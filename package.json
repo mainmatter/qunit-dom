@@ -17,7 +17,7 @@
     "start": "ember server",
     "test": "jest",
     "test:coverage": "jest --coverage",
-    "test:ember": "jest",
+    "test:ember": "ember test",
     "test:watch": "jest --watchAll --notify"
   },
   "dependencies": {
