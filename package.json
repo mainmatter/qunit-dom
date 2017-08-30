@@ -16,6 +16,7 @@
     "build": "ember build",
     "start": "ember server",
     "test": "jest",
+    "test:coverage": "jest --coverage",
     "test:ember": "jest",
     "test:watch": "jest --watchAll --notify"
   },
