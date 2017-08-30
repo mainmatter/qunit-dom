@@ -1,6 +1,6 @@
 {
   "name": "qunit-dom",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "DOM element assertions for QUnit",
   "keywords": [
     "ember-addon"
