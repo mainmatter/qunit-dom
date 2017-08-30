@@ -20,6 +20,8 @@
     "test:watch": "jest --watchAll --notify"
   },
   "dependencies": {
+    "broccoli-funnel": "^2.0.0",
+    "broccoli-merge-trees": "^2.0.0",
     "ember-cli-babel": "^6.6.0"
   },
   "devDependencies": {
@@ -49,6 +51,10 @@
     "node": "^4.5 || 6.* || >= 7.*"
   },
   "ember-addon": {
-    "configPath": "tests/dummy/config"
+    "configPath": "tests/dummy/config",
+    "after": [
+      "ember-cli-qunit",
+      "ember-qunit"
+    ]
   }
 }
