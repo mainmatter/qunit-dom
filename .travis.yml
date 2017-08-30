@@ -22,6 +22,7 @@ install:
   - yarn install --no-lockfile
 
 script:
+  - yarn run build
   - yarn run test:coverage
   - yarn run test:ember
 
