@@ -15,7 +15,9 @@
   "scripts": {
     "build": "ember build",
     "start": "ember server",
-    "test": "ember try:each"
+    "test": "jest",
+    "test:ember": "jest",
+    "test:watch": "jest --watchAll --notify"
   },
   "dependencies": {
     "ember-cli-babel": "^6.6.0"
@@ -38,6 +40,7 @@
     "ember-load-initializers": "^1.0.0",
     "ember-resolver": "^4.0.0",
     "ember-source": "~2.15.0-beta.2",
+    "jest": "^20.0.4",
     "loader.js": "^4.2.3",
     "rollup": "^0.49.2"
   },
