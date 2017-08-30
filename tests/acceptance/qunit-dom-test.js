@@ -11,6 +11,6 @@ test('qunit-dom assertions are available', function(assert) {
 
   visit('/');
   andThen(() => {
-    assert.dom.textContains(find('#title').get(0), 'Welcome');
+    assert.dom.textContains('#title', 'Welcome');
   });
 });
