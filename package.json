@@ -13,8 +13,8 @@
   },
   "repository": "",
   "scripts": {
-    "build": "ember build",
-    "start": "ember server",
+    "build": "rollup -c",
+    "prepublish": "rollup -c",
     "test": "jest",
     "test:coverage": "jest --coverage",
     "test:ember": "ember test",
