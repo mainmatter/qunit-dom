@@ -1,6 +1,6 @@
 # qunit-dom
 
-This README outlines the details of collaborating on this Ember addon.
+DOM element assertions for QUnit
 
 ## Installation
 
