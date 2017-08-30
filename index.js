@@ -1,7 +1,6 @@
 /* eslint-env node */
 'use strict';
 
-const path = require('path');
 const Funnel = require('broccoli-funnel');
 const MergeTrees = require('broccoli-merge-trees');
 
@@ -15,7 +14,7 @@ module.exports = {
   },
 
   treeForVendor(vendorTree) {
-    let qunitPluginTree = new Funnel(path.join(this.project.root, 'dist'), {
+    let qunitPluginTree = new Funnel(`${__dirname}/dist`, {
       files: ['qunit-dom.js', 'qunit-dom.js.map'],
     });
 
