@@ -53,14 +53,14 @@ test('the title is friendly', function(assert) {
 Assertions
 ------------------------------------------------------------------------------
 
-### `isFocused(selector|element, [message])`
-### `isNotFocused(selector|element, [message])`
+### `focused(selector|element, [message])`
+### `notFocused(selector|element, [message])`
 
 Assert that the [HTMLElement][] is or is not currently focused.
 
 ```js
-assert.dom.isFocused('input.email');
-assert.dom.isNotFocused(document.querySelector('input[type="password"]'));
+assert.dom.focused('input.email');
+assert.dom.notFocused(document.querySelector('input[type="password"]'));
 ```
 
 
