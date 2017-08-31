@@ -54,13 +54,14 @@ Assertions
 ------------------------------------------------------------------------------
 
 ### `exists(selector, [options], [message])`
+### `missing(selector, [message])`
 
 Assert an [HTMLElement][] (or multiple) matching the `selector` exists.
 
 ```js
 assert.dom.exists('#title');
 assert.dom.exists('.choice', { count: 4 });
-assert.dom.exists('.should-not-exist', { count: 0 });
+assert.dom.missing('.should-not-exist');
 ```
 
 

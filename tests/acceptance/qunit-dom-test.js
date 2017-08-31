@@ -12,7 +12,7 @@ test('qunit-dom assertions are available', function(assert) {
   visit('/');
   andThen(() => {
     assert.dom.exists('#title');
-    assert.dom.exists('#subtitle', { count: 0 });
+    assert.dom.missing('#subtitle');
     assert.dom.textContains('#title', 'Welcome');
   });
 });
