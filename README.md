@@ -53,6 +53,17 @@ test('the title is friendly', function(assert) {
 Assertions
 ------------------------------------------------------------------------------
 
+### `exists(selector, [options], [message])`
+
+Assert an [HTMLElement][] (or multiple) matching the `selector` exists.
+
+```js
+assert.dom.exists('#title');
+assert.dom.exists('.choice', { count: 4 });
+assert.dom.exists('.should-not-exist', { count: 0 });
+```
+
+
 ### `focused(selector|element, [message])`
 ### `notFocused(selector|element, [message])`
 

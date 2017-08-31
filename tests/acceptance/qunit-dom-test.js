@@ -4,13 +4,15 @@ import moduleForAcceptance from '../../tests/helpers/module-for-acceptance';
 moduleForAcceptance('Acceptance | qunit-dom');
 
 test('qunit-dom assertions are available', function(assert) {
-  assert.expect(3);
+  assert.expect(5);
 
   assert.ok(assert.dom, 'assert.dom is available');
   assert.ok(assert.dom.textContains, 'assert.dom.textContains is available');
 
   visit('/');
   andThen(() => {
+    assert.dom.exists('#title');
+    assert.dom.exists('#subtitle', { count: 0 });
     assert.dom.textContains('#title', 'Welcome');
   });
 });
