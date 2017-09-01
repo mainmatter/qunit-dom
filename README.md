@@ -114,6 +114,6 @@ Related
 License
 ------------------------------------------------------------------------------
 
-ember-test-selectors is developed by and &copy;
+qunit-dom is developed by and &copy;
 [simplabs GmbH](http://simplabs.com) and contributors. It is released under the
-[MIT License](https://github.com/simplabs/ember-simple-auth/blob/master/LICENSE).
+[MIT License](https://github.com/simplabs/qunit-dom/blob/master/LICENSE.md).
