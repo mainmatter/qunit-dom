@@ -6,12 +6,12 @@
     "ember-addon"
   ],
   "license": "MIT",
-  "author": "",
+  "author": "simplabs GmbH",
   "directories": {
     "doc": "doc",
     "test": "tests"
   },
-  "repository": "",
+  "repository": "https://github.com/simplabs/qunit-dom",
   "scripts": {
     "build": "rollup -c",
     "prepublish": "rollup -c",
