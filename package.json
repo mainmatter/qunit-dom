@@ -3,7 +3,12 @@
   "version": "0.2.0",
   "description": "DOM element assertions for QUnit",
   "keywords": [
-    "ember-addon"
+    "browser",
+    "dom",
+    "ember-addon",
+    "html",
+    "qunit",
+    "testing"
   ],
   "license": "MIT",
   "author": "simplabs GmbH",
