@@ -41,11 +41,11 @@ Load `qunit-dom.js` *after* `qunit.js`:
 Usage
 ------------------------------------------------------------------------------
 
-Once installed the DOM element assertions are available at `assert.dom.*`:
+Once installed the DOM element assertions are available at `assert.dom(...).*`:
 
 ```js
 test('the title is friendly', function(assert) {
-  assert.dom.textContains('#title', 'Welcome');
+  assert.dom('#title').textContains('Welcome');
 });
 ```
 
@@ -53,48 +53,48 @@ test('the title is friendly', function(assert) {
 Assertions
 ------------------------------------------------------------------------------
 
-### `exists(selector, [options], [message])`
-### `missing(selector, [message])`
+### `assert.dom(selector).exists([options], [message])`
+### `assert.dom(selector).missing([message])`
 
 Assert an [HTMLElement][] (or multiple) matching the `selector` exists.
 
 ```js
-assert.dom.exists('#title');
-assert.dom.exists('.choice', { count: 4 });
-assert.dom.missing('.should-not-exist');
+assert.dom('#title').exists();
+assert.dom('.choice').exists({ count: 4 });
+assert.dom('.should-not-exist').missing();
 ```
 
 
-### `focused(selector|element, [message])`
-### `notFocused(selector|element, [message])`
+### `assert.dom(selector|element).focused([message])`
+### `assert.dom(selector|element).notFocused([message])`
 
 Assert that the [HTMLElement][] is or is not currently focused.
 
 ```js
-assert.dom.focused('input.email');
-assert.dom.notFocused(document.querySelector('input[type="password"]'));
+assert.dom('input.email').focused();
+assert.dom(document.querySelector('input[type="password"]')).notFocused();
 ```
 
 
-### `textContains(selector|element, text, [message])`
+### `assert.dom(selector|element).textContains(text, [message])`
 
 Assert that the text of the [HTMLElement][] contains the given `text`, using
 [`textContent`](https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent).
 
 ```js
-assert.dom.textContains('#title', 'Welcome');
-assert.dom.textContains(document.querySelector('#title'), 'Welcome');
+assert.dom('#title').textContains('Welcome');
+assert.dom(document.querySelector('#title')).textContains('Welcome');
 ```
 
 
-### `textMatches(selector|element, regex, [message])`
+### `assert.dom(selector|element).textMatches(regex, [message])`
 
 Assert that the text of the [HTMLElement][] matches the given regular expression, using
 [`textContent`](https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent).
 
 ```js
-assert.dom.textMatches('.foo', /[12]\d{3}/);
-assert.dom.textMatches(document.querySelector('.foo'), /[12]\d{3}/);
+assert.dom('.foo').textMatches(/[12]\d{3}/);
+assert.dom(document.querySelector('.foo')).textMatches(/[12]\d{3}/);
 ```
 
 
