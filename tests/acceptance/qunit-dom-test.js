@@ -7,7 +7,7 @@ test('qunit-dom assertions are available', function(assert) {
   assert.expect(6);
 
   assert.ok(assert.dom, 'assert.dom is available');
-  assert.ok(assert.dom('.foo').textContains, 'assert.dom(...).textContains is available');
+  assert.ok(assert.dom('.foo').hasTextContaining, 'assert.dom(...).textContains is available');
 
   assert.dom('#qunit').doesNotExist('rootElement is set to #ember-testing-container');
 
@@ -15,6 +15,6 @@ test('qunit-dom assertions are available', function(assert) {
   andThen(() => {
     assert.dom('#title').exists();
     assert.dom('#subtitle').doesNotExist();
-    assert.dom('#title').textContains('Welcome');
+    assert.dom('#title').hasText('Welcome to Ember');
   });
 });
