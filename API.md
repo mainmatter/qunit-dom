@@ -55,7 +55,7 @@ Assert an [HTMLElement][] matching the `selector` does not exists.
 assert.dom('.should-not-exist').doesNotExist();
 ```
 
-### focused
+### isFocused
 
 Assert that the [HTMLElement][] or an [HTMLElement][] matching the
 `selector` is currently focused.
@@ -67,7 +67,7 @@ Assert that the [HTMLElement][] or an [HTMLElement][] matching the
 **Examples**
 
 ```javascript
-assert.dom('input.email').focused();
+assert.dom('input.email').isFocused();
 ```
 
 ### notFocused
