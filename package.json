@@ -19,6 +19,7 @@
   "repository": "https://github.com/simplabs/qunit-dom",
   "scripts": {
     "build": "rollup -c",
+    "docs": "documentation readme lib/qunit-dom.js --readme-file=API.md --section=Assertions",
     "prepublish": "rollup -c",
     "test": "jest",
     "test:coverage": "jest --coverage",

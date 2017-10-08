@@ -49,57 +49,7 @@ test('the title is friendly', function(assert) {
 });
 ```
 
-
-Assertions
-------------------------------------------------------------------------------
-
-### `assert.dom(selector).exists([options], [message])`
-### `assert.dom(selector).missing([message])`
-
-Assert an [HTMLElement][] (or multiple) matching the `selector` exists.
-
-```js
-assert.dom('#title').exists();
-assert.dom('.choice').exists({ count: 4 });
-assert.dom('.should-not-exist').missing();
-```
-
-
-### `assert.dom(selector|element).focused([message])`
-### `assert.dom(selector|element).notFocused([message])`
-
-Assert that the [HTMLElement][] is or is not currently focused.
-
-```js
-assert.dom('input.email').focused();
-assert.dom(document.querySelector('input[type="password"]')).notFocused();
-```
-
-
-### `assert.dom(selector|element).textContains(text, [message])`
-
-Assert that the text of the [HTMLElement][] contains the given `text`, using
-[`textContent`](https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent).
-
-```js
-assert.dom('#title').textContains('Welcome');
-assert.dom(document.querySelector('#title')).textContains('Welcome');
-```
-
-
-### `assert.dom(selector|element).textMatches(regex, [message])`
-
-Assert that the text of the [HTMLElement][] matches the given regular expression, using
-[`textContent`](https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent).
-
-```js
-assert.dom('.foo').textMatches(/[12]\d{3}/);
-assert.dom(document.querySelector('.foo')).textMatches(/[12]\d{3}/);
-```
-
-
-[HTMLElement]: https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement
-[NodeList]: https://developer.mozilla.org/en-US/docs/Web/API/NodeList
+**All available assertions are documented in [API.md](API.md).**
 
 
 Related
