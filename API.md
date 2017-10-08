@@ -70,7 +70,7 @@ Assert that the [HTMLElement][] or an [HTMLElement][] matching the
 assert.dom('input.email').isFocused();
 ```
 
-### notFocused
+### isNotFocused
 
 Assert that the [HTMLElement][] or an [HTMLElement][] matching the
 `selector` is not currently focused.
@@ -82,7 +82,7 @@ Assert that the [HTMLElement][] or an [HTMLElement][] matching the
 **Examples**
 
 ```javascript
-assert.dom('input[type="password"]').notFocused();
+assert.dom('input[type="password"]').isNotFocused();
 ```
 
 ### textContains
