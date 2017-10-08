@@ -15,6 +15,6 @@ test('qunit-dom assertions are available', function(assert) {
   andThen(() => {
     assert.dom('#title').exists();
     assert.dom('#subtitle').doesNotExist();
-    assert.dom('#title').textContains('Welcome');
+    assert.dom('#title').hasText('Welcome to Ember');
   });
 });

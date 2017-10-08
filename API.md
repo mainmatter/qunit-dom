@@ -85,6 +85,28 @@ Assert that the [HTMLElement][] or an [HTMLElement][] matching the
 assert.dom('input[type="password"]').isNotFocused();
 ```
 
+### hasText
+
+Assert that the text of the [HTMLElement][] or an [HTMLElement][]
+matching the `selector` matches the given `text`, using the
+[`textContent`](https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent)
+attribute and stripping/collapsing whitespace.
+
+**Parameters**
+
+-   `text` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+-   `message` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)?** 
+
+**Examples**
+
+```javascript
+// <h2 id="title">
+//   Welcome to <b>QUnit</b>
+// </h2>
+
+assert.dom('#title').hasText('Welcome to QUnit');
+```
+
 ### textContains
 
 Assert that the text of the [HTMLElement][] or an [HTMLElement][]
