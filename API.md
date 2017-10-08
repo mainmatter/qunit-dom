@@ -88,13 +88,15 @@ assert.dom('input[type="password"]').isNotFocused();
 ### hasText
 
 Assert that the text of the [HTMLElement][] or an [HTMLElement][]
-matching the `selector` matches the given `text`, using the
+matching the `selector` matches the `expected` text, using the
 [`textContent`](https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent)
 attribute and stripping/collapsing whitespace.
 
+`expected` can also be a regular expression.
+
 **Parameters**
 
--   `text` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+-   `expected` **([string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) \| [RegExp](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp))** 
 -   `message` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)?** 
 
 **Examples**
@@ -105,6 +107,10 @@ attribute and stripping/collapsing whitespace.
 // </h2>
 
 assert.dom('#title').hasText('Welcome to QUnit');
+```
+
+```javascript
+assert.dom('.foo').hasText(/[12]\d{3}/);
 ```
 
 ### textContains
@@ -123,22 +129,4 @@ attribute.
 
 ```javascript
 assert.dom('#title').textContains('Welcome');
-```
-
-### textMatches
-
-Assert that the text of the [HTMLElement][] or an [HTMLElement][]
-matching the `selector` matches the given regular expression, using the
-[`textContent`](https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent)
-attribute.
-
-**Parameters**
-
--   `regex` **[RegExp](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp)** 
--   `message` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)?** 
-
-**Examples**
-
-```javascript
-assert.dom('.foo').textMatches(/[12]\d{3}/);
 ```
