@@ -113,7 +113,7 @@ assert.dom('#title').hasText('Welcome to QUnit');
 assert.dom('.foo').hasText(/[12]\d{3}/);
 ```
 
-### textContains
+### hasTextContaining
 
 Assert that the text of the [HTMLElement][] or an [HTMLElement][]
 matching the `selector` contains the given `text`, using the
@@ -128,5 +128,5 @@ attribute.
 **Examples**
 
 ```javascript
-assert.dom('#title').textContains('Welcome');
+assert.dom('#title').hasTextContaining('Welcome');
 ```
