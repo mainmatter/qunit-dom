@@ -41,7 +41,7 @@ assert.dom('#title').exists();
 assert.dom('.choice').exists({ count: 4 });
 ```
 
-### missing
+### doesNotExist
 
 Assert an [HTMLElement][] matching the `selector` does not exists.
 
@@ -52,7 +52,7 @@ Assert an [HTMLElement][] matching the `selector` does not exists.
 **Examples**
 
 ```javascript
-assert.dom('.should-not-exist').missing();
+assert.dom('.should-not-exist').doesNotExist();
 ```
 
 ### focused
