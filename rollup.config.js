@@ -1,3 +1,4 @@
+import babel from 'rollup-plugin-babel';
 import commonjs from 'rollup-plugin-commonjs';
 
 export default {
@@ -5,6 +6,9 @@ export default {
 
   external: ['qunit'],
   plugins: [
+    babel({
+      exclude: 'node_modules/**'
+    }),
     commonjs(),
   ],
 
