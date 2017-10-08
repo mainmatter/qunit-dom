@@ -41,7 +41,7 @@ assert.dom('#title').exists();
 assert.dom('.choice').exists({ count: 4 });
 ```
 
-### missing
+### doesNotExist
 
 Assert an [HTMLElement][] matching the `selector` does not exists.
 
@@ -52,10 +52,10 @@ Assert an [HTMLElement][] matching the `selector` does not exists.
 **Examples**
 
 ```javascript
-assert.dom('.should-not-exist').missing();
+assert.dom('.should-not-exist').doesNotExist();
 ```
 
-### focused
+### isFocused
 
 Assert that the [HTMLElement][] or an [HTMLElement][] matching the
 `selector` is currently focused.
@@ -67,10 +67,10 @@ Assert that the [HTMLElement][] or an [HTMLElement][] matching the
 **Examples**
 
 ```javascript
-assert.dom('input.email').focused();
+assert.dom('input.email').isFocused();
 ```
 
-### notFocused
+### isNotFocused
 
 Assert that the [HTMLElement][] or an [HTMLElement][] matching the
 `selector` is not currently focused.
@@ -82,7 +82,7 @@ Assert that the [HTMLElement][] or an [HTMLElement][] matching the
 **Examples**
 
 ```javascript
-assert.dom('input[type="password"]').notFocused();
+assert.dom('input[type="password"]').isNotFocused();
 ```
 
 ### textContains
