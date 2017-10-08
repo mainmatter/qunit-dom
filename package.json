@@ -19,6 +19,7 @@
   "repository": "https://github.com/simplabs/qunit-dom",
   "scripts": {
     "build": "rollup -c",
+    "docs": "documentation readme lib/qunit-dom.js --readme-file=API.md --section=Assertions",
     "prepublish": "rollup -c",
     "test": "jest",
     "test:coverage": "jest --coverage",
@@ -30,6 +31,7 @@
     "broccoli-merge-trees": "^2.0.0"
   },
   "devDependencies": {
+    "documentation": "^5.3.2",
     "ember-cli": "~2.15.0-beta.2",
     "ember-cli-babel": "^6.6.0",
     "ember-cli-dependency-checker": "^2.0.0",
