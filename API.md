@@ -29,6 +29,8 @@ test('the title exists', function(assert) {
 
 ### exists
 
+-   **See: [#doesNotExist](#doesnotexist)**
+
 Assert an [HTMLElement][] (or multiple) matching the `selector` exists.
 
 **Parameters**
@@ -45,6 +47,8 @@ assert.dom('.choice').exists({ count: 4 });
 
 ### doesNotExist
 
+-   **See: [#exists](#exists)**
+
 Assert an [HTMLElement][] matching the `selector` does not exists.
 
 **Parameters**
@@ -58,6 +62,8 @@ assert.dom('.should-not-exist').doesNotExist();
 ```
 
 ### isFocused
+
+-   **See: [#isNotFocused](#isnotfocused)**
 
 Assert that the [HTMLElement][] or an [HTMLElement][] matching the
 `selector` is currently focused.
@@ -73,6 +79,8 @@ assert.dom('input.email').isFocused();
 ```
 
 ### isNotFocused
+
+-   **See: [#isFocused](#isfocused)**
 
 Assert that the [HTMLElement][] or an [HTMLElement][] matching the
 `selector` is not currently focused.
@@ -105,6 +113,8 @@ assert.dom('input[type="password"]').hasClass('secret-password-input');
 
 ### hasText
 
+-   **See: [#hasTextContaining](#hastextcontaining)**
+
 Assert that the text of the [HTMLElement][] or an [HTMLElement][]
 matching the `selector` matches the `expected` text, using the
 [`textContent`](https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent)
@@ -132,6 +142,8 @@ assert.dom('.foo').hasText(/[12]\d{3}/);
 ```
 
 ### hasTextContaining
+
+-   **See: [#hasText](#hastext)**
 
 Assert that the text of the [HTMLElement][] or an [HTMLElement][]
 matching the `selector` contains the given `text`, using the
