@@ -19,6 +19,7 @@
   "repository": "https://github.com/simplabs/qunit-dom",
   "scripts": {
     "build": "rollup -c",
+    "changelog": "lerna-changelog",
     "docs": "documentation readme lib/qunit-dom.js --readme-file=API.md --section=Assertions",
     "prepublish": "rollup -c",
     "test": "jest",
@@ -47,6 +48,7 @@
     "ember-resolver": "^4.0.0",
     "ember-source": "~2.15.0-beta.2",
     "jest": "^20.0.4",
+    "lerna-changelog": "^0.6.0",
     "loader.js": "^4.2.3",
     "rollup": "^0.49.2",
     "rollup-plugin-babel": "^3.0.2"
@@ -60,5 +62,15 @@
       "ember-cli-qunit",
       "ember-qunit"
     ]
+  },
+  "changelog": {
+    "repo": "simplabs/qunit-dom",
+    "labels": {
+      "breaking": ":boom: Breaking Change",
+      "enhancement": ":rocket: Enhancement",
+      "bug": ":bug: Bug Fix",
+      "documentation": ":memo: Documentation",
+      "internal": ":house: Internal"
+    }
   }
 }
