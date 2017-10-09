@@ -2,6 +2,8 @@
 
 [htmlelement]: https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement
 
+[htmlinputelement]: https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement
+
 [nodelist]: https://developer.mozilla.org/en-US/docs/Web/API/NodeList
 
 ## assert.dom()
@@ -129,4 +131,20 @@ attribute.
 
 ```javascript
 assert.dom('#title').hasTextContaining('Welcome');
+```
+
+### hasValue
+
+Assert that the `value` property of an [HTMLInputElement][] matches
+the `expected` text or regular expression.
+
+**Parameters**
+
+-   `expected` **([string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) \| [RegExp](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp))** 
+-   `message` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)?** 
+
+**Examples**
+
+```javascript
+assert.dom('input.username').hasValue('HSimpson');
 ```
