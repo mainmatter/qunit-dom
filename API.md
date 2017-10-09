@@ -87,6 +87,22 @@ Assert that the [HTMLElement][] or an [HTMLElement][] matching the
 assert.dom('input[type="password"]').isNotFocused();
 ```
 
+### hasClass
+
+Assert that the [HTMLElement][] has the `expected` CSS class using
+[`classList`](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList).
+
+**Parameters**
+
+-   `expected` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+-   `message` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)?** 
+
+**Examples**
+
+```javascript
+assert.dom('input[type="password"]').hasClass('secret-password-input');
+```
+
 ### hasText
 
 Assert that the text of the [HTMLElement][] or an [HTMLElement][]
