@@ -1,5 +1,18 @@
 # Changelog
 
+## v0.3.1 (2017-10-09)
+
+#### :rocket: Enhancement
+* [#17](https://github.com/simplabs/qunit-dom/pull/17) Add hasClass() assertion. ([@Turbo87](https://github.com/Turbo87))
+* [#15](https://github.com/simplabs/qunit-dom/pull/15) Add hasValue() assertion. ([@Turbo87](https://github.com/Turbo87))
+
+#### :memo: Documentation
+* [#16](https://github.com/simplabs/qunit-dom/pull/16) Add @see directives to JSDoc comments. ([@Turbo87](https://github.com/Turbo87))
+
+#### Committers: 1
+- Tobias Bieniek ([Turbo87](https://github.com/Turbo87))
+
+
 ## v0.3.0 (2017-10-09)
 
 #### :boom: Breaking Change
