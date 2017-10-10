@@ -97,6 +97,8 @@ assert.dom('input[type="password"]').isNotFocused();
 
 ### hasClass
 
+-   **See: [#doesNotHaveClass](#doesnothaveclass)**
+
 Assert that the [HTMLElement][] has the `expected` CSS class using
 [`classList`](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList).
 
@@ -109,6 +111,24 @@ Assert that the [HTMLElement][] has the `expected` CSS class using
 
 ```javascript
 assert.dom('input[type="password"]').hasClass('secret-password-input');
+```
+
+### doesNotHaveClass
+
+-   **See: [#hasClass](#hasclass)**
+
+Assert that the [HTMLElement][] does not have the `expected` CSS class using
+[`classList`](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList).
+
+**Parameters**
+
+-   `expected` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+-   `message` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)?** 
+
+**Examples**
+
+```javascript
+assert.dom('input[type="password"]').doesNotHaveClass('username-input');
 ```
 
 ### hasText
