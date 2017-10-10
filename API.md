@@ -163,6 +163,8 @@ assert.dom('#title').hasTextContaining('Welcome');
 
 ### hasValue
 
+-   **See: [#hasNoValue](#hasnovalue)**
+
 Assert that the `value` property of an [HTMLInputElement][] matches
 the `expected` text or regular expression.
 
@@ -175,4 +177,20 @@ the `expected` text or regular expression.
 
 ```javascript
 assert.dom('input.username').hasValue('HSimpson');
+```
+
+### hasNoValue
+
+-   **See: [#hasValue](#hasvalue)**
+
+Assert that the `value` property of an [HTMLInputElement][] is empty.
+
+**Parameters**
+
+-   `message` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)?** 
+
+**Examples**
+
+```javascript
+assert.dom('input.username').hasNoValue();
 ```
