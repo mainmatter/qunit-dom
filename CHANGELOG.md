@@ -1,5 +1,21 @@
 # Changelog
 
+## v0.3.2 (2017-10-10)
+
+#### :rocket: Enhancement
+* [#28](https://github.com/simplabs/qunit-dom/pull/28) Adds hasAttribute() and doesNotHaveAttribute() assertions. ([@Turbo87](https://github.com/Turbo87))
+* [#27](https://github.com/simplabs/qunit-dom/pull/27) Add lacksClass() and lacksValue() aliases. ([@Turbo87](https://github.com/Turbo87))
+* [#26](https://github.com/simplabs/qunit-dom/pull/26) Add doesNotHaveClass/hasNoClass() assertion. ([@Turbo87](https://github.com/Turbo87))
+* [#25](https://github.com/simplabs/qunit-dom/pull/25)  Add hasAnyValue() assertion and support for calling hasValue() without arguments. ([@Turbo87](https://github.com/Turbo87))
+* [#24](https://github.com/simplabs/qunit-dom/pull/24) Add hasNoValue() assertion. ([@Turbo87](https://github.com/Turbo87))
+
+#### :house: Internal
+* [#23](https://github.com/simplabs/qunit-dom/pull/23) tests/has-value: Ensure empty `value` does not break the assertion. ([@Turbo87](https://github.com/Turbo87))
+
+#### Committers: 1
+- Tobias Bieniek ([Turbo87](https://github.com/Turbo87))
+
+
 ## v0.3.1 (2017-10-09)
 
 #### :rocket: Enhancement
