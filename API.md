@@ -168,9 +168,12 @@ assert.dom('#title').hasTextContaining('Welcome');
 Assert that the `value` property of an [HTMLInputElement][] matches
 the `expected` text or regular expression.
 
+If no `expected` value is provided, the assertion will fail if the
+`value` is an empty string.
+
 **Parameters**
 
--   `expected` **([string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) \| [RegExp](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp))** 
+-   `expected` **([string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) \| [RegExp](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp) \| [object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)?)** 
 -   `message` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)?** 
 
 **Examples**
