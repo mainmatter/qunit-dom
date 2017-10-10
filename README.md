@@ -44,8 +44,8 @@ Usage
 Once installed the DOM element assertions are available at `assert.dom(...).*`:
 
 ```js
-test('the title is friendly', function(assert) {
-  assert.dom('#title').textContains('Welcome');
+test('the title is welcoming', function(assert) {
+  assert.dom('#title').hasText('Welcome to QUnit');
 });
 ```
 
