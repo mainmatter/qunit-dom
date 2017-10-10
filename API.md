@@ -120,6 +120,8 @@ assert.dom('input[type="password"]').hasClass('secret-password-input');
 Assert that the [HTMLElement][] does not have the `expected` CSS class using
 [`classList`](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList).
 
+**Aliases:** `hasNoClass`
+
 **Parameters**
 
 -   `expected` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** 
