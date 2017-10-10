@@ -95,6 +95,45 @@ Assert that the [HTMLElement][] or an [HTMLElement][] matching the
 assert.dom('input[type="password"]').isNotFocused();
 ```
 
+### hasAttribute
+
+-   **See: [#doesNotHaveAttribute](#doesnothaveattribute)**
+
+Assert that the [HTMLElement][] has an attribute with the provided `name`
+and optionally checks if the attribute `value` matches the provided text
+or regular expression.
+
+**Parameters**
+
+-   `name` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+-   `value` **([string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) \| [RegExp](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp) \| [object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)?)** 
+-   `message` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)?** 
+
+**Examples**
+
+```javascript
+assert.dom('input.password-input').hasAttribute('type', 'password');
+```
+
+### doesNotHaveAttribute
+
+-   **See: [#hasAttribute](#hasattribute)**
+
+Assert that the [HTMLElement][] has no attribute with the provided `name`.
+
+**Aliases:** `hasNoAttribute`, `lacksAttribute`
+
+**Parameters**
+
+-   `name` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+-   `message` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)?** 
+
+**Examples**
+
+```javascript
+assert.dom('input.username').hasNoAttribute('disabled');
+```
+
 ### hasClass
 
 -   **See: [#doesNotHaveClass](#doesnothaveclass)**
@@ -120,7 +159,7 @@ assert.dom('input[type="password"]').hasClass('secret-password-input');
 Assert that the [HTMLElement][] does not have the `expected` CSS class using
 [`classList`](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList).
 
-**Aliases:** `hasNoClass`
+**Aliases:** `hasNoClass`, `lacksClass`
 
 **Parameters**
 
@@ -228,6 +267,8 @@ assert.dom('input.username').hasAnyValue();
 -   **See: [#hasAnyValue](#hasanyvalue)**
 
 Assert that the `value` property of an [HTMLInputElement][] is empty.
+
+**Aliases:** `lacksValue`
 
 **Parameters**
 
