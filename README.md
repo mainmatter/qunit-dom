@@ -9,7 +9,7 @@ qunit-dom
 [travis-badge]: https://img.shields.io/travis/simplabs/qunit-dom/master.svg
 [travis-badge-url]: https://travis-ci.org/simplabs/qunit-dom
 
-DOM element assertions for [QUnit](https://qunitjs.com/)
+High Level DOM Assertions for [QUnit](https://qunitjs.com/)
 
 Install
 ------------------------------------------------------------------------------
