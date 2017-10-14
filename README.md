@@ -11,6 +11,17 @@ qunit-dom
 
 High Level DOM Assertions for [QUnit](https://qunitjs.com/)
 
+```js
+assert.dom('h1').exists();
+assert.dom('h1').hasClass('title');
+assert.dom('h1').hasText('Welcome to Ember, John Doe!');
+
+assert.dom('input').isFocused();
+assert.dom('input').hasValue(/.+ Doe/);
+assert.dom('input').hasAttribute('type', 'text');
+```
+
+
 Install
 ------------------------------------------------------------------------------
 
