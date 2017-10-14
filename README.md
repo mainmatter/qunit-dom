@@ -51,6 +51,9 @@ test('the title is welcoming', function(assert) {
 
 **All available assertions are documented in [API.md](API.md).**
 
+A basic codemod to automatically convert your assertions is available at
+[https://github.com/simplabs/qunit-dom-codemod](https://github.com/simplabs/qunit-dom-codemod).
+
 
 Related
 ------------------------------------------------------------------------------
