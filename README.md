@@ -66,6 +66,21 @@ A basic codemod to automatically convert your assertions is available at
 [https://github.com/simplabs/qunit-dom-codemod](https://github.com/simplabs/qunit-dom-codemod).
 
 
+Contributing
+------------------------------------------------------------------------------
+
+### How to Run Tests
+
+```bash
+yarn run test
+```
+
+### How to Generate the Documentation
+
+```bash
+yarn run docs
+```
+
 Related
 ------------------------------------------------------------------------------
 
