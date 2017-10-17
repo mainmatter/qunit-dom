@@ -174,7 +174,7 @@ assert.dom('input[type="password"]').doesNotHaveClass('username-input');
 
 ### hasText
 
--   **See: [#hasTextContaining](#hastextcontaining)**
+-   **See: [#includesText](#includestext)**
 
 Assert that the text of the [HTMLElement][] or an [HTMLElement][]
 matching the `selector` matches the `expected` text, using the
@@ -202,7 +202,7 @@ assert.dom('#title').hasText('Welcome to QUnit');
 assert.dom('.foo').hasText(/[12]\d{3}/);
 ```
 
-### hasTextContaining
+### includesText
 
 -   **See: [#hasText](#hastext)**
 
@@ -211,7 +211,7 @@ matching the `selector` contains the given `text`, using the
 [`textContent`](https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent)
 attribute.
 
-**Aliases:** `includesText`
+**Aliases:** `containsText`, `hasTextContaining`
 
 **Parameters**
 
@@ -221,7 +221,7 @@ attribute.
 **Examples**
 
 ```javascript
-assert.dom('#title').hasTextContaining('Welcome');
+assert.dom('#title').includesText('Welcome');
 ```
 
 ### hasValue

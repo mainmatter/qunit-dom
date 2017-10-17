@@ -7,7 +7,7 @@ test('qunit-dom assertions are available', function(assert) {
   assert.expect(6);
 
   assert.ok(assert.dom, 'assert.dom is available');
-  assert.ok(assert.dom('.foo').hasTextContaining, 'assert.dom(...).textContains is available');
+  assert.ok(assert.dom('.foo').includesText, 'assert.dom(...).includesText is available');
 
   assert.dom('#qunit').doesNotExist('rootElement is set to #ember-testing-container');
 
