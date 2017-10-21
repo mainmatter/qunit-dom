@@ -1,1 +1,7 @@
-QUnit.assert.dom.rootElement = document.querySelector('#ember-testing');
+Object.defineProperty(QUnit.assert.dom, 'rootElement', {
+  get: function() {
+    return document.querySelector('#ember-testing');
+  },
+  enumerable: true,
+  configurable: true,
+});
