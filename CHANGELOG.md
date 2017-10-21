@@ -1,5 +1,20 @@
 # Changelog
 
+## v0.3.3 (2017-10-21)
+
+#### :rocket: Enhancement
+* [#33](https://github.com/simplabs/qunit-dom/pull/33) Ember: Convert `rootElement` to non-caching property. ([@Turbo87](https://github.com/Turbo87))
+* [#32](https://github.com/simplabs/qunit-dom/pull/32) Rename `hasTextContaining()` to `includesText()`. ([@Oreoz](https://github.com/Oreoz))
+* [#31](https://github.com/simplabs/qunit-dom/pull/31) Add includesText() alias. ([@Oreoz](https://github.com/Oreoz))
+
+#### :memo: Documentation
+* [#29](https://github.com/simplabs/qunit-dom/pull/29) README: Fix example code. ([@Turbo87](https://github.com/Turbo87))
+
+#### Committers: 2
+- Jean-Philippe Roy ([Oreoz](https://github.com/Oreoz))
+- Tobias Bieniek ([Turbo87](https://github.com/Turbo87))
+
+
 ## v0.3.2 (2017-10-10)
 
 #### :rocket: Enhancement
