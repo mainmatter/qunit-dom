@@ -224,6 +224,24 @@ attribute.
 assert.dom('#title').includesText('Welcome');
 ```
 
+### doesNotIncludeText
+
+Assert that the text of the [HTMLElement][] or an [HTMLElement][]
+matching the `selector` does not contain the given `text`, using the
+[`textContent`](https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent)
+attribute.
+
+**Parameters**
+
+-   `text` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+-   `message` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)?** 
+
+**Examples**
+
+```javascript
+assert.dom('#title').doesNotIncludeText('Welcome');
+```
+
 ### hasValue
 
 -   **See: [#hasAnyValue](#hasanyvalue)**
