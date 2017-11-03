@@ -231,6 +231,8 @@ matching the `selector` does not contain the given `text`, using the
 [`textContent`](https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent)
 attribute.
 
+**Aliases:** `doesNotContainText`, `doesNotHaveTextContaining`
+
 **Parameters**
 
 -   `text` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** 
