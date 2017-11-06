@@ -227,7 +227,7 @@ assert.dom('#title').includesText('Welcome');
 ### doesNotIncludeText
 
 Assert that the text of the [HTMLElement][] or an [HTMLElement][]
-matching the `selector` does not contain the given `text`, using the
+matching the `selector` does not include the given `text`, using the
 [`textContent`](https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent)
 attribute.
 
