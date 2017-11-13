@@ -1,5 +1,14 @@
 # Changelog
 
+## v0.3.4 (2017-11-13)
+
+#### :rocket: Enhancement
+* [#36](https://github.com/simplabs/qunit-dom/pull/36) Add `doesNotIncludeText()` assertion. ([@Zureka](https://github.com/Zureka))
+
+#### Committers: 1
+- Alex Zurek ([Zureka](https://github.com/Zureka))
+
+
 ## v0.3.3 (2017-10-21)
 
 #### :rocket: Enhancement
