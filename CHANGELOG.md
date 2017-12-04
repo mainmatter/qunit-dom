@@ -1,5 +1,14 @@
 # Changelog
 
+## v0.4.0 (2017-12-04)
+
+#### :rocket: Enhancement
+* [#40](https://github.com/simplabs/qunit-dom/pull/40) [Ember] Adjust `rootElement`. ([@simonihmig](https://github.com/simonihmig))
+
+#### Committers: 1
+- Simon Ihmig ([simonihmig](https://github.com/simonihmig))
+
+
 ## v0.3.4 (2017-11-13)
 
 #### :rocket: Enhancement
