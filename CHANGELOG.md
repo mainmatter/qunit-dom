@@ -1,5 +1,18 @@
 # Changelog
 
+## v0.5.0 (2018-02-03)
+
+#### :boom: Breaking Change
+* [#49](https://github.com/simplabs/qunit-dom/pull/49) Revert "[Ember] Adjust `rootElement`". ([@Turbo87](https://github.com/Turbo87))
+
+#### :house: Internal
+* [#48](https://github.com/simplabs/qunit-dom/pull/48) testem: Use `--no-sandbox` on TravisCI. ([@Turbo87](https://github.com/Turbo87))
+
+#### Committers: 2
+- Marco Otte-Witte ([marcoow](https://github.com/marcoow))
+- Tobias Bieniek ([Turbo87](https://github.com/Turbo87))
+
+
 ## v0.4.0 (2017-12-04)
 
 #### :rocket: Enhancement
