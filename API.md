@@ -495,3 +495,18 @@ Assert that the `value` property of an [HTMLInputElement][] is empty.
 ```javascript
 assert.dom('input.username').hasNoValue();
 ```
+
+### hasProperty
+
+Assert an [HTMLElement][] matching the selector has a given `property`, and optionally checks if the `value` of that `property` matches the provided `value`.
+
+**Parameters**
+
+-   `property` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)**
+-   `options` **[object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)?**
+
+**Examples**
+
+```javascript
+assert.dom('input#agreedToTOS').hasProperty('checked', { value: true });
+```
