@@ -1,5 +1,11 @@
 <h2 id="title">
   Welcome to <b>Ember</b>
 </h2>
+<p id="display-none" style="display: none;">You can't see me.</p>
+<div style="display: none;">
+  <p id="display-descendant" style="display: block;">You can't see me.</p>
+</div>
+<p id="display-block" style="display: block;">You can see me.</p>
+<input id="hidden-input" type="hidden">
 
 {{outlet}}
