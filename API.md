@@ -61,6 +61,40 @@ Assert an [HTMLElement][] matching the `selector` does not exists.
 assert.dom('.should-not-exist').doesNotExist();
 ```
 
+### isChecked
+
+-   **See: [#isNotChecked](#isnotchecked)**
+
+Assert that the [HTMLElement][] or an [HTMLElement][] matching the
+`selector` is currently checked.
+
+**Parameters**
+
+-   `message` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)?** 
+
+**Examples**
+
+```javascript
+assert.dom('input.active').isChecked();
+```
+
+### isNotChecked
+
+-   **See: [#isChecked](#ischecked)**
+
+Assert that the [HTMLElement][] or an [HTMLElement][] matching the
+`selector` is currently unchecked.
+
+**Parameters**
+
+-   `message` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)?** 
+
+**Examples**
+
+```javascript
+assert.dom('input.active').isNotChecked();
+```
+
 ### isFocused
 
 -   **See: [#isNotFocused](#isnotfocused)**
@@ -93,6 +127,40 @@ Assert that the [HTMLElement][] or an [HTMLElement][] matching the
 
 ```javascript
 assert.dom('input[type="password"]').isNotFocused();
+```
+
+### isRequired
+
+-   **See: [#isNotRequired](#isnotrequired)**
+
+Assert that the [HTMLElement][] or an [HTMLElement][] matching the
+`selector` is currently required.
+
+**Parameters**
+
+-   `message` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)?** 
+
+**Examples**
+
+```javascript
+assert.dom('input[type="text"]').isRequired();
+```
+
+### isNotRequired
+
+-   **See: [#isRequired](#isrequired)**
+
+Assert that the [HTMLElement][] or an [HTMLElement][] matching the
+`selector` is currently not required.
+
+**Parameters**
+
+-   `message` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)?** 
+
+**Examples**
+
+```javascript
+assert.dom('input[type="text"]').isNotRequired();
 ```
 
 ### hasAttribute
