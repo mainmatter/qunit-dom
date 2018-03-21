@@ -129,6 +129,40 @@ Assert that the [HTMLElement][] or an [HTMLElement][] matching the
 assert.dom('input[type="password"]').isNotFocused();
 ```
 
+### isRequired
+
+-   **See: [#isNotRequired](#isnotrequired)**
+
+Assert that the [HTMLElement][] or an [HTMLElement][] matching the
+`selector` is currently required.
+
+**Parameters**
+
+-   `message` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)?** 
+
+**Examples**
+
+```javascript
+assert.dom('input[type="text"]').isRequired();
+```
+
+### isNotRequired
+
+-   **See: [#isRequired](#isrequired)**
+
+Assert that the [HTMLElement][] or an [HTMLElement][] matching the
+`selector` is currently not required.
+
+**Parameters**
+
+-   `message` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)?** 
+
+**Examples**
+
+```javascript
+assert.dom('input[type="text"]').isNotRequired();
+```
+
 ### hasAttribute
 
 -   **See: [#doesNotHaveAttribute](#doesnothaveattribute)**
