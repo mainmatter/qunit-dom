@@ -6,6 +6,27 @@
 
 [nodelist]: https://developer.mozilla.org/en-US/docs/Web/API/NodeList
 
+## Table of Contents
+ * [assert.dom](#assertdom)
+ * [Assertions](#assertions)
+   * [exists](#exists)
+   * [doesNotExist](#doesnotexist)
+   * [isChecked](#ischecked)
+   * [isFocused](#isnotfocused)
+   * [isRequired](#isrequired)
+   * [isNotRequired](#isnotrequired)
+   * [hasAttribute](#hasattribute)
+   * [doesNotHaveAttribute](#doesnothaveattribute)
+   * [hasClass](#hasclass)
+   * [doesNotHaveClass](#doesnothaveclass)
+   * [hasText](#hastext)
+   * [hasAnyText](#hasanytext)
+   * [includesText](#includestext)
+   * [doesNotIncludeText](#doesnotincludetext)
+   * [hasValue](#hasvalue)
+   * [hasAnyValue](#hasanyvalue)
+   * [hasNoValue](#hasnovalue)
+
 ## assert.dom()
 
 Once installed the DOM element assertions are available at `assert.dom(...).*`:
