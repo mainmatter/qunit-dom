@@ -25,8 +25,7 @@
     "test": "jest",
     "test:coverage": "jest --coverage",
     "test:ember": "ember test",
-    "test:watch": "jest --watchAll --notify",
-    "test:debug": "node --inspect-brk node_modules/.bin/jest --runInBand"
+    "test:watch": "jest --watchAll --notify"
   },
   "dependencies": {
     "broccoli-funnel": "^2.0.0",
