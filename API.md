@@ -174,6 +174,9 @@ specifically:
 -   is the element's offsetHeight non-zero
 -   is the length of an element's DOMRect objects found via getClientRects() non-zero
 
+Additionally, visibility in this case means that the element is visible on the page,
+but not necessarily in the viewport.
+
 **Parameters**
 
 -   `message` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)?** 
@@ -194,6 +197,9 @@ specifically:
 -   is the element's offsetWidth non-zero
 -   is the element's offsetHeight non-zero
 -   is the length of an element's DOMRect objects found via getClientRects() non-zero
+
+Additionally, visibility in this case means that the element is visible on the page,
+but not necessarily in the viewport.
 
 **Parameters**
 
