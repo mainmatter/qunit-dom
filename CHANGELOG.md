@@ -1,5 +1,34 @@
 # Changelog
 
+## v0.6.0 (2018-04-03)
+
+#### :rocket: Enhancement
+* [#69](https://github.com/simplabs/qunit-dom/pull/69) Add new `matchesText` alias for `hasText`. ([@RahulShivkumar](https://github.com/RahulShivkumar))
+* [#67](https://github.com/simplabs/qunit-dom/pull/67) Add `isVisible` and `isNotVisible` assertion helpers. ([@patocallaghan](https://github.com/patocallaghan) and [@scalvert](https://github.com/scalvert))
+* [#65](https://github.com/simplabs/qunit-dom/pull/65) Add `isRequired` and `isNotRequired` assertions. ([@scalvert](https://github.com/scalvert))
+* [#64](https://github.com/simplabs/qunit-dom/pull/64) Add `hasAnyText()` assertion. ([@mikoscz](https://github.com/mikoscz))
+* [#63](https://github.com/simplabs/qunit-dom/pull/63) Add `isChecked` and `isNotChecked` assertions. ([@raytiley](https://github.com/raytiley))
+* [#60](https://github.com/simplabs/qunit-dom/pull/60) Allow calling `assert.dom()` with no argument defaulting to `rootElement`. ([@lennyburdette](https://github.com/lennyburdette))
+* [#62](https://github.com/simplabs/qunit-dom/pull/62) Add `isDisabled()` assertion. ([@rtablada](https://github.com/rtablada))
+
+#### :bug: Bug Fix
+* [#59](https://github.com/simplabs/qunit-dom/pull/59) Add helpful error for invalid attributes to `hasText`. ([@spencer516](https://github.com/spencer516))
+
+#### :house: Internal
+* [#58](https://github.com/simplabs/qunit-dom/pull/58) Update `jest` to v21.2.1. ([@Turbo87](https://github.com/Turbo87))
+
+#### Committers: 9
+- Lenny Burdette ([lennyburdette](https://github.com/lennyburdette))
+- Michał Staśkiewicz ([mikoscz](https://github.com/mikoscz))
+- Pat O'Callaghan ([@patocallaghan](https://github.com/patocallaghan))
+- Rahul Shivkumar ([RahulShivkumar](https://github.com/RahulShivkumar))
+- Ray Tiley ([raytiley](https://github.com/raytiley))
+- Ryan Tablada ([rtablada](https://github.com/rtablada))
+- Spencer P ([spencer516](https://github.com/spencer516))
+- Steve Calvert ([scalvert](https://github.com/scalvert))
+- Tobias Bieniek ([Turbo87](https://github.com/Turbo87))
+
+
 ## v0.5.0 (2018-02-03)
 
 #### :boom: Breaking Change
