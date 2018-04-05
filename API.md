@@ -95,6 +95,40 @@ Assert that the [HTMLElement][] or an [HTMLElement][] matching the
 assert.dom('input.active').isNotChecked();
 ```
 
+### isDisabled
+
+-   **See: [#isNotDisabled](#isnotdisabled)**
+
+Assert that the [HTMLElement][] or an [HTMLElement][] matching the
+`selector` is disabled.
+
+**Parameters**
+
+-   `message` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)?**
+
+**Examples**
+
+```javascript
+assert.dom('input').isDisabled();
+```
+
+### isNotDisabled
+
+-   **See: [#isDisabled](#isdisabled)**
+
+Assert that the [HTMLElement][] or an [HTMLElement][] matching the
+`selector` is currently not disabled.
+
+**Parameters**
+
+-   `message` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)?**
+
+**Examples**
+
+```javascript
+assert.dom('input').isNotDisabled();
+```
+
 ### isFocused
 
 -   **See: [#isNotFocused](#isnotfocused)**
