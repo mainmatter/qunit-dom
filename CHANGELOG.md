@@ -1,5 +1,14 @@
 # Changelog
 
+## v0.6.1 (2018-04-09)
+
+#### :bug: Bug Fix
+* [#74](https://github.com/simplabs/qunit-dom/pull/74) Add isNotDisabled assertion. ([@jackbeegan](https://github.com/jackbeegan))
+
+#### Committers: 1
+- Jack Beegan ([jackbeegan](https://github.com/jackbeegan))
+
+
 ## v0.6.0 (2018-04-03)
 
 #### :rocket: Enhancement
