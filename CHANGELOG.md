@@ -1,5 +1,14 @@
 # Changelog
 
+## v0.6.2 (2018-04-11)
+
+#### :bug: Bug Fix
+* [#76](https://github.com/simplabs/qunit-dom/pull/76) Reduce specificity of Element check in findTargetElement. ([@adriancooney](https://github.com/adriancooney))
+
+#### Committers: 1
+- Adrian Cooney ([adriancooney](https://github.com/adriancooney))
+
+
 ## v0.6.1 (2018-04-09)
 
 #### :bug: Bug Fix
