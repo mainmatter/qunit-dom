@@ -3,28 +3,29 @@
 ### Table of Contents
 
 -   [assert.dom()](#assertdom)
--   [exists](#exists)
--   [doesNotExist](#doesnotexist)
--   [isChecked](#ischecked)
--   [isNotChecked](#isnotchecked)
--   [isFocused](#isfocused)
--   [isNotFocused](#isnotfocused)
--   [isRequired](#isrequired)
--   [isNotRequired](#isnotrequired)
--   [isVisible](#isvisible)
--   [isNotVisible](#isnotvisible)
--   [hasAttribute](#hasattribute)
--   [isNotDisabled](#isnotdisabled)
--   [doesNotHaveAttribute](#doesnothaveattribute)
--   [hasClass](#hasclass)
--   [doesNotHaveClass](#doesnothaveclass)
--   [hasText](#hastext)
--   [hasAnyText](#hasanytext)
--   [includesText](#includestext)
--   [doesNotIncludeText](#doesnotincludetext)
--   [hasValue](#hasvalue)
--   [hasAnyValue](#hasanyvalue)
--   [hasNoValue](#hasnovalue)
+-   [Assertions](#assertions)
+    -   [exists](#exists)
+    -   [doesNotExist](#doesnotexist)
+    -   [isChecked](#ischecked)
+    -   [isNotChecked](#isnotchecked)
+    -   [isFocused](#isfocused)
+    -   [isNotFocused](#isnotfocused)
+    -   [isRequired](#isrequired)
+    -   [isNotRequired](#isnotrequired)
+    -   [isVisible](#isvisible)
+    -   [isNotVisible](#isnotvisible)
+    -   [hasAttribute](#hasattribute)
+    -   [isNotDisabled](#isnotdisabled)
+    -   [doesNotHaveAttribute](#doesnothaveattribute)
+    -   [hasClass](#hasclass)
+    -   [doesNotHaveClass](#doesnothaveclass)
+    -   [hasText](#hastext)
+    -   [hasAnyText](#hasanytext)
+    -   [includesText](#includestext)
+    -   [doesNotIncludeText](#doesnotincludetext)
+    -   [hasValue](#hasvalue)
+    -   [hasAnyValue](#hasanyvalue)
+    -   [hasNoValue](#hasnovalue)
 
 ## assert.dom()
 
@@ -44,9 +45,14 @@ test('the title exists', function(assert) {
 ```
 
 
-## exists
+## Assertions
 
--   **See: [#doesNotExist](#doesnotexist)**
+
+
+
+### exists
+
+-   **See: [#doesNotExist](#doesNotExist)**
 
 Assert an [HTMLElement][] (or multiple) matching the `selector` exists.
 
@@ -62,7 +68,7 @@ assert.dom('#title').exists();
 assert.dom('.choice').exists({ count: 4 });
 ```
 
-## doesNotExist
+### doesNotExist
 
 -   **See: [#exists](#exists)**
 
@@ -78,9 +84,9 @@ Assert an [HTMLElement][] matching the `selector` does not exists.
 assert.dom('.should-not-exist').doesNotExist();
 ```
 
-## isChecked
+### isChecked
 
--   **See: [#isNotChecked](#isnotchecked)**
+-   **See: [#isNotChecked](#isNotChecked)**
 
 Assert that the [HTMLElement][] or an [HTMLElement][] matching the
 `selector` is currently checked.
@@ -95,9 +101,9 @@ Assert that the [HTMLElement][] or an [HTMLElement][] matching the
 assert.dom('input.active').isChecked();
 ```
 
-## isNotChecked
+### isNotChecked
 
--   **See: [#isChecked](#ischecked)**
+-   **See: [#isChecked](#isChecked)**
 
 Assert that the [HTMLElement][] or an [HTMLElement][] matching the
 `selector` is currently unchecked.
@@ -112,9 +118,9 @@ Assert that the [HTMLElement][] or an [HTMLElement][] matching the
 assert.dom('input.active').isNotChecked();
 ```
 
-## isFocused
+### isFocused
 
--   **See: [#isNotFocused](#isnotfocused)**
+-   **See: [#isNotFocused](#isNotFocused)**
 
 Assert that the [HTMLElement][] or an [HTMLElement][] matching the
 `selector` is currently focused.
@@ -129,9 +135,9 @@ Assert that the [HTMLElement][] or an [HTMLElement][] matching the
 assert.dom('input.email').isFocused();
 ```
 
-## isNotFocused
+### isNotFocused
 
--   **See: [#isFocused](#isfocused)**
+-   **See: [#isFocused](#isFocused)**
 
 Assert that the [HTMLElement][] or an [HTMLElement][] matching the
 `selector` is not currently focused.
@@ -146,9 +152,9 @@ Assert that the [HTMLElement][] or an [HTMLElement][] matching the
 assert.dom('input[type="password"]').isNotFocused();
 ```
 
-## isRequired
+### isRequired
 
--   **See: [#isNotRequired](#isnotrequired)**
+-   **See: [#isNotRequired](#isNotRequired)**
 
 Assert that the [HTMLElement][] or an [HTMLElement][] matching the
 `selector` is currently required.
@@ -163,9 +169,9 @@ Assert that the [HTMLElement][] or an [HTMLElement][] matching the
 assert.dom('input[type="text"]').isRequired();
 ```
 
-## isNotRequired
+### isNotRequired
 
--   **See: [#isRequired](#isrequired)**
+-   **See: [#isRequired](#isRequired)**
 
 Assert that the [HTMLElement][] or an [HTMLElement][] matching the
 `selector` is currently not required.
@@ -180,7 +186,7 @@ Assert that the [HTMLElement][] or an [HTMLElement][] matching the
 assert.dom('input[type="text"]').isNotRequired();
 ```
 
-## isVisible
+### isVisible
 
 Assert that the [HTMLElement][] or an [HTMLElement][] matching the
 `selector` is visible. Visibility is determined with the hueristic
@@ -204,7 +210,7 @@ but not necessarily in the viewport.
 assert.dom('.foo').isVisible();
 ```
 
-## isNotVisible
+### isNotVisible
 
 Assert that the [HTMLElement][] or an [HTMLElement][] matching the
 `selector` is not visible. Visibility is determined with the hueristic
@@ -228,9 +234,9 @@ but not necessarily in the viewport.
 assert.dom('.foo').isNotVisible();
 ```
 
-## hasAttribute
+### hasAttribute
 
--   **See: [#doesNotHaveAttribute](#doesnothaveattribute)**
+-   **See: [#doesNotHaveAttribute](#doesNotHaveAttribute)**
 
 Assert that the [HTMLElement][] has an attribute with the provided `name`
 and optionally checks if the attribute `value` matches the provided text
@@ -248,7 +254,7 @@ or regular expression.
 assert.dom('input.password-input').hasAttribute('type', 'password');
 ```
 
-## isNotDisabled
+### isNotDisabled
 
 Assert that the [HTMLElement][] or an [HTMLElement][] matching the
 `selector` is not disabled.
@@ -263,9 +269,9 @@ Assert that the [HTMLElement][] or an [HTMLElement][] matching the
 assert.dom('.foo').isNotDisabled();
 ```
 
-## doesNotHaveAttribute
+### doesNotHaveAttribute
 
--   **See: [#hasAttribute](#hasattribute)**
+-   **See: [#hasAttribute](#hasAttribute)**
 
 Assert that the [HTMLElement][] has no attribute with the provided `name`.
 
@@ -282,9 +288,9 @@ Assert that the [HTMLElement][] has no attribute with the provided `name`.
 assert.dom('input.username').hasNoAttribute('disabled');
 ```
 
-## hasClass
+### hasClass
 
--   **See: [#doesNotHaveClass](#doesnothaveclass)**
+-   **See: [#doesNotHaveClass](#doesNotHaveClass)**
 
 Assert that the [HTMLElement][] has the `expected` CSS class using
 [`classList`](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList).
@@ -300,9 +306,9 @@ Assert that the [HTMLElement][] has the `expected` CSS class using
 assert.dom('input[type="password"]').hasClass('secret-password-input');
 ```
 
-## doesNotHaveClass
+### doesNotHaveClass
 
--   **See: [#hasClass](#hasclass)**
+-   **See: [#hasClass](#hasClass)**
 
 Assert that the [HTMLElement][] does not have the `expected` CSS class using
 [`classList`](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList).
@@ -320,9 +326,9 @@ Assert that the [HTMLElement][] does not have the `expected` CSS class using
 assert.dom('input[type="password"]').doesNotHaveClass('username-input');
 ```
 
-## hasText
+### hasText
 
--   **See: [#includesText](#includestext)**
+-   **See: [#includesText](#includesText)**
 
 Assert that the text of the [HTMLElement][] or an [HTMLElement][]
 matching the `selector` matches the `expected` text, using the
@@ -352,9 +358,9 @@ assert.dom('#title').hasText('Welcome to QUnit');
 assert.dom('.foo').hasText(/[12]\d{3}/);
 ```
 
-## hasAnyText
+### hasAnyText
 
--   **See: [#hasText](#hastext)**
+-   **See: [#hasText](#hasText)**
 
 Assert that the `textContent` property of an [HTMLElement][] is not empty.
 
@@ -368,9 +374,9 @@ Assert that the `textContent` property of an [HTMLElement][] is not empty.
 assert.dom('button.share').hasAnyText();
 ```
 
-## includesText
+### includesText
 
--   **See: [#hasText](#hastext)**
+-   **See: [#hasText](#hasText)**
 
 Assert that the text of the [HTMLElement][] or an [HTMLElement][]
 matching the `selector` contains the given `text`, using the
@@ -390,7 +396,7 @@ attribute.
 assert.dom('#title').includesText('Welcome');
 ```
 
-## doesNotIncludeText
+### doesNotIncludeText
 
 Assert that the text of the [HTMLElement][] or an [HTMLElement][]
 matching the `selector` does not include the given `text`, using the
@@ -410,10 +416,10 @@ attribute.
 assert.dom('#title').doesNotIncludeText('Welcome');
 ```
 
-## hasValue
+### hasValue
 
--   **See: [#hasAnyValue](#hasanyvalue)**
--   **See: [#hasNoValue](#hasnovalue)**
+-   **See: [#hasAnyValue](#hasAnyValue)**
+-   **See: [#hasNoValue](#hasNoValue)**
 
 Assert that the `value` property of an [HTMLInputElement][] matches
 the `expected` text or regular expression.
@@ -432,10 +438,10 @@ If no `expected` value is provided, the assertion will fail if the
 assert.dom('input.username').hasValue('HSimpson');
 ```
 
-## hasAnyValue
+### hasAnyValue
 
--   **See: [#hasValue](#hasvalue)**
--   **See: [#hasNoValue](#hasnovalue)**
+-   **See: [#hasValue](#hasValue)**
+-   **See: [#hasNoValue](#hasNoValue)**
 
 Assert that the `value` property of an [HTMLInputElement][] is not empty.
 
@@ -449,10 +455,10 @@ Assert that the `value` property of an [HTMLInputElement][] is not empty.
 assert.dom('input.username').hasAnyValue();
 ```
 
-## hasNoValue
+### hasNoValue
 
--   **See: [#hasValue](#hasvalue)**
--   **See: [#hasAnyValue](#hasanyvalue)**
+-   **See: [#hasValue](#hasValue)**
+-   **See: [#hasAnyValue](#hasAnyValue)**
 
 Assert that the `value` property of an [HTMLInputElement][] is empty.
 
