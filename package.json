@@ -20,7 +20,7 @@
   "scripts": {
     "build": "rollup -c",
     "changelog": "lerna-changelog",
-    "docs": "documentation readme lib/qunit-dom.js --readme-file=API.md --section=Assertions",
+    "docs": "documentation build lib/qunit-dom.js --config documentation.yml -f md -o API.md",
     "prepublish": "rollup -c",
     "test": "jest",
     "test:coverage": "jest --coverage",
