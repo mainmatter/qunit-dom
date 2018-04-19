@@ -15,6 +15,7 @@
     -   [isVisible](#isvisible)
     -   [isNotVisible](#isnotvisible)
     -   [hasAttribute](#hasattribute)
+    -   [isDisabled](#isdisabled)
     -   [isNotDisabled](#isnotdisabled)
     -   [doesNotHaveAttribute](#doesnothaveattribute)
     -   [hasClass](#hasclass)
@@ -254,7 +255,26 @@ or regular expression.
 assert.dom('input.password-input').hasAttribute('type', 'password');
 ```
 
+### isDisabled
+
+-   **See: [#isNotDisabled](#isNotDisabled)**
+
+Assert that the [HTMLElement][] or an [HTMLElement][] matching the
+`selector` is disabled.
+
+**Parameters**
+
+-   `message` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)?** 
+
+**Examples**
+
+```javascript
+assert.dom('.foo').isDisabled();
+```
+
 ### isNotDisabled
+
+-   **See: [#isDisabled](#isDisabled)**
 
 Assert that the [HTMLElement][] or an [HTMLElement][] matching the
 `selector` is not disabled.

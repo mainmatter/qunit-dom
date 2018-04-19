@@ -29,6 +29,7 @@ toc:
       - isVisible
       - isNotVisible
       - hasAttribute
+      - isDisabled
       - isNotDisabled
       - doesNotHaveAttribute
       - hasClass
