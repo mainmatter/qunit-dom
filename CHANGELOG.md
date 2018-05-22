@@ -1,5 +1,23 @@
 # Changelog
 
+## v0.6.3 (2018-05-22)
+
+#### :rocket: Enhancement
+* [#89](https://github.com/simplabs/qunit-dom/pull/89) Improve visibility detection. ([@Turbo87](https://github.com/Turbo87))
+
+#### :memo: Documentation
+* [#86](https://github.com/simplabs/qunit-dom/pull/86) Documentation cleanup. ([@Turbo87](https://github.com/Turbo87))
+* [#85](https://github.com/simplabs/qunit-dom/pull/85) Add API docs for `isDisabled()` assertion. ([@Turbo87](https://github.com/Turbo87))
+* [#66](https://github.com/simplabs/qunit-dom/pull/66) Add table of contents to API docs. ([@ddoria921](https://github.com/ddoria921))
+
+#### :house: Internal
+* [#87](https://github.com/simplabs/qunit-dom/pull/87)  Merge `isDisabled` and `isNotDisabled` helpers. ([@Turbo87](https://github.com/Turbo87))
+
+#### Committers: 2
+- Darin Doria ([ddoria921](https://github.com/ddoria921))
+- Tobias Bieniek ([Turbo87](https://github.com/Turbo87))
+
+
 ## v0.6.2 (2018-04-11)
 
 #### :bug: Bug Fix
