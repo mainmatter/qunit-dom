@@ -1,0 +1,43 @@
+toc:
+  - name: assert.dom()
+    description: |
+      Once installed the DOM element assertions are available at `assert.dom(...).*`:
+
+      **Parameters**
+
+      -   `target` **([string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) \| [HTMLElement](https://developer.mozilla.org/en-US/docs/Web/HTML/Element))** A CSS selector that can be used to find elements using [`querySelector()`](https://developer.mozilla.org/de/docs/Web/API/Document/querySelector), or an [HTMLElement][] (Not all assertions support both target types.) (optional, default `rootElement` or `document`)
+      -   `rootElement` **[HTMLElement](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)?** The root element of the DOM in which to search for the `target` (optional, default `document`)
+
+      **Examples**
+
+      ```javascript
+      test('the title exists', function(assert) {
+        assert.dom('#title').exists();
+      });
+      ```
+
+  - name: Assertions
+    children:
+      - exists
+      - doesNotExist
+      - isChecked
+      - isNotChecked
+      - isFocused
+      - isNotFocused
+      - isRequired
+      - isNotRequired
+      - isVisible
+      - isNotVisible
+      - hasAttribute
+      - isDisabled
+      - isNotDisabled
+      - doesNotHaveAttribute
+      - hasClass
+      - doesNotHaveClass
+      - hasText
+      - hasAnyText
+      - includesText
+      - doesNotIncludeText
+      - hasValue
+      - hasAnyValue
+      - hasNoValue
