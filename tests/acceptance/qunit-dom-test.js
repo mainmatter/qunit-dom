@@ -4,7 +4,7 @@ import moduleForAcceptance from '../../tests/helpers/module-for-acceptance';
 moduleForAcceptance('Acceptance | qunit-dom');
 
 test('qunit-dom assertions are available', function(assert) {
-  assert.expect(12);
+  assert.expect(13);
 
   assert.ok(assert.dom, 'assert.dom is available');
   assert.ok(assert.dom('.foo').includesText, 'assert.dom(...).includesText is available');
@@ -25,6 +25,7 @@ test('qunit-dom assertions are available', function(assert) {
     // visibility, as those tests run in a browser environment.
     assert.dom('#title').isVisible();
     assert.dom('#display-block').isVisible();
+    assert.dom('#missing').isNotVisible();
     assert.dom('#display-none').isNotVisible();
     assert.dom('#display-descendant').isNotVisible();
     assert.dom('#hidden-input').isNotVisible();
