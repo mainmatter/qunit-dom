@@ -189,14 +189,15 @@ assert.dom('input[type="text"]').isNotRequired();
 
 ### isVisible
 
-Assert that the [HTMLElement][] or an [HTMLElement][] matching the
-`selector` is visible. Visibility is determined with the hueristic
-used in [jQuery's :visible pseudo-selector](https://github.com/jquery/jquery/blob/2d4f53416e5f74fa98e0c1d66b6f3c285a12f0ce/src/css/hiddenVisibleSelectors.js#L12),
-specifically:
+-   **See: [#isNotVisible](#isNotVisible)**
 
--   is the element's offsetWidth non-zero
--   is the element's offsetHeight non-zero
--   is the length of an element's DOMRect objects found via getClientRects() non-zero
+Assert that the [HTMLElement][] or an [HTMLElement][] matching the
+`selector` exists and is visible.
+
+Visibility is determined by asserting that:
+
+-   the element's offsetWidth and offsetHeight are non-zero
+-   any of the element's DOMRect objects have a non-zero size
 
 Additionally, visibility in this case means that the element is visible on the page,
 but not necessarily in the viewport.
@@ -213,14 +214,15 @@ assert.dom('.foo').isVisible();
 
 ### isNotVisible
 
-Assert that the [HTMLElement][] or an [HTMLElement][] matching the
-`selector` is not visible. Visibility is determined with the hueristic
-used in [jQuery's :visible pseudo-selector](https://github.com/jquery/jquery/blob/2d4f53416e5f74fa98e0c1d66b6f3c285a12f0ce/src/css/hiddenVisibleSelectors.js#L12),
-specifically:
+-   **See: [#isVisible](#isVisible)**
 
--   is the element's offsetWidth non-zero
--   is the element's offsetHeight non-zero
--   is the length of an element's DOMRect objects found via getClientRects() non-zero
+Assert that the [HTMLElement][] or an [HTMLElement][] matching the
+`selector` does not exist or is not visible on the page.
+
+Visibility is determined by asserting that:
+
+-   the element's offsetWidth or offsetHeight are zero
+-   all of the element's DOMRect objects have a size of zero
 
 Additionally, visibility in this case means that the element is visible on the page,
 but not necessarily in the viewport.
