@@ -233,15 +233,23 @@ function isDisabled(message) {
   var element = this.findTargetElement();
   if (!element) return;
 
+  var state = null;
   if (!(element instanceof HTMLInputElement || element instanceof HTMLTextAreaElement || element instanceof HTMLSelectElement || element instanceof HTMLButtonElement || element instanceof HTMLOptGroupElement || element instanceof HTMLOptionElement || element instanceof HTMLFieldSetElement)) {
-    throw new TypeError("Unexpected Element Type: " + element.toString());
+    var ariaDisabled = element.attributes['aria-disabled'];
+    if (ariaDisabled) {
+      state = ariaDisabled.value === 'true' ? true : false;
+    } else {
+      throw new TypeError('Generic Element Type: ' + element.toString() + ' does not use aria-disabled attribute');
+    }
+  } else {
+    state = element.disabled;
   }
 
-  var result = element.disabled === !inverted;
+  var result = state === !inverted;
 
-  var actual = element.disabled === false ? "Element " + this.targetDescription + " is not disabled" : "Element " + this.targetDescription + " is disabled";
+  var actual = state === false ? 'Element ' + this.targetDescription + ' is not disabled' : 'Element ' + this.targetDescription + ' is disabled';
 
-  var expected = inverted ? "Element " + this.targetDescription + " is not disabled" : "Element " + this.targetDescription + " is disabled";
+  var expected = inverted ? 'Element ' + this.targetDescription + ' is not disabled' : 'Element ' + this.targetDescription + ' is disabled';
 
   if (!message) {
     message = expected;
