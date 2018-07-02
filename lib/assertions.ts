@@ -62,7 +62,7 @@ export default class DOMAssertions {
    *
    * @see {@link #isNotChecked}
    */
-  isChecked(message) {
+  isChecked(message?: string): void {
     isChecked.call(this, message);
   }
 
@@ -78,7 +78,7 @@ export default class DOMAssertions {
    *
    * @see {@link #isChecked}
    */
-  isNotChecked(message) {
+  isNotChecked(message?: string): void {
     isNotChecked.call(this, message);
   }
 
@@ -94,7 +94,7 @@ export default class DOMAssertions {
    *
    * @see {@link #isNotFocused}
    */
-  isFocused(message) {
+  isFocused(message?: string): void {
     focused.call(this, message);
   }
 
@@ -110,7 +110,7 @@ export default class DOMAssertions {
    *
    * @see {@link #isFocused}
    */
-  isNotFocused(message) {
+  isNotFocused(message?: string): void {
     notFocused.call(this, message);
   }
 
@@ -126,7 +126,7 @@ export default class DOMAssertions {
    *
    * @see {@link #isNotRequired}
    */
-  isRequired(message) {
+  isRequired(message?: string): void {
     isRequired.call(this, message);
   }
 
@@ -142,7 +142,7 @@ export default class DOMAssertions {
    *
    * @see {@link #isRequired}
    */
-  isNotRequired(message) {
+  isNotRequired(message?: string): void {
     isNotRequired.call(this, message);
   }
 
@@ -166,7 +166,7 @@ export default class DOMAssertions {
    *
    * @see {@link #isNotVisible}
    */
-  isVisible(message) {
+  isVisible(message?: string): void {
     isVisible.call(this, message);
   }
 
@@ -190,7 +190,7 @@ export default class DOMAssertions {
    *
    * @see {@link #isVisible}
    */
-  isNotVisible(message) {
+  isNotVisible(message?: string): void {
     isNotVisible.call(this, message);
   }
 
@@ -312,7 +312,7 @@ export default class DOMAssertions {
    *
    * @see {@link #isNotDisabled}
    */
-  isDisabled(message) {
+  isDisabled(message?: string): void {
     isDisabled.call(this, message);
   }
 
@@ -328,7 +328,7 @@ export default class DOMAssertions {
    *
    * @see {@link #isDisabled}
    */
-  isNotDisabled(message) {
+  isNotDisabled(message?: string): void {
     isDisabled.call(this, message, { inverted: true });
   }
 
@@ -477,7 +477,7 @@ export default class DOMAssertions {
    *
    * @see {@link #hasText}
    */
-  hasAnyText(message) {
+  hasAnyText(message?: string): void {
     this.hasText({ any: true }, message);
   }
 
@@ -636,7 +636,7 @@ export default class DOMAssertions {
    * @see {@link #hasValue}
    * @see {@link #hasNoValue}
    */
-  hasAnyValue(message) {
+  hasAnyValue(message?: string): void {
     this.hasValue({ any: true }, message);
   }
 
@@ -654,11 +654,11 @@ export default class DOMAssertions {
    * @see {@link #hasValue}
    * @see {@link #hasAnyValue}
    */
-  hasNoValue(message) {
+  hasNoValue(message?: string): void {
     this.hasValue('', message);
   }
 
-  lacksValue(message) {
+  lacksValue(message?: string): void {
     this.hasNoValue(message);
   }
 
