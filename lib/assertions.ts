@@ -15,8 +15,18 @@ import collapseWhitespace from './helpers/collapse-whitespace';
 export default class DOMAssertions {
   constructor(private target: string | Element | null, private rootElement: Element, private testContext: Assert) {}
 
+  /**
+   * Assert an [HTMLElement][] (or multiple) matching the `selector` exists.
+   *
+   * @name exists
+   * @param {string?} message
+   *
+   * @example
+   * assert.dom('#title').exists();
+   *
+   * @see {@link #doesNotExist}
+   */
   exists(message?: string): void;
-  exists(options: { count: number }, message?: string): void;
 
   /**
    * Assert an [HTMLElement][] (or multiple) matching the `selector` exists.
@@ -26,11 +36,12 @@ export default class DOMAssertions {
    * @param {string?} message
    *
    * @example
-   * assert.dom('#title').exists();
    * assert.dom('.choice').exists({ count: 4 });
    *
    * @see {@link #doesNotExist}
    */
+  exists(options: { count: number }, message?: string): void;
+
   exists(options: { count: number } | string, message?: string): void {
     exists.call(this, options, message);
   }
