@@ -206,9 +206,22 @@ export default class DOMAssertions {
   }
 
   /**
+   * Assert that the [HTMLElement][] has an attribute with the provided `name`.
+   *
+   * @name hasAttribute
+   * @param {string} name
+   *
+   * @example
+   * assert.dom('input.password-input').hasAttribute('disabled');
+
+   * @see {@link #doesNotHaveAttribute}
+   */
+  hasAttribute(name: string): void;
+
+  /**
    * Assert that the [HTMLElement][] has an attribute with the provided `name`
-   * and optionally checks if the attribute `value` matches the provided text
-   * or regular expression.
+   * and checks if the attribute `value` matches the provided text or regular
+   * expression.
    *
    * @name hasAttribute
    * @param {string} name
@@ -220,7 +233,9 @@ export default class DOMAssertions {
 
    * @see {@link #doesNotHaveAttribute}
    */
-  hasAttribute(name, value, message) {
+  hasAttribute(name: string, value: string | RegExp | { any: true }, message?: string): void;
+
+  hasAttribute(name: string, value?: string | RegExp | { any: true }, message?: string): void {
     let element = this.findTargetElement();
     if (!element) return;
 
@@ -243,7 +258,7 @@ export default class DOMAssertions {
 
       this.pushResult({ result, actual, expected, message });
 
-    } else if (value.any === true) {
+    } else if ((value as { any: true }).any === true) {
       let result = actualValue !== null;
       let expected = `Element ${this.targetDescription} has attribute "${name}"`;
       let actual = result ? expected : `Element ${this.targetDescription} does not have attribute "${name}"`;
@@ -283,7 +298,7 @@ export default class DOMAssertions {
    *
    * @see {@link #hasAttribute}
    */
-  doesNotHaveAttribute(name, message) {
+  doesNotHaveAttribute(name: string, message?: string): void {
     let element = this.findTargetElement();
     if (!element) return;
 
@@ -303,11 +318,11 @@ export default class DOMAssertions {
     this.pushResult({ result, actual, expected, message });
   }
 
-  hasNoAttribute(name, message) {
+  hasNoAttribute(name: string, message?: string): void {
     this.doesNotHaveAttribute(name, message);
   }
 
-  lacksAttribute(name, message) {
+  lacksAttribute(name: string, message?: string): void {
     this.doesNotHaveAttribute(name, message);
   }
 
