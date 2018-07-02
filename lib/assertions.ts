@@ -448,7 +448,7 @@ export default class DOMAssertions {
    *
    * @see {@link #includesText}
    */
-  hasText(expected, message) {
+  hasText(expected: string | RegExp | { any: true }, message?: string): void {
     let element = this.findTargetElement();
     if (!element) return;
 
@@ -461,7 +461,7 @@ export default class DOMAssertions {
       }
 
       this.pushResult({ result, actual, expected, message });
-    } else if (expected.any === true) {
+    } else if ((expected as { any: true }).any === true) {
       let result = Boolean(element.textContent);
 
       let expected = `Element ${this.targetDescription} has a text`;
@@ -488,7 +488,7 @@ export default class DOMAssertions {
     }
   }
 
-  matchesText(expected, message) {
+  matchesText(expected: string | RegExp | { any: true }, message?: string): void {
     this.hasText(expected, message);
   }
 
@@ -524,7 +524,7 @@ export default class DOMAssertions {
    *
    * @see {@link #hasText}
    */
-  includesText(text, message) {
+  includesText(text: string, message?: string): void {
     let element = this.findTargetElement();
     if (!element) return;
 
@@ -539,11 +539,11 @@ export default class DOMAssertions {
     this.pushResult({ result, actual, expected, message });
   }
 
-  containsText(expected, message) {
+  containsText(expected: string, message?: string): void {
     this.includesText(expected, message);
   }
 
-  hasTextContaining(expected, message) {
+  hasTextContaining(expected: string, message?: string): void {
     this.includesText(expected, message);
   }
 
@@ -562,7 +562,7 @@ export default class DOMAssertions {
    * @example
    * assert.dom('#title').doesNotIncludeText('Welcome');
    */
-  doesNotIncludeText(text, message) {
+  doesNotIncludeText(text: string, message?: string): void {
     let element = this.findTargetElement();
     if (!element) return;
 
@@ -581,11 +581,11 @@ export default class DOMAssertions {
     this.pushResult({ result, actual, expected, message });
   }
 
-  doesNotContainText(unexpected, message) {
+  doesNotContainText(unexpected: string, message?: string): void {
     this.doesNotIncludeText(unexpected, message);
   }
 
-  doesNotHaveTextContaining(unexpected, message) {
+  doesNotHaveTextContaining(unexpected: string, message?: string): void {
     this.doesNotIncludeText(unexpected, message);
   }
 
