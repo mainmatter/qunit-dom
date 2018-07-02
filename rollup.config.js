@@ -14,8 +14,5 @@ export default {
     file: 'dist/qunit-dom.js',
     format: 'iife',
     sourcemap: true,
-    globals: {
-      qunit: 'QUnit',
-    },
   },
 };
