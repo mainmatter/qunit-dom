@@ -585,9 +585,11 @@ export default class DOMAssertions {
       expected = { any: true };
     }
 
+    let value = (element as HTMLInputElement).value;
+
     if (expected instanceof RegExp) {
-      let result = expected.test(element.value);
-      let actual = element.value;
+      let result = expected.test(value);
+      let actual = value;
 
       if (!message) {
         message = `Element ${this.targetDescription} has value matching ${expected}`;
@@ -596,7 +598,7 @@ export default class DOMAssertions {
       this.pushResult({ result, actual, expected, message });
 
     } else if (expected.any === true) {
-      let result = Boolean(element.value);
+      let result = Boolean(value);
 
       let expected = `Element ${this.targetDescription} has a value`;
       let actual = result ? expected : `Element ${this.targetDescription} has no value`;
@@ -608,7 +610,7 @@ export default class DOMAssertions {
       this.pushResult({ result, actual, expected, message });
 
     } else {
-      let actual = element.value;
+      let actual = value;
       let result = actual === expected;
 
       if (!message) {
