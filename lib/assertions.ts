@@ -606,7 +606,7 @@ export default class DOMAssertions {
    * @see {@link #hasAnyValue}
    * @see {@link #hasNoValue}
    */
-  hasValue(expected, message) {
+  hasValue(expected: string | RegExp | { any: true }, message?: string) {
     let element = this.findTargetElement();
     if (!element) return;
 
@@ -626,7 +626,7 @@ export default class DOMAssertions {
 
       this.pushResult({ result, actual, expected, message });
 
-    } else if (expected.any === true) {
+    } else if ((expected as { any: true }).any === true) {
       let result = Boolean(value);
 
       let expected = `Element ${this.targetDescription} has a value`;
