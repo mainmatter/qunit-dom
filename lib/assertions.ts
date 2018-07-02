@@ -42,6 +42,19 @@ export default class DOMAssertions {
    */
   exists(options: { count: number }, message?: string): void;
 
+  /**
+   * Assert an [HTMLElement][] (or multiple) matching the `selector` exists.
+   *
+   * @name exists
+   * @param {object?} options
+   * @param {string?} message
+   *
+   * @example
+   * assert.dom('#title').exists();
+   * assert.dom('.choice').exists({ count: 4 });
+   *
+   * @see {@link #doesNotExist}
+   */
   exists(options: { count: number } | string, message?: string): void {
     exists.call(this, options, message);
   }
@@ -213,7 +226,7 @@ export default class DOMAssertions {
    *
    * @example
    * assert.dom('input.password-input').hasAttribute('disabled');
-
+   *
    * @see {@link #doesNotHaveAttribute}
    */
   hasAttribute(name: string): void;
@@ -225,16 +238,31 @@ export default class DOMAssertions {
    *
    * @name hasAttribute
    * @param {string} name
+   * @param {string|RegExp|object} value
+   * @param {string?} message
+   *
+   * @example
+   * assert.dom('input.password-input').hasAttribute('type', 'password');
+   *
+   * @see {@link #doesNotHaveAttribute}
+   */
+  hasAttribute(name: string, value: string | RegExp | { any: true }, message?: string): void;
+
+  /**
+   * Assert that the [HTMLElement][] has an attribute with the provided `name`
+   * and optionally checks if the attribute `value` matches the provided text
+   * or regular expression.
+   *
+   * @name hasAttribute
+   * @param {string} name
    * @param {string|RegExp|object?} value
    * @param {string?} message
    *
    * @example
    * assert.dom('input.password-input').hasAttribute('type', 'password');
-
+   *
    * @see {@link #doesNotHaveAttribute}
    */
-  hasAttribute(name: string, value: string | RegExp | { any: true }, message?: string): void;
-
   hasAttribute(name: string, value?: string | RegExp | { any: true }, message?: string): void {
     let element = this.findTargetElement();
     if (!element) return;
