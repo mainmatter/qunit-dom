@@ -670,7 +670,7 @@ export default class DOMAssertions {
    * @private
    * @returns (HTMLElement|null) a valid HTMLElement, or null
    */
-  findTargetElement() {
+  findTargetElement(): Element | null {
     let el = this.findElement();
 
     if (el === null) {
@@ -688,7 +688,7 @@ export default class DOMAssertions {
    * @returns (HTMLElement|null) a valid HTMLElement, or null
    * @throws TypeError will be thrown if target is an unrecognized type
    */
-  findElement() {
+  findElement(): Element | null {
     if (this.target === null) {
       return null;
 
