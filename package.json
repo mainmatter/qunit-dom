@@ -21,7 +21,7 @@
   "scripts": {
     "build": "rollup -c",
     "changelog": "lerna-changelog",
-    "docs": "documentation build lib/qunit-dom.js --config documentation.yml -f md -o API.md",
+    "docs": "yarn build && documentation build dist/qunit-dom.js --config documentation.yml -f md -o API.md",
     "prepublish": "rollup -c",
     "test": "jest",
     "test:coverage": "jest --coverage",
