@@ -13,11 +13,7 @@ import elementToString from './helpers/element-to-string';
 import collapseWhitespace from './helpers/collapse-whitespace';
 
 export default class DOMAssertions {
-  constructor(target, rootElement, testContext) {
-    this.target = target;
-    this.rootElement = rootElement;
-    this.testContext = testContext;
-  }
+  constructor(private target, private rootElement, private testContext) {}
 
   /**
    * Assert an [HTMLElement][] (or multiple) matching the `selector` exists.
