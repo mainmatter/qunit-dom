@@ -691,7 +691,7 @@ export default class DOMAssertions {
   /**
    * @private
    */
-  pushResult(result) {
+  private pushResult(result) {
     this.testContext.pushResult(result);
   }
 
@@ -701,7 +701,7 @@ export default class DOMAssertions {
    * @private
    * @returns (HTMLElement|null) a valid HTMLElement, or null
    */
-  findTargetElement(): Element | null {
+  private findTargetElement(): Element | null {
     let el = this.findElement();
 
     if (el === null) {
@@ -719,7 +719,7 @@ export default class DOMAssertions {
    * @returns (HTMLElement|null) a valid HTMLElement, or null
    * @throws TypeError will be thrown if target is an unrecognized type
    */
-  findElement(): Element | null {
+  private findElement(): Element | null {
     if (this.target === null) {
       return null;
 
@@ -737,7 +737,7 @@ export default class DOMAssertions {
   /**
    * @private
    */
-  get targetDescription() {
+  private get targetDescription() {
     return elementToString(this.target);
   }
 }
