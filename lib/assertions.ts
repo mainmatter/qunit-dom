@@ -371,7 +371,7 @@ export default class DOMAssertions {
    *
    * @see {@link #doesNotHaveClass}
    */
-  hasClass(expected, message) {
+  hasClass(expected: string, message?: string): void {
     let element = this.findTargetElement();
     if (!element) return;
 
@@ -400,7 +400,7 @@ export default class DOMAssertions {
    *
    * @see {@link #hasClass}
    */
-  doesNotHaveClass(expected, message) {
+  doesNotHaveClass(expected: string, message?: string): void {
     let element = this.findTargetElement();
     if (!element) return;
 
@@ -414,11 +414,11 @@ export default class DOMAssertions {
     this.pushResult({ result, actual, expected: `not: ${expected}`, message });
   }
 
-  hasNoClass(expected, message) {
+  hasNoClass(expected: string, message?: string): void {
     this.doesNotHaveClass(expected, message);
   }
 
-  lacksClass(expected, message) {
+  lacksClass(expected: string, message?: string): void {
     this.doesNotHaveClass(expected, message);
   }
 
