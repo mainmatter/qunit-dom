@@ -12,6 +12,7 @@
   ],
   "license": "MIT",
   "author": "simplabs GmbH",
+  "types": "dist/qunit-dom.d.ts",
   "directories": {
     "doc": "doc",
     "test": "tests"
