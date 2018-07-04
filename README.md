@@ -66,6 +66,18 @@ A basic codemod to automatically convert your assertions is available at
 [https://github.com/simplabs/qunit-dom-codemod](https://github.com/simplabs/qunit-dom-codemod).
 
 
+### TypeScript
+
+`qunit-dom` includes type definition files, but the way it extends QUnit means
+that you need import it somewhere so that TS and your editor can pick up the
+types. It is recommended to add the following line to your
+`tests/test-helper.js` file:
+
+```
+import 'qunit-dom';
+```
+
+
 Contributing
 ------------------------------------------------------------------------------
 
