@@ -1,5 +1,21 @@
 # Changelog
 
+## v0.7.0 (2018-07-04)
+
+#### :boom: Breaking Change
+* [#93](https://github.com/simplabs/qunit-dom/pull/93) Let `isNotVisible()` pass if the element does not exist ([@scalvert](https://github.com/scalvert))
+
+#### :rocket: Enhancement
+* [#96](https://github.com/simplabs/qunit-dom/pull/96) Use TypeScript instead of Babel ([@Turbo87](https://github.com/Turbo87))
+
+#### :house: Internal
+* [#95](https://github.com/simplabs/qunit-dom/pull/95) Update `fsevents` subdependency ([@Turbo87](https://github.com/Turbo87))
+
+#### Committers: 2
+- Steve Calvert ([scalvert](https://github.com/scalvert))
+- Tobias Bieniek ([Turbo87](https://github.com/Turbo87))
+
+
 ## v0.6.3 (2018-05-22)
 
 #### :rocket: Enhancement
