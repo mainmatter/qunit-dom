@@ -1,4 +1,4 @@
-export default function hasProperty(property, options = {}) {
+export default function hasProperty(property, options: { value?: any, message?: string } = {}) {
   let { value, message } = options;
   let element = this.findTargetElement();
   if (!element) return;
