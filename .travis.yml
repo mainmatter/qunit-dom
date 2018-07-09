@@ -25,7 +25,7 @@ script:
   - yarn run test:ember
 
 before_deploy:
-  - yarn global add auto-dist-tag
+  - yarn global add auto-dist-tag@1
   - auto-dist-tag --write
 
 deploy:
