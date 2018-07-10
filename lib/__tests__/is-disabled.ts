@@ -82,6 +82,33 @@ describe('assert.dom(...).isDisabled()', () => {
       document.body.innerHTML = '<input type="text" disabled>';
     });
 
+    describe('when using a generic container', () => {
+
+      test('succeeds if element is disabled', () => {
+        document.body.innerHTML = '<div aria-disabled="true"></div>';
+        assert.dom('div').isDisabled();
+
+        expect(assert.results).toEqual([{
+          actual: 'Element div is disabled',
+          expected: 'Element div is disabled',
+          message: 'Element div is disabled',
+          result: true,
+        }]);
+      });
+
+      test('fails if element is not disabled', () => {
+        document.body.innerHTML = '<div aria-disabled="false"></div>';
+        assert.dom('div').isDisabled();
+
+        expect(assert.results).toEqual([{
+          actual: 'Element div is not disabled',
+          expected: 'Element div is disabled',
+          message: 'Element div is disabled',
+          result: false,
+        }]);
+      });
+    });
+
     test('succeeds if element is disabled', () => {
       assert.dom('input').isDisabled();
 
