@@ -133,6 +133,6 @@ describe('assert.dom(...).isNotDisabled()', () => {
     expect(() => assert.dom(undefined).isNotDisabled()).toThrow('Unexpected Parameter: undefined');
     expect(() => assert.dom({}).isNotDisabled()).toThrow('Unexpected Parameter: [object Object]');
     expect(() => assert.dom(document).isNotDisabled()).toThrow('Unexpected Parameter: [object Document]');
-    expect(() => assert.dom(document.createElement('div')).isNotDisabled()).toThrow('Unexpected Element Type: [object HTMLDivElement]');
+    expect(() => assert.dom(document.createElement('div')).isNotDisabled()).toThrow('Generic Element Type: [object HTMLDivElement] does not use aria-disabled attribute');
   });
 });
