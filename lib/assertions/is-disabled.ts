@@ -4,6 +4,7 @@ export default function isDisabled(message, options: { inverted?: boolean } = {}
   let element = this.findTargetElement();
   if (!element) return;
 
+  let state = null;
   if (!(
       element instanceof HTMLInputElement ||
       element instanceof HTMLTextAreaElement ||
@@ -13,12 +14,19 @@ export default function isDisabled(message, options: { inverted?: boolean } = {}
       element instanceof HTMLOptionElement ||
       element instanceof HTMLFieldSetElement
     )) {
-    throw new TypeError(`Unexpected Element Type: ${element.toString()}`);
+      let ariaDisabled = element.attributes['aria-disabled'];
+      if(ariaDisabled) {
+        state = ariaDisabled.value === 'true' ? true : false;
+      } else {
+        throw new TypeError(`Generic Element Type: ${element.toString()} does not use aria-disabled attribute`);
+      }
+  } else {
+    state = element.disabled;
   }
 
-  let result = element.disabled === !inverted;
+  let result = state === !inverted;
 
-  let actual = element.disabled === false
+  let actual = state === false
     ? `Element ${this.targetDescription} is not disabled`
     : `Element ${this.targetDescription} is disabled`;
 
