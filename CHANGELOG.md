@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.7.1 (2018-07-17)
+
+#### :rocket: Enhancement
+* [#102](https://github.com/simplabs/qunit-dom/pull/102) Add `qunit-dom` dummy module to allow imports ([@Turbo87](https://github.com/Turbo87))
+
+#### :bug: Bug Fix
+* [#101](https://github.com/simplabs/qunit-dom/pull/101) Update `.npmignore` file ([@Turbo87](https://github.com/Turbo87))
+
+#### Committers: 1
+- Tobias Bieniek ([Turbo87](https://github.com/Turbo87))
+
+
 ## v0.7.0 (2018-07-04)
 
 #### :boom: Breaking Change
