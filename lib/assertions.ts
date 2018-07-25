@@ -556,8 +556,9 @@ export default class DOMAssertions {
     let element = this.findTargetElement();
     if (!element) return;
 
-    let result = element.textContent.indexOf(text) !== -1;
-    let actual = element.textContent;
+    let collapsedText = collapseWhitespace(element.textContent);
+    let result = collapsedText.indexOf(text) !== -1;
+    let actual = collapsedText;
     let expected = text;
 
     if (!message) {
@@ -594,7 +595,8 @@ export default class DOMAssertions {
     let element = this.findTargetElement();
     if (!element) return;
 
-    let result = element.textContent.indexOf(text) === -1;
+    let collapsedText = collapseWhitespace(element.textContent);
+    let result = collapsedText.indexOf(text) === -1;
     let expected = `Element ${this.targetDescription} does not include text "${text}"`;
     let actual = expected;
 
