@@ -402,6 +402,40 @@ export default class DOMAssertions {
   }
 
   /**
+   * Assert that the [HTMLElement][] has the `expected` style declarations
+   * [`getComputedStyle`](https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle).
+   *
+   * @name hasCSS
+   * @param {object} expected
+   * @param {string?} message
+   *
+   * @example
+   * assert.dom('.progress-bar').hasCSS({
+   *   opacity: 1,
+   *   display: 'block'
+   * });
+   *
+   * @see {@link #hasClass}
+   */
+  hasCSS(expected: object, message?: string): void {
+    let element = this.findTargetElement();
+    if (!element) return;
+    let actual = {};
+    let result = false;
+    let cssStyleDeclaration = window.getComputedStyle(element);
+    for (let property in expected) {
+      actual[property] = cssStyleDeclaration[property];
+      if (!result) {
+        result = '' + expected[property] === actual[property];
+      }
+    }
+    if (!message) {
+      message = `Element ${this.targetDescription} has style "${JSON.stringify(expected)}"`;
+    }
+    this.pushResult({ result, actual, expected, message });
+  }
+
+  /**
    * Assert that the [HTMLElement][] has the `expected` CSS class using
    * [`classList`](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList).
    *
