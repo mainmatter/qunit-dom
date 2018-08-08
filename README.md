@@ -70,8 +70,7 @@ A basic codemod to automatically convert your assertions is available at
 
 `qunit-dom` includes type definition files, but the way it extends QUnit means
 that you need import it somewhere so that TS and your editor can pick up the
-types. It is recommended to add the following line to your
-`tests/test-helper.js` file:
+types. It is recommended to rename your `tests/test-helper.js` file to `tests/test-helper.ts` and then add the following line:
 
 ```
 import 'qunit-dom';
