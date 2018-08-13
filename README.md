@@ -86,13 +86,13 @@ Contributing
 ### How to Run Tests
 
 ```bash
-yarn run test
+yarn test
 ```
 
 ### How to Generate the Documentation
 
 ```bash
-yarn run docs
+yarn docs
 ```
 
 Related
