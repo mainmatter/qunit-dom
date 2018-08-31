@@ -90,8 +90,8 @@
   resolved "https://registry.yarnpkg.com/@types/jest/-/jest-23.1.3.tgz#4db19b2e7627dc254bbed5781b5609c621b5ad8e"
 
 "@types/qunit@^2.5.1":
-  version "2.5.1"
-  resolved "https://registry.yarnpkg.com/@types/qunit/-/qunit-2.5.1.tgz#ee39feefb9ee33f6761a046c563cd3c2caacfcf3"
+  version "2.5.2"
+  resolved "https://registry.yarnpkg.com/@types/qunit/-/qunit-2.5.2.tgz#8b1c3fa33017148032c58a6530f66be3239edef9"
 
 JSONStream@^1.0.3:
   version "1.3.1"
