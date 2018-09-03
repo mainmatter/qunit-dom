@@ -51,7 +51,7 @@
     "ember-resolver": "^4.0.0",
     "ember-source": "~2.15.0-beta.2",
     "jest": "^21.2.1",
-    "lerna-changelog": "^0.6.0",
+    "lerna-changelog": "^0.8.0",
     "loader.js": "^4.2.3",
     "rollup": "^0.49.2",
     "rollup-plugin-typescript2": "^0.15.1",
