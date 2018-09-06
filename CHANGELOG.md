@@ -1,5 +1,20 @@
 # Changelog
 
+## v0.8.0 (2018-09-06)
+
+#### :boom: Breaking Change
+* [#105](https://github.com/simplabs/qunit-dom/pull/105) Collapse whitespace for `includesText` assertion ([@brookjordan](https://github.com/brookjordan))
+* [#126](https://github.com/simplabs/qunit-dom/pull/126) Update Node version requirement to `6.* || 8.* || >= 10.*` ([@Turbo87](https://github.com/Turbo87))
+* [#117](https://github.com/simplabs/qunit-dom/pull/117) Bump broccoli-merge-trees from 2.0.0 to 3.0.1 ([@dependabot[bot]](https://github.com/apps/dependabot))
+
+#### :memo: Documentation
+* [#103](https://github.com/simplabs/qunit-dom/pull/103) README: Add `import` documentation ([@Turbo87](https://github.com/Turbo87))
+
+#### Committers: 2
+- Brook Jordan ([@brookjordan](https://github.com/brookjordan))
+- Tobias Bieniek ([@Turbo87](https://github.com/Turbo87))
+
+
 ## v0.7.1 (2018-07-17)
 
 #### :rocket: Enhancement
