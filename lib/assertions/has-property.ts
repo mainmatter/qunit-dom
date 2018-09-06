@@ -1,13 +1,15 @@
-export default function hasProperty(property, options: { value?: any, message?: string } = {}) {
-  let { value, message } = options;
+export default function hasProperty(property, value, message) {
   let element = this.findTargetElement();
   if (!element) return;
 
-  const actualValue = element[property];
-  const propertyExists = typeof actualValue !== 'undefined';
+  if (arguments.length === 1) {
+    value = { any: true };
+  }
 
-  if (typeof value === 'undefined') {
-    const result = propertyExists;
+  let actualValue = element[property];
+
+  if (arguments.length === 1) {
+    const result = element.hasOwnProperty(property);
     const expected = `Element ${this.targetDescription} has property "${property}"`;
     const actual = result
       ? expected
@@ -15,16 +17,40 @@ export default function hasProperty(property, options: { value?: any, message?: 
     message = message || expected;
 
     this.pushResult({ result, actual, expected, message });
-  } else {
-    const result = propertyExists && actualValue === value;
-    const expected = `Element ${this.targetDescription} has property "${property}" with value ${JSON.stringify(value)}`;
-    let actual;
-    if (!propertyExists) {
-      actual = `Element ${this.targetDescription} does not have property "${property}"`;
-    } else {
-      actual = `Element ${this.targetDescription} has property "${property}" with value ${JSON.stringify(actualValue)}`;
+  } else if (value instanceof RegExp) {
+    let result = value.test(actualValue);
+    let expected = `Element ${this.targetDescription} has property "${property}" with value matching ${value}`;
+    let actual = actualValue === undefined
+      ? `Element ${this.targetDescription} does not have property "${property}"`
+      : `Element ${this.targetDescription} has property "${property}" with value ${JSON.stringify(actualValue)}`;
+
+    if (!message) {
+      message = expected;
     }
-    message = message || expected;
+
+    this.pushResult({ result, actual, expected, message });
+
+  } else if ((value as { any: true }).any === true) {
+    let result = actualValue !== undefined;
+    let expected = `Element ${this.targetDescription} has property "${property}"`;
+    let actual = result ? expected : `Element ${this.targetDescription} does not have property "${property}"`;
+
+    if (!message) {
+      message = expected;
+    }
+
+    this.pushResult({ result, actual, expected, message });
+
+  } else {
+    let result = value === actualValue;
+    let expected = `Element ${this.targetDescription} has property "${property}" with value ${JSON.stringify(value)}`;
+    let actual = actualValue === undefined
+      ? `Element ${this.targetDescription} does not have property "${property}"`
+      : `Element ${this.targetDescription} has property "${property}" with value ${JSON.stringify(actualValue)}`;
+
+    if (!message) {
+      message = expected;
+    }
 
     this.pushResult({ result, actual, expected, message });
   }

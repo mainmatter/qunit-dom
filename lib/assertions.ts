@@ -14,7 +14,7 @@ import elementToString from './helpers/element-to-string';
 import collapseWhitespace from './helpers/collapse-whitespace';
 
 export default class DOMAssertions {
-  constructor(private target: string | Element | null, private rootElement: Element, private testContext: Assert) {}
+  constructor(private target: string | Element | null, private rootElement: Element, private testContext: Assert) { }
 
   /**
    * Assert an [HTMLElement][] (or multiple) matching the `selector` exists.
@@ -219,21 +219,69 @@ export default class DOMAssertions {
     isNotVisible.call(this, message);
   }
 
-    /**
-   * Assert that the [HTMLElement][] or an [HTMLElement][] matching the
-   * `selector` contains the provided `property` and optionally checks
-   * if the property `value` matches the provided `value`.
-   *
-   * @param {string} property
-   * @param {object?} options
-   *
-   * @example
-   * assert.dom('.checkbox').hasProperty('checked');
-   * assert.dom('.checkbox').hasProperty('checked', { value: true });
-   * assert.dom('.checkbox').hasProperty('checked', { value: false, message: "The checkbox is not checked" });
-   */
-  hasProperty(property, options) {
-    hasProperty.call(this, property, options);
+  /**
+ * Assert that the [HTMLElement][] or an [HTMLElement][] matching the
+ * `selector` contains the provided `property` and optionally checks
+ * if the property `value` matches the provided `value`.
+ *
+ * @param {string} property
+ * @param {object?} options
+ *
+ * @example
+ * assert.dom('.checkbox').hasProperty('checked');
+ * assert.dom('.checkbox').hasProperty('checked', { value: true });
+ * assert.dom('.checkbox').hasProperty('checked', { value: false, message: "The checkbox is not checked" });
+ */
+  hasProperty(name: string): void;
+  hasProperty(name: string, value: string | RegExp | { any: true }, message?: string): void;
+  hasProperty(name: string, value?: string | RegExp | { any: true }, message?: string): void {
+    let element = this.findTargetElement();
+    if (!element) return;
+
+    if (arguments.length === 1) {
+      value = { any: true };
+    }
+
+    let actualValue = element[name];
+    let propertyExists = typeof actualValue !== 'undefined';
+
+    if (value instanceof RegExp) {
+      let result = value.test(actualValue);
+      let expected = `Element ${this.targetDescription} has property "${name}" with value matching ${value}`;
+      let actual = actualValue === undefined
+        ? `Element ${this.targetDescription} does not have property "${name}"`
+        : `Element ${this.targetDescription} has property "${name}" with value ${JSON.stringify(actualValue)}`;
+
+      if (!message) {
+        message = expected;
+      }
+
+      this.pushResult({ result, actual, expected, message });
+
+    } else if ((value as { any: true }).any === true) {
+      let result = propertyExists;
+      let expected = `Element ${this.targetDescription} has property "${name}"`;
+      let actual = result ? expected : `Element ${this.targetDescription} does not have property "${name}"`;
+
+      if (!message) {
+        message = expected;
+      }
+
+      this.pushResult({ result, actual, expected, message });
+
+    } else {
+      let result = value === actualValue;
+      let expected = `Element ${this.targetDescription} has property "${name}" with value ${JSON.stringify(value)}`;
+      let actual = actualValue === undefined
+        ? `Element ${this.targetDescription} does not have property "${name}"`
+        : `Element ${this.targetDescription} has property "${name}" with value ${JSON.stringify(actualValue)}`;
+
+      if (!message) {
+        message = expected;
+      }
+
+      this.pushResult({ result, actual, expected, message });
+    }
   }
 
   /**
