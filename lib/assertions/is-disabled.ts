@@ -1,3 +1,11 @@
+function checkAriaDisabled(element) {
+  let ariaDisabled = element.attributes['aria-disabled'];
+  if(ariaDisabled) {
+    return ariaDisabled.value === 'true' ? true : false;
+  }
+  return null;
+}
+
 export default function isDisabled(message, options: { inverted?: boolean } = {}) {
   let { inverted } = options;
 
@@ -14,10 +22,8 @@ export default function isDisabled(message, options: { inverted?: boolean } = {}
       element instanceof HTMLOptionElement ||
       element instanceof HTMLFieldSetElement
     )) {
-      let ariaDisabled = element.attributes['aria-disabled'];
-      if(ariaDisabled) {
-        state = ariaDisabled.value === 'true' ? true : false;
-      } else {
+      state = checkAriaDisabled(element);
+      if(state === null) {
         throw new TypeError(`Generic Element Type: ${element.toString()} does not use aria-disabled attribute`);
       }
   } else {
