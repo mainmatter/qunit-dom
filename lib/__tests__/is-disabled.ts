@@ -91,9 +91,9 @@ describe('assert.dom(...).isDisabled()', () => {
             assert.dom('#child').isDisabled();
 
             expect(assert.results).toEqual([{
-              actual: 'Element #child is disabled',
-              expected: 'Element #child is disabled',
-              message: 'Element #child is disabled',
+              actual: 'Parent of Element #child is disabled',
+              expected: 'Parent of Element #child is disabled',
+              message: 'Parent of Element #child is disabled',
               result: true,
             }]);
           });
