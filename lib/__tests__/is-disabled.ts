@@ -84,6 +84,21 @@ describe('assert.dom(...).isDisabled()', () => {
 
     describe('when using a generic container', () => {
 
+      describe('when parent is disabled', () => {
+
+          test('walks tree to check if it is disabled', () => {
+            document.body.innerHTML = '<div aria-disabled="true"><div id="child"></div></div>';
+            assert.dom('#child').isDisabled();
+
+            expect(assert.results).toEqual([{
+              actual: 'Element #child is disabled',
+              expected: 'Element #child is disabled',
+              message: 'Element #child is disabled',
+              result: true,
+            }]);
+          });
+      })
+
       test('succeeds if element is disabled', () => {
         document.body.innerHTML = '<div aria-disabled="true"></div>';
         assert.dom('div').isDisabled();

@@ -6,6 +6,19 @@ function checkAriaDisabled(element) {
   return null;
 }
 
+function walkAndCheck(node, checker){
+  let parent = node.parentElement;
+   if(parent){
+    let result = checker(node);
+    if(result === null){
+      return walkAndCheck(parent, checker);
+    }
+    return result;
+  } else {
+    return null;
+  }
+}
+
 export default function isDisabled(message, options: { inverted?: boolean } = {}) {
   let { inverted } = options;
 
@@ -22,7 +35,7 @@ export default function isDisabled(message, options: { inverted?: boolean } = {}
       element instanceof HTMLOptionElement ||
       element instanceof HTMLFieldSetElement
     )) {
-      state = checkAriaDisabled(element);
+      state = walkAndCheck(element, checkAriaDisabled);
       if(state === null) {
         throw new TypeError(`Generic Element Type: ${element.toString()} does not use aria-disabled attribute`);
       }
