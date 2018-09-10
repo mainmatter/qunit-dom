@@ -106,7 +106,7 @@ describe('assert.dom(...).isChecked()', () => {
     expect(() => assert.dom(true).isChecked()).toThrow('Unexpected Parameter: true');
     expect(() => assert.dom(undefined).isChecked()).toThrow('Unexpected Parameter: undefined');
     expect(() => assert.dom({}).isChecked()).toThrow('Unexpected Parameter: [object Object]');
-    expect(() => assert.dom(document).isChecked()).toThrow('Unexpected Parameter: [object HTMLDocument]');
+    expect(() => assert.dom(document).isChecked()).toThrow('Unexpected Parameter: [object Document]');
   });
 
 });

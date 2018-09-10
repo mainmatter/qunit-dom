@@ -104,6 +104,6 @@ describe('assert.dom(...).doesNotIncludeText()', () => {
     expect(() => assert.dom(true).doesNotIncludeText('foo')).toThrow('Unexpected Parameter: true');
     expect(() => assert.dom(undefined).doesNotIncludeText('foo')).toThrow('Unexpected Parameter: undefined');
     expect(() => assert.dom({}).doesNotIncludeText('foo')).toThrow('Unexpected Parameter: [object Object]');
-    expect(() => assert.dom(document).doesNotIncludeText('foo')).toThrow('Unexpected Parameter: [object HTMLDocument]');
+    expect(() => assert.dom(document).doesNotIncludeText('foo')).toThrow('Unexpected Parameter: [object Document]');
   });
 });

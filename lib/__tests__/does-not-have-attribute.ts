@@ -76,6 +76,6 @@ describe('assert.dom(...).doesNotHaveAttribute()', () => {
     expect(() => assert.dom(true).doesNotHaveAttribute('disabled')).toThrow('Unexpected Parameter: true');
     expect(() => assert.dom(undefined).doesNotHaveAttribute('disabled')).toThrow('Unexpected Parameter: undefined');
     expect(() => assert.dom({}).doesNotHaveAttribute('disabled')).toThrow('Unexpected Parameter: [object Object]');
-    expect(() => assert.dom(document).doesNotHaveAttribute('disabled')).toThrow('Unexpected Parameter: [object HTMLDocument]');
+    expect(() => assert.dom(document).doesNotHaveAttribute('disabled')).toThrow('Unexpected Parameter: [object Document]');
   });
 });

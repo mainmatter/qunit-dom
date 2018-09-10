@@ -132,7 +132,7 @@ describe('assert.dom(...).isDisabled()', () => {
     expect(() => assert.dom(true).isDisabled()).toThrow('Unexpected Parameter: true');
     expect(() => assert.dom(undefined).isDisabled()).toThrow('Unexpected Parameter: undefined');
     expect(() => assert.dom({}).isDisabled()).toThrow('Unexpected Parameter: [object Object]');
-    expect(() => assert.dom(document).isDisabled()).toThrow('Unexpected Parameter: [object HTMLDocument]');
+    expect(() => assert.dom(document).isDisabled()).toThrow('Unexpected Parameter: [object Document]');
     expect(() => assert.dom(document.createElement('div')).isDisabled()).toThrow('Unexpected Element Type: [object HTMLDivElement]');
   });
 });

@@ -126,6 +126,6 @@ describe('assert.dom(...).hasText()', () => {
     expect(() => assert.dom(true).hasText(/fo+/)).toThrow('Unexpected Parameter: true');
     expect(() => assert.dom(undefined).hasText(/fo+/)).toThrow('Unexpected Parameter: undefined');
     expect(() => assert.dom({}).hasText(/fo+/)).toThrow('Unexpected Parameter: [object Object]');
-    expect(() => assert.dom(document).hasText(/fo+/)).toThrow('Unexpected Parameter: [object HTMLDocument]');
+    expect(() => assert.dom(document).hasText(/fo+/)).toThrow('Unexpected Parameter: [object Document]');
   });
 });

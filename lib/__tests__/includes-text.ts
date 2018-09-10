@@ -177,6 +177,6 @@ describe('assert.dom(...).includesText()', () => {
     expect(() => assert.dom(true).includesText('foo')).toThrow('Unexpected Parameter: true');
     expect(() => assert.dom(undefined).includesText('foo')).toThrow('Unexpected Parameter: undefined');
     expect(() => assert.dom({}).includesText('foo')).toThrow('Unexpected Parameter: [object Object]');
-    expect(() => assert.dom(document).includesText('foo')).toThrow('Unexpected Parameter: [object HTMLDocument]');
+    expect(() => assert.dom(document).includesText('foo')).toThrow('Unexpected Parameter: [object Document]');
   });
 });

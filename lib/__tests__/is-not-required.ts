@@ -106,7 +106,7 @@ describe('assert.dom(...).isNotRequired()', () => {
     expect(() => assert.dom(true).isNotRequired()).toThrow('Unexpected Parameter: true');
     expect(() => assert.dom(undefined).isNotRequired()).toThrow('Unexpected Parameter: undefined');
     expect(() => assert.dom({}).isNotRequired()).toThrow('Unexpected Parameter: [object Object]');
-    expect(() => assert.dom(document).isNotRequired()).toThrow('Unexpected Parameter: [object HTMLDocument]');
+    expect(() => assert.dom(document).isNotRequired()).toThrow('Unexpected Parameter: [object Document]');
     expect(() => assert.dom(document.createElement('div')).isRequired()).toThrow('Unexpected Element Type: [object HTMLDivElement]');
   });
 });
