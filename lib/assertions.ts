@@ -18,7 +18,6 @@ export default class DOMAssertions {
   /**
    * Assert an [HTMLElement][] (or multiple) matching the `selector` exists.
    *
-   * @name exists
    * @param {string?} message
    *
    * @example
@@ -31,7 +30,6 @@ export default class DOMAssertions {
   /**
    * Assert an [HTMLElement][] (or multiple) matching the `selector` exists.
    *
-   * @name exists
    * @param {object?} options
    * @param {string?} message
    *
@@ -45,7 +43,6 @@ export default class DOMAssertions {
   /**
    * Assert an [HTMLElement][] (or multiple) matching the `selector` exists.
    *
-   * @name exists
    * @param {object?} options
    * @param {string?} message
    *
@@ -62,7 +59,6 @@ export default class DOMAssertions {
   /**
    * Assert an [HTMLElement][] matching the `selector` does not exists.
    *
-   * @name doesNotExist
    * @param {string?} message
    *
    * @example
@@ -78,7 +74,6 @@ export default class DOMAssertions {
    * Assert that the [HTMLElement][] or an [HTMLElement][] matching the
    * `selector` is currently checked.
    *
-   * @name isChecked
    * @param {string?} message
    *
    * @example
@@ -94,7 +89,6 @@ export default class DOMAssertions {
    * Assert that the [HTMLElement][] or an [HTMLElement][] matching the
    * `selector` is currently unchecked.
    *
-   * @name isNotChecked
    * @param {string?} message
    *
    * @example
@@ -110,7 +104,6 @@ export default class DOMAssertions {
    * Assert that the [HTMLElement][] or an [HTMLElement][] matching the
    * `selector` is currently focused.
    *
-   * @name isFocused
    * @param {string?} message
    *
    * @example
@@ -126,7 +119,6 @@ export default class DOMAssertions {
    * Assert that the [HTMLElement][] or an [HTMLElement][] matching the
    * `selector` is not currently focused.
    *
-   * @name isNotFocused
    * @param {string?} message
    *
    * @example
@@ -142,7 +134,6 @@ export default class DOMAssertions {
    * Assert that the [HTMLElement][] or an [HTMLElement][] matching the
    * `selector` is currently required.
    *
-   * @name isRequired
    * @param {string?} message
    *
    * @example
@@ -158,7 +149,6 @@ export default class DOMAssertions {
    * Assert that the [HTMLElement][] or an [HTMLElement][] matching the
    * `selector` is currently not required.
    *
-   * @name isNotRequired
    * @param {string?} message
    *
    * @example
@@ -182,7 +172,6 @@ export default class DOMAssertions {
    * Additionally, visibility in this case means that the element is visible on the page,
    * but not necessarily in the viewport.
    *
-   * @name isVisible
    * @param {string?} message
    *
    * @example
@@ -206,7 +195,6 @@ export default class DOMAssertions {
    * Additionally, visibility in this case means that the element is visible on the page,
    * but not necessarily in the viewport.
    *
-   * @name isNotVisible
    * @param {string?} message
    *
    * @example
@@ -221,7 +209,6 @@ export default class DOMAssertions {
   /**
    * Assert that the [HTMLElement][] has an attribute with the provided `name`.
    *
-   * @name hasAttribute
    * @param {string} name
    *
    * @example
@@ -236,7 +223,6 @@ export default class DOMAssertions {
    * and checks if the attribute `value` matches the provided text or regular
    * expression.
    *
-   * @name hasAttribute
    * @param {string} name
    * @param {string|RegExp|object} value
    * @param {string?} message
@@ -253,7 +239,6 @@ export default class DOMAssertions {
    * and optionally checks if the attribute `value` matches the provided text
    * or regular expression.
    *
-   * @name hasAttribute
    * @param {string} name
    * @param {string|RegExp|object?} value
    * @param {string?} message
@@ -317,7 +302,6 @@ export default class DOMAssertions {
    *
    * **Aliases:** `hasNoAttribute`, `lacksAttribute`
    *
-   * @name doesNotHaveAttribute
    * @param {string} name
    * @param {string?} message
    *
@@ -358,7 +342,6 @@ export default class DOMAssertions {
    *  Assert that the [HTMLElement][] or an [HTMLElement][] matching the
    * `selector` is disabled.
    *
-   * @name isDisabled
    * @param {string?} message
    *
    * @example
@@ -374,7 +357,6 @@ export default class DOMAssertions {
    *  Assert that the [HTMLElement][] or an [HTMLElement][] matching the
    * `selector` is not disabled.
    *
-   * @name isNotDisabled
    * @param {string?} message
    *
    * @example
@@ -390,7 +372,6 @@ export default class DOMAssertions {
    * Assert that the [HTMLElement][] has the `expected` CSS class using
    * [`classList`](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList).
    *
-   * @name hasClass
    * @param {string} expected
    * @param {string?} message
    *
@@ -419,7 +400,6 @@ export default class DOMAssertions {
    *
    * **Aliases:** `hasNoClass`, `lacksClass`
    *
-   * @name doesNotHaveClass
    * @param {string} expected
    * @param {string?} message
    *
@@ -460,7 +440,6 @@ export default class DOMAssertions {
    *
    * **Aliases:** `matchesText`
    *
-   * @name hasText
    * @param {string|RegExp} expected
    * @param {string?} message
    *
@@ -523,7 +502,6 @@ export default class DOMAssertions {
   /**
    * Assert that the `textContent` property of an [HTMLElement][] is not empty.
    *
-   * @name hasAnyText
    * @param {string?} message
    *
    * @example
@@ -543,7 +521,6 @@ export default class DOMAssertions {
    *
    * **Aliases:** `containsText`, `hasTextContaining`
    *
-   * @name includesText
    * @param {string} text
    * @param {string?} message
    *
@@ -584,7 +561,6 @@ export default class DOMAssertions {
    *
    * **Aliases:** `doesNotContainText`, `doesNotHaveTextContaining`
    *
-   * @name doesNotIncludeText
    * @param {string} text
    * @param {string?} message
    *
@@ -626,7 +602,6 @@ export default class DOMAssertions {
    * If no `expected` value is provided, the assertion will fail if the
    * `value` is an empty string.
    *
-   * @name hasValue
    * @param {string|RegExp|object?} expected
    * @param {string?} message
    *
@@ -683,7 +658,6 @@ export default class DOMAssertions {
   /**
    * Assert that the `value` property of an [HTMLInputElement][] is not empty.
    *
-   * @name hasAnyValue
    * @param {string?} message
    *
    * @example
@@ -701,7 +675,6 @@ export default class DOMAssertions {
    *
    * **Aliases:** `lacksValue`
    *
-   * @name hasNoValue
    * @param {string?} message
    *
    * @example
