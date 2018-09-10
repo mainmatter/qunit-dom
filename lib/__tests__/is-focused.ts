@@ -112,6 +112,6 @@ describe('assert.dom(...).isFocused()', () => {
     expect(() => assert.dom(true).isFocused()).toThrow('Unexpected Parameter: true');
     expect(() => assert.dom(undefined).isFocused()).toThrow('Unexpected Parameter: undefined');
     expect(() => assert.dom({}).isFocused()).toThrow('Unexpected Parameter: [object Object]');
-    expect(() => assert.dom(document).isFocused()).toThrow('Unexpected Parameter: [object HTMLDocument]');
+    expect(() => assert.dom(document).isFocused()).toThrow('Unexpected Parameter: [object Document]');
   });
 });

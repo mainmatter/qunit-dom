@@ -52,6 +52,6 @@ describe('assert.dom(...).isNotVisible()', () => {
     expect(() => assert.dom(true).isNotVisible()).toThrow('Unexpected Parameter: true');
     expect(() => assert.dom(undefined).isNotVisible()).toThrow('Unexpected Parameter: undefined');
     expect(() => assert.dom({}).isNotVisible()).toThrow('Unexpected Parameter: [object Object]');
-    expect(() => assert.dom(document).isNotVisible()).toThrow('Unexpected Parameter: [object HTMLDocument]');
+    expect(() => assert.dom(document).isNotVisible()).toThrow('Unexpected Parameter: [object Document]');
   });
 });

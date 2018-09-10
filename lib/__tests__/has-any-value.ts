@@ -62,6 +62,6 @@ describe('assert.dom(...).hasAnyValue()', () => {
     expect(() => assert.dom(true).hasAnyValue()).toThrow('Unexpected Parameter: true');
     expect(() => assert.dom(undefined).hasAnyValue()).toThrow('Unexpected Parameter: undefined');
     expect(() => assert.dom({}).hasAnyValue()).toThrow('Unexpected Parameter: [object Object]');
-    expect(() => assert.dom(document).hasAnyValue()).toThrow('Unexpected Parameter: [object HTMLDocument]');
+    expect(() => assert.dom(document).hasAnyValue()).toThrow('Unexpected Parameter: [object Document]');
   });
 });
