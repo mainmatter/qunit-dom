@@ -9,7 +9,7 @@ describe('assert.dom(...).hasValue()', () => {
     assert = new TestAssertions();
 
     document.body.innerHTML = '<input class="input username">';
-    document.querySelector('input.username').value = 'HSimpson';
+    (document.querySelector('input.username') as HTMLInputElement).value = 'HSimpson';
   });
 
   describe('string expected', () => {
