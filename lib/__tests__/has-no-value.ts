@@ -29,7 +29,7 @@ describe('assert.dom(...).hasNoValue()', () => {
   });
 
   test('fails for wrong content', () => {
-    document.querySelector('input.username').value = 'HSimpson';
+    (document.querySelector('input.username') as HTMLInputElement).value = 'HSimpson';
 
     assert.dom('input.username').hasNoValue();
     assert.dom(document.querySelector('input.username')).hasNoValue();

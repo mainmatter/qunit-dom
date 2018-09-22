@@ -4,7 +4,7 @@ export default class TestAssertions {
   public results = [];
 
   dom(target, rootElement) {
-    return new DOMAssertions(target, rootElement || document, this);
+    return new DOMAssertions(target, rootElement || document, this as any);
   }
 
   pushResult(result) {
