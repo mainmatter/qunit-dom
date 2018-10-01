@@ -40,7 +40,7 @@
     "documentation": "^8.1.2",
     "ember-cli": "~3.4.3",
     "ember-cli-babel": "^7.1.2",
-    "ember-cli-dependency-checker": "^2.0.0",
+    "ember-cli-dependency-checker": "^3.0.0",
     "ember-cli-eslint": "^4.0.0",
     "ember-cli-htmlbars": "^3.0.0",
     "ember-cli-htmlbars-inline-precompile": "^1.0.0",
