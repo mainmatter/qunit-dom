@@ -339,6 +339,39 @@ export default class DOMAssertions {
   }
 
   /**
+   * Assert that the [HTMLElement][] has a style property with the provided `value`.
+   * @name hasStyle
+   * @param {string} name
+   * @param {string} value
+   * @param {string?} message
+   *
+   * @example
+   * assert.dom('.progress-bar').hasStyle('backgroundColor', 'rgb(248, 183, 21)');
+   *
+   * @see {@link #hasStyle}
+   */
+  hasStyle(name, value, message) {
+    let element = this.findTargetElement();
+    if (!element) return;
+
+    let elementStyleValue = element.style[name];
+    let result = elementStyleValue === value;
+    let expected = `Element ${this.targetDescription} has style property "${name}" with value ${value}`;
+    let actual = expected;
+
+    if (!result) {
+      actual = `Element ${this.targetDescription} has style property "${name}" with value ${elementStyleValue}`;
+    }
+
+    if (!message) {
+      message = expected;
+    }
+
+    this.pushResult({ result, actual, expected, message })
+  }
+
+
+  /**
    *  Assert that the [HTMLElement][] or an [HTMLElement][] matching the
    * `selector` is disabled.
    *
@@ -366,6 +399,40 @@ export default class DOMAssertions {
    */
   isNotDisabled(message?: string): void {
     isDisabled.call(this, message, { inverted: true });
+  }
+
+  /**
+   * Assert that the [HTMLElement][] has the `expected` style declarations
+   * [`getComputedStyle`](https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle).
+   *
+   * @name hasStyle
+   * @param {object} expected
+   * @param {string?} message
+   *
+   * @example
+   * assert.dom('.progress-bar').hasStyle({
+   *   opacity: 1,
+   *   display: 'block'
+   * });
+   *
+   * @see {@link #hasClass}
+   */
+  hasStyle(expected: object, message?: string): void {
+    let element = this.findTargetElement();
+    if (!element) return;
+    let actual = {};
+    let result = false;
+    let cssStyleDeclaration = window.getComputedStyle(element);
+    for (let property in expected) {
+      actual[property] = cssStyleDeclaration[property];
+      if (!result) {
+        result = '' + expected[property] === actual[property];
+      }
+    }
+    if (!message) {
+      message = `Element ${this.targetDescription} has style "${JSON.stringify(expected)}"`;
+    }
+    this.pushResult({ result, actual, expected, message });
   }
 
   /**
