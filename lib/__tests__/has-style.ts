@@ -10,17 +10,47 @@ describe('assert.dom(...).hasStyle()', () => {
     document.body.innerHTML = '<div class="foo" style="opacity: 1; width: 200px; text-align: center;">quit-dom ftw!</div>';
   });
 
-  test('works for subset of style assertions', () => {
+  test('succeeds for correct content', () => {
     assert.dom('.foo').hasStyle({
       opacity: '1',
       width: '200px',
       'text-align': 'center',
     });
     expect(assert.results).toEqual([{
-      actual: {opacity: '1', width: '200px', 'text-align': 'center'},
-      expected: {opacity: '1', width: '200px', 'text-align': 'center'},
+      actual: { opacity: '1', width: '200px', 'text-align': 'center' },
+      expected: { opacity: '1', width: '200px', 'text-align': 'center' },
       message: 'Element .foo has style \"{\"opacity\":\"1\",\"width\":\"200px\",\"text-align\":\"center\"}\"',
       result: true,
     }]);
+  });
+
+  test('fails for wrong content', () => {
+    assert.dom('.foo').hasStyle({
+      opacity: 0,
+    });
+    expect(assert.results).toEqual([{
+      actual: { opacity: '1' },
+      expected: { opacity: 0 },
+      message: 'Element .foo has style \"{\"opacity\":0}\"',
+      result: false,
+    }]);
+  });
+
+  test('fails for missing element', () => {
+    assert.dom('#missing').hasStyle({
+      opacity: 0,
+    });
+    expect(assert.results).toEqual([{
+      message: 'Element #missing should exist',
+      result: false,
+    }]);
+  });
+
+  test('throws for unexpected parameter types', () => {
+    expect(() => assert.dom(5).hasStyle({ opacity: 1 })).toThrow('Unexpected Parameter: 5');
+    expect(() => assert.dom(true).hasStyle({ opacity: 1 })).toThrow('Unexpected Parameter: true');
+    expect(() => assert.dom(undefined).hasStyle({ opacity: 1 })).toThrow('Unexpected Parameter: undefined');
+    expect(() => assert.dom({}).hasStyle({ opacity: 1 })).toThrow('Unexpected Parameter: [object Object]');
+    expect(() => assert.dom(document).hasStyle({ opacity: 1 })).toThrow('Unexpected Parameter: [object Document]');
   });
 });
