@@ -203,7 +203,7 @@ describe('assert.dom(...).hasAttribute()', () => {
     expect(() => assert.dom(true).hasAttribute('foo')).toThrow('Unexpected Parameter: true');
     expect(() => assert.dom(undefined).hasAttribute('foo')).toThrow('Unexpected Parameter: undefined');
     expect(() => assert.dom({}).hasAttribute('foo')).toThrow('Unexpected Parameter: [object Object]');
-    expect(() => assert.dom(document).hasAttribute('foo')).toThrow('Unexpected Parameter: [object HTMLDocument]');
+    expect(() => assert.dom(document).hasAttribute('foo')).toThrow('Unexpected Parameter: [object Document]');
   });
 
   test('accepts SVGElement', () => {

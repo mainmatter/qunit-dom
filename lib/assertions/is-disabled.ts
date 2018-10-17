@@ -1,4 +1,4 @@
-export default function isDisabled(message, options = {}) {
+export default function isDisabled(message, options: { inverted?: boolean } = {}) {
   let { inverted } = options;
 
   let element = this.findTargetElement();

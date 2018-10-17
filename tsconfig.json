@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "lib": [
+      "ES6",
+      "DOM"
+    ],
+    "target": "es5"
+  },
+  "exclude": [
+    "node_modules/**",
+    "dist/**"
+  ]
+}

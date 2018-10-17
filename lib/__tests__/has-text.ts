@@ -104,7 +104,7 @@ describe('assert.dom(...).hasText()', () => {
     expect(() => assert.dom(true).hasText('foo')).toThrow('Unexpected Parameter: true');
     expect(() => assert.dom(undefined).hasText('foo')).toThrow('Unexpected Parameter: undefined');
     expect(() => assert.dom({}).hasText('foo')).toThrow('Unexpected Parameter: [object Object]');
-    expect(() => assert.dom(document).hasText('foo')).toThrow('Unexpected Parameter: [object HTMLDocument]');
+    expect(() => assert.dom(document).hasText('foo')).toThrow('Unexpected Parameter: [object Document]');
   });
 
   describe('invalid arguments to `hasText`', () => {

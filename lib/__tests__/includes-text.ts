@@ -73,6 +73,57 @@ describe('assert.dom(...).includesText()', () => {
     });
   });
 
+  describe('with HTMLElement with irregular-spacing', () => {
+    let element;
+
+    beforeEach(() => {
+      document.body.innerHTML = '<h1 class="baz">foo\n  <span>bar</span>\n</h1>baz';
+      element = document.querySelector('h1');
+    });
+
+    test('succeeds for correct content', () => {
+      assert.dom(element).includesText('foo bar');
+
+      expect(assert.results).toEqual([{
+        actual: 'foo bar',
+        expected: 'foo bar',
+        message: 'Element h1.baz has text containing "foo bar"',
+        result: true,
+      }]);
+    });
+
+    test('succeeds for correct partial content', () => {
+      assert.dom(element).includesText('oo b');
+
+      expect(assert.results).toEqual([{
+        actual: 'foo bar',
+        expected: 'oo b',
+        message: 'Element h1.baz has text containing "oo b"',
+        result: true,
+      }]);
+    });
+
+    test('fails for wrong content', () => {
+      assert.dom(element).includesText('baz');
+
+      expect(assert.results).toEqual([{
+        actual: 'foo bar',
+        expected: 'baz',
+        message: 'Element h1.baz has text containing "baz"',
+        result: false,
+      }]);
+    });
+
+    test('fails for missing element', () => {
+      assert.dom(null).includesText('foo');
+
+      expect(assert.results).toEqual([{
+        message: 'Element <unknown> should exist',
+        result: false,
+      }]);
+    });
+  });
+
   describe('with selector', () => {
     beforeEach(() => {
       document.body.innerHTML = '<h1 class="baz">foo</h1>bar';
@@ -126,6 +177,6 @@ describe('assert.dom(...).includesText()', () => {
     expect(() => assert.dom(true).includesText('foo')).toThrow('Unexpected Parameter: true');
     expect(() => assert.dom(undefined).includesText('foo')).toThrow('Unexpected Parameter: undefined');
     expect(() => assert.dom({}).includesText('foo')).toThrow('Unexpected Parameter: [object Object]');
-    expect(() => assert.dom(document).includesText('foo')).toThrow('Unexpected Parameter: [object HTMLDocument]');
+    expect(() => assert.dom(document).includesText('foo')).toThrow('Unexpected Parameter: [object Document]');
   });
 });

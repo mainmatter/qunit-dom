@@ -15,29 +15,3 @@ toc:
         assert.dom('#title').exists();
       });
       ```
-
-  - name: Assertions
-    children:
-      - exists
-      - doesNotExist
-      - isChecked
-      - isNotChecked
-      - isFocused
-      - isNotFocused
-      - isRequired
-      - isNotRequired
-      - isVisible
-      - isNotVisible
-      - hasAttribute
-      - isDisabled
-      - isNotDisabled
-      - doesNotHaveAttribute
-      - hasClass
-      - doesNotHaveClass
-      - hasText
-      - hasAnyText
-      - includesText
-      - doesNotIncludeText
-      - hasValue
-      - hasAnyValue
-      - hasNoValue

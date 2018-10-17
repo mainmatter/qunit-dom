@@ -70,6 +70,6 @@ describe('assert.dom(...).doesNotExist()', () => {
     expect(() => assert.dom(true).doesNotExist()).toThrow('Unexpected Parameter: true');
     expect(() => assert.dom(undefined).doesNotExist()).toThrow('Unexpected Parameter: undefined');
     expect(() => assert.dom({}).doesNotExist()).toThrow('Unexpected Parameter: [object Object]');
-    expect(() => assert.dom(document).doesNotExist()).toThrow('Unexpected Parameter: [object HTMLDocument]');
+    expect(() => assert.dom(document).doesNotExist()).toThrow('Unexpected Parameter: [object Document]');
   });
 });

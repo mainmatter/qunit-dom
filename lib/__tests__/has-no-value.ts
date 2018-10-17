@@ -29,7 +29,7 @@ describe('assert.dom(...).hasNoValue()', () => {
   });
 
   test('fails for wrong content', () => {
-    document.querySelector('input.username').value = 'HSimpson';
+    (document.querySelector('input.username') as HTMLInputElement).value = 'HSimpson';
 
     assert.dom('input.username').hasNoValue();
     assert.dom(document.querySelector('input.username')).hasNoValue();
@@ -61,6 +61,6 @@ describe('assert.dom(...).hasNoValue()', () => {
     expect(() => assert.dom(true).hasNoValue()).toThrow('Unexpected Parameter: true');
     expect(() => assert.dom(undefined).hasNoValue()).toThrow('Unexpected Parameter: undefined');
     expect(() => assert.dom({}).hasNoValue()).toThrow('Unexpected Parameter: [object Object]');
-    expect(() => assert.dom(document).hasNoValue()).toThrow('Unexpected Parameter: [object HTMLDocument]');
+    expect(() => assert.dom(document).hasNoValue()).toThrow('Unexpected Parameter: [object Document]');
   });
 });

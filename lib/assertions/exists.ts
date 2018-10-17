@@ -39,7 +39,7 @@ export default function exists(options, message) {
   }
 }
 
-function format(selector, num) {
+function format(selector: string, num?: number) {
   if (num === undefined || num === null) {
     return `Element ${selector} exists`;
   } else if (num === 0) {

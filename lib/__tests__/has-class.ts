@@ -59,6 +59,6 @@ describe('assert.dom(...).hasClass()', () => {
     expect(() => assert.dom(true).hasClass('foo')).toThrow('Unexpected Parameter: true');
     expect(() => assert.dom(undefined).hasClass('foo')).toThrow('Unexpected Parameter: undefined');
     expect(() => assert.dom({}).hasClass('foo')).toThrow('Unexpected Parameter: [object Object]');
-    expect(() => assert.dom(document).hasClass('foo')).toThrow('Unexpected Parameter: [object HTMLDocument]');
+    expect(() => assert.dom(document).hasClass('foo')).toThrow('Unexpected Parameter: [object Document]');
   });
 });

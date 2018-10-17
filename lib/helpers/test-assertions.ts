@@ -1,12 +1,10 @@
 import DOMAssertions from "../assertions";
 
 export default class TestAssertions {
-  constructor() {
-    this.results = [];
-  }
+  public results = [];
 
   dom(target, rootElement) {
-    return new DOMAssertions(target, rootElement || document, this);
+    return new DOMAssertions(target, rootElement || document, this as any);
   }
 
   pushResult(result) {

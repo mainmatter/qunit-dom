@@ -9,7 +9,7 @@ describe('assert.dom(...).hasValue()', () => {
     assert = new TestAssertions();
 
     document.body.innerHTML = '<input class="input username">';
-    document.querySelector('input.username').value = 'HSimpson';
+    (document.querySelector('input.username') as HTMLInputElement).value = 'HSimpson';
   });
 
   describe('string expected', () => {
@@ -193,6 +193,6 @@ describe('assert.dom(...).hasValue()', () => {
     expect(() => assert.dom(true).hasValue('foo')).toThrow('Unexpected Parameter: true');
     expect(() => assert.dom(undefined).hasValue('foo')).toThrow('Unexpected Parameter: undefined');
     expect(() => assert.dom({}).hasValue('foo')).toThrow('Unexpected Parameter: [object Object]');
-    expect(() => assert.dom(document).hasValue('foo')).toThrow('Unexpected Parameter: [object HTMLDocument]');
+    expect(() => assert.dom(document).hasValue('foo')).toThrow('Unexpected Parameter: [object Document]');
   });
 });

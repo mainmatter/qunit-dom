@@ -1,5 +1,48 @@
 # Changelog
 
+## v0.8.0 (2018-09-06)
+
+#### :boom: Breaking Change
+* [#105](https://github.com/simplabs/qunit-dom/pull/105) Collapse whitespace for `includesText` assertion ([@brookjordan](https://github.com/brookjordan))
+* [#126](https://github.com/simplabs/qunit-dom/pull/126) Update Node version requirement to `6.* || 8.* || >= 10.*` ([@Turbo87](https://github.com/Turbo87))
+* [#117](https://github.com/simplabs/qunit-dom/pull/117) Bump broccoli-merge-trees from 2.0.0 to 3.0.1 ([@dependabot[bot]](https://github.com/apps/dependabot))
+
+#### :memo: Documentation
+* [#103](https://github.com/simplabs/qunit-dom/pull/103) README: Add `import` documentation ([@Turbo87](https://github.com/Turbo87))
+
+#### Committers: 2
+- Brook Jordan ([@brookjordan](https://github.com/brookjordan))
+- Tobias Bieniek ([@Turbo87](https://github.com/Turbo87))
+
+
+## v0.7.1 (2018-07-17)
+
+#### :rocket: Enhancement
+* [#102](https://github.com/simplabs/qunit-dom/pull/102) Add `qunit-dom` dummy module to allow imports ([@Turbo87](https://github.com/Turbo87))
+
+#### :bug: Bug Fix
+* [#101](https://github.com/simplabs/qunit-dom/pull/101) Update `.npmignore` file ([@Turbo87](https://github.com/Turbo87))
+
+#### Committers: 1
+- Tobias Bieniek ([Turbo87](https://github.com/Turbo87))
+
+
+## v0.7.0 (2018-07-04)
+
+#### :boom: Breaking Change
+* [#93](https://github.com/simplabs/qunit-dom/pull/93) Let `isNotVisible()` pass if the element does not exist ([@scalvert](https://github.com/scalvert))
+
+#### :rocket: Enhancement
+* [#96](https://github.com/simplabs/qunit-dom/pull/96) Use TypeScript instead of Babel ([@Turbo87](https://github.com/Turbo87))
+
+#### :house: Internal
+* [#95](https://github.com/simplabs/qunit-dom/pull/95) Update `fsevents` subdependency ([@Turbo87](https://github.com/Turbo87))
+
+#### Committers: 2
+- Steve Calvert ([scalvert](https://github.com/scalvert))
+- Tobias Bieniek ([Turbo87](https://github.com/Turbo87))
+
+
 ## v0.6.3 (2018-05-22)
 
 #### :rocket: Enhancement

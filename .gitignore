@@ -20,3 +20,6 @@ testem.log
 .node_modules.ember-try/
 bower.json.ember-try
 package.json.ember-try
+
+# rollup-plugin-typescript2
+/.rpt2_cache
