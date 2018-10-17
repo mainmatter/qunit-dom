@@ -405,19 +405,19 @@ export default class DOMAssertions {
    * Assert that the [HTMLElement][] has the `expected` style declarations
    * [`getComputedStyle`](https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle).
    *
-   * @name hasCSS
+   * @name hasStyle
    * @param {object} expected
    * @param {string?} message
    *
    * @example
-   * assert.dom('.progress-bar').hasCSS({
+   * assert.dom('.progress-bar').hasStyle({
    *   opacity: 1,
    *   display: 'block'
    * });
    *
    * @see {@link #hasClass}
    */
-  hasCSS(expected: object, message?: string): void {
+  hasStyle(expected: object, message?: string): void {
     let element = this.findTargetElement();
     if (!element) return;
     let actual = {};
