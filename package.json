@@ -38,7 +38,7 @@
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
     "babel-preset-env": "^1.6.0",
     "documentation": "^8.1.2",
-    "ember-cli": "~3.4.3",
+    "ember-cli": "~3.5.0",
     "ember-cli-babel": "^7.1.2",
     "ember-cli-dependency-checker": "^3.0.0",
     "ember-cli-eslint": "^4.0.0",
