@@ -78,13 +78,6 @@
     }
   },
   "jest": {
-    "transform": {
-      "^.+\\.(js|ts)$": "ts-jest"
-    },
-    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(js|ts)$",
-    "moduleFileExtensions": [
-      "ts",
-      "js"
-    ]
+    "preset": "ts-jest"
   }
 }
