@@ -48,7 +48,7 @@
     "ember-cli-qunit": "^4.0.0",
     "ember-load-initializers": "^1.0.0",
     "ember-resolver": "^5.0.1",
-    "ember-source": "~3.4.0",
+    "ember-source": "~3.5.0",
     "jest": "^23.5.0",
     "lerna-changelog": "^0.8.0",
     "loader.js": "^4.2.3",
