@@ -124,6 +124,48 @@ describe('assert.dom(...).includesText()', () => {
     });
   });
 
+  describe('with HTMLElement with expected spacing', () => {
+    let element;
+
+    beforeEach(() => {
+      document.body.innerHTML = '<div>foo\n  <pre>bar\n  baz</pre></div>';
+      element = document.querySelector('div');
+    });
+
+    test('succeeds for correct content', () => {
+      assert.dom(element).includesText('foo\n  bar\n  baz');
+
+      expect(assert.results).toEqual([{
+        actual: 'foo bar baz',
+        expected: 'foo\n  bar\n  baz',
+        message: 'Element div has text containing "foo\n  bar\n  baz"',
+        result: true,
+      }]);
+    });
+
+    test('succeeds for correct partial content', () => {
+      assert.dom(element).includesText('bar\n  baz');
+
+      expect(assert.results).toEqual([{
+        actual: 'foo bar baz',
+        expected: 'bar\n  baz',
+        message: 'Element div has text containing "bar\n  baz"',
+        result: true,
+      }]);
+    });
+
+    test('explains failures to the user', () => {
+      assert.dom(element).includesText('bar\n  baz');
+
+      expect(assert.results).toEqual([{
+        actual: 'foo bar baz',
+        expected: 'bar\n  baz',
+        message: 'Element div has text containing "bar\n  baz" -- Your expected text contains spacing that is not preserved in this assertion. Try the `.hasText()` assertion passing in your expected text as a RegEx pattern.',
+        result: false,
+      }]);
+    });
+  });
+
   describe('with selector', () => {
     beforeEach(() => {
       document.body.innerHTML = '<h1 class="baz">foo</h1>bar';
