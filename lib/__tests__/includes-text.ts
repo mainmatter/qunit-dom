@@ -132,28 +132,6 @@ describe('assert.dom(...).includesText()', () => {
       element = document.querySelector('div');
     });
 
-    test('succeeds for correct content', () => {
-      assert.dom(element).includesText('foo\n  bar\n  baz');
-
-      expect(assert.results).toEqual([{
-        actual: 'foo bar baz',
-        expected: 'foo\n  bar\n  baz',
-        message: 'Element div has text containing "foo\n  bar\n  baz"',
-        result: true,
-      }]);
-    });
-
-    test('succeeds for correct partial content', () => {
-      assert.dom(element).includesText('bar\n  baz');
-
-      expect(assert.results).toEqual([{
-        actual: 'foo bar baz',
-        expected: 'bar\n  baz',
-        message: 'Element div has text containing "bar\n  baz"',
-        result: true,
-      }]);
-    });
-
     test('explains failures to the user', () => {
       assert.dom(element).includesText('bar\n  baz');
 
