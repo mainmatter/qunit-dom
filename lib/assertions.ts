@@ -543,7 +543,7 @@ export default class DOMAssertions {
     }
 
     if (!result && text !== collapseWhitespace(text)) {
-      message = `${message} -- Your expected text contains spacing that is not preserved in this assertion. Try the \`.hasText()\` assertion passing in your expected text as a RegEx pattern.`;
+      message = message + '\n\nYour expected text contains spacing that is not preserved in this assertion. Try the `.hasText()` assertion passing in your expected text as a RegEx pattern.';
     }
 
     this.pushResult({ result, actual, expected, message });
