@@ -538,3 +538,6 @@ Assert that the `value` property of an [HTMLInputElement][] is empty.
 ```javascript
 assert.dom('input.username').hasNoValue();
 ```
+
+[HTMLElement]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element
+[HTMLInputElement]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input
