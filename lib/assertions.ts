@@ -519,6 +519,11 @@ export default class DOMAssertions {
    * [`textContent`](https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent)
    * attribute.
    *
+   * > Note: This assertion will collapse whitespace in `textContent` before searching.
+   * > If you would like to assert on a string that *should* contain line breaks, tabs,
+   * > more than one space in a row, or starting/ending whitespace, use the {@link #hasText}
+   * > selector and pass your expected text in as a RegEx pattern.
+   * 
    * **Aliases:** `containsText`, `hasTextContaining`
    *
    * @param {string} text
