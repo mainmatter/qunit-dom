@@ -138,7 +138,7 @@ describe('assert.dom(...).includesText()', () => {
       expect(assert.results).toEqual([{
         actual: 'foo bar baz',
         expected: 'bar\n  baz',
-        message: 'Element div has text containing "bar\n  baz"\n\nYour expected text contains spacing that is not preserved in this assertion. Try the `.hasText()` assertion passing in your expected text as a RegEx pattern.',
+        message: 'Element div has text containing "bar\n  baz"\n\nYour expected text contains spacing that is not preserved in this assertion. Try the `.hasText()` assertion passing in your expected text as a RegExp pattern.',
         result: false,
       }]);
     });
