@@ -449,11 +449,13 @@ export default class DOMAssertions {
   hasStyle(expected: object, message?: string): void {
     let element = this.findTargetElement();
     if (!element) return;
+    let computedStyle = window.getComputedStyle(element);
+    let expectedProperties = Object.keys(expected);
+    let result = expectedProperties.every(property => computedStyle[property] === expected[property]);
     let actual = {};
-    let result = false;
-    let cssStyleDeclaration = window.getComputedStyle(element);
+    expectedProperties.forEach(property => actual[property] = computedStyle[property]);
     for (let property in expected) {
-      actual[property] = cssStyleDeclaration[property];
+      actual[property] = computedStyle[property];
       if (!result) {
         result = '' + expected[property] === actual[property];
       }

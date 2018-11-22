@@ -24,6 +24,18 @@ describe('assert.dom(...).hasStyle()', () => {
     }]);
   });
 
+  test('succeeds for partial style checking', () => {
+    assert.dom('.foo').hasStyle({
+      opacity: '1',
+    });
+    expect(assert.results).toEqual([{
+      actual: { opacity: '1' },
+      expected: { opacity: '1' },
+      message: 'Element .foo has style \"{\"opacity\":\"1\"}\"',
+      result: true,
+    }]);
+  });
+
   test('fails for wrong content', () => {
     assert.dom('.foo').hasStyle({
       opacity: 0,
