@@ -16,7 +16,7 @@ export default class DOMAssertions {
   constructor(private target: string | Element | null, private rootElement: Element, private testContext: Assert) {}
 
   /**
-   * Assert an [HTMLElement][] (or multiple) matching the `selector` exists.
+   * Assert an {@link HTMLElement} (or multiple) matching the `selector` exists.
    *
    * @param {string?} message
    *
@@ -28,7 +28,7 @@ export default class DOMAssertions {
   exists(message?: string): void;
 
   /**
-   * Assert an [HTMLElement][] (or multiple) matching the `selector` exists.
+   * Assert an {@link HTMLElement} (or multiple) matching the `selector` exists.
    *
    * @param {object?} options
    * @param {string?} message
@@ -41,7 +41,7 @@ export default class DOMAssertions {
   exists(options: { count: number }, message?: string): void;
 
   /**
-   * Assert an [HTMLElement][] (or multiple) matching the `selector` exists.
+   * Assert an {@link HTMLElement} (or multiple) matching the `selector` exists.
    *
    * @param {object?} options
    * @param {string?} message
@@ -57,7 +57,7 @@ export default class DOMAssertions {
   }
 
   /**
-   * Assert an [HTMLElement][] matching the `selector` does not exists.
+   * Assert an {@link HTMLElement} matching the `selector` does not exists.
    *
    * @param {string?} message
    *
@@ -71,7 +71,7 @@ export default class DOMAssertions {
   }
 
   /**
-   * Assert that the [HTMLElement][] or an [HTMLElement][] matching the
+   * Assert that the {@link HTMLElement} or an {@link HTMLElement} matching the
    * `selector` is currently checked.
    *
    * @param {string?} message
@@ -86,7 +86,7 @@ export default class DOMAssertions {
   }
 
   /**
-   * Assert that the [HTMLElement][] or an [HTMLElement][] matching the
+   * Assert that the {@link HTMLElement} or an {@link HTMLElement} matching the
    * `selector` is currently unchecked.
    *
    * @param {string?} message
@@ -101,7 +101,7 @@ export default class DOMAssertions {
   }
 
   /**
-   * Assert that the [HTMLElement][] or an [HTMLElement][] matching the
+   * Assert that the {@link HTMLElement} or an {@link HTMLElement} matching the
    * `selector` is currently focused.
    *
    * @param {string?} message
@@ -116,7 +116,7 @@ export default class DOMAssertions {
   }
 
   /**
-   * Assert that the [HTMLElement][] or an [HTMLElement][] matching the
+   * Assert that the {@link HTMLElement} or an {@link HTMLElement} matching the
    * `selector` is not currently focused.
    *
    * @param {string?} message
@@ -131,7 +131,7 @@ export default class DOMAssertions {
   }
 
   /**
-   * Assert that the [HTMLElement][] or an [HTMLElement][] matching the
+   * Assert that the {@link HTMLElement} or an {@link HTMLElement} matching the
    * `selector` is currently required.
    *
    * @param {string?} message
@@ -146,7 +146,7 @@ export default class DOMAssertions {
   }
 
   /**
-   * Assert that the [HTMLElement][] or an [HTMLElement][] matching the
+   * Assert that the {@link HTMLElement} or an {@link HTMLElement} matching the
    * `selector` is currently not required.
    *
    * @param {string?} message
@@ -161,7 +161,7 @@ export default class DOMAssertions {
   }
 
   /**
-   * Assert that the [HTMLElement][] or an [HTMLElement][] matching the
+   * Assert that the {@link HTMLElement} or an {@link HTMLElement} matching the
    * `selector` exists and is visible.
    *
    * Visibility is determined by asserting that:
@@ -184,7 +184,7 @@ export default class DOMAssertions {
   }
 
   /**
-   * Assert that the [HTMLElement][] or an [HTMLElement][] matching the
+   * Assert that the {@link HTMLElement} or an {@link HTMLElement} matching the
    * `selector` does not exist or is not visible on the page.
    *
    * Visibility is determined by asserting that:
@@ -207,7 +207,7 @@ export default class DOMAssertions {
   }
 
   /**
-   * Assert that the [HTMLElement][] has an attribute with the provided `name`.
+   * Assert that the {@link HTMLElement} has an attribute with the provided `name`.
    *
    * @param {string} name
    *
@@ -219,7 +219,7 @@ export default class DOMAssertions {
   hasAttribute(name: string): void;
 
   /**
-   * Assert that the [HTMLElement][] has an attribute with the provided `name`
+   * Assert that the {@link HTMLElement} has an attribute with the provided `name`
    * and checks if the attribute `value` matches the provided text or regular
    * expression.
    *
@@ -235,7 +235,7 @@ export default class DOMAssertions {
   hasAttribute(name: string, value: string | RegExp | { any: true }, message?: string): void;
 
   /**
-   * Assert that the [HTMLElement][] has an attribute with the provided `name`
+   * Assert that the {@link HTMLElement} has an attribute with the provided `name`
    * and optionally checks if the attribute `value` matches the provided text
    * or regular expression.
    *
@@ -298,7 +298,7 @@ export default class DOMAssertions {
   }
 
   /**
-   * Assert that the [HTMLElement][] has no attribute with the provided `name`.
+   * Assert that the {@link HTMLElement} has no attribute with the provided `name`.
    *
    * **Aliases:** `hasNoAttribute`, `lacksAttribute`
    *
@@ -339,7 +339,7 @@ export default class DOMAssertions {
   }
 
   /**
-   *  Assert that the [HTMLElement][] or an [HTMLElement][] matching the
+   *  Assert that the {@link HTMLElement} or an {@link HTMLElement} matching the
    * `selector` is disabled.
    *
    * @param {string?} message
@@ -354,7 +354,7 @@ export default class DOMAssertions {
   }
 
   /**
-   *  Assert that the [HTMLElement][] or an [HTMLElement][] matching the
+   *  Assert that the {@link HTMLElement} or an {@link HTMLElement} matching the
    * `selector` is not disabled.
    *
    * @param {string?} message
@@ -369,7 +369,7 @@ export default class DOMAssertions {
   }
 
   /**
-   * Assert that the [HTMLElement][] has the `expected` CSS class using
+   * Assert that the {@link HTMLElement} has the `expected` CSS class using
    * [`classList`](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList).
    *
    * @param {string} expected
@@ -395,7 +395,7 @@ export default class DOMAssertions {
   }
 
   /**
-   * Assert that the [HTMLElement][] does not have the `expected` CSS class using
+   * Assert that the {@link HTMLElement} does not have the `expected` CSS class using
    * [`classList`](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList).
    *
    * **Aliases:** `hasNoClass`, `lacksClass`
@@ -431,7 +431,7 @@ export default class DOMAssertions {
   }
 
   /**
-   * Assert that the text of the [HTMLElement][] or an [HTMLElement][]
+   * Assert that the text of the {@link HTMLElement} or an {@link HTMLElement}
    * matching the `selector` matches the `expected` text, using the
    * [`textContent`](https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent)
    * attribute and stripping/collapsing whitespace.
@@ -500,7 +500,7 @@ export default class DOMAssertions {
   }
 
   /**
-   * Assert that the `textContent` property of an [HTMLElement][] is not empty.
+   * Assert that the `textContent` property of an {@link HTMLElement} is not empty.
    *
    * @param {string?} message
    *
@@ -514,7 +514,7 @@ export default class DOMAssertions {
   }
 
   /**
-   * Assert that the text of the [HTMLElement][] or an [HTMLElement][]
+   * Assert that the text of the {@link HTMLElement} or an {@link HTMLElement}
    * matching the `selector` contains the given `text`, using the
    * [`textContent`](https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent)
    * attribute.
@@ -554,7 +554,7 @@ export default class DOMAssertions {
   }
 
   /**
-   * Assert that the text of the [HTMLElement][] or an [HTMLElement][]
+   * Assert that the text of the {@link HTMLElement} or an {@link HTMLElement}
    * matching the `selector` does not include the given `text`, using the
    * [`textContent`](https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent)
    * attribute.
@@ -596,7 +596,7 @@ export default class DOMAssertions {
   }
 
   /**
-   * Assert that the `value` property of an [HTMLInputElement][] matches
+   * Assert that the `value` property of an {@link HTMLInputElement} matches
    * the `expected` text or regular expression.
    *
    * If no `expected` value is provided, the assertion will fail if the
@@ -656,7 +656,7 @@ export default class DOMAssertions {
   }
 
   /**
-   * Assert that the `value` property of an [HTMLInputElement][] is not empty.
+   * Assert that the `value` property of an {@link HTMLInputElement} is not empty.
    *
    * @param {string?} message
    *
@@ -671,7 +671,7 @@ export default class DOMAssertions {
   }
 
   /**
-   * Assert that the `value` property of an [HTMLInputElement][] is empty.
+   * Assert that the `value` property of an {@link HTMLInputElement} is empty.
    *
    * **Aliases:** `lacksValue`
    *

@@ -98,7 +98,7 @@ test('the title exists', function(assert) {
 
 -   **See: [#doesNotExist](#doesNotExist)**
 
-Assert an [HTMLElement][] (or multiple) matching the `selector` exists.
+Assert an [HTMLElement](https://developer.mozilla.org/docs/Web/HTML/Element) (or multiple) matching the `selector` exists.
 
 #### Parameters
 
@@ -116,7 +116,7 @@ assert.dom('.choice').exists({ count: 4 });
 
 -   **See: [#exists](#exists)**
 
-Assert an [HTMLElement][] matching the `selector` does not exists.
+Assert an [HTMLElement](https://developer.mozilla.org/docs/Web/HTML/Element) matching the `selector` does not exists.
 
 #### Parameters
 
@@ -132,7 +132,7 @@ assert.dom('.should-not-exist').doesNotExist();
 
 -   **See: [#isNotChecked](#isNotChecked)**
 
-Assert that the [HTMLElement][] or an [HTMLElement][] matching the
+Assert that the [HTMLElement](https://developer.mozilla.org/docs/Web/HTML/Element) or an [HTMLElement](https://developer.mozilla.org/docs/Web/HTML/Element) matching the
 `selector` is currently checked.
 
 #### Parameters
@@ -149,7 +149,7 @@ assert.dom('input.active').isChecked();
 
 -   **See: [#isChecked](#isChecked)**
 
-Assert that the [HTMLElement][] or an [HTMLElement][] matching the
+Assert that the [HTMLElement](https://developer.mozilla.org/docs/Web/HTML/Element) or an [HTMLElement](https://developer.mozilla.org/docs/Web/HTML/Element) matching the
 `selector` is currently unchecked.
 
 #### Parameters
@@ -166,7 +166,7 @@ assert.dom('input.active').isNotChecked();
 
 -   **See: [#isNotFocused](#isNotFocused)**
 
-Assert that the [HTMLElement][] or an [HTMLElement][] matching the
+Assert that the [HTMLElement](https://developer.mozilla.org/docs/Web/HTML/Element) or an [HTMLElement](https://developer.mozilla.org/docs/Web/HTML/Element) matching the
 `selector` is currently focused.
 
 #### Parameters
@@ -183,7 +183,7 @@ assert.dom('input.email').isFocused();
 
 -   **See: [#isFocused](#isFocused)**
 
-Assert that the [HTMLElement][] or an [HTMLElement][] matching the
+Assert that the [HTMLElement](https://developer.mozilla.org/docs/Web/HTML/Element) or an [HTMLElement](https://developer.mozilla.org/docs/Web/HTML/Element) matching the
 `selector` is not currently focused.
 
 #### Parameters
@@ -200,7 +200,7 @@ assert.dom('input[type="password"]').isNotFocused();
 
 -   **See: [#isNotRequired](#isNotRequired)**
 
-Assert that the [HTMLElement][] or an [HTMLElement][] matching the
+Assert that the [HTMLElement](https://developer.mozilla.org/docs/Web/HTML/Element) or an [HTMLElement](https://developer.mozilla.org/docs/Web/HTML/Element) matching the
 `selector` is currently required.
 
 #### Parameters
@@ -217,7 +217,7 @@ assert.dom('input[type="text"]').isRequired();
 
 -   **See: [#isRequired](#isRequired)**
 
-Assert that the [HTMLElement][] or an [HTMLElement][] matching the
+Assert that the [HTMLElement](https://developer.mozilla.org/docs/Web/HTML/Element) or an [HTMLElement](https://developer.mozilla.org/docs/Web/HTML/Element) matching the
 `selector` is currently not required.
 
 #### Parameters
@@ -234,7 +234,7 @@ assert.dom('input[type="text"]').isNotRequired();
 
 -   **See: [#isNotVisible](#isNotVisible)**
 
-Assert that the [HTMLElement][] or an [HTMLElement][] matching the
+Assert that the [HTMLElement](https://developer.mozilla.org/docs/Web/HTML/Element) or an [HTMLElement](https://developer.mozilla.org/docs/Web/HTML/Element) matching the
 `selector` exists and is visible.
 
 Visibility is determined by asserting that:
@@ -259,7 +259,7 @@ assert.dom('.foo').isVisible();
 
 -   **See: [#isVisible](#isVisible)**
 
-Assert that the [HTMLElement][] or an [HTMLElement][] matching the
+Assert that the [HTMLElement](https://developer.mozilla.org/docs/Web/HTML/Element) or an [HTMLElement](https://developer.mozilla.org/docs/Web/HTML/Element) matching the
 `selector` does not exist or is not visible on the page.
 
 Visibility is determined by asserting that:
@@ -284,7 +284,7 @@ assert.dom('.foo').isNotVisible();
 
 -   **See: [#doesNotHaveAttribute](#doesNotHaveAttribute)**
 
-Assert that the [HTMLElement][] has an attribute with the provided `name`
+Assert that the [HTMLElement](https://developer.mozilla.org/docs/Web/HTML/Element) has an attribute with the provided `name`
 and optionally checks if the attribute `value` matches the provided text
 or regular expression.
 
@@ -304,7 +304,7 @@ assert.dom('input.password-input').hasAttribute('type', 'password');
 
 -   **See: [#hasAttribute](#hasAttribute)**
 
-Assert that the [HTMLElement][] has no attribute with the provided `name`.
+Assert that the [HTMLElement](https://developer.mozilla.org/docs/Web/HTML/Element) has no attribute with the provided `name`.
 
 **Aliases:** `hasNoAttribute`, `lacksAttribute`
 
@@ -323,7 +323,7 @@ assert.dom('input.username').hasNoAttribute('disabled');
 
 -   **See: [#isNotDisabled](#isNotDisabled)**
 
-Assert that the [HTMLElement][] or an [HTMLElement][] matching the
+Assert that the [HTMLElement](https://developer.mozilla.org/docs/Web/HTML/Element) or an [HTMLElement](https://developer.mozilla.org/docs/Web/HTML/Element) matching the
 `selector` is disabled.
 
 #### Parameters
@@ -340,7 +340,7 @@ assert.dom('.foo').isDisabled();
 
 -   **See: [#isDisabled](#isDisabled)**
 
-Assert that the [HTMLElement][] or an [HTMLElement][] matching the
+Assert that the [HTMLElement](https://developer.mozilla.org/docs/Web/HTML/Element) or an [HTMLElement](https://developer.mozilla.org/docs/Web/HTML/Element) matching the
 `selector` is not disabled.
 
 #### Parameters
@@ -357,7 +357,7 @@ assert.dom('.foo').isNotDisabled();
 
 -   **See: [#doesNotHaveClass](#doesNotHaveClass)**
 
-Assert that the [HTMLElement][] has the `expected` CSS class using
+Assert that the [HTMLElement](https://developer.mozilla.org/docs/Web/HTML/Element) has the `expected` CSS class using
 [`classList`](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList).
 
 #### Parameters
@@ -375,7 +375,7 @@ assert.dom('input[type="password"]').hasClass('secret-password-input');
 
 -   **See: [#hasClass](#hasClass)**
 
-Assert that the [HTMLElement][] does not have the `expected` CSS class using
+Assert that the [HTMLElement](https://developer.mozilla.org/docs/Web/HTML/Element) does not have the `expected` CSS class using
 [`classList`](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList).
 
 **Aliases:** `hasNoClass`, `lacksClass`
@@ -395,7 +395,7 @@ assert.dom('input[type="password"]').doesNotHaveClass('username-input');
 
 -   **See: [#includesText](#includesText)**
 
-Assert that the text of the [HTMLElement][] or an [HTMLElement][]
+Assert that the text of the [HTMLElement](https://developer.mozilla.org/docs/Web/HTML/Element) or an [HTMLElement](https://developer.mozilla.org/docs/Web/HTML/Element)
 matching the `selector` matches the `expected` text, using the
 [`textContent`](https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent)
 attribute and stripping/collapsing whitespace.
@@ -427,7 +427,7 @@ assert.dom('.foo').hasText(/[12]\d{3}/);
 
 -   **See: [#hasText](#hasText)**
 
-Assert that the `textContent` property of an [HTMLElement][] is not empty.
+Assert that the `textContent` property of an [HTMLElement](https://developer.mozilla.org/docs/Web/HTML/Element) is not empty.
 
 #### Parameters
 
@@ -443,7 +443,7 @@ assert.dom('button.share').hasAnyText();
 
 -   **See: [#hasText](#hasText)**
 
-Assert that the text of the [HTMLElement][] or an [HTMLElement][]
+Assert that the text of the [HTMLElement](https://developer.mozilla.org/docs/Web/HTML/Element) or an [HTMLElement](https://developer.mozilla.org/docs/Web/HTML/Element)
 matching the `selector` contains the given `text`, using the
 [`textContent`](https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent)
 attribute.
@@ -463,7 +463,7 @@ assert.dom('#title').includesText('Welcome');
 
 ### doesNotIncludeText
 
-Assert that the text of the [HTMLElement][] or an [HTMLElement][]
+Assert that the text of the [HTMLElement](https://developer.mozilla.org/docs/Web/HTML/Element) or an [HTMLElement](https://developer.mozilla.org/docs/Web/HTML/Element)
 matching the `selector` does not include the given `text`, using the
 [`textContent`](https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent)
 attribute.
@@ -486,7 +486,7 @@ assert.dom('#title').doesNotIncludeText('Welcome');
 -   **See: [#hasAnyValue](#hasAnyValue)**
 -   **See: [#hasNoValue](#hasNoValue)**
 
-Assert that the `value` property of an [HTMLInputElement][] matches
+Assert that the `value` property of an [HTMLInputElement](https://developer.mozilla.org/docs/Web/API/HTMLInputElement) matches
 the `expected` text or regular expression.
 
 If no `expected` value is provided, the assertion will fail if the
@@ -508,7 +508,7 @@ assert.dom('input.username').hasValue('HSimpson');
 -   **See: [#hasValue](#hasValue)**
 -   **See: [#hasNoValue](#hasNoValue)**
 
-Assert that the `value` property of an [HTMLInputElement][] is not empty.
+Assert that the `value` property of an [HTMLInputElement](https://developer.mozilla.org/docs/Web/API/HTMLInputElement) is not empty.
 
 #### Parameters
 
@@ -525,7 +525,7 @@ assert.dom('input.username').hasAnyValue();
 -   **See: [#hasValue](#hasValue)**
 -   **See: [#hasAnyValue](#hasAnyValue)**
 
-Assert that the `value` property of an [HTMLInputElement][] is empty.
+Assert that the `value` property of an [HTMLInputElement](https://developer.mozilla.org/docs/Web/API/HTMLInputElement) is empty.
 
 **Aliases:** `lacksValue`
 
