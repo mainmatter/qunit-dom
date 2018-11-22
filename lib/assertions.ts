@@ -454,12 +454,6 @@ export default class DOMAssertions {
     let result = expectedProperties.every(property => computedStyle[property] === expected[property]);
     let actual = {};
     expectedProperties.forEach(property => actual[property] = computedStyle[property]);
-    for (let property in expected) {
-      actual[property] = computedStyle[property];
-      if (!result) {
-        result = '' + expected[property] === actual[property];
-      }
-    }
     if (!message) {
       message = `Element ${this.targetDescription} has style "${JSON.stringify(expected)}"`;
     }

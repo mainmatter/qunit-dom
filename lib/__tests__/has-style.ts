@@ -24,6 +24,25 @@ describe('assert.dom(...).hasStyle()', () => {
     }]);
   });
 
+  test('succeeds for checking styles applied by CSS stylesheets', () => {
+    var styleNode = document.createElement('style');
+    styleNode.innerHTML = '.foo { color: blue }';
+    document.body.appendChild(styleNode);
+    assert.dom('.foo').hasStyle({
+      opacity: '1',
+      width: '200px',
+      'text-align': 'center',
+      color: 'blue',
+    });
+    expect(assert.results).toEqual([{
+      actual: { opacity: '1', width: '200px', 'text-align': 'center', color: 'blue' },
+      expected: { opacity: '1', width: '200px', 'text-align': 'center', color: 'blue' },
+      message: 'Element .foo has style \"{\"opacity\":\"1\",\"width\":\"200px\",\"text-align\":\"center\",\"color\":\"blue\"}\"',
+      result: true,
+    }]);
+    document.body.removeChild(styleNode);
+  });
+
   test('succeeds for partial style checking', () => {
     assert.dom('.foo').hasStyle({
       opacity: '1',
