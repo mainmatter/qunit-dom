@@ -1,5 +1,25 @@
 # Changelog
 
+## v0.8.1 (2018-11-23)
+
+#### :rocket: Enhancement
+* [#168](https://github.com/simplabs/qunit-dom/pull/168) Add `assert.dom(...).hasStyle()` assertion ([@selvagsz](https://github.com/selvagsz))
+
+#### :memo: Documentation
+* [#202](https://github.com/simplabs/qunit-dom/pull/202) docs: Use `{@link}` instead of broken empty markdown links ([@Turbo87](https://github.com/Turbo87))
+
+#### :house: Internal
+* [#174](https://github.com/simplabs/qunit-dom/pull/174)  CI: Use `--runInBand` option of Jest to speed up the tests  ([@Turbo87](https://github.com/Turbo87))
+* [#161](https://github.com/simplabs/qunit-dom/pull/161) yarn: Add `integrity` hashes to the lockfile ([@Turbo87](https://github.com/Turbo87))
+* [#142](https://github.com/simplabs/qunit-dom/pull/142) Fix CI issues ([@Turbo87](https://github.com/Turbo87))
+* [#134](https://github.com/simplabs/qunit-dom/pull/134) tests: Adjust `setResolver()` import ([@Turbo87](https://github.com/Turbo87))
+
+#### Committers: 3
+- Jessica Jordan ([@jessica-jordan](https://github.com/jessica-jordan))
+- Selva ([@selvagsz](https://github.com/selvagsz))
+- Tobias Bieniek ([@Turbo87](https://github.com/Turbo87))
+
+
 ## v0.8.0 (2018-09-06)
 
 #### :boom: Breaking Change
