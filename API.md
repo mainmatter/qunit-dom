@@ -73,6 +73,9 @@
     -   [hasNoValue](#hasnovalue)
         -   [Parameters](#parameters-22)
         -   [Examples](#examples-22)
+-   [hasStyle](#hasstyle)
+    -   [Parameters](#parameters-23)
+    -   [Examples](#examples-23)
 
 ## assert.dom()
 
@@ -537,4 +540,25 @@ Assert that the `value` property of an [HTMLInputElement](https://developer.mozi
 
 ```javascript
 assert.dom('input.username').hasNoValue();
+```
+
+## hasStyle
+
+-   **See: [#hasClass](#hasClass)**
+
+Assert that the [HTMLElement][] has the `expected` style declarations using
+[`window.getComputedStyle`](https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle).
+
+### Parameters
+
+-   `expected` **[object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** 
+-   `message` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)?** 
+
+### Examples
+
+```javascript
+assert.dom('.progress-bar').hasStyle({
+  opacity: 1,
+  display: 'block'
+});
 ```

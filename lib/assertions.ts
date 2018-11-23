@@ -431,6 +431,36 @@ export default class DOMAssertions {
   }
 
   /**
+   * Assert that the [HTMLElement][] has the `expected` style declarations using
+   * [`window.getComputedStyle`](https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle).
+   *
+   * @name hasStyle
+   * @param {object} expected
+   * @param {string?} message
+   *
+   * @example
+   * assert.dom('.progress-bar').hasStyle({
+   *   opacity: 1,
+   *   display: 'block'
+   * });
+   *
+   * @see {@link #hasClass}
+   */
+  hasStyle(expected: object, message?: string): void {
+    let element = this.findTargetElement();
+    if (!element) return;
+    let computedStyle = window.getComputedStyle(element);
+    let expectedProperties = Object.keys(expected);
+    let result = expectedProperties.every(property => computedStyle[property] === expected[property]);
+    let actual = {};
+    expectedProperties.forEach(property => actual[property] = computedStyle[property]);
+    if (!message) {
+      message = `Element ${this.targetDescription} has style "${JSON.stringify(expected)}"`;
+    }
+    this.pushResult({ result, actual, expected, message });
+  }
+
+  /**
    * Assert that the text of the {@link HTMLElement} or an {@link HTMLElement}
    * matching the `selector` matches the `expected` text, using the
    * [`textContent`](https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent)
