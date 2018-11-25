@@ -8,7 +8,7 @@ import TestAssertions from '../helpers/test-assertions';
  * won't work. As a result, we need to use Ember's test infrastructure to correctly assess
  * visibility, as those tests run in a browser environment.
  *
- * Tests for the success cases of isVisible can be found in tests/acceptance/qunit-dom-test.js
+ * Additional tests cases of isVisible can be found in tests/acceptance/qunit-dom-test.js
  */
 describe('assert.dom(...).isVisible()', () => {
   let assert;
@@ -42,6 +42,21 @@ describe('assert.dom(...).isVisible()', () => {
         actual: 'Element h1 is not visible',
         expected: 'Element h1 is visible',
         message: 'foo',
+        result: false,
+      }]);
+    });
+  });
+
+  describe('with count option', () => {
+    test('fails if element is missing', () => {
+      document.body.innerHTML = '<div></div>'.repeat(3);
+
+      assert.dom('span').isVisible({ count: 3 });
+
+      expect(assert.results).toEqual([{
+        actual: 'Element span is not visible',
+        expected: 'Element span is visible 3 times',
+        message: 'Element span is visible 3 times',
         result: false,
       }]);
     });

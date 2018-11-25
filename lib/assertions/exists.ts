@@ -1,14 +1,10 @@
 export default function exists(options, message) {
-  if (typeof this.target !== 'string') {
-    throw new TypeError(`Unexpected Parameter: ${this.target}`)
-  }
-
   if (typeof options === 'string') {
     message = options;
     options = undefined;
   }
 
-  let elements = this.rootElement.querySelectorAll(this.target);
+  let elements = this.findElements(this.target);
 
   let expectedCount = options ? options.count : null;
 
