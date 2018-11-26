@@ -250,12 +250,14 @@ but not necessarily in the viewport.
 
 #### Parameters
 
+-   `options` **[object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)?** 
 -   `message` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)?** 
 
 #### Examples
 
 ```javascript
-assert.dom('.foo').isVisible();
+assert.dom('#title').isVisible();
+assert.dom('.choice').isVisible({ count: 4 });
 ```
 
 ### isNotVisible

@@ -6,7 +6,6 @@ import isNotChecked from './assertions/is-not-checked';
 import isRequired from './assertions/is-required';
 import isNotRequired from './assertions/is-not-required';
 import isVisible from './assertions/is-visible';
-import isNotVisible from './assertions/is-not-visible';
 import isDisabled from './assertions/is-disabled';
 
 import elementToString from './helpers/element-to-string';
@@ -179,8 +178,53 @@ export default class DOMAssertions {
    *
    * @see {@link #isNotVisible}
    */
-  isVisible(message?: string): void {
-    isVisible.call(this, message);
+  isVisible(message?: string): void;
+
+  /**
+   * Assert that the {@link HTMLElement} or an {@link HTMLElement} matching the
+   * `selector` exists and is visible.
+   *
+   * Visibility is determined by asserting that:
+   *
+   * - the element's offsetWidth and offsetHeight are non-zero
+   * - any of the element's DOMRect objects have a non-zero size
+   *
+   * Additionally, visibility in this case means that the element is visible on the page,
+   * but not necessarily in the viewport.
+   *
+   * @param {object?} options
+   * @param {string?} message
+   *
+   * @example
+   * assert.dom('.choice').isVisible({ count: 4 });
+   *
+   * @see {@link #isNotVisible}
+   */
+  isVisible(options: { count: number }, message?: string): void;
+
+  /**
+   * Assert that the {@link HTMLElement} or an {@link HTMLElement} matching the
+   * `selector` exists and is visible.
+   *
+   * Visibility is determined by asserting that:
+   *
+   * - the element's offsetWidth and offsetHeight are non-zero
+   * - any of the element's DOMRect objects have a non-zero size
+   *
+   * Additionally, visibility in this case means that the element is visible on the page,
+   * but not necessarily in the viewport.
+   *
+   * @param {object?} options
+   * @param {string?} message
+   *
+   * @example
+   * assert.dom('#title').isVisible();
+   * assert.dom('.choice').isVisible({ count: 4 });
+   *
+   * @see {@link #isNotVisible}
+   */
+  isVisible(options: { count: number } | string, message?: string): void {
+    isVisible.call(this, options, message);
   }
 
   /**
@@ -202,9 +246,9 @@ export default class DOMAssertions {
    *
    * @see {@link #isVisible}
    */
-  isNotVisible(message?: string): void {
-    isNotVisible.call(this, message);
-  }
+   isNotVisible(message?: string): void {
+     isVisible.call(this, { count: 0 }, message);
+   }
 
   /**
    * Assert that the {@link HTMLElement} has an attribute with the provided `name`.
@@ -761,6 +805,25 @@ export default class DOMAssertions {
 
     } else if (this.target instanceof Element) {
       return this.target;
+
+    } else {
+      throw new TypeError(`Unexpected Parameter: ${this.target}`)
+    }
+  }
+
+
+  /**
+   * Finds a collection of HTMLElement instances from target using querySelectorAll
+   * @private
+   * @returns (HTMLElement[]) an array of HTMLElement instances
+   * @throws TypeError will be thrown if target is an unrecognized type
+   */
+  private findElements(): HTMLElement[] {
+    if (this.target === null) {
+      return [];
+
+    } else if (typeof this.target === 'string') {
+      return Array.from(this.rootElement.querySelectorAll(this.target));
 
     } else {
       throw new TypeError(`Unexpected Parameter: ${this.target}`)
