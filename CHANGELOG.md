@@ -1,5 +1,14 @@
 # Changelog
 
+## v0.8.2 (2018-11-27)
+
+#### :rocket: Enhancement
+* [#204](https://github.com/simplabs/qunit-dom/pull/204) Adds support for `count` option to `isVisible` assertion ([@lukemelia](https://github.com/lukemelia))
+
+#### Committers: 1
+- Luke Melia ([@lukemelia](https://github.com/lukemelia))
+
+
 ## v0.8.1 (2018-11-23)
 
 #### :rocket: Enhancement
