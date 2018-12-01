@@ -73,9 +73,12 @@
     -   [hasNoValue](#hasnovalue)
         -   [Parameters](#parameters-22)
         -   [Examples](#examples-22)
+    -   [matchesSelector](#matchesselector)
+        -   [Parameters](#parameters-23)
+        -   [Examples](#examples-23)
 -   [hasStyle](#hasstyle)
-    -   [Parameters](#parameters-23)
-    -   [Examples](#examples-23)
+    -   [Parameters](#parameters-24)
+    -   [Examples](#examples-24)
 
 ## assert.dom()
 
@@ -542,6 +545,22 @@ Assert that the `value` property of an [HTMLInputElement](https://developer.mozi
 
 ```javascript
 assert.dom('input.username').hasNoValue();
+```
+
+### matchesSelector
+
+Assert that the target selector retrieves only Elements that are also retrieved by
+compareSelector.
+
+#### Parameters
+
+-   `compareSelector` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+-   `message` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)?** 
+
+#### Examples
+
+```javascript
+assert.dom('p.red').matchesSelector('div.wrapper p:last-child')
 ```
 
 ## hasStyle

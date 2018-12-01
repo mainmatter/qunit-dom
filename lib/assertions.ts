@@ -7,7 +7,7 @@ import isRequired from './assertions/is-required';
 import isNotRequired from './assertions/is-not-required';
 import isVisible from './assertions/is-visible';
 import isDisabled from './assertions/is-disabled';
-
+import matchesSelector from './assertions/matches-selector';
 import elementToString from './helpers/element-to-string';
 import collapseWhitespace from './helpers/collapse-whitespace';
 
@@ -763,6 +763,42 @@ export default class DOMAssertions {
 
   lacksValue(message?: string): void {
     this.hasNoValue(message);
+  }
+
+  /**
+   * Assert that the target selector retrieves only Elements that are also retrieved by
+   * compareSelector.
+   *
+   * @param {string} compareSelector
+   * @param {string?} message
+   *
+   * @example
+   * assert.dom('p.red').matchesSelector('div.wrapper p:last-child')
+   */
+  matchesSelector(compareSelector: string, message?: string) {
+    let [targetElements, matchFailures] = matchesSelector(this.target, compareSelector);
+    let singleElement: boolean = targetElements === 1;
+
+    if (matchFailures === 0) {
+      if (!message) {
+        message = singleElement ?
+          `The element selected by ${this.target} also matches the selector ${compareSelector}.` :
+          `${targetElements} elements, selected by ${this.target}, also match the selector ${compareSelector}.`
+      }
+      this.pushResult({
+        result: true, expected: targetElements, actual: targetElements,
+        message
+      });
+    } else {
+      let difference = targetElements - matchFailures;
+      // there were failures when matching.
+      if (!message) {
+        message = singleElement ?
+          `The element selected by ${this.target} did not also match the selector ${compareSelector}.` :
+          `${difference} out of ${targetElements} elements selected by ${this.target} did not also match the selector ${compareSelector}.`;
+      }
+      this.pushResult({ result: false, expected: targetElements, actual: difference, message });
+    }
   }
 
   /**
