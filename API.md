@@ -76,9 +76,12 @@
     -   [matchesSelector](#matchesselector)
         -   [Parameters](#parameters-23)
         -   [Examples](#examples-23)
+    -   [doesNotMatchSelector](#doesnotmatchselector)
+        -   [Parameters](#parameters-24)
+        -   [Examples](#examples-24)
 -   [hasStyle](#hasstyle)
-    -   [Parameters](#parameters-24)
-    -   [Examples](#examples-24)
+    -   [Parameters](#parameters-25)
+    -   [Examples](#examples-25)
 
 ## assert.dom()
 
@@ -549,7 +552,7 @@ assert.dom('input.username').hasNoValue();
 
 ### matchesSelector
 
-Assert that the target selector retrieves only Elements that are also retrieved by
+Assert that the target selector selects only Elements that are also selected by
 compareSelector.
 
 #### Parameters
@@ -561,6 +564,22 @@ compareSelector.
 
 ```javascript
 assert.dom('p.red').matchesSelector('div.wrapper p:last-child')
+```
+
+### doesNotMatchSelector
+
+Assert that the target selector selects only Elements that are not also selected by
+compareSelector.
+
+#### Parameters
+
+-   `compareSelector` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+-   `message` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)?** 
+
+#### Examples
+
+```javascript
+assert.dom('input').doesNotMatchSelector('input[disabled]')
 ```
 
 ## hasStyle
