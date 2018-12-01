@@ -766,7 +766,7 @@ export default class DOMAssertions {
   }
 
   /**
-   * Assert that the target selector retrieves only Elements that are also retrieved by
+   * Assert that the target selector selects only Elements that are also selected by
    * compareSelector.
    *
    * @param {string} compareSelector
@@ -799,6 +799,16 @@ export default class DOMAssertions {
     }
   }
 
+  /**
+   * Assert that the target selector selects only Elements that are not also selected by
+   * compareSelector.
+   *
+   * @param {string} compareSelector
+   * @param {string?} message
+   *
+   * @example
+   * assert.dom('input').doesNotMatchSelector('input[disabled]')
+   */
   doesNotMatchSelector(compareSelector: string, message?: string) {
     let [targetElements, matchFailures] = matchesSelector(this.target, compareSelector);
     let singleElement: boolean = targetElements === 1;
