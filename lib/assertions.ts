@@ -836,7 +836,7 @@ export default class DOMAssertions {
       return [];
 
     } else if (typeof this.target === 'string') {
-      return Array.from(this.rootElement.querySelectorAll(this.target));
+      return [].slice.call(this.rootElement.querySelectorAll(this.target));
 
     } else {
       throw new TypeError(`Unexpected Parameter: ${this.target}`)
