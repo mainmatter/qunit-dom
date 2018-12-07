@@ -512,6 +512,10 @@ export default class DOMAssertions {
    *
    * `expected` can also be a regular expression.
    *
+   * > Note: This assertion will collapse whitespace if the type you pass in is a string.
+   * > If you are testing specifically for whitespace integrity, pass your expected text
+   * > in as a RegEx pattern.
+   *
    * **Aliases:** `matchesText`
    *
    * @param {string|RegExp} expected
@@ -593,6 +597,11 @@ export default class DOMAssertions {
    * [`textContent`](https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent)
    * attribute.
    *
+   * > Note: This assertion will collapse whitespace in `textContent` before searching.
+   * > If you would like to assert on a string that *should* contain line breaks, tabs,
+   * > more than one space in a row, or starting/ending whitespace, use the {@link #hasText}
+   * > selector and pass your expected text in as a RegEx pattern.
+   * 
    * **Aliases:** `containsText`, `hasTextContaining`
    *
    * @param {string} text
@@ -614,6 +623,10 @@ export default class DOMAssertions {
 
     if (!message) {
       message = `Element ${this.targetDescription} has text containing "${text}"`;
+    }
+
+    if (!result && text !== collapseWhitespace(text)) {
+      console.warn('The `.includesText()`, `.containsText()`, and `.hasTextContaining()` assertions collapse whitespace. The text you are checking for contains whitespace that may have made your test fail incorrectly. Try the `.hasText()` assertion passing in your expected text as a RegExp pattern. Your text:\n' + text);
     }
 
     this.pushResult({ result, actual, expected, message });

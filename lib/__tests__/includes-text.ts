@@ -122,6 +122,15 @@ describe('assert.dom(...).includesText()', () => {
         result: false,
       }]);
     });
+
+    test('explains failures to the user via `console.warn` if expected text contains collapsable whitespace', () => {
+      const warnSpy = jest.spyOn(global.console, 'warn').mockImplementation(() => {});
+
+      assert.dom(element).includesText('foo\n  bar');
+
+      expect(warnSpy.mock.calls[0][0]).toMatch('whitespace');
+      warnSpy.mockRestore();
+    });
   });
 
   describe('with selector', () => {
