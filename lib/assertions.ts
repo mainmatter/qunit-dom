@@ -548,7 +548,7 @@ export default class DOMAssertions {
     }
 
     if (!result && text !== collapseWhitespace(text)) {
-      message = message + '\n\nYour expected text contains spacing that is not preserved in this assertion. Try the `.hasText()` assertion passing in your expected text as a RegExp pattern.';
+      console.warn('The `.includesText()`, `.containsText()`, and `.hasTextContaining()` assertions collapse whitespace. The text you are checking for contains whitespace that may have made your test fail incorrectly. Try the `.hasText()` assertion passing in your expected text as a RegExp pattern. Your text:\n' + text);
     }
 
     this.pushResult({ result, actual, expected, message });
