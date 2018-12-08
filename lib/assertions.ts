@@ -776,25 +776,26 @@ export default class DOMAssertions {
    * assert.dom('p.red').matchesSelector('div.wrapper p:last-child')
    */
   matchesSelector(compareSelector: string, message?: string) {
-    const targetElements = this.findElements();
+    let targetElements = this.target instanceof Element ? [this.target] : this.findElements();
     let targets = targetElements.length;
     let matchFailures = matchesSelector(targetElements, compareSelector);
     let singleElement: boolean = targets === 1;
+    let selectedByPart = (this.target instanceof Element) ? 'passed' : `selected by ${this.target}`;
 
     if (matchFailures === 0) {
       // no failures matching.
       if (!message) {
         message = singleElement ?
-          `The element selected by ${this.target} also matches the selector ${compareSelector}.` :
+          `The element ${selectedByPart} also matches the selector ${compareSelector}.` :
           `${targets} elements, selected by ${this.target}, also match the selector ${compareSelector}.`
       }
-      this.pushResult({result: true, expected: targets, actual: targets, message});
+      this.pushResult({ result: true, expected: targets, actual: targets, message });
     } else {
       let difference = targets - matchFailures;
       // there were failures when matching.
       if (!message) {
         message = singleElement ?
-          `The element selected by ${this.target} did not also match the selector ${compareSelector}.` :
+          `The element ${selectedByPart} did not also match the selector ${compareSelector}.` :
           `${matchFailures} out of ${targets} elements selected by ${this.target} did not also match the selector ${compareSelector}.`;
       }
       this.pushResult({ result: false, expected: targets, actual: difference, message });
@@ -812,16 +813,17 @@ export default class DOMAssertions {
    * assert.dom('input').doesNotMatchSelector('input[disabled]')
    */
   doesNotMatchSelector(compareSelector: string, message?: string) {
-    let targetElements = this.findElements();
+    let targetElements = this.target instanceof Element ? [this.target] : this.findElements();
     let targets = targetElements.length;
     let matchFailures = matchesSelector(targetElements, compareSelector);
     let singleElement: boolean = targets === 1;
+    let selectedByPart = this.target instanceof Element ? 'passed' : `selected by ${this.target}`;
 
     if (matchFailures === targets) {
       // the assertion is successful because no element matched the other selector.
       if (!message) {
         message = singleElement ?
-          `The element selected by ${this.target} did not also match the selector ${compareSelector}.` :
+          `The element ${selectedByPart} did not also match the selector ${compareSelector}.` :
           `${targets} elements, selected by ${this.target}, did not also match the selector ${compareSelector}.`;
       }
       this.pushResult({ result: true, expected: 0, actual: 0, message })
@@ -830,8 +832,8 @@ export default class DOMAssertions {
       // the assertion fails because at least one element matched the other selector.
       if (!message) {
         message = singleElement ?
-          `The element selected by ${this.target} did also match the selector ${compareSelector}.` :
-          `${difference} elements out of ${targets}, selected by ${this.target}, did also match the selector ${compareSelector}.`;
+          `The element ${selectedByPart} must not also match the selector ${compareSelector}.` :
+          `${difference} elements out of ${targets}, selected by ${this.target}, must not also match the selector ${compareSelector}.`;
       }
       this.pushResult({ result: false, expected: 0, actual: difference, message })
     }

@@ -11,8 +11,7 @@ describe('assert.dom(...).matchesSelector()', () => {
   });
 
   describe('success scenarios', () => {
-    test('succeeds for one element matching the selector', () => {
-
+    test('succeeds for one element (selector passed) matching the selector', () => {
       assert.dom('p.last').matchesSelector('div>p:last-child');
 
       expect(assert.results).toEqual([{
@@ -23,8 +22,19 @@ describe('assert.dom(...).matchesSelector()', () => {
       }]);
     });
 
-    test('succeeds for multiple elements, all sucessfully matched', () => {
+    test('succeeds for one element (element passed) matching compareSelector', () => {
+      const element = document.querySelector('p.last');
+      assert.dom(element).matchesSelector('div>p:last-child');
 
+      expect(assert.results).toEqual([{
+        actual: 1,
+        expected: 1,
+        message: 'The element passed also matches the selector div>p:last-child.',
+        result: true
+      }]);
+    })
+
+    test('succeeds for multiple elements, all sucessfully matched', () => {
       assert.dom('p').matchesSelector('div>p');
 
       expect(assert.results).toEqual([{
@@ -37,8 +47,7 @@ describe('assert.dom(...).matchesSelector()', () => {
   });
 
   describe('failure scenarios', () => {
-    test('one element not matching compareSelector', () => {
-
+    test('one element (selector passed) not matching compareSelector', () => {
       assert.dom('p.first').matchesSelector('div>p:last-child');
 
       expect(assert.results).toEqual([{
@@ -49,8 +58,19 @@ describe('assert.dom(...).matchesSelector()', () => {
       }]);
     });
 
-    test('multiple elements not all matching compareSelector', () => {
+    test('one element (element passed) not matching compareSelector', () => {
+      const element = document.querySelector('p.first');
+      assert.dom(element).matchesSelector('div>p:last-child');
 
+      expect(assert.results).toEqual([{
+        actual: 0,
+        expected: 1,
+        message: 'The element passed did not also match the selector div>p:last-child.',
+        result: false
+      }]);
+    });
+
+    test('multiple elements not all matching compareSelector', () => {
       assert.dom('p').matchesSelector('p + p');
 
       expect(assert.results).toEqual([{
