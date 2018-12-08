@@ -1,15 +1,8 @@
 export default function matchesSelector(
-  targetSelector: string | Element,
+  elements: Array<Element>,
   compareSelector: string
-): Array<number> {
-  let targetElements: Array<Element> =
-    typeof targetSelector === 'string'
-      ? Array.from(document.querySelectorAll(targetSelector))
-      : [targetSelector];
+): number {
+  let failures = elements.filter(it => !it.matches(compareSelector));
 
-  let failures = targetElements.reduce(function(acc, element) {
-    return element.matches(compareSelector) ? acc : acc + 1;
-  }, 0);
-
-  return [targetElements.length, failures];
+  return failures.length;
 }
