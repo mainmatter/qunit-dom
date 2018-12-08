@@ -7,11 +7,11 @@ describe('assert.dom(...).matchesSelector()', () => {
 
   beforeEach(() => {
     assert = new TestAssertions();
+    document.body.innerHTML = '<div><p class="first"></p><p></p><p class="last"></p></div>';
   });
 
-  describe('matchesSelector: success scenarios', () => {
+  describe('success scenarios', () => {
     test('succeeds for one element matching the selector', () => {
-      document.body.innerHTML = '<div><p class="first"></p><p></p><p class="last"></p></div>';
 
       assert.dom('p.last').matchesSelector('div>p:last-child');
 
@@ -24,7 +24,6 @@ describe('assert.dom(...).matchesSelector()', () => {
     });
 
     test('succeeds for multiple elements, all sucessfully matched', () => {
-      document.body.innerHTML = '<div><p class="first"></p><p></p><p class="last"></p></div>.';
 
       assert.dom('p').matchesSelector('div>p');
 
@@ -37,9 +36,8 @@ describe('assert.dom(...).matchesSelector()', () => {
     });
   });
 
-  describe('matchesSelector: failure scenarios', () => {
-    test('fails for one element not matching compareSelector', () => {
-      document.body.innerHTML = '<div><p class="first"></p><p></p><p class="last"></p></div>';
+  describe('failure scenarios', () => {
+    test('one element not matching compareSelector', () => {
 
       assert.dom('p.first').matchesSelector('div>p:last-child');
 
@@ -51,8 +49,7 @@ describe('assert.dom(...).matchesSelector()', () => {
       }]);
     });
 
-    test('fails for multiple element not all matching compareSelector', () => {
-      document.body.innerHTML = '<div><p class="first"></p><p></p><p class="last"></p></div>';
+    test('multiple elements not all matching compareSelector', () => {
 
       assert.dom('p').matchesSelector('p + p');
 

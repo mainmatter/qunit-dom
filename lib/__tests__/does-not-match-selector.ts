@@ -7,11 +7,11 @@ describe('assert.dom(...).doesNotMatchSelector()', () => {
 
   beforeEach(() => {
     assert = new TestAssertions();
+    document.body.innerHTML = '<div><p class="first"></p><p></p><p class="last"></p></div>';
   });
 
   describe('success scenarios', () => {
-    test('succeeds for one element not matching compareSelector', () => {
-      document.body.innerHTML = '<div><p class="first"></p><p></p><p class="last"></p></div>';
+    test('one element not matching compareSelector', () => {
 
       assert.dom('p.first').doesNotMatchSelector('p + p');
 
@@ -23,8 +23,7 @@ describe('assert.dom(...).doesNotMatchSelector()', () => {
       }]);
     });
 
-    test('succeeds for multiple elements not matching compareSelector', () => {
-      document.body.innerHTML = '<div><p class="first"></p><p></p><p class="last"></p></div>';
+    test('multiple elements all not matching compareSelector', () => {
 
       assert.dom('p + p').doesNotMatchSelector('div>p.first');
 
@@ -38,8 +37,7 @@ describe('assert.dom(...).doesNotMatchSelector()', () => {
   });
 
   describe('failure scenarios', () => {
-    test('succeeds for one element not matching compareSelector', () => {
-      document.body.innerHTML = '<div><p class="first"></p><p></p><p class="last"></p></div>';
+    test('one element matching compareSelector', () => {
 
       assert.dom('p.last').doesNotMatchSelector('div>p:nth-child(3)');
 
@@ -51,8 +49,7 @@ describe('assert.dom(...).doesNotMatchSelector()', () => {
       }]);
     });
 
-    test('succeeds for multiple elements not matching compareSelector', () => {
-      document.body.innerHTML = '<div><p class="first"></p><p></p><p class="last"></p></div>';
+    test('multiple elements, some matching compareSelector', () => {
 
       assert.dom('p').doesNotMatchSelector('div>p');
 
