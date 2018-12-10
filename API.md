@@ -407,6 +407,10 @@ attribute and stripping/collapsing whitespace.
 
 `expected` can also be a regular expression.
 
+> Note: This assertion will collapse whitespace if the type you pass in is a string.
+> If you are testing specifically for whitespace integrity, pass your expected text
+> in as a RegEx pattern.
+
 **Aliases:** `matchesText`
 
 #### Parameters
