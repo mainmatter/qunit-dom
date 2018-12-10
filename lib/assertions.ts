@@ -10,6 +10,7 @@ import isDisabled from './assertions/is-disabled';
 
 import elementToString from './helpers/element-to-string';
 import collapseWhitespace from './helpers/collapse-whitespace';
+import { toArray } from './helpers/node-list';
 
 export default class DOMAssertions {
   constructor(private target: string | Element | null, private rootElement: Element, private testContext: Assert) {}
@@ -836,7 +837,7 @@ export default class DOMAssertions {
       return [];
 
     } else if (typeof this.target === 'string') {
-      return [].slice.call(this.rootElement.querySelectorAll(this.target));
+      return toArray(this.rootElement.querySelectorAll(this.target));
 
     } else {
       throw new TypeError(`Unexpected Parameter: ${this.target}`)
