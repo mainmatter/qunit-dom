@@ -3,13 +3,13 @@
 
 export default function visible(el) {
   if (el === null) return false;
-  if (el.offsetWidth === 0 || el.offsetHeight === 0) return false;
+  if (el.offsetWidth === 0 && el.offsetHeight === 0) return false;
 
   let clientRects = el.getClientRects();
   if (clientRects.length === 0) return false;
   for (let i = 0; i < clientRects.length; i++) {
     let rect = clientRects[i];
-    if (rect.width !== 0 && rect.height !== 0) return true;
+    if (rect.width !== 0 || rect.height !== 0) return true;
   }
 
   return false;
