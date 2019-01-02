@@ -76,6 +76,9 @@
 -   [hasStyle](#hasstyle)
     -   [Parameters](#parameters-23)
     -   [Examples](#examples-23)
+-   [hasPseudoElementStyle](#haspseudoelementstyle)
+    -   [Parameters](#parameters-24)
+    -   [Examples](#examples-24)
 
 ## assert.dom()
 
@@ -571,5 +574,26 @@ Assert that the [HTMLElement][] has the `expected` style declarations using
 assert.dom('.progress-bar').hasStyle({
   opacity: 1,
   display: 'block'
+});
+```
+
+## hasPseudoElementStyle
+
+-   **See: [#hasClass](#hasClass)**
+
+Assert that the pseudo element for `selector` of the [HTMLElement][] has the `expected` style declarations using
+[`window.getComputedStyle`](https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle).
+
+### Parameters
+
+-   `selector` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+-   `expected` **[object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** 
+-   `message` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)?** 
+
+### Examples
+
+```javascript
+assert.dom('.progress-bar').hasPseudoElementStyle(':after', {
+  content: '";"',
 });
 ```

@@ -9,4 +9,9 @@
 <p>You can see me, too.</p>
 <input id="hidden-input" type="hidden">
 
+<style>
+  #with-pseudo-element::after { content: ";"; }
+</style>
+<div id="with-pseudo-element">There is more to me.</div>
+
 {{outlet}}
