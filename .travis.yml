@@ -21,6 +21,7 @@ install:
   - yarn install --no-lockfile
 
 script:
+  - yarn lint
   - yarn run build
   - yarn run test:coverage --runInBand
   - yarn run test:ember

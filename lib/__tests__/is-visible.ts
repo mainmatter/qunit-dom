@@ -23,12 +23,14 @@ describe('assert.dom(...).isVisible()', () => {
 
       assert.dom('h2').isVisible();
 
-      expect(assert.results).toEqual([{
-        actual: 'Element h2 is not visible',
-        expected: 'Element h2 is visible',
-        message: 'Element h2 is visible',
-        result: false
-      }]);
+      expect(assert.results).toEqual([
+        {
+          actual: 'Element h2 is not visible',
+          expected: 'Element h2 is visible',
+          message: 'Element h2 is visible',
+          result: false,
+        },
+      ]);
     });
   });
 
@@ -38,12 +40,14 @@ describe('assert.dom(...).isVisible()', () => {
 
       assert.dom('h1').isVisible('foo');
 
-      expect(assert.results).toEqual([{
-        actual: 'Element h1 is not visible',
-        expected: 'Element h1 is visible',
-        message: 'foo',
-        result: false,
-      }]);
+      expect(assert.results).toEqual([
+        {
+          actual: 'Element h1 is not visible',
+          expected: 'Element h1 is visible',
+          message: 'foo',
+          result: false,
+        },
+      ]);
     });
   });
 
@@ -53,12 +57,14 @@ describe('assert.dom(...).isVisible()', () => {
 
       assert.dom('span').isVisible({ count: 3 });
 
-      expect(assert.results).toEqual([{
-        actual: 'Element span is not visible',
-        expected: 'Element span is visible 3 times',
-        message: 'Element span is visible 3 times',
-        result: false,
-      }]);
+      expect(assert.results).toEqual([
+        {
+          actual: 'Element span is not visible',
+          expected: 'Element span is visible 3 times',
+          message: 'Element span is visible 3 times',
+          result: false,
+        },
+      ]);
     });
   });
 
@@ -67,6 +73,8 @@ describe('assert.dom(...).isVisible()', () => {
     expect(() => assert.dom(true).isVisible()).toThrow('Unexpected Parameter: true');
     expect(() => assert.dom(undefined).isVisible()).toThrow('Unexpected Parameter: undefined');
     expect(() => assert.dom({}).isVisible()).toThrow('Unexpected Parameter: [object Object]');
-    expect(() => assert.dom(document).isVisible()).toThrow('Unexpected Parameter: [object Document]');
+    expect(() => assert.dom(document).isVisible()).toThrow(
+      'Unexpected Parameter: [object Document]'
+    );
   });
 });

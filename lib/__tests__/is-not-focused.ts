@@ -1,6 +1,6 @@
 /* eslint-env jest */
 
-import TestAssertions from "../helpers/test-assertions";
+import TestAssertions from '../helpers/test-assertions';
 
 describe('assert.dom(...).isNotFocused()', () => {
   let assert;
@@ -14,10 +14,12 @@ describe('assert.dom(...).isNotFocused()', () => {
 
     assert.dom('h1').isNotFocused('foo');
 
-    expect(assert.results).toEqual([{
-      message: 'foo',
-      result: true,
-    }]);
+    expect(assert.results).toEqual([
+      {
+        message: 'foo',
+        result: true,
+      },
+    ]);
   });
 
   describe('with HTMLElement', () => {
@@ -33,10 +35,12 @@ describe('assert.dom(...).isNotFocused()', () => {
 
       assert.dom(element).isNotFocused();
 
-      expect(assert.results).toEqual([{
-        message: 'Element input[type="email"] is not focused',
-        result: true,
-      }]);
+      expect(assert.results).toEqual([
+        {
+          message: 'Element input[type="email"] is not focused',
+          result: true,
+        },
+      ]);
     });
 
     test('fails if element is focused', () => {
@@ -44,19 +48,23 @@ describe('assert.dom(...).isNotFocused()', () => {
 
       assert.dom(element).isNotFocused();
 
-      expect(assert.results).toEqual([{
-        message: 'Element input[type="email"] is not focused',
-        result: false,
-      }]);
+      expect(assert.results).toEqual([
+        {
+          message: 'Element input[type="email"] is not focused',
+          result: false,
+        },
+      ]);
     });
 
     test('fails for missing element', () => {
       assert.dom(null).isNotFocused();
 
-      expect(assert.results).toEqual([{
-        message: 'Element <unknown> should exist',
-        result: false,
-      }]);
+      expect(assert.results).toEqual([
+        {
+          message: 'Element <unknown> should exist',
+          result: false,
+        },
+      ]);
     });
   });
 
@@ -70,10 +78,12 @@ describe('assert.dom(...).isNotFocused()', () => {
 
       assert.dom('input').isNotFocused();
 
-      expect(assert.results).toEqual([{
-        message: 'Element input is not focused',
-        result: true,
-      }]);
+      expect(assert.results).toEqual([
+        {
+          message: 'Element input is not focused',
+          result: true,
+        },
+      ]);
     });
 
     test('fails if element is focused', () => {
@@ -81,19 +91,23 @@ describe('assert.dom(...).isNotFocused()', () => {
 
       assert.dom('input').isNotFocused();
 
-      expect(assert.results).toEqual([{
-        message: 'Element input is not focused',
-        result: false,
-      }]);
+      expect(assert.results).toEqual([
+        {
+          message: 'Element input is not focused',
+          result: false,
+        },
+      ]);
     });
 
     test('fails for missing element', () => {
       assert.dom('input[type="password"]').isNotFocused();
 
-      expect(assert.results).toEqual([{
-        message: 'Element input[type="password"] should exist',
-        result: false,
-      }]);
+      expect(assert.results).toEqual([
+        {
+          message: 'Element input[type="password"] should exist',
+          result: false,
+        },
+      ]);
     });
   });
 
@@ -102,6 +116,8 @@ describe('assert.dom(...).isNotFocused()', () => {
     expect(() => assert.dom(true).isNotFocused()).toThrow('Unexpected Parameter: true');
     expect(() => assert.dom(undefined).isNotFocused()).toThrow('Unexpected Parameter: undefined');
     expect(() => assert.dom({}).isNotFocused()).toThrow('Unexpected Parameter: [object Object]');
-    expect(() => assert.dom(document).isNotFocused()).toThrow('Unexpected Parameter: [object Document]');
+    expect(() => assert.dom(document).isNotFocused()).toThrow(
+      'Unexpected Parameter: [object Document]'
+    );
   });
 });

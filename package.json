@@ -22,6 +22,7 @@
     "build": "rollup -c",
     "changelog": "lerna-changelog",
     "docs": "yarn build && documentation build dist/qunit-dom.js --config documentation.yml -f md -o API.md",
+    "lint": "eslint . --ext=js,ts --cache",
     "prepublish": "rollup -c",
     "test": "jest",
     "test:coverage": "jest --coverage",
@@ -41,7 +42,6 @@
     "ember-cli": "~3.6.0",
     "ember-cli-babel": "^7.1.2",
     "ember-cli-dependency-checker": "^3.0.0",
-    "ember-cli-eslint": "^5.0.0",
     "ember-cli-htmlbars": "^3.0.0",
     "ember-cli-htmlbars-inline-precompile": "^2.0.0",
     "ember-cli-inject-live-reload": "^2.0.1",
@@ -49,13 +49,19 @@
     "ember-load-initializers": "^2.0.0",
     "ember-resolver": "^5.0.1",
     "ember-source": "~3.6.0",
+    "eslint": "^5.11.1",
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-typescript": "^0.14.0",
     "jest": "^23.5.0",
     "lerna-changelog": "^0.8.0",
     "loader.js": "^4.2.3",
+    "prettier": "^1.15.3",
     "rollup": "^1.0.0",
     "rollup-plugin-typescript2": "^0.18.0",
     "ts-jest": "^23.0.0",
-    "typescript": "^3.1.2"
+    "typescript": "^3.1.2",
+    "typescript-eslint-parser": "^21.0.2"
   },
   "engines": {
     "node": "6.* || 8.* || >= 10.*"

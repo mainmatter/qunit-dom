@@ -1,5 +1,9 @@
-export function toArray<K extends keyof HTMLElementTagNameMap>(selectors: NodeListOf<HTMLElementTagNameMap[K]>): HTMLElementTagNameMap[K][];
-export function toArray<K extends keyof SVGElementTagNameMap>(selectors: NodeListOf<SVGElementTagNameMap[K]>): SVGElementTagNameMap[K][];
+export function toArray<K extends keyof HTMLElementTagNameMap>(
+  selectors: NodeListOf<HTMLElementTagNameMap[K]>
+): HTMLElementTagNameMap[K][];
+export function toArray<K extends keyof SVGElementTagNameMap>(
+  selectors: NodeListOf<SVGElementTagNameMap[K]>
+): SVGElementTagNameMap[K][];
 export function toArray<E extends Element = Element>(selectors: NodeListOf<E>): E[];
 export function toArray(list: NodeList): Node[];
 
