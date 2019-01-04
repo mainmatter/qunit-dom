@@ -1,3 +1,5 @@
+/* global QUnit */
+
 import DOMAssertions from './assertions';
 
 declare global {
