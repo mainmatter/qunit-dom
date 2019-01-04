@@ -492,15 +492,39 @@ export default class DOMAssertions {
    * @see {@link #hasClass}
    */
   hasStyle(expected: object, message?: string): void {
+    this.hasPseudoElementStyle(null, expected, message);
+  }
+
+
+  hasPseudoElementStyle(selector: string, expected: object, message?: string): void;
+
+  /**
+   * Assert that the pseudo element for `selector` of the [HTMLElement][] has the `expected` style declarations using
+   * [`window.getComputedStyle`](https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle).
+   *
+   * @name hasPseudoElementStyle
+   * @param {string} selector
+   * @param {object} expected
+   * @param {string?} message
+   *
+   * @example
+   * assert.dom('.progress-bar').hasPseudoElementStyle(':after', {
+   *   content: '";"',
+   * });
+   *
+   * @see {@link #hasClass}
+   */
+  hasPseudoElementStyle(selector: string | null, expected: object, message?: string): void {
     let element = this.findTargetElement();
     if (!element) return;
-    let computedStyle = window.getComputedStyle(element);
+    let computedStyle = window.getComputedStyle(element, selector);
     let expectedProperties = Object.keys(expected);
     let result = expectedProperties.every(property => computedStyle[property] === expected[property]);
     let actual = {};
     expectedProperties.forEach(property => actual[property] = computedStyle[property]);
     if (!message) {
-      message = `Element ${this.targetDescription} has style "${JSON.stringify(expected)}"`;
+      let normalizedSelector = selector ? selector.replace(/^:{0,2}/, '::') : '';
+      message = `Element ${this.targetDescription}${normalizedSelector} has style "${JSON.stringify(expected)}"`;
     }
     this.pushResult({ result, actual, expected, message });
   }

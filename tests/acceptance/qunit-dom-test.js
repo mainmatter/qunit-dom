@@ -4,7 +4,7 @@ import moduleForAcceptance from '../../tests/helpers/module-for-acceptance';
 moduleForAcceptance('Acceptance | qunit-dom');
 
 test('qunit-dom assertions are available', function(assert) {
-  assert.expect(14);
+  assert.expect(15);
 
   assert.ok(assert.dom, 'assert.dom is available');
   assert.ok(assert.dom('.foo').includesText, 'assert.dom(...).includesText is available');
@@ -32,5 +32,11 @@ test('qunit-dom assertions are available', function(assert) {
     assert.dom('#display-descendant').isNotVisible();
     assert.dom('#hidden-input').isNotVisible();
     assert.dom('p').isVisible({ count: 2 });
+
+    /*
+     * JSDom does not implement pseudo elements and this can only be tested in a real browser.
+     * See this: https://github.com/jsdom/jsdom/issues/1928
+     */
+    assert.dom('#with-pseudo-element').hasPseudoElementStyle(':after', { content: '";"' });
   });
 });
