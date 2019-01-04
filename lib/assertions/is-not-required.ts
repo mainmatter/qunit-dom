@@ -4,11 +4,13 @@ export default function notRequired(message) {
   let element = this.findTargetElement();
   if (!element) return;
 
-  if (!(
-    element instanceof HTMLInputElement ||
-    element instanceof HTMLTextAreaElement ||
-    element instanceof HTMLSelectElement
-  )) {
+  if (
+    !(
+      element instanceof HTMLInputElement ||
+      element instanceof HTMLTextAreaElement ||
+      element instanceof HTMLSelectElement
+    )
+  ) {
     throw new TypeError(`Unexpected Element Type: ${element.toString()}`);
   }
 

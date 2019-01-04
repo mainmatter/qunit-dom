@@ -20,7 +20,6 @@ export default function isVisible(options, message) {
     }
 
     this.pushResult({ result, actual, expected, message });
-
   } else if (typeof expectedCount === 'number') {
     let result = elements.length === expectedCount;
     let actual = format(this.target, elements.length);
@@ -30,10 +29,9 @@ export default function isVisible(options, message) {
       message = expected;
     }
 
-    this.pushResult({result, actual, expected, message});
-
+    this.pushResult({ result, actual, expected, message });
   } else {
-    throw new TypeError(`Unexpected Parameter: ${expectedCount}`)
+    throw new TypeError(`Unexpected Parameter: ${expectedCount}`);
   }
 }
 

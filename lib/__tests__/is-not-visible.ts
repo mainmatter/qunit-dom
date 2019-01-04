@@ -23,12 +23,14 @@ describe('assert.dom(...).isNotVisible()', () => {
 
       assert.dom('h2').isNotVisible();
 
-      expect(assert.results).toEqual([{
-        actual: 'Element h2 is not visible',
-        expected: 'Element h2 is not visible',
-        message: 'Element h2 is not visible',
-        result: true,
-      }]);
+      expect(assert.results).toEqual([
+        {
+          actual: 'Element h2 is not visible',
+          expected: 'Element h2 is not visible',
+          message: 'Element h2 is not visible',
+          result: true,
+        },
+      ]);
     });
   });
 
@@ -38,12 +40,14 @@ describe('assert.dom(...).isNotVisible()', () => {
 
       assert.dom('h1').isNotVisible('foo');
 
-      expect(assert.results).toEqual([{
-        actual: 'Element h1 is not visible',
-        expected: 'Element h1 is not visible',
-        message: 'foo',
-        result: true,
-      }]);
+      expect(assert.results).toEqual([
+        {
+          actual: 'Element h1 is not visible',
+          expected: 'Element h1 is not visible',
+          message: 'foo',
+          result: true,
+        },
+      ]);
     });
   });
 
@@ -52,6 +56,8 @@ describe('assert.dom(...).isNotVisible()', () => {
     expect(() => assert.dom(true).isNotVisible()).toThrow('Unexpected Parameter: true');
     expect(() => assert.dom(undefined).isNotVisible()).toThrow('Unexpected Parameter: undefined');
     expect(() => assert.dom({}).isNotVisible()).toThrow('Unexpected Parameter: [object Object]');
-    expect(() => assert.dom(document).isNotVisible()).toThrow('Unexpected Parameter: [object Document]');
+    expect(() => assert.dom(document).isNotVisible()).toThrow(
+      'Unexpected Parameter: [object Document]'
+    );
   });
 });

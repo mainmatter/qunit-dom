@@ -1,6 +1,6 @@
 /* eslint-env jest */
 
-import TestAssertions from "../helpers/test-assertions";
+import TestAssertions from '../helpers/test-assertions';
 
 describe('assert.dom(...).isNotRequired()', () => {
   let assert;
@@ -14,12 +14,14 @@ describe('assert.dom(...).isNotRequired()', () => {
 
     assert.dom('input').isNotRequired('custom message');
 
-    expect(assert.results).toEqual([{
-      actual: 'required',
-      expected: 'not required',
-      message: 'custom message',
-      result: false,
-    }]);
+    expect(assert.results).toEqual([
+      {
+        actual: 'required',
+        expected: 'not required',
+        message: 'custom message',
+        result: false,
+      },
+    ]);
   });
 
   describe('with HTMLElement', () => {
@@ -33,33 +35,39 @@ describe('assert.dom(...).isNotRequired()', () => {
     test('succeeds if element is not required', () => {
       assert.dom(element).isNotRequired();
 
-      expect(assert.results).toEqual([{
-        actual: 'not required',
-        expected: 'not required',
-        message: 'Element input[type="text"] is not required',
-        result: true,
-      }]);
+      expect(assert.results).toEqual([
+        {
+          actual: 'not required',
+          expected: 'not required',
+          message: 'Element input[type="text"] is not required',
+          result: true,
+        },
+      ]);
     });
 
     test('fails if element is required', () => {
       element.required = true;
       assert.dom(element).isNotRequired();
 
-      expect(assert.results).toEqual([{
-        actual: 'required',
-        expected: 'not required',
-        message: 'Element input[type="text"][required] is not required',
-        result: false,
-      }]);
+      expect(assert.results).toEqual([
+        {
+          actual: 'required',
+          expected: 'not required',
+          message: 'Element input[type="text"][required] is not required',
+          result: false,
+        },
+      ]);
     });
 
     test('fails for missing element', () => {
       assert.dom(null).isNotRequired();
 
-      expect(assert.results).toEqual([{
-        message: 'Element <unknown> should exist',
-        result: false,
-      }]);
+      expect(assert.results).toEqual([
+        {
+          message: 'Element <unknown> should exist',
+          result: false,
+        },
+      ]);
     });
   });
 
@@ -71,33 +79,39 @@ describe('assert.dom(...).isNotRequired()', () => {
     test('succeeds if element is not required', () => {
       assert.dom('input').isNotRequired();
 
-      expect(assert.results).toEqual([{
-        actual: 'not required',
-        expected: 'not required',
-        message: 'Element input is not required',
-        result: true,
-      }]);
+      expect(assert.results).toEqual([
+        {
+          actual: 'not required',
+          expected: 'not required',
+          message: 'Element input is not required',
+          result: true,
+        },
+      ]);
     });
 
     test('fails if element is required', () => {
       document.querySelector('input').required = true;
       assert.dom('input').isNotRequired();
 
-      expect(assert.results).toEqual([{
-        actual: 'required',
-        expected: 'not required',
-        message: 'Element input is not required',
-        result: false,
-      }]);
+      expect(assert.results).toEqual([
+        {
+          actual: 'required',
+          expected: 'not required',
+          message: 'Element input is not required',
+          result: false,
+        },
+      ]);
     });
 
     test('fails for missing element', () => {
       assert.dom('input[type="password"]').isNotRequired();
 
-      expect(assert.results).toEqual([{
-        message: 'Element input[type="password"] should exist',
-        result: false,
-      }]);
+      expect(assert.results).toEqual([
+        {
+          message: 'Element input[type="password"] should exist',
+          result: false,
+        },
+      ]);
     });
   });
 
@@ -106,7 +120,11 @@ describe('assert.dom(...).isNotRequired()', () => {
     expect(() => assert.dom(true).isNotRequired()).toThrow('Unexpected Parameter: true');
     expect(() => assert.dom(undefined).isNotRequired()).toThrow('Unexpected Parameter: undefined');
     expect(() => assert.dom({}).isNotRequired()).toThrow('Unexpected Parameter: [object Object]');
-    expect(() => assert.dom(document).isNotRequired()).toThrow('Unexpected Parameter: [object Document]');
-    expect(() => assert.dom(document.createElement('div')).isRequired()).toThrow('Unexpected Element Type: [object HTMLDivElement]');
+    expect(() => assert.dom(document).isNotRequired()).toThrow(
+      'Unexpected Parameter: [object Document]'
+    );
+    expect(() => assert.dom(document.createElement('div')).isRequired()).toThrow(
+      'Unexpected Element Type: [object HTMLDivElement]'
+    );
   });
 });

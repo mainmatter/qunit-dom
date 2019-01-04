@@ -1,6 +1,6 @@
 /* eslint-env jest */
 
-import TestAssertions from "../helpers/test-assertions";
+import TestAssertions from '../helpers/test-assertions';
 
 describe('assert.dom(...).hasText()', () => {
   let assert;
@@ -14,12 +14,14 @@ describe('assert.dom(...).hasText()', () => {
 
     assert.dom('#title').hasText('Welcome to QUnit', 'custom message');
 
-    expect(assert.results).toEqual([{
-      actual: 'Welcome to QUnit',
-      expected: 'Welcome to QUnit',
-      message: 'custom message',
-      result: true,
-    }]);
+    expect(assert.results).toEqual([
+      {
+        actual: 'Welcome to QUnit',
+        expected: 'Welcome to QUnit',
+        message: 'custom message',
+        result: true,
+      },
+    ]);
   });
 
   describe('with HTMLElement', () => {
@@ -33,32 +35,38 @@ describe('assert.dom(...).hasText()', () => {
     test('succeeds for correct content', () => {
       assert.dom(element).hasText('Welcome to QUnit');
 
-      expect(assert.results).toEqual([{
-        actual: 'Welcome to QUnit',
-        expected: 'Welcome to QUnit',
-        message: 'Element h2#title has text "Welcome to QUnit"',
-        result: true,
-      }]);
+      expect(assert.results).toEqual([
+        {
+          actual: 'Welcome to QUnit',
+          expected: 'Welcome to QUnit',
+          message: 'Element h2#title has text "Welcome to QUnit"',
+          result: true,
+        },
+      ]);
     });
 
     test('fails for wrong content', () => {
       assert.dom(element).hasText('Welcome to Mocha');
 
-      expect(assert.results).toEqual([{
-        actual: 'Welcome to QUnit',
-        expected: 'Welcome to Mocha',
-        message: 'Element h2#title has text "Welcome to Mocha"',
-        result: false,
-      }]);
+      expect(assert.results).toEqual([
+        {
+          actual: 'Welcome to QUnit',
+          expected: 'Welcome to Mocha',
+          message: 'Element h2#title has text "Welcome to Mocha"',
+          result: false,
+        },
+      ]);
     });
 
     test('fails for missing element', () => {
       assert.dom(null).hasText('Welcome to QUnit');
 
-      expect(assert.results).toEqual([{
-        message: 'Element <unknown> should exist',
-        result: false,
-      }]);
+      expect(assert.results).toEqual([
+        {
+          message: 'Element <unknown> should exist',
+          result: false,
+        },
+      ]);
     });
   });
 
@@ -70,32 +78,38 @@ describe('assert.dom(...).hasText()', () => {
     test('succeeds for correct content', () => {
       assert.dom('#title').hasText('Welcome to QUnit');
 
-      expect(assert.results).toEqual([{
-        actual: 'Welcome to QUnit',
-        expected: 'Welcome to QUnit',
-        message: 'Element #title has text "Welcome to QUnit"',
-        result: true,
-      }]);
+      expect(assert.results).toEqual([
+        {
+          actual: 'Welcome to QUnit',
+          expected: 'Welcome to QUnit',
+          message: 'Element #title has text "Welcome to QUnit"',
+          result: true,
+        },
+      ]);
     });
 
     test('fails for wrong content', () => {
       assert.dom('#title').hasText('Welcome to Mocha');
 
-      expect(assert.results).toEqual([{
-        actual: 'Welcome to QUnit',
-        expected: 'Welcome to Mocha',
-        message: 'Element #title has text "Welcome to Mocha"',
-        result: false,
-      }]);
+      expect(assert.results).toEqual([
+        {
+          actual: 'Welcome to QUnit',
+          expected: 'Welcome to Mocha',
+          message: 'Element #title has text "Welcome to Mocha"',
+          result: false,
+        },
+      ]);
     });
 
     test('fails for missing element', () => {
       assert.dom('#missing').hasText('foo');
 
-      expect(assert.results).toEqual([{
-        message: 'Element #missing should exist',
-        result: false,
-      }]);
+      expect(assert.results).toEqual([
+        {
+          message: 'Element #missing should exist',
+          result: false,
+        },
+      ]);
     });
   });
 
@@ -104,7 +118,9 @@ describe('assert.dom(...).hasText()', () => {
     expect(() => assert.dom(true).hasText('foo')).toThrow('Unexpected Parameter: true');
     expect(() => assert.dom(undefined).hasText('foo')).toThrow('Unexpected Parameter: undefined');
     expect(() => assert.dom({}).hasText('foo')).toThrow('Unexpected Parameter: [object Object]');
-    expect(() => assert.dom(document).hasText('foo')).toThrow('Unexpected Parameter: [object Document]');
+    expect(() => assert.dom(document).hasText('foo')).toThrow(
+      'Unexpected Parameter: [object Document]'
+    );
   });
 
   describe('invalid arguments to `hasText`', () => {
@@ -116,11 +132,15 @@ describe('assert.dom(...).hasText()', () => {
     });
 
     test('passing a number to `hasText` will throw an error', () => {
-      expect(() => assert.dom(element).hasText(1234)).toThrow('You must pass a string or Regular Expression to "hasText". You passed 1234');
+      expect(() => assert.dom(element).hasText(1234)).toThrow(
+        'You must pass a string or Regular Expression to "hasText". You passed 1234'
+      );
     });
 
     test('passing an object to `hasText` will throw an error', () => {
-      expect(() => assert.dom(element).hasText({})).toThrow('You must pass a string or Regular Expression to "hasText". You passed [object Object]');
+      expect(() => assert.dom(element).hasText({})).toThrow(
+        'You must pass a string or Regular Expression to "hasText". You passed [object Object]'
+      );
     });
   });
 });

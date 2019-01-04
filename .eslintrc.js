@@ -5,12 +5,12 @@ module.exports = {
   parser: 'typescript-eslint-parser',
   parserOptions: {
     ecmaVersion: 2017,
-    sourceType: 'module'
+    sourceType: 'module',
   },
   plugins: ['prettier', 'typescript'],
   extends: ['eslint:recommended', 'prettier'],
   env: {
-    browser: true
+    browser: true,
   },
   rules: {
     'no-console': 'off',
@@ -27,5 +27,5 @@ module.exports = {
         'no-undef': 'off',
       },
     },
-  ]
+  ],
 };
