@@ -211,9 +211,9 @@ describe('assert.dom(...).hasAttribute()', () => {
     assert.dom(document.querySelector("#svg-element")).hasAttribute("width", "100");
 
     expect(assert.results).toEqual([{
-      actual: 'Element svg#svg-element[width=\"100\"] has attribute "width" with value "100"',
-      expected: 'Element svg#svg-element[width=\"100\"] has attribute "width" with value "100"',
-      message: 'Element svg#svg-element[width=\"100\"] has attribute "width" with value "100"',
+      actual: 'Element svg#svg-element[width="100"] has attribute "width" with value "100"',
+      expected: 'Element svg#svg-element[width="100"] has attribute "width" with value "100"',
+      message: 'Element svg#svg-element[width="100"] has attribute "width" with value "100"',
       result: true,
     }]);
   });

@@ -34,9 +34,9 @@ describe('assert.dom(...).isNotDisabled()', () => {
       assert.dom(element).isNotDisabled();
 
       expect(assert.results).toEqual([{
-        actual: 'Element input[type=\"text\"] is not disabled',
-        expected: 'Element input[type=\"text\"] is not disabled',
-        message: 'Element input[type=\"text\"] is not disabled',
+        actual: 'Element input[type="text"] is not disabled',
+        expected: 'Element input[type="text"] is not disabled',
+        message: 'Element input[type="text"] is not disabled',
         result: true,
       }]);
     });
@@ -46,9 +46,9 @@ describe('assert.dom(...).isNotDisabled()', () => {
       assert.dom(element).isNotDisabled();
 
       expect(assert.results).toEqual([{
-        actual: 'Element input[type=\"text\"][disabled] is disabled',
-        expected: 'Element input[type=\"text\"][disabled] is not disabled',
-        message: 'Element input[type=\"text\"][disabled] is not disabled',
+        actual: 'Element input[type="text"][disabled] is disabled',
+        expected: 'Element input[type="text"][disabled] is not disabled',
+        message: 'Element input[type="text"][disabled] is not disabled',
         result: false,
       }]);
     });

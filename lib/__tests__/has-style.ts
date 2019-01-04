@@ -19,7 +19,7 @@ describe('assert.dom(...).hasStyle()', () => {
     expect(assert.results).toEqual([{
       actual: { opacity: '1', width: '200px', 'text-align': 'center' },
       expected: { opacity: '1', width: '200px', 'text-align': 'center' },
-      message: 'Element .foo has style \"{\"opacity\":\"1\",\"width\":\"200px\",\"text-align\":\"center\"}\"',
+      message: 'Element .foo has style "{"opacity":"1","width":"200px","text-align":"center"}"',
       result: true,
     }]);
   });
@@ -37,7 +37,7 @@ describe('assert.dom(...).hasStyle()', () => {
     expect(assert.results).toEqual([{
       actual: { opacity: '1', width: '200px', 'text-align': 'center', color: 'blue' },
       expected: { opacity: '1', width: '200px', 'text-align': 'center', color: 'blue' },
-      message: 'Element .foo has style \"{\"opacity\":\"1\",\"width\":\"200px\",\"text-align\":\"center\",\"color\":\"blue\"}\"',
+      message: 'Element .foo has style "{"opacity":"1","width":"200px","text-align":"center","color":"blue"}"',
       result: true,
     }]);
     document.body.removeChild(styleNode);
@@ -50,7 +50,7 @@ describe('assert.dom(...).hasStyle()', () => {
     expect(assert.results).toEqual([{
       actual: { opacity: '1' },
       expected: { opacity: '1' },
-      message: 'Element .foo has style \"{\"opacity\":\"1\"}\"',
+      message: 'Element .foo has style "{"opacity":"1"}"',
       result: true,
     }]);
   });
@@ -62,7 +62,7 @@ describe('assert.dom(...).hasStyle()', () => {
     expect(assert.results).toEqual([{
       actual: { opacity: '1' },
       expected: { opacity: 0 },
-      message: 'Element .foo has style \"{\"opacity\":0}\"',
+      message: 'Element .foo has style "{"opacity":0}"',
       result: false,
     }]);
   });

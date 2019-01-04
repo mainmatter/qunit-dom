@@ -36,7 +36,7 @@ describe('assert.dom(...).isChecked()', () => {
       expect(assert.results).toEqual([{
         actual: 'checked',
         expected: 'checked',
-        message: 'Element input[type=\"checkbox\"][checked] is checked',
+        message: 'Element input[type="checkbox"][checked] is checked',
         result: true,
       }]);
     });
@@ -48,7 +48,7 @@ describe('assert.dom(...).isChecked()', () => {
       expect(assert.results).toEqual([{
         actual: 'not checked',
         expected: 'checked',
-        message: 'Element input[type=\"checkbox\"][checked] is checked',
+        message: 'Element input[type="checkbox"][checked] is checked',
         result: false,
       }]);
     });

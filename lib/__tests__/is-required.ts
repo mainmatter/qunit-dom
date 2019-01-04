@@ -36,7 +36,7 @@ describe('assert.dom(...).isRequired()', () => {
       expect(assert.results).toEqual([{
         actual: 'required',
         expected: 'required',
-        message: 'Element input[type=\"text\"][required] is required',
+        message: 'Element input[type="text"][required] is required',
         result: true,
       }]);
     });
@@ -48,7 +48,7 @@ describe('assert.dom(...).isRequired()', () => {
       expect(assert.results).toEqual([{
         actual: 'not required',
         expected: 'required',
-        message: 'Element input[type=\"text\"] is required',
+        message: 'Element input[type="text"] is required',
         result: false,
       }]);
     });
