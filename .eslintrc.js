@@ -7,13 +7,14 @@ module.exports = {
     ecmaVersion: 2017,
     sourceType: 'module'
   },
-  plugins: ['typescript'],
-  extends: 'eslint:recommended',
+  plugins: ['prettier', 'typescript'],
+  extends: ['eslint:recommended', 'prettier'],
   env: {
     browser: true
   },
   rules: {
     'no-console': 'off',
+    'prettier/prettier': 'error',
   },
   overrides: [
     {
