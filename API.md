@@ -82,6 +82,9 @@
 -   [hasStyle](#hasstyle)
     -   [Parameters](#parameters-25)
     -   [Examples](#examples-25)
+-   [hasPseudoElementStyle](#haspseudoelementstyle)
+    -   [Parameters](#parameters-26)
+    -   [Examples](#examples-26)
 
 ## assert.dom()
 
@@ -413,6 +416,10 @@ attribute and stripping/collapsing whitespace.
 
 `expected` can also be a regular expression.
 
+> Note: This assertion will collapse whitespace if the type you pass in is a string.
+> If you are testing specifically for whitespace integrity, pass your expected text
+> in as a RegEx pattern.
+
 **Aliases:** `matchesText`
 
 #### Parameters
@@ -458,6 +465,11 @@ Assert that the text of the [HTMLElement](https://developer.mozilla.org/docs/Web
 matching the `selector` contains the given `text`, using the
 [`textContent`](https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent)
 attribute.
+
+> Note: This assertion will collapse whitespace in `textContent` before searching.
+> If you would like to assert on a string that _should_ contain line breaks, tabs,
+> more than one space in a row, or starting/ending whitespace, use the [#hasText](#hasText)
+> selector and pass your expected text in as a RegEx pattern.
 
 **Aliases:** `containsText`, `hasTextContaining`
 
@@ -600,5 +612,26 @@ Assert that the [HTMLElement][] has the `expected` style declarations using
 assert.dom('.progress-bar').hasStyle({
   opacity: 1,
   display: 'block'
+});
+```
+
+## hasPseudoElementStyle
+
+-   **See: [#hasClass](#hasClass)**
+
+Assert that the pseudo element for `selector` of the [HTMLElement][] has the `expected` style declarations using
+[`window.getComputedStyle`](https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle).
+
+### Parameters
+
+-   `selector` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+-   `expected` **[object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** 
+-   `message` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)?** 
+
+### Examples
+
+```javascript
+assert.dom('.progress-bar').hasPseudoElementStyle(':after', {
+  content: '";"',
 });
 ```

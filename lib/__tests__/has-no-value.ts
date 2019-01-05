@@ -1,6 +1,6 @@
 /* eslint-env jest */
 
-import TestAssertions from "../helpers/test-assertions";
+import TestAssertions from '../helpers/test-assertions';
 
 describe('assert.dom(...).hasNoValue()', () => {
   let assert;
@@ -15,17 +15,20 @@ describe('assert.dom(...).hasNoValue()', () => {
     assert.dom('input.username').hasNoValue();
     assert.dom(document.querySelector('input.username')).hasNoValue();
 
-    expect(assert.results).toEqual([{
-      actual: '',
-      expected: '',
-      message: 'Element input.username has value ""',
-      result: true,
-    }, {
-      actual: '',
-      expected: '',
-      message: 'Element input.input.username has value ""',
-      result: true,
-    }]);
+    expect(assert.results).toEqual([
+      {
+        actual: '',
+        expected: '',
+        message: 'Element input.username has value ""',
+        result: true,
+      },
+      {
+        actual: '',
+        expected: '',
+        message: 'Element input.input.username has value ""',
+        result: true,
+      },
+    ]);
   });
 
   test('fails for wrong content', () => {
@@ -34,26 +37,31 @@ describe('assert.dom(...).hasNoValue()', () => {
     assert.dom('input.username').hasNoValue();
     assert.dom(document.querySelector('input.username')).hasNoValue();
 
-    expect(assert.results).toEqual([{
-      actual: 'HSimpson',
-      expected: '',
-      message: 'Element input.username has value ""',
-      result: false,
-    }, {
-      actual: 'HSimpson',
-      expected: '',
-      message: 'Element input.input.username has value ""',
-      result: false,
-    }]);
+    expect(assert.results).toEqual([
+      {
+        actual: 'HSimpson',
+        expected: '',
+        message: 'Element input.username has value ""',
+        result: false,
+      },
+      {
+        actual: 'HSimpson',
+        expected: '',
+        message: 'Element input.input.username has value ""',
+        result: false,
+      },
+    ]);
   });
 
   test('fails for missing element', () => {
     assert.dom('#missing').hasNoValue();
 
-    expect(assert.results).toEqual([{
-      message: 'Element #missing should exist',
-      result: false,
-    }]);
+    expect(assert.results).toEqual([
+      {
+        message: 'Element #missing should exist',
+        result: false,
+      },
+    ]);
   });
 
   test('throws for unexpected parameter types', () => {
@@ -61,6 +69,8 @@ describe('assert.dom(...).hasNoValue()', () => {
     expect(() => assert.dom(true).hasNoValue()).toThrow('Unexpected Parameter: true');
     expect(() => assert.dom(undefined).hasNoValue()).toThrow('Unexpected Parameter: undefined');
     expect(() => assert.dom({}).hasNoValue()).toThrow('Unexpected Parameter: [object Object]');
-    expect(() => assert.dom(document).hasNoValue()).toThrow('Unexpected Parameter: [object Document]');
+    expect(() => assert.dom(document).hasNoValue()).toThrow(
+      'Unexpected Parameter: [object Document]'
+    );
   });
 });

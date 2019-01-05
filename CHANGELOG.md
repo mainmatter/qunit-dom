@@ -1,5 +1,37 @@
 # Changelog
 
+## v0.8.4 (2019-01-04)
+
+#### :rocket: Enhancement
+* [#232](https://github.com/simplabs/qunit-dom/pull/232) Implement a `hasPseudoElementStyle` assertion ([@joankaradimov](https://github.com/joankaradimov))
+
+#### :memo: Documentation
+* [#233](https://github.com/simplabs/qunit-dom/pull/233) helpers/node-list: Add missing `@private` declaration ([@Turbo87](https://github.com/Turbo87))
+
+#### :house: Internal
+* [#231](https://github.com/simplabs/qunit-dom/pull/231) CI: Remove broken `notifications` config ([@Turbo87](https://github.com/Turbo87))
+
+#### Committers: 2
+- Joan Karadimov ([@joankaradimov](https://github.com/joankaradimov))
+- Tobias Bieniek ([@Turbo87](https://github.com/Turbo87))
+
+
+## v0.8.3 (2018-12-10)
+
+#### :rocket: Enhancement
+* [#198](https://github.com/simplabs/qunit-dom/pull/198) Warn user when `includesText` assertion should expect collapsable whitespace ([@happycollision](https://github.com/happycollision))
+
+#### :bug: Bug Fix
+* [#213](https://github.com/simplabs/qunit-dom/pull/213) Replace `Array.from()` for IE11 compatibility ([@Turbo87](https://github.com/Turbo87))
+
+#### :house: Internal
+* [#207](https://github.com/simplabs/qunit-dom/pull/207) TravisCI: Remove deprecated `sudo: false` option ([@Turbo87](https://github.com/Turbo87))
+
+#### Committers: 2
+- Don Denton ([@happycollision](https://github.com/happycollision))
+- Tobias Bieniek ([@Turbo87](https://github.com/Turbo87))
+
+
 ## v0.8.2 (2018-11-27)
 
 #### :rocket: Enhancement

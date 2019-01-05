@@ -8,7 +8,7 @@ export default {
     typescript({
       exclude: [
         'node_modules/**',
-        'lib/__tests__/**',
+        'lib/**/__tests__/**',
         'lib/**/*.test.ts',
         'lib/helpers/test-assertions.ts',
       ],

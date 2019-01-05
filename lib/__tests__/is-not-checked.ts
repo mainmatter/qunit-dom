@@ -1,6 +1,6 @@
 /* eslint-env jest */
 
-import TestAssertions from "../helpers/test-assertions";
+import TestAssertions from '../helpers/test-assertions';
 
 describe('assert.dom(...).isNotChecked()', () => {
   let assert;
@@ -14,12 +14,14 @@ describe('assert.dom(...).isNotChecked()', () => {
 
     assert.dom('input').isNotChecked('foo');
 
-    expect(assert.results).toEqual([{
-      actual: 'checked',
-      expected: 'not checked',
-      message: 'foo',
-      result: false,
-    }]);
+    expect(assert.results).toEqual([
+      {
+        actual: 'checked',
+        expected: 'not checked',
+        message: 'foo',
+        result: false,
+      },
+    ]);
   });
 
   describe('with HTMLElement', () => {
@@ -33,33 +35,39 @@ describe('assert.dom(...).isNotChecked()', () => {
     test('succeeds if element is not checked', () => {
       assert.dom(element).isNotChecked();
 
-      expect(assert.results).toEqual([{
-        actual: 'not checked',
-        expected: 'not checked',
-        message: 'Element input[type=\"checkbox\"] is not checked',
-        result: true,
-      }]);
+      expect(assert.results).toEqual([
+        {
+          actual: 'not checked',
+          expected: 'not checked',
+          message: 'Element input[type="checkbox"] is not checked',
+          result: true,
+        },
+      ]);
     });
 
     test('fails if element is checked', () => {
       element.checked = true;
       assert.dom(element).isNotChecked();
 
-      expect(assert.results).toEqual([{
-        actual: 'checked',
-        expected: 'not checked',
-        message: 'Element input[type=\"checkbox\"] is not checked',
-        result: false,
-      }]);
+      expect(assert.results).toEqual([
+        {
+          actual: 'checked',
+          expected: 'not checked',
+          message: 'Element input[type="checkbox"] is not checked',
+          result: false,
+        },
+      ]);
     });
 
     test('fails for missing element', () => {
       assert.dom(null).isNotChecked();
 
-      expect(assert.results).toEqual([{
-        message: 'Element <unknown> should exist',
-        result: false,
-      }]);
+      expect(assert.results).toEqual([
+        {
+          message: 'Element <unknown> should exist',
+          result: false,
+        },
+      ]);
     });
   });
 
@@ -71,33 +79,39 @@ describe('assert.dom(...).isNotChecked()', () => {
     test('succeeds if element is not checked', () => {
       assert.dom('input').isNotChecked();
 
-      expect(assert.results).toEqual([{
-        actual: 'not checked',
-        expected: 'not checked',
-        message: 'Element input is not checked',
-        result: true,
-      }]);
+      expect(assert.results).toEqual([
+        {
+          actual: 'not checked',
+          expected: 'not checked',
+          message: 'Element input is not checked',
+          result: true,
+        },
+      ]);
     });
 
     test('fails if element is checked', () => {
       document.querySelector('input').checked = true;
       assert.dom('input').isNotChecked();
 
-      expect(assert.results).toEqual([{
-        actual: 'checked',
-        expected: 'not checked',
-        message: 'Element input is not checked',
-        result: false,
-      }]);
+      expect(assert.results).toEqual([
+        {
+          actual: 'checked',
+          expected: 'not checked',
+          message: 'Element input is not checked',
+          result: false,
+        },
+      ]);
     });
 
     test('fails for missing element', () => {
       assert.dom('input[type="password"]').isNotChecked();
 
-      expect(assert.results).toEqual([{
-        message: 'Element input[type="password"] should exist',
-        result: false,
-      }]);
+      expect(assert.results).toEqual([
+        {
+          message: 'Element input[type="password"] should exist',
+          result: false,
+        },
+      ]);
     });
   });
 
@@ -106,7 +120,8 @@ describe('assert.dom(...).isNotChecked()', () => {
     expect(() => assert.dom(true).isNotChecked()).toThrow('Unexpected Parameter: true');
     expect(() => assert.dom(undefined).isNotChecked()).toThrow('Unexpected Parameter: undefined');
     expect(() => assert.dom({}).isNotChecked()).toThrow('Unexpected Parameter: [object Object]');
-    expect(() => assert.dom(document).isNotChecked()).toThrow('Unexpected Parameter: [object Document]');
+    expect(() => assert.dom(document).isNotChecked()).toThrow(
+      'Unexpected Parameter: [object Document]'
+    );
   });
-
 });

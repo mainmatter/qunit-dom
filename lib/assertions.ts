@@ -10,9 +10,14 @@ import isDisabled from './assertions/is-disabled';
 import matchesSelector from './assertions/matches-selector';
 import elementToString from './helpers/element-to-string';
 import collapseWhitespace from './helpers/collapse-whitespace';
+import { toArray } from './helpers/node-list';
 
 export default class DOMAssertions {
-  constructor(private target: string | Element | null, private rootElement: Element, private testContext: Assert) {}
+  constructor(
+    private target: string | Element | null,
+    private rootElement: Element,
+    private testContext: Assert
+  ) {}
 
   /**
    * Assert an {@link HTMLElement} (or multiple) matching the `selector` exists.
@@ -246,9 +251,9 @@ export default class DOMAssertions {
    *
    * @see {@link #isVisible}
    */
-   isNotVisible(message?: string): void {
-     isVisible.call(this, { count: 0 }, message);
-   }
+  isNotVisible(message?: string): void {
+    isVisible.call(this, { count: 0 }, message);
+  }
 
   /**
    * Assert that the {@link HTMLElement} has an attribute with the provided `name`.
@@ -304,34 +309,44 @@ export default class DOMAssertions {
 
     if (value instanceof RegExp) {
       let result = value.test(actualValue);
-      let expected = `Element ${this.targetDescription} has attribute "${name}" with value matching ${value}`;
-      let actual = actualValue === null
-        ? `Element ${this.targetDescription} does not have attribute "${name}"`
-        : `Element ${this.targetDescription} has attribute "${name}" with value ${JSON.stringify(actualValue)}`;
+      let expected = `Element ${
+        this.targetDescription
+      } has attribute "${name}" with value matching ${value}`;
+      let actual =
+        actualValue === null
+          ? `Element ${this.targetDescription} does not have attribute "${name}"`
+          : `Element ${this.targetDescription} has attribute "${name}" with value ${JSON.stringify(
+              actualValue
+            )}`;
 
       if (!message) {
         message = expected;
       }
 
       this.pushResult({ result, actual, expected, message });
-
     } else if ((value as { any: true }).any === true) {
       let result = actualValue !== null;
       let expected = `Element ${this.targetDescription} has attribute "${name}"`;
-      let actual = result ? expected : `Element ${this.targetDescription} does not have attribute "${name}"`;
+      let actual = result
+        ? expected
+        : `Element ${this.targetDescription} does not have attribute "${name}"`;
 
       if (!message) {
         message = expected;
       }
 
       this.pushResult({ result, actual, expected, message });
-
     } else {
       let result = value === actualValue;
-      let expected = `Element ${this.targetDescription} has attribute "${name}" with value ${JSON.stringify(value)}`;
-      let actual = actualValue === null
-        ? `Element ${this.targetDescription} does not have attribute "${name}"`
-        : `Element ${this.targetDescription} has attribute "${name}" with value ${JSON.stringify(actualValue)}`;
+      let expected = `Element ${
+        this.targetDescription
+      } has attribute "${name}" with value ${JSON.stringify(value)}`;
+      let actual =
+        actualValue === null
+          ? `Element ${this.targetDescription} does not have attribute "${name}"`
+          : `Element ${this.targetDescription} has attribute "${name}" with value ${JSON.stringify(
+              actualValue
+            )}`;
 
       if (!message) {
         message = expected;
@@ -364,7 +379,9 @@ export default class DOMAssertions {
 
     if (!result) {
       let value = element.getAttribute(name);
-      actual = `Element ${this.targetDescription} has attribute "${name}" with value ${JSON.stringify(value)}`;
+      actual = `Element ${
+        this.targetDescription
+      } has attribute "${name}" with value ${JSON.stringify(value)}`;
     }
 
     if (!message) {
@@ -491,15 +508,42 @@ export default class DOMAssertions {
    * @see {@link #hasClass}
    */
   hasStyle(expected: object, message?: string): void {
+    this.hasPseudoElementStyle(null, expected, message);
+  }
+
+  hasPseudoElementStyle(selector: string, expected: object, message?: string): void;
+
+  /**
+   * Assert that the pseudo element for `selector` of the [HTMLElement][] has the `expected` style declarations using
+   * [`window.getComputedStyle`](https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle).
+   *
+   * @name hasPseudoElementStyle
+   * @param {string} selector
+   * @param {object} expected
+   * @param {string?} message
+   *
+   * @example
+   * assert.dom('.progress-bar').hasPseudoElementStyle(':after', {
+   *   content: '";"',
+   * });
+   *
+   * @see {@link #hasClass}
+   */
+  hasPseudoElementStyle(selector: string | null, expected: object, message?: string): void {
     let element = this.findTargetElement();
     if (!element) return;
-    let computedStyle = window.getComputedStyle(element);
+    let computedStyle = window.getComputedStyle(element, selector);
     let expectedProperties = Object.keys(expected);
-    let result = expectedProperties.every(property => computedStyle[property] === expected[property]);
+    let result = expectedProperties.every(
+      property => computedStyle[property] === expected[property]
+    );
     let actual = {};
-    expectedProperties.forEach(property => actual[property] = computedStyle[property]);
+    expectedProperties.forEach(property => (actual[property] = computedStyle[property]));
     if (!message) {
-      message = `Element ${this.targetDescription} has style "${JSON.stringify(expected)}"`;
+      let normalizedSelector = selector ? selector.replace(/^:{0,2}/, '::') : '';
+      message = `Element ${this.targetDescription}${normalizedSelector} has style "${JSON.stringify(
+        expected
+      )}"`;
     }
     this.pushResult({ result, actual, expected, message });
   }
@@ -511,6 +555,10 @@ export default class DOMAssertions {
    * attribute and stripping/collapsing whitespace.
    *
    * `expected` can also be a regular expression.
+   *
+   * > Note: This assertion will collapse whitespace if the type you pass in is a string.
+   * > If you are testing specifically for whitespace integrity, pass your expected text
+   * > in as a RegEx pattern.
    *
    * **Aliases:** `matchesText`
    *
@@ -553,7 +601,6 @@ export default class DOMAssertions {
       }
 
       this.pushResult({ result, actual, expected, message });
-
     } else if (typeof expected === 'string') {
       expected = collapseWhitespace(expected);
       let actual = collapseWhitespace(element.textContent);
@@ -565,7 +612,9 @@ export default class DOMAssertions {
 
       this.pushResult({ result, actual, expected, message });
     } else {
-      throw new TypeError(`You must pass a string or Regular Expression to "hasText". You passed ${expected}.`);
+      throw new TypeError(
+        `You must pass a string or Regular Expression to "hasText". You passed ${expected}.`
+      );
     }
   }
 
@@ -593,6 +642,11 @@ export default class DOMAssertions {
    * [`textContent`](https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent)
    * attribute.
    *
+   * > Note: This assertion will collapse whitespace in `textContent` before searching.
+   * > If you would like to assert on a string that *should* contain line breaks, tabs,
+   * > more than one space in a row, or starting/ending whitespace, use the {@link #hasText}
+   * > selector and pass your expected text in as a RegEx pattern.
+   *
    * **Aliases:** `containsText`, `hasTextContaining`
    *
    * @param {string} text
@@ -614,6 +668,13 @@ export default class DOMAssertions {
 
     if (!message) {
       message = `Element ${this.targetDescription} has text containing "${text}"`;
+    }
+
+    if (!result && text !== collapseWhitespace(text)) {
+      console.warn(
+        'The `.includesText()`, `.containsText()`, and `.hasTextContaining()` assertions collapse whitespace. The text you are checking for contains whitespace that may have made your test fail incorrectly. Try the `.hasText()` assertion passing in your expected text as a RegExp pattern. Your text:\n' +
+          text
+      );
     }
 
     this.pushResult({ result, actual, expected, message });
@@ -704,7 +765,6 @@ export default class DOMAssertions {
       }
 
       this.pushResult({ result, actual, expected, message });
-
     } else if ((expected as { any: true }).any === true) {
       let result = Boolean(value);
 
@@ -716,7 +776,6 @@ export default class DOMAssertions {
       }
 
       this.pushResult({ result, actual, expected, message });
-
     } else {
       let actual = value;
       let result = actual === expected;
@@ -883,18 +942,14 @@ export default class DOMAssertions {
   private findElement(): Element | null {
     if (this.target === null) {
       return null;
-
     } else if (typeof this.target === 'string') {
       return this.rootElement.querySelector(this.target);
-
     } else if (this.target instanceof Element) {
       return this.target;
-
     } else {
-      throw new TypeError(`Unexpected Parameter: ${this.target}`)
+      throw new TypeError(`Unexpected Parameter: ${this.target}`);
     }
   }
-
 
   /**
    * Finds a collection of HTMLElement instances from target using querySelectorAll
@@ -905,12 +960,10 @@ export default class DOMAssertions {
   private findElements(): HTMLElement[] {
     if (this.target === null) {
       return [];
-
     } else if (typeof this.target === 'string') {
-      return Array.from(this.rootElement.querySelectorAll(this.target));
-
+      return toArray(this.rootElement.querySelectorAll(this.target));
     } else {
-      throw new TypeError(`Unexpected Parameter: ${this.target}`)
+      throw new TypeError(`Unexpected Parameter: ${this.target}`);
     }
   }
 

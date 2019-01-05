@@ -1,4 +1,4 @@
-import DOMAssertions from "../assertions";
+import DOMAssertions from '../assertions';
 
 export default class TestAssertions {
   public results = [];
