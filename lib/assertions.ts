@@ -792,7 +792,7 @@ export default class DOMAssertions {
         `${targets} elements, selected by ${this.target}, also match the selector ${compareSelector}.`;
       }
       actual = expected = message;
-      this.pushResult({ result: true, expected, actual, message });
+      this.pushResult({ result: true, actual, expected, message });
     } else {
       let difference = targets - matchFailures;
       // there were failures when matching.
@@ -804,7 +804,7 @@ export default class DOMAssertions {
       actual = singleElement ? message : `${difference} elements matched ${compareSelector}.`;
       expected = singleElement ? `The element should have matched ${compareSelector}.` :
         `${targets} elements should have matched ${compareSelector}.`;
-      this.pushResult({ result: false, expected, actual, message });
+      this.pushResult({ result: false, actual, expected, message });
     }
   }
 
@@ -834,7 +834,7 @@ export default class DOMAssertions {
           `${targets} elements, selected by ${this.target}, did not also match the selector ${compareSelector}.`;
       }
       actual = expected = message;
-      this.pushResult({ result: true, expected, actual, message })
+      this.pushResult({ result: true, actual, expected, message })
     } else {
       let difference = targets - matchFailures;
       // the assertion fails because at least one element matched the other selector.
@@ -845,7 +845,7 @@ export default class DOMAssertions {
       }
       actual = singleElement ? `The element ${selectedByPart} matched ${compareSelector}.`: `${matchFailures} elements did not match ${compareSelector}.`
       expected = singleElement ? message : `${targets} elements should not have matched ${compareSelector}.`;
-      this.pushResult({ result: false, expected, actual, message })
+      this.pushResult({ result: false, actual, expected, message })
     }
   }
 
