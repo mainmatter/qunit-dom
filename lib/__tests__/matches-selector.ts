@@ -15,8 +15,8 @@ describe('assert.dom(...).matchesSelector()', () => {
       assert.dom('p.last').matchesSelector('div>p:last-child');
 
       expect(assert.results).toEqual([{
-        actual: 1,
-        expected: 1,
+        actual: 'The element selected by p.last also matches the selector div>p:last-child.',
+        expected: 'The element selected by p.last also matches the selector div>p:last-child.',
         message: 'The element selected by p.last also matches the selector div>p:last-child.',
         result: true
       }]);
@@ -27,8 +27,8 @@ describe('assert.dom(...).matchesSelector()', () => {
       assert.dom(element).matchesSelector('div>p:last-child');
 
       expect(assert.results).toEqual([{
-        actual: 1,
-        expected: 1,
+        actual: 'The element passed also matches the selector div>p:last-child.',
+        expected: 'The element passed also matches the selector div>p:last-child.',
         message: 'The element passed also matches the selector div>p:last-child.',
         result: true
       }]);
@@ -38,8 +38,8 @@ describe('assert.dom(...).matchesSelector()', () => {
       assert.dom('p').matchesSelector('div>p');
 
       expect(assert.results).toEqual([{
-        actual: 3,
-        expected: 3,
+        actual: '3 elements, selected by p, also match the selector div>p.',
+        expected: '3 elements, selected by p, also match the selector div>p.',
         message: '3 elements, selected by p, also match the selector div>p.',
         result: true
       }]);
@@ -51,8 +51,8 @@ describe('assert.dom(...).matchesSelector()', () => {
       assert.dom('p.first').matchesSelector('div>p:last-child');
 
       expect(assert.results).toEqual([{
-        actual: 0,
-        expected: 1,
+        actual: 'The element selected by p.first did not also match the selector div>p:last-child.',
+        expected: 'The element should have matched div>p:last-child.',
         message: 'The element selected by p.first did not also match the selector div>p:last-child.',
         result: false
       }]);
@@ -63,8 +63,8 @@ describe('assert.dom(...).matchesSelector()', () => {
       assert.dom(element).matchesSelector('div>p:last-child');
 
       expect(assert.results).toEqual([{
-        actual: 0,
-        expected: 1,
+        actual: 'The element passed did not also match the selector div>p:last-child.',
+        expected: 'The element should have matched div>p:last-child.',
         message: 'The element passed did not also match the selector div>p:last-child.',
         result: false
       }]);
@@ -74,8 +74,8 @@ describe('assert.dom(...).matchesSelector()', () => {
       assert.dom('p').matchesSelector('p + p');
 
       expect(assert.results).toEqual([{
-        actual: 2,
-        expected: 3,
+        actual: '2 elements matched p + p.',
+        expected: '3 elements should have matched p + p.',
         message: '1 out of 3 elements selected by p did not also match the selector p + p.',
         result: false
       }]);

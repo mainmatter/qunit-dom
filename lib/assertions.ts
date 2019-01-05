@@ -781,15 +781,18 @@ export default class DOMAssertions {
     let matchFailures = matchesSelector(targetElements, compareSelector);
     let singleElement: boolean = targets === 1;
     let selectedByPart = (this.target instanceof Element) ? 'passed' : `selected by ${this.target}`;
+    let actual;
+    let expected;
 
     if (matchFailures === 0) {
       // no failures matching.
       if (!message) {
         message = singleElement ?
-          `The element ${selectedByPart} also matches the selector ${compareSelector}.` :
-          `${targets} elements, selected by ${this.target}, also match the selector ${compareSelector}.`
+        `The element ${selectedByPart} also matches the selector ${compareSelector}.` :
+        `${targets} elements, selected by ${this.target}, also match the selector ${compareSelector}.`;
       }
-      this.pushResult({ result: true, expected: targets, actual: targets, message });
+      actual = expected = message;
+      this.pushResult({ result: true, expected, actual, message });
     } else {
       let difference = targets - matchFailures;
       // there were failures when matching.
@@ -798,7 +801,10 @@ export default class DOMAssertions {
           `The element ${selectedByPart} did not also match the selector ${compareSelector}.` :
           `${matchFailures} out of ${targets} elements selected by ${this.target} did not also match the selector ${compareSelector}.`;
       }
-      this.pushResult({ result: false, expected: targets, actual: difference, message });
+      actual = singleElement ? message : `${difference} elements matched ${compareSelector}.`;
+      expected = singleElement ? `The element should have matched ${compareSelector}.` :
+        `${targets} elements should have matched ${compareSelector}.`;
+      this.pushResult({ result: false, expected, actual, message });
     }
   }
 
