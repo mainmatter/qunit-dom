@@ -839,16 +839,18 @@ export default class DOMAssertions {
     let targets = targetElements.length;
     let matchFailures = matchesSelector(targetElements, compareSelector);
     let singleElement: boolean = targets === 1;
-    let selectedByPart = (this.target instanceof Element) ? 'passed' : `selected by ${this.target}`;
+    let selectedByPart = this.target instanceof Element ? 'passed' : `selected by ${this.target}`;
     let actual;
     let expected;
 
     if (matchFailures === 0) {
       // no failures matching.
       if (!message) {
-        message = singleElement ?
-        `The element ${selectedByPart} also matches the selector ${compareSelector}.` :
-        `${targets} elements, selected by ${this.target}, also match the selector ${compareSelector}.`;
+        message = singleElement
+          ? `The element ${selectedByPart} also matches the selector ${compareSelector}.`
+          : `${targets} elements, selected by ${
+              this.target
+            }, also match the selector ${compareSelector}.`;
       }
       actual = expected = message;
       this.pushResult({ result: true, actual, expected, message });
@@ -856,13 +858,16 @@ export default class DOMAssertions {
       let difference = targets - matchFailures;
       // there were failures when matching.
       if (!message) {
-        message = singleElement ?
-          `The element ${selectedByPart} did not also match the selector ${compareSelector}.` :
-          `${matchFailures} out of ${targets} elements selected by ${this.target} did not also match the selector ${compareSelector}.`;
+        message = singleElement
+          ? `The element ${selectedByPart} did not also match the selector ${compareSelector}.`
+          : `${matchFailures} out of ${targets} elements selected by ${
+              this.target
+            } did not also match the selector ${compareSelector}.`;
       }
       actual = singleElement ? message : `${difference} elements matched ${compareSelector}.`;
-      expected = singleElement ? `The element should have matched ${compareSelector}.` :
-        `${targets} elements should have matched ${compareSelector}.`;
+      expected = singleElement
+        ? `The element should have matched ${compareSelector}.`
+        : `${targets} elements should have matched ${compareSelector}.`;
       this.pushResult({ result: false, actual, expected, message });
     }
   }
@@ -888,23 +893,31 @@ export default class DOMAssertions {
     if (matchFailures === targets) {
       // the assertion is successful because no element matched the other selector.
       if (!message) {
-        message = singleElement ?
-          `The element ${selectedByPart} did not also match the selector ${compareSelector}.` :
-          `${targets} elements, selected by ${this.target}, did not also match the selector ${compareSelector}.`;
+        message = singleElement
+          ? `The element ${selectedByPart} did not also match the selector ${compareSelector}.`
+          : `${targets} elements, selected by ${
+              this.target
+            }, did not also match the selector ${compareSelector}.`;
       }
       actual = expected = message;
-      this.pushResult({ result: true, actual, expected, message })
+      this.pushResult({ result: true, actual, expected, message });
     } else {
       let difference = targets - matchFailures;
       // the assertion fails because at least one element matched the other selector.
       if (!message) {
-        message = singleElement ?
-          `The element ${selectedByPart} must not also match the selector ${compareSelector}.` :
-          `${difference} elements out of ${targets}, selected by ${this.target}, must not also match the selector ${compareSelector}.`;
+        message = singleElement
+          ? `The element ${selectedByPart} must not also match the selector ${compareSelector}.`
+          : `${difference} elements out of ${targets}, selected by ${
+              this.target
+            }, must not also match the selector ${compareSelector}.`;
       }
-      actual = singleElement ? `The element ${selectedByPart} matched ${compareSelector}.`: `${matchFailures} elements did not match ${compareSelector}.`
-      expected = singleElement ? message : `${targets} elements should not have matched ${compareSelector}.`;
-      this.pushResult({ result: false, actual, expected, message })
+      actual = singleElement
+        ? `The element ${selectedByPart} matched ${compareSelector}.`
+        : `${matchFailures} elements did not match ${compareSelector}.`;
+      expected = singleElement
+        ? message
+        : `${targets} elements should not have matched ${compareSelector}.`;
+      this.pushResult({ result: false, actual, expected, message });
     }
   }
 
