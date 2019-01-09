@@ -7,7 +7,7 @@ import isRequired from './assertions/is-required';
 import isNotRequired from './assertions/is-not-required';
 import isVisible from './assertions/is-visible';
 import isDisabled from './assertions/is-disabled';
-
+import matchesSelector from './assertions/matches-selector';
 import elementToString from './helpers/element-to-string';
 import collapseWhitespace from './helpers/collapse-whitespace';
 import { toArray } from './helpers/node-list';
@@ -822,6 +822,103 @@ export default class DOMAssertions {
 
   lacksValue(message?: string): void {
     this.hasNoValue(message);
+  }
+
+  /**
+   * Assert that the target selector selects only Elements that are also selected by
+   * compareSelector.
+   *
+   * @param {string} compareSelector
+   * @param {string?} message
+   *
+   * @example
+   * assert.dom('p.red').matchesSelector('div.wrapper p:last-child')
+   */
+  matchesSelector(compareSelector: string, message?: string) {
+    let targetElements = this.target instanceof Element ? [this.target] : this.findElements();
+    let targets = targetElements.length;
+    let matchFailures = matchesSelector(targetElements, compareSelector);
+    let singleElement: boolean = targets === 1;
+    let selectedByPart = this.target instanceof Element ? 'passed' : `selected by ${this.target}`;
+    let actual;
+    let expected;
+
+    if (matchFailures === 0) {
+      // no failures matching.
+      if (!message) {
+        message = singleElement
+          ? `The element ${selectedByPart} also matches the selector ${compareSelector}.`
+          : `${targets} elements, selected by ${
+              this.target
+            }, also match the selector ${compareSelector}.`;
+      }
+      actual = expected = message;
+      this.pushResult({ result: true, actual, expected, message });
+    } else {
+      let difference = targets - matchFailures;
+      // there were failures when matching.
+      if (!message) {
+        message = singleElement
+          ? `The element ${selectedByPart} did not also match the selector ${compareSelector}.`
+          : `${matchFailures} out of ${targets} elements selected by ${
+              this.target
+            } did not also match the selector ${compareSelector}.`;
+      }
+      actual = singleElement ? message : `${difference} elements matched ${compareSelector}.`;
+      expected = singleElement
+        ? `The element should have matched ${compareSelector}.`
+        : `${targets} elements should have matched ${compareSelector}.`;
+      this.pushResult({ result: false, actual, expected, message });
+    }
+  }
+
+  /**
+   * Assert that the target selector selects only Elements that are not also selected by
+   * compareSelector.
+   *
+   * @param {string} compareSelector
+   * @param {string?} message
+   *
+   * @example
+   * assert.dom('input').doesNotMatchSelector('input[disabled]')
+   */
+  doesNotMatchSelector(compareSelector: string, message?: string) {
+    let targetElements = this.target instanceof Element ? [this.target] : this.findElements();
+    let targets = targetElements.length;
+    let matchFailures = matchesSelector(targetElements, compareSelector);
+    let singleElement: boolean = targets === 1;
+    let selectedByPart = this.target instanceof Element ? 'passed' : `selected by ${this.target}`;
+    let actual;
+    let expected;
+    if (matchFailures === targets) {
+      // the assertion is successful because no element matched the other selector.
+      if (!message) {
+        message = singleElement
+          ? `The element ${selectedByPart} did not also match the selector ${compareSelector}.`
+          : `${targets} elements, selected by ${
+              this.target
+            }, did not also match the selector ${compareSelector}.`;
+      }
+      actual = expected = message;
+      this.pushResult({ result: true, actual, expected, message });
+    } else {
+      let difference = targets - matchFailures;
+      // the assertion fails because at least one element matched the other selector.
+      if (!message) {
+        message = singleElement
+          ? `The element ${selectedByPart} must not also match the selector ${compareSelector}.`
+          : `${difference} elements out of ${targets}, selected by ${
+              this.target
+            }, must not also match the selector ${compareSelector}.`;
+      }
+      actual = singleElement
+        ? `The element ${selectedByPart} matched ${compareSelector}.`
+        : `${matchFailures} elements did not match ${compareSelector}.`;
+      expected = singleElement
+        ? message
+        : `${targets} elements should not have matched ${compareSelector}.`;
+      this.pushResult({ result: false, actual, expected, message });
+    }
   }
 
   /**
