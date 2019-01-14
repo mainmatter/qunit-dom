@@ -1196,16 +1196,18 @@ export default class DOMAssertions {
   }
 
   /**
-   * Finds a collection of HTMLElement instances from target using querySelectorAll
+   * Finds a collection of Element instances from target using querySelectorAll
    * @private
-   * @returns (HTMLElement[]) an array of HTMLElement instances
+   * @returns (Element[]) an array of Element instances
    * @throws TypeError will be thrown if target is an unrecognized type
    */
-  private findElements(): HTMLElement[] {
+  private findElements(): Element[] {
     if (this.target === null) {
       return [];
     } else if (typeof this.target === 'string') {
       return toArray(this.rootElement.querySelectorAll(this.target));
+    } else if (this.target instanceof Element) {
+      return [this.target];
     } else {
       throw new TypeError(`Unexpected Parameter: ${this.target}`);
     }
