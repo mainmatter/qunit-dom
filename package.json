@@ -34,7 +34,7 @@
     "broccoli-merge-trees": "^3.0.1"
   },
   "devDependencies": {
-    "@types/jest": "^24.0.5",
+    "@types/jest": "^24.0.6",
     "@types/qunit": "^2.5.4",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
     "babel-preset-env": "^1.6.0",
