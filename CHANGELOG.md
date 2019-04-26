@@ -1,5 +1,18 @@
 # Changelog
 
+## v0.8.5 (2019-04-26)
+
+#### :rocket: Enhancement
+* [#208](https://github.com/simplabs/qunit-dom/pull/208) Add `matchesSelector()` assertions ([@lindem](https://github.com/lindem))
+
+#### :house: Internal
+* [#234](https://github.com/simplabs/qunit-dom/pull/234) Use ESLint and prettier ([@Turbo87](https://github.com/Turbo87))
+
+#### Committers: 2
+- Timo L. ([@lindem](https://github.com/lindem))
+- Tobias Bieniek ([@Turbo87](https://github.com/Turbo87))
+
+
 ## v0.8.4 (2019-01-04)
 
 #### :rocket: Enhancement
