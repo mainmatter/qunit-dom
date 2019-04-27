@@ -1,22 +1,20 @@
-/* eslint-env embertest */
+import { module, test } from 'qunit';
+import { setupApplicationTest } from 'ember-qunit';
+import { visit } from '@ember/test-helpers';
 
-import { test } from 'qunit';
-import moduleForAcceptance from '../../tests/helpers/module-for-acceptance';
+module('Acceptance | qunit-dom', function(hooks) {
+  setupApplicationTest(hooks);
 
-moduleForAcceptance('Acceptance | qunit-dom');
+  test('qunit-dom assertions are available', async function(assert) {
+    assert.ok(assert.dom, 'assert.dom is available');
+    assert.ok(assert.dom('.foo').includesText, 'assert.dom(...).includesText is available');
 
-test('qunit-dom assertions are available', function(assert) {
-  assert.expect(15);
+    assert.dom('#qunit').doesNotExist('rootElement is set to #ember-testing-container');
 
-  assert.ok(assert.dom, 'assert.dom is available');
-  assert.ok(assert.dom('.foo').includesText, 'assert.dom(...).includesText is available');
+    assert.dom().hasAttribute('id', 'ember-testing');
 
-  assert.dom('#qunit').doesNotExist('rootElement is set to #ember-testing-container');
+    await visit('/');
 
-  assert.dom().hasAttribute('id', 'ember-testing');
-
-  visit('/');
-  andThen(() => {
     assert.dom('#title').exists();
     assert.dom('#subtitle').doesNotExist();
     assert.dom('#title').hasText('Welcome to Ember');
