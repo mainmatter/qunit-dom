@@ -115,6 +115,7 @@ Assert an [HTMLElement][88] (or multiple) matching the `selector` exists.
 #### Parameters
 
 -   `options` **[object][89]?** 
+-   `options.count` **[number]?**
 -   `message` **[string][90]?** 
 
 #### Examples
@@ -260,6 +261,7 @@ but not necessarily in the viewport.
 #### Parameters
 
 -   `options` **[object][89]?** 
+-  `options.count` **[number]?**
 -   `message` **[string][90]?** 
 
 #### Examples
