@@ -35,6 +35,7 @@ export default class DOMAssertions {
    * Assert an {@link HTMLElement} (or multiple) matching the `selector` exists.
    *
    * @param {object?} options
+   * @param {number?} options.count
    * @param {string?} message
    *
    * @example
@@ -48,6 +49,7 @@ export default class DOMAssertions {
    * Assert an {@link HTMLElement} (or multiple) matching the `selector` exists.
    *
    * @param {object?} options
+   * @param {number?} options.count
    * @param {string?} message
    *
    * @example
@@ -198,6 +200,7 @@ export default class DOMAssertions {
    * but not necessarily in the viewport.
    *
    * @param {object?} options
+   * @param {number?} options.count
    * @param {string?} message
    *
    * @example
@@ -220,6 +223,7 @@ export default class DOMAssertions {
    * but not necessarily in the viewport.
    *
    * @param {object?} options
+   * @param {number?} options.count
    * @param {string?} message
    *
    * @example
