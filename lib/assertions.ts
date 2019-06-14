@@ -313,9 +313,7 @@ export default class DOMAssertions {
 
     if (value instanceof RegExp) {
       let result = value.test(actualValue);
-      let expected = `Element ${
-        this.targetDescription
-      } has attribute "${name}" with value matching ${value}`;
+      let expected = `Element ${this.targetDescription} has attribute "${name}" with value matching ${value}`;
       let actual =
         actualValue === null
           ? `Element ${this.targetDescription} does not have attribute "${name}"`
@@ -852,9 +850,7 @@ export default class DOMAssertions {
       if (!message) {
         message = singleElement
           ? `The element ${selectedByPart} also matches the selector ${compareSelector}.`
-          : `${targets} elements, selected by ${
-              this.target
-            }, also match the selector ${compareSelector}.`;
+          : `${targets} elements, selected by ${this.target}, also match the selector ${compareSelector}.`;
       }
       actual = expected = message;
       this.pushResult({ result: true, actual, expected, message });
@@ -864,9 +860,7 @@ export default class DOMAssertions {
       if (!message) {
         message = singleElement
           ? `The element ${selectedByPart} did not also match the selector ${compareSelector}.`
-          : `${matchFailures} out of ${targets} elements selected by ${
-              this.target
-            } did not also match the selector ${compareSelector}.`;
+          : `${matchFailures} out of ${targets} elements selected by ${this.target} did not also match the selector ${compareSelector}.`;
       }
       actual = singleElement ? message : `${difference} elements matched ${compareSelector}.`;
       expected = singleElement
@@ -899,9 +893,7 @@ export default class DOMAssertions {
       if (!message) {
         message = singleElement
           ? `The element ${selectedByPart} did not also match the selector ${compareSelector}.`
-          : `${targets} elements, selected by ${
-              this.target
-            }, did not also match the selector ${compareSelector}.`;
+          : `${targets} elements, selected by ${this.target}, did not also match the selector ${compareSelector}.`;
       }
       actual = expected = message;
       this.pushResult({ result: true, actual, expected, message });
@@ -911,9 +903,7 @@ export default class DOMAssertions {
       if (!message) {
         message = singleElement
           ? `The element ${selectedByPart} must not also match the selector ${compareSelector}.`
-          : `${difference} elements out of ${targets}, selected by ${
-              this.target
-            }, must not also match the selector ${compareSelector}.`;
+          : `${difference} elements out of ${targets}, selected by ${this.target}, must not also match the selector ${compareSelector}.`;
       }
       actual = singleElement
         ? `The element ${selectedByPart} matched ${compareSelector}.`
