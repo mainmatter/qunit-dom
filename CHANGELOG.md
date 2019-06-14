@@ -1,5 +1,23 @@
 # Changelog
 
+## v0.9.0 (2019-06-14)
+
+#### :boom: Breaking Change
+* [#394](https://github.com/simplabs/qunit-dom/pull/394) Drop support for Node 6 ([@Turbo87](https://github.com/Turbo87))
+
+#### :memo: Documentation
+* [#368](https://github.com/simplabs/qunit-dom/pull/368) Specify options.count for exists and isVisible ([@steventsao](https://github.com/steventsao))
+
+#### :house: Internal
+* [#393](https://github.com/simplabs/qunit-dom/pull/393) Disable jQuery integration ([@Turbo87](https://github.com/Turbo87))
+* [#391](https://github.com/simplabs/qunit-dom/pull/391) Remove caret constraint from `prettier` dev dependency ([@Turbo87](https://github.com/Turbo87))
+* [#351](https://github.com/simplabs/qunit-dom/pull/351) Use new `ember-qunit` testing APIs ([@Turbo87](https://github.com/Turbo87))
+
+#### Committers: 2
+- Steven Tsao ([@steventsao](https://github.com/steventsao))
+- Tobias Bieniek ([@Turbo87](https://github.com/Turbo87))
+
+
 ## v0.8.5 (2019-04-26)
 
 #### :rocket: Enhancement
