@@ -28,7 +28,7 @@ describe('assert.dom(...).hasStyle()', () => {
   });
 
   test('succeeds for checking styles applied by CSS stylesheets', () => {
-    var styleNode = document.createElement('style');
+    let styleNode = document.createElement('style');
     styleNode.innerHTML = '.foo { color: blue }';
     document.body.appendChild(styleNode);
     assert.dom('.foo').hasStyle({
