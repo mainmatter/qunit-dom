@@ -2,13 +2,13 @@
 
 module.exports = {
   root: true,
-  parser: 'typescript-eslint-parser',
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 2017,
     sourceType: 'module',
   },
-  plugins: ['prettier', 'typescript'],
-  extends: ['eslint:recommended', 'prettier'],
+  plugins: ['prettier', '@typescript-eslint'],
+  extends: ['eslint:recommended', 'plugin:@typescript-eslint/eslint-recommended', 'prettier'],
   env: {
     browser: true,
   },
@@ -20,6 +20,8 @@ module.exports = {
     {
       files: ['**/*.ts'],
       rules: {
+        'prefer-const': 'off',
+
         // the TypeScript compiler already takes care of this and
         // leaving it enabled results in false positives for interface imports
         'no-dupe-class-members': 'off',
