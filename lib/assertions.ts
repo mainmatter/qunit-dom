@@ -435,26 +435,46 @@ export default class DOMAssertions {
    * Assert that the {@link HTMLElement} has the `expected` CSS class using
    * [`classList`](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList).
    *
-   * @param {string} expected
+   * `expected` can also be a regular expression, and the assertion will return
+   * true if any of the element's CSS classes match.
+   *
+   * @param {string|RegExp} expected
    * @param {string?} message
    *
    * @example
    * assert.dom('input[type="password"]').hasClass('secret-password-input');
    *
+   * @example
+   * assert.dom('input[type="password"]').hasClass(/.*password-input/);
+   *
    * @see {@link #doesNotHaveClass}
    */
-  hasClass(expected: string, message?: string): void {
+  hasClass(expected: string | RegExp, message?: string): void {
     let element = this.findTargetElement();
     if (!element) return;
 
     let actual = element.classList.toString();
-    let result = element.classList.contains(expected);
 
-    if (!message) {
-      message = `Element ${this.targetDescription} has CSS class "${expected}"`;
+    if (expected instanceof RegExp) {
+      let classNames = Array.prototype.slice.call(element.classList)
+      let result = classNames.some((className: string): boolean => {
+        return expected.test(className);
+      })
+
+      if (!message) {
+        message = `Element ${this.targetDescription} has CSS class matching ${expected}`;
+      }
+
+      this.pushResult({ result, actual, expected, message });
+    } else {
+      let result = element.classList.contains(expected);
+
+      if (!message) {
+        message = `Element ${this.targetDescription} has CSS class "${expected}"`;
+      }
+
+      this.pushResult({ result, actual, expected, message });
     }
-
-    this.pushResult({ result, actual, expected, message });
   }
 
   /**
