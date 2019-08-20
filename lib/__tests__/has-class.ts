@@ -14,7 +14,9 @@ describe('assert.dom(...).hasClass()', () => {
   describe('string expected', () => {
     test('succeeds for correct content', () => {
       assert.dom('input[type="password"]').hasClass('secret-password-input');
-      assert.dom(document.querySelector('input[type="password"]')).hasClass('secret-password-input');
+      assert
+        .dom(document.querySelector('input[type="password"]'))
+        .hasClass('secret-password-input');
 
       expect(assert.results).toEqual([
         {

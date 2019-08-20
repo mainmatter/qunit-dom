@@ -14,7 +14,9 @@ describe('assert.dom(...).doesNotHaveClass()', () => {
   describe('string expected', () => {
     test('succeeds for correct content', () => {
       assert.dom('input[type="password"]').doesNotHaveClass('username-input');
-      assert.dom(document.querySelector('input[type="password"]')).doesNotHaveClass('username-input');
+      assert
+        .dom(document.querySelector('input[type="password"]'))
+        .doesNotHaveClass('username-input');
 
       expect(assert.results).toEqual([
         {
@@ -60,13 +62,16 @@ describe('assert.dom(...).doesNotHaveClass()', () => {
   describe('regex expected', () => {
     test('succeeds for correct content', () => {
       assert.dom('input[type="password"]').doesNotHaveClass(/public-password.*/);
-      assert.dom(document.querySelector('input[type="password"]')).doesNotHaveClass(/public-password.*/);
+      assert
+        .dom(document.querySelector('input[type="password"]'))
+        .doesNotHaveClass(/public-password.*/);
 
       expect(assert.results).toEqual([
         {
           actual: 'secret-password-input foo',
           expected: 'not: /public-password.*/',
-          message: 'Element input[type="password"] does not have CSS class matching /public-password.*/',
+          message:
+            'Element input[type="password"] does not have CSS class matching /public-password.*/',
           result: true,
         },
         {
@@ -81,9 +86,7 @@ describe('assert.dom(...).doesNotHaveClass()', () => {
 
     test('fails for wrong content', () => {
       assert.dom('input[type="password"]').doesNotHaveClass(/.*password/);
-      assert
-        .dom(document.querySelector('input[type="password"]'))
-        .doesNotHaveClass(/.*password/);
+      assert.dom(document.querySelector('input[type="password"]')).doesNotHaveClass(/.*password/);
 
       expect(assert.results).toEqual([
         {

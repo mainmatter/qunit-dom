@@ -456,10 +456,10 @@ export default class DOMAssertions {
     let actual = element.classList.toString();
 
     if (expected instanceof RegExp) {
-      let classNames = Array.prototype.slice.call(element.classList)
+      let classNames = Array.prototype.slice.call(element.classList);
       let result = classNames.some((className: string): boolean => {
         return expected.test(className);
-      })
+      });
 
       if (!message) {
         message = `Element ${this.targetDescription} has CSS class matching ${expected}`;
@@ -504,10 +504,10 @@ export default class DOMAssertions {
     let actual = element.classList.toString();
 
     if (expected instanceof RegExp) {
-      let classNames = Array.prototype.slice.call(element.classList)
+      let classNames = Array.prototype.slice.call(element.classList);
       let result = classNames.every((className: string): boolean => {
         return !expected.test(className);
-      })
+      });
 
       if (!message) {
         message = `Element ${this.targetDescription} does not have CSS class matching ${expected}`;
