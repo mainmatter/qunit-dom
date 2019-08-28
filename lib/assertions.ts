@@ -584,8 +584,8 @@ export default class DOMAssertions {
     if (!element) return;
 
     if (expected instanceof RegExp) {
-      let result = expected.test(element.textContent);
-      let actual = element.textContent;
+      let actual = collapseWhitespace(element.textContent);
+      let result = expected.test(actual);
 
       if (!message) {
         message = `Element ${this.targetDescription} has text matching ${expected}`;
