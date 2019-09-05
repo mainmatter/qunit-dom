@@ -376,15 +376,22 @@ assert.dom('.foo').isNotDisabled();
 Assert that the [HTMLElement][88] has the `expected` CSS class using
 [`classList`][106].
 
+`expected` can also be a regular expression, and the assertion will return
+true if any of the element's CSS classes match.
+
 #### Parameters
 
--   `expected` **[string][91]** 
+-   `expected` **([string][91] \| [RegExp][101])** 
 -   `message` **[string][91]?** 
 
 #### Examples
 
 ```javascript
 assert.dom('input[type="password"]').hasClass('secret-password-input');
+```
+
+```javascript
+assert.dom('input[type="password"]').hasClass(/.*password-input/);
 ```
 
 ### doesNotHaveClass
@@ -394,17 +401,24 @@ assert.dom('input[type="password"]').hasClass('secret-password-input');
 Assert that the [HTMLElement][88] does not have the `expected` CSS class using
 [`classList`][106].
 
+`expected` can also be a regular expression, and the assertion will return
+true if none of the element's CSS classes match.
+
 **Aliases:** `hasNoClass`, `lacksClass`
 
 #### Parameters
 
--   `expected` **[string][91]** 
+-   `expected` **([string][91] \| [RegExp][101])** 
 -   `message` **[string][91]?** 
 
 #### Examples
 
 ```javascript
 assert.dom('input[type="password"]').doesNotHaveClass('username-input');
+```
+
+```javascript
+assert.dom('input[type="password"]').doesNotHaveClass(/username-.*-input/);
 ```
 
 ### hasText
