@@ -4041,10 +4041,10 @@ doctrine@^3.0.0:
   dependencies:
     esutils "^2.0.2"
 
-documentation@^12.1.1:
-  version "12.1.1"
-  resolved "https://registry.yarnpkg.com/documentation/-/documentation-12.1.1.tgz#4f1190854240ffcd594883ce823ffc32b38173bc"
-  integrity sha512-OmvNJ6gddKy9K8lx+eA9w+dTxs//vetBnzhaGrTnXbKkE1qgAP0DXaEE8pva2ptSDw3Wa6oDm3C7fKgXdobjPQ==
+documentation@^12.1.2:
+  version "12.1.2"
+  resolved "https://registry.yarnpkg.com/documentation/-/documentation-12.1.2.tgz#4ed9ab511363504da7a0c120d192a366bd6b994a"
+  integrity sha512-k0orsM458oU4m2P7yaXuLwM/0TPC1y0AWeiM5qLIT39oGjUgHLY+VOlb9x2cty5LyENxLQl4rtQzTMWKJ6l5Ng==
   dependencies:
     "@babel/core" "^7.1.2"
     "@babel/generator" "^7.1.3"
