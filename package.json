@@ -54,7 +54,7 @@
     "ember-resolver": "^5.2.1",
     "ember-source": "~3.11.1",
     "eslint": "^5.16.0",
-    "eslint-config-prettier": "^6.2.0",
+    "eslint-config-prettier": "^6.3.0",
     "eslint-plugin-prettier": "^3.1.0",
     "jest": "^24.9.0",
     "lerna-changelog": "^0.8.0",
