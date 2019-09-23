@@ -34,7 +34,7 @@
     "broccoli-merge-trees": "^3.0.1"
   },
   "devDependencies": {
-    "@ember/optional-features": "^0.7.0",
+    "@ember/optional-features": "^1.0.0",
     "@types/jest": "^24.0.18",
     "@types/qunit": "^2.9.0",
     "@typescript-eslint/parser": "^1.13.0",
