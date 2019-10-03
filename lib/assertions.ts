@@ -679,6 +679,20 @@ export default class DOMAssertions {
   }
 
   /**
+   * Assert that the `textContent` property of an {@link HTMLElement} is empty.
+   *
+   * @param {string?} message
+   *
+   * @example
+   * assert.dom('div').hasNoText();
+   *
+   * @see {@link #hasNoText}
+   */
+  hasNoText(message?: string): void {
+    this.hasText('', message);
+  }
+
+  /**
    * Assert that the text of the {@link HTMLElement} or an {@link HTMLElement}
    * matching the `selector` contains the given `text`, using the
    * [`textContent`](https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent)
