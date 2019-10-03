@@ -11,7 +11,6 @@ import matchesSelector from './assertions/matches-selector';
 import elementToString from './helpers/element-to-string';
 import collapseWhitespace from './helpers/collapse-whitespace';
 import { toArray } from './helpers/node-list';
-import TAG_NAMES from './helpers/tag-names';
 
 export default class DOMAssertions {
   constructor(
@@ -983,14 +982,8 @@ export default class DOMAssertions {
       throw new TypeError(`You must pass a string to "hasTag". You passed ${tagName}.`);
     }
 
-    if (!TAG_NAMES.includes(tagName.toLowerCase())) {
-      throw new Error(
-        `The tagName '${tagName}' is not a valid HTML tag. You must provide a valid HTML tag`
-      );
-    }
-
     actual = element.tagName.toLowerCase();
-    expected = tagName;
+    expected = tagName.toLowerCase();
 
     if (actual === expected) {
       if (!message) {
