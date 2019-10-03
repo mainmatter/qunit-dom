@@ -79,7 +79,7 @@
     -   [doesNotMatchSelector][75]
         -   [Parameters][76]
         -   [Examples][77]
-    -   [hasTag][78]
+    -   [hasTagName][78]
         -   [Parameters][79]
         -   [Examples][80]
 -   [hasStyle][81]
@@ -117,9 +117,9 @@ Assert an [HTMLElement][91] (or multiple) matching the `selector` exists.
 
 #### Parameters
 
--   `options` **[object][92]?** 
-    -   `options.count` **[number][93]?** 
--   `message` **[string][94]?** 
+-   `options` **[object][92]?**
+    -   `options.count` **[number][93]?**
+-   `message` **[string][94]?**
 
 #### Examples
 
@@ -136,7 +136,7 @@ Assert an [HTMLElement][91] matching the `selector` does not exists.
 
 #### Parameters
 
--   `message` **[string][94]?** 
+-   `message` **[string][94]?**
 
 #### Examples
 
@@ -153,7 +153,7 @@ Assert that the [HTMLElement][91] or an [HTMLElement][91] matching the
 
 #### Parameters
 
--   `message` **[string][94]?** 
+-   `message` **[string][94]?**
 
 #### Examples
 
@@ -170,7 +170,7 @@ Assert that the [HTMLElement][91] or an [HTMLElement][91] matching the
 
 #### Parameters
 
--   `message` **[string][94]?** 
+-   `message` **[string][94]?**
 
 #### Examples
 
@@ -187,7 +187,7 @@ Assert that the [HTMLElement][91] or an [HTMLElement][91] matching the
 
 #### Parameters
 
--   `message` **[string][94]?** 
+-   `message` **[string][94]?**
 
 #### Examples
 
@@ -204,7 +204,7 @@ Assert that the [HTMLElement][91] or an [HTMLElement][91] matching the
 
 #### Parameters
 
--   `message` **[string][94]?** 
+-   `message` **[string][94]?**
 
 #### Examples
 
@@ -221,7 +221,7 @@ Assert that the [HTMLElement][91] or an [HTMLElement][91] matching the
 
 #### Parameters
 
--   `message` **[string][94]?** 
+-   `message` **[string][94]?**
 
 #### Examples
 
@@ -238,7 +238,7 @@ Assert that the [HTMLElement][91] or an [HTMLElement][91] matching the
 
 #### Parameters
 
--   `message` **[string][94]?** 
+-   `message` **[string][94]?**
 
 #### Examples
 
@@ -263,9 +263,9 @@ but not necessarily in the viewport.
 
 #### Parameters
 
--   `options` **[object][92]?** 
-    -   `options.count` **[number][93]?** 
--   `message` **[string][94]?** 
+-   `options` **[object][92]?**
+    -   `options.count` **[number][93]?**
+-   `message` **[string][94]?**
 
 #### Examples
 
@@ -291,7 +291,7 @@ but not necessarily in the viewport.
 
 #### Parameters
 
--   `message` **[string][94]?** 
+-   `message` **[string][94]?**
 
 #### Examples
 
@@ -309,9 +309,9 @@ or regular expression.
 
 #### Parameters
 
--   `name` **[string][94]** 
--   `value` **([string][94] \| [RegExp][104] \| [object][92]?)** 
--   `message` **[string][94]?** 
+-   `name` **[string][94]**
+-   `value` **([string][94] \| [RegExp][104] \| [object][92]?)**
+-   `message` **[string][94]?**
 
 #### Examples
 
@@ -329,8 +329,8 @@ Assert that the [HTMLElement][91] has no attribute with the provided `name`.
 
 #### Parameters
 
--   `name` **[string][94]** 
--   `message` **[string][94]?** 
+-   `name` **[string][94]**
+-   `message` **[string][94]?**
 
 #### Examples
 
@@ -347,7 +347,7 @@ Assert that the [HTMLElement][91] or an [HTMLElement][91] matching the
 
 #### Parameters
 
--   `message` **[string][94]?** 
+-   `message` **[string][94]?**
 
 #### Examples
 
@@ -364,7 +364,7 @@ Assert that the [HTMLElement][91] or an [HTMLElement][91] matching the
 
 #### Parameters
 
--   `message` **[string][94]?** 
+-   `message` **[string][94]?**
 
 #### Examples
 
@@ -384,8 +384,8 @@ true if any of the element's CSS classes match.
 
 #### Parameters
 
--   `expected` **([string][94] \| [RegExp][104])** 
--   `message` **[string][94]?** 
+-   `expected` **([string][94] \| [RegExp][104])**
+-   `message` **[string][94]?**
 
 #### Examples
 
@@ -411,8 +411,8 @@ true if none of the element's CSS classes match.
 
 #### Parameters
 
--   `expected` **([string][94] \| [RegExp][104])** 
--   `message` **[string][94]?** 
+-   `expected` **([string][94] \| [RegExp][104])**
+-   `message` **[string][94]?**
 
 #### Examples
 
@@ -443,8 +443,8 @@ attribute and stripping/collapsing whitespace.
 
 #### Parameters
 
--   `expected` **([string][94] \| [RegExp][104])** 
--   `message` **[string][94]?** 
+-   `expected` **([string][94] \| [RegExp][104])**
+-   `message` **[string][94]?**
 
 #### Examples
 
@@ -468,7 +468,7 @@ Assert that the `textContent` property of an [HTMLElement][91] is not empty.
 
 #### Parameters
 
--   `message` **[string][94]?** 
+-   `message` **[string][94]?**
 
 #### Examples
 
@@ -494,8 +494,8 @@ attribute.
 
 #### Parameters
 
--   `text` **[string][94]** 
--   `message` **[string][94]?** 
+-   `text` **[string][94]**
+-   `message` **[string][94]?**
 
 #### Examples
 
@@ -514,8 +514,8 @@ attribute.
 
 #### Parameters
 
--   `text` **[string][94]** 
--   `message` **[string][94]?** 
+-   `text` **[string][94]**
+-   `message` **[string][94]?**
 
 #### Examples
 
@@ -536,8 +536,8 @@ If no `expected` value is provided, the assertion will fail if the
 
 #### Parameters
 
--   `expected` **([string][94] \| [RegExp][104] \| [object][92]?)** 
--   `message` **[string][94]?** 
+-   `expected` **([string][94] \| [RegExp][104] \| [object][92]?)**
+-   `message` **[string][94]?**
 
 #### Examples
 
@@ -554,7 +554,7 @@ Assert that the `value` property of an [HTMLInputElement][116] is not empty.
 
 #### Parameters
 
--   `message` **[string][94]?** 
+-   `message` **[string][94]?**
 
 #### Examples
 
@@ -573,7 +573,7 @@ Assert that the `value` property of an [HTMLInputElement][116] is empty.
 
 #### Parameters
 
--   `message` **[string][94]?** 
+-   `message` **[string][94]?**
 
 #### Examples
 
@@ -588,8 +588,8 @@ compareSelector.
 
 #### Parameters
 
--   `compareSelector` **[string][94]** 
--   `message` **[string][94]?** 
+-   `compareSelector` **[string][94]**
+-   `message` **[string][94]?**
 
 #### Examples
 
@@ -604,8 +604,8 @@ compareSelector.
 
 #### Parameters
 
--   `compareSelector` **[string][94]** 
--   `message` **[string][94]?** 
+-   `compareSelector` **[string][94]**
+-   `message` **[string][94]?**
 
 #### Examples
 
@@ -613,7 +613,7 @@ compareSelector.
 assert.dom('input').doesNotMatchSelector('input[disabled]')
 ```
 
-### hasTag
+### hasTagName
 
 Assert that the tagName of the [HTMLElement][91] or an [HTMLElement][91]
 matching the `selector` matches the `expected` tagName, using the
@@ -622,9 +622,9 @@ property of the [HTMLElement][91].
 
 #### Parameters
 
--   `tagName`  
--   `message` **[string][94]?** 
--   `expected` **[string][94]** 
+-   `tagName`
+-   `message` **[string][94]?**
+-   `expected` **[string][94]**
 
 #### Examples
 
@@ -633,7 +633,7 @@ property of the [HTMLElement][91].
 //   Title
 // </h1>
 
-assert.dom('#title').hasTag('h1');
+assert.dom('#title').hasTagName('h1');
 ```
 
 ## hasStyle
@@ -645,8 +645,8 @@ Assert that the [HTMLElement][] has the `expected` style declarations using
 
 ### Parameters
 
--   `expected` **[object][92]** 
--   `message` **[string][94]?** 
+-   `expected` **[object][92]**
+-   `message` **[string][94]?**
 
 ### Examples
 
@@ -666,9 +666,9 @@ Assert that the pseudo element for `selector` of the [HTMLElement][] has the `ex
 
 ### Parameters
 
--   `selector` **[string][94]** 
--   `expected` **[object][92]** 
--   `message` **[string][94]?** 
+-   `selector` **[string][94]**
+-   `expected` **[object][92]**
+-   `message` **[string][94]?**
 
 ### Examples
 
@@ -832,7 +832,7 @@ assert.dom('.progress-bar').hasPseudoElementStyle(':after', {
 
 [77]: #examples-24
 
-[78]: #hastag
+[78]: #hasTagName
 
 [79]: #parameters-25
 

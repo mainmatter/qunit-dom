@@ -969,9 +969,9 @@ export default class DOMAssertions {
    * //   Title
    * // </h1>
    *
-   * assert.dom('#title').hasTag('h1');
+   * assert.dom('#title').hasTagName('h1');
    */
-  hasTag(tagName: string, message?: string) {
+  hasTagName(tagName: string, message?: string) {
     let element = this.findTargetElement();
     let actual;
     let expected;
@@ -979,7 +979,7 @@ export default class DOMAssertions {
     if (!element) return;
 
     if (typeof tagName !== 'string') {
-      throw new TypeError(`You must pass a string to "hasTag". You passed ${tagName}.`);
+      throw new TypeError(`You must pass a string to "hasTagName". You passed ${tagName}.`);
     }
 
     actual = element.tagName.toLowerCase();

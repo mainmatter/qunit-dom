@@ -2,7 +2,7 @@
 
 import TestAssertions from '../helpers/test-assertions';
 
-describe('assert.dom(...).hasTag()', () => {
+describe('assert.dom(...).hasTagName()', () => {
   let assert;
 
   beforeEach(() => {
@@ -12,7 +12,7 @@ describe('assert.dom(...).hasTag()', () => {
   test('with custom message', () => {
     document.body.innerHTML = '<h1 id="title">Title</h1>\n';
 
-    assert.dom('#title').hasTag('h1', 'custom message');
+    assert.dom('#title').hasTagName('h1', 'custom message');
 
     expect(assert.results).toEqual([
       {
@@ -33,7 +33,7 @@ describe('assert.dom(...).hasTag()', () => {
     });
 
     test('succeeds for correct tagName', () => {
-      assert.dom(element).hasTag('h1');
+      assert.dom(element).hasTagName('h1');
 
       expect(assert.results).toEqual([
         {
@@ -46,7 +46,7 @@ describe('assert.dom(...).hasTag()', () => {
     });
 
     test('fails for wrong tagName', () => {
-      assert.dom(element).hasTag('h2');
+      assert.dom(element).hasTagName('h2');
 
       expect(assert.results).toEqual([
         {
@@ -59,7 +59,7 @@ describe('assert.dom(...).hasTag()', () => {
     });
 
     test('fails for missing element', () => {
-      assert.dom(null).hasTag('h1');
+      assert.dom(null).hasTagName('h1');
 
       expect(assert.results).toEqual([
         {
@@ -76,7 +76,7 @@ describe('assert.dom(...).hasTag()', () => {
     });
 
     test('succeeds for correct tagName', () => {
-      assert.dom('#title').hasTag('h1');
+      assert.dom('#title').hasTagName('h1');
 
       expect(assert.results).toEqual([
         {
@@ -89,7 +89,7 @@ describe('assert.dom(...).hasTag()', () => {
     });
 
     test('fails for wrong tagName', () => {
-      assert.dom('#title').hasTag('h2');
+      assert.dom('#title').hasTagName('h2');
 
       expect(assert.results).toEqual([
         {
@@ -102,7 +102,7 @@ describe('assert.dom(...).hasTag()', () => {
     });
 
     test('fails for missing element', () => {
-      assert.dom('#missing').hasTag('h1');
+      assert.dom('#missing').hasTagName('h1');
 
       expect(assert.results).toEqual([
         {
@@ -114,16 +114,16 @@ describe('assert.dom(...).hasTag()', () => {
   });
 
   test('throws for unexpected parameter types', () => {
-    expect(() => assert.dom(5).hasTag('h1')).toThrow('Unexpected Parameter: 5');
-    expect(() => assert.dom(true).hasTag('h1')).toThrow('Unexpected Parameter: true');
-    expect(() => assert.dom(undefined).hasTag('h1')).toThrow('Unexpected Parameter: undefined');
-    expect(() => assert.dom({}).hasTag('h1')).toThrow('Unexpected Parameter: [object Object]');
-    expect(() => assert.dom(document).hasTag('h1')).toThrow(
+    expect(() => assert.dom(5).hasTagName('h1')).toThrow('Unexpected Parameter: 5');
+    expect(() => assert.dom(true).hasTagName('h1')).toThrow('Unexpected Parameter: true');
+    expect(() => assert.dom(undefined).hasTagName('h1')).toThrow('Unexpected Parameter: undefined');
+    expect(() => assert.dom({}).hasTagName('h1')).toThrow('Unexpected Parameter: [object Object]');
+    expect(() => assert.dom(document).hasTagName('h1')).toThrow(
       'Unexpected Parameter: [object Document]'
     );
   });
 
-  describe('invalid arguments to `hasTag`', () => {
+  describe('invalid arguments to `hasTagName`', () => {
     let element;
 
     beforeEach(() => {
@@ -131,15 +131,15 @@ describe('assert.dom(...).hasTag()', () => {
       element = document.querySelector('#title');
     });
 
-    test('passing a number to `hasTag` will throw an error', () => {
-      expect(() => assert.dom(element).hasTag(1234)).toThrow(
-        'You must pass a string to "hasTag". You passed 1234'
+    test('passing a number to `hasTagName` will throw an error', () => {
+      expect(() => assert.dom(element).hasTagName(1234)).toThrow(
+        'You must pass a string to "hasTagName". You passed 1234'
       );
     });
 
-    test('passing an object to `hasTag` will throw an error', () => {
-      expect(() => assert.dom(element).hasTag({})).toThrow(
-        'You must pass a string to "hasTag". You passed [object Object]'
+    test('passing an object to `hasTagName` will throw an error', () => {
+      expect(() => assert.dom(element).hasTagName({})).toThrow(
+        'You must pass a string to "hasTagName". You passed [object Object]'
       );
     });
   });
