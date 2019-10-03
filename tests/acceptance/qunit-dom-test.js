@@ -18,6 +18,7 @@ module('Acceptance | qunit-dom', function(hooks) {
     assert.dom('#title').exists();
     assert.dom('#subtitle').doesNotExist();
     assert.dom('#title').hasText('Welcome to Ember');
+    assert.dom('#title').hasTagName('h2');
 
     /*
      * JSDom based tests aren't able to discern visibility as we define it. Specifically,
