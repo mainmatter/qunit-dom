@@ -11,6 +11,7 @@ import matchesSelector from './assertions/matches-selector';
 import elementToString from './helpers/element-to-string';
 import collapseWhitespace from './helpers/collapse-whitespace';
 import { toArray } from './helpers/node-list';
+import TAG_NAMES from './helpers/tag-names';
 
 export default class DOMAssertions {
   constructor(
@@ -951,6 +952,57 @@ export default class DOMAssertions {
       expected = singleElement
         ? message
         : `${targets} elements should not have matched ${compareSelector}.`;
+      this.pushResult({ result: false, actual, expected, message });
+    }
+  }
+
+  /**
+   * Assert that the tagName of the {@link HTMLElement} or an {@link HTMLElement}
+   * matching the `selector` matches the `expected` tagName, using the
+   * [`tagName`](https://developer.mozilla.org/en-US/docs/Web/API/Element/tagName)
+   * property of the {@link HTMLElement}.
+   *
+   * @param {string} expected
+   * @param {string?} message
+   *
+   * @example
+   * // <h1 id="title">
+   * //   Title
+   * // </h1>
+   *
+   * assert.dom('#title').hasTag('h1');
+   */
+  hasTag(tagName: string, message?: string) {
+    let element = this.findTargetElement();
+    let actual;
+    let expected;
+
+    if (!element) return;
+
+    if (typeof tagName !== 'string') {
+      throw new TypeError(`You must pass a string to "hasTag". You passed ${tagName}.`);
+    }
+
+    if (!TAG_NAMES.includes(tagName.toLowerCase())) {
+      throw new Error(
+        `The tagName '${tagName}' is not a valid HTML tag. You must provide a valid HTML tag`
+      );
+    }
+
+    actual = element.tagName.toLowerCase();
+    expected = tagName;
+
+    if (actual === expected) {
+      if (!message) {
+        message = `Element ${this.targetDescription} has tagName ${expected}`;
+      }
+
+      this.pushResult({ result: true, actual, expected, message });
+    } else {
+      if (!message) {
+        message = `Element ${this.targetDescription} does not have tagName ${expected}`;
+      }
+
       this.pushResult({ result: false, actual, expected, message });
     }
   }
