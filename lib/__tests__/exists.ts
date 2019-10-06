@@ -45,14 +45,14 @@ describe('assert.dom(...).exists()', () => {
     test('succeeds if element exists', () => {
       document.body.innerHTML = '<h1 class="baz">foo</h1>bar';
 
-      const h1Element = document.querySelector('h1');
-      assert.dom(h1Element).exists();
+      const headingElement = document.querySelector('h1');
+      assert.dom(headingElement).exists();
 
       expect(assert.results).toEqual([
         {
-          actual: 'Element H1 exists',
-          expected: 'Element H1 exists',
-          message: 'Element H1 exists',
+          actual: 'Element h1.baz exists',
+          expected: 'Element h1.baz exists',
+          message: 'Element h1.baz exists',
           result: true,
         },
       ]);

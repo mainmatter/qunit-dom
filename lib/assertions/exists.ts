@@ -8,19 +8,13 @@ export default function exists(options?: ExistsOptions | string, message?: strin
   } else if (options) {
     expectedCount = options.count;
   }
-  let label;
-  if (typeof this.target === 'string') {
-    label = this.target;
-  } else if (this.target instanceof Element) {
-    label = (this.target as Element).tagName;
-  }
 
   let elements = this.findElements(this.target);
 
   if (expectedCount === null) {
     let result = elements.length > 0;
-    let expected = format(label);
-    let actual = result ? expected : format(label, 0);
+    let expected = format(this.targetDescription);
+    let actual = result ? expected : format(this.targetDescription, 0);
 
     if (!message) {
       message = expected;
@@ -29,8 +23,8 @@ export default function exists(options?: ExistsOptions | string, message?: strin
     this.pushResult({ result, actual, expected, message });
   } else if (typeof expectedCount === 'number') {
     let result = elements.length === expectedCount;
-    let actual = format(label, elements.length);
-    let expected = format(label, expectedCount);
+    let actual = format(this.targetDescription, elements.length);
+    let expected = format(this.targetDescription, expectedCount);
 
     if (!message) {
       message = expected;
