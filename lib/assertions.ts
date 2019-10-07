@@ -1001,6 +1001,51 @@ export default class DOMAssertions {
   }
 
   /**
+   * Assert that the tagName of the {@link HTMLElement} or an {@link HTMLElement}
+   * matching the `selector` does not match the `expected` tagName, using the
+   * [`tagName`](https://developer.mozilla.org/en-US/docs/Web/API/Element/tagName)
+   * property of the {@link HTMLElement}.
+   *
+   * @param {string} expected
+   * @param {string?} message
+   *
+   * @example
+   * // <section id="block">
+   * //   Title
+   * // </section>
+   *
+   * assert.dom('section#block').doesNotHaveTagName('div');
+   */
+  doesNotHaveTagName(tagName: string, message?: string) {
+    let element = this.findTargetElement();
+    let actual;
+    let expected;
+
+    if (!element) return;
+
+    if (typeof tagName !== 'string') {
+      throw new TypeError(`You must pass a string to "doesNotHaveTagName". You passed ${tagName}.`);
+    }
+
+    actual = element.tagName.toLowerCase();
+    expected = tagName.toLowerCase();
+
+    if (actual !== expected) {
+      if (!message) {
+        message = `Element ${this.targetDescription} does not have tagName ${expected}`;
+      }
+
+      this.pushResult({ result: true, actual, expected, message });
+    } else {
+      if (!message) {
+        message = `Element ${this.targetDescription} has tagName ${expected}`;
+      }
+
+      this.pushResult({ result: false, actual, expected, message });
+    }
+  }
+
+  /**
    * @private
    */
   private pushResult(result) {
