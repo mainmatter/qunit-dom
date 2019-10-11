@@ -34,6 +34,9 @@ module('Acceptance | qunit-dom', function(hooks) {
     assert.dom('#hidden-input').isNotVisible();
     assert.dom('p').isVisible({ count: 2 });
 
+    let titleElement = document.querySelector('#title');
+    assert.dom(titleElement).isVisible();
+
     /*
      * JSDom does not implement pseudo elements and this can only be tested in a real browser.
      * See this: https://github.com/jsdom/jsdom/issues/1928

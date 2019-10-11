@@ -10,7 +10,7 @@ export default function isVisible(options?: string | ExistsOptions, message?: st
     expectedCount = options.count;
   }
 
-  let elements = this.findElements(this.target).filter(visible);
+  let elements = this.findElements().filter(visible);
 
   if (expectedCount === null) {
     let result = elements.length > 0;

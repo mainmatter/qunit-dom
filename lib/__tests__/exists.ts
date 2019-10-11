@@ -9,7 +9,7 @@ describe('assert.dom(...).exists()', () => {
     assert = new TestAssertions();
   });
 
-  describe('selector only', () => {
+  describe('with selector', () => {
     test('succeeds if element exists', () => {
       document.body.innerHTML = '<h1 class="baz">foo</h1>bar';
 
@@ -41,7 +41,7 @@ describe('assert.dom(...).exists()', () => {
     });
   });
 
-  describe('Element only', () => {
+  describe('with Element', () => {
     test('succeeds if element exists', () => {
       document.body.innerHTML = '<h1 class="baz">foo</h1>bar';
 

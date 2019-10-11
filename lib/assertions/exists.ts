@@ -9,7 +9,7 @@ export default function exists(options?: ExistsOptions | string, message?: strin
     expectedCount = options.count;
   }
 
-  let elements = this.findElements(this.target);
+  let elements = this.findElements();
 
   if (expectedCount === null) {
     let result = elements.length > 0;

@@ -10,7 +10,7 @@ module.exports = {
       process.env.TRAVIS ? '--no-sandbox' : null,
 
       '--disable-gpu',
-      '--headless',
+      // '--headless',
       '--remote-debugging-port=9222',
       '--window-size=1440,900',
     ].filter(Boolean),
