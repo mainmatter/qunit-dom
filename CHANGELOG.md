@@ -1,5 +1,21 @@
 # Changelog
 
+## v0.9.1 (2019-10-28)
+
+#### :rocket: Enhancement
+* [#496](https://github.com/simplabs/qunit-dom/pull/496) Adding `hasTagName()` assertion ([@scalvert](https://github.com/scalvert))
+* [#451](https://github.com/simplabs/qunit-dom/pull/451) Adds regex support for CSS class assertions ([@timiyay](https://github.com/timiyay))
+
+#### :house: Internal
+* [#407](https://github.com/simplabs/qunit-dom/pull/407) Update ESLint-Typescript tooling ([@Turbo87](https://github.com/Turbo87))
+
+#### Committers: 4
+- Stephen Yeung ([@step2yeung](https://github.com/step2yeung))
+- Steve Calvert ([@scalvert](https://github.com/scalvert))
+- Tobias Bieniek ([@Turbo87](https://github.com/Turbo87))
+- [@timiyay](https://github.com/timiyay)
+
+
 ## v0.9.0 (2019-06-14)
 
 #### :boom: Breaking Change
