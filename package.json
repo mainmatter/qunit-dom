@@ -61,7 +61,7 @@
     "loader.js": "^4.2.3",
     "prettier": "1.18.2",
     "rollup": "^1.26.0",
-    "rollup-plugin-typescript2": "^0.24.3",
+    "rollup-plugin-typescript2": "^0.25.1",
     "ts-jest": "^24.1.0",
     "typescript": "^3.6.4"
   },
