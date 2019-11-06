@@ -3,6 +3,7 @@
 ## v0.9.1 (2019-10-28)
 
 #### :rocket: Enhancement
+* [#499](https://github.com/simplabs/qunit-dom/pull/499) Adding `hasNoText()` assertion ([@step2yeung](https://github.com/step2yeung))
 * [#496](https://github.com/simplabs/qunit-dom/pull/496) Adding `hasTagName()` assertion ([@scalvert](https://github.com/scalvert))
 * [#451](https://github.com/simplabs/qunit-dom/pull/451) Adds regex support for CSS class assertions ([@timiyay](https://github.com/timiyay))
 
