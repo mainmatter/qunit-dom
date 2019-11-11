@@ -10,7 +10,7 @@ describe('assert.dom(...).isCSSVisible()', () => {
   });
 
   test('succeeds for correct content', () => {
-    document.body.innerHTML = '<div class="foo" style="opacity: 1"></div>'
+    document.body.innerHTML = '<div class="foo" style="opacity: 1"></div>';
 
     assert.dom('.foo').isCSSVisible();
 
@@ -25,7 +25,8 @@ describe('assert.dom(...).isCSSVisible()', () => {
   });
 
   test('succeeds for correct content with multiple CSS visibility types', () => {
-    document.body.innerHTML = '<div class="foo" style="opacity: 1; display: block; visibility: visible"></div>'
+    document.body.innerHTML =
+      '<div class="foo" style="opacity: 1; display: block; visibility: visible"></div>';
 
     assert.dom('.foo').isCSSVisible();
 
@@ -60,7 +61,8 @@ describe('assert.dom(...).isCSSVisible()', () => {
   });
 
   test('fails if opacity hides element', () => {
-    document.body.innerHTML = '<div class="foo" style="opacity: 0; display: block; visibility: visible"></div>'
+    document.body.innerHTML =
+      '<div class="foo" style="opacity: 0; display: block; visibility: visible"></div>';
 
     assert.dom('.foo').isCSSVisible();
 
@@ -72,10 +74,11 @@ describe('assert.dom(...).isCSSVisible()', () => {
         result: false,
       },
     ]);
-  })
+  });
 
   test('fails if display hides element', () => {
-    document.body.innerHTML = '<div class="foo" style="opacity: 1; display: none; visibility: visible"></div>'
+    document.body.innerHTML =
+      '<div class="foo" style="opacity: 1; display: none; visibility: visible"></div>';
 
     assert.dom('.foo').isCSSVisible();
 
@@ -87,10 +90,11 @@ describe('assert.dom(...).isCSSVisible()', () => {
         result: false,
       },
     ]);
-  })
+  });
 
   test('fails if visibility hides element', () => {
-    document.body.innerHTML = '<div class="foo" style="opacity: 1; display: block; visibility: hidden"></div>'
+    document.body.innerHTML =
+      '<div class="foo" style="opacity: 1; display: block; visibility: hidden"></div>';
 
     assert.dom('.foo').isCSSVisible();
 
@@ -102,7 +106,7 @@ describe('assert.dom(...).isCSSVisible()', () => {
         result: false,
       },
     ]);
-  })
+  });
 
   test('fails for missing element', () => {
     assert.dom('#missing').isCSSVisible();
@@ -117,12 +121,8 @@ describe('assert.dom(...).isCSSVisible()', () => {
   test('throws for unexpected parameter types', () => {
     expect(() => assert.dom(5).isCSSVisible()).toThrow('Unexpected Parameter: 5');
     expect(() => assert.dom(true).isCSSVisible()).toThrow('Unexpected Parameter: true');
-    expect(() => assert.dom(undefined).isCSSVisible()).toThrow(
-      'Unexpected Parameter: undefined'
-    );
-    expect(() => assert.dom({}).isCSSVisible()).toThrow(
-      'Unexpected Parameter: [object Object]'
-    );
+    expect(() => assert.dom(undefined).isCSSVisible()).toThrow('Unexpected Parameter: undefined');
+    expect(() => assert.dom({}).isCSSVisible()).toThrow('Unexpected Parameter: [object Object]');
     expect(() => assert.dom(document).isCSSVisible()).toThrow(
       'Unexpected Parameter: [object Document]'
     );

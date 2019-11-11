@@ -296,7 +296,7 @@ export default class DOMAssertions {
    * });
    *
    */
-  hasPseudoElementVisibility(selector: string | null,  message?: string): void {
+  hasPseudoElementVisibility(selector: string | null, message?: string): void {
     let element = this.findTargetElement();
 
     if (!element) return;
@@ -306,9 +306,7 @@ export default class DOMAssertions {
     let visibility = computedStyle['visibility'];
     let display = computedStyle['display'];
 
-    let result = opacity !== '0' &&
-      visibility !== 'hidden' &&
-      display !== 'none';
+    let result = opacity !== '0' && visibility !== 'hidden' && display !== 'none';
 
     let expected = `Element ${this.targetDescription} is CSS visible`;
     let actual = result ? expected : `Element ${this.targetDescription} is not CSS visible`;
