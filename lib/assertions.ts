@@ -604,12 +604,12 @@ export default class DOMAssertions {
    *
    * @example
    * assert.dom('.progress-bar').doesNotHaveStyle({
-    *   opacity: 1,
-    *   display: 'block'
-    * });
-    *
-    * @see {@link #hasClass}
-    */
+   *   opacity: 1,
+   *   display: 'block'
+   * });
+   *
+   * @see {@link #hasClass}
+   */
   doesNotHaveStyle(expected: object, message?: string): void {
     this.doesNotHavePseudoElementStyle(null, expected, message);
   }
@@ -627,11 +627,11 @@ export default class DOMAssertions {
    *
    * @example
    * assert.dom('.progress-bar').doesNotHavePseudoElementStyle(':after', {
-    *   content: '";"',
-    * });
-    *
-    * @see {@link #hasClass}
-    */
+   *   content: '";"',
+   * });
+   *
+   * @see {@link #hasClass}
+   */
   doesNotHavePseudoElementStyle(selector: string | null, expected: object, message: string) {
     let element = this.findTargetElement();
     if (!element) return;

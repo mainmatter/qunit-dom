@@ -92,7 +92,9 @@ describe('assert.dom(...).doesNotHaveStyle()', () => {
 
   test('throws for unexpected parameter types', () => {
     expect(() => assert.dom(5).doesNotHaveStyle({ opacity: 1 })).toThrow('Unexpected Parameter: 5');
-    expect(() => assert.dom(true).doesNotHaveStyle({ opacity: 1 })).toThrow('Unexpected Parameter: true');
+    expect(() => assert.dom(true).doesNotHaveStyle({ opacity: 1 })).toThrow(
+      'Unexpected Parameter: true'
+    );
     expect(() => assert.dom(undefined).doesNotHaveStyle({ opacity: 1 })).toThrow(
       'Unexpected Parameter: undefined'
     );
