@@ -260,6 +260,67 @@ export default class DOMAssertions {
   }
 
   /**
+   * Assert that the {@link HTMLElement} or an {@link HTMLElement} matching the
+   * `selector` exists and is visible via CSS properties.
+   *
+   * Visibility is determined by asserting that:
+   *
+   * - the elements CSSStyleDeclaration properties for visibility are:
+   *  - opacity !== '0'
+   *  - visibility !== 'hidden'
+   *  - display !== 'none'
+   *
+   * @param {string?} message
+   *
+   * @example
+   * assert.dom('.choice').isCSSVisible();
+   *
+   */
+  isCSSVisible(message?: string): void {
+    this.hasPseudoElementVisibility(null, message);
+  }
+
+  hasPseudoElementVisibility(selector: string, message?: string): void;
+
+  /**
+   * Assert that the pseudo element for `selector` of the [HTMLElement][] has the `expected` CSS visibility declarations using
+   * [`window.getComputedStyle`](https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle).
+   *
+   * @name hasPseudoElementStyle
+   * @param {string} selector
+   * @param {string?} message
+   *
+   * @example
+   * assert.dom('.progress-bar').hasPseudoElementVisibility(':after', {
+   *   content: '";"',
+   * });
+   *
+   */
+  hasPseudoElementVisibility(selector: string | null,  message?: string): void {
+    let element = this.findTargetElement();
+
+    if (!element) return;
+
+    let computedStyle = window.getComputedStyle(element, selector);
+    let opacity = computedStyle['opacity'];
+    let visibility = computedStyle['visibility'];
+    let display = computedStyle['display'];
+
+    let result = opacity !== '0' &&
+      visibility !== 'hidden' &&
+      display !== 'none';
+
+    let expected = `Element ${this.targetDescription} is CSS visible`;
+    let actual = result ? expected : `Element ${this.targetDescription} is not CSS visible`;
+
+    if (!message) {
+      message = expected;
+    }
+
+    this.pushResult({ result, actual, expected, message });
+  }
+
+  /**
    * Assert that the {@link HTMLElement} has an attribute with the provided `name`.
    *
    * @param {string} name
