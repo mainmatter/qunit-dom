@@ -80,6 +80,8 @@ export default class DOMAssertions {
    * Assert that the {@link HTMLElement} or an {@link HTMLElement} matching the
    * `selector` is currently checked.
    *
+   * Note: This also supports `aria-checked="true/false"`.
+   *
    * @param {string?} message
    *
    * @example
@@ -94,6 +96,8 @@ export default class DOMAssertions {
   /**
    * Assert that the {@link HTMLElement} or an {@link HTMLElement} matching the
    * `selector` is currently unchecked.
+   *
+   * Note: This also supports `aria-checked="true/false"`.
    *
    * @param {string?} message
    *
