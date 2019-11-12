@@ -1,13 +1,28 @@
 # Changelog
 
+## v0.9.2 (2019-11-12)
+
+#### :rocket: Enhancement
+* [#535](https://github.com/simplabs/qunit-dom/pull/535) isChecked: Add support for `aria-checked="true/false"` ([@Turbo87](https://github.com/Turbo87))
+
+#### :memo: Documentation
+* [#530](https://github.com/simplabs/qunit-dom/pull/530) Update Changelog ([@tniezurawski](https://github.com/tniezurawski))
+
+#### Committers: 2
+- Tobias Bieniek ([@Turbo87](https://github.com/Turbo87))
+- Tomasz Nieżurawski ([@tniezurawski](https://github.com/tniezurawski))
+
+
 ## v0.9.1 (2019-10-28)
 
 #### :rocket: Enhancement
-* [#499](https://github.com/simplabs/qunit-dom/pull/499) Adding `hasNoText()` assertion ([@step2yeung](https://github.com/step2yeung))
-* [#496](https://github.com/simplabs/qunit-dom/pull/496) Adding `hasTagName()` assertion ([@scalvert](https://github.com/scalvert))
-* [#451](https://github.com/simplabs/qunit-dom/pull/451) Adds regex support for CSS class assertions ([@timiyay](https://github.com/timiyay))
+* [#499](https://github.com/simplabs/qunit-dom/pull/499) Add `hasNoText()` assertion ([@step2yeung](https://github.com/step2yeung))
+* [#501](https://github.com/simplabs/qunit-dom/pull/501) Add `doesNotHaveTagName()` assertion ([@scalvert](https://github.com/scalvert))
+* [#496](https://github.com/simplabs/qunit-dom/pull/496) Add `hasTagName()` assertion ([@scalvert](https://github.com/scalvert))
+* [#451](https://github.com/simplabs/qunit-dom/pull/451) Add regex support for CSS class assertions ([@timiyay](https://github.com/timiyay))
 
 #### :house: Internal
+* [#498](https://github.com/simplabs/qunit-dom/pull/498) Fix tests to correctly ignore dist output ([@scalvert](https://github.com/scalvert))
 * [#407](https://github.com/simplabs/qunit-dom/pull/407) Update ESLint-Typescript tooling ([@Turbo87](https://github.com/Turbo87))
 
 #### Committers: 4
