@@ -115,6 +115,66 @@ describe('assert.dom(...).isChecked()', () => {
     });
   });
 
+  describe('aria-checked', () => {
+    test('succeeds if element is checked', () => {
+      document.body.innerHTML = '<button role="checkbox" aria-checked="true">';
+
+      assert.dom('button').isChecked();
+
+      expect(assert.results).toEqual([
+        {
+          actual: 'checked',
+          expected: 'checked',
+          message: 'Element button is checked',
+          result: true,
+        },
+      ]);
+    });
+
+    test('fails if element is not checked', () => {
+      document.body.innerHTML = '<button role="checkbox" aria-checked="false">';
+
+      assert.dom('button').isChecked();
+
+      expect(assert.results).toEqual([
+        {
+          actual: 'not checked',
+          expected: 'checked',
+          message: 'Element button is checked',
+          result: false,
+        },
+      ]);
+    });
+
+    test('fails if element does not have `aria-checked` attribute', () => {
+      document.body.innerHTML = '<button role="checkbox">';
+
+      assert.dom('button').isChecked();
+
+      expect(assert.results).toEqual([
+        {
+          actual: 'not checked',
+          expected: 'checked',
+          message: 'Element button is checked',
+          result: false,
+        },
+      ]);
+    });
+
+    test('fails for missing element', () => {
+      document.body.innerHTML = '';
+
+      assert.dom('button').isChecked();
+
+      expect(assert.results).toEqual([
+        {
+          message: 'Element button should exist',
+          result: false,
+        },
+      ]);
+    });
+  });
+
   test('throws for unexpected parameter types', () => {
     expect(() => assert.dom(5).isChecked()).toThrow('Unexpected Parameter: 5');
     expect(() => assert.dom(true).isChecked()).toThrow('Unexpected Parameter: true');
