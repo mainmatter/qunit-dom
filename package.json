@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "broccoli-funnel": "^2.0.2",
-    "broccoli-merge-trees": "^3.0.1"
+    "broccoli-merge-trees": "^4.0.0"
   },
   "devDependencies": {
     "@ember/optional-features": "^1.2.0",
