@@ -1,4 +1,4 @@
-export default function notFocused(message) {
+export default function notFocused(message: string) {
   let element = this.findTargetElement();
   if (!element) return;
 

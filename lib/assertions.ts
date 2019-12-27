@@ -12,10 +12,21 @@ import elementToString from './helpers/element-to-string';
 import collapseWhitespace from './helpers/collapse-whitespace';
 import { toArray } from './helpers/node-list';
 
+export interface AssertionResult {
+  result: boolean;
+  actual: any;
+  expected: any;
+  message: string;
+}
+
+export interface ExistsOptions {
+  count: number;
+}
+
 export default class DOMAssertions {
   constructor(
     private target: string | Element | null,
-    private rootElement: Element,
+    private rootElement: Element | Document,
     private testContext: Assert
   ) {}
 
@@ -43,7 +54,7 @@ export default class DOMAssertions {
    *
    * @see {@link #doesNotExist}
    */
-  exists(options: { count: number }, message?: string): void;
+  exists(options: ExistsOptions, message?: string): void;
 
   /**
    * Assert an {@link HTMLElement} (or multiple) matching the `selector` exists.
@@ -58,7 +69,7 @@ export default class DOMAssertions {
    *
    * @see {@link #doesNotExist}
    */
-  exists(options: { count: number } | string, message?: string): void {
+  exists(options: ExistsOptions | string, message?: string): void {
     exists.call(this, options, message);
   }
 
@@ -212,7 +223,7 @@ export default class DOMAssertions {
    *
    * @see {@link #isNotVisible}
    */
-  isVisible(options: { count: number }, message?: string): void;
+  isVisible(options: ExistsOptions, message?: string): void;
 
   /**
    * Assert that the {@link HTMLElement} or an {@link HTMLElement} matching the
@@ -236,7 +247,7 @@ export default class DOMAssertions {
    *
    * @see {@link #isNotVisible}
    */
-  isVisible(options: { count: number } | string, message?: string): void {
+  isVisible(options: ExistsOptions | string, message?: string): void {
     isVisible.call(this, options, message);
   }
 
@@ -575,16 +586,20 @@ export default class DOMAssertions {
    *
    * @see {@link #hasClass}
    */
-  hasPseudoElementStyle(selector: string | null, expected: object, message?: string): void {
+  hasPseudoElementStyle(
+    selector: string | null,
+    expected: { [key: string]: any },
+    message?: string
+  ): void {
     let element = this.findTargetElement();
     if (!element) return;
 
     let computedStyle = window.getComputedStyle(element, selector);
-    let expectedProperties = Object.keys(expected);
+    let expectedProperties = Object.keys(expected) as [keyof CSSStyleDeclaration];
     let result = expectedProperties.every(
       property => computedStyle[property] === expected[property]
     );
-    let actual = {};
+    let actual: { [key: string]: any } = {};
 
     expectedProperties.forEach(property => (actual[property] = computedStyle[property]));
 
@@ -636,16 +651,21 @@ export default class DOMAssertions {
    *
    * @see {@link #hasClass}
    */
-  doesNotHavePseudoElementStyle(selector: string | null, expected: object, message: string) {
+  doesNotHavePseudoElementStyle(
+    selector: string | null,
+    expected: { [key: string]: any },
+    message: string
+  ): void {
     let element = this.findTargetElement();
     if (!element) return;
 
     let computedStyle = window.getComputedStyle(element, selector);
-    let expectedProperties = Object.keys(expected);
+
+    let expectedProperties = Object.keys(expected) as [keyof CSSStyleDeclaration];
     let result = expectedProperties.some(
       property => computedStyle[property] !== expected[property]
     );
-    let actual = {};
+    let actual: { [key: string]: any } = {};
 
     expectedProperties.forEach(property => (actual[property] = computedStyle[property]));
 
@@ -871,7 +891,7 @@ export default class DOMAssertions {
    * @see {@link #hasAnyValue}
    * @see {@link #hasNoValue}
    */
-  hasValue(expected: string | RegExp | { any: true }, message?: string) {
+  hasValue(expected?: string | RegExp | { any: true }, message?: string): void {
     let element = this.findTargetElement();
     if (!element) return;
 
@@ -959,7 +979,7 @@ export default class DOMAssertions {
    * @example
    * assert.dom('p.red').matchesSelector('div.wrapper p:last-child')
    */
-  matchesSelector(compareSelector: string, message?: string) {
+  matchesSelector(compareSelector: string, message?: string): void {
     let targetElements = this.target instanceof Element ? [this.target] : this.findElements();
     let targets = targetElements.length;
     let matchFailures = matchesSelector(targetElements, compareSelector);
@@ -1003,7 +1023,7 @@ export default class DOMAssertions {
    * @example
    * assert.dom('input').doesNotMatchSelector('input[disabled]')
    */
-  doesNotMatchSelector(compareSelector: string, message?: string) {
+  doesNotMatchSelector(compareSelector: string, message?: string): void {
     let targetElements = this.target instanceof Element ? [this.target] : this.findElements();
     let targets = targetElements.length;
     let matchFailures = matchesSelector(targetElements, compareSelector);
@@ -1054,7 +1074,7 @@ export default class DOMAssertions {
    *
    * assert.dom('#title').hasTagName('h1');
    */
-  hasTagName(tagName: string, message?: string) {
+  hasTagName(tagName: string, message?: string): void {
     let element = this.findTargetElement();
     let actual;
     let expected;
@@ -1099,7 +1119,7 @@ export default class DOMAssertions {
    *
    * assert.dom('section#block').doesNotHaveTagName('div');
    */
-  doesNotHaveTagName(tagName: string, message?: string) {
+  doesNotHaveTagName(tagName: string, message?: string): void {
     let element = this.findTargetElement();
     let actual;
     let expected;
@@ -1131,7 +1151,7 @@ export default class DOMAssertions {
   /**
    * @private
    */
-  private pushResult(result) {
+  private pushResult(result: AssertionResult): void {
     this.testContext.pushResult(result);
   }
 
@@ -1146,7 +1166,7 @@ export default class DOMAssertions {
 
     if (el === null) {
       let message = `Element ${this.target || '<unknown>'} should exist`;
-      this.pushResult({ message, result: false });
+      this.pushResult({ message, result: false, actual: undefined, expected: undefined });
       return null;
     }
 
@@ -1190,7 +1210,7 @@ export default class DOMAssertions {
   /**
    * @private
    */
-  private get targetDescription() {
+  private get targetDescription(): string {
     return elementToString(this.target);
   }
 }

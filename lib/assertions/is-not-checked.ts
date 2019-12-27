@@ -1,6 +1,6 @@
 import elementToString from '../helpers/element-to-string';
 
-export default function notChecked(message) {
+export default function notChecked(message: string) {
   let element = this.findTargetElement();
   if (!element) return;
 

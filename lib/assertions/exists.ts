@@ -1,12 +1,16 @@
-export default function exists(options, message) {
+import { ExistsOptions } from '../assertions';
+
+export default function exists(options?: ExistsOptions | string, message?: string) {
+  let expectedCount: number = null;
+
   if (typeof options === 'string') {
     message = options;
     options = undefined;
+  } else {
+    expectedCount = options ? options.count : null;
   }
 
   let elements = this.findElements(this.target);
-
-  let expectedCount = options ? options.count : null;
 
   if (expectedCount === null) {
     let result = elements.length > 0;
