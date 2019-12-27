@@ -11,7 +11,7 @@ import TestAssertions from '../helpers/test-assertions';
  * Additional tests cases of isVisible can be found in tests/acceptance/qunit-dom-test.js
  */
 describe('assert.dom(...).isVisible()', () => {
-  let assert;
+  let assert: TestAssertions;
 
   beforeEach(() => {
     assert = new TestAssertions();
@@ -69,10 +69,14 @@ describe('assert.dom(...).isVisible()', () => {
   });
 
   test('throws for unexpected parameter types', () => {
+    //@ts-ignore -- These assertions are for JavaScript users who don't have type checking
     expect(() => assert.dom(5).isVisible()).toThrow('Unexpected Parameter: 5');
+    //@ts-ignore
     expect(() => assert.dom(true).isVisible()).toThrow('Unexpected Parameter: true');
     expect(() => assert.dom(undefined).isVisible()).toThrow('Unexpected Parameter: undefined');
+    //@ts-ignore
     expect(() => assert.dom({}).isVisible()).toThrow('Unexpected Parameter: [object Object]');
+    //@ts-ignores
     expect(() => assert.dom(document).isVisible()).toThrow(
       'Unexpected Parameter: [object Document]'
     );

@@ -3,7 +3,7 @@
 import TestAssertions from '../helpers/test-assertions';
 
 describe('assert.dom(...).hasTagName()', () => {
-  let assert;
+  let assert: TestAssertions;
 
   beforeEach(() => {
     assert = new TestAssertions();
@@ -25,7 +25,7 @@ describe('assert.dom(...).hasTagName()', () => {
   });
 
   describe('with HTMLElement', () => {
-    let element;
+    let element: Element;
 
     beforeEach(() => {
       document.body.innerHTML = '<h1 id="title">Title</h1>\n';
@@ -114,17 +114,21 @@ describe('assert.dom(...).hasTagName()', () => {
   });
 
   test('throws for unexpected parameter types', () => {
+    //@ts-ignore -- These assertions are for JavaScript users who don't have type checking
     expect(() => assert.dom(5).hasTagName('h1')).toThrow('Unexpected Parameter: 5');
+    //@ts-ignore
     expect(() => assert.dom(true).hasTagName('h1')).toThrow('Unexpected Parameter: true');
     expect(() => assert.dom(undefined).hasTagName('h1')).toThrow('Unexpected Parameter: undefined');
+    //@ts-ignore
     expect(() => assert.dom({}).hasTagName('h1')).toThrow('Unexpected Parameter: [object Object]');
+    //@ts-ignore
     expect(() => assert.dom(document).hasTagName('h1')).toThrow(
       'Unexpected Parameter: [object Document]'
     );
   });
 
   describe('invalid arguments to `hasTagName`', () => {
-    let element;
+    let element: Element;
 
     beforeEach(() => {
       document.body.innerHTML = '<h1 id="title">Title</h1>\n';
@@ -132,12 +136,14 @@ describe('assert.dom(...).hasTagName()', () => {
     });
 
     test('passing a number to `hasTagName` will throw an error', () => {
+      //@ts-ignore -- These assertions are for JavaScript users who don't have type checking
       expect(() => assert.dom(element).hasTagName(1234)).toThrow(
         'You must pass a string to "hasTagName". You passed 1234'
       );
     });
 
     test('passing an object to `hasTagName` will throw an error', () => {
+      //@ts-ignore -- These assertions are for JavaScript users who don't have type checking
       expect(() => assert.dom(element).hasTagName({})).toThrow(
         'You must pass a string to "hasTagName". You passed [object Object]'
       );

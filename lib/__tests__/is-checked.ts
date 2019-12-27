@@ -3,7 +3,7 @@
 import TestAssertions from '../helpers/test-assertions';
 
 describe('assert.dom(...).isChecked()', () => {
-  let assert;
+  let assert: TestAssertions;
 
   beforeEach(() => {
     assert = new TestAssertions();
@@ -25,7 +25,7 @@ describe('assert.dom(...).isChecked()', () => {
   });
 
   describe('with HTMLElement', () => {
-    let element;
+    let element: HTMLInputElement;
 
     beforeEach(() => {
       document.body.innerHTML = '<input type="checkbox" checked>';
@@ -176,10 +176,14 @@ describe('assert.dom(...).isChecked()', () => {
   });
 
   test('throws for unexpected parameter types', () => {
+    //@ts-ignore -- These assertions are for JavaScript users who don't have type checking
     expect(() => assert.dom(5).isChecked()).toThrow('Unexpected Parameter: 5');
+    //@ts-ignore
     expect(() => assert.dom(true).isChecked()).toThrow('Unexpected Parameter: true');
     expect(() => assert.dom(undefined).isChecked()).toThrow('Unexpected Parameter: undefined');
+    //@ts-ignore
     expect(() => assert.dom({}).isChecked()).toThrow('Unexpected Parameter: [object Object]');
+    //@ts-ignore
     expect(() => assert.dom(document).isChecked()).toThrow(
       'Unexpected Parameter: [object Document]'
     );

@@ -3,7 +3,7 @@
 import TestAssertions from '../helpers/test-assertions';
 
 describe('assert.dom(...).doesNotExist()', () => {
-  let assert;
+  let assert: TestAssertions;
 
   beforeEach(() => {
     assert = new TestAssertions();
@@ -76,10 +76,14 @@ describe('assert.dom(...).doesNotExist()', () => {
       'Unexpected Parameter: [object HTMLBodyElement]'
     );
 
+    //@ts-ignore -- These assertions are for JavaScript users who don't have type checking
     expect(() => assert.dom(5).doesNotExist()).toThrow('Unexpected Parameter: 5');
+    //@ts-ignore
     expect(() => assert.dom(true).doesNotExist()).toThrow('Unexpected Parameter: true');
     expect(() => assert.dom(undefined).doesNotExist()).toThrow('Unexpected Parameter: undefined');
+    //@ts-ignore
     expect(() => assert.dom({}).doesNotExist()).toThrow('Unexpected Parameter: [object Object]');
+    //@ts-ignore
     expect(() => assert.dom(document).doesNotExist()).toThrow(
       'Unexpected Parameter: [object Document]'
     );

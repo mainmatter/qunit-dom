@@ -3,7 +3,7 @@
 import TestAssertions from '../helpers/test-assertions';
 
 describe('assert.dom(...).isFocused()', () => {
-  let assert;
+  let assert: TestAssertions;
 
   beforeEach(() => {
     assert = new TestAssertions();
@@ -25,7 +25,7 @@ describe('assert.dom(...).isFocused()', () => {
   });
 
   describe('with HTMLElement', () => {
-    let element;
+    let element: HTMLInputElement;
 
     beforeEach(() => {
       document.body.innerHTML = 'foo<input type="email">bar';
@@ -122,10 +122,14 @@ describe('assert.dom(...).isFocused()', () => {
   });
 
   test('throws for unexpected parameter types', () => {
+    //@ts-ignore -- These assertions are for JavaScript users who don't have type checking
     expect(() => assert.dom(5).isFocused()).toThrow('Unexpected Parameter: 5');
+    //@ts-ignore
     expect(() => assert.dom(true).isFocused()).toThrow('Unexpected Parameter: true');
     expect(() => assert.dom(undefined).isFocused()).toThrow('Unexpected Parameter: undefined');
+    //@ts-ignore
     expect(() => assert.dom({}).isFocused()).toThrow('Unexpected Parameter: [object Object]');
+    //@ts-ignore
     expect(() => assert.dom(document).isFocused()).toThrow(
       'Unexpected Parameter: [object Document]'
     );

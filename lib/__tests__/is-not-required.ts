@@ -3,7 +3,7 @@
 import TestAssertions from '../helpers/test-assertions';
 
 describe('assert.dom(...).isNotRequired()', () => {
-  let assert;
+  let assert: TestAssertions;
 
   beforeEach(() => {
     assert = new TestAssertions();
@@ -25,7 +25,7 @@ describe('assert.dom(...).isNotRequired()', () => {
   });
 
   describe('with HTMLElement', () => {
-    let element;
+    let element: HTMLInputElement;
 
     beforeEach(() => {
       document.body.innerHTML = '<input type="text">';
@@ -116,10 +116,14 @@ describe('assert.dom(...).isNotRequired()', () => {
   });
 
   test('throws for unexpected parameter types', () => {
+    //@ts-ignore -- These assertions are for JavaScript users who don't have type checking
     expect(() => assert.dom(5).isNotRequired()).toThrow('Unexpected Parameter: 5');
+    //@ts-ignore
     expect(() => assert.dom(true).isNotRequired()).toThrow('Unexpected Parameter: true');
     expect(() => assert.dom(undefined).isNotRequired()).toThrow('Unexpected Parameter: undefined');
+    //@ts-ignore
     expect(() => assert.dom({}).isNotRequired()).toThrow('Unexpected Parameter: [object Object]');
+    //@ts-ignore
     expect(() => assert.dom(document).isNotRequired()).toThrow(
       'Unexpected Parameter: [object Document]'
     );

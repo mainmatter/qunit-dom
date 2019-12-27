@@ -3,7 +3,7 @@
 import TestAssertions from '../helpers/test-assertions';
 
 describe('assert.dom(...).doesNotHaveClass()', () => {
-  let assert;
+  let assert: TestAssertions;
 
   beforeEach(() => {
     assert = new TestAssertions();
@@ -118,14 +118,18 @@ describe('assert.dom(...).doesNotHaveClass()', () => {
   });
 
   test('throws for unexpected parameter types', () => {
+    //@ts-ignore -- These assertions are for JavaScript users who don't have type checking
     expect(() => assert.dom(5).doesNotHaveClass('foo')).toThrow('Unexpected Parameter: 5');
+    //@ts-ignore
     expect(() => assert.dom(true).doesNotHaveClass('foo')).toThrow('Unexpected Parameter: true');
     expect(() => assert.dom(undefined).doesNotHaveClass('foo')).toThrow(
       'Unexpected Parameter: undefined'
     );
+    //@ts-ignore
     expect(() => assert.dom({}).doesNotHaveClass('foo')).toThrow(
       'Unexpected Parameter: [object Object]'
     );
+    //@ts-ignore
     expect(() => assert.dom(document).doesNotHaveClass('foo')).toThrow(
       'Unexpected Parameter: [object Document]'
     );
