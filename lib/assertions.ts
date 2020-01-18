@@ -23,6 +23,10 @@ export interface ExistsOptions {
   count: number;
 }
 
+export interface Dictionary<T> {
+  [key: string]: T;
+}
+
 export default class DOMAssertions {
   constructor(
     private target: string | Element | null,
@@ -588,7 +592,7 @@ export default class DOMAssertions {
    */
   hasPseudoElementStyle(
     selector: string | null,
-    expected: { [key: string]: any },
+    expected: Dictionary<string>,
     message?: string
   ): void {
     let element = this.findTargetElement();
@@ -599,7 +603,7 @@ export default class DOMAssertions {
     let result = expectedProperties.every(
       property => computedStyle[property] === expected[property]
     );
-    let actual: { [key: string]: any } = {};
+    let actual: Dictionary<string> = {};
 
     expectedProperties.forEach(property => (actual[property] = computedStyle[property]));
 
