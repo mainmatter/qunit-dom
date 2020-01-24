@@ -56,13 +56,13 @@
     "eslint": "^5.16.0",
     "eslint-config-prettier": "^6.9.0",
     "eslint-plugin-prettier": "^3.1.2",
-    "jest": "^24.9.0",
+    "jest": "^25.1.0",
     "lerna-changelog": "^0.8.3",
     "loader.js": "^4.2.3",
     "prettier": "1.19.1",
     "rollup": "^1.29.1",
     "rollup-plugin-typescript2": "^0.25.3",
-    "ts-jest": "^24.3.0",
+    "ts-jest": "^25.0.0",
     "typescript": "^3.7.5"
   },
   "engines": {
