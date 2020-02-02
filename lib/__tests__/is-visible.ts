@@ -113,4 +113,15 @@ describe('assert.dom(...).isVisible()', () => {
       'Unexpected Parameter: [object Document]'
     );
   });
+
+  test('supports chaining', () => {
+    document.body.innerHTML = '<input type="checkbox" />';
+
+    assert
+      .dom('input')
+      .isVisible()
+      .isVisible();
+
+    expect(assert.results.length).toEqual(2);
+  });
 });

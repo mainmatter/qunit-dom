@@ -134,4 +134,15 @@ describe('assert.dom(...).doesNotHaveClass()', () => {
       'Unexpected Parameter: [object Document]'
     );
   });
+
+  test('supports chaining', () => {
+    document.body.innerHTML = '<h1 class="bar">foo</h1>';
+
+    assert
+      .dom('h1')
+      .doesNotHaveClass('foo')
+      .doesNotHaveClass('bar');
+
+    expect(assert.results.length).toEqual(2);
+  });
 });

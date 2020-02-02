@@ -149,4 +149,15 @@ describe('assert.dom(...).hasText()', () => {
       );
     });
   });
+
+  test('supports chaining', () => {
+    document.body.innerHTML = '<h1 class="bar">foo</h1>';
+
+    assert
+      .dom('h1')
+      .hasText('foo')
+      .hasText('bar');
+
+    expect(assert.results.length).toEqual(2);
+  });
 });

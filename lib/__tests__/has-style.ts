@@ -112,4 +112,15 @@ describe('assert.dom(...).hasStyle()', () => {
       'Missing style expectations. There must be at least one style property in the passed in expectation object.'
     );
   });
+
+  test('supports chaining', () => {
+    document.body.innerHTML = '<h1 class="bar">foo</h1>';
+
+    assert
+      .dom('h1')
+      .hasStyle({ top: 42 })
+      .hasStyle({ left: 0 });
+
+    expect(assert.results.length).toEqual(2);
+  });
 });

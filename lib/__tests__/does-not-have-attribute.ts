@@ -102,4 +102,13 @@ describe('assert.dom(...).doesNotHaveAttribute()', () => {
       'Unexpected Parameter: [object Document]'
     );
   });
+
+  test('supports chaining', () => {
+    assert
+      .dom('input')
+      .doesNotHaveAttribute('disabled')
+      .doesNotHaveAttribute('required');
+
+    expect(assert.results.length).toEqual(2);
+  });
 });

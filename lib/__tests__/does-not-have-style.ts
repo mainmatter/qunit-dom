@@ -115,4 +115,13 @@ describe('assert.dom(...).doesNotHaveStyle()', () => {
       'Missing style expectations. There must be at least one style property in the passed in expectation object.'
     );
   });
+
+  test('supports chaining', () => {
+    assert
+      .dom('h2')
+      .doesNotHaveStyle({ left: 0 })
+      .doesNotHaveStyle({ top: 0 });
+
+    expect(assert.results.length).toEqual(2);
+  });
 });
