@@ -1217,12 +1217,6 @@ export default class DOMAssertions {
    * @private
    */
   private get targetDescription(): string {
-    if (typeof this.target === 'string') {
-      return this.target;
-    } else if (this.target instanceof Element) {
-      return elementToString(this.target);
-    } else {
-      return '<not found>';
-    }
+    return elementToString(this.target);
   }
 }
