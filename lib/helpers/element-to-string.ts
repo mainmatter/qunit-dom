@@ -1,7 +1,7 @@
 // imported from https://github.com/nathanboktae/chai-dom
 
-export default function elementToString(el) {
-  let desc;
+export default function elementToString(el: Element | NodeList | string): string {
+  let desc: string;
   if (el instanceof NodeList) {
     if (el.length === 0) {
       return 'empty NodeList';
@@ -23,7 +23,7 @@ export default function elementToString(el) {
   if (el.className && !(el.className instanceof SVGAnimatedString)) {
     desc += `.${String(el.className).replace(/\s+/g, '.')}`;
   }
-  Array.prototype.forEach.call(el.attributes, function(attr) {
+  Array.prototype.forEach.call(el.attributes, function(attr: Attr) {
     if (attr.name !== 'class' && attr.name !== 'id') {
       desc += `[${attr.name}${attr.value ? `="${attr.value}"]` : ']'}`;
     }

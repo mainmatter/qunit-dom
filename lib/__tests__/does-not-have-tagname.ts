@@ -3,7 +3,7 @@
 import TestAssertions from '../helpers/test-assertions';
 
 describe('assert.dom(...).doesNotHaveTagName()', () => {
-  let assert;
+  let assert: TestAssertions;
 
   beforeEach(() => {
     assert = new TestAssertions();
@@ -25,7 +25,7 @@ describe('assert.dom(...).doesNotHaveTagName()', () => {
   });
 
   describe('with HTMLElement', () => {
-    let element;
+    let element: Element;
 
     beforeEach(() => {
       document.body.innerHTML = '<section id="block">Section</section>\n';
@@ -114,21 +114,25 @@ describe('assert.dom(...).doesNotHaveTagName()', () => {
   });
 
   test('throws for unexpected parameter types', () => {
+    //@ts-ignore -- These assertions are for JavaScript users who don't have type checking
     expect(() => assert.dom(5).doesNotHaveTagName('div')).toThrow('Unexpected Parameter: 5');
+    //@ts-ignore
     expect(() => assert.dom(true).doesNotHaveTagName('div')).toThrow('Unexpected Parameter: true');
     expect(() => assert.dom(undefined).doesNotHaveTagName('div')).toThrow(
       'Unexpected Parameter: undefined'
     );
+    //@ts-ignore
     expect(() => assert.dom({}).doesNotHaveTagName('div')).toThrow(
       'Unexpected Parameter: [object Object]'
     );
+    //@ts-ignore
     expect(() => assert.dom(document).doesNotHaveTagName('div')).toThrow(
       'Unexpected Parameter: [object Document]'
     );
   });
 
   describe('invalid arguments to `doesNotHaveTagName`', () => {
-    let element;
+    let element: Element;
 
     beforeEach(() => {
       document.body.innerHTML = '<section id="block">Section</section>\n';
@@ -136,12 +140,14 @@ describe('assert.dom(...).doesNotHaveTagName()', () => {
     });
 
     test('passing a number to `doesNotHaveTagName` will throw an error', () => {
+      //@ts-ignore
       expect(() => assert.dom(element).doesNotHaveTagName(1234)).toThrow(
         'You must pass a string to "doesNotHaveTagName". You passed 1234'
       );
     });
 
     test('passing an object to `doesNotHaveTagName` will throw an error', () => {
+      //@ts-ignore
       expect(() => assert.dom(element).doesNotHaveTagName({})).toThrow(
         'You must pass a string to "doesNotHaveTagName". You passed [object Object]'
       );

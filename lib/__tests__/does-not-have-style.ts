@@ -3,7 +3,7 @@
 import TestAssertions from '../helpers/test-assertions';
 
 describe('assert.dom(...).doesNotHaveStyle()', () => {
-  let assert;
+  let assert: TestAssertions;
 
   beforeEach(() => {
     assert = new TestAssertions();
@@ -91,16 +91,20 @@ describe('assert.dom(...).doesNotHaveStyle()', () => {
   });
 
   test('throws for unexpected parameter types', () => {
+    //@ts-ignore -- These assertions are for JavaScript users who don't have type checking
     expect(() => assert.dom(5).doesNotHaveStyle({ opacity: 1 })).toThrow('Unexpected Parameter: 5');
+    //@ts-ignore
     expect(() => assert.dom(true).doesNotHaveStyle({ opacity: 1 })).toThrow(
       'Unexpected Parameter: true'
     );
     expect(() => assert.dom(undefined).doesNotHaveStyle({ opacity: 1 })).toThrow(
       'Unexpected Parameter: undefined'
     );
+    //@ts-ignore
     expect(() => assert.dom({}).doesNotHaveStyle({ opacity: 1 })).toThrow(
       'Unexpected Parameter: [object Object]'
     );
+    //@ts-ignore
     expect(() => assert.dom(document).doesNotHaveStyle({ opacity: 1 })).toThrow(
       'Unexpected Parameter: [object Document]'
     );

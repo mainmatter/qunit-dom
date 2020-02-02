@@ -3,7 +3,7 @@
 import TestAssertions from '../helpers/test-assertions';
 
 describe('assert.dom(...).hasText()', () => {
-  let assert;
+  let assert: TestAssertions;
 
   beforeEach(() => {
     assert = new TestAssertions();
@@ -25,7 +25,7 @@ describe('assert.dom(...).hasText()', () => {
   });
 
   describe('with HTMLElement', () => {
-    let element;
+    let element: Element;
 
     beforeEach(() => {
       document.body.innerHTML = '<h2 id="title">\n\tWelcome to <b>QUnit</b>\n</h2>\n';
@@ -114,17 +114,21 @@ describe('assert.dom(...).hasText()', () => {
   });
 
   test('throws for unexpected parameter types', () => {
+    //@ts-ignore -- These assertions are for JavaScript users who don't have type checking
     expect(() => assert.dom(5).hasText('foo')).toThrow('Unexpected Parameter: 5');
+    //@ts-ignore
     expect(() => assert.dom(true).hasText('foo')).toThrow('Unexpected Parameter: true');
     expect(() => assert.dom(undefined).hasText('foo')).toThrow('Unexpected Parameter: undefined');
+    //@ts-ignore
     expect(() => assert.dom({}).hasText('foo')).toThrow('Unexpected Parameter: [object Object]');
+    //@ts-ignore
     expect(() => assert.dom(document).hasText('foo')).toThrow(
       'Unexpected Parameter: [object Document]'
     );
   });
 
   describe('invalid arguments to `hasText`', () => {
-    let element;
+    let element: Element;
 
     beforeEach(() => {
       document.body.innerHTML = '<h2 id="title">\n\tWelcome to <b>QUnit</b>\n</h2>\n';
@@ -132,12 +136,14 @@ describe('assert.dom(...).hasText()', () => {
     });
 
     test('passing a number to `hasText` will throw an error', () => {
+      //@ts-ignore -- These assertions are for JavaScript users who don't have type checking
       expect(() => assert.dom(element).hasText(1234)).toThrow(
         'You must pass a string or Regular Expression to "hasText". You passed 1234'
       );
     });
 
     test('passing an object to `hasText` will throw an error', () => {
+      //@ts-ignore -- These assertions are for JavaScript users who don't have type checking
       expect(() => assert.dom(element).hasText({})).toThrow(
         'You must pass a string or Regular Expression to "hasText". You passed [object Object]'
       );

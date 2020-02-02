@@ -3,7 +3,7 @@
 import TestAssertions from '../helpers/test-assertions';
 
 describe('assert.dom(...).isNotFocused()', () => {
-  let assert;
+  let assert: TestAssertions;
 
   beforeEach(() => {
     assert = new TestAssertions();
@@ -18,12 +18,14 @@ describe('assert.dom(...).isNotFocused()', () => {
       {
         message: 'foo',
         result: true,
+        actual: 'Element h1 is not focused',
+        expected: 'Element h1 is not focused',
       },
     ]);
   });
 
   describe('with HTMLElement', () => {
-    let element;
+    let element: HTMLInputElement;
 
     beforeEach(() => {
       document.body.innerHTML = 'foo<input type="email">bar';
@@ -39,6 +41,8 @@ describe('assert.dom(...).isNotFocused()', () => {
         {
           message: 'Element input[type="email"] is not focused',
           result: true,
+          actual: 'Element input[type="email"] is not focused',
+          expected: 'Element input[type="email"] is not focused',
         },
       ]);
     });
@@ -52,6 +56,8 @@ describe('assert.dom(...).isNotFocused()', () => {
         {
           message: 'Element input[type="email"] is not focused',
           result: false,
+          actual: 'Element input[type="email"] is focused',
+          expected: 'Element input[type="email"] is not focused',
         },
       ]);
     });
@@ -82,6 +88,8 @@ describe('assert.dom(...).isNotFocused()', () => {
         {
           message: 'Element input is not focused',
           result: true,
+          actual: 'Element input is not focused',
+          expected: 'Element input is not focused',
         },
       ]);
     });
@@ -95,6 +103,8 @@ describe('assert.dom(...).isNotFocused()', () => {
         {
           message: 'Element input is not focused',
           result: false,
+          actual: 'Element input is focused',
+          expected: 'Element input is not focused',
         },
       ]);
     });
@@ -112,10 +122,14 @@ describe('assert.dom(...).isNotFocused()', () => {
   });
 
   test('throws for unexpected parameter types', () => {
+    //@ts-ignore -- These assertions are for JavaScript users who don't have type checking
     expect(() => assert.dom(5).isNotFocused()).toThrow('Unexpected Parameter: 5');
+    //@ts-ignore
     expect(() => assert.dom(true).isNotFocused()).toThrow('Unexpected Parameter: true');
     expect(() => assert.dom(undefined).isNotFocused()).toThrow('Unexpected Parameter: undefined');
+    //@ts-ignore
     expect(() => assert.dom({}).isNotFocused()).toThrow('Unexpected Parameter: [object Object]');
+    //@ts-ignore
     expect(() => assert.dom(document).isNotFocused()).toThrow(
       'Unexpected Parameter: [object Document]'
     );

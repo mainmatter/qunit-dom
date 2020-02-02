@@ -1,13 +1,13 @@
-import DOMAssertions from '../assertions';
+import DOMAssertions, { AssertionResult } from '../assertions';
 
 export default class TestAssertions {
-  public results = [];
+  public results: AssertionResult[] = [];
 
-  dom(target, rootElement) {
+  dom(target: string | Element | null, rootElement?: Element) {
     return new DOMAssertions(target, rootElement || document, this as any);
   }
 
-  pushResult(result) {
+  pushResult(result: AssertionResult) {
     this.results.push(result);
   }
 }

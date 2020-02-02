@@ -1,14 +1,16 @@
 import visible from '../helpers/visible';
+import { ExistsOptions } from '../assertions';
 
-export default function isVisible(options, message) {
+export default function isVisible(options?: string | ExistsOptions, message?: string) {
+  let expectedCount: number | null = null;
+
   if (typeof options === 'string') {
     message = options;
-    options = undefined;
+  } else if (options) {
+    expectedCount = options.count;
   }
 
   let elements = this.findElements(this.target).filter(visible);
-
-  let expectedCount = options ? options.count : null;
 
   if (expectedCount === null) {
     let result = elements.length > 0;
