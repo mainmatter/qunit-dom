@@ -18,6 +18,8 @@ describe('assert.dom(...).isNotFocused()', () => {
       {
         message: 'foo',
         result: true,
+        actual: 'Element h1 is not focused',
+        expected: 'Element h1 is not focused',
       },
     ]);
   });
@@ -39,6 +41,8 @@ describe('assert.dom(...).isNotFocused()', () => {
         {
           message: 'Element input[type="email"] is not focused',
           result: true,
+          actual: 'Element input[type="email"] is not focused',
+          expected: 'Element input[type="email"] is not focused',
         },
       ]);
     });
@@ -52,6 +56,8 @@ describe('assert.dom(...).isNotFocused()', () => {
         {
           message: 'Element input[type="email"] is not focused',
           result: false,
+          actual: 'Element input[type="email"] is focused',
+          expected: 'Element input[type="email"] is not focused',
         },
       ]);
     });
@@ -82,6 +88,8 @@ describe('assert.dom(...).isNotFocused()', () => {
         {
           message: 'Element input is not focused',
           result: true,
+          actual: 'Element input is not focused',
+          expected: 'Element input is not focused',
         },
       ]);
     });
@@ -95,6 +103,8 @@ describe('assert.dom(...).isNotFocused()', () => {
         {
           message: 'Element input is not focused',
           result: false,
+          actual: 'Element input is focused',
+          expected: 'Element input is not focused',
         },
       ]);
     });
