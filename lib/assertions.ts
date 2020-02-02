@@ -657,7 +657,7 @@ export default class DOMAssertions {
    */
   doesNotHavePseudoElementStyle(
     selector: string | null,
-    expected: { [key: string]: any },
+    expected: Dictionary<any>,
     message: string
   ): void {
     let element = this.findTargetElement();
@@ -669,7 +669,7 @@ export default class DOMAssertions {
     let result = expectedProperties.some(
       property => computedStyle[property] !== expected[property]
     );
-    let actual: { [key: string]: any } = {};
+    let actual: Dictionary<any> = {};
 
     expectedProperties.forEach(property => (actual[property] = computedStyle[property]));
 

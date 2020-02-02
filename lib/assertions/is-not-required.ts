@@ -1,6 +1,6 @@
 import elementToString from '../helpers/element-to-string';
 
-export default function notRequired(message: string) {
+export default function notRequired(message?: string) {
   let element = this.findTargetElement();
   if (!element) return;
 

@@ -1,13 +1,12 @@
 import { ExistsOptions } from '../assertions';
 
 export default function exists(options?: ExistsOptions | string, message?: string) {
-  let expectedCount: number = null;
+  let expectedCount: number | null = null;
 
   if (typeof options === 'string') {
     message = options;
-    options = undefined;
-  } else {
-    expectedCount = options ? options.count : null;
+  } else if (options) {
+    expectedCount = options.count;
   }
 
   let elements = this.findElements(this.target);
