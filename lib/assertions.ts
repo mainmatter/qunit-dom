@@ -421,6 +421,57 @@ export default class DOMAssertions {
   }
 
   /**
+   * Assert that the {@link HTMLElement} has a property with the provided `name`
+   * and checks if the property `value` matches the provided text or regular
+   * expression.
+   *
+   * @param {string} name
+   * @param {string|RegExp} value
+   * @param {string?} message
+   *
+   * @example
+   * assert.dom('input.password-input').hasAttribute('type', 'password');
+   *
+   * @see {@link #doesNotHaveProperty}
+   */
+  hasProperty(name: string, value: string | RegExp, message?: string): void {
+    let element = this.findTargetElement();
+    if (!element) return;
+
+    let description = this.targetDescription;
+
+    let actualValue = element[name as keyof Element];
+
+    if (value instanceof RegExp) {
+      let result = value.test(String(actualValue));
+      let expected = `Element ${description} has property "${name}" with value matching ${value}`;
+      let actual = `Element ${description} has property "${name}" with value ${JSON.stringify(
+        actualValue
+      )}`;
+
+      if (!message) {
+        message = expected;
+      }
+
+      this.pushResult({ result, actual, expected, message });
+    } else {
+      let result = value === actualValue;
+      let expected = `Element ${description} has property "${name}" with value ${JSON.stringify(
+        value
+      )}`;
+      let actual = `Element ${description} has property "${name}" with value ${JSON.stringify(
+        actualValue
+      )}`;
+
+      if (!message) {
+        message = expected;
+      }
+
+      this.pushResult({ result, actual, expected, message });
+    }
+  }
+
+  /**
    *  Assert that the {@link HTMLElement} or an {@link HTMLElement} matching the
    * `selector` is disabled.
    *
