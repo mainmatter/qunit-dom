@@ -9,7 +9,7 @@ describe('assert.dom(...).exists()', () => {
     assert = new TestAssertions();
   });
 
-  describe('selector only', () => {
+  describe('with selector', () => {
     test('succeeds if element exists', () => {
       document.body.innerHTML = '<h1 class="baz">foo</h1>bar';
 
@@ -35,6 +35,39 @@ describe('assert.dom(...).exists()', () => {
           actual: 'Element h2 does not exist',
           expected: 'Element h2 exists',
           message: 'Element h2 exists',
+          result: false,
+        },
+      ]);
+    });
+  });
+
+  describe('with Element', () => {
+    test('succeeds if element exists', () => {
+      document.body.innerHTML = '<h1 class="baz">foo</h1>bar';
+
+      const headingElement = document.querySelector('h1');
+      assert.dom(headingElement).exists();
+
+      expect(assert.results).toEqual([
+        {
+          actual: 'Element h1.baz exists',
+          expected: 'Element h1.baz exists',
+          message: 'Element h1.baz exists',
+          result: true,
+        },
+      ]);
+    });
+
+    test('fails if element is missing', () => {
+      document.body.innerHTML = '<h1 class="baz">foo</h1>bar';
+
+      assert.dom(null).isVisible();
+
+      expect(assert.results).toEqual([
+        {
+          actual: 'Element <not found> is not visible',
+          expected: 'Element <not found> is visible',
+          message: 'Element <not found> is visible',
           result: false,
         },
       ]);
@@ -136,10 +169,6 @@ describe('assert.dom(...).exists()', () => {
   });
 
   test('throws for unexpected parameter types', () => {
-    expect(() => assert.dom(document.body).exists()).toThrow(
-      'Unexpected Parameter: [object HTMLBodyElement]'
-    );
-
     //@ts-ignore -- These assertions are for JavaScript users who don't have type checking
     expect(() => assert.dom(5).exists()).toThrow('Unexpected Parameter: 5');
     //@ts-ignore

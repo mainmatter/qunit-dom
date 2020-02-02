@@ -72,10 +72,6 @@ describe('assert.dom(...).doesNotExist()', () => {
   });
 
   test('throws for unexpected parameter types', () => {
-    expect(() => assert.dom(document.body).doesNotExist()).toThrow(
-      'Unexpected Parameter: [object HTMLBodyElement]'
-    );
-
     //@ts-ignore -- These assertions are for JavaScript users who don't have type checking
     expect(() => assert.dom(5).doesNotExist()).toThrow('Unexpected Parameter: 5');
     //@ts-ignore

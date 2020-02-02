@@ -17,7 +17,22 @@ describe('assert.dom(...).isVisible()', () => {
     assert = new TestAssertions();
   });
 
-  describe('selector only', () => {
+  describe('with selector', () => {
+    test('fails if element is missing', () => {
+      document.body.innerHTML = '<h1 class="baz">foo</h1>bar';
+
+      assert.dom('h2').isVisible();
+
+      expect(assert.results).toEqual([
+        {
+          actual: 'Element h2 is not visible',
+          expected: 'Element h2 is visible',
+          message: 'Element h2 is visible',
+          result: false,
+        },
+      ]);
+    });
+
     test('fails if element is missing', () => {
       document.body.innerHTML = '<h1 class="baz">foo</h1>bar';
 
@@ -45,6 +60,23 @@ describe('assert.dom(...).isVisible()', () => {
           actual: 'Element h1 is not visible',
           expected: 'Element h1 is visible',
           message: 'foo',
+          result: false,
+        },
+      ]);
+    });
+  });
+
+  describe('with Element', () => {
+    test('fails for missing element', () => {
+      document.body.innerHTML = '<h1 class="baz">foo</h1>bar';
+
+      assert.dom(null).isVisible();
+
+      expect(assert.results).toEqual([
+        {
+          actual: 'Element <not found> is not visible',
+          expected: 'Element <not found> is visible',
+          message: 'Element <not found> is visible',
           result: false,
         },
       ]);

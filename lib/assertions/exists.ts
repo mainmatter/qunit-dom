@@ -9,12 +9,12 @@ export default function exists(options?: ExistsOptions | string, message?: strin
     expectedCount = options.count;
   }
 
-  let elements = this.findElements(this.target);
+  let elements = this.findElements();
 
   if (expectedCount === null) {
     let result = elements.length > 0;
-    let expected = format(this.target);
-    let actual = result ? expected : format(this.target, 0);
+    let expected = format(this.targetDescription);
+    let actual = result ? expected : format(this.targetDescription, 0);
 
     if (!message) {
       message = expected;
@@ -23,8 +23,8 @@ export default function exists(options?: ExistsOptions | string, message?: strin
     this.pushResult({ result, actual, expected, message });
   } else if (typeof expectedCount === 'number') {
     let result = elements.length === expectedCount;
-    let actual = format(this.target, elements.length);
-    let expected = format(this.target, expectedCount);
+    let actual = format(this.targetDescription, elements.length);
+    let expected = format(this.targetDescription, expectedCount);
 
     if (!message) {
       message = expected;

@@ -1,6 +1,8 @@
 // imported from https://github.com/nathanboktae/chai-dom
 
-export default function elementToString(el: Element | NodeList | string): string {
+export default function elementToString(el: Element | NodeList | string | null): string {
+  if (!el) return '<not found>';
+
   let desc: string;
   if (el instanceof NodeList) {
     if (el.length === 0) {
