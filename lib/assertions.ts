@@ -600,6 +600,12 @@ export default class DOMAssertions {
 
     let computedStyle = window.getComputedStyle(element, selector);
     let expectedProperties = Object.keys(expected) as [keyof CSSStyleDeclaration];
+    if (expectedProperties.length <= 0) {
+      throw new TypeError(
+        `Missing style expectations. There must be at least one style property in the passed in expectation object.`
+      );
+    }
+
     let result = expectedProperties.every(
       property => computedStyle[property] === expected[property]
     );
@@ -666,6 +672,12 @@ export default class DOMAssertions {
     let computedStyle = window.getComputedStyle(element, selector);
 
     let expectedProperties = Object.keys(expected) as [keyof CSSStyleDeclaration];
+    if (expectedProperties.length <= 0) {
+      throw new TypeError(
+        `Missing style expectations. There must be at least one style property in the passed in expectation object.`
+      );
+    }
+
     let result = expectedProperties.some(
       property => computedStyle[property] !== expected[property]
     );

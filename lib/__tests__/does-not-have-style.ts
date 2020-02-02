@@ -109,4 +109,10 @@ describe('assert.dom(...).doesNotHaveStyle()', () => {
       'Unexpected Parameter: [object Document]'
     );
   });
+
+  test('throws for empty expectation object', () => {
+    expect(() => assert.dom('div').doesNotHaveStyle({})).toThrow(
+      'Missing style expectations. There must be at least one style property in the passed in expectation object.'
+    );
+  });
 });
