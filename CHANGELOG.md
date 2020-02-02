@@ -1,5 +1,32 @@
 # Changelog
 
+## v1.0.0 (2020-02-02)
+
+#### :boom: Breaking Change
+* [#591](https://github.com/simplabs/qunit-dom/pull/591) Drop Support for Node 8 ([@scalvert](https://github.com/scalvert))
+
+#### :rocket: Enhancement
+* [#610](https://github.com/simplabs/qunit-dom/pull/610) Add support for assertion chaining ([@Turbo87](https://github.com/Turbo87))
+* [#609](https://github.com/simplabs/qunit-dom/pull/609) Implement `hasProperty()` assertion ([@Turbo87](https://github.com/Turbo87))
+* [#608](https://github.com/simplabs/qunit-dom/pull/608) hasStyle: Throw an error if expectation object is empty ([@Turbo87](https://github.com/Turbo87))
+* [#542](https://github.com/simplabs/qunit-dom/pull/542) Fix embroider compatibility ([@ef4](https://github.com/ef4))
+* [#531](https://github.com/simplabs/qunit-dom/pull/531) Add `doesNotHaveStyle` assertion ([@scalvert](https://github.com/scalvert))
+
+#### :bug: Bug Fix
+* [#246](https://github.com/simplabs/qunit-dom/pull/246) Make `findTargets` support a `this.target` of type `Element` ([@dwilhelmi](https://github.com/dwilhelmi))
+
+#### :house: Internal
+* [#587](https://github.com/simplabs/qunit-dom/pull/587) TypeScript: Turn on `noImplicityAny` and fix a few type signatures ([@LucasHill](https://github.com/LucasHill))
+* [#538](https://github.com/simplabs/qunit-dom/pull/538) Adjust ignore files ([@Turbo87](https://github.com/Turbo87))
+
+#### Committers: 5
+- Dustin Wilhelmi ([@dwilhelmi](https://github.com/dwilhelmi))
+- Edward Faulkner ([@ef4](https://github.com/ef4))
+- Lucas Hill ([@LucasHill](https://github.com/LucasHill))
+- Steve Calvert ([@scalvert](https://github.com/scalvert))
+- Tobias Bieniek ([@Turbo87](https://github.com/Turbo87))
+
+
 ## v0.9.2 (2019-11-12)
 
 #### :rocket: Enhancement
