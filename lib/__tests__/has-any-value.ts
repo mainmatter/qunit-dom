@@ -79,4 +79,15 @@ describe('assert.dom(...).hasAnyValue()', () => {
       'Unexpected Parameter: [object Document]'
     );
   });
+
+  test('supports chaining', () => {
+    document.body.innerHTML = '<input value="foo"/>';
+
+    assert
+      .dom('input')
+      .hasAnyValue()
+      .hasAnyValue();
+
+    expect(assert.results.length).toEqual(2);
+  });
 });

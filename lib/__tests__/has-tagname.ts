@@ -149,4 +149,15 @@ describe('assert.dom(...).hasTagName()', () => {
       );
     });
   });
+
+  test('supports chaining', () => {
+    document.body.innerHTML = '<h1 class="bar">foo</h1>';
+
+    assert
+      .dom('h1')
+      .hasTagName('h1')
+      .hasTagName('foo');
+
+    expect(assert.results.length).toEqual(2);
+  });
 });

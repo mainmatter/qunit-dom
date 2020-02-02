@@ -234,4 +234,15 @@ describe('assert.dom(...).hasValue()', () => {
       'Unexpected Parameter: [object Document]'
     );
   });
+
+  test('supports chaining', () => {
+    document.body.innerHTML = '<input value="foo" />';
+
+    assert
+      .dom('input')
+      .hasValue('foo')
+      .hasValue('bar');
+
+    expect(assert.results.length).toEqual(2);
+  });
 });

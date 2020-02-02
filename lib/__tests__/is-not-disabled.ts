@@ -161,4 +161,15 @@ describe('assert.dom(...).isNotDisabled()', () => {
       'Unexpected Element Type: [object HTMLDivElement]'
     );
   });
+
+  test('supports chaining', () => {
+    document.body.innerHTML = '<input type="checkbox" />';
+
+    assert
+      .dom('input')
+      .isNotDisabled()
+      .isNotDisabled();
+
+    expect(assert.results.length).toEqual(2);
+  });
 });

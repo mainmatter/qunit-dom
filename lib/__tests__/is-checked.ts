@@ -188,4 +188,15 @@ describe('assert.dom(...).isChecked()', () => {
       'Unexpected Parameter: [object Document]'
     );
   });
+
+  test('supports chaining', () => {
+    document.body.innerHTML = '<input type="checkbox" />';
+
+    assert
+      .dom('input')
+      .isChecked()
+      .isChecked();
+
+    expect(assert.results.length).toEqual(2);
+  });
 });

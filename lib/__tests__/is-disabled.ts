@@ -161,4 +161,15 @@ describe('assert.dom(...).isDisabled()', () => {
       'Unexpected Element Type: [object HTMLDivElement]'
     );
   });
+
+  test('supports chaining', () => {
+    document.body.innerHTML = '<input disabled />';
+
+    assert
+      .dom('input')
+      .isDisabled()
+      .isDisabled();
+
+    expect(assert.results.length).toEqual(2);
+  });
 });

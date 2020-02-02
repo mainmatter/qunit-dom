@@ -84,4 +84,15 @@ describe('assert.dom(...).doesNotExist()', () => {
       'Unexpected Parameter: [object Document]'
     );
   });
+
+  test('supports chaining', () => {
+    document.body.innerHTML = '<h1 class="baz">foo</h1>bar';
+
+    assert
+      .dom('h2')
+      .doesNotExist()
+      .doesNotExist();
+
+    expect(assert.results.length).toEqual(2);
+  });
 });

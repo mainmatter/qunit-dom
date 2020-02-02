@@ -77,4 +77,15 @@ describe('assert.dom(...).hasAnyText()', () => {
       'Unexpected Parameter: [object Document]'
     );
   });
+
+  test('supports chaining', () => {
+    document.body.innerHTML = '<h1 class="bar">foo</h1>';
+
+    assert
+      .dom('h1')
+      .hasAnyText()
+      .hasAnyText();
+
+    expect(assert.results.length).toEqual(2);
+  });
 });
