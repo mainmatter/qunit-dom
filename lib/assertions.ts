@@ -451,7 +451,7 @@ export default class DOMAssertions {
    * @param {string?} message
    *
    * @example
-   * assert.dom('input.password-input').hasAttribute('type', 'password');
+   * assert.dom('input.password-input').hasProperty('type', 'password');
    *
    * @see {@link #doesNotHaveProperty}
    */
