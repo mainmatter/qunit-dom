@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+      - 'v*'
+  pull_request: {}
+  schedule:
+    - cron: '0 3 * * *' # daily, at 3am
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        node: ['10', '12']
+
+    name: Tests (Node.js v${{ matrix.node }})
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node }}
+
+      - run: yarn install --no-lockfile
+      - run: yarn lint
+      - run: yarn build
+      - run: yarn test:coverage --runInBand
+      - run: yarn test:ember
