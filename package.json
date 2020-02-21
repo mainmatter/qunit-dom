@@ -30,7 +30,7 @@
     "test:watch": "jest --watchAll --notify"
   },
   "dependencies": {
-    "broccoli-funnel": "^3.0.1",
+    "broccoli-funnel": "^3.0.2",
     "broccoli-merge-trees": "^4.1.0"
   },
   "devDependencies": {
