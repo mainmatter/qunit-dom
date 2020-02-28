@@ -1,0 +1,30 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    name: release
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 10
+          registry-url: 'https://registry.npmjs.org'
+
+      - run: yarn install
+      - run: yarn build
+
+      - name: auto-dist-tag
+        run: |
+          yarn global add auto-dist-tag@1
+          auto-dist-tag --write
+
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
