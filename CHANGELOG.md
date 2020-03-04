@@ -1,5 +1,23 @@
 # Changelog
 
+## v1.1.0 (2020-03-04)
+
+#### :rocket: Enhancement
+* [#634](https://github.com/simplabs/qunit-dom/pull/634) Throw an error if an invalid `rootElement` is passed to `assert.dom()` ([@Turbo87](https://github.com/Turbo87))
+
+#### :memo: Documentation
+* [#614](https://github.com/simplabs/qunit-dom/pull/614) Fix example for `hasProperty()` ([@jonathannewman](https://github.com/jonathannewman))
+
+#### :house: Internal
+* [#635](https://github.com/simplabs/qunit-dom/pull/635) Remove obsolete `ember-cli-htmlbars-inline-precompile` dev dependency ([@Turbo87](https://github.com/Turbo87))
+* [#619](https://github.com/simplabs/qunit-dom/pull/619) Add GitHub Actions config ([@scalvert](https://github.com/scalvert))
+
+#### Committers: 3
+- Jonathan Newman ([@jonathannewman](https://github.com/jonathannewman))
+- Steve Calvert ([@scalvert](https://github.com/scalvert))
+- Tobias Bieniek ([@Turbo87](https://github.com/Turbo87))
+
+
 ## v1.0.0 (2020-02-02)
 
 #### :boom: Breaking Change
