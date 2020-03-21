@@ -1261,6 +1261,23 @@ export default class DOMAssertions {
   }
 
   /**
+   * Assert an {@link HTMLElement} (or multiple) matching the `selector` exists.
+   *
+   * @param {number} count
+   * @param {string?} message
+   *
+   * @example
+   * assert.dom('#title').hasCount(3);
+   *
+   *
+   */
+
+  hasCount(count: number, message?: string) {
+    exists.call(this, { count }, message);
+    return this;
+  }
+
+  /**
    * @private
    */
   private pushResult(result: AssertionResult): void {
