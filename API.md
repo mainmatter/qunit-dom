@@ -401,6 +401,8 @@ assert.dom('.foo').isDisabled();
 Assert that the [HTMLElement][106] or an [HTMLElement][106] matching the
 `selector` is not disabled.
 
+**Aliases:** `isEnabled`
+
 #### Parameters
 
 -   `message` **[string][109]?** 
