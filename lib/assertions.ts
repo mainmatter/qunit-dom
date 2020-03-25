@@ -514,6 +514,8 @@ export default class DOMAssertions {
    *  Assert that the {@link HTMLElement} or an {@link HTMLElement} matching the
    * `selector` is not disabled.
    *
+   * **Aliases:** `isEnabled`
+   *
    * @param {string?} message
    *
    * @example
@@ -523,6 +525,11 @@ export default class DOMAssertions {
    */
   isNotDisabled(message?: string): DOMAssertions {
     isDisabled.call(this, message, { inverted: true });
+    return this;
+  }
+
+  isEnabled(message?: string): DOMAssertions {
+    this.isNotDisabled(message);
     return this;
   }
 
