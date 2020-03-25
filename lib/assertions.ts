@@ -529,8 +529,7 @@ export default class DOMAssertions {
   }
 
   isEnabled(message?: string): DOMAssertions {
-    this.isNotDisabled(message);
-    return this;
+    return this.isNotDisabled(message);
   }
 
   /**
