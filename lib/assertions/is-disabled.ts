@@ -1,7 +1,11 @@
-export default function isDisabled(message?: string, options: { inverted?: boolean } = {}) {
-  let { inverted } = options;
+export default function isDisabled(
+  message?: string,
+  options: { inverted?: boolean; aliased?: boolean } = {}
+) {
+  const { inverted, aliased } = options,
+    notDisabledPlaceholder = aliased ? 'enabled' : 'not disabled',
+    element = this.findTargetElement();
 
-  let element = this.findTargetElement();
   if (!element) return;
 
   if (
@@ -22,11 +26,11 @@ export default function isDisabled(message?: string, options: { inverted?: boole
 
   let actual =
     element.disabled === false
-      ? `Element ${this.targetDescription} is not disabled`
+      ? `Element ${this.targetDescription} is ${notDisabledPlaceholder}`
       : `Element ${this.targetDescription} is disabled`;
 
   let expected = inverted
-    ? `Element ${this.targetDescription} is not disabled`
+    ? `Element ${this.targetDescription} is ${notDisabledPlaceholder}`
     : `Element ${this.targetDescription} is disabled`;
 
   if (!message) {
