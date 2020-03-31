@@ -61,7 +61,7 @@
     "prettier": "1.19.1",
     "rollup": "^2.3.0",
     "rollup-plugin-typescript2": "^0.26.0",
-    "ts-jest": "^25.2.1",
+    "ts-jest": "^25.3.0",
     "typescript": "^3.8.3"
   },
   "engines": {
