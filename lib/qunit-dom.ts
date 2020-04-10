@@ -8,7 +8,7 @@ declare global {
   }
 }
 
-QUnit.assert.dom = function(
+QUnit.assert.dom = function (
   target?: string | Element | null,
   rootElement?: Element
 ): DOMAssertions {

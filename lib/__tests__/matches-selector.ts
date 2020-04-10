@@ -99,10 +99,7 @@ describe('assert.dom(...).matchesSelector()', () => {
   test('supports chaining', () => {
     document.body.innerHTML = '<input type="checkbox" />';
 
-    assert
-      .dom('input')
-      .matchesSelector('.foo')
-      .matchesSelector('.bar');
+    assert.dom('input').matchesSelector('.foo').matchesSelector('.bar');
 
     expect(assert.results.length).toEqual(2);
   });

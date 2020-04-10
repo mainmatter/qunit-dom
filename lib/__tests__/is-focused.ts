@@ -138,10 +138,7 @@ describe('assert.dom(...).isFocused()', () => {
   test('supports chaining', () => {
     document.body.innerHTML = '<input type="checkbox" />';
 
-    assert
-      .dom('input')
-      .isFocused()
-      .isFocused();
+    assert.dom('input').isFocused().isFocused();
 
     expect(assert.results.length).toEqual(2);
   });

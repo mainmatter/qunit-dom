@@ -117,10 +117,7 @@ describe('assert.dom(...).doesNotHaveStyle()', () => {
   });
 
   test('supports chaining', () => {
-    assert
-      .dom('h2')
-      .doesNotHaveStyle({ left: 0 })
-      .doesNotHaveStyle({ top: 0 });
+    assert.dom('h2').doesNotHaveStyle({ left: 0 }).doesNotHaveStyle({ top: 0 });
 
     expect(assert.results.length).toEqual(2);
   });

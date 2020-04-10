@@ -117,10 +117,7 @@ describe('assert.dom(...).isVisible()', () => {
   test('supports chaining', () => {
     document.body.innerHTML = '<input type="checkbox" />';
 
-    assert
-      .dom('input')
-      .isVisible()
-      .isVisible();
+    assert.dom('input').isVisible().isVisible();
 
     expect(assert.results.length).toEqual(2);
   });

@@ -192,10 +192,7 @@ describe('assert.dom(...).isNotChecked()', () => {
   test('supports chaining', () => {
     document.body.innerHTML = '<input type="checkbox" />';
 
-    assert
-      .dom('input')
-      .isNotChecked()
-      .isNotChecked();
+    assert.dom('input').isNotChecked().isNotChecked();
 
     expect(assert.results.length).toEqual(2);
   });

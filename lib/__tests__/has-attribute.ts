@@ -273,10 +273,7 @@ describe('assert.dom(...).hasAttribute()', () => {
   test('supports chaining', () => {
     document.body.innerHTML = '<h1 class="bar">foo</h1>';
 
-    assert
-      .dom('h1')
-      .hasAttribute('class')
-      .hasAttribute('class', 'bar');
+    assert.dom('h1').hasAttribute('class').hasAttribute('class', 'bar');
 
     expect(assert.results.length).toEqual(2);
   });
