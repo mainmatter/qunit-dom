@@ -104,10 +104,7 @@ describe('assert.dom(...).doesNotHaveAttribute()', () => {
   });
 
   test('supports chaining', () => {
-    assert
-      .dom('input')
-      .doesNotHaveAttribute('disabled')
-      .doesNotHaveAttribute('required');
+    assert.dom('input').doesNotHaveAttribute('disabled').doesNotHaveAttribute('required');
 
     expect(assert.results.length).toEqual(2);
   });

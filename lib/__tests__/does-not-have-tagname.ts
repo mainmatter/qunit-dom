@@ -157,10 +157,7 @@ describe('assert.dom(...).doesNotHaveTagName()', () => {
   test('supports chaining', () => {
     document.body.innerHTML = '<h1 class="bar">foo</h1>';
 
-    assert
-      .dom('h1')
-      .doesNotHaveTagName('div')
-      .doesNotHaveTagName('h1');
+    assert.dom('h1').doesNotHaveTagName('div').doesNotHaveTagName('h1');
 
     expect(assert.results.length).toEqual(2);
   });

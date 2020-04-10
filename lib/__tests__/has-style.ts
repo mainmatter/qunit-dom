@@ -116,10 +116,7 @@ describe('assert.dom(...).hasStyle()', () => {
   test('supports chaining', () => {
     document.body.innerHTML = '<h1 class="bar">foo</h1>';
 
-    assert
-      .dom('h1')
-      .hasStyle({ top: 42 })
-      .hasStyle({ left: 0 });
+    assert.dom('h1').hasStyle({ top: 42 }).hasStyle({ left: 0 });
 
     expect(assert.results.length).toEqual(2);
   });

@@ -83,10 +83,7 @@ describe('assert.dom(...).hasAnyValue()', () => {
   test('supports chaining', () => {
     document.body.innerHTML = '<input value="foo"/>';
 
-    assert
-      .dom('input')
-      .hasAnyValue()
-      .hasAnyValue();
+    assert.dom('input').hasAnyValue().hasAnyValue();
 
     expect(assert.results.length).toEqual(2);
   });

@@ -99,10 +99,7 @@ describe('assert.dom(...).doesNotMatchSelector()', () => {
   test('supports chaining', () => {
     document.body.innerHTML = '<h1 class="bar">foo</h1>';
 
-    assert
-      .dom('h1')
-      .doesNotMatchSelector('.foo')
-      .doesNotMatchSelector('.bar');
+    assert.dom('h1').doesNotMatchSelector('.foo').doesNotMatchSelector('.bar');
 
     expect(assert.results.length).toEqual(2);
   });

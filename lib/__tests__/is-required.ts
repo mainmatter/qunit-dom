@@ -135,10 +135,7 @@ describe('assert.dom(...).isRequired()', () => {
   test('supports chaining', () => {
     document.body.innerHTML = '<input type="checkbox" />';
 
-    assert
-      .dom('input')
-      .isRequired()
-      .isRequired();
+    assert.dom('input').isRequired().isRequired();
 
     expect(assert.results.length).toEqual(2);
   });

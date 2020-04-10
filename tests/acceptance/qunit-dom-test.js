@@ -2,10 +2,10 @@ import { module, test } from 'qunit';
 import { setupApplicationTest } from 'ember-qunit';
 import { visit } from '@ember/test-helpers';
 
-module('Acceptance | qunit-dom', function(hooks) {
+module('Acceptance | qunit-dom', function (hooks) {
   setupApplicationTest(hooks);
 
-  test('qunit-dom assertions are available', async function(assert) {
+  test('qunit-dom assertions are available', async function (assert) {
     assert.ok(assert.dom, 'assert.dom is available');
     assert.ok(assert.dom('.foo').includesText, 'assert.dom(...).includesText is available');
 

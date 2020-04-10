@@ -228,10 +228,7 @@ describe('assert.dom(...).includesText()', () => {
   test('supports chaining', () => {
     document.body.innerHTML = '<h1 class="bar">foo</h1>';
 
-    assert
-      .dom('h1')
-      .includesText('foo')
-      .includesText('bar');
+    assert.dom('h1').includesText('foo').includesText('bar');
 
     expect(assert.results.length).toEqual(2);
   });

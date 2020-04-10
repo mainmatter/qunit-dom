@@ -88,10 +88,7 @@ describe('assert.dom(...).doesNotExist()', () => {
   test('supports chaining', () => {
     document.body.innerHTML = '<h1 class="baz">foo</h1>bar';
 
-    assert
-      .dom('h2')
-      .doesNotExist()
-      .doesNotExist();
+    assert.dom('h2').doesNotExist().doesNotExist();
 
     expect(assert.results.length).toEqual(2);
   });
