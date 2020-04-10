@@ -442,6 +442,40 @@ export default class DOMAssertions {
   }
 
   /**
+   * Assert that the {@link HTMLElement} has an ARIA attribute with the provided
+   * `name` and optionally checks if the attribute `value` matches the provided
+   * text or regular expression.
+   *
+   * @param {string} name
+   * @param {string|RegExp|object?} value
+   * @param {string?} message
+   *
+   * @example
+   * assert.dom('button').hasAria('pressed', 'true');
+   *
+   * @see {@link #hasNoAria}
+   */
+  hasAria(name: string, value?: string | RegExp | { any: true }, message?: string): DOMAssertions {
+    return this.hasAttribute(`aria-${name}`, value, message);
+  }
+
+  /**
+   * Assert that the {@link HTMLElement} has no ARIA attribute with the
+   * provided `name`.
+   *
+   * @param {string} name
+   * @param {string?} message
+   *
+   * @example
+   * assert.dom('button').doesNotHaveAria('pressed');
+   *
+   * @see {@link #hasAria}
+   */
+  doesNotHaveAria(name: string, message?: string): DOMAssertions {
+    return this.doesNotHaveAttribute(`aria-${name}`, message);
+  }
+
+  /**
    * Assert that the {@link HTMLElement} has a property with the provided `name`
    * and checks if the property `value` matches the provided text or regular
    * expression.
