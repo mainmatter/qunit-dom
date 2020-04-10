@@ -21,9 +21,7 @@ jobs:
       - run: yarn build
 
       - name: auto-dist-tag
-        run: |
-          yarn global add auto-dist-tag@1
-          auto-dist-tag --write
+        run: npx auto-dist-tag@1 --write
 
       - run: npm publish
         env:
