@@ -1,5 +1,16 @@
 # Changelog
 
+## v1.2.0 (2020-04-10)
+
+#### :rocket: Enhancement
+* [#679](https://github.com/simplabs/qunit-dom/pull/679) Add `hasAria()` assertion ([@Turbo87](https://github.com/Turbo87))
+* [#653](https://github.com/simplabs/qunit-dom/pull/653) Add `isEnabled()` alias for `isNotDisabled()` ([@mum-never-proud](https://github.com/mum-never-proud))
+
+#### Committers: 2
+- Tobias Bieniek ([@Turbo87](https://github.com/Turbo87))
+- [@mum-never-proud](https://github.com/mum-never-proud)
+
+
 ## v1.1.0 (2020-03-04)
 
 #### :rocket: Enhancement
