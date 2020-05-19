@@ -62,7 +62,7 @@
     "rollup": "^2.10.2",
     "rollup-plugin-typescript2": "^0.27.1",
     "ts-jest": "^25.5.1",
-    "typescript": "~3.8.3"
+    "typescript": "~3.9.2"
   },
   "engines": {
     "node": "10.* || >= 12.*"
