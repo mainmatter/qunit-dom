@@ -5,6 +5,7 @@ import isChecked from './assertions/is-checked';
 import isNotChecked from './assertions/is-not-checked';
 import isRequired from './assertions/is-required';
 import isNotRequired from './assertions/is-not-required';
+import isValid from './assertions/is-valid';
 import isVisible from './assertions/is-visible';
 import isDisabled from './assertions/is-disabled';
 import matchesSelector from './assertions/matches-selector';
@@ -190,6 +191,25 @@ export default class DOMAssertions {
    */
   isNotRequired(message?: string): DOMAssertions {
     isNotRequired.call(this, message);
+    return this;
+  }
+
+  /**
+   * Assert that the {@link HTMLElement} passes validation
+   *
+   * Validity is determined by asserting that:
+   *
+   * - `element.reportValidity() === true`
+   *
+   * @param {string?} message
+   *
+   * @example
+   * assert.dom('.input').isValid();
+   *
+   * @see {@link #isValid}
+   */
+  isValid(message?: string): DOMAssertions {
+    isValid.call(this, message);
     return this;
   }
 
