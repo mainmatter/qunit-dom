@@ -28,87 +28,90 @@
     -   [isNotRequired][24]
         -   [Parameters][25]
         -   [Examples][26]
-    -   [isVisible][27]
+    -   [isValid][27]
         -   [Parameters][28]
         -   [Examples][29]
-    -   [isNotVisible][30]
+    -   [isVisible][30]
         -   [Parameters][31]
         -   [Examples][32]
-    -   [hasAttribute][33]
+    -   [isNotVisible][33]
         -   [Parameters][34]
         -   [Examples][35]
-    -   [doesNotHaveAttribute][36]
+    -   [hasAttribute][36]
         -   [Parameters][37]
         -   [Examples][38]
-    -   [hasAria][39]
+    -   [doesNotHaveAttribute][39]
         -   [Parameters][40]
         -   [Examples][41]
-    -   [doesNotHaveAria][42]
+    -   [hasAria][42]
         -   [Parameters][43]
         -   [Examples][44]
-    -   [hasProperty][45]
+    -   [doesNotHaveAria][45]
         -   [Parameters][46]
         -   [Examples][47]
-    -   [isDisabled][48]
+    -   [hasProperty][48]
         -   [Parameters][49]
         -   [Examples][50]
-    -   [isNotDisabled][51]
+    -   [isDisabled][51]
         -   [Parameters][52]
         -   [Examples][53]
-    -   [hasClass][54]
+    -   [isNotDisabled][54]
         -   [Parameters][55]
         -   [Examples][56]
-    -   [doesNotHaveClass][57]
+    -   [hasClass][57]
         -   [Parameters][58]
         -   [Examples][59]
-    -   [hasText][60]
+    -   [doesNotHaveClass][60]
         -   [Parameters][61]
         -   [Examples][62]
-    -   [hasAnyText][63]
+    -   [hasText][63]
         -   [Parameters][64]
         -   [Examples][65]
-    -   [hasNoText][66]
+    -   [hasAnyText][66]
         -   [Parameters][67]
         -   [Examples][68]
-    -   [includesText][69]
+    -   [hasNoText][69]
         -   [Parameters][70]
         -   [Examples][71]
-    -   [doesNotIncludeText][72]
+    -   [includesText][72]
         -   [Parameters][73]
         -   [Examples][74]
-    -   [hasValue][75]
+    -   [doesNotIncludeText][75]
         -   [Parameters][76]
         -   [Examples][77]
-    -   [hasAnyValue][78]
+    -   [hasValue][78]
         -   [Parameters][79]
         -   [Examples][80]
-    -   [hasNoValue][81]
+    -   [hasAnyValue][81]
         -   [Parameters][82]
         -   [Examples][83]
-    -   [matchesSelector][84]
+    -   [hasNoValue][84]
         -   [Parameters][85]
         -   [Examples][86]
-    -   [doesNotMatchSelector][87]
+    -   [matchesSelector][87]
         -   [Parameters][88]
         -   [Examples][89]
-    -   [hasTagName][90]
+    -   [doesNotMatchSelector][90]
         -   [Parameters][91]
         -   [Examples][92]
-    -   [doesNotHaveTagName][93]
+    -   [hasTagName][93]
         -   [Parameters][94]
         -   [Examples][95]
--   [hasStyle][96]
-    -   [Parameters][97]
-    -   [Examples][98]
--   [hasPseudoElementStyle][99]
+    -   [doesNotHaveTagName][96]
+        -   [Parameters][97]
+        -   [Examples][98]
+-   [hasStyle][99]
     -   [Parameters][100]
     -   [Examples][101]
--   [doesNotHaveStyle][102]
+-   [hasPseudoElementStyle][102]
     -   [Parameters][103]
     -   [Examples][104]
--   [doesNotHavePseudoElementStyle][105]
+-   [doesNotHaveStyle][105]
     -   [Parameters][106]
     -   [Examples][107]
+-   [doesNotHavePseudoElementStyle][108]
+    -   [Parameters][109]
+    -   [Examples][110]
 
 ## assert.dom()
 
@@ -116,8 +119,8 @@ Once installed the DOM element assertions are available at `assert.dom(...).*`:
 
 **Parameters**
 
--   `target` **([string][108] \| [HTMLElement][109])** A CSS selector that can be used to find elements using [`querySelector()`][110], or an [HTMLElement][] (Not all assertions support both target types.) (optional, default `rootElement` or `document`)
--   `rootElement` **[HTMLElement][109]?** The root element of the DOM in which to search for the `target` (optional, default `document`)
+-   `target` **([string][111] \| [HTMLElement][112])** A CSS selector that can be used to find elements using [`querySelector()`][113], or an [HTMLElement][] (Not all assertions support both target types.) (optional, default `rootElement` or `document`)
+-   `rootElement` **[HTMLElement][112]?** The root element of the DOM in which to search for the `target` (optional, default `document`)
 
 **Examples**
 
@@ -132,16 +135,16 @@ test('the title exists', function(assert) {
 
 ### exists
 
--   **See: [#doesNotExist][111]
+-   **See: [#doesNotExist][114]
     **
 
-Assert an [HTMLElement][112] (or multiple) matching the `selector` exists.
+Assert an [HTMLElement][115] (or multiple) matching the `selector` exists.
 
 #### Parameters
 
--   `options` **[object][113]?** 
-    -   `options.count` **[number][114]?** 
--   `message` **[string][115]?** 
+-   `options` **[object][116]?** 
+    -   `options.count` **[number][117]?** 
+-   `message` **[string][118]?** 
 
 #### Examples
 
@@ -155,11 +158,11 @@ assert.dom('.choice').exists({ count: 4 });
 -   **See: [#exists][3]
     **
 
-Assert an [HTMLElement][112] matching the `selector` does not exists.
+Assert an [HTMLElement][115] matching the `selector` does not exists.
 
 #### Parameters
 
--   `message` **[string][115]?** 
+-   `message` **[string][118]?** 
 
 #### Examples
 
@@ -169,17 +172,17 @@ assert.dom('.should-not-exist').doesNotExist();
 
 ### isChecked
 
--   **See: [#isNotChecked][116]
+-   **See: [#isNotChecked][119]
     **
 
-Assert that the [HTMLElement][112] or an [HTMLElement][112] matching the
+Assert that the [HTMLElement][115] or an [HTMLElement][115] matching the
 `selector` is currently checked.
 
 Note: This also supports `aria-checked="true/false"`.
 
 #### Parameters
 
--   `message` **[string][115]?** 
+-   `message` **[string][118]?** 
 
 #### Examples
 
@@ -189,17 +192,17 @@ assert.dom('input.active').isChecked();
 
 ### isNotChecked
 
--   **See: [#isChecked][117]
+-   **See: [#isChecked][120]
     **
 
-Assert that the [HTMLElement][112] or an [HTMLElement][112] matching the
+Assert that the [HTMLElement][115] or an [HTMLElement][115] matching the
 `selector` is currently unchecked.
 
 Note: This also supports `aria-checked="true/false"`.
 
 #### Parameters
 
--   `message` **[string][115]?** 
+-   `message` **[string][118]?** 
 
 #### Examples
 
@@ -209,15 +212,15 @@ assert.dom('input.active').isNotChecked();
 
 ### isFocused
 
--   **See: [#isNotFocused][118]
+-   **See: [#isNotFocused][121]
     **
 
-Assert that the [HTMLElement][112] or an [HTMLElement][112] matching the
+Assert that the [HTMLElement][115] or an [HTMLElement][115] matching the
 `selector` is currently focused.
 
 #### Parameters
 
--   `message` **[string][115]?** 
+-   `message` **[string][118]?** 
 
 #### Examples
 
@@ -227,15 +230,15 @@ assert.dom('input.email').isFocused();
 
 ### isNotFocused
 
--   **See: [#isFocused][119]
+-   **See: [#isFocused][122]
     **
 
-Assert that the [HTMLElement][112] or an [HTMLElement][112] matching the
+Assert that the [HTMLElement][115] or an [HTMLElement][115] matching the
 `selector` is not currently focused.
 
 #### Parameters
 
--   `message` **[string][115]?** 
+-   `message` **[string][118]?** 
 
 #### Examples
 
@@ -245,15 +248,15 @@ assert.dom('input[type="password"]').isNotFocused();
 
 ### isRequired
 
--   **See: [#isNotRequired][120]
+-   **See: [#isNotRequired][123]
     **
 
-Assert that the [HTMLElement][112] or an [HTMLElement][112] matching the
+Assert that the [HTMLElement][115] or an [HTMLElement][115] matching the
 `selector` is currently required.
 
 #### Parameters
 
--   `message` **[string][115]?** 
+-   `message` **[string][118]?** 
 
 #### Examples
 
@@ -263,15 +266,15 @@ assert.dom('input[type="text"]').isRequired();
 
 ### isNotRequired
 
--   **See: [#isRequired][121]
+-   **See: [#isRequired][124]
     **
 
-Assert that the [HTMLElement][112] or an [HTMLElement][112] matching the
+Assert that the [HTMLElement][115] or an [HTMLElement][115] matching the
 `selector` is currently not required.
 
 #### Parameters
 
--   `message` **[string][115]?** 
+-   `message` **[string][118]?** 
 
 #### Examples
 
@@ -279,12 +282,33 @@ Assert that the [HTMLElement][112] or an [HTMLElement][112] matching the
 assert.dom('input[type="text"]').isNotRequired();
 ```
 
-### isVisible
+### isValid
 
--   **See: [#isNotVisible][122]
+-   **See: [#isValid][125]
     **
 
-Assert that the [HTMLElement][112] or an [HTMLElement][112] matching the
+Assert that the [HTMLElement][115] passes validation
+
+Validity is determined by asserting that:
+
+-   `element.reportValidity() === true`
+
+#### Parameters
+
+-   `message` **[string][118]?** 
+
+#### Examples
+
+```javascript
+assert.dom('.input').isValid();
+```
+
+### isVisible
+
+-   **See: [#isNotVisible][126]
+    **
+
+Assert that the [HTMLElement][115] or an [HTMLElement][115] matching the
 `selector` exists and is visible.
 
 Visibility is determined by asserting that:
@@ -297,9 +321,9 @@ but not necessarily in the viewport.
 
 #### Parameters
 
--   `options` **[object][113]?** 
-    -   `options.count` **[number][114]?** 
--   `message` **[string][115]?** 
+-   `options` **[object][116]?** 
+    -   `options.count` **[number][117]?** 
+-   `message` **[string][118]?** 
 
 #### Examples
 
@@ -310,10 +334,10 @@ assert.dom('.choice').isVisible({ count: 4 });
 
 ### isNotVisible
 
--   **See: [#isVisible][123]
+-   **See: [#isVisible][127]
     **
 
-Assert that the [HTMLElement][112] or an [HTMLElement][112] matching the
+Assert that the [HTMLElement][115] or an [HTMLElement][115] matching the
 `selector` does not exist or is not visible on the page.
 
 Visibility is determined by asserting that:
@@ -326,7 +350,7 @@ but not necessarily in the viewport.
 
 #### Parameters
 
--   `message` **[string][115]?** 
+-   `message` **[string][118]?** 
 
 #### Examples
 
@@ -336,18 +360,18 @@ assert.dom('.foo').isNotVisible();
 
 ### hasAttribute
 
--   **See: [#doesNotHaveAttribute][124]
+-   **See: [#doesNotHaveAttribute][128]
     **
 
-Assert that the [HTMLElement][112] has an attribute with the provided `name`
+Assert that the [HTMLElement][115] has an attribute with the provided `name`
 and optionally checks if the attribute `value` matches the provided text
 or regular expression.
 
 #### Parameters
 
--   `name` **[string][115]** 
--   `value` **([string][115] \| [RegExp][125] \| [object][113]?)** 
--   `message` **[string][115]?** 
+-   `name` **[string][118]** 
+-   `value` **([string][118] \| [RegExp][129] \| [object][116]?)** 
+-   `message` **[string][118]?** 
 
 #### Examples
 
@@ -357,17 +381,17 @@ assert.dom('input.password-input').hasAttribute('type', 'password');
 
 ### doesNotHaveAttribute
 
--   **See: [#hasAttribute][126]
+-   **See: [#hasAttribute][130]
     **
 
-Assert that the [HTMLElement][112] has no attribute with the provided `name`.
+Assert that the [HTMLElement][115] has no attribute with the provided `name`.
 
 **Aliases:** `hasNoAttribute`, `lacksAttribute`
 
 #### Parameters
 
--   `name` **[string][115]** 
--   `message` **[string][115]?** 
+-   `name` **[string][118]** 
+-   `message` **[string][118]?** 
 
 #### Examples
 
@@ -377,18 +401,18 @@ assert.dom('input.username').hasNoAttribute('disabled');
 
 ### hasAria
 
--   **See: [#hasNoAria][127]
+-   **See: [#hasNoAria][131]
     **
 
-Assert that the [HTMLElement][112] has an ARIA attribute with the provided
+Assert that the [HTMLElement][115] has an ARIA attribute with the provided
 `name` and optionally checks if the attribute `value` matches the provided
 text or regular expression.
 
 #### Parameters
 
--   `name` **[string][115]** 
--   `value` **([string][115] \| [RegExp][125] \| [object][113]?)** 
--   `message` **[string][115]?** 
+-   `name` **[string][118]** 
+-   `value` **([string][118] \| [RegExp][129] \| [object][116]?)** 
+-   `message` **[string][118]?** 
 
 #### Examples
 
@@ -398,16 +422,16 @@ assert.dom('button').hasAria('pressed', 'true');
 
 ### doesNotHaveAria
 
--   **See: [#hasAria][128]
+-   **See: [#hasAria][132]
     **
 
-Assert that the [HTMLElement][112] has no ARIA attribute with the
+Assert that the [HTMLElement][115] has no ARIA attribute with the
 provided `name`.
 
 #### Parameters
 
--   `name` **[string][115]** 
--   `message` **[string][115]?** 
+-   `name` **[string][118]** 
+-   `message` **[string][118]?** 
 
 #### Examples
 
@@ -417,18 +441,18 @@ assert.dom('button').doesNotHaveAria('pressed');
 
 ### hasProperty
 
--   **See: [#doesNotHaveProperty][129]
+-   **See: [#doesNotHaveProperty][133]
     **
 
-Assert that the [HTMLElement][112] has a property with the provided `name`
+Assert that the [HTMLElement][115] has a property with the provided `name`
 and checks if the property `value` matches the provided text or regular
 expression.
 
 #### Parameters
 
--   `name` **[string][115]** 
--   `value` **([string][115] \| [RegExp][125])** 
--   `message` **[string][115]?** 
+-   `name` **[string][118]** 
+-   `value` **([string][118] \| [RegExp][129])** 
+-   `message` **[string][118]?** 
 
 #### Examples
 
@@ -438,15 +462,15 @@ assert.dom('input.password-input').hasProperty('type', 'password');
 
 ### isDisabled
 
--   **See: [#isNotDisabled][130]
+-   **See: [#isNotDisabled][134]
     **
 
-Assert that the [HTMLElement][112] or an [HTMLElement][112] matching the
+Assert that the [HTMLElement][115] or an [HTMLElement][115] matching the
 `selector` is disabled.
 
 #### Parameters
 
--   `message` **[string][115]?** 
+-   `message` **[string][118]?** 
 
 #### Examples
 
@@ -456,17 +480,17 @@ assert.dom('.foo').isDisabled();
 
 ### isNotDisabled
 
--   **See: [#isDisabled][131]
+-   **See: [#isDisabled][135]
     **
 
-Assert that the [HTMLElement][112] or an [HTMLElement][112] matching the
+Assert that the [HTMLElement][115] or an [HTMLElement][115] matching the
 `selector` is not disabled.
 
 **Aliases:** `isEnabled`
 
 #### Parameters
 
--   `message` **[string][115]?** 
+-   `message` **[string][118]?** 
 
 #### Examples
 
@@ -476,19 +500,19 @@ assert.dom('.foo').isNotDisabled();
 
 ### hasClass
 
--   **See: [#doesNotHaveClass][132]
+-   **See: [#doesNotHaveClass][136]
     **
 
-Assert that the [HTMLElement][112] has the `expected` CSS class using
-[`classList`][133].
+Assert that the [HTMLElement][115] has the `expected` CSS class using
+[`classList`][137].
 
 `expected` can also be a regular expression, and the assertion will return
 true if any of the element's CSS classes match.
 
 #### Parameters
 
--   `expected` **([string][115] \| [RegExp][125])** 
--   `message` **[string][115]?** 
+-   `expected` **([string][118] \| [RegExp][129])** 
+-   `message` **[string][118]?** 
 
 #### Examples
 
@@ -502,11 +526,11 @@ assert.dom('input[type="password"]').hasClass(/.*password-input/);
 
 ### doesNotHaveClass
 
--   **See: [#hasClass][134]
+-   **See: [#hasClass][138]
     **
 
-Assert that the [HTMLElement][112] does not have the `expected` CSS class using
-[`classList`][133].
+Assert that the [HTMLElement][115] does not have the `expected` CSS class using
+[`classList`][137].
 
 `expected` can also be a regular expression, and the assertion will return
 true if none of the element's CSS classes match.
@@ -515,8 +539,8 @@ true if none of the element's CSS classes match.
 
 #### Parameters
 
--   `expected` **([string][115] \| [RegExp][125])** 
--   `message` **[string][115]?** 
+-   `expected` **([string][118] \| [RegExp][129])** 
+-   `message` **[string][118]?** 
 
 #### Examples
 
@@ -530,12 +554,12 @@ assert.dom('input[type="password"]').doesNotHaveClass(/username-.*-input/);
 
 ### hasText
 
--   **See: [#includesText][135]
+-   **See: [#includesText][139]
     **
 
-Assert that the text of the [HTMLElement][112] or an [HTMLElement][112]
+Assert that the text of the [HTMLElement][115] or an [HTMLElement][115]
 matching the `selector` matches the `expected` text, using the
-[`textContent`][136]
+[`textContent`][140]
 attribute and stripping/collapsing whitespace.
 
 `expected` can also be a regular expression.
@@ -548,8 +572,8 @@ attribute and stripping/collapsing whitespace.
 
 #### Parameters
 
--   `expected` **([string][115] \| [RegExp][125])** 
--   `message` **[string][115]?** 
+-   `expected` **([string][118] \| [RegExp][129])** 
+-   `message` **[string][118]?** 
 
 #### Examples
 
@@ -567,14 +591,14 @@ assert.dom('.foo').hasText(/[12]\d{3}/);
 
 ### hasAnyText
 
--   **See: [#hasText][137]
+-   **See: [#hasText][141]
     **
 
-Assert that the `textContent` property of an [HTMLElement][112] is not empty.
+Assert that the `textContent` property of an [HTMLElement][115] is not empty.
 
 #### Parameters
 
--   `message` **[string][115]?** 
+-   `message` **[string][118]?** 
 
 #### Examples
 
@@ -584,14 +608,14 @@ assert.dom('button.share').hasAnyText();
 
 ### hasNoText
 
--   **See: [#hasNoText][138]
+-   **See: [#hasNoText][142]
     **
 
-Assert that the `textContent` property of an [HTMLElement][112] is empty.
+Assert that the `textContent` property of an [HTMLElement][115] is empty.
 
 #### Parameters
 
--   `message` **[string][115]?** 
+-   `message` **[string][118]?** 
 
 #### Examples
 
@@ -601,25 +625,25 @@ assert.dom('div').hasNoText();
 
 ### includesText
 
--   **See: [#hasText][137]
+-   **See: [#hasText][141]
     **
 
-Assert that the text of the [HTMLElement][112] or an [HTMLElement][112]
+Assert that the text of the [HTMLElement][115] or an [HTMLElement][115]
 matching the `selector` contains the given `text`, using the
-[`textContent`][136]
+[`textContent`][140]
 attribute.
 
 > Note: This assertion will collapse whitespace in `textContent` before searching.
 > If you would like to assert on a string that _should_ contain line breaks, tabs,
-> more than one space in a row, or starting/ending whitespace, use the [#hasText][137]
+> more than one space in a row, or starting/ending whitespace, use the [#hasText][141]
 > selector and pass your expected text in as a RegEx pattern.
 
 **Aliases:** `containsText`, `hasTextContaining`
 
 #### Parameters
 
--   `text` **[string][115]** 
--   `message` **[string][115]?** 
+-   `text` **[string][118]** 
+-   `message` **[string][118]?** 
 
 #### Examples
 
@@ -629,17 +653,17 @@ assert.dom('#title').includesText('Welcome');
 
 ### doesNotIncludeText
 
-Assert that the text of the [HTMLElement][112] or an [HTMLElement][112]
+Assert that the text of the [HTMLElement][115] or an [HTMLElement][115]
 matching the `selector` does not include the given `text`, using the
-[`textContent`][136]
+[`textContent`][140]
 attribute.
 
 **Aliases:** `doesNotContainText`, `doesNotHaveTextContaining`
 
 #### Parameters
 
--   `text` **[string][115]** 
--   `message` **[string][115]?** 
+-   `text` **[string][118]** 
+-   `message` **[string][118]?** 
 
 #### Examples
 
@@ -649,12 +673,12 @@ assert.dom('#title').doesNotIncludeText('Welcome');
 
 ### hasValue
 
--   **See: [#hasAnyValue][139]
+-   **See: [#hasAnyValue][143]
     **
--   **See: [#hasNoValue][140]
+-   **See: [#hasNoValue][144]
     **
 
-Assert that the `value` property of an [HTMLInputElement][141] matches
+Assert that the `value` property of an [HTMLInputElement][145] matches
 the `expected` text or regular expression.
 
 If no `expected` value is provided, the assertion will fail if the
@@ -662,8 +686,8 @@ If no `expected` value is provided, the assertion will fail if the
 
 #### Parameters
 
--   `expected` **([string][115] \| [RegExp][125] \| [object][113]?)** 
--   `message` **[string][115]?** 
+-   `expected` **([string][118] \| [RegExp][129] \| [object][116]?)** 
+-   `message` **[string][118]?** 
 
 #### Examples
 
@@ -673,16 +697,16 @@ assert.dom('input.username').hasValue('HSimpson');
 
 ### hasAnyValue
 
--   **See: [#hasValue][142]
+-   **See: [#hasValue][146]
     **
--   **See: [#hasNoValue][140]
+-   **See: [#hasNoValue][144]
     **
 
-Assert that the `value` property of an [HTMLInputElement][141] is not empty.
+Assert that the `value` property of an [HTMLInputElement][145] is not empty.
 
 #### Parameters
 
--   `message` **[string][115]?** 
+-   `message` **[string][118]?** 
 
 #### Examples
 
@@ -692,18 +716,18 @@ assert.dom('input.username').hasAnyValue();
 
 ### hasNoValue
 
--   **See: [#hasValue][142]
+-   **See: [#hasValue][146]
     **
--   **See: [#hasAnyValue][139]
+-   **See: [#hasAnyValue][143]
     **
 
-Assert that the `value` property of an [HTMLInputElement][141] is empty.
+Assert that the `value` property of an [HTMLInputElement][145] is empty.
 
 **Aliases:** `lacksValue`
 
 #### Parameters
 
--   `message` **[string][115]?** 
+-   `message` **[string][118]?** 
 
 #### Examples
 
@@ -718,8 +742,8 @@ compareSelector.
 
 #### Parameters
 
--   `compareSelector` **[string][115]** 
--   `message` **[string][115]?** 
+-   `compareSelector` **[string][118]** 
+-   `message` **[string][118]?** 
 
 #### Examples
 
@@ -734,8 +758,8 @@ compareSelector.
 
 #### Parameters
 
--   `compareSelector` **[string][115]** 
--   `message` **[string][115]?** 
+-   `compareSelector` **[string][118]** 
+-   `message` **[string][118]?** 
 
 #### Examples
 
@@ -745,16 +769,16 @@ assert.dom('input').doesNotMatchSelector('input[disabled]')
 
 ### hasTagName
 
-Assert that the tagName of the [HTMLElement][112] or an [HTMLElement][112]
+Assert that the tagName of the [HTMLElement][115] or an [HTMLElement][115]
 matching the `selector` matches the `expected` tagName, using the
-[`tagName`][143]
-property of the [HTMLElement][112].
+[`tagName`][147]
+property of the [HTMLElement][115].
 
 #### Parameters
 
 -   `tagName`  
--   `message` **[string][115]?** 
--   `expected` **[string][115]** 
+-   `message` **[string][118]?** 
+-   `expected` **[string][118]** 
 
 #### Examples
 
@@ -768,16 +792,16 @@ assert.dom('#title').hasTagName('h1');
 
 ### doesNotHaveTagName
 
-Assert that the tagName of the [HTMLElement][112] or an [HTMLElement][112]
+Assert that the tagName of the [HTMLElement][115] or an [HTMLElement][115]
 matching the `selector` does not match the `expected` tagName, using the
-[`tagName`][143]
-property of the [HTMLElement][112].
+[`tagName`][147]
+property of the [HTMLElement][115].
 
 #### Parameters
 
 -   `tagName`  
--   `message` **[string][115]?** 
--   `expected` **[string][115]** 
+-   `message` **[string][118]?** 
+-   `expected` **[string][118]** 
 
 #### Examples
 
@@ -791,16 +815,16 @@ assert.dom('section#block').doesNotHaveTagName('div');
 
 ## hasStyle
 
--   **See: [#hasClass][134]
+-   **See: [#hasClass][138]
     **
 
 Assert that the [HTMLElement][] has the `expected` style declarations using
-[`window.getComputedStyle`][144].
+[`window.getComputedStyle`][148].
 
 ### Parameters
 
--   `expected` **[object][113]** 
--   `message` **[string][115]?** 
+-   `expected` **[object][116]** 
+-   `message` **[string][118]?** 
 
 ### Examples
 
@@ -813,17 +837,17 @@ assert.dom('.progress-bar').hasStyle({
 
 ## hasPseudoElementStyle
 
--   **See: [#hasClass][134]
+-   **See: [#hasClass][138]
     **
 
 Assert that the pseudo element for `selector` of the [HTMLElement][] has the `expected` style declarations using
-[`window.getComputedStyle`][144].
+[`window.getComputedStyle`][148].
 
 ### Parameters
 
--   `selector` **[string][115]** 
--   `expected` **[object][113]** 
--   `message` **[string][115]?** 
+-   `selector` **[string][118]** 
+-   `expected` **[object][116]** 
+-   `message` **[string][118]?** 
 
 ### Examples
 
@@ -835,16 +859,16 @@ assert.dom('.progress-bar').hasPseudoElementStyle(':after', {
 
 ## doesNotHaveStyle
 
--   **See: [#hasClass][134]
+-   **See: [#hasClass][138]
     **
 
 Assert that the [HTMLElement][] does not have the `expected` style declarations using
-[`window.getComputedStyle`][144].
+[`window.getComputedStyle`][148].
 
 ### Parameters
 
--   `expected` **[object][113]** 
--   `message` **[string][115]?** 
+-   `expected` **[object][116]** 
+-   `message` **[string][118]?** 
 
 ### Examples
 
@@ -857,17 +881,17 @@ assert.dom('.progress-bar').doesNotHaveStyle({
 
 ## doesNotHavePseudoElementStyle
 
--   **See: [#hasClass][134]
+-   **See: [#hasClass][138]
     **
 
 Assert that the pseudo element for `selector` of the [HTMLElement][] does not have the `expected` style declarations using
-[`window.getComputedStyle`][144].
+[`window.getComputedStyle`][148].
 
 ### Parameters
 
--   `selector` **[string][115]** 
--   `expected` **[object][113]** 
--   `message` **[string][115]?** 
+-   `selector` **[string][118]** 
+-   `expected` **[object][116]** 
+-   `message` **[string][118]?** 
 
 ### Examples
 
@@ -929,238 +953,246 @@ assert.dom('.progress-bar').doesNotHavePseudoElementStyle(':after', {
 
 [26]: #examples-7
 
-[27]: #isvisible
+[27]: #isvalid
 
 [28]: #parameters-8
 
 [29]: #examples-8
 
-[30]: #isnotvisible
+[30]: #isvisible
 
 [31]: #parameters-9
 
 [32]: #examples-9
 
-[33]: #hasattribute
+[33]: #isnotvisible
 
 [34]: #parameters-10
 
 [35]: #examples-10
 
-[36]: #doesnothaveattribute
+[36]: #hasattribute
 
 [37]: #parameters-11
 
 [38]: #examples-11
 
-[39]: #hasaria
+[39]: #doesnothaveattribute
 
 [40]: #parameters-12
 
 [41]: #examples-12
 
-[42]: #doesnothavearia
+[42]: #hasaria
 
 [43]: #parameters-13
 
 [44]: #examples-13
 
-[45]: #hasproperty
+[45]: #doesnothavearia
 
 [46]: #parameters-14
 
 [47]: #examples-14
 
-[48]: #isdisabled
+[48]: #hasproperty
 
 [49]: #parameters-15
 
 [50]: #examples-15
 
-[51]: #isnotdisabled
+[51]: #isdisabled
 
 [52]: #parameters-16
 
 [53]: #examples-16
 
-[54]: #hasclass
+[54]: #isnotdisabled
 
 [55]: #parameters-17
 
 [56]: #examples-17
 
-[57]: #doesnothaveclass
+[57]: #hasclass
 
 [58]: #parameters-18
 
 [59]: #examples-18
 
-[60]: #hastext
+[60]: #doesnothaveclass
 
 [61]: #parameters-19
 
 [62]: #examples-19
 
-[63]: #hasanytext
+[63]: #hastext
 
 [64]: #parameters-20
 
 [65]: #examples-20
 
-[66]: #hasnotext
+[66]: #hasanytext
 
 [67]: #parameters-21
 
 [68]: #examples-21
 
-[69]: #includestext
+[69]: #hasnotext
 
 [70]: #parameters-22
 
 [71]: #examples-22
 
-[72]: #doesnotincludetext
+[72]: #includestext
 
 [73]: #parameters-23
 
 [74]: #examples-23
 
-[75]: #hasvalue
+[75]: #doesnotincludetext
 
 [76]: #parameters-24
 
 [77]: #examples-24
 
-[78]: #hasanyvalue
+[78]: #hasvalue
 
 [79]: #parameters-25
 
 [80]: #examples-25
 
-[81]: #hasnovalue
+[81]: #hasanyvalue
 
 [82]: #parameters-26
 
 [83]: #examples-26
 
-[84]: #matchesselector
+[84]: #hasnovalue
 
 [85]: #parameters-27
 
 [86]: #examples-27
 
-[87]: #doesnotmatchselector
+[87]: #matchesselector
 
 [88]: #parameters-28
 
 [89]: #examples-28
 
-[90]: #hastagname
+[90]: #doesnotmatchselector
 
 [91]: #parameters-29
 
 [92]: #examples-29
 
-[93]: #doesnothavetagname
+[93]: #hastagname
 
 [94]: #parameters-30
 
 [95]: #examples-30
 
-[96]: #hasstyle
+[96]: #doesnothavetagname
 
 [97]: #parameters-31
 
 [98]: #examples-31
 
-[99]: #haspseudoelementstyle
+[99]: #hasstyle
 
 [100]: #parameters-32
 
 [101]: #examples-32
 
-[102]: #doesnothavestyle
+[102]: #haspseudoelementstyle
 
 [103]: #parameters-33
 
 [104]: #examples-33
 
-[105]: #doesnothavepseudoelementstyle
+[105]: #doesnothavestyle
 
 [106]: #parameters-34
 
 [107]: #examples-34
 
-[108]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
+[108]: #doesnothavepseudoelementstyle
 
-[109]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element
+[109]: #parameters-35
 
-[110]: https://developer.mozilla.org/de/docs/Web/API/Document/querySelector
+[110]: #examples-35
 
-[111]: #doesNotExist
+[111]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
 
-[112]: https://developer.mozilla.org/docs/Web/HTML/Element
+[112]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element
 
-[113]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
+[113]: https://developer.mozilla.org/de/docs/Web/API/Document/querySelector
 
-[114]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
+[114]: #doesNotExist
 
-[115]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
+[115]: https://developer.mozilla.org/docs/Web/HTML/Element
 
-[116]: #isNotChecked
+[116]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
 
-[117]: #isChecked
+[117]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
 
-[118]: #isNotFocused
+[118]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
 
-[119]: #isFocused
+[119]: #isNotChecked
 
-[120]: #isNotRequired
+[120]: #isChecked
 
-[121]: #isRequired
+[121]: #isNotFocused
 
-[122]: #isNotVisible
+[122]: #isFocused
 
-[123]: #isVisible
+[123]: #isNotRequired
 
-[124]: #doesNotHaveAttribute
+[124]: #isRequired
 
-[125]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp
+[125]: #isValid
 
-[126]: #hasAttribute
+[126]: #isNotVisible
 
-[127]: #hasNoAria
+[127]: #isVisible
 
-[128]: #hasAria
+[128]: #doesNotHaveAttribute
 
-[129]: #doesNotHaveProperty
+[129]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp
 
-[130]: #isNotDisabled
+[130]: #hasAttribute
 
-[131]: #isDisabled
+[131]: #hasNoAria
 
-[132]: #doesNotHaveClass
+[132]: #hasAria
 
-[133]: https://developer.mozilla.org/en-US/docs/Web/API/Element/classList
+[133]: #doesNotHaveProperty
 
-[134]: #hasClass
+[134]: #isNotDisabled
 
-[135]: #includesText
+[135]: #isDisabled
 
-[136]: https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent
+[136]: #doesNotHaveClass
 
-[137]: #hasText
+[137]: https://developer.mozilla.org/en-US/docs/Web/API/Element/classList
 
-[138]: #hasNoText
+[138]: #hasClass
 
-[139]: #hasAnyValue
+[139]: #includesText
 
-[140]: #hasNoValue
+[140]: https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent
 
-[141]: https://developer.mozilla.org/docs/Web/API/HTMLInputElement
+[141]: #hasText
 
-[142]: #hasValue
+[142]: #hasNoText
 
-[143]: https://developer.mozilla.org/en-US/docs/Web/API/Element/tagName
+[143]: #hasAnyValue
 
-[144]: https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle
+[144]: #hasNoValue
+
+[145]: https://developer.mozilla.org/docs/Web/API/HTMLInputElement
+
+[146]: #hasValue
+
+[147]: https://developer.mozilla.org/en-US/docs/Web/API/Element/tagName
+
+[148]: https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle
