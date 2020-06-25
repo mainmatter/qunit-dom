@@ -21,6 +21,7 @@ module.exports = {
       files: ['**/*.ts'],
       rules: {
         'prefer-const': 'off',
+        'prefer-rest-params': 'off',
 
         // the TypeScript compiler already takes care of this and
         // leaving it enabled results in false positives for interface imports
