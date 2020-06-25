@@ -12,6 +12,10 @@ QUnit.assert.dom = function (
   target?: string | Element | null,
   rootElement?: Element
 ): DOMAssertions {
+  if (arguments.length > 0 && arguments[0] === null) {
+    throw new Error('Null target or element was passed');
+  }
+
   if (!isValidRootElement(rootElement)) {
     throw new Error(`${rootElement} is not a valid root element`);
   }

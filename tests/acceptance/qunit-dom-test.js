@@ -41,5 +41,6 @@ module('Acceptance | qunit-dom', function (hooks) {
     assert.dom('#with-pseudo-element').hasPseudoElementStyle(':after', { content: '";"' });
 
     assert.throws(() => assert.dom('foo', 'bar'), /bar is not a valid root element/);
+    assert.throws(() => assert.dom(null), /Null target or element was passed/);
   });
 });
