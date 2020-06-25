@@ -59,14 +59,9 @@ describe('assert.dom(...).doesNotIncludeText()', () => {
     });
 
     test('fails for missing element', () => {
-      assert.dom(null).doesNotIncludeText('foo');
-
-      expect(assert.results).toEqual([
-        {
-          message: 'Element <unknown> should exist',
-          result: false,
-        },
-      ]);
+      expect(() => assert.dom(null).doesNotIncludeText('foo')).toThrow(
+        'Null target or element was passed'
+      );
     });
   });
 

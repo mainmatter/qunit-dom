@@ -63,14 +63,7 @@ describe('assert.dom(...).isNotFocused()', () => {
     });
 
     test('fails for missing element', () => {
-      assert.dom(null).isNotFocused();
-
-      expect(assert.results).toEqual([
-        {
-          message: 'Element <unknown> should exist',
-          result: false,
-        },
-      ]);
+      expect(() => assert.dom(null).isNotFocused()).toThrow('Null target or element was passed');
     });
   });
 

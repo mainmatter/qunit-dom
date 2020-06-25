@@ -60,14 +60,7 @@ describe('assert.dom(...).isChecked()', () => {
     });
 
     test('fails for missing element', () => {
-      assert.dom(null).isChecked();
-
-      expect(assert.results).toEqual([
-        {
-          message: 'Element <unknown> should exist',
-          result: false,
-        },
-      ]);
+      expect(() => assert.dom(null).isChecked()).toThrow('Null target or element was passed');
     });
   });
 

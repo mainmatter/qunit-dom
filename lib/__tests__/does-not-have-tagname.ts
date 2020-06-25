@@ -59,14 +59,9 @@ describe('assert.dom(...).doesNotHaveTagName()', () => {
     });
 
     test('fails for missing element', () => {
-      assert.dom(null).doesNotHaveTagName('div');
-
-      expect(assert.results).toEqual([
-        {
-          message: 'Element <unknown> should exist',
-          result: false,
-        },
-      ]);
+      expect(() => assert.dom(null).doesNotHaveTagName('div')).toThrow(
+        'Null target or element was passed'
+      );
     });
   });
 

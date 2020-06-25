@@ -59,14 +59,9 @@ describe('assert.dom(...).hasText()', () => {
     });
 
     test('fails for missing element', () => {
-      assert.dom(null).hasText('Welcome to QUnit');
-
-      expect(assert.results).toEqual([
-        {
-          message: 'Element <unknown> should exist',
-          result: false,
-        },
-      ]);
+      expect(() => assert.dom(null).hasText('Welcome to QUnit')).toThrow(
+        'Null target or element was passed'
+      );
     });
   });
 

@@ -60,14 +60,7 @@ describe('assert.dom(...).isNotDisabled()', () => {
     });
 
     test('fails for missing element', () => {
-      assert.dom(null).isNotDisabled();
-
-      expect(assert.results).toEqual([
-        {
-          message: 'Element <unknown> should exist',
-          result: false,
-        },
-      ]);
+      expect(() => assert.dom(null).isNotDisabled()).toThrow('Null target or element was passed');
     });
 
     test('fails if element is disabled with text', () => {

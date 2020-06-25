@@ -72,14 +72,9 @@ describe('assert.dom(...).includesText()', () => {
     });
 
     test('fails for missing element', () => {
-      assert.dom(null).includesText('foo');
-
-      expect(assert.results).toEqual([
-        {
-          message: 'Element <unknown> should exist',
-          result: false,
-        },
-      ]);
+      expect(() => assert.dom(null).includesText('foo')).toThrow(
+        'Null target or element was passed'
+      );
     });
   });
 
@@ -125,17 +120,6 @@ describe('assert.dom(...).includesText()', () => {
           actual: 'foo bar',
           expected: 'baz',
           message: 'Element h1.baz has text containing "baz"',
-          result: false,
-        },
-      ]);
-    });
-
-    test('fails for missing element', () => {
-      assert.dom(null).includesText('foo');
-
-      expect(assert.results).toEqual([
-        {
-          message: 'Element <unknown> should exist',
           result: false,
         },
       ]);

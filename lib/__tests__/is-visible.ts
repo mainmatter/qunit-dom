@@ -68,18 +68,7 @@ describe('assert.dom(...).isVisible()', () => {
 
   describe('with Element', () => {
     test('fails for missing element', () => {
-      document.body.innerHTML = '<h1 class="baz">foo</h1>bar';
-
-      assert.dom(null).isVisible();
-
-      expect(assert.results).toEqual([
-        {
-          actual: 'Element <not found> is not visible',
-          expected: 'Element <not found> is visible',
-          message: 'Element <not found> is visible',
-          result: false,
-        },
-      ]);
+      expect(() => assert.dom(null).isVisible()).toThrow('Null target or element was passed');
     });
   });
 
