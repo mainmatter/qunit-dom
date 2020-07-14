@@ -64,54 +64,54 @@
     -   [doesNotHaveClass][60]
         -   [Parameters][61]
         -   [Examples][62]
-    -   [hasText][63]
+    -   [hasStyle][63]
         -   [Parameters][64]
         -   [Examples][65]
-    -   [hasAnyText][66]
+    -   [hasPseudoElementStyle][66]
         -   [Parameters][67]
         -   [Examples][68]
-    -   [hasNoText][69]
+    -   [doesNotHaveStyle][69]
         -   [Parameters][70]
         -   [Examples][71]
-    -   [includesText][72]
+    -   [doesNotHavePseudoElementStyle][72]
         -   [Parameters][73]
         -   [Examples][74]
-    -   [doesNotIncludeText][75]
+    -   [hasText][75]
         -   [Parameters][76]
         -   [Examples][77]
-    -   [hasValue][78]
+    -   [hasAnyText][78]
         -   [Parameters][79]
         -   [Examples][80]
-    -   [hasAnyValue][81]
+    -   [hasNoText][81]
         -   [Parameters][82]
         -   [Examples][83]
-    -   [hasNoValue][84]
+    -   [includesText][84]
         -   [Parameters][85]
         -   [Examples][86]
-    -   [matchesSelector][87]
+    -   [doesNotIncludeText][87]
         -   [Parameters][88]
         -   [Examples][89]
-    -   [doesNotMatchSelector][90]
+    -   [hasValue][90]
         -   [Parameters][91]
         -   [Examples][92]
-    -   [hasTagName][93]
+    -   [hasAnyValue][93]
         -   [Parameters][94]
         -   [Examples][95]
-    -   [doesNotHaveTagName][96]
+    -   [hasNoValue][96]
         -   [Parameters][97]
         -   [Examples][98]
--   [hasStyle][99]
-    -   [Parameters][100]
-    -   [Examples][101]
--   [hasPseudoElementStyle][102]
-    -   [Parameters][103]
-    -   [Examples][104]
--   [doesNotHaveStyle][105]
-    -   [Parameters][106]
-    -   [Examples][107]
--   [doesNotHavePseudoElementStyle][108]
-    -   [Parameters][109]
-    -   [Examples][110]
+    -   [matchesSelector][99]
+        -   [Parameters][100]
+        -   [Examples][101]
+    -   [doesNotMatchSelector][102]
+        -   [Parameters][103]
+        -   [Examples][104]
+    -   [hasTagName][105]
+        -   [Parameters][106]
+        -   [Examples][107]
+    -   [doesNotHaveTagName][108]
+        -   [Parameters][109]
+        -   [Examples][110]
 
 ## assert.dom()
 
@@ -552,14 +552,102 @@ assert.dom('input[type="password"]').doesNotHaveClass('username-input');
 assert.dom('input[type="password"]').doesNotHaveClass(/username-.*-input/);
 ```
 
+### hasStyle
+
+-   **See: [#hasClass][138]
+    **
+
+Assert that the [HTMLElement][] has the `expected` style declarations using
+[`window.getComputedStyle`][139].
+
+#### Parameters
+
+-   `expected` **[object][116]** 
+-   `message` **[string][118]?** 
+
+#### Examples
+
+```javascript
+assert.dom('.progress-bar').hasStyle({
+  opacity: 1,
+  display: 'block'
+});
+```
+
+### hasPseudoElementStyle
+
+-   **See: [#hasClass][138]
+    **
+
+Assert that the pseudo element for `selector` of the [HTMLElement][] has the `expected` style declarations using
+[`window.getComputedStyle`][139].
+
+#### Parameters
+
+-   `selector` **[string][118]** 
+-   `expected` **[object][116]** 
+-   `message` **[string][118]?** 
+
+#### Examples
+
+```javascript
+assert.dom('.progress-bar').hasPseudoElementStyle(':after', {
+  content: '";"',
+});
+```
+
+### doesNotHaveStyle
+
+-   **See: [#hasClass][138]
+    **
+
+Assert that the [HTMLElement][] does not have the `expected` style declarations using
+[`window.getComputedStyle`][139].
+
+#### Parameters
+
+-   `expected` **[object][116]** 
+-   `message` **[string][118]?** 
+
+#### Examples
+
+```javascript
+assert.dom('.progress-bar').doesNotHaveStyle({
+  opacity: 1,
+  display: 'block'
+});
+```
+
+### doesNotHavePseudoElementStyle
+
+-   **See: [#hasClass][138]
+    **
+
+Assert that the pseudo element for `selector` of the [HTMLElement][] does not have the `expected` style declarations using
+[`window.getComputedStyle`][139].
+
+#### Parameters
+
+-   `selector` **[string][118]** 
+-   `expected` **[object][116]** 
+-   `message` **[string][118]?** 
+
+#### Examples
+
+```javascript
+assert.dom('.progress-bar').doesNotHavePseudoElementStyle(':after', {
+  content: '";"',
+});
+```
+
 ### hasText
 
--   **See: [#includesText][139]
+-   **See: [#includesText][140]
     **
 
 Assert that the text of the [HTMLElement][115] or an [HTMLElement][115]
 matching the `selector` matches the `expected` text, using the
-[`textContent`][140]
+[`textContent`][141]
 attribute and stripping/collapsing whitespace.
 
 `expected` can also be a regular expression.
@@ -591,7 +679,7 @@ assert.dom('.foo').hasText(/[12]\d{3}/);
 
 ### hasAnyText
 
--   **See: [#hasText][141]
+-   **See: [#hasText][142]
     **
 
 Assert that the `textContent` property of an [HTMLElement][115] is not empty.
@@ -608,7 +696,7 @@ assert.dom('button.share').hasAnyText();
 
 ### hasNoText
 
--   **See: [#hasNoText][142]
+-   **See: [#hasNoText][143]
     **
 
 Assert that the `textContent` property of an [HTMLElement][115] is empty.
@@ -625,17 +713,17 @@ assert.dom('div').hasNoText();
 
 ### includesText
 
--   **See: [#hasText][141]
+-   **See: [#hasText][142]
     **
 
 Assert that the text of the [HTMLElement][115] or an [HTMLElement][115]
 matching the `selector` contains the given `text`, using the
-[`textContent`][140]
+[`textContent`][141]
 attribute.
 
 > Note: This assertion will collapse whitespace in `textContent` before searching.
 > If you would like to assert on a string that _should_ contain line breaks, tabs,
-> more than one space in a row, or starting/ending whitespace, use the [#hasText][141]
+> more than one space in a row, or starting/ending whitespace, use the [#hasText][142]
 > selector and pass your expected text in as a RegEx pattern.
 
 **Aliases:** `containsText`, `hasTextContaining`
@@ -655,7 +743,7 @@ assert.dom('#title').includesText('Welcome');
 
 Assert that the text of the [HTMLElement][115] or an [HTMLElement][115]
 matching the `selector` does not include the given `text`, using the
-[`textContent`][140]
+[`textContent`][141]
 attribute.
 
 **Aliases:** `doesNotContainText`, `doesNotHaveTextContaining`
@@ -673,12 +761,12 @@ assert.dom('#title').doesNotIncludeText('Welcome');
 
 ### hasValue
 
--   **See: [#hasAnyValue][143]
+-   **See: [#hasAnyValue][144]
     **
--   **See: [#hasNoValue][144]
+-   **See: [#hasNoValue][145]
     **
 
-Assert that the `value` property of an [HTMLInputElement][145] matches
+Assert that the `value` property of an [HTMLInputElement][146] matches
 the `expected` text or regular expression.
 
 If no `expected` value is provided, the assertion will fail if the
@@ -697,12 +785,12 @@ assert.dom('input.username').hasValue('HSimpson');
 
 ### hasAnyValue
 
--   **See: [#hasValue][146]
+-   **See: [#hasValue][147]
     **
--   **See: [#hasNoValue][144]
+-   **See: [#hasNoValue][145]
     **
 
-Assert that the `value` property of an [HTMLInputElement][145] is not empty.
+Assert that the `value` property of an [HTMLInputElement][146] is not empty.
 
 #### Parameters
 
@@ -716,12 +804,12 @@ assert.dom('input.username').hasAnyValue();
 
 ### hasNoValue
 
--   **See: [#hasValue][146]
+-   **See: [#hasValue][147]
     **
--   **See: [#hasAnyValue][143]
+-   **See: [#hasAnyValue][144]
     **
 
-Assert that the `value` property of an [HTMLInputElement][145] is empty.
+Assert that the `value` property of an [HTMLInputElement][146] is empty.
 
 **Aliases:** `lacksValue`
 
@@ -771,7 +859,7 @@ assert.dom('input').doesNotMatchSelector('input[disabled]')
 
 Assert that the tagName of the [HTMLElement][115] or an [HTMLElement][115]
 matching the `selector` matches the `expected` tagName, using the
-[`tagName`][147]
+[`tagName`][148]
 property of the [HTMLElement][115].
 
 #### Parameters
@@ -794,7 +882,7 @@ assert.dom('#title').hasTagName('h1');
 
 Assert that the tagName of the [HTMLElement][115] or an [HTMLElement][115]
 matching the `selector` does not match the `expected` tagName, using the
-[`tagName`][147]
+[`tagName`][148]
 property of the [HTMLElement][115].
 
 #### Parameters
@@ -811,94 +899,6 @@ property of the [HTMLElement][115].
 // </section>
 
 assert.dom('section#block').doesNotHaveTagName('div');
-```
-
-## hasStyle
-
--   **See: [#hasClass][138]
-    **
-
-Assert that the [HTMLElement][] has the `expected` style declarations using
-[`window.getComputedStyle`][148].
-
-### Parameters
-
--   `expected` **[object][116]** 
--   `message` **[string][118]?** 
-
-### Examples
-
-```javascript
-assert.dom('.progress-bar').hasStyle({
-  opacity: 1,
-  display: 'block'
-});
-```
-
-## hasPseudoElementStyle
-
--   **See: [#hasClass][138]
-    **
-
-Assert that the pseudo element for `selector` of the [HTMLElement][] has the `expected` style declarations using
-[`window.getComputedStyle`][148].
-
-### Parameters
-
--   `selector` **[string][118]** 
--   `expected` **[object][116]** 
--   `message` **[string][118]?** 
-
-### Examples
-
-```javascript
-assert.dom('.progress-bar').hasPseudoElementStyle(':after', {
-  content: '";"',
-});
-```
-
-## doesNotHaveStyle
-
--   **See: [#hasClass][138]
-    **
-
-Assert that the [HTMLElement][] does not have the `expected` style declarations using
-[`window.getComputedStyle`][148].
-
-### Parameters
-
--   `expected` **[object][116]** 
--   `message` **[string][118]?** 
-
-### Examples
-
-```javascript
-assert.dom('.progress-bar').doesNotHaveStyle({
-  opacity: 1,
-  display: 'block'
-});
-```
-
-## doesNotHavePseudoElementStyle
-
--   **See: [#hasClass][138]
-    **
-
-Assert that the pseudo element for `selector` of the [HTMLElement][] does not have the `expected` style declarations using
-[`window.getComputedStyle`][148].
-
-### Parameters
-
--   `selector` **[string][118]** 
--   `expected` **[object][116]** 
--   `message` **[string][118]?** 
-
-### Examples
-
-```javascript
-assert.dom('.progress-bar').doesNotHavePseudoElementStyle(':after', {
-  content: '";"',
-});
 ```
 
 [1]: #assertdom
@@ -1025,97 +1025,97 @@ assert.dom('.progress-bar').doesNotHavePseudoElementStyle(':after', {
 
 [62]: #examples-19
 
-[63]: #hastext
+[63]: #hasstyle
 
 [64]: #parameters-20
 
 [65]: #examples-20
 
-[66]: #hasanytext
+[66]: #haspseudoelementstyle
 
 [67]: #parameters-21
 
 [68]: #examples-21
 
-[69]: #hasnotext
+[69]: #doesnothavestyle
 
 [70]: #parameters-22
 
 [71]: #examples-22
 
-[72]: #includestext
+[72]: #doesnothavepseudoelementstyle
 
 [73]: #parameters-23
 
 [74]: #examples-23
 
-[75]: #doesnotincludetext
+[75]: #hastext
 
 [76]: #parameters-24
 
 [77]: #examples-24
 
-[78]: #hasvalue
+[78]: #hasanytext
 
 [79]: #parameters-25
 
 [80]: #examples-25
 
-[81]: #hasanyvalue
+[81]: #hasnotext
 
 [82]: #parameters-26
 
 [83]: #examples-26
 
-[84]: #hasnovalue
+[84]: #includestext
 
 [85]: #parameters-27
 
 [86]: #examples-27
 
-[87]: #matchesselector
+[87]: #doesnotincludetext
 
 [88]: #parameters-28
 
 [89]: #examples-28
 
-[90]: #doesnotmatchselector
+[90]: #hasvalue
 
 [91]: #parameters-29
 
 [92]: #examples-29
 
-[93]: #hastagname
+[93]: #hasanyvalue
 
 [94]: #parameters-30
 
 [95]: #examples-30
 
-[96]: #doesnothavetagname
+[96]: #hasnovalue
 
 [97]: #parameters-31
 
 [98]: #examples-31
 
-[99]: #hasstyle
+[99]: #matchesselector
 
 [100]: #parameters-32
 
 [101]: #examples-32
 
-[102]: #haspseudoelementstyle
+[102]: #doesnotmatchselector
 
 [103]: #parameters-33
 
 [104]: #examples-33
 
-[105]: #doesnothavestyle
+[105]: #hastagname
 
 [106]: #parameters-34
 
 [107]: #examples-34
 
-[108]: #doesnothavepseudoelementstyle
+[108]: #doesnothavetagname
 
 [109]: #parameters-35
 
@@ -1177,22 +1177,22 @@ assert.dom('.progress-bar').doesNotHavePseudoElementStyle(':after', {
 
 [138]: #hasClass
 
-[139]: #includesText
+[139]: https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle
 
-[140]: https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent
+[140]: #includesText
 
-[141]: #hasText
+[141]: https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent
 
-[142]: #hasNoText
+[142]: #hasText
 
-[143]: #hasAnyValue
+[143]: #hasNoText
 
-[144]: #hasNoValue
+[144]: #hasAnyValue
 
-[145]: https://developer.mozilla.org/docs/Web/API/HTMLInputElement
+[145]: #hasNoValue
 
-[146]: #hasValue
+[146]: https://developer.mozilla.org/docs/Web/API/HTMLInputElement
 
-[147]: https://developer.mozilla.org/en-US/docs/Web/API/Element/tagName
+[147]: #hasValue
 
-[148]: https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle
+[148]: https://developer.mozilla.org/en-US/docs/Web/API/Element/tagName

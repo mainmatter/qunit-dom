@@ -696,7 +696,6 @@ export default class DOMAssertions {
    * Assert that the [HTMLElement][] has the `expected` style declarations using
    * [`window.getComputedStyle`](https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle).
    *
-   * @name hasStyle
    * @param {object} expected
    * @param {string?} message
    *
@@ -718,7 +717,6 @@ export default class DOMAssertions {
    * Assert that the pseudo element for `selector` of the [HTMLElement][] has the `expected` style declarations using
    * [`window.getComputedStyle`](https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle).
    *
-   * @name hasPseudoElementStyle
    * @param {string} selector
    * @param {object} expected
    * @param {string?} message
@@ -768,7 +766,6 @@ export default class DOMAssertions {
    * Assert that the [HTMLElement][] does not have the `expected` style declarations using
    * [`window.getComputedStyle`](https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle).
    *
-   * @name doesNotHaveStyle
    * @param {object} expected
    * @param {string?} message
    *
@@ -790,7 +787,6 @@ export default class DOMAssertions {
    * Assert that the pseudo element for `selector` of the [HTMLElement][] does not have the `expected` style declarations using
    * [`window.getComputedStyle`](https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle).
    *
-   * @name doesNotHavePseudoElementStyle
    * @param {string} selector
    * @param {object} expected
    * @param {string?} message
