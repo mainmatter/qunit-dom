@@ -17,7 +17,12 @@ QUnit.assert.dom = function (
   }
 
   rootElement = rootElement || this.dom.rootElement || document;
-  return new DOMAssertions(target || rootElement, rootElement, this);
+
+  if (arguments.length === 0) {
+    target = rootElement;
+  }
+
+  return new DOMAssertions(target, rootElement, this);
 };
 
 function isValidRootElement(element: any): element is Element {
