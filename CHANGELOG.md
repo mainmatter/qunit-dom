@@ -1,5 +1,26 @@
 # Changelog
 
+## v1.3.0 (2020-07-30)
+
+#### :rocket: Enhancement
+* [#741](https://github.com/simplabs/qunit-dom/pull/741) Add isValid assertion ([@patsy-issa](https://github.com/patsy-issa))
+
+#### :bug: Bug Fix
+* [#772](https://github.com/simplabs/qunit-dom/pull/772) Fix `assert.dom(null).exists()` case ([@Turbo87](https://github.com/Turbo87))
+
+#### :memo: Documentation
+* [#757](https://github.com/simplabs/qunit-dom/pull/757) The `name` annotation results in inconsistent formatting ([@pablobm](https://github.com/pablobm))
+
+#### :house: Internal
+* [#712](https://github.com/simplabs/qunit-dom/pull/712) Use `~` constraint for `typescript` dependency ([@Turbo87](https://github.com/Turbo87))
+* [#680](https://github.com/simplabs/qunit-dom/pull/680) CI: Fix `auto-dist-tag` in GitHub Actions config ([@Turbo87](https://github.com/Turbo87))
+
+#### Committers: 3
+- Pablo Brasero ([@pablobm](https://github.com/pablobm))
+- Patsy Issa ([@patsy-issa](https://github.com/patsy-issa))
+- Tobias Bieniek ([@Turbo87](https://github.com/Turbo87))
+
+
 ## v1.2.0 (2020-04-10)
 
 #### :rocket: Enhancement
