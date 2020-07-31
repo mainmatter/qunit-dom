@@ -24,9 +24,9 @@ export interface ExistsOptions {
   count: number;
 }
 
-export interface Dictionary<T> {
-  [key: string]: T;
-}
+type CSSStyleDeclarationProperty = keyof CSSStyleDeclaration;
+
+type ActualCSSStyleDeclaration = Partial<Record<CSSStyleDeclarationProperty, unknown>>;
 
 export default class DOMAssertions {
   constructor(
@@ -730,14 +730,14 @@ export default class DOMAssertions {
    */
   hasPseudoElementStyle(
     selector: string | null,
-    expected: Dictionary<string>,
+    expected: Record<string, string>,
     message?: string
   ): DOMAssertions {
     let element = this.findTargetElement();
     if (!element) return this;
 
     let computedStyle = window.getComputedStyle(element, selector);
-    let expectedProperties = Object.keys(expected) as [keyof CSSStyleDeclaration];
+    let expectedProperties = Object.keys(expected) as CSSStyleDeclarationProperty[];
     if (expectedProperties.length <= 0) {
       throw new TypeError(
         `Missing style expectations. There must be at least one style property in the passed in expectation object.`
@@ -747,7 +747,7 @@ export default class DOMAssertions {
     let result = expectedProperties.every(
       property => computedStyle[property] === expected[property]
     );
-    let actual: Dictionary<string> = {};
+    let actual: ActualCSSStyleDeclaration = {};
 
     expectedProperties.forEach(property => (actual[property] = computedStyle[property]));
 
@@ -800,7 +800,7 @@ export default class DOMAssertions {
    */
   doesNotHavePseudoElementStyle(
     selector: string | null,
-    expected: Dictionary<any>,
+    expected: Record<string, unknown>,
     message: string
   ): DOMAssertions {
     let element = this.findTargetElement();
@@ -808,7 +808,7 @@ export default class DOMAssertions {
 
     let computedStyle = window.getComputedStyle(element, selector);
 
-    let expectedProperties = Object.keys(expected) as [keyof CSSStyleDeclaration];
+    let expectedProperties = Object.keys(expected) as CSSStyleDeclarationProperty[];
     if (expectedProperties.length <= 0) {
       throw new TypeError(
         `Missing style expectations. There must be at least one style property in the passed in expectation object.`
@@ -818,7 +818,7 @@ export default class DOMAssertions {
     let result = expectedProperties.some(
       property => computedStyle[property] !== expected[property]
     );
-    let actual: Dictionary<any> = {};
+    let actual: ActualCSSStyleDeclaration = {};
 
     expectedProperties.forEach(property => (actual[property] = computedStyle[property]));
 
