@@ -1,6 +1,6 @@
 import elementToString from '../helpers/element-to-string';
 
-export default function isValid(message?: string) {
+export default function isValid(message?: string, options: { inverted?: boolean } = {}) {
   let element = this.findTargetElement();
   if (!element) return;
 
@@ -17,9 +17,10 @@ export default function isValid(message?: string) {
     throw new TypeError(`Unexpected Element Type: ${element.toString()}`);
   }
 
-  let result = element.reportValidity() === true;
-  let actual = result ? 'valid' : 'not valid';
-  let expected = 'valid';
+  let validity = element.reportValidity() === true;
+  let result = validity === !options.inverted;
+  let actual = validity ? 'valid' : 'not valid';
+  let expected = options.inverted ? 'not valid' : 'valid';
 
   if (!message) {
     message = `Element ${elementToString(this.target)} is ${actual}`;
