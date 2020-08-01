@@ -214,6 +214,25 @@ export default class DOMAssertions {
   }
 
   /**
+   * Assert that the {@link HTMLElement} does not pass validation
+   *
+   * Validity is determined by asserting that:
+   *
+   * - `element.reportValidity() === true`
+   *
+   * @param {string?} message
+   *
+   * @example
+   * assert.dom('.input').isNotValid();
+   *
+   * @see {@link #isValid}
+   */
+  isNotValid(message?: string): DOMAssertions {
+    isValid.call(this, message, { inverted: true });
+    return this;
+  }
+
+  /**
    * Assert that the {@link HTMLElement} or an {@link HTMLElement} matching the
    * `selector` exists and is visible.
    *
