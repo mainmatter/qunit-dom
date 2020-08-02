@@ -1,5 +1,23 @@
 # Changelog
 
+## v1.4.0 (2020-08-02)
+
+#### :rocket: Enhancement
+* [#777](https://github.com/simplabs/qunit-dom/pull/777) Add isNotValid assertion ([@luxferresum](https://github.com/luxferresum))
+
+#### :memo: Documentation
+* [#778](https://github.com/simplabs/qunit-dom/pull/778) Add "qunit-plugin" keyword to package.json ([@Krinkle](https://github.com/Krinkle))
+
+#### :house: Internal
+* [#764](https://github.com/simplabs/qunit-dom/pull/764) Update TypeScript from v3.8.3 to v3.9.7
+* [#773](https://github.com/simplabs/qunit-dom/pull/773) Refactor CSS Style Declaration types ([@BarryThePenguin](https://github.com/BarryThePenguin))
+
+#### Committers: 3
+- Jonathan Haines ([@BarryThePenguin](https://github.com/BarryThePenguin))
+- Lukas Kohler ([@luxferresum](https://github.com/luxferresum))
+- Timo Tijhof ([@Krinkle](https://github.com/Krinkle))
+
+
 ## v1.3.0 (2020-07-30)
 
 #### :rocket: Enhancement
