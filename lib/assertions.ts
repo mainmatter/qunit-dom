@@ -520,7 +520,7 @@ export default class DOMAssertions {
    * expression.
    *
    * @param {string} name
-   * @param {string|RegExp} value
+   * @param {RegExp|any} value
    * @param {string?} message
    *
    * @example
@@ -528,7 +528,7 @@ export default class DOMAssertions {
    *
    * @see {@link #doesNotHaveProperty}
    */
-  hasProperty(name: string, value: string | RegExp, message?: string): DOMAssertions {
+  hasProperty(name: string, value: unknown, message?: string): DOMAssertions {
     let element = this.findTargetElement();
     if (!element) return this;
 

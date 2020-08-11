@@ -475,7 +475,7 @@ expression.
 #### Parameters
 
 -   `name` **[string][121]** 
--   `value` **([string][121] \| [RegExp][132])** 
+-   `value` **([RegExp][132] | any)** 
 -   `message` **[string][121]?** 
 
 #### Examples
