@@ -53,6 +53,48 @@ describe('assert.dom(...).hasProperty()', () => {
     });
   });
 
+  describe('boolean expected', () => {
+    test('succeeds for correct name and value', () => {
+      assert.dom('input').hasProperty('disabled', false);
+      assert.dom(document.querySelector('input')).hasProperty('disabled', false);
+
+      expect(assert.results).toEqual([
+        {
+          actual: 'Element input has property "disabled" with value false',
+          expected: 'Element input has property "disabled" with value false',
+          message: 'Element input has property "disabled" with value false',
+          result: true,
+        },
+        {
+          actual: 'Element input[type="password"] has property "disabled" with value false',
+          expected: 'Element input[type="password"] has property "disabled" with value false',
+          message: 'Element input[type="password"] has property "disabled" with value false',
+          result: true,
+        },
+      ]);
+    });
+
+    test('fails for wrong value', () => {
+      assert.dom('input').hasProperty('disabled', true);
+      assert.dom(document.querySelector('input')).hasProperty('disabled', true);
+
+      expect(assert.results).toEqual([
+        {
+          actual: 'Element input has property "disabled" with value false',
+          expected: 'Element input has property "disabled" with value true',
+          message: 'Element input has property "disabled" with value true',
+          result: false,
+        },
+        {
+          actual: 'Element input[type="password"] has property "disabled" with value false',
+          expected: 'Element input[type="password"] has property "disabled" with value true',
+          message: 'Element input[type="password"] has property "disabled" with value true',
+          result: false,
+        },
+      ]);
+    });
+  });
+
   describe('regex expected', () => {
     test('succeeds for matching name and value', () => {
       assert.dom('input').hasProperty('type', /^pass/);
