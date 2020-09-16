@@ -1,5 +1,14 @@
 # Changelog
 
+## v1.5.0 (2020-09-16)
+
+#### :rocket: Enhancement
+* [#782](https://github.com/simplabs/qunit-dom/pull/782) Fix typing for `hasProperty` assertion ([@wuron](https://github.com/wuron))
+
+#### Committers: 1
+- Alexander Chepurnoy ([@wuron](https://github.com/wuron))
+
+
 ## v1.4.0 (2020-08-02)
 
 #### :rocket: Enhancement
