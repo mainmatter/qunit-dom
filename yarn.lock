@@ -2066,10 +2066,10 @@
   resolved "https://registry.yarnpkg.com/@types/prettier/-/prettier-1.19.1.tgz#33509849f8e679e4add158959fdb086440e9553f"
   integrity sha512-5qOlnZscTn4xxM5MeGXAMOsIOIKIbh9e85zJWfBRVPlRMEVawzoPhINYbRGkBZCI8LxvBe7tJCdWiarA99OZfQ==
 
-"@types/qunit@^2.9.2":
-  version "2.9.2"
-  resolved "https://registry.yarnpkg.com/@types/qunit/-/qunit-2.9.2.tgz#e9293940599848deda9108e00987737d3b780bcc"
-  integrity sha512-GwQibQ0ciNKJ/5beonZ87AiB+/ZbV4DRVWAH9wMUp+K1zRd67LZLH2hKyxj9we3FWH968CYD2tcN2yCitOYp1g==
+"@types/qunit@^2.9.3":
+  version "2.9.3"
+  resolved "https://registry.yarnpkg.com/@types/qunit/-/qunit-2.9.3.tgz#bc9ab98187e8a0d3f6d8cc2f8c02ab14d9531574"
+  integrity sha512-u+FXla658t6Kpx/k9v8jaNFEHsELvSck35EBJfV3i6CXVPOsCRhrqXYmuPNXrxIo4Nh2hkNRxMcZmXq5A5S7qA==
 
 "@types/range-parser@*":
   version "1.2.3"

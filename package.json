@@ -37,7 +37,7 @@
   "devDependencies": {
     "@ember/optional-features": "^2.0.0",
     "@types/jest": "^26.0.14",
-    "@types/qunit": "^2.9.2",
+    "@types/qunit": "^2.9.3",
     "@typescript-eslint/eslint-plugin": "^4.2.0",
     "@typescript-eslint/parser": "^4.2.0",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
