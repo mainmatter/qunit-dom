@@ -23,7 +23,7 @@
     "build": "rollup -c",
     "changelog": "lerna-changelog",
     "docs": "yarn build && documentation build dist/qunit-dom.js --config documentation.yml -f md -o API.md",
-    "lint": "eslint . --ext=js,ts --cache",
+    "lint": "eslint . --cache",
     "prepublish": "rollup -c",
     "test": "jest",
     "test:coverage": "jest --coverage",
