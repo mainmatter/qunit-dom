@@ -9,8 +9,14 @@ module.exports = {
 
   included() {
     this._super.included.apply(this, arguments);
-    this.import('vendor/qunit-dom.js', { type: 'test' });
-    this.import('vendor/overwrite-qunit-dom-root-element.js', { type: 'test' });
+
+    const VersionChecker = require('ember-cli-version-checker');
+    const checker = new VersionChecker(this.project);
+
+    if (!checker.for('ember-qunit').gte('5.0.0-alpha.1')) {
+      this.import('vendor/qunit-dom.js', { type: 'test' });
+      this.import('vendor/overwrite-qunit-dom-root-element.js', { type: 'test' });
+    }
   },
 
   treeForVendor(vendorTree) {

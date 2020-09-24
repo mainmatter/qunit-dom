@@ -39,7 +39,8 @@
   },
   "dependencies": {
     "broccoli-funnel": "^3.0.3",
-    "broccoli-merge-trees": "^4.2.0"
+    "broccoli-merge-trees": "^4.2.0",
+    "ember-cli-version-checker": "^5.1.1"
   },
   "devDependencies": {
     "@ember/optional-features": "^2.0.0",
