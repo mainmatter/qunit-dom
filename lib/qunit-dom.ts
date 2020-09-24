@@ -19,7 +19,7 @@ QUnit.assert.dom = function (
   rootElement = rootElement || this.dom.rootElement || document;
 
   if (arguments.length === 0) {
-    target = rootElement;
+    target = rootElement instanceof Element ? rootElement : null;
   }
 
   return new DOMAssertions(target, rootElement, this);
