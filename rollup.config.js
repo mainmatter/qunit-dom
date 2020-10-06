@@ -29,7 +29,7 @@ const esBundle = {
   plugins: [typescript(typescriptConfiguration)],
 
   output: {
-    file: 'dist/qunit-dom.es.js',
+    file: 'dist/addon-test-support/index.js',
     format: 'es',
     sourcemap: true,
   },
