@@ -1,4 +1,10 @@
 import * as QUnit from 'qunit';
-import install from './install';
+import attach from './install';
 
-install(QUnit);
+export { default as attach } from './install';
+
+interface SetupOptions {}
+
+export function setup(options: SetupOptions) {
+  attach(QUnit.assert);
+}
