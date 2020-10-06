@@ -1,4 +1,5 @@
 import DOMAssertions from './assertions';
+import { getRootElement } from './root-element';
 
 declare global {
   interface Assert {
@@ -6,16 +7,13 @@ declare global {
   }
 }
 
-export default function (QUnit: QUnit) {
-  QUnit.assert.dom = function (
-    target?: string | Element | null,
-    rootElement?: Element
-  ): DOMAssertions {
+export default function (assert: Assert) {
+  assert.dom = function (target?: string | Element | null, rootElement?: Element): DOMAssertions {
     if (!isValidRootElement(rootElement)) {
       throw new Error(`${rootElement} is not a valid root element`);
     }
 
-    rootElement = rootElement || this.dom.rootElement || document;
+    rootElement = rootElement || getRootElement();
 
     if (arguments.length === 0) {
       target = rootElement instanceof Element ? rootElement : null;
