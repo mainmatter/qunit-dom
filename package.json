@@ -11,6 +11,7 @@
     "qunit-plugin",
     "testing"
   ],
+  "repository": "https://github.com/simplabs/qunit-dom",
   "license": "MIT",
   "author": "simplabs GmbH",
   "types": "dist/qunit-dom.d.ts",
@@ -18,7 +19,6 @@
     "doc": "doc",
     "test": "tests"
   },
-  "repository": "https://github.com/simplabs/qunit-dom",
   "scripts": {
     "build": "rollup -c",
     "changelog": "lerna-changelog",
@@ -29,6 +29,13 @@
     "test:coverage": "jest --coverage",
     "test:ember": "ember test",
     "test:watch": "jest --watchAll --notify"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/dist/"
+    ]
   },
   "dependencies": {
     "broccoli-funnel": "^3.0.3",
@@ -68,13 +75,6 @@
   "engines": {
     "node": "10.* || >= 12.*"
   },
-  "ember-addon": {
-    "configPath": "tests/dummy/config",
-    "after": [
-      "ember-cli-qunit",
-      "ember-qunit"
-    ]
-  },
   "changelog": {
     "repo": "simplabs/qunit-dom",
     "labels": {
@@ -85,11 +85,11 @@
       "internal": ":house: Internal"
     }
   },
-  "jest": {
-    "preset": "ts-jest",
-    "testPathIgnorePatterns": [
-      "/node_modules/",
-      "/dist/"
+  "ember-addon": {
+    "configPath": "tests/dummy/config",
+    "after": [
+      "ember-cli-qunit",
+      "ember-qunit"
     ]
   }
 }
