@@ -13,7 +13,7 @@ export default function (assert: Assert) {
       throw new Error(`${rootElement} is not a valid root element`);
     }
 
-    rootElement = rootElement || getRootElement();
+    rootElement = rootElement || this.dom.rootElement || getRootElement();
 
     if (arguments.length === 0) {
       target = rootElement instanceof Element ? rootElement : null;
