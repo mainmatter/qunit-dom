@@ -37,7 +37,9 @@ or using [`yarn`](https://yarnpkg.com/):
 yarn add --dev qunit-dom
 ```
 
-This is the recommended method for Ember projects using `ember-qunit` < 5.*.
+### Ember projects using `ember-qunit` < 5.*
+
+`qunit-dom` will automatically attach the APIs to QUnit's `assert` object. No extra setup required :tada:.
 
 ### Ember projects using `ember-qunit` >= 5.*
 
@@ -53,6 +55,8 @@ setup(QUnit.assert);
 
 //...
 ```
+
+this will attach the APIs to QUnit's `assert` object.
 
 ### `<script>` Tag
 
