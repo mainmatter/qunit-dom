@@ -8,6 +8,17 @@ module.exports = function (defaults) {
     // Add options here
   });
 
+  if ('@embroider/webpack' in app.dependencies()) {
+    const { Webpack } = require('@embroider/webpack'); // eslint-disable-line
+    return require('@embroider/compat') // eslint-disable-line
+      .compatBuild(app, Webpack, {
+        staticAddonTestSupportTrees: true,
+        staticAddonTrees: true,
+        staticHelpers: true,
+        staticComponents: true,
+      });
+  }
+
   /*
     This build file specifies the options for the dummy test app of this
     addon, located in `/tests/dummy`
