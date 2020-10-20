@@ -1,14 +1,14 @@
-import attach from './install';
+import install from './install';
 import { overrideRootElement } from './root-element';
 
-export { default as attach } from './install';
+export { default as install } from './install';
 
 interface SetupOptions {
   getRootElement?: () => Element | null;
 }
 
 export function setup(assert: Assert, options: SetupOptions = {}) {
-  attach(assert);
+  install(assert);
 
   const getRootElement =
     typeof options.getRootElement === 'function'
