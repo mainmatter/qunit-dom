@@ -1,4 +1,3 @@
-import type * as QUnit from 'qunit';
 import attach from './install';
 import { overrideRootElement } from './root-element';
 
@@ -8,8 +7,8 @@ interface SetupOptions {
   getRootElement?: () => Element | null;
 }
 
-export function setup(QUnit: QUnit, options: SetupOptions = {}) {
-  attach(QUnit.assert);
+export function setup(assert: Assert, options: SetupOptions = {}) {
+  attach(assert);
 
   const getRootElement =
     typeof options.getRootElement === 'function'

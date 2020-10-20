@@ -37,7 +37,22 @@ or using [`yarn`](https://yarnpkg.com/):
 yarn add --dev qunit-dom
 ```
 
-(This is the recommended method for Ember projects.)
+This is the recommended method for Ember projects using `ember-qunit` < 5.*.
+
+### Ember projects using `ember-qunit` >= 5.*
+
+Import and run the `setup` function in your `test-helper.js` file.
+
+```js
+// tests/test-helper.js
+import { setup } from 'qunit-dom';
+
+//...
+
+setup(QUnit.assert);
+
+//...
+```
 
 ### `<script>` Tag
 
