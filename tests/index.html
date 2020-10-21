@@ -19,7 +19,15 @@
   </head>
   <body>
     {{content-for "body"}}
-    {{content-for "test-body"}}
+
+    <!-- deleted content-for test-body to be compatible with both ember-qunit@4 and ember-qunit@5 -->
+    <div id="qunit"></div>
+    <div id="qunit-fixture">
+      <div id="ember-testing-container">
+        <div id="ember-testing"></div>
+      </div>
+    </div>
+
 
     <script src="/testem.js" integrity=""></script>
     <script src="{{rootURL}}assets/vendor.js"></script>

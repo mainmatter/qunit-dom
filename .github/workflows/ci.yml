@@ -29,3 +29,23 @@ jobs:
       - run: yarn build
       - run: yarn test:coverage --runInBand
       - run: yarn test:ember
+
+  compatibility:
+    name: "Ember Compat: Embroider: ${{ matrix.embroider }} | ember-qunit: ${{ matrix.ember-qunit-version }}"
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        embroider: ["true", "false"]
+        ember-qunit-version: [4, 5]
+
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+
+      - run: yarn install --frozen-lockfile
+      - run: node_modules/.bin/ember try:one --config-path tests/dummy/config/ember-try.js ember-qunit-${{ matrix.ember-qunit-version}}
+        env:
+          USE_EMBROIDER: "${{ matrix.embroider }}"

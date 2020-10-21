@@ -8,6 +8,16 @@ module.exports = function (defaults) {
     // Add options here
   });
 
+  if (process.env.USE_EMBROIDER === 'true') {
+    const { Webpack } = require('@embroider/webpack');
+    return require('@embroider/compat').compatBuild(app, Webpack, {
+      staticAddonTestSupportTrees: true,
+      staticAddonTrees: true,
+      staticHelpers: true,
+      staticComponents: true,
+    });
+  }
+
   /*
     This build file specifies the options for the dummy test app of this
     addon, located in `/tests/dummy`
