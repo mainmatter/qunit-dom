@@ -28,7 +28,6 @@
     "test": "jest",
     "test:coverage": "jest --coverage",
     "test:ember": "ember test",
-    "test:compatibility": "ember try:each --config-path tests/dummy/config/ember-try.js",
     "test:watch": "jest --watchAll --notify"
   },
   "jest": {
@@ -47,7 +46,10 @@
   },
   "devDependencies": {
     "@ember/optional-features": "^2.0.0",
+    "@embroider/compat": "^0.27.0",
+    "@embroider/core": "^0.27.0",
     "@embroider/macros": "^0.27.0",
+    "@embroider/webpack": "^0.27.0",
     "@types/jest": "^26.0.15",
     "@types/qunit": "^2.9.5",
     "@typescript-eslint/eslint-plugin": "^4.5.0",
