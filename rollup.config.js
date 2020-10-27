@@ -10,12 +10,13 @@ const typescriptConfiguration = {
 };
 
 const iifeBundle = {
-  input: 'lib/qunit-dom-globals.ts',
+  input: 'lib/qunit-dom.ts',
 
   external: ['qunit'],
   plugins: [typescript(typescriptConfiguration)],
 
   output: {
+    name: 'QUnitDOM',
     file: 'dist/qunit-dom.js',
     format: 'iife',
     sourcemap: true,
