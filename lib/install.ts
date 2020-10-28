@@ -1,12 +1,6 @@
 import DOMAssertions from './assertions';
 import { getRootElement } from './root-element';
 
-declare global {
-  interface Assert {
-    dom(target?: string | Element | null, rootElement?: Element): DOMAssertions;
-  }
-}
-
 export default function (assert: Assert) {
   assert.dom = function (target?: string | Element | null, rootElement?: Element): DOMAssertions {
     if (!isValidRootElement(rootElement)) {
