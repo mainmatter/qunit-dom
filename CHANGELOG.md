@@ -1,5 +1,17 @@
 # Changelog
 
+## v1.6.0-beta.2 (2020-10-31)
+
+#### :bug: Bug Fix
+* [#857](https://github.com/simplabs/qunit-dom/pull/857) Fixing missing `qunit-dom` declaration file ([@scalvert](https://github.com/scalvert))
+
+#### :house: Internal
+* [#867](https://github.com/simplabs/qunit-dom/pull/867) Add `release-it` to simplify the release process ([@Turbo87](https://github.com/Turbo87))
+
+#### Committers: 2
+- Steve Calvert ([@scalvert](https://github.com/scalvert))
+- Tobias Bieniek ([@Turbo87](https://github.com/Turbo87))
+
 ## v1.6.0-beta.1 (2020-10-21)
 
 #### :rocket: Enhancement
