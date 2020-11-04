@@ -48,7 +48,7 @@
     "@ember/optional-features": "^2.0.0",
     "@embroider/compat": "^0.29.0",
     "@embroider/core": "^0.29.0",
-    "@embroider/macros": "^0.28.0",
+    "@embroider/macros": "^0.30.0",
     "@embroider/webpack": "^0.29.0",
     "@types/jest": "^26.0.15",
     "@types/qunit": "^2.9.6",
