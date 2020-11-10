@@ -1,29 +1,23 @@
 # Changelog
 
-## v1.6.0-beta.2 (2020-10-31)
+## v1.6.0 (2020-11-10)
+
+#### :rocket: Enhancement
+* [#816](https://github.com/simplabs/qunit-dom/pull/816) Add compatibility with `ember-qunit` v5 ([@rwjblue](https://github.com/rwjblue))
 
 #### :bug: Bug Fix
 * [#857](https://github.com/simplabs/qunit-dom/pull/857) Fixing missing `qunit-dom` declaration file ([@scalvert](https://github.com/scalvert))
 
 #### :house: Internal
+* [#868](https://github.com/simplabs/qunit-dom/pull/868) Adjust `.npmignore` file ([@Turbo87](https://github.com/Turbo87))
 * [#867](https://github.com/simplabs/qunit-dom/pull/867) Add `release-it` to simplify the release process ([@Turbo87](https://github.com/Turbo87))
-
-#### Committers: 2
-- Steve Calvert ([@scalvert](https://github.com/scalvert))
-- Tobias Bieniek ([@Turbo87](https://github.com/Turbo87))
-
-## v1.6.0-beta.1 (2020-10-21)
-
-#### :rocket: Enhancement
-* [#816](https://github.com/simplabs/qunit-dom/pull/816) Add compatibility with `ember-qunit` v5 ([@rwjblue](https://github.com/rwjblue))
-
-#### :house: Internal
 * [#821](https://github.com/simplabs/qunit-dom/pull/821) Update ESLint setup ([@rwjblue](https://github.com/rwjblue))
 * [#820](https://github.com/simplabs/qunit-dom/pull/820) Update `@types/qunit` ([@rwjblue](https://github.com/rwjblue))
 * [#818](https://github.com/simplabs/qunit-dom/pull/818) Remove TravisCI config ([@Turbo87](https://github.com/Turbo87))
 
-#### Committers: 2
+#### Committers: 3
 - Robert Jackson ([@rwjblue](https://github.com/rwjblue))
+- Steve Calvert ([@scalvert](https://github.com/scalvert))
 - Tobias Bieniek ([@Turbo87](https://github.com/Turbo87))
 
 
