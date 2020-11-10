@@ -1154,25 +1154,28 @@
     ember-cli-htmlbars-inline-precompile "^2.1.0"
     ember-test-waiters "^1.1.1"
 
-"@embroider/babel-loader-7@0.29.0":
-  version "0.29.0"
-  resolved "https://registry.yarnpkg.com/@embroider/babel-loader-7/-/babel-loader-7-0.29.0.tgz#a4b7709927b66dc4e3383dd0f41f4b98107cf45d"
-  integrity sha512-D9z2GpQP7e7AdxjYiVFIyKai0+yMUCXwNDbofF0ohgzcxjL5E25U6Wm6QzTww1e5DWhQIPhfWi94w9X8yMFA8Q==
+"@embroider/babel-loader-7@0.30.0":
+  version "0.30.0"
+  resolved "https://registry.yarnpkg.com/@embroider/babel-loader-7/-/babel-loader-7-0.30.0.tgz#9d604d8b31fb10ec43e7aabc6fb208ab211fac94"
+  integrity sha512-qL9lH3xjPvLOZuTFu2eINdXX7/PrCH0nPPF92Ul0NjXL0om17FMEeSVq2K5N1KkRsF1PWDRkdQr8CXtxyodQEw==
   dependencies:
     babel-core "^6.26.3"
     babel-loader "7"
 
-"@embroider/compat@^0.29.0":
-  version "0.29.0"
-  resolved "https://registry.yarnpkg.com/@embroider/compat/-/compat-0.29.0.tgz#199ede3da7d456e925729265bf2058c721575483"
-  integrity sha512-rOEAibm1fUw67cn6fbi0+xRhJz44VaQLC4FKP5LNZuq+cb6ZqqUlVmi1akU9QWJ+oYNQSvSNdyoAJgR/btwMLQ==
+"@embroider/compat@^0.30.0":
+  version "0.30.0"
+  resolved "https://registry.yarnpkg.com/@embroider/compat/-/compat-0.30.0.tgz#2a79782b6614b3eae2662f49d61fb9409d4fd01e"
+  integrity sha512-2H5c8El5WE9zCHe9WDkHr/Pu8OWYVNSv3Wav5YNZiGfn3YkgHEeOoakHzu4MIC6HGvcogYXCbc108aZorK+hig==
   dependencies:
+    "@babel/code-frame" "^7.10.4"
     "@babel/core" "^7.12.3"
     "@babel/plugin-syntax-dynamic-import" "^7.8.3"
     "@babel/preset-env" "^7.12.1"
     "@babel/traverse" "^7.12.1"
     "@babel/types" "^7.12.1"
-    "@embroider/macros" "0.29.0"
+    "@embroider/macros" "0.30.0"
+    "@types/babel__code-frame" "^7.0.2"
+    "@types/yargs" "^15.0.9"
     assert-never "^1.1.0"
     babel-plugin-syntax-dynamic-import "^6.18.0"
     babylon "^6.18.0"
@@ -1185,6 +1188,7 @@
     broccoli-persistent-filter "^2.3.1"
     broccoli-plugin "^1.3.0"
     broccoli-source "^1.1.0"
+    chalk "^4.1.0"
     debug "^3.1.0"
     ember-cli-htmlbars "^4.0.9"
     ember-cli-htmlbars-3 "npm:ember-cli-htmlbars@3"
@@ -1200,6 +1204,7 @@
     tree-sync "^2.0.0"
     typescript-memoize "^1.0.0-alpha.3"
     walk-sync "^1.1.3"
+    yargs "^16.1.0"
 
 "@embroider/core@0.23.0", "@embroider/core@^0.23.0":
   version "0.23.0"
@@ -1236,42 +1241,7 @@
     walk-sync "^1.1.3"
     wrap-legacy-hbs-plugin-if-needed "^1.0.1"
 
-"@embroider/core@0.29.0", "@embroider/core@^0.29.0":
-  version "0.29.0"
-  resolved "https://registry.yarnpkg.com/@embroider/core/-/core-0.29.0.tgz#51421fbb2bcee607dc6e162400e3502a121230d2"
-  integrity sha512-2i0QtV1y1jJpj1aiIA3FVZHfuLBN2yCUcJs0PkOsqZYi7J796KT4t7WwAk8gmBq00yGzHDWLw/iH4ULTomPS8A==
-  dependencies:
-    "@babel/core" "^7.12.3"
-    "@babel/parser" "^7.12.3"
-    "@babel/plugin-syntax-dynamic-import" "^7.8.3"
-    "@babel/traverse" "^7.12.1"
-    "@babel/types" "^7.12.1"
-    "@embroider/macros" "0.29.0"
-    assert-never "^1.1.0"
-    babel-plugin-syntax-dynamic-import "^6.18.0"
-    broccoli-persistent-filter "^2.2.2"
-    broccoli-plugin "^3.0.0"
-    broccoli-source "^1.1.0"
-    debug "^3.1.0"
-    fast-sourcemap-concat "^1.4.0"
-    filesize "^4.1.2"
-    fs-extra "^7.0.1"
-    fs-tree-diff "^2.0.0"
-    handlebars "^4.4.2"
-    js-string-escape "^1.0.1"
-    jsdom "^16.4.0"
-    json-stable-stringify "^1.0.1"
-    lodash "^4.17.10"
-    pkg-up "^2.0.0"
-    resolve "^1.8.1"
-    resolve-package-path "^1.2.2"
-    semver "^7.3.2"
-    strip-bom "^3.0.0"
-    typescript-memoize "^1.0.0-alpha.3"
-    walk-sync "^1.1.3"
-    wrap-legacy-hbs-plugin-if-needed "^1.0.1"
-
-"@embroider/core@0.30.0":
+"@embroider/core@0.30.0", "@embroider/core@^0.30.0":
   version "0.30.0"
   resolved "https://registry.yarnpkg.com/@embroider/core/-/core-0.30.0.tgz#0bb06020088c916910c5ba172631b0dbd00decd0"
   integrity sha512-xgvi6WooltBBT+5XsIKYGsb/bO3OB5GRkmVwDwZjn9D1i5WlsWn6XdCBnaPgwcAqS/cAixFIw3hznGMi3L8njA==
@@ -1321,21 +1291,6 @@
     resolve "^1.8.1"
     semver "^5.6.0"
 
-"@embroider/macros@0.29.0":
-  version "0.29.0"
-  resolved "https://registry.yarnpkg.com/@embroider/macros/-/macros-0.29.0.tgz#33048069b0abdda17efc7ff438b18b0c2c237bff"
-  integrity sha512-Kg8we7U7TpgUZ0EBKlTC4UGItPa91OrGT5Bzxa2cJi/pPp1z8Amgd7Y+m29N+aLBZwlv+OxlhnOCm0Fhjw/dag==
-  dependencies:
-    "@babel/core" "^7.12.3"
-    "@babel/traverse" "^7.12.1"
-    "@babel/types" "^7.12.1"
-    "@embroider/core" "0.29.0"
-    assert-never "^1.1.0"
-    ember-cli-babel "^7.23.0"
-    lodash "^4.17.10"
-    resolve "^1.8.1"
-    semver "^7.3.2"
-
 "@embroider/macros@0.30.0", "@embroider/macros@^0.30.0":
   version "0.30.0"
   resolved "https://registry.yarnpkg.com/@embroider/macros/-/macros-0.30.0.tgz#448fcc1d195c62488de227edb413fe9d1a0708ab"
@@ -1351,15 +1306,15 @@
     resolve "^1.8.1"
     semver "^7.3.2"
 
-"@embroider/webpack@^0.29.0":
-  version "0.29.0"
-  resolved "https://registry.yarnpkg.com/@embroider/webpack/-/webpack-0.29.0.tgz#76eff4636da15154283569718891e713ada47c71"
-  integrity sha512-LI7rqI7juNQ+AyJ4FZWQt/pURgsmbJHgN10roUmSs5UfVmv7pl2uSLHCO0bgzqmSzWRP/XJI78TfrCnhMecS+Q==
+"@embroider/webpack@^0.30.0":
+  version "0.30.0"
+  resolved "https://registry.yarnpkg.com/@embroider/webpack/-/webpack-0.30.0.tgz#d2b7df48eeb976671bec572c4e5c99d044ae5783"
+  integrity sha512-YzMw2bffAbYJBu1ysaoCUXuUgzH2godZ7xgOQqc864EVLSx59JAaDe/6H2QqdG4YQYmbaxkRIvScstzbpv5wfg==
   dependencies:
     "@babel/core" "^7.12.3"
     "@babel/plugin-proposal-nullish-coalescing-operator" "^7.12.1"
     "@babel/plugin-proposal-optional-chaining" "^7.12.1"
-    "@embroider/babel-loader-7" "0.29.0"
+    "@embroider/babel-loader-7" "0.30.0"
     "@types/source-map" "^0.5.7"
     babel-core "^6.26.3"
     babel-loader "8"
@@ -1840,6 +1795,11 @@
   dependencies:
     defer-to-connect "^2.0.0"
 
+"@types/babel__code-frame@^7.0.2":
+  version "7.0.2"
+  resolved "https://registry.yarnpkg.com/@types/babel__code-frame/-/babel__code-frame-7.0.2.tgz#e0c0f1648cbc09a9d4e5b4ed2ae9a6f7c8f5aeb0"
+  integrity sha512-imO+jT/yjOKOAS5GQZ8SDtwiIloAGGr6OaZDKB0V5JVaSfGZLat5K5/ZRtyKW6R60XHV3RHYPTFfhYb+wDKyKg==
+
 "@types/babel__core@^7.1.7":
   version "7.1.10"
   resolved "https://registry.yarnpkg.com/@types/babel__core/-/babel__core-7.1.10.tgz#ca58fc195dd9734e77e57c6f2df565623636ab40"
@@ -2127,7 +2087,7 @@
   resolved "https://registry.yarnpkg.com/@types/yargs-parser/-/yargs-parser-15.0.0.tgz#cb3f9f741869e20cce330ffbeb9271590483882d"
   integrity sha512-FA/BWv8t8ZWJ+gEOnLLd8ygxH/2UFbAvgEonyfN6yWGLKc7zVjbpl2Y4CTjid9h2RfgPP6SEt6uHwEOply00yw==
 
-"@types/yargs@^15.0.0":
+"@types/yargs@^15.0.0", "@types/yargs@^15.0.9":
   version "15.0.9"
   resolved "https://registry.yarnpkg.com/@types/yargs/-/yargs-15.0.9.tgz#524cd7998fe810cdb02f26101b699cccd156ff19"
   integrity sha512-HmU8SeIRhZCWcnRskCs36Q1Q00KBV6Cqh/ora8WN1+22dY07AZdn6Gel8QZ3t26XYPImtcL8WV/eqjhVmMEw4g==
@@ -4903,6 +4863,15 @@ cliui@^6.0.0:
     strip-ansi "^6.0.0"
     wrap-ansi "^6.2.0"
 
+cliui@^7.0.2:
+  version "7.0.4"
+  resolved "https://registry.yarnpkg.com/cliui/-/cliui-7.0.4.tgz#a0265ee655476fc807aea9df3df8df7783808b4f"
+  integrity sha512-OcRE68cOsVMXp1Yvonl/fzkQOyjLSu/8bhPDfQt0e0/Eb283TKP20Fs2MqoPsr9SwA595rRCA+QMzYc9nBP+JQ==
+  dependencies:
+    string-width "^4.2.0"
+    strip-ansi "^6.0.0"
+    wrap-ansi "^7.0.0"
+
 clone-buffer@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/clone-buffer/-/clone-buffer-1.0.0.tgz#e3e25b207ac4e701af721e2cb5a16792cac3dc58"
@@ -6795,7 +6764,7 @@ es6-promisify@^5.0.0:
   dependencies:
     es6-promise "^4.0.3"
 
-escalade@^3.1.0:
+escalade@^3.1.0, escalade@^3.1.1:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/escalade/-/escalade-3.1.1.tgz#d8cfdc7000965c5a0174b4a82eaa5c0552742e40"
   integrity sha512-k0er2gUkLf8O0zKJiAhmkTnJlTvINGv7ygDNPbeIsX/TJjGJZHuh9B2UxbsaEkmlEo9MfhrSzmhIlhRlI2GXnw==
@@ -15636,6 +15605,15 @@ wrap-ansi@^6.2.0:
     string-width "^4.1.0"
     strip-ansi "^6.0.0"
 
+wrap-ansi@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/wrap-ansi/-/wrap-ansi-7.0.0.tgz#67e145cff510a6a6984bdf1152911d69d2eb9e43"
+  integrity sha512-YVGIj2kamLSTxw6NsZjoBxfSwsn0ycdesmc4p+Q21c5zPuZ1pl+NfxVdxPtdHvmNVOQ6XSYG4AUtyt/Fi7D16Q==
+  dependencies:
+    ansi-styles "^4.0.0"
+    string-width "^4.1.0"
+    strip-ansi "^6.0.0"
+
 wrap-legacy-hbs-plugin-if-needed@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/wrap-legacy-hbs-plugin-if-needed/-/wrap-legacy-hbs-plugin-if-needed-1.0.1.tgz#6683eb74747f33e7caea54bb2ed85106ef9006b4"
@@ -15727,6 +15705,11 @@ y18n@^4.0.0:
   resolved "https://registry.yarnpkg.com/y18n/-/y18n-4.0.0.tgz#95ef94f85ecc81d007c264e190a120f0a3c8566b"
   integrity sha512-r9S/ZyXu/Xu9q1tYlpsLIsa3EeLXXk0VwlxqTcFRfg9EhMW+17kbt9G0NrgCmhGb5vT2hyhJZLfDGx+7+5Uj/w==
 
+y18n@^5.0.2:
+  version "5.0.5"
+  resolved "https://registry.yarnpkg.com/y18n/-/y18n-5.0.5.tgz#8769ec08d03b1ea2df2500acef561743bbb9ab18"
+  integrity sha512-hsRUr4FFrvhhRH12wOdfs38Gy7k2FFzB9qgN9v3aLykRq0dRcdcpz5C9FxdS2NuhOrI/628b/KSTJ3rwHysYSg==
+
 yallist@^3.0.0, yallist@^3.0.2:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/yallist/-/yallist-3.1.1.tgz#dbb7daf9bfd8bac9ab45ebf602b8cbad0d5d08fd"
@@ -15771,6 +15754,11 @@ yargs-parser@^13.1.2:
     camelcase "^5.0.0"
     decamelize "^1.2.0"
 
+yargs-parser@^20.2.2:
+  version "20.2.4"
+  resolved "https://registry.yarnpkg.com/yargs-parser/-/yargs-parser-20.2.4.tgz#b42890f14566796f85ae8e3a25290d205f154a54"
+  integrity sha512-WOkpgNhPTlE73h4VFAFsOnomJVaovO8VqLDzy5saChRBFQFBoMYirowyW+Q9HB4HFF4Z7VZTiG3iSzJJA29yRA==
+
 yargs@^13.0.0:
   version "13.3.2"
   resolved "https://registry.yarnpkg.com/yargs/-/yargs-13.3.2.tgz#ad7ffefec1aa59565ac915f82dccb38a9c31a2dd"
@@ -15803,6 +15791,19 @@ yargs@^15.0.0, yargs@^15.3.1:
     which-module "^2.0.0"
     y18n "^4.0.0"
     yargs-parser "^18.1.2"
+
+yargs@^16.1.0:
+  version "16.1.0"
+  resolved "https://registry.yarnpkg.com/yargs/-/yargs-16.1.0.tgz#fc333fe4791660eace5a894b39d42f851cd48f2a"
+  integrity sha512-upWFJOmDdHN0syLuESuvXDmrRcWd1QafJolHskzaw79uZa7/x53gxQKiR07W59GWY1tFhhU/Th9DrtSfpS782g==
+  dependencies:
+    cliui "^7.0.2"
+    escalade "^3.1.1"
+    get-caller-file "^2.0.5"
+    require-directory "^2.1.1"
+    string-width "^4.2.0"
+    y18n "^5.0.2"
+    yargs-parser "^20.2.2"
 
 yeast@0.1.2:
   version "0.1.2"
