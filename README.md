@@ -102,17 +102,7 @@ file yet.
 Contributing
 ------------------------------------------------------------------------------
 
-### How to Run Tests
-
-```bash
-yarn test
-```
-
-### How to Generate the Documentation
-
-```bash
-yarn docs
-```
+See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 Related
 ------------------------------------------------------------------------------
