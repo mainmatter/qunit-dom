@@ -79,11 +79,8 @@ test('the title is welcoming', function(assert) {
 });
 ```
 
-**All available assertions are documented in [API.md](API.md).**
-
 A basic codemod to automatically convert your assertions is available at
 [https://github.com/simplabs/qunit-dom-codemod](https://github.com/simplabs/qunit-dom-codemod).
-
 
 ### TypeScript
 
@@ -98,6 +95,12 @@ import 'qunit-dom';
 
 Rename your `tests/test-helper.js` to `.ts` if you do not have such a
 file yet.
+
+Documentation
+------------------------------------------------------------------------------
+
+See [API.md](API.md) for the list of available assertions.
+
 
 Contributing
 ------------------------------------------------------------------------------
