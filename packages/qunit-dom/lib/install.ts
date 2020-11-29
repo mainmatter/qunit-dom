@@ -1,14 +1,21 @@
 import DOMAssertions from './assertions.js';
 import { getRootElement } from './root-element.js';
+import type { IDOMElementDescriptor } from 'dom-element-descriptors';
 
 declare global {
   interface Assert {
-    dom(target?: string | Element | null, rootElement?: Element): DOMAssertions;
+    dom(
+      target?: string | Element | IDOMElementDescriptor | null,
+      rootElement?: Element
+    ): DOMAssertions;
   }
 }
 
 export default function (assert: Assert) {
-  assert.dom = function (target?: string | Element | null, rootElement?: Element): DOMAssertions {
+  assert.dom = function (
+    target?: string | Element | IDOMElementDescriptor | null,
+    rootElement?: Element
+  ): DOMAssertions {
     if (!isValidRootElement(rootElement)) {
       throw new Error(`${rootElement} is not a valid root element`);
     }

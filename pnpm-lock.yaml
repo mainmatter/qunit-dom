@@ -22,6 +22,10 @@ importers:
         version: 2.8.8
 
   packages/qunit-dom:
+    dependencies:
+      dom-element-descriptors:
+        specifier: ^0.5.0
+        version: 0.5.0
     devDependencies:
       '@arethetypeswrong/cli':
         specifier: 0.12.2
@@ -7811,6 +7815,10 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /dom-element-descriptors@0.5.0:
+    resolution: {integrity: sha512-CVzntLid1oFVHTKdTp/Qu7Kz+wSm8uO30TSQyAJ6n4Dz09yTzVQn3S1oRhVhUubxdMuKs1DjDqt88pubHagbPw==}
+    dev: false
 
   /domexception@2.0.1:
     resolution: {integrity: sha512-yxJ2mFy/sibVQlu5qHjOkf9J3K6zgmCxgJ94u2EdvDOV09H+32LtRswEcUsmUWN72pVLOEnTSRaIVVzVQgS0dg==}
