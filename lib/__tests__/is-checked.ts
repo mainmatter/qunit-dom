@@ -64,7 +64,7 @@ describe('assert.dom(...).isChecked()', () => {
 
       expect(assert.results).toEqual([
         {
-          message: 'Element <unknown> should exist',
+          message: 'Element <not found> should exist',
           result: false,
         },
       ]);

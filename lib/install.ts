@@ -1,8 +1,12 @@
 import DOMAssertions from './assertions';
+import type { ExternalQuery } from './query';
 import { getRootElement } from './root-element';
 
 export default function (assert: Assert) {
-  assert.dom = function (target?: string | Element | null, rootElement?: Element): DOMAssertions {
+  assert.dom = function (
+    target?: string | Element | null | ExternalQuery,
+    rootElement?: Element
+  ): DOMAssertions {
     if (!isValidRootElement(rootElement)) {
       throw new Error(`${rootElement} is not a valid root element`);
     }

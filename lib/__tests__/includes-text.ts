@@ -76,7 +76,7 @@ describe('assert.dom(...).includesText()', () => {
 
       expect(assert.results).toEqual([
         {
-          message: 'Element <unknown> should exist',
+          message: 'Element <not found> should exist',
           result: false,
         },
       ]);
@@ -135,7 +135,7 @@ describe('assert.dom(...).includesText()', () => {
 
       expect(assert.results).toEqual([
         {
-          message: 'Element <unknown> should exist',
+          message: 'Element <not found> should exist',
           result: false,
         },
       ]);
