@@ -5,7 +5,7 @@ toc:
 
       **Parameters**
 
-      -   `target` **([string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) \| [HTMLElement](https://developer.mozilla.org/en-US/docs/Web/HTML/Element))** A CSS selector that can be used to find elements using [`querySelector()`](https://developer.mozilla.org/de/docs/Web/API/Document/querySelector), or an [HTMLElement][] (Not all assertions support both target types.) (optional, default `rootElement` or `document`)
+      -   `target` **([string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) \| [HTMLElement](https://developer.mozilla.org/en-US/docs/Web/HTML/Element) \| [ExternalQuery](#ExternalQuery))** A CSS selector that can be used to find elements using [`querySelector()`](https://developer.mozilla.org/de/docs/Web/API/Document/querySelector), or an [HTMLElement][], or an [ExternalQuery][] (optional, default `rootElement` or `document`)
       -   `rootElement` **[HTMLElement](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)?** The root element of the DOM in which to search for the `target` (optional, default `document`)
 
       **Examples**
@@ -15,3 +15,60 @@ toc:
         assert.dom('#title').exists();
       });
       ```
+  - DOMAssertions
+  # documentation.js throws an error if we give it both .js and .ts files as
+  # inputs
+  # (https://github.com/documentationjs/documentation/issues/1272#issuecomment-520031093),
+  # so as long as we're running it against the generated dist/ .js code, we
+  # can't auto-document typescript interfaces. This documentation was adapted
+  # from the output of
+  # ```
+  # yarn documentation build lib/query.ts --parse-extension ts --infer-private '(SelectorQuery|ElementQuery|WrappedQuery)' -f md
+  # ```
+  - name: ExternalQuery
+    description: |
+      An interface for external query implementations, allowing `qunit-dom` to
+      run assertions on objects wrapping DOM elements/queries such as page object
+      implementations.
+
+      At a minimum, implementations must provide the `elements` property, and
+      `qunit-dom` can fill in the other functionality with reasonable
+      assumptions/defaults.
+
+      Example:
+
+      ```javascript
+      function withText(selector, text) {
+        let els = Array.from(document.querySelectorAll(selector));
+        return {
+          elements: els.filter(e => e.textContent.includes('submit')),
+          elementsDescription: `${selector}:contains(${text})`
+        };
+      }
+
+      assert.dom(withText('button', 'save')).exists();
+      ```
+    children:
+      - name: elements
+        description: |
+          The DOM elements matched when executing this query as a multiple-element
+          query, analagous to `querySelectorAll()`
+
+          Type: ([NodeList](https://developer.mozilla.org/docs/Web/API/NodeList) | [Element](https://developer.mozilla.org/docs/Web/API/Element)[])
+      - name: element (optional)
+        description: |
+          The DOM element (or null) matched when executing this query as a
+          single-element query, analagous to `querySelector()`. If not supplied, the
+          value will default to `elements[0]`. This property can be implemented to
+          achieve better performance since almost all of `qunit-dom`'s assertions run
+          single-element queries.
+
+          Type: ([Element](https://developer.mozilla.org/docs/Web/API/Element) | null)
+      - name: elementsDescription (optional)
+        description: |
+          A string describing the matched elements, e.g. the selector used to query
+          them. If not supplied, then `qunit-dom` will generate a description by
+          inspecting the first matching element and reading various properties and
+          attributes off of it.
+
+          Type: [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)
