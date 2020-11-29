@@ -1,17 +1,21 @@
 import DOMAssertions from './assertions.js';
 import { getRootElement } from './root-element.js';
+import type { IDOMElementDescriptor } from 'dom-element-descriptors';
 
 declare global {
   type RootElement = Element | Document | ShadowRoot | null;
 
   interface Assert {
-    dom(target?: string | Element | null, rootElement?: RootElement): DOMAssertions;
+    dom(
+      target?: string | Element | IDOMElementDescriptor | null,
+      rootElement?: RootElement
+    ): DOMAssertions;
   }
 }
 
 export default function (assert: Assert) {
   assert.dom = function (
-    target?: string | Element | null,
+    target?: string | Element | IDOMElementDescriptor | null,
     rootElement?: RootElement
   ): DOMAssertions {
     if (!isValidRootElement(rootElement)) {

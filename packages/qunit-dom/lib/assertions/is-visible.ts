@@ -38,6 +38,10 @@ export default function isVisible(options?: string | ExistsOptions, message?: st
 }
 
 function format(selector: string, num?: number) {
+  if (selector === '<unknown>') {
+    selector = '<not found>';
+  }
+
   if (num === undefined || num === null) {
     return `Element ${selector} is visible`;
   } else if (num === 0) {

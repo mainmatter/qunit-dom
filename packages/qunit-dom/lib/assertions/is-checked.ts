@@ -1,5 +1,3 @@
-import elementToString from '../helpers/element-to-string.js';
-
 export default function checked(message?: string) {
   let element = this.findTargetElement();
   if (!element) return;
@@ -21,7 +19,7 @@ export default function checked(message?: string) {
   let expected = 'checked';
 
   if (!message) {
-    message = `Element ${elementToString(this.target)} is checked`;
+    message = `Element ${this.targetDescription} is checked`;
   }
 
   this.pushResult({ result, actual, expected, message });

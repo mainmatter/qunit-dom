@@ -20,7 +20,7 @@ const copyStaticArtifacts = copy({
 const iifeBundle = {
   input: 'lib/qunit-dom.ts',
 
-  external: ['qunit'],
+  external: ['qunit', 'dom-element-descriptors'],
   plugins: [typescript({
     ...typescriptConfiguration,
     tsconfigOverride: {
@@ -35,13 +35,16 @@ const iifeBundle = {
     file: 'dist/qunit-dom.js',
     format: 'iife',
     sourcemap: true,
+    globals: {
+      'dom-element-descriptors': 'DOMElementDescriptors',
+    },
   },
 };
 
 const esBundle = {
   input: 'lib/qunit-dom-modules.ts',
 
-  external: ['qunit'],
+  external: ['qunit', 'dom-element-descriptors'],
   plugins: [typescript(typescriptConfiguration)],
 
   output: {
