@@ -78,7 +78,7 @@
     "prettier": "2.1.2",
     "release-it": "^14.2.2",
     "release-it-lerna-changelog": "^3.1.0",
-    "rollup": "^2.33.3",
+    "rollup": "^2.34.0",
     "rollup-plugin-typescript2": "^0.29.0",
     "ts-jest": "^25.5.1",
     "typescript": "~3.9.7"
