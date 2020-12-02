@@ -50,7 +50,7 @@
     "@embroider/core": "^0.31.0",
     "@embroider/macros": "^0.31.0",
     "@embroider/webpack": "^0.31.0",
-    "@types/jest": "^26.0.15",
+    "@types/jest": "^26.0.16",
     "@types/qunit": "^2.9.6",
     "@typescript-eslint/eslint-plugin": "^4.9.0",
     "@typescript-eslint/parser": "^4.9.0",
