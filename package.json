@@ -51,7 +51,7 @@
     "@embroider/macros": "^0.31.0",
     "@embroider/webpack": "^0.31.0",
     "@types/jest": "^26.0.16",
-    "@types/qunit": "^2.9.6",
+    "@types/qunit": "^2.11.0",
     "@typescript-eslint/eslint-plugin": "^4.9.0",
     "@typescript-eslint/parser": "^4.9.0",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
