@@ -43,16 +43,21 @@ Import and run the `setup` function in your `test-helper.js` file:
 
 ```js
 // tests/test-helper.js
+import * as QUnit from 'qunit';
 import { setup } from 'qunit-dom';
 
 //...
 
 setup(QUnit.assert);
 
+setApplication(Application.create(config.APP));
+
+start();
+
 //...
 ```
 
-this will attach the APIs to QUnit's `assert` object.
+This will attach the APIs to QUnit's `assert` object.
 
 ### Ember projects using `ember-qunit` v4.x and below
 
