@@ -52,7 +52,7 @@
     "@embroider/webpack": "^0.31.0",
     "@types/jest": "^26.0.19",
     "@types/qunit": "^2.11.1",
-    "@typescript-eslint/eslint-plugin": "^4.11.1",
+    "@typescript-eslint/eslint-plugin": "^4.12.0",
     "@typescript-eslint/parser": "^4.12.0",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
     "babel-preset-env": "^1.6.0",
