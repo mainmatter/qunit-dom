@@ -8,6 +8,13 @@ module.exports = async function () {
       {
         // this is currently the version in package.json, so no dependency changes are needed
         name: 'ember-qunit-4',
+        npm: {
+          devDependencies: {
+            'ember-qunit': '^4.0.0',
+            '@ember/test-helpers': null,
+            qunit: null,
+          },
+        },
       },
       {
         name: 'ember-qunit-5',
