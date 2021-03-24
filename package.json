@@ -57,7 +57,7 @@
     "babel-plugin-transform-es2015-modules-commonjs": "6.26.2",
     "babel-preset-env": "1.7.0",
     "documentation": "13.2.0",
-    "ember-auto-import": "1.11.0",
+    "ember-auto-import": "1.11.2",
     "ember-cli": "3.25.2",
     "ember-cli-babel": "7.26.2",
     "ember-cli-dependency-checker": "3.2.0",
