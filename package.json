@@ -15,20 +15,24 @@
   "license": "MIT",
   "author": "simplabs GmbH",
   "types": "dist/qunit-dom.d.ts",
+  "main": "dist/qunit-dom-modules.js",
+  "files": [
+    "dist/*"
+  ],
   "directories": {
     "doc": "doc",
     "test": "tests"
   },
   "scripts": {
-    "build": "rollup -c",
+    "build": "node_modules/.bin/tsc $(find 'lib' -type f) --outDir dist --target es6 --moduleResolution node --experimentalDecorators true -d --allowJs",
     "changelog": "lerna-changelog",
     "docs": "yarn build && documentation build dist/qunit-dom.js --config documentation.yml -f md -o API.md",
     "lint": "eslint . --cache",
-    "prepublish": "rollup -c",
+    "prepublish": "npm run build",
     "release": "release-it",
     "test": "jest",
     "test:coverage": "jest --coverage",
-    "test:ember": "ember test",
+    "test:ember": "npm run build && qunitx test/acceptance-test.js --browser --debug",
     "test:watch": "jest --watchAll --notify"
   },
   "jest": {
@@ -38,23 +42,19 @@
       "/dist/"
     ]
   },
-  "dependencies": {
-  },
   "devDependencies": {
     "@types/jest": "26.0.23",
     "@types/qunit": "2.11.1",
     "@typescript-eslint/eslint-plugin": "4.26.0",
     "@typescript-eslint/parser": "4.26.0",
-    "babel-plugin-transform-es2015-modules-commonjs": "6.26.2",
-    "babel-preset-env": "1.7.0",
     "documentation": "13.2.5",
-    "ember-try": "1.4.0",
     "eslint": "7.27.0",
     "eslint-config-prettier": "8.3.0",
     "eslint-plugin-prettier": "3.4.0",
     "jest": "26.6.3",
     "lerna-changelog": "1.0.1",
     "prettier": "2.3.0",
+    "qunitx": "^0.1.10",
     "release-it": "14.7.0",
     "release-it-lerna-changelog": "3.1.0",
     "ts-jest": "26.5.6",
@@ -97,5 +97,14 @@
     "npm": {
       "publish": false
     }
+  },
+  "qunitx": {
+    "output": "tmp",
+    "timeout": 20000,
+    "failFast": true,
+    "port": 1234,
+    "htmlPaths": [
+      "test/tests.html"
+    ]
   }
 }

@@ -1,19 +1,34 @@
-import { module, test } from 'qunit';
-import { setupApplicationTest } from 'ember-qunit';
-import { visit } from '@ember/test-helpers';
+import QUnit from 'qunitx';
+import { module, test } from 'qunitx';
+import { setup } from '../dist/qunit-dom-modules';
 
 module('Acceptance | qunit-dom', function (hooks) {
-  setupApplicationTest(hooks);
+  setup(QUnit.assert);
 
   test('qunit-dom assertions are available', async function (assert) {
+    document.querySelector('#ember-testing').innerHTML = `
+      <h2 id="title">
+        Welcome to <b>Ember</b>
+      </h2>
+      <p id="display-none" style="display: none;">You can't see me.</p>
+      <div style="display: none;">
+        <p id="display-descendant" style="display: block;">You can't see me.</p>
+      </div>
+      <p id="display-block" style="display: block;">You can see me.</p>
+      <p>You can see me, too.</p>
+      <input id="hidden-input" type="hidden">
+
+      <style>
+        #with-pseudo-element::after { content: ";"; }
+      </style>
+      <div id="with-pseudo-element">There is more to me.</div>
+    `;
+
     assert.ok(assert.dom, 'assert.dom is available');
     assert.ok(assert.dom('.foo').includesText, 'assert.dom(...).includesText is available');
 
     assert.dom('#qunit').doesNotExist('rootElement is set to #ember-testing-container');
-
     assert.dom().hasAttribute('id', 'ember-testing');
-
-    await visit('/');
 
     assert.dom('#title').exists();
     assert.dom('#subtitle').doesNotExist();

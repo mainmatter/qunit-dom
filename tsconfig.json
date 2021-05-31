@@ -6,7 +6,7 @@
       "ES6",
       "DOM"
     ],
-    "target": "es5"
+    "target": "es6"
   },
   "include": [
     "lib/**/*"
