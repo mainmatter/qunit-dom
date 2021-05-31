@@ -764,7 +764,7 @@ export default class DOMAssertions {
     }
 
     let result = expectedProperties.every(
-      property => computedStyle[property] === expected[property]
+      (property: any) => computedStyle[property] === expected[property]
     );
     let actual: ActualCSSStyleDeclaration = {};
 
@@ -835,7 +835,7 @@ export default class DOMAssertions {
     }
 
     let result = expectedProperties.some(
-      property => computedStyle[property] !== expected[property]
+      (property: any) => computedStyle[property] !== expected[property]
     );
     let actual: ActualCSSStyleDeclaration = {};
 
