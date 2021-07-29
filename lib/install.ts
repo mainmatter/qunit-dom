@@ -1,8 +1,14 @@
-import DOMAssertions from './assertions';
+import DOMAssertions, { DOMAssertionOptions } from './assertions';
 import { getRootElement } from './root-element';
 
-export default function (assert: Assert) {
-  assert.dom = function (target?: string | Element | null, rootElement?: Element): DOMAssertions {
+export interface InstallOptions extends DOMAssertionOptions {}
+
+export default function (assert: Assert, options: InstallOptions = {}) {
+  assert.dom = function (
+    target?: string | Element | null,
+    rootElement?: Element,
+    options: DOMAssertionOptions = {}
+  ): DOMAssertions {
     if (!isValidRootElement(rootElement)) {
       throw new Error(`${rootElement} is not a valid root element`);
     }
@@ -13,7 +19,7 @@ export default function (assert: Assert) {
       target = rootElement instanceof Element ? rootElement : null;
     }
 
-    return new DOMAssertions(target, rootElement, this);
+    return new DOMAssertions(target, rootElement, this, options);
   };
 
   function isValidRootElement(element: any): element is Element {

@@ -20,6 +20,25 @@ export interface AssertionResult {
   message: string;
 }
 
+export interface DOMAssertionOptions {
+  /**
+   * Whether to also consider `aria-*` attributes in semantic assertion helpers.
+   *
+   * {@link https://www.w3.org/TR/wai-aria-1.1/#state_prop_def}
+   *
+   * @see DOMAssertions#isChecked
+   * @see DOMAssertions#isNotChecked
+   * @see DOMAssertions#isRequired
+   * @see DOMAssertions#isNotRequired
+   * @see DOMAssertions#isDisabled
+   * @see DOMAssertions#isNotDisabled
+   * @see DOMAssertions#isEnabled
+   * @see DOMAssertions#isValid
+   * @see DOMAssertions#isNotValid
+   */
+  withAriaSupport?: boolean;
+}
+
 export interface ExistsOptions {
   count: number;
 }
@@ -32,7 +51,8 @@ export default class DOMAssertions {
   constructor(
     private target: string | Element | null,
     private rootElement: Element | Document,
-    private testContext: Assert
+    private testContext: Assert,
+    private options: DOMAssertionOptions = {}
   ) {}
 
   /**
@@ -106,8 +126,9 @@ export default class DOMAssertions {
    * assert.dom('input.active').isChecked();
    *
    * @see {@link #isNotChecked}
+   * {@link https://www.w3.org/TR/wai-aria-1.1/#aria-checked}
    */
-  isChecked(message?: string): DOMAssertions {
+  isChecked(message?: string, options = {}): DOMAssertions {
     isChecked.call(this, message);
     return this;
   }
@@ -124,6 +145,7 @@ export default class DOMAssertions {
    * assert.dom('input.active').isNotChecked();
    *
    * @see {@link #isChecked}
+   * {@link https://www.w3.org/TR/wai-aria-1.1/#aria-checked}
    */
   isNotChecked(message?: string): DOMAssertions {
     isNotChecked.call(this, message);
@@ -172,9 +194,10 @@ export default class DOMAssertions {
    * assert.dom('input[type="text"]').isRequired();
    *
    * @see {@link #isNotRequired}
+   * {@link https://www.w3.org/TR/wai-aria-1.1/#aria-required}
    */
-  isRequired(message?: string): DOMAssertions {
-    isRequired.call(this, message);
+  isRequired(message?: string, options?: { withAriaSupport?: boolean }): DOMAssertions {
+    isRequired.call(this, message, options);
     return this;
   }
 
@@ -188,9 +211,10 @@ export default class DOMAssertions {
    * assert.dom('input[type="text"]').isNotRequired();
    *
    * @see {@link #isRequired}
+   * {@link https://www.w3.org/TR/wai-aria-1.1/#aria-required}
    */
-  isNotRequired(message?: string): DOMAssertions {
-    isNotRequired.call(this, message);
+  isNotRequired(message?: string, options?: { withAriaSupport?: boolean }): DOMAssertions {
+    isNotRequired.call(this, message, options);
     return this;
   }
 
@@ -207,9 +231,10 @@ export default class DOMAssertions {
    * assert.dom('.input').isValid();
    *
    * @see {@link #isValid}
+   * {@link https://www.w3.org/TR/wai-aria-1.1/#aria-invalid}
    */
-  isValid(message?: string): DOMAssertions {
-    isValid.call(this, message);
+  isValid(message?: string, options?: { withAriaSupport?: boolean }): DOMAssertions {
+    isValid.call(this, message, options);
     return this;
   }
 
@@ -226,9 +251,10 @@ export default class DOMAssertions {
    * assert.dom('.input').isNotValid();
    *
    * @see {@link #isValid}
+   * {@link https://www.w3.org/TR/wai-aria-1.1/#aria-invalid}
    */
-  isNotValid(message?: string): DOMAssertions {
-    isValid.call(this, message, { inverted: true });
+  isNotValid(message?: string, options?: { withAriaSupport?: boolean }): DOMAssertions {
+    isValid.call(this, message, { ...options, inverted: true });
     return this;
   }
 
@@ -577,9 +603,10 @@ export default class DOMAssertions {
    * assert.dom('.foo').isDisabled();
    *
    * @see {@link #isNotDisabled}
+   * {@link https://www.w3.org/TR/wai-aria-1.1/#aria-disabled}
    */
-  isDisabled(message?: string): DOMAssertions {
-    isDisabled.call(this, message);
+  isDisabled(message?: string, options?: { withAriaSupport?: boolean }): DOMAssertions {
+    isDisabled.call(this, message, options);
     return this;
   }
 
@@ -595,14 +622,15 @@ export default class DOMAssertions {
    * assert.dom('.foo').isNotDisabled();
    *
    * @see {@link #isDisabled}
+   * {@link https://www.w3.org/TR/wai-aria-1.1/#aria-disabled}
    */
-  isNotDisabled(message?: string): DOMAssertions {
-    isDisabled.call(this, message, { inverted: true });
+  isNotDisabled(message?: string, options?: { withAriaSupport?: boolean }): DOMAssertions {
+    isDisabled.call(this, message, { ...options, inverted: true });
     return this;
   }
 
-  isEnabled(message?: string): DOMAssertions {
-    return this.isNotDisabled(message);
+  isEnabled(message?: string, options?: { withAriaSupport?: boolean }): DOMAssertions {
+    return this.isNotDisabled(message, options);
   }
 
   /**

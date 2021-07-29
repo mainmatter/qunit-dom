@@ -1,14 +1,14 @@
-import install from './install';
+import install, { InstallOptions } from './install';
 import { overrideRootElement } from './root-element';
 
 export { default as install } from './install';
 
-interface SetupOptions {
+interface SetupOptions extends InstallOptions {
   getRootElement?: () => Element | null;
 }
 
 export function setup(assert: Assert, options: SetupOptions = {}) {
-  install(assert);
+  install(assert, options);
 
   const getRootElement =
     typeof options.getRootElement === 'function'
