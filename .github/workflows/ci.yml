@@ -13,7 +13,7 @@ jobs:
   test:
     strategy:
       matrix:
-        node: ['10', '12', '14', '16']
+        node: ['12', '14', '16']
 
     name: Tests (Node.js v${{ matrix.node }})
     runs-on: ubuntu-latest
