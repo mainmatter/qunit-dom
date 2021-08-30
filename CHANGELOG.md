@@ -1,5 +1,28 @@
 # Changelog
 
+
+## v2.0.0 (2021-08-30)
+
+#### :boom: Breaking Change
+* [#1214](https://github.com/simplabs/qunit-dom/pull/1214) Drop support for Node.js 10 ([@Turbo87](https://github.com/Turbo87))
+
+#### :memo: Documentation
+* [#983](https://github.com/simplabs/qunit-dom/pull/983) doc(release): remove extra 'to' ([@mrloop](https://github.com/mrloop))
+* [#919](https://github.com/simplabs/qunit-dom/pull/919) Clarified how to update tests/test-helper.js when migrating ember-qunit to v5.x ([@ijlee2](https://github.com/ijlee2))
+* [#893](https://github.com/simplabs/qunit-dom/pull/893) Extract contributing instructions to separate file ([@locks](https://github.com/locks))
+
+#### :house: Internal
+* [#1140](https://github.com/simplabs/qunit-dom/pull/1140) CI: Add Node.js 14 and 16 to the test matrix ([@Turbo87](https://github.com/Turbo87))
+* [#963](https://github.com/simplabs/qunit-dom/pull/963) ember-try: Explicitly declare dependencies ([@Turbo87](https://github.com/Turbo87))
+* [#924](https://github.com/simplabs/qunit-dom/pull/924) Remove duplicated eslint rules ([@czikarito](https://github.com/czikarito))
+
+#### Committers: 5
+- Ewan McDougall ([@mrloop](https://github.com/mrloop))
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+- Pawel Kuwik ([@czikarito](https://github.com/czikarito))
+- Ricardo Mendes ([@locks](https://github.com/locks))
+- Tobias Bieniek ([@Turbo87](https://github.com/Turbo87))
+
 ## v1.6.0 (2020-11-10)
 
 #### :rocket: Enhancement
