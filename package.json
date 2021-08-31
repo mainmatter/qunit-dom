@@ -32,6 +32,7 @@
     "test:watch": "jest --watchAll --notify"
   },
   "jest": {
+    "testEnvironment": "jsdom",
     "preset": "ts-jest",
     "testPathIgnorePatterns": [
       "/node_modules/",
