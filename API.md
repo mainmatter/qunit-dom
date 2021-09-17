@@ -615,7 +615,7 @@ Assert that the pseudo element for `selector` of the [HTMLElement][] has the `ex
 #### Examples
 
 ```javascript
-assert.dom('.progress-bar').hasPseudoElementStyle(':after', {
+assert.dom('.progress-bar').hasPseudoElementStyle('after', {
   content: '";"',
 });
 ```
@@ -659,7 +659,7 @@ Assert that the pseudo element for `selector` of the [HTMLElement][] does not ha
 #### Examples
 
 ```javascript
-assert.dom('.progress-bar').doesNotHavePseudoElementStyle(':after', {
+assert.dom('.progress-bar').doesNotHavePseudoElementStyle('after', {
   content: '";"',
 });
 ```
