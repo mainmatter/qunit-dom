@@ -756,7 +756,7 @@ export default class DOMAssertions {
     let classes = expected.split(/\s/).filter(Boolean);
 
     for (let cssClass of classes) {
-      let message = `Element ${this.targetDescription} contains CSS class ${cssClass} within list ${classes}`;
+      let message = `Element ${this.targetDescription} should not contain CSS class ${cssClass} within list ${classes}`;
 
       let result = !element.classList.contains(cssClass);
 
