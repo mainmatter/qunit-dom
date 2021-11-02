@@ -1,21 +1,6 @@
 {
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:js-lib",
-    ":automergePatch",
-    ":automergeLinters",
-    ":automergeTesters",
-    ":dependencyDashboard",
-    ":maintainLockFilesWeekly",
-    ":semanticCommitsDisabled"
-  ],
-
-  "postUpdateOptions": ["yarnDedupeHighest"],
-
-  "packageRules": [
-    {
-      "matchCurrentVersion": ">= 1.0.0",
-      "updateTypes": ["minor"],
-      "automerge": true
-    }
+    "local>Turbo87/renovate-config:emberAddon"
   ]
 }
