@@ -1,5 +1,3 @@
-import elementToString from '../helpers/element-to-string';
-
 export default function isValid(message?: string, options: { inverted?: boolean } = {}) {
   let element = this.findTargetElement();
   if (!element) return;
@@ -23,7 +21,7 @@ export default function isValid(message?: string, options: { inverted?: boolean 
   let expected = options.inverted ? 'not valid' : 'valid';
 
   if (!message) {
-    message = `Element ${elementToString(this.target)} is ${actual}`;
+    message = `Element ${this.targetDescription} is ${actual}`;
   }
 
   this.pushResult({ result, actual, expected, message });

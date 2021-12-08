@@ -6,7 +6,7 @@ export default function focused(message?: string) {
 
   let result = document.activeElement === element;
   let actual = elementToString(document.activeElement);
-  let expected = elementToString(this.target);
+  let expected = this.targetDescription;
 
   if (!message) {
     message = `Element ${expected} is focused`;
