@@ -22,7 +22,7 @@
   "scripts": {
     "build": "rollup -c",
     "changelog": "lerna-changelog",
-    "docs": "yarn build && documentation build dist/qunit-dom.js --config documentation.yml -f md -o API.md",
+    "docs": "npm run build && documentation build dist/qunit-dom.js --config documentation.yml -f md -o API.md",
     "lint": "eslint . --cache",
     "prepublish": "rollup -c",
     "release": "release-it",

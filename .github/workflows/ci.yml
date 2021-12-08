@@ -9,6 +9,9 @@ on:
   schedule:
     - cron: '0 3 * * *' # daily, at 3am
 
+env:
+  PNPM_VERSION: 6.19.0
+
 jobs:
   test:
     strategy:
@@ -19,16 +22,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v2.4.0
+      - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: ${{ env.PNPM_VERSION }}
+
+      - uses: actions/setup-node@v2.4.1
         with:
           node-version: ${{ matrix.node }}
+          cache: pnpm
 
-      - run: yarn install --no-lockfile
-      - run: yarn lint
-      - run: yarn build
-      - run: yarn test:coverage --runInBand
-      - run: yarn test:ember
+      - run: pnpm install
+      - run: pnpm lint
+      - run: pnpm build
+      - run: pnpm test:coverage -- --runInBand
+      - run: pnpm test:ember
 
   compatibility:
     name: "Tests (Ember.js, ember-try: ${{ matrix.ember-try-scenario }}, Embroider: ${{ matrix.embroider }})"
@@ -43,12 +51,17 @@ jobs:
           - ember-lts-3.28
 
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v2.4.0
+      - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: ${{ env.PNPM_VERSION }}
+
+      - uses: actions/setup-node@v2.4.1
         with:
           node-version: 12
+          cache: pnpm
 
-      - run: yarn install --frozen-lockfile
-      - run: node_modules/.bin/ember try:one --config-path tests/dummy/config/ember-try.js ${{ matrix.ember-try-scenario}}
+      - run: pnpm install
+      - run: pnpm ember try:one ${{ matrix.ember-try-scenario}} -- --config-path tests/dummy/config/ember-try.js
         env:
           USE_EMBROIDER: "${{ matrix.embroider }}"

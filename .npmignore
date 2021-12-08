@@ -12,6 +12,7 @@
 bower.json
 documentation.yml
 ember-cli-build.js
+pnpm-lock.yaml
 RELEASE.md
 rollup.config.js
 testem.js

@@ -3,7 +3,7 @@
 
 module.exports = async function () {
   return {
-    useYarn: true,
+    usePnpm: true,
     scenarios: [
       {
         // this is currently the version in package.json, so no dependency changes are needed
