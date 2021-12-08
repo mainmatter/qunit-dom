@@ -1,7 +1,7 @@
 qunit-dom
 ==============================================================================
 
-[![TravisCI Build Status][travis-badge]][travis-badge-url]
+[![CI Build Status](https://github.com/simplabs/qunit-dom/actions/workflows/ci.yml/badge.svg)](https://github.com/simplabs/qunit-dom/actions/workflows/ci.yml)
 [![Latest NPM release][npm-badge]][npm-badge-url]
 
 [npm-badge]: https://img.shields.io/npm/v/qunit-dom.svg
