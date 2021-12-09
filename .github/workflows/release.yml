@@ -6,7 +6,7 @@ on:
       - 'v*'
 
 env:
-  PNPM_VERSION: 6.19.1
+  PNPM_VERSION: 6.23.6
 
 jobs:
   release:

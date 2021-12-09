@@ -10,7 +10,7 @@ on:
     - cron: '0 3 * * *' # daily, at 3am
 
 env:
-  PNPM_VERSION: 6.19.1
+  PNPM_VERSION: 6.23.6
 
 jobs:
   test:
@@ -62,6 +62,7 @@ jobs:
           cache: pnpm
 
       - run: pnpm install
+      - run: pnpm build
       - run: pnpm ember try:one ${{ matrix.ember-try-scenario}} -- --config-path tests/dummy/config/ember-try.js
         env:
           USE_EMBROIDER: "${{ matrix.embroider }}"
