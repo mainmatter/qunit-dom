@@ -11,6 +11,7 @@ module.exports = async function () {
         npm: {
           devDependencies: {
             'ember-qunit': '^4.0.0',
+            'ember-source': '~3.28.0',
             '@ember/test-helpers': null,
             qunit: null,
           },
