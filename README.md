@@ -21,7 +21,6 @@ assert.dom('input').hasValue(/.+ Doe/);
 assert.dom('input').hasAttribute('type', 'text');
 ```
 
-
 Install
 ------------------------------------------------------------------------------
 
@@ -72,7 +71,6 @@ Load `qunit-dom.js` *after* `qunit.js`:
 <script src="https://unpkg.com/qunit-dom/dist/qunit-dom.js"></script>
 ```
 
-
 Usage
 ------------------------------------------------------------------------------
 
@@ -89,7 +87,6 @@ test('the title is welcoming', function(assert) {
 A basic codemod to automatically convert your assertions is available at
 [https://github.com/simplabs/qunit-dom-codemod](https://github.com/simplabs/qunit-dom-codemod).
 
-
 ### TypeScript
 
 `qunit-dom` includes type definition files, but the way it extends QUnit means
@@ -97,7 +94,7 @@ that you need import it somewhere so that TS and your editor can pick up the
 types. It is recommended to add the following line to your
 `tests/test-helper.ts` file:
 
-```
+```bash
 import 'qunit-dom';
 ```
 
@@ -116,7 +113,6 @@ Related
   the Chai assertion library using vanilla JavaScript
 - [chai-jquery](https://github.com/chaijs/chai-jquery) – jQuery assertions
   for chai
-
 
 License
 ------------------------------------------------------------------------------

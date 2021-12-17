@@ -2,14 +2,14 @@
 
 import TestAssertions from '../helpers/test-assertions';
 
-describe('assert.dom(...).isNotOverflown()', () => {
+describe('assert.dom(...).isOverflown()', () => {
   let assert: TestAssertions;
 
   beforeEach(() => {
     assert = new TestAssertions();
   });
 
-  test('fails if inner element exceeds outer elements width', () => {
+  test('passes if inner element exceeds outer elements width', () => {
     // Element.clientWidth and Element.scrollWidth APIs are not avaliable in jsdom, so testing this the brute-force way
     // Read more here: https://github.com/jsdom/jsdom/issues/2310
     document.body.innerHTML = '<div id="foo" />';
@@ -26,19 +26,19 @@ describe('assert.dom(...).isNotOverflown()', () => {
       },
     });
 
-    assert.dom('#foo').isNotOverflown('foo is not overflown');
+    assert.dom('#foo').isOverflown('foo is not overflown');
 
     expect(assert.results).toEqual([
       {
         message: 'foo is not overflown',
-        result: false,
+        result: true,
         actual: '#foo has width 50 and scrollWidth 100',
-        expected: '#foo has width 50 and scrollWidth 50',
+        expected: '#foo has scrollWidth greater than 50',
       },
     ]);
   });
 
-  test('passes if inner element has smaller width than outer element', () => {
+  test('fails if inner element has smaller width than outer element', () => {
     document.body.innerHTML = '<div id="foo" />';
     const foo = document.getElementById('foo');
     Object.defineProperties(foo, {
@@ -52,14 +52,14 @@ describe('assert.dom(...).isNotOverflown()', () => {
       },
     });
 
-    assert.dom('#foo').isNotOverflown('foo is not overflown');
+    assert.dom('#foo').isOverflown('foo is not overflown');
 
     expect(assert.results).toEqual([
       {
         message: 'foo is not overflown',
-        result: true,
+        result: false,
         actual: '#foo has width 100 and scrollWidth 100',
-        expected: '#foo has width 100 and scrollWidth 100',
+        expected: '#foo has scrollWidth greater than 100',
       },
     ]);
   });
