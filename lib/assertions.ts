@@ -3,9 +3,9 @@ import focused from './assertions/focused';
 import isChecked from './assertions/is-checked';
 import isDisabled from './assertions/is-disabled';
 import isNotChecked from './assertions/is-not-checked';
-import isNotOverflown from './assertions/is-not-overflown';
+import isNotOverflowing from './assertions/is-not-overflowing';
 import isNotRequired from './assertions/is-not-required';
-import isOverflown from './assertions/is-overflown';
+import isOverflowing from './assertions/is-overflowing';
 import isRequired from './assertions/is-required';
 import isValid from './assertions/is-valid';
 import isVisible from './assertions/is-visible';
@@ -116,7 +116,7 @@ export default class DOMAssertions {
 
   /**
    * Assert that the {@link HTMLElement} or an {@link HTMLElement} matching the
-   * `selector` is overflown horizontally. In other words, assert the
+   * `selector` is overflowing horizontally. In other words, assert the
    * element has a horizontal scroll bar.
    *
    * This asserts the [`Element.scrollWidth`](https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollWidth) exceeds [`Element.clientWidth`](https://developer.mozilla.org/en-US/docs/Web/API/Element/clientWidth)
@@ -124,18 +124,18 @@ export default class DOMAssertions {
    * @param {string?} message
    *
    * @example
-   * assert.dom('body').isNotOverflown();
+   * assert.dom('body').isNotOverflowing();
    *
-   * @see {@link #isNotOverflown}
+   * @see {@link #isNotOverflowing}
    */
-  isOverflown(message?: string): DOMAssertions {
-    isOverflown.call(this, message);
+  isOverflowing(message?: string): DOMAssertions {
+    isOverflowing.call(this, message);
     return this;
   }
 
   /**
    * Assert that the {@link HTMLElement} or an {@link HTMLElement} matching the
-   * `selector` is not overflown horizontally. In other words, assert the
+   * `selector` is not overflowing horizontally. In other words, assert the
    * element does not have a horizontal scroll bar.
    *
    * This asserts the [`Element.clientWidth`](https://developer.mozilla.org/en-US/docs/Web/API/Element/clientWidth) equals the [`Element.scrollWidth`](https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollWidth)
@@ -145,12 +145,12 @@ export default class DOMAssertions {
    * @param {string?} message
    *
    * @example
-   * assert.dom('body').isNotOverflown();
+   * assert.dom('body').isNotOverflowing();
    *
-   * @see {@link #isOverflown}
+   * @see {@link #isOverflowing}
    */
-  isNotOverflown(message?: string): DOMAssertions {
-    isNotOverflown.call(this, message);
+  isNotOverflowing(message?: string): DOMAssertions {
+    isNotOverflowing.call(this, message);
     return this;
   }
 
