@@ -5,6 +5,7 @@ import isChecked from './assertions/is-checked';
 import isNotChecked from './assertions/is-not-checked';
 import isRequired from './assertions/is-required';
 import isNotRequired from './assertions/is-not-required';
+import isNotOverflown from './assertions/is-not-overflown';
 import isValid from './assertions/is-valid';
 import isVisible from './assertions/is-visible';
 import isDisabled from './assertions/is-disabled';
@@ -109,6 +110,25 @@ export default class DOMAssertions {
    */
   isChecked(message?: string): DOMAssertions {
     isChecked.call(this, message);
+    return this;
+  }
+
+  /**
+   * Assert that the {@link HTMLElement} or an {@link HTMLElement} matching the
+   * `selector` is not overflown horizontally. In other words, assert the
+   * element does not have a horizontal scroll bar.
+   *
+   * This asserts the [`Element.clientWidth`](https://developer.mozilla.org/en-US/docs/Web/API/Element/clientWidth) equals the [`Element.scrollWidth`](https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollWidth)
+   *
+   * Note: This is useful for the [Reflow standard](https://www.w3.org/WAI/WCAG21/Understanding/reflow.html).
+   *
+   * @param {string?} message
+   *
+   * @example
+   * assert.dom('body').isNotOverflown();
+   */
+  isNotOverflown(message?: string): DOMAssertions {
+    isNotOverflown.call(this, message);
     return this;
   }
 
