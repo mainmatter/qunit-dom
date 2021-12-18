@@ -2,6 +2,16 @@
 
 import TestAssertions from '../helpers/test-assertions';
 
+/*
+ * JSDom based tests aren't able to discern widths as we define it. Specifically,
+ * the JSDom tests don't do layouting, therefore calculating `clientWidth` or `scrollWidth`
+ * won't work. As a result, we need to use Ember's test infrastructure to correctly assess
+ * visibility, as those tests run in a browser environment.
+ *
+ * Read more here: https://github.com/jsdom/jsdom/issues/2310
+ *
+ * Tests for the success cases of isOverflowing can be found in tests/acceptance/qunit-dom-test.js
+ */
 describe('assert.dom(...).isOverflowing()', () => {
   let assert: TestAssertions;
 
@@ -10,8 +20,6 @@ describe('assert.dom(...).isOverflowing()', () => {
   });
 
   test('passes if inner element exceeds outer elements width', () => {
-    // Element.clientWidth and Element.scrollWidth APIs are not avaliable in jsdom, so testing this the brute-force way
-    // Read more here: https://github.com/jsdom/jsdom/issues/2310
     document.body.innerHTML = '<div id="foo" />';
     const foo = document.getElementById('foo');
     // clientWidth and scrollWidth are read-only properties, so Typescript gets mad if we try to assign them directly
