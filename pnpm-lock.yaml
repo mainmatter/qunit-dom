@@ -41,7 +41,7 @@ specifiers:
   release-it-lerna-changelog: 4.0.1
   rollup: 2.64.0
   rollup-plugin-typescript2: 0.31.1
-  ts-jest: 27.1.2
+  ts-jest: 27.1.3
   typescript: 4.5.4
   webpack: 5.66.0
 
@@ -88,7 +88,7 @@ devDependencies:
   release-it-lerna-changelog: 4.0.1_release-it@14.12.1
   rollup: 2.64.0
   rollup-plugin-typescript2: 0.31.1_rollup@2.64.0+typescript@4.5.4
-  ts-jest: 27.1.2_9364f2ad0b7b67f00a4d081c662c6871
+  ts-jest: 27.1.3_9364f2ad0b7b67f00a4d081c662c6871
   typescript: 4.5.4
   webpack: 5.66.0
 
@@ -15078,8 +15078,8 @@ packages:
     resolution: {integrity: sha512-rvuRbTarPXmMb79SmzEp8aqXNKcK+y0XaB298IXueQ8I2PsrATcPBCSPyK/dDNa2iWOhKlfNnOjdAOTBU/nkFA==}
     dev: true
 
-  /ts-jest/27.1.2_9364f2ad0b7b67f00a4d081c662c6871:
-    resolution: {integrity: sha512-eSOiJOWq6Hhs6Khzk5wKC5sgWIXgXqOCiIl1+3lfnearu58Hj4QpE5tUhQcA3xtZrELbcvAGCsd6HB8OsaVaTA==}
+  /ts-jest/27.1.3_9364f2ad0b7b67f00a4d081c662c6871:
+    resolution: {integrity: sha512-6Nlura7s6uM9BVUAoqLH7JHyMXjz8gluryjpPXxr3IxZdAXnU6FhjvVLHFtfd1vsE1p8zD1OJfskkc0jhTSnkA==}
     engines: {node: ^10.13.0 || ^12.13.0 || ^14.15.0 || >=15.0.0}
     hasBin: true
     peerDependencies:
