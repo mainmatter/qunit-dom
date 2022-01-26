@@ -17,7 +17,7 @@ specifiers:
   broccoli-merge-trees: ^4.2.0
   documentation: 13.2.5
   ember-auto-import: 2.3.0
-  ember-cli: 4.1.0
+  ember-cli: 4.1.1
   ember-cli-babel: ^7.26.10
   ember-cli-dependency-checker: 3.2.0
   ember-cli-htmlbars: 6.0.1
@@ -66,7 +66,7 @@ devDependencies:
   babel-preset-env: 1.7.0
   documentation: 13.2.5
   ember-auto-import: 2.3.0_webpack@5.66.0
-  ember-cli: 4.1.0
+  ember-cli: 4.1.1
   ember-cli-dependency-checker: 3.2.0
   ember-cli-htmlbars: 6.0.1
   ember-cli-inject-live-reload: 2.1.0
@@ -109,10 +109,10 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       '@babel/code-frame': 7.16.7
-      '@babel/generator': 7.12.1
+      '@babel/generator': 7.16.8
       '@babel/helper-module-transforms': 7.16.7
       '@babel/helpers': 7.16.7
-      '@babel/parser': 7.12.3
+      '@babel/parser': 7.16.8
       '@babel/template': 7.16.7
       '@babel/traverse': 7.16.8
       '@babel/types': 7.16.8
@@ -7110,8 +7110,8 @@ packages:
       semver: 7.3.5
       silent-error: 1.1.1
 
-  /ember-cli/4.1.0:
-    resolution: {integrity: sha512-weWNx1bWdcLGCfUTRSN9393yzBkTBcIIhbGW/cOIvwsDjTxkT+RA2XdnpdeHtH4JnIW2JiJSAErCebN5R4wT7w==}
+  /ember-cli/4.1.1:
+    resolution: {integrity: sha512-QFgV14wYOPIc4h1szQ8OW5evPUn7B8YZDs/dexRmD6x9+Y/2BH8lmWyO6vFopBhgV91w1/mSiNDsef+MSdBLbQ==}
     engines: {node: '>= 12'}
     hasBin: true
     dependencies:
@@ -15965,7 +15965,7 @@ packages:
   /wide-align/1.1.5:
     resolution: {integrity: sha512-eDMORYaPNZ4sQIuuYPDHdQvf4gyCF9rEEV/yPxGfwPkRodwEgiMUUXTx/dex+Me0wxx53S+NgUHaP7y3MGlDmg==}
     dependencies:
-      string-width: 1.0.2
+      string-width: 4.2.3
     dev: true
 
   /widest-line/3.1.0:
