@@ -23,7 +23,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2.4.0
-      - uses: pnpm/action-setup@v2.0.1
+      - uses: pnpm/action-setup@v2.1.0
         with:
           version: ${{ env.PNPM_VERSION }}
 
@@ -52,7 +52,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2.4.0
-      - uses: pnpm/action-setup@v2.0.1
+      - uses: pnpm/action-setup@v2.1.0
         with:
           version: ${{ env.PNPM_VERSION }}
 
