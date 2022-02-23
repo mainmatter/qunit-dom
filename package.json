@@ -52,7 +52,7 @@
     "@embroider/core": "0.48.1",
     "@embroider/macros": "0.48.1",
     "@embroider/webpack": "0.48.1",
-    "@types/jest": "27.4.0",
+    "@types/jest": "27.4.1",
     "@types/qunit": "2.11.3",
     "@typescript-eslint/eslint-plugin": "5.12.1",
     "@typescript-eslint/parser": "5.12.1",
