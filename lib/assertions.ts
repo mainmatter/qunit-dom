@@ -492,7 +492,7 @@ export default class DOMAssertions {
    * @example
    * assert.dom('button').hasAria('pressed', 'true');
    *
-   * @see {@link #hasNoAria}
+   * @see {@link #doesNotHaveAria}
    */
   hasAria(name: string, value?: string | RegExp | { any: true }, message?: string): DOMAssertions {
     return this.hasAttribute(`aria-${name}`, value, message);
