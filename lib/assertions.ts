@@ -502,6 +502,8 @@ export default class DOMAssertions {
    * Assert that the {@link HTMLElement} has no ARIA attribute with the
    * provided `name`.
    *
+   * **Aliases:** `hasNoAria`, `lacksAria`
+   *
    * @param {string} name
    * @param {string?} message
    *
@@ -512,6 +514,14 @@ export default class DOMAssertions {
    */
   doesNotHaveAria(name: string, message?: string): DOMAssertions {
     return this.doesNotHaveAttribute(`aria-${name}`, message);
+  }
+
+  hasNoAria(name: string, message?: string): DOMAssertions {
+    return this.doesNotHaveAria(name, message);
+  }
+
+  lacksAria(name: string, message?: string): DOMAssertions {
+    return this.doesNotHaveAria(name, message);
   }
 
   /**
