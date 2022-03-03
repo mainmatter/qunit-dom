@@ -445,7 +445,7 @@ export default class DOMAssertions {
    * @param {string?} message
    *
    * @example
-   * assert.dom('input.username').hasNoAttribute('disabled');
+   * assert.dom('input.username').doesNotHaveAttribute('disabled');
    *
    * @see {@link #hasAttribute}
    */
