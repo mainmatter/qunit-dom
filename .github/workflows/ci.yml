@@ -13,6 +13,27 @@ env:
   PNPM_VERSION: 6.32.3
 
 jobs:
+  docs:
+    name: API docs
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3.0.0
+      - uses: pnpm/action-setup@v2.1.0
+        with:
+          version: ${{ env.PNPM_VERSION }}
+
+      - uses: actions/setup-node@v3.0.0
+        with:
+          node-version: 16
+          cache: pnpm
+
+      - run: pnpm install
+      - run: pnpm run docs
+
+      # ensure there are no changes compared to the current API.md
+      - run: git diff --exit-code
+
   test:
     strategy:
       matrix:
