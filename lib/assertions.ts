@@ -445,7 +445,7 @@ export default class DOMAssertions {
    * @param {string?} message
    *
    * @example
-   * assert.dom('input.username').hasNoAttribute('disabled');
+   * assert.dom('input.username').doesNotHaveAttribute('disabled');
    *
    * @see {@link #hasAttribute}
    */
@@ -492,7 +492,7 @@ export default class DOMAssertions {
    * @example
    * assert.dom('button').hasAria('pressed', 'true');
    *
-   * @see {@link #hasNoAria}
+   * @see {@link #doesNotHaveAria}
    */
   hasAria(name: string, value?: string | RegExp | { any: true }, message?: string): DOMAssertions {
     return this.hasAttribute(`aria-${name}`, value, message);
@@ -501,6 +501,8 @@ export default class DOMAssertions {
   /**
    * Assert that the {@link HTMLElement} has no ARIA attribute with the
    * provided `name`.
+   *
+   * **Aliases:** `hasNoAria`, `lacksAria`
    *
    * @param {string} name
    * @param {string?} message
@@ -512,6 +514,14 @@ export default class DOMAssertions {
    */
   doesNotHaveAria(name: string, message?: string): DOMAssertions {
     return this.doesNotHaveAttribute(`aria-${name}`, message);
+  }
+
+  hasNoAria(name: string, message?: string): DOMAssertions {
+    return this.doesNotHaveAria(name, message);
+  }
+
+  lacksAria(name: string, message?: string): DOMAssertions {
+    return this.doesNotHaveAria(name, message);
   }
 
   /**
