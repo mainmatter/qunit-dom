@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3.0.0
+      - uses: actions/checkout@v3.0.1
       - uses: pnpm/action-setup@v2.2.1
         with:
           version: ${{ env.PNPM_VERSION }}
@@ -43,7 +43,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3.0.0
+      - uses: actions/checkout@v3.0.1
       - uses: pnpm/action-setup@v2.2.1
         with:
           version: ${{ env.PNPM_VERSION }}
@@ -72,7 +72,7 @@ jobs:
           - ember-lts-3.28
 
     steps:
-      - uses: actions/checkout@v3.0.0
+      - uses: actions/checkout@v3.0.1
       - uses: pnpm/action-setup@v2.2.1
         with:
           version: ${{ env.PNPM_VERSION }}
