@@ -7,7 +7,7 @@ specifiers:
   '@embroider/core': 0.48.1
   '@embroider/macros': 0.48.1
   '@embroider/webpack': 0.48.1
-  '@types/jest': 27.4.1
+  '@types/jest': 27.5.0
   '@types/qunit': 2.11.3
   '@typescript-eslint/eslint-plugin': 5.21.0
   '@typescript-eslint/parser': 5.21.0
@@ -58,7 +58,7 @@ devDependencies:
   '@embroider/core': 0.48.1
   '@embroider/macros': 0.48.1
   '@embroider/webpack': 0.48.1_1cf6352c134b847e2fcd5f9496e93507
-  '@types/jest': 27.4.1
+  '@types/jest': 27.5.0
   '@types/qunit': 2.11.3
   '@typescript-eslint/eslint-plugin': 5.21.0_c1e59b1199c3e62d6b2356f37f2be084
   '@typescript-eslint/parser': 5.21.0_eslint@8.15.0+typescript@4.6.4
@@ -88,7 +88,7 @@ devDependencies:
   release-it-lerna-changelog: 4.0.1_release-it@14.14.3
   rollup: 2.71.1
   rollup-plugin-typescript2: 0.31.2_rollup@2.71.1+typescript@4.6.4
-  ts-jest: 27.1.4_eecc682348e44222a66a9b13407b285a
+  ts-jest: 27.1.4_de3efcd1e6a6e8470860984ab19632da
   typescript: 4.6.4
   webpack: 5.72.0
 
@@ -2770,8 +2770,8 @@ packages:
       '@types/istanbul-lib-report': 3.0.0
     dev: true
 
-  /@types/jest/27.4.1:
-    resolution: {integrity: sha512-23iPJADSmicDVrWk+HT58LMJtzLAnB2AgIzplQuq/bSrGaxCrlvRFjGbXmamnnk/mAmCdLStiGqggu28ocUyiw==}
+  /@types/jest/27.5.0:
+    resolution: {integrity: sha512-9RBFx7r4k+msyj/arpfaa0WOOEcaAZNmN+j80KFbFCoSqCJGHTz7YMAMGQW9Xmqm5w6l5c25vbSjMwlikJi5+g==}
     dependencies:
       jest-matcher-utils: 27.5.1
       pretty-format: 27.5.1
@@ -15074,7 +15074,7 @@ packages:
     resolution: {integrity: sha512-rvuRbTarPXmMb79SmzEp8aqXNKcK+y0XaB298IXueQ8I2PsrATcPBCSPyK/dDNa2iWOhKlfNnOjdAOTBU/nkFA==}
     dev: true
 
-  /ts-jest/27.1.4_eecc682348e44222a66a9b13407b285a:
+  /ts-jest/27.1.4_de3efcd1e6a6e8470860984ab19632da:
     resolution: {integrity: sha512-qjkZlVPWVctAezwsOD1OPzbZ+k7zA5z3oxII4dGdZo5ggX/PL7kvwTM0pXTr10fAtbiVpJaL3bWd502zAhpgSQ==}
     engines: {node: ^10.13.0 || ^12.13.0 || ^14.15.0 || >=15.0.0}
     hasBin: true
@@ -15095,7 +15095,7 @@ packages:
       esbuild:
         optional: true
     dependencies:
-      '@types/jest': 27.4.1
+      '@types/jest': 27.5.0
       bs-logger: 0.2.6
       fast-json-stable-stringify: 2.1.0
       jest: 27.5.1
