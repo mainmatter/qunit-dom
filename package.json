@@ -86,9 +86,6 @@
     "typescript": "4.6.4",
     "webpack": "5.72.1"
   },
-  "engines": {
-    "node": "12.* || 14.* || >= 16.*"
-  },
   "changelog": {
     "repo": "simplabs/qunit-dom",
     "labels": {
