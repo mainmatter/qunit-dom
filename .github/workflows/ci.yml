@@ -37,7 +37,7 @@ jobs:
   test:
     strategy:
       matrix:
-        node: ['12', '14', '16']
+        node: ['14', '16', '18']
 
     name: Tests (Node.js v${{ matrix.node }})
     runs-on: ubuntu-latest
@@ -79,7 +79,7 @@ jobs:
 
       - uses: actions/setup-node@v3.2.0
         with:
-          node-version: 12
+          node-version: 16
           cache: pnpm
 
       - run: pnpm install
