@@ -73,7 +73,7 @@
     "eslint": "8.15.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-prettier": "4.0.0",
-    "jest": "27.5.1",
+    "jest": "28.1.0",
     "lerna-changelog": "2.2.0",
     "loader.js": "4.7.0",
     "prettier": "2.6.2",
@@ -82,7 +82,7 @@
     "release-it-lerna-changelog": "4.0.1",
     "rollup": "2.74.0",
     "rollup-plugin-typescript2": "0.31.2",
-    "ts-jest": "27.1.5",
+    "ts-jest": "28.0.2",
     "typescript": "4.6.4",
     "webpack": "5.72.1"
   },
