@@ -56,7 +56,7 @@ jobs:
       - run: pnpm install
       - run: pnpm lint
       - run: pnpm build
-      - run: pnpm test:coverage -- --runInBand
+      - run: pnpm test:coverage --runInBand
       - run: pnpm test:ember
 
   compatibility:
