@@ -2,7 +2,7 @@ lockfileVersion: 5.3
 
 specifiers:
   '@ember/optional-features': 2.0.0
-  '@ember/test-helpers': 2.7.0
+  '@ember/test-helpers': 2.8.1
   '@embroider/compat': 0.48.1
   '@embroider/core': 0.48.1
   '@embroider/macros': 0.48.1
@@ -53,7 +53,7 @@ dependencies:
 
 devDependencies:
   '@ember/optional-features': 2.0.0
-  '@ember/test-helpers': 2.7.0
+  '@ember/test-helpers': 2.8.1_ember-source@4.4.0
   '@embroider/compat': 0.48.1_@embroider+core@0.48.1
   '@embroider/core': 0.48.1
   '@embroider/macros': 0.48.1
@@ -72,7 +72,7 @@ devDependencies:
   ember-cli-inject-live-reload: 2.1.0
   ember-load-initializers: 2.1.2
   ember-maybe-import-regenerator: 1.0.0
-  ember-qunit: 5.1.5_9ed2911121e0a3aca1ef05503525747c
+  ember-qunit: 5.1.5_66aaf4259d52975831654068563a6d0a
   ember-resolver: 8.0.3
   ember-source: 4.4.0_webpack@5.72.1
   ember-try: 2.0.0
@@ -1796,16 +1796,21 @@ packages:
       - supports-color
     dev: true
 
-  /@ember/test-helpers/2.7.0:
-    resolution: {integrity: sha512-eWFtw5+sbci1Fw+E+HoyaMxY126LvK7jul6i8tad48zlWoxrOalbhJhz1mKqIo4daHbqIZWuFgQhOib4QfTKCQ==}
+  /@ember/test-helpers/2.8.1_ember-source@4.4.0:
+    resolution: {integrity: sha512-jbsYwWyAdhL/pdPu7Gb3SG1gvIXY70FWMtC/Us0Kmvk82Y+5YUQ1SOC0io75qmOGYQmH7eQrd/bquEVd+4XtdQ==}
     engines: {node: 10.* || 12.* || 14.* || 15.* || >= 16.*}
+    peerDependencies:
+      ember-source: '>=3.8.0'
     dependencies:
       '@ember/test-waiters': 3.0.1
+      '@embroider/macros': 1.6.0
+      '@embroider/util': 1.6.0_ember-source@4.4.0
       broccoli-debug: 0.6.5
       broccoli-funnel: 3.0.8
       ember-cli-babel: 7.26.11
       ember-cli-htmlbars: 5.7.2
       ember-destroyable-polyfill: 2.0.3
+      ember-source: 4.4.0_webpack@5.72.1
     transitivePeerDependencies:
       - '@babel/core'
       - supports-color
@@ -2058,6 +2063,20 @@ packages:
       resolve-package-path: 4.0.3
       semver: 7.3.7
       typescript-memoize: 1.1.0
+    dev: true
+
+  /@embroider/util/1.6.0_ember-source@4.4.0:
+    resolution: {integrity: sha512-oUQDAMiAATHsiNwEMH/SzNSQ/Z5wDr9f6NImsDIFLvDT6T34/p7cqR4wyfrfMRtcc1EB6PbwhZ6bXYsJ6QPWRA==}
+    engines: {node: 12.* || 14.* || >= 16}
+    peerDependencies:
+      ember-source: '*'
+    dependencies:
+      '@embroider/macros': 1.6.0
+      broccoli-funnel: 3.0.8
+      ember-cli-babel: 7.26.11
+      ember-source: 4.4.0_webpack@5.72.1
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /@embroider/webpack/0.48.1_fe3398f56dc07aa174171878c87bb1df:
@@ -3833,7 +3852,7 @@ packages:
     dev: true
 
   /async/0.2.10:
-    resolution: {integrity: sha1-trvgsGdLnXGXCMo43owjfLUmw9E=}
+    resolution: {integrity: sha512-eAkdoKxU6/LkKDBzLpT+t6Ff5EtfSF4wx1WfJiPEEV7WNLnDaRXk0oVysiEPm262roaachGexwUv94WhSgN5TQ==}
     dev: true
 
   /async/2.6.4:
@@ -5334,7 +5353,7 @@ packages:
       - supports-color
 
   /broccoli-kitchen-sink-helpers/0.3.1:
-    resolution: {integrity: sha1-d8fBgZS5ZkFj7E/O4nk0RJJuDAY=}
+    resolution: {integrity: sha512-gqYnKSJxBSjj/uJqeuRAzYVbmjWhG0mOZ8jrp6+fnUIOgLN6MvI7XxBECDHkYMIFPJ8Smf4xaI066Q2FqQDnXg==}
     dependencies:
       glob: 5.0.15
       mkdirp: 0.5.6
@@ -5381,7 +5400,7 @@ packages:
     resolution: {integrity: sha512-QIqLSVJWJUVOhclmkmypJJH9u9s/aWH4+FH6Q6Ju5l+Io4dtwqdPUNmDfw40o6sxhbZHhqGujDJuHTML1wG8Yw==}
 
   /broccoli-node-info/1.1.0:
-    resolution: {integrity: sha1-OqLjHgflvbUW3SUhT3xFuhxFlBI=}
+    resolution: {integrity: sha512-DUohSZCdfXli/3iN6SmxPbck1OVG8xCkrLx47R25his06xVc1ZmmrOsrThiM8BsCWirwyocODiYJqNP5W2Hg1A==}
     engines: {node: '>= 0.10.0'}
     dev: true
 
@@ -7955,14 +7974,14 @@ packages:
       - supports-color
     dev: true
 
-  /ember-qunit/5.1.5_9ed2911121e0a3aca1ef05503525747c:
+  /ember-qunit/5.1.5_66aaf4259d52975831654068563a6d0a:
     resolution: {integrity: sha512-2cFA4oMygh43RtVcMaBrr086Tpdhgbn3fVZ2awLkzF/rnSN0D0PSRpd7hAD7OdBPerC/ZYRwzVyGXLoW/Zes4A==}
     engines: {node: 10.* || 12.* || >= 14.*}
     peerDependencies:
       '@ember/test-helpers': ^2.4.0
       qunit: ^2.13.0
     dependencies:
-      '@ember/test-helpers': 2.7.0
+      '@ember/test-helpers': 2.8.1_ember-source@4.4.0
       broccoli-funnel: 3.0.8
       broccoli-merge-trees: 3.0.2
       common-tags: 1.8.2
