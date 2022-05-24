@@ -83,7 +83,7 @@
     "rollup": "2.74.1",
     "rollup-plugin-typescript2": "0.31.2",
     "ts-jest": "27.1.5",
-    "typescript": "4.6.4",
+    "typescript": "4.7.2",
     "webpack": "5.72.1"
   },
   "changelog": {
