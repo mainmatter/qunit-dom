@@ -7,7 +7,7 @@ specifiers:
   '@embroider/core': 0.48.1
   '@embroider/macros': 0.48.1
   '@embroider/webpack': 0.48.1
-  '@types/jest': 27.5.1
+  '@types/jest': 27.5.2
   '@types/qunit': 2.11.3
   '@typescript-eslint/eslint-plugin': 5.27.0
   '@typescript-eslint/parser': 5.27.0
@@ -58,7 +58,7 @@ devDependencies:
   '@embroider/core': 0.48.1
   '@embroider/macros': 0.48.1
   '@embroider/webpack': 0.48.1_fe3398f56dc07aa174171878c87bb1df
-  '@types/jest': 27.5.1
+  '@types/jest': 27.5.2
   '@types/qunit': 2.11.3
   '@typescript-eslint/eslint-plugin': 5.27.0_1cb21ecc3f04eca4a509631d5e40e8fa
   '@typescript-eslint/parser': 5.27.0_eslint@8.16.0+typescript@4.7.2
@@ -88,7 +88,7 @@ devDependencies:
   release-it-lerna-changelog: 4.0.1_release-it@14.14.3
   rollup: 2.75.5
   rollup-plugin-typescript2: 0.31.2_rollup@2.75.5+typescript@4.7.2
-  ts-jest: 27.1.5_503bfb847900ba876dcec7308e1e7b81
+  ts-jest: 27.1.5_4e623839ecfc1b0242d7f262e6e0b1df
   typescript: 4.7.2
   webpack: 5.72.1
 
@@ -2791,8 +2791,8 @@ packages:
       '@types/istanbul-lib-report': 3.0.0
     dev: true
 
-  /@types/jest/27.5.1:
-    resolution: {integrity: sha512-fUy7YRpT+rHXto1YlL+J9rs0uLGyiqVt3ZOTQR+4ROc47yNl8WLdVLgUloBRhOxP1PZvguHl44T3H0wAWxahYQ==}
+  /@types/jest/27.5.2:
+    resolution: {integrity: sha512-mpT8LJJ4CMeeahobofYWIjFo0xonRS/HfxnVEPMPFSQdGUt1uHCnoPT7Zhb+sjDU2wz0oKV0OLUR0WzrHNgfeA==}
     dependencies:
       jest-matcher-utils: 27.5.1
       pretty-format: 27.5.1
@@ -3567,7 +3567,7 @@ packages:
     dev: true
 
   /ansi-regex/2.1.1:
-    resolution: {integrity: sha1-w7M6te42DYbg5ijwRorn7yfWVN8=}
+    resolution: {integrity: sha512-TIGnTpdo+E3+pCyAluZvtED5p5wCqLdezCyhPZzKPcxvFplEt4i+W7OONCKgeZFT3+y5NZZfOOS/Bdcanm1MYA==}
     engines: {node: '>=0.10.0'}
     dev: true
 
@@ -16115,7 +16115,7 @@ packages:
     resolution: {integrity: sha512-rvuRbTarPXmMb79SmzEp8aqXNKcK+y0XaB298IXueQ8I2PsrATcPBCSPyK/dDNa2iWOhKlfNnOjdAOTBU/nkFA==}
     dev: true
 
-  /ts-jest/27.1.5_503bfb847900ba876dcec7308e1e7b81:
+  /ts-jest/27.1.5_4e623839ecfc1b0242d7f262e6e0b1df:
     resolution: {integrity: sha512-Xv6jBQPoBEvBq/5i2TeSG9tt/nqkbpcurrEG1b+2yfBrcJelOZF9Ml6dmyMh7bcW9JyFbRYpR5rxROSlBLTZHA==}
     engines: {node: ^10.13.0 || ^12.13.0 || ^14.15.0 || >=15.0.0}
     hasBin: true
@@ -16136,7 +16136,7 @@ packages:
       esbuild:
         optional: true
     dependencies:
-      '@types/jest': 27.5.1
+      '@types/jest': 27.5.2
       bs-logger: 0.2.6
       fast-json-stable-stringify: 2.1.0
       jest: 27.5.1
