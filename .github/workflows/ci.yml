@@ -10,7 +10,7 @@ on:
     - cron: '0 3 * * *' # daily, at 3am
 
 env:
-  PNPM_VERSION: 6.32.19
+  PNPM_VERSION: 7.1.2
 
 jobs:
   docs:
@@ -19,7 +19,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3.0.2
-      - uses: pnpm/action-setup@v2.2.2
+      - uses: pnpm/action-setup@v2.2.1
         with:
           version: ${{ env.PNPM_VERSION }}
 
@@ -44,7 +44,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3.0.2
-      - uses: pnpm/action-setup@v2.2.2
+      - uses: pnpm/action-setup@v2.2.1
         with:
           version: ${{ env.PNPM_VERSION }}
 
@@ -56,7 +56,7 @@ jobs:
       - run: pnpm install
       - run: pnpm lint
       - run: pnpm build
-      - run: pnpm test:coverage -- --runInBand
+      - run: pnpm test:coverage --runInBand
       - run: pnpm test:ember
 
   compatibility:
@@ -73,7 +73,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3.0.2
-      - uses: pnpm/action-setup@v2.2.2
+      - uses: pnpm/action-setup@v2.2.1
         with:
           version: ${{ env.PNPM_VERSION }}
 
