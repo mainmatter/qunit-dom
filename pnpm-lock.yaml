@@ -27,7 +27,7 @@ specifiers:
   ember-maybe-import-regenerator: 1.0.0
   ember-qunit: 5.1.5
   ember-resolver: 8.0.3
-  ember-source: 4.4.2
+  ember-source: 4.5.0
   ember-try: 2.0.0
   eslint: 8.17.0
   eslint-config-prettier: 8.5.0
@@ -53,7 +53,7 @@ dependencies:
 
 devDependencies:
   '@ember/optional-features': 2.0.0
-  '@ember/test-helpers': 2.8.1_ember-source@4.4.2
+  '@ember/test-helpers': 2.8.1_ember-source@4.5.0
   '@embroider/compat': 0.48.1_@embroider+core@0.48.1
   '@embroider/core': 0.48.1
   '@embroider/macros': 0.48.1
@@ -74,7 +74,7 @@ devDependencies:
   ember-maybe-import-regenerator: 1.0.0
   ember-qunit: 5.1.5_m2vpijm5kklvqmlfibufmotnbi
   ember-resolver: 8.0.3
-  ember-source: 4.4.2_webpack@5.73.0
+  ember-source: 4.5.0_webpack@5.73.0
   ember-try: 2.0.0
   eslint: 8.17.0
   eslint-config-prettier: 8.5.0_eslint@8.17.0
@@ -1804,7 +1804,7 @@ packages:
       - supports-color
     dev: true
 
-  /@ember/test-helpers/2.8.1_ember-source@4.4.2:
+  /@ember/test-helpers/2.8.1_ember-source@4.5.0:
     resolution: {integrity: sha512-jbsYwWyAdhL/pdPu7Gb3SG1gvIXY70FWMtC/Us0Kmvk82Y+5YUQ1SOC0io75qmOGYQmH7eQrd/bquEVd+4XtdQ==}
     engines: {node: 10.* || 12.* || 14.* || 15.* || >= 16.*}
     peerDependencies:
@@ -1812,13 +1812,13 @@ packages:
     dependencies:
       '@ember/test-waiters': 3.0.2
       '@embroider/macros': 1.8.0
-      '@embroider/util': 1.8.0_ember-source@4.4.2
+      '@embroider/util': 1.8.0_ember-source@4.5.0
       broccoli-debug: 0.6.5
       broccoli-funnel: 3.0.8
       ember-cli-babel: 7.26.11
       ember-cli-htmlbars: 5.7.2
       ember-destroyable-polyfill: 2.0.3
-      ember-source: 4.4.2_webpack@5.73.0
+      ember-source: 4.5.0_webpack@5.73.0
     transitivePeerDependencies:
       - '@babel/core'
       - supports-color
@@ -2073,7 +2073,7 @@ packages:
       typescript-memoize: 1.1.0
     dev: true
 
-  /@embroider/util/1.8.0_ember-source@4.4.2:
+  /@embroider/util/1.8.0_ember-source@4.5.0:
     resolution: {integrity: sha512-uCR8fpBBVexW1FvqEJMzI52iiEM7aYJIIJgQ3S5za+d1Je2jPH3YUVJ2RR6gAxhjYBdazRG7FbUCYvZz/6cOPA==}
     engines: {node: 12.* || 14.* || >= 16}
     peerDependencies:
@@ -2082,7 +2082,7 @@ packages:
       '@embroider/macros': 1.8.0
       broccoli-funnel: 3.0.8
       ember-cli-babel: 7.26.11
-      ember-source: 4.4.2_webpack@5.73.0
+      ember-source: 4.5.0_webpack@5.73.0
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -2200,8 +2200,8 @@ packages:
     resolution: {integrity: sha512-Heck0baFSaWDanCYtmOcLeaz7v+rSqI8ovS7twrp2/FWEteb3Ze5sWQ2BEuSAG23L/k/lzVwYM/MY7ZugxBpaA==}
     dev: true
 
-  /@glimmer/vm-babel-plugins/0.83.1:
-    resolution: {integrity: sha512-Cz0e/SrOo1gSNA0PXZRYI1WGmlQSAQCpiERBlXjjpwoLgiqx2kvsjfFiCUC/CfpsO6WN6wuPMeTFGJuhSSeL5A==}
+  /@glimmer/vm-babel-plugins/0.84.2:
+    resolution: {integrity: sha512-HS2dEbJ3CgXn56wk/5QdudM7rE3vtNMvPIoG7Rrg+GhkGMNxBCIRxOeEF2g520j9rwlA2LAZFpc7MCDMFbTjNA==}
     dependencies:
       babel-plugin-debug-macros: 0.3.4
     transitivePeerDependencies:
@@ -8129,7 +8129,7 @@ packages:
       '@ember/test-helpers': ^2.4.0
       qunit: ^2.13.0
     dependencies:
-      '@ember/test-helpers': 2.8.1_ember-source@4.4.2
+      '@ember/test-helpers': 2.8.1_ember-source@4.5.0
       broccoli-funnel: 3.0.8
       broccoli-merge-trees: 3.0.2
       common-tags: 1.8.2
@@ -8185,14 +8185,14 @@ packages:
       - encoding
     dev: true
 
-  /ember-source/4.4.2_webpack@5.73.0:
-    resolution: {integrity: sha512-5mVVNc6X5nyrkJk4Xn+mqG4VTeB0G2DsVJP/J5cxGPOnl7tQk3vFUAKB9hwXsDtT2elLYIxuS1ob0hZ/3XxPrQ==}
+  /ember-source/4.5.0_webpack@5.73.0:
+    resolution: {integrity: sha512-zGNnFCD8a4UNTrp5gORdlItJUalga8t6FX6EvFWTsyywB9ST8cov/c71CBDBo8bp1/V4W4z0dG6DhL8C1onxPw==}
     engines: {node: '>= 12.*'}
     dependencies:
       '@babel/helper-module-imports': 7.16.7
       '@babel/plugin-transform-block-scoping': 7.18.4
       '@ember/edition-utils': 1.2.0
-      '@glimmer/vm-babel-plugins': 0.83.1
+      '@glimmer/vm-babel-plugins': 0.84.2
       babel-plugin-debug-macros: 0.3.4
       babel-plugin-filter-imports: 4.0.0
       broccoli-concat: 4.2.5
