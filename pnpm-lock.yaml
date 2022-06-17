@@ -35,7 +35,7 @@ specifiers:
   jest: 27.5.1
   lerna-changelog: 2.2.0
   loader.js: 4.7.0
-  prettier: 2.7.0
+  prettier: 2.7.1
   qunit: 2.19.1
   release-it: 15.0.0
   release-it-lerna-changelog: 4.0.1
@@ -78,11 +78,11 @@ devDependencies:
   ember-try: 2.0.0
   eslint: 8.17.0
   eslint-config-prettier: 8.5.0_eslint@8.17.0
-  eslint-plugin-prettier: 4.0.0_nguwan5pqsajixjz57ffz7bkde
+  eslint-plugin-prettier: 4.0.0_hsbo72uvra2cjko46y2c4fgzzm
   jest: 27.5.1
   lerna-changelog: 2.2.0
   loader.js: 4.7.0
-  prettier: 2.7.0
+  prettier: 2.7.1
   qunit: 2.19.1
   release-it: 15.0.0
   release-it-lerna-changelog: 4.0.1_release-it@15.0.0
@@ -8496,7 +8496,7 @@ packages:
       eslint: 8.17.0
     dev: true
 
-  /eslint-plugin-prettier/4.0.0_nguwan5pqsajixjz57ffz7bkde:
+  /eslint-plugin-prettier/4.0.0_hsbo72uvra2cjko46y2c4fgzzm:
     resolution: {integrity: sha512-98MqmCJ7vJodoQK359bqQWaxOE0CS8paAz/GgjaZLyex4TTk3g9HugoO89EqWCrFiOqn9EVvcoo7gZzONCWVwQ==}
     engines: {node: '>=6.0.0'}
     peerDependencies:
@@ -8509,7 +8509,7 @@ packages:
     dependencies:
       eslint: 8.17.0
       eslint-config-prettier: 8.5.0_eslint@8.17.0
-      prettier: 2.7.0
+      prettier: 2.7.1
       prettier-linter-helpers: 1.0.0
     dev: true
 
@@ -13934,8 +13934,8 @@ packages:
       fast-diff: 1.2.0
     dev: true
 
-  /prettier/2.7.0:
-    resolution: {integrity: sha512-nwoX4GMFgxoPC6diHvSwmK/4yU8FFH3V8XWtLQrbj4IBsK2pkYhG4kf/ljF/haaZ/aii+wNJqISrCDPgxGWDVQ==}
+  /prettier/2.7.1:
+    resolution: {integrity: sha512-ujppO+MkdPqoVINuDFDRLClm7D78qbDt0/NR+wp5FqEZOoTNAjPHWj17QRhu7geIHJfcNhRk1XVQmF8Bp3ye+g==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     dev: true
@@ -14645,7 +14645,7 @@ packages:
       '@babel/core': 7.18.2
       '@babel/plugin-syntax-decorators': 7.17.12_@babel+core@7.18.2
       '@babel/plugin-transform-typescript': 7.18.4_@babel+core@7.18.2
-      prettier: 2.7.0
+      prettier: 2.7.1
     transitivePeerDependencies:
       - supports-color
     dev: true
