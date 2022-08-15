@@ -79,7 +79,7 @@
     "prettier": "2.7.1",
     "qunit": "2.19.1",
     "release-it": "15.3.0",
-    "release-it-lerna-changelog": "4.0.1",
+    "release-it-lerna-changelog": "5.0.0",
     "rollup": "2.78.0",
     "rollup-plugin-typescript2": "0.32.1",
     "ts-jest": "27.1.5",
