@@ -39,7 +39,7 @@ specifiers:
   qunit: 2.19.1
   release-it: 15.3.0
   release-it-lerna-changelog: 5.0.0
-  rollup: 2.78.0
+  rollup: 2.78.1
   rollup-plugin-typescript2: 0.32.1
   ts-jest: 27.1.5
   typescript: 4.7.4
@@ -86,8 +86,8 @@ devDependencies:
   qunit: 2.19.1
   release-it: 15.3.0
   release-it-lerna-changelog: 5.0.0_release-it@15.3.0
-  rollup: 2.78.0
-  rollup-plugin-typescript2: 0.32.1_nm5mlcuxlwr6samvke7b2fz27i
+  rollup: 2.78.1
+  rollup-plugin-typescript2: 0.32.1_accrhai6qopda76wnqb3pkewpq
   ts-jest: 27.1.5_mqaoisgizytgigbr3gbjwvnjie
   typescript: 4.7.4
   webpack: 5.74.0
@@ -15414,7 +15414,7 @@ packages:
       inherits: 2.0.4
     dev: true
 
-  /rollup-plugin-typescript2/0.32.1_nm5mlcuxlwr6samvke7b2fz27i:
+  /rollup-plugin-typescript2/0.32.1_accrhai6qopda76wnqb3pkewpq:
     resolution: {integrity: sha512-RanO8bp1WbeMv0bVlgcbsFNCn+Y3rX7wF97SQLDxf0fMLsg0B/QFF005t4AsGUcDgF3aKJHoqt4JF2xVaABeKw==}
     peerDependencies:
       rollup: '>=1.26.3'
@@ -15424,13 +15424,13 @@ packages:
       find-cache-dir: 3.3.2
       fs-extra: 10.1.0
       resolve: 1.22.0
-      rollup: 2.78.0
+      rollup: 2.78.1
       tslib: 2.4.0
       typescript: 4.7.4
     dev: true
 
-  /rollup/2.78.0:
-    resolution: {integrity: sha512-4+YfbQC9QEVvKTanHhIAFVUFSRsezvQF8vFOJwtGfb9Bb+r014S+qryr9PSmw8x6sMnPkmFBGAvIFVQxvJxjtg==}
+  /rollup/2.78.1:
+    resolution: {integrity: sha512-VeeCgtGi4P+o9hIg+xz4qQpRl6R401LWEXBmxYKOV4zlF82lyhgh2hTZnheFUbANE8l2A41F458iwj2vEYaXJg==}
     engines: {node: '>=10.0.0'}
     hasBin: true
     optionalDependencies:
@@ -17156,6 +17156,7 @@ packages:
   /unified/9.2.2:
     resolution: {integrity: sha512-Sg7j110mtefBD+qunSLO1lqOEKdrwBFBrR6Qd8f4uwkhWNlbkaqwHse6e7QvD3AP/MNoJdEDLaf8OxYyoWgorQ==}
     dependencies:
+      '@types/unist': 2.0.6
       bail: 1.0.5
       extend: 3.0.2
       is-buffer: 2.0.5
