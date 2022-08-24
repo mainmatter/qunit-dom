@@ -58,7 +58,7 @@
     "@typescript-eslint/parser": "5.34.0",
     "babel-plugin-transform-es2015-modules-commonjs": "6.26.2",
     "babel-preset-env": "1.7.0",
-    "documentation": "13.2.4",
+    "documentation": "13.2.5",
     "ember-auto-import": "2.4.2",
     "ember-cli": "4.6.0",
     "ember-cli-dependency-checker": "3.3.1",
