@@ -78,7 +78,7 @@
     "loader.js": "4.7.0",
     "prettier": "2.7.1",
     "qunit": "2.19.1",
-    "release-it": "15.3.0",
+    "release-it": "15.4.2",
     "release-it-lerna-changelog": "5.0.0",
     "rollup": "2.78.1",
     "rollup-plugin-typescript2": "0.32.1",
