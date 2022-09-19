@@ -143,10 +143,10 @@ Assert an [HTMLElement][118] (or multiple) matching the `selector` exists.
 
 #### Parameters
 
-*   `options` **[object][119]?** 
+*   `options` **[object][119]?**&#x20;
 
-    *   `options.count` **[number][120]?** 
-*   `message` **[string][121]?** 
+    *   `options.count` **[number][120]?**&#x20;
+*   `message` **[string][121]?**&#x20;
 
 #### Examples
 
@@ -163,7 +163,7 @@ Assert an [HTMLElement][118] matching the `selector` does not exists.
 
 #### Parameters
 
-*   `message` **[string][121]?** 
+*   `message` **[string][121]?**&#x20;
 
 #### Examples
 
@@ -182,7 +182,7 @@ Note: This also supports `aria-checked="true/false"`.
 
 #### Parameters
 
-*   `message` **[string][121]?** 
+*   `message` **[string][121]?**&#x20;
 
 #### Examples
 
@@ -201,7 +201,7 @@ Note: This also supports `aria-checked="true/false"`.
 
 #### Parameters
 
-*   `message` **[string][121]?** 
+*   `message` **[string][121]?**&#x20;
 
 #### Examples
 
@@ -218,7 +218,7 @@ Assert that the [HTMLElement][118] or an [HTMLElement][118] matching the
 
 #### Parameters
 
-*   `message` **[string][121]?** 
+*   `message` **[string][121]?**&#x20;
 
 #### Examples
 
@@ -235,7 +235,7 @@ Assert that the [HTMLElement][118] or an [HTMLElement][118] matching the
 
 #### Parameters
 
-*   `message` **[string][121]?** 
+*   `message` **[string][121]?**&#x20;
 
 #### Examples
 
@@ -252,7 +252,7 @@ Assert that the [HTMLElement][118] or an [HTMLElement][118] matching the
 
 #### Parameters
 
-*   `message` **[string][121]?** 
+*   `message` **[string][121]?**&#x20;
 
 #### Examples
 
@@ -269,7 +269,7 @@ Assert that the [HTMLElement][118] or an [HTMLElement][118] matching the
 
 #### Parameters
 
-*   `message` **[string][121]?** 
+*   `message` **[string][121]?**&#x20;
 
 #### Examples
 
@@ -289,7 +289,7 @@ Validity is determined by asserting that:
 
 #### Parameters
 
-*   `message` **[string][121]?** 
+*   `message` **[string][121]?**&#x20;
 
 #### Examples
 
@@ -309,7 +309,7 @@ Validity is determined by asserting that:
 
 #### Parameters
 
-*   `message` **[string][121]?** 
+*   `message` **[string][121]?**&#x20;
 
 #### Examples
 
@@ -334,10 +334,10 @@ but not necessarily in the viewport.
 
 #### Parameters
 
-*   `options` **[object][119]?** 
+*   `options` **[object][119]?**&#x20;
 
-    *   `options.count` **[number][120]?** 
-*   `message` **[string][121]?** 
+    *   `options.count` **[number][120]?**&#x20;
+*   `message` **[string][121]?**&#x20;
 
 #### Examples
 
@@ -363,7 +363,7 @@ but not necessarily in the viewport.
 
 #### Parameters
 
-*   `message` **[string][121]?** 
+*   `message` **[string][121]?**&#x20;
 
 #### Examples
 
@@ -381,9 +381,9 @@ or regular expression.
 
 #### Parameters
 
-*   `name` **[string][121]** 
-*   `value` **([string][121] | [RegExp][132] | [object][119]?)** 
-*   `message` **[string][121]?** 
+*   `name` **[string][121]**&#x20;
+*   `value` **([string][121] | [RegExp][132] | [object][119]?)**&#x20;
+*   `message` **[string][121]?**&#x20;
 
 #### Examples
 
@@ -401,8 +401,8 @@ Assert that the [HTMLElement][118] has no attribute with the provided `name`.
 
 #### Parameters
 
-*   `name` **[string][121]** 
-*   `message` **[string][121]?** 
+*   `name` **[string][121]**&#x20;
+*   `message` **[string][121]?**&#x20;
 
 #### Examples
 
@@ -420,9 +420,9 @@ text or regular expression.
 
 #### Parameters
 
-*   `name` **[string][121]** 
-*   `value` **([string][121] | [RegExp][132] | [object][119]?)** 
-*   `message` **[string][121]?** 
+*   `name` **[string][121]**&#x20;
+*   `value` **([string][121] | [RegExp][132] | [object][119]?)**&#x20;
+*   `message` **[string][121]?**&#x20;
 
 #### Examples
 
@@ -441,8 +441,8 @@ provided `name`.
 
 #### Parameters
 
-*   `name` **[string][121]** 
-*   `message` **[string][121]?** 
+*   `name` **[string][121]**&#x20;
+*   `message` **[string][121]?**&#x20;
 
 #### Examples
 
@@ -460,9 +460,9 @@ expression.
 
 #### Parameters
 
-*   `name` **[string][121]** 
-*   `value` **([RegExp][132] | any)** 
-*   `message` **[string][121]?** 
+*   `name` **[string][121]**&#x20;
+*   `value` **([RegExp][132] | any)**&#x20;
+*   `message` **[string][121]?**&#x20;
 
 #### Examples
 
@@ -479,7 +479,7 @@ Assert that the [HTMLElement][118] or an [HTMLElement][118] matching the
 
 #### Parameters
 
-*   `message` **[string][121]?** 
+*   `message` **[string][121]?**&#x20;
 
 #### Examples
 
@@ -498,7 +498,7 @@ Assert that the [HTMLElement][118] or an [HTMLElement][118] matching the
 
 #### Parameters
 
-*   `message` **[string][121]?** 
+*   `message` **[string][121]?**&#x20;
 
 #### Examples
 
@@ -518,8 +518,8 @@ true if any of the element's CSS classes match.
 
 #### Parameters
 
-*   `expected` **([string][121] | [RegExp][132])** 
-*   `message` **[string][121]?** 
+*   `expected` **([string][121] | [RegExp][132])**&#x20;
+*   `message` **[string][121]?**&#x20;
 
 #### Examples
 
@@ -545,8 +545,8 @@ true if none of the element's CSS classes match.
 
 #### Parameters
 
-*   `expected` **([string][121] | [RegExp][132])** 
-*   `message` **[string][121]?** 
+*   `expected` **([string][121] | [RegExp][132])**&#x20;
+*   `message` **[string][121]?**&#x20;
 
 #### Examples
 
@@ -567,8 +567,8 @@ Assert that the \[HTMLElement]\[] has the `expected` style declarations using
 
 #### Parameters
 
-*   `expected` **[object][119]** 
-*   `message` **[string][121]?** 
+*   `expected` **[object][119]**&#x20;
+*   `message` **[string][121]?**&#x20;
 
 #### Examples
 
@@ -588,9 +588,9 @@ Assert that the pseudo element for `selector` of the \[HTMLElement]\[] has the `
 
 #### Parameters
 
-*   `selector` **[string][121]** 
-*   `expected` **[object][119]** 
-*   `message` **[string][121]?** 
+*   `selector` **[string][121]**&#x20;
+*   `expected` **[object][119]**&#x20;
+*   `message` **[string][121]?**&#x20;
 
 #### Examples
 
@@ -609,8 +609,8 @@ Assert that the \[HTMLElement]\[] does not have the `expected` style declaration
 
 #### Parameters
 
-*   `expected` **[object][119]** 
-*   `message` **[string][121]?** 
+*   `expected` **[object][119]**&#x20;
+*   `message` **[string][121]?**&#x20;
 
 #### Examples
 
@@ -630,9 +630,9 @@ Assert that the pseudo element for `selector` of the \[HTMLElement]\[] does not 
 
 #### Parameters
 
-*   `selector` **[string][121]** 
-*   `expected` **[object][119]** 
-*   `message` **[string][121]?** 
+*   `selector` **[string][121]**&#x20;
+*   `expected` **[object][119]**&#x20;
+*   `message` **[string][121]?**&#x20;
 
 #### Examples
 
@@ -661,8 +661,8 @@ attribute and stripping/collapsing whitespace.
 
 #### Parameters
 
-*   `expected` **([string][121] | [RegExp][132])** 
-*   `message` **[string][121]?** 
+*   `expected` **([string][121] | [RegExp][132])**&#x20;
+*   `message` **[string][121]?**&#x20;
 
 #### Examples
 
@@ -686,7 +686,7 @@ Assert that the `textContent` property of an [HTMLElement][118] is not empty.
 
 #### Parameters
 
-*   `message` **[string][121]?** 
+*   `message` **[string][121]?**&#x20;
 
 #### Examples
 
@@ -702,7 +702,7 @@ Assert that the `textContent` property of an [HTMLElement][118] is empty.
 
 #### Parameters
 
-*   `message` **[string][121]?** 
+*   `message` **[string][121]?**&#x20;
 
 #### Examples
 
@@ -728,8 +728,8 @@ attribute.
 
 #### Parameters
 
-*   `text` **[string][121]** 
-*   `message` **[string][121]?** 
+*   `text` **[string][121]**&#x20;
+*   `message` **[string][121]?**&#x20;
 
 #### Examples
 
@@ -748,8 +748,8 @@ attribute.
 
 #### Parameters
 
-*   `text` **[string][121]** 
-*   `message` **[string][121]?** 
+*   `text` **[string][121]**&#x20;
+*   `message` **[string][121]?**&#x20;
 
 #### Examples
 
@@ -770,8 +770,8 @@ If no `expected` value is provided, the assertion will fail if the
 
 #### Parameters
 
-*   `expected` **([string][121] | [RegExp][132] | [object][119]?)** 
-*   `message` **[string][121]?** 
+*   `expected` **([string][121] | [RegExp][132] | [object][119]?)**&#x20;
+*   `message` **[string][121]?**&#x20;
 
 #### Examples
 
@@ -788,7 +788,7 @@ Assert that the `value` property of an [HTMLInputElement][149] is not empty.
 
 #### Parameters
 
-*   `message` **[string][121]?** 
+*   `message` **[string][121]?**&#x20;
 
 #### Examples
 
@@ -807,7 +807,7 @@ Assert that the `value` property of an [HTMLInputElement][149] is empty.
 
 #### Parameters
 
-*   `message` **[string][121]?** 
+*   `message` **[string][121]?**&#x20;
 
 #### Examples
 
@@ -822,8 +822,8 @@ compareSelector.
 
 #### Parameters
 
-*   `compareSelector` **[string][121]** 
-*   `message` **[string][121]?** 
+*   `compareSelector` **[string][121]**&#x20;
+*   `message` **[string][121]?**&#x20;
 
 #### Examples
 
@@ -838,8 +838,8 @@ compareSelector.
 
 #### Parameters
 
-*   `compareSelector` **[string][121]** 
-*   `message` **[string][121]?** 
+*   `compareSelector` **[string][121]**&#x20;
+*   `message` **[string][121]?**&#x20;
 
 #### Examples
 
@@ -856,9 +856,9 @@ property of the [HTMLElement][118].
 
 #### Parameters
 
-*   `tagName`  
-*   `message` **[string][121]?** 
-*   `expected` **[string][121]** 
+*   `tagName` &#x20;
+*   `message` **[string][121]?**&#x20;
+*   `expected` **[string][121]**&#x20;
 
 #### Examples
 
@@ -879,9 +879,9 @@ property of the [HTMLElement][118].
 
 #### Parameters
 
-*   `tagName`  
-*   `message` **[string][121]?** 
-*   `expected` **[string][121]** 
+*   `tagName` &#x20;
+*   `message` **[string][121]?**&#x20;
+*   `expected` **[string][121]**&#x20;
 
 #### Examples
 
