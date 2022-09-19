@@ -1,13 +1,11 @@
 qunit-dom
 ==============================================================================
 
-[![CI Build Status](https://github.com/simplabs/qunit-dom/actions/workflows/ci.yml/badge.svg)](https://github.com/simplabs/qunit-dom/actions/workflows/ci.yml)
+[![CI Build Status](https://github.com/Mainmatter/qunit-dom/actions/workflows/ci.yml/badge.svg)](https://github.com/Mainmatter/qunit-dom/actions/workflows/ci.yml)
 [![Latest NPM release][npm-badge]][npm-badge-url]
 
 [npm-badge]: https://img.shields.io/npm/v/qunit-dom.svg
 [npm-badge-url]: https://www.npmjs.com/package/qunit-dom
-[travis-badge]: https://img.shields.io/travis/simplabs/qunit-dom/master.svg
-[travis-badge-url]: https://travis-ci.org/simplabs/qunit-dom
 
 High Level DOM Assertions for [QUnit](https://qunitjs.com/)
 
@@ -90,7 +88,7 @@ test('the title is welcoming', function(assert) {
 **All available assertions are documented in [API.md](API.md).**
 
 A basic codemod to automatically convert your assertions is available at
-[https://github.com/simplabs/qunit-dom-codemod](https://github.com/simplabs/qunit-dom-codemod).
+[https://github.com/Mainmatter/qunit-dom-codemod](https://github.com/Mainmatter/qunit-dom-codemod).
 
 
 ### TypeScript
@@ -126,4 +124,4 @@ License
 
 qunit-dom is developed by and &copy;
 [Mainmatter GmbH](http://mainmatter.com) and contributors. It is released under the
-[MIT License](https://github.com/simplabs/qunit-dom/blob/master/LICENSE.md).
+[MIT License](https://github.com/Mainmatter/qunit-dom/blob/master/LICENSE.md).
