@@ -40,7 +40,7 @@ specifiers:
   release-it: 15.4.2
   release-it-lerna-changelog: 5.0.0
   rollup: 2.79.0
-  rollup-plugin-typescript2: 0.32.1
+  rollup-plugin-typescript2: 0.34.0
   ts-jest: 27.1.5
   typescript: 4.8.3
   webpack: 5.74.0
@@ -87,7 +87,7 @@ devDependencies:
   release-it: 15.4.2
   release-it-lerna-changelog: 5.0.0_release-it@15.4.2
   rollup: 2.79.0
-  rollup-plugin-typescript2: 0.32.1_ihkqvyh37tzxtjmovjyy2yrv7m
+  rollup-plugin-typescript2: 0.34.0_ihkqvyh37tzxtjmovjyy2yrv7m
   ts-jest: 27.1.5_qqheuyrmnawe7ws7n63adpwbnu
   typescript: 4.8.3
   webpack: 5.74.0
@@ -15067,8 +15067,8 @@ packages:
       inherits: 2.0.4
     dev: true
 
-  /rollup-plugin-typescript2/0.32.1_ihkqvyh37tzxtjmovjyy2yrv7m:
-    resolution: {integrity: sha512-RanO8bp1WbeMv0bVlgcbsFNCn+Y3rX7wF97SQLDxf0fMLsg0B/QFF005t4AsGUcDgF3aKJHoqt4JF2xVaABeKw==}
+  /rollup-plugin-typescript2/0.34.0_ihkqvyh37tzxtjmovjyy2yrv7m:
+    resolution: {integrity: sha512-dGtOz2kL6nQVgfIOmnA4Xh+5cFrs3bdu4jja/ej7WKR92RzOOixsn71LY5ZFFmKe1R677nUh+k2++NiY3un2PQ==}
     peerDependencies:
       rollup: '>=1.26.3'
       typescript: '>=2.4.0'
@@ -15076,7 +15076,6 @@ packages:
       '@rollup/pluginutils': 4.2.1
       find-cache-dir: 3.3.2
       fs-extra: 10.1.0
-      resolve: 1.22.1
       rollup: 2.79.0
       tslib: 2.4.0
       typescript: 4.8.3
