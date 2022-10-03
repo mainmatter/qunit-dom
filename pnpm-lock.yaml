@@ -37,7 +37,7 @@ specifiers:
   loader.js: 4.7.0
   prettier: 2.7.1
   qunit: 2.19.1
-  release-it: 15.4.2
+  release-it: 15.4.3
   release-it-lerna-changelog: 5.0.0
   rollup: 2.79.1
   rollup-plugin-typescript2: 0.34.0
@@ -84,8 +84,8 @@ devDependencies:
   loader.js: 4.7.0
   prettier: 2.7.1
   qunit: 2.19.1
-  release-it: 15.4.2
-  release-it-lerna-changelog: 5.0.0_release-it@15.4.2
+  release-it: 15.4.3
+  release-it-lerna-changelog: 5.0.0_release-it@15.4.3
   rollup: 2.79.1
   rollup-plugin-typescript2: 0.34.0_gypgyaqhine6mwjfvh7icfhviq
   ts-jest: 27.1.5_h2mjkler2cwtrz56xjx3qgassu
@@ -2729,15 +2729,6 @@ packages:
     dependencies:
       '@types/connect': 3.4.35
       '@types/node': 18.7.18
-    dev: true
-
-  /@types/cacheable-request/6.0.2:
-    resolution: {integrity: sha512-B3xVo+dlKM6nnKTcmm5ZtY/OL8bOAOd2Olee9M1zft65ox50OzjEHW91sDiU9j6cvW8Ejg1/Qkf4xd2kugApUA==}
-    dependencies:
-      '@types/http-cache-semantics': 4.0.1
-      '@types/keyv': 3.1.4
-      '@types/node': 18.7.18
-      '@types/responselike': 1.0.0
     dev: true
 
   /@types/chai-as-promised/7.1.5:
@@ -5910,9 +5901,22 @@ packages:
       unset-value: 1.0.0
     dev: true
 
-  /cacheable-lookup/6.1.0:
-    resolution: {integrity: sha512-KJ/Dmo1lDDhmW2XDPMo+9oiy/CeqosPguPCrgcVzKyZrL6pM1gU2GmPY/xo6OQPTUaA/c0kwHuywB4E6nmT9ww==}
-    engines: {node: '>=10.6.0'}
+  /cacheable-lookup/7.0.0:
+    resolution: {integrity: sha512-+qJyx4xiKra8mZrcwhjMRMUhD5NR1R8esPkzIYxX96JiecFoxAXFuz/GpR3+ev4PE1WamHip78wV0vcmPQtp8w==}
+    engines: {node: '>=14.16'}
+    dev: true
+
+  /cacheable-request/10.2.1:
+    resolution: {integrity: sha512-3tLJyBjGuXw1s5gpKFSG3iS4kaKT4id04dZi98wzHQp/8cqZNweBnrF9J+rrlvrf4M53OdtDGNctNHFias8BEA==}
+    engines: {node: '>=14.16'}
+    dependencies:
+      '@types/http-cache-semantics': 4.0.1
+      get-stream: 6.0.1
+      http-cache-semantics: 4.1.0
+      keyv: 4.5.0
+      mimic-response: 4.0.0
+      normalize-url: 7.2.0
+      responselike: 3.0.0
     dev: true
 
   /cacheable-request/6.1.0:
@@ -5926,19 +5930,6 @@ packages:
       lowercase-keys: 2.0.0
       normalize-url: 4.5.1
       responselike: 1.0.2
-    dev: true
-
-  /cacheable-request/7.0.2:
-    resolution: {integrity: sha512-pouW8/FmiPQbuGpkXQ9BAPv/Mo5xDGANgSNXzTzJ8DrKGuXOssM4wIQRjfanNRh3Yu5cfYPvcorqbhg2KIJtew==}
-    engines: {node: '>=8'}
-    dependencies:
-      clone-response: 1.0.3
-      get-stream: 5.2.0
-      http-cache-semantics: 4.1.0
-      keyv: 4.5.0
-      lowercase-keys: 2.0.0
-      normalize-url: 6.1.0
-      responselike: 2.0.1
     dev: true
 
   /calculate-cache-key-for-tree/2.0.0:
@@ -9347,8 +9338,8 @@ packages:
       git-up: 6.0.0
     dev: true
 
-  /git-url-parse/13.0.0:
-    resolution: {integrity: sha512-X1kozCqKL82dMrCLi4vie9SHDC+QugKskAMs4VUbIkhURKg5yDwxDmf6Ixg73J+/xVgK5TXKhzn8a94nHJHpnA==}
+  /git-url-parse/13.1.0:
+    resolution: {integrity: sha512-5FvPJP/70WkIprlUZ33bm4UAaFdjcLkJLpWft1BeZKqwR0uhhNGoKwlUaPtVb4LxCSQ++erHapRak9kWGj+FCA==}
     dependencies:
       git-up: 7.0.0
     dev: true
@@ -9505,15 +9496,14 @@ packages:
     resolution: {integrity: sha512-uHJgbwAMwNFf5mLst7IWLNg14x1CkeqglJb/K3doi4dw6q2IvAAmM/Y81kevy83wP+Sst+nutFTYOGg3d1lsxg==}
     dev: true
 
-  /got/12.4.1:
-    resolution: {integrity: sha512-Sz1ojLt4zGNkcftIyJKnulZT/yEDvifhUjccHA8QzOuTgPs/+njXYNMFE3jR4/2OODQSSbH8SdnoLCkbh41ieA==}
+  /got/12.5.1:
+    resolution: {integrity: sha512-sD16AK8cCyUoPtKr/NMvLTFFa+T3i3S+zoiuvhq0HP2YiqBZA9AtlBjAdsQBsLBK7slPuvmfE0OxhGi7N5dD4w==}
     engines: {node: '>=14.16'}
     dependencies:
       '@sindresorhus/is': 5.3.0
       '@szmarczak/http-timer': 5.0.1
-      '@types/cacheable-request': 6.0.2
-      cacheable-lookup: 6.1.0
-      cacheable-request: 7.0.2
+      cacheable-lookup: 7.0.0
+      cacheable-request: 10.2.1
       decompress-response: 6.0.0
       form-data-encoder: 2.1.2
       get-stream: 6.0.1
@@ -10114,8 +10104,8 @@ packages:
       through: 2.3.8
     dev: true
 
-  /inquirer/9.1.1:
-    resolution: {integrity: sha512-hfS9EJ1pVkGNbYKqzdGwMj0Dqosd36Qvxd5pFy4657QT23gmtFTSqoYBisZR75DReeSMWPNa8J0Lf6TQCz8PvA==}
+  /inquirer/9.1.2:
+    resolution: {integrity: sha512-Hj2Ml1WpxKJU2npP2Rj0OURGkHV+GtNW2CwFdHDiXlqUBAUrWTcZHxCkFywX/XHzOS7wrG/kExgJFbUkVgyHzg==}
     engines: {node: '>=12.0.0'}
     dependencies:
       ansi-escapes: 5.0.0
@@ -12425,6 +12415,11 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
+  /mimic-response/4.0.0:
+    resolution: {integrity: sha512-e5ISH9xMYU0DzrT+jl8q2ze9D6eWBto+I8CNpe+VI+K2J/F/k3PdkdTdz4wvGVH4NTpo+NRYTVIuMQEMMcsLqg==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+    dev: true
+
   /mini-css-extract-plugin/1.6.2_webpack@5.74.0:
     resolution: {integrity: sha512-WhDvO3SjGm40oV5y26GjMJYjd2UMqrLAGKy5YS2/3QKJy2F7jgynuHTir/tgUUOiNQu5saXHdc8reo7YuhhT4Q==}
     engines: {node: '>= 10.13.0'}
@@ -12819,6 +12814,11 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
+  /normalize-url/7.2.0:
+    resolution: {integrity: sha512-uhXOdZry0L6M2UIo9BTt7FdpBDiAGN/7oItedQwPKh8jh31ZlvC8U9Xl/EJ3aijDHaywXTW3QbZ6LuCocur1YA==}
+    engines: {node: '>=12.20'}
+    dev: true
+
   /npm-package-arg/9.1.0:
     resolution: {integrity: sha512-4J0GL+u2Nh6OnhvUKXRr2ZMG4lR8qtLp+kv7UiV00Y+nGiSxtttCyIRHCt5L5BNkXQld/RceYItau3MDOoGiBw==}
     engines: {node: ^12.13.0 || ^14.15.0 || >=16.0.0}
@@ -13189,7 +13189,7 @@ packages:
     resolution: {integrity: sha512-hySwcV8RAWeAfPsXb9/HGSPn8lwDnv6fabH+obUZKX169QknRkRhPxd1yMubpKDskLFATkl3jHpNtVtDPFA0Wg==}
     engines: {node: '>=14.16'}
     dependencies:
-      got: 12.4.1
+      got: 12.5.1
       registry-auth-token: 5.0.1
       registry-url: 6.0.1
       semver: 7.3.7
@@ -14068,7 +14068,7 @@ packages:
     dependencies:
       jsesc: 0.5.0
 
-  /release-it-lerna-changelog/5.0.0_release-it@15.4.2:
+  /release-it-lerna-changelog/5.0.0_release-it@15.4.3:
     resolution: {integrity: sha512-s/rHzwAwp878bivWKsJKNya9SRVKYZjgpyyGzg5ddBKZY5u5lhTWhxHtld7mHTRg4azIN7YypPH3rGaOfVmNVw==}
     engines: {node: ^14.13.1 || >= 16}
     deprecated: This package has been renamed to @release-it-plugins/lerna-changelog
@@ -14079,7 +14079,7 @@ packages:
       lerna-changelog: 2.2.0
       lodash.template: 4.5.0
       mdast-util-from-markdown: 1.2.0
-      release-it: 15.4.2
+      release-it: 15.4.3
       tmp: 0.2.1
       validate-peer-dependencies: 2.1.0
       which: 2.0.2
@@ -14088,8 +14088,8 @@ packages:
       - supports-color
     dev: true
 
-  /release-it/15.4.2:
-    resolution: {integrity: sha512-8UszvMbV/+aNZ03TRIpPiKOyO7s6fWkSHZ0Bz08qUBpO8F+o2j6o4+TEygPygJznW8UcfO1SDldagqBMIfOh5Q==}
+  /release-it/15.4.3:
+    resolution: {integrity: sha512-+GPciiCLhb9AUNlRNmajHtGAr6ud8uu2qHLRQRPJgqO3KE5RnVXjRgmJPn5MIupaAavrEltklMC4vpnl8pydsA==}
     engines: {node: '>=14.9'}
     hasBin: true
     dependencies:
@@ -14100,10 +14100,10 @@ packages:
       cosmiconfig: 7.0.1
       execa: 6.1.0
       form-data: 4.0.0
-      git-url-parse: 13.0.0
+      git-url-parse: 13.1.0
       globby: 13.1.2
-      got: 12.4.1
-      inquirer: 9.1.1
+      got: 12.5.1
+      inquirer: 9.1.2
       is-ci: 3.0.1
       lodash: 4.17.21
       mime-types: 2.1.35
@@ -14335,12 +14335,6 @@ packages:
     resolution: {integrity: sha512-/Fpe5guzJk1gPqdJLJR5u7eG/gNY4nImjbRDaVWVMRhne55TCmj2i9Q+54PBRfatRC8v/rIiv9BN0pMd9OV5EQ==}
     dependencies:
       lowercase-keys: 1.0.1
-    dev: true
-
-  /responselike/2.0.1:
-    resolution: {integrity: sha512-4gl03wn3hj1HP3yzgdI7d3lCkF95F21Pz4BPGvKHinyQzALR5CapwC8yIi0Rh58DEMQ/SguC03wFj2k0M/mHhw==}
-    dependencies:
-      lowercase-keys: 2.0.0
     dev: true
 
   /responselike/3.0.0:
