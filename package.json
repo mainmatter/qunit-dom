@@ -76,7 +76,7 @@
     "jest": "27.5.1",
     "lerna-changelog": "2.2.0",
     "loader.js": "4.7.0",
-    "prettier": "2.7.1",
+    "prettier": "2.8.0",
     "qunit": "2.19.3",
     "release-it": "15.5.0",
     "release-it-lerna-changelog": "5.0.0",
