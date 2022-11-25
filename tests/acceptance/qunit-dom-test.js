@@ -40,6 +40,9 @@ module('Acceptance | qunit-dom', function (hooks) {
      */
     assert.dom('#with-pseudo-element').hasPseudoElementStyle(':after', { content: '";"' });
 
+    assert.dom('#overflowing-container').isOverflowing();
+    assert.dom('#not-overflowing-container').isNotOverflowing();
+
     assert.throws(() => assert.dom('foo', 'bar'), /bar is not a valid root element/);
   });
 });

@@ -1,6 +1,8 @@
 <h2 id="title">
   Welcome to <b>Ember</b>
 </h2>
+
+{{!-- Used for testing isVisible and isNotVisible --}}
 <p id="display-none" style="display: none;">You can't see me.</p>
 <div style="display: none;">
   <p id="display-descendant" style="display: block;">You can't see me.</p>
@@ -13,5 +15,14 @@
   #with-pseudo-element::after { content: ";"; }
 </style>
 <div id="with-pseudo-element">There is more to me.</div>
+
+{{!-- Used for testing isOverflowing and isNotOverflowing --}}
+<div id="overflowing-container" style="max-width: 100px; overflow-x: scroll;">
+  <div style="width: 150px;">bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla</div>
+</div>
+
+<div id="not-overflowing-container" style="max-width: 100px; overflow-x: scroll;">
+  <div style="width: 50px;">bla bla</div>
+</div>
 
 {{outlet}}

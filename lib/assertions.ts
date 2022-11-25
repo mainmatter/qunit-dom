@@ -8,6 +8,8 @@ import isNotRequired from './assertions/is-not-required';
 import isValid from './assertions/is-valid';
 import isVisible from './assertions/is-visible';
 import isDisabled from './assertions/is-disabled';
+import isOverflowing from './assertions/is-overflowing';
+import isNotOverflowing from './assertions/is-not-overflowing';
 import matchesSelector from './assertions/matches-selector';
 import elementToString from './helpers/element-to-string';
 import collapseWhitespace from './helpers/collapse-whitespace';
@@ -109,6 +111,46 @@ export default class DOMAssertions {
    */
   isChecked(message?: string): DOMAssertions {
     isChecked.call(this, message);
+    return this;
+  }
+
+  /**
+   * Assert that the {@link HTMLElement} or an {@link HTMLElement} matching the
+   * `selector` is overflowing horizontally. In other words, assert the
+   * element has a horizontal scroll bar.
+   *
+   * This asserts the [`Element.scrollWidth`](https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollWidth) exceeds [`Element.clientWidth`](https://developer.mozilla.org/en-US/docs/Web/API/Element/clientWidth)
+   *
+   * @param {string?} message
+   *
+   * @example
+   * assert.dom('body').isNotOverflowing();
+   *
+   * @see {@link #isNotOverflowing}
+   */
+  isOverflowing(message?: string): DOMAssertions {
+    isOverflowing.call(this, message);
+    return this;
+  }
+
+  /**
+   * Assert that the {@link HTMLElement} or an {@link HTMLElement} matching the
+   * `selector` is not overflowing horizontally. In other words, assert the
+   * element does not have a horizontal scroll bar.
+   *
+   * This asserts the [`Element.clientWidth`](https://developer.mozilla.org/en-US/docs/Web/API/Element/clientWidth) equals the [`Element.scrollWidth`](https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollWidth)
+   *
+   * Note: This is useful for the [Reflow standard](https://www.w3.org/WAI/WCAG21/Understanding/reflow.html).
+   *
+   * @param {string?} message
+   *
+   * @example
+   * assert.dom('body').isNotOverflowing();
+   *
+   * @see {@link #isOverflowing}
+   */
+  isNotOverflowing(message?: string): DOMAssertions {
+    isNotOverflowing.call(this, message);
     return this;
   }
 
