@@ -27,7 +27,7 @@ specifiers:
   ember-maybe-import-regenerator: 1.0.0
   ember-qunit: 6.0.0
   ember-resolver: 8.0.3
-  ember-source: 4.8.2
+  ember-source: 4.9.0
   ember-try: 2.0.0
   eslint: 8.28.0
   eslint-config-prettier: 8.5.0
@@ -53,7 +53,7 @@ dependencies:
 
 devDependencies:
   '@ember/optional-features': 2.0.0
-  '@ember/test-helpers': 2.8.1_ember-source@4.8.2
+  '@ember/test-helpers': 2.8.1_ember-source@4.9.0
   '@embroider/compat': 0.48.1_@embroider+core@0.48.1
   '@embroider/core': 0.48.1
   '@embroider/macros': 0.48.1
@@ -74,7 +74,7 @@ devDependencies:
   ember-maybe-import-regenerator: 1.0.0
   ember-qunit: 6.0.0_qhusffjocg4cnbdwj4yxijwhva
   ember-resolver: 8.0.3
-  ember-source: 4.8.2_webpack@5.75.0
+  ember-source: 4.9.0_webpack@5.75.0
   ember-try: 2.0.0
   eslint: 8.28.0
   eslint-config-prettier: 8.5.0_eslint@8.28.0
@@ -1769,7 +1769,7 @@ packages:
       - supports-color
     dev: true
 
-  /@ember/test-helpers/2.8.1_ember-source@4.8.2:
+  /@ember/test-helpers/2.8.1_ember-source@4.9.0:
     resolution: {integrity: sha512-jbsYwWyAdhL/pdPu7Gb3SG1gvIXY70FWMtC/Us0Kmvk82Y+5YUQ1SOC0io75qmOGYQmH7eQrd/bquEVd+4XtdQ==}
     engines: {node: 10.* || 12.* || 14.* || 15.* || >= 16.*}
     peerDependencies:
@@ -1777,13 +1777,13 @@ packages:
     dependencies:
       '@ember/test-waiters': 3.0.2
       '@embroider/macros': 1.9.0
-      '@embroider/util': 1.9.0_ember-source@4.8.2
+      '@embroider/util': 1.9.0_ember-source@4.9.0
       broccoli-debug: 0.6.5
       broccoli-funnel: 3.0.8
       ember-cli-babel: 7.26.11
       ember-cli-htmlbars: 5.7.2
       ember-destroyable-polyfill: 2.0.3
-      ember-source: 4.8.2_webpack@5.75.0
+      ember-source: 4.9.0_webpack@5.75.0
     transitivePeerDependencies:
       - '@babel/core'
       - supports-color
@@ -2038,7 +2038,7 @@ packages:
       typescript-memoize: 1.1.1
     dev: true
 
-  /@embroider/util/1.9.0_ember-source@4.8.2:
+  /@embroider/util/1.9.0_ember-source@4.9.0:
     resolution: {integrity: sha512-9I63iJK6N01OHJafmS/BX0msUkTlmhFMIEmDl/SRNACVi0nS6QfNyTgTTeji1P/DALf6eobg/9t/N4VhS9G9QA==}
     engines: {node: 12.* || 14.* || >= 16}
     peerDependencies:
@@ -2047,7 +2047,7 @@ packages:
       '@embroider/macros': 1.9.0
       broccoli-funnel: 3.0.8
       ember-cli-babel: 7.26.11
-      ember-source: 4.8.2_webpack@5.75.0
+      ember-source: 4.9.0_webpack@5.75.0
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -4876,7 +4876,7 @@ packages:
     dependencies:
       ansi-align: 3.0.1
       camelcase: 7.0.0
-      chalk: 5.0.1
+      chalk: 5.1.2
       cli-boxes: 3.0.0
       string-width: 5.1.2
       type-fest: 2.19.0
@@ -7268,7 +7268,7 @@ packages:
       '@ember/test-helpers': ^2.4.0
       qunit: ^2.13.0
     dependencies:
-      '@ember/test-helpers': 2.8.1_ember-source@4.8.2
+      '@ember/test-helpers': 2.8.1_ember-source@4.9.0
       broccoli-funnel: 3.0.8
       broccoli-merge-trees: 3.0.2
       common-tags: 1.8.2
@@ -7323,9 +7323,9 @@ packages:
       - encoding
     dev: true
 
-  /ember-source/4.8.2_webpack@5.75.0:
-    resolution: {integrity: sha512-YU/ytPaua+QOw+2qRrZM7qahAmxv+N8Utv/Xz2e01NQci6KTaY3AXx6SS3ge0G/KlGyL9ouaHLyHqv7xkcV2ww==}
-    engines: {node: '>= 12.*'}
+  /ember-source/4.9.0_webpack@5.75.0:
+    resolution: {integrity: sha512-TYwOpHbZKBSHaBEQSWZrUjj2lOBlARmUdENGaImT941T9wwdDyfdi0/6Nu3MIQs/eEVcBfUusT5PAC+rIUu3Tw==}
+    engines: {node: '>= 14.*'}
     peerDependencies:
       '@glimmer/component': ^1.1.2
     dependencies:
@@ -9426,7 +9426,7 @@ packages:
     engines: {node: '>=12.0.0'}
     dependencies:
       ansi-escapes: 5.0.0
-      chalk: 5.0.1
+      chalk: 5.1.2
       cli-cursor: 4.0.0
       cli-width: 4.0.0
       external-editor: 3.1.0
@@ -10953,7 +10953,7 @@ packages:
     resolution: {integrity: sha512-l0x2DvrW294C9uDCoQe1VSU4gf529FkSZ6leBl4TiqZH/e+0R7hSfHQBNut2mNygDgHwvYHfFLn6Oxb3VWj2rA==}
     engines: {node: '>=12'}
     dependencies:
-      chalk: 5.0.1
+      chalk: 5.1.2
       is-unicode-supported: 1.3.0
     dev: true
 
@@ -12168,7 +12168,7 @@ packages:
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     dependencies:
       bl: 5.1.0
-      chalk: 5.0.1
+      chalk: 5.1.2
       cli-cursor: 4.0.0
       cli-spinners: 2.7.0
       is-interactive: 2.0.0
@@ -15028,7 +15028,7 @@ packages:
     engines: {node: '>=14.16'}
     dependencies:
       boxen: 7.0.0
-      chalk: 5.0.1
+      chalk: 5.1.2
       configstore: 6.0.0
       has-yarn: 3.0.0
       import-lazy: 4.0.0
