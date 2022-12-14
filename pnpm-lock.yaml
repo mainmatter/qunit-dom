@@ -15,7 +15,7 @@ specifiers:
   babel-preset-env: 1.7.0
   broccoli-funnel: ^3.0.8
   broccoli-merge-trees: ^4.2.0
-  documentation: 14.0.0
+  documentation: 14.0.1
   ember-auto-import: 2.5.0
   ember-cli: 4.9.2
   ember-cli-babel: ^7.26.10
@@ -64,7 +64,7 @@ devDependencies:
   '@typescript-eslint/parser': 5.46.1_ha6vam6werchizxrnqvarmz2zu
   babel-plugin-transform-es2015-modules-commonjs: 6.26.2
   babel-preset-env: 1.7.0
-  documentation: 14.0.0
+  documentation: 14.0.1
   ember-auto-import: 2.5.0_webpack@5.75.0
   ember-cli: 4.9.2
   ember-cli-dependency-checker: 3.3.1_ember-cli@4.9.2
@@ -6653,8 +6653,8 @@ packages:
       esutils: 2.0.3
     dev: true
 
-  /documentation/14.0.0:
-    resolution: {integrity: sha512-4AwFzdiseEdtqR0KKLrruIQ5fvh7n5epg47P0ZyOidA5Fes5am+6xjqkDECHPwcv4pxJ6zITaHwzCoGblP0+JQ==}
+  /documentation/14.0.1:
+    resolution: {integrity: sha512-Y/brACCE3sNnDJPFiWlhXrqGY+NelLYVZShLGse5bT1KdohP4JkPf5T2KNq1YWhIEbDYl/1tebRLC0WYbPQxVw==}
     engines: {node: '>=14'}
     hasBin: true
     dependencies:
@@ -6667,7 +6667,7 @@ packages:
       chokidar: 3.5.3
       diff: 5.1.0
       doctrine-temporary-fork: 2.1.0
-      git-url-parse: 12.0.0
+      git-url-parse: 13.1.0
       github-slugger: 1.4.0
       glob: 8.0.3
       globals-docs: 2.4.1
@@ -8689,24 +8689,11 @@ packages:
     engines: {node: '>= 4.0'}
     dev: true
 
-  /git-up/6.0.0:
-    resolution: {integrity: sha512-6RUFSNd1c/D0xtGnyWN2sxza2bZtZ/EmI9448n6rCZruFwV/ezeEn2fJP7XnUQGwf0RAtd/mmUCbtH6JPYA2SA==}
-    dependencies:
-      is-ssh: 1.4.0
-      parse-url: 7.0.2
-    dev: true
-
   /git-up/7.0.0:
     resolution: {integrity: sha512-ONdIrbBCFusq1Oy0sC71F5azx8bVkvtZtMJAsv+a6lz5YAmbNnLD6HAB4gptHZVLPR8S2/kVN6Gab7lryq5+lQ==}
     dependencies:
       is-ssh: 1.4.0
       parse-url: 8.1.0
-    dev: true
-
-  /git-url-parse/12.0.0:
-    resolution: {integrity: sha512-I6LMWsxV87vysX1WfsoglXsXg6GjQRKq7+Dgiseo+h0skmp5Hp2rzmcEIRQot9CPA+uzU7x1x7jZdqvTFGnB+Q==}
-    dependencies:
-      git-up: 6.0.0
     dev: true
 
   /git-url-parse/13.1.0:
@@ -12052,11 +12039,6 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /normalize-url/6.1.0:
-    resolution: {integrity: sha512-DlL+XwOy3NxAQ8xuC0okPgK46iuVNAK01YN7RueYBqqFeGsBjV9XmCAzAdgt+667bCl5kPh9EqKKDwnaPG1I7A==}
-    engines: {node: '>=10'}
-    dev: true
-
   /normalize-url/8.0.0:
     resolution: {integrity: sha512-uVFpKhj5MheNBJRTiMZ9pE/7hD1QTeEvugSJW/OmLzAp78PB5O6adfMNTvmfKhXBkvCzC+rqifWcVYpGFwTjnw==}
     engines: {node: '>=14.16'}
@@ -12501,12 +12483,6 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /parse-path/5.0.0:
-    resolution: {integrity: sha512-qOpH55/+ZJ4jUu/oLO+ifUKjFPNZGfnPJtzvGzKN/4oLMil5m9OH4VpOj6++9/ytJcfks4kzH2hhi87GL/OU9A==}
-    dependencies:
-      protocols: 2.0.1
-    dev: true
-
   /parse-path/7.0.0:
     resolution: {integrity: sha512-Euf9GG8WT9CdqwuWJGdf3RkUcTBArppHABkO7Lm8IzRQp0e2r/kkFnmhu4TSK30Wcu5rVAZLmfPKSBBi9tWFog==}
     dependencies:
@@ -12515,15 +12491,6 @@ packages:
 
   /parse-static-imports/1.1.0:
     resolution: {integrity: sha512-HlxrZcISCblEV0lzXmAHheH/8qEkKgmqkdxyHTPbSqsTUV8GzqmN1L+SSti+VbNPfbBO3bYLPHDiUs2avbAdbA==}
-    dev: true
-
-  /parse-url/7.0.2:
-    resolution: {integrity: sha512-PqO4Z0eCiQ08Wj6QQmrmp5YTTxpYfONdOEamrtvK63AmzXpcavIVQubGHxOEwiIoDZFb8uDOoQFS0NCcjqIYQg==}
-    dependencies:
-      is-ssh: 1.4.0
-      normalize-url: 6.1.0
-      parse-path: 5.0.0
-      protocols: 2.0.1
     dev: true
 
   /parse-url/8.1.0:
