@@ -2,7 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@ember/optional-features': 2.0.0
-  '@ember/test-helpers': 2.9.0
+  '@ember/test-helpers': 2.9.1
   '@embroider/compat': 0.48.1
   '@embroider/core': 0.48.1
   '@embroider/macros': 0.48.1
@@ -53,7 +53,7 @@ dependencies:
 
 devDependencies:
   '@ember/optional-features': 2.0.0
-  '@ember/test-helpers': 2.9.0_ember-source@4.9.3
+  '@ember/test-helpers': 2.9.1_ember-source@4.9.3
   '@embroider/compat': 0.48.1_@embroider+core@0.48.1
   '@embroider/core': 0.48.1
   '@embroider/macros': 0.48.1
@@ -72,7 +72,7 @@ devDependencies:
   ember-cli-inject-live-reload: 2.1.0
   ember-load-initializers: 2.1.2
   ember-maybe-import-regenerator: 1.0.0
-  ember-qunit: 6.0.0_6pszlid464u2yfid6l5rxkml4q
+  ember-qunit: 6.0.0_kpjf7lqvbhq5wc56pgzqud54da
   ember-resolver: 8.0.3
   ember-source: 4.9.3_webpack@5.75.0
   ember-try: 2.0.0
@@ -1769,8 +1769,8 @@ packages:
       - supports-color
     dev: true
 
-  /@ember/test-helpers/2.9.0_ember-source@4.9.3:
-    resolution: {integrity: sha512-poMnZk12dOt+yGtUvhW7IqUdb1iE2LqOyfsx+8BG3alxOU86A1m21SFiZV5fTwJ1ENCw2GvxpJGyidIItrKf3Q==}
+  /@ember/test-helpers/2.9.1_ember-source@4.9.3:
+    resolution: {integrity: sha512-1ZFZCnNfkXcQOf6Vxep/vbZMwFLfD+8heiLiQ6LSB5SY9F3VCF1yNslfgtDqmyQZXhAbbhRTDhy+rHuzzpd+yA==}
     engines: {node: 10.* || 12.* || 14.* || 15.* || >= 16.*}
     peerDependencies:
       ember-source: '>=3.8.0'
@@ -7240,14 +7240,14 @@ packages:
       - supports-color
     dev: true
 
-  /ember-qunit/6.0.0_6pszlid464u2yfid6l5rxkml4q:
+  /ember-qunit/6.0.0_kpjf7lqvbhq5wc56pgzqud54da:
     resolution: {integrity: sha512-idNWh9Ap2HN9e3Xozh5Jrciu5tDhn0okM/bgwDjdks3dwuMhEox45iiRTx469FWQ9+ixjZ40AsXsRTDkfCmvmw==}
     engines: {node: 14.* || 16.* || >= 17}
     peerDependencies:
       '@ember/test-helpers': ^2.4.0
       qunit: ^2.13.0
     dependencies:
-      '@ember/test-helpers': 2.9.0_ember-source@4.9.3
+      '@ember/test-helpers': 2.9.1_ember-source@4.9.3
       broccoli-funnel: 3.0.8
       broccoli-merge-trees: 3.0.2
       common-tags: 1.8.2
