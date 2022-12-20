@@ -12,7 +12,8 @@ export default function isDisabled(message?: string, options: { inverted?: boole
       element instanceof HTMLButtonElement ||
       element instanceof HTMLOptGroupElement ||
       element instanceof HTMLOptionElement ||
-      element instanceof HTMLFieldSetElement
+      element instanceof HTMLFieldSetElement ||
+      element instanceof HTMLLinkElement
     )
   ) {
     throw new TypeError(`Unexpected Element Type: ${element.toString()}`);
