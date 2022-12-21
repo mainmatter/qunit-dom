@@ -47,7 +47,7 @@
   },
   "devDependencies": {
     "@ember/optional-features": "2.0.0",
-    "@ember/test-helpers": "2.9.1",
+    "@ember/test-helpers": "2.9.3",
     "@embroider/compat": "0.48.1",
     "@embroider/core": "0.48.1",
     "@embroider/macros": "0.48.1",
