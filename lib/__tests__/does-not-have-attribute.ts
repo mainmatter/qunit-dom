@@ -52,7 +52,7 @@ describe('assert.dom(...).doesNotHaveAttribute()', () => {
     ]);
   });
 
-  test('fails for wrong content (string value)', () => {
+  test('fails for wrong content (boolean value)', () => {
     assert.dom('input').doesNotHaveAttribute('required');
     assert.dom(document.querySelector('input')).doesNotHaveAttribute('required');
 
