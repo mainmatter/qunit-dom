@@ -31,7 +31,7 @@ specifiers:
   ember-try: 2.0.0
   eslint: 8.30.0
   eslint-config-prettier: 8.5.0
-  eslint-plugin-jest: ^27.1.7
+  eslint-plugin-jest: 27.2.0
   eslint-plugin-prettier: 4.2.1
   jest: 27.5.1
   lerna-changelog: 2.2.0
@@ -79,7 +79,7 @@ devDependencies:
   ember-try: 2.0.0
   eslint: 8.30.0
   eslint-config-prettier: 8.5.0_eslint@8.30.0
-  eslint-plugin-jest: 27.1.7_nm2ic5nngwviwdbcm2f7ah557u
+  eslint-plugin-jest: 27.2.0_nm2ic5nngwviwdbcm2f7ah557u
   eslint-plugin-prettier: 4.2.1_kl4pe43v5b43npmso5hoplpbyi
   jest: 27.5.1
   lerna-changelog: 2.2.0
@@ -7609,8 +7609,8 @@ packages:
       eslint: 8.30.0
     dev: true
 
-  /eslint-plugin-jest/27.1.7_nm2ic5nngwviwdbcm2f7ah557u:
-    resolution: {integrity: sha512-0QVzf+og4YI1Qr3UoprkqqhezAZjFffdi62b0IurkCXMqPtRW84/UT4CKsYT80h/D82LA9avjO/80Ou1LdgbaQ==}
+  /eslint-plugin-jest/27.2.0_nm2ic5nngwviwdbcm2f7ah557u:
+    resolution: {integrity: sha512-KGIYtelk4rIhKocxRKUEeX+kJ0ZCab/CiSgS8BMcKD7AY7YxXhlg/d51oF5jq2rOrtuJEDYWRwXD95l6l2vtrA==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
     peerDependencies:
       '@typescript-eslint/eslint-plugin': ^5.0.0
