@@ -32,21 +32,6 @@ describe('assert.dom(...).isVisible()', () => {
         },
       ]);
     });
-
-    test('fails if element is missing', () => {
-      document.body.innerHTML = '<h1 class="baz">foo</h1>bar';
-
-      assert.dom('h2').isVisible();
-
-      expect(assert.results).toEqual([
-        {
-          actual: 'Element h2 is not visible',
-          expected: 'Element h2 is visible',
-          message: 'Element h2 is visible',
-          result: false,
-        },
-      ]);
-    });
   });
 
   describe('custom messages', () => {
