@@ -68,7 +68,7 @@
     "ember-maybe-import-regenerator": "1.0.0",
     "ember-qunit": "6.1.1",
     "ember-resolver": "9.0.1",
-    "ember-source": "4.9.3",
+    "ember-source": "4.10.0",
     "ember-try": "2.0.0",
     "eslint": "8.31.0",
     "eslint-config-prettier": "8.6.0",
