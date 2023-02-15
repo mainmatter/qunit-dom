@@ -9,4 +9,4 @@ bundle install
 bundle exec jekyll serve
 ```
 
-Copyright &copy; 2015-2018 simplabs GmbH (https://simplabs.com)
+Copyright &copy; 2015-2023 Mainmatter GmbH (https://mainmatter.com)
