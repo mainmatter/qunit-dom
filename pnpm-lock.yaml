@@ -25,7 +25,7 @@ specifiers:
   ember-cli-version-checker: ^5.1.2
   ember-load-initializers: 2.1.2
   ember-maybe-import-regenerator: 1.0.0
-  ember-qunit: 6.1.1
+  ember-qunit: 6.2.0
   ember-resolver: 9.0.1
   ember-source: 4.11.0
   ember-try: 2.0.0
@@ -73,7 +73,7 @@ devDependencies:
   ember-cli-inject-live-reload: 2.1.0
   ember-load-initializers: 2.1.2
   ember-maybe-import-regenerator: 1.0.0
-  ember-qunit: 6.1.1_ctcbkj4xro4mdfer2osyhq5z4q
+  ember-qunit: 6.2.0_qzpscdypvst2a7p4oplhefmfda
   ember-resolver: 9.0.1_ember-source@4.11.0
   ember-source: 4.11.0_webpack@5.75.0
   ember-try: 2.0.0
@@ -7342,13 +7342,15 @@ packages:
       - supports-color
     dev: true
 
-  /ember-qunit/6.1.1_ctcbkj4xro4mdfer2osyhq5z4q:
-    resolution: {integrity: sha512-3/jCpoecltFV6vm7GCtSDNRxBzWx96nP+QrbereJAnioSaGeLe+slKL3l80mGzMYDTvn7ESobZ+Ba+OQ1vMMKQ==}
+  /ember-qunit/6.2.0_qzpscdypvst2a7p4oplhefmfda:
+    resolution: {integrity: sha512-mC+0bp8DwWzJLn8SW3GS8KDZIkl4yLsNYwMi5Dw6+aFllq7FM2crd/dfY4MuOIHK7GKdjtmWJTMGnjSpeSayaw==}
     engines: {node: 14.* || 16.* || >= 18}
     peerDependencies:
-      ember-source: ^3.28 || ^4.0
+      '@ember/test-helpers': ^2.9.3
+      ember-source: '>=3.28'
       qunit: ^2.13.0
     dependencies:
+      '@ember/test-helpers': 2.9.3_ember-source@4.11.0
       broccoli-funnel: 3.0.8
       broccoli-merge-trees: 3.0.2
       common-tags: 1.8.2
