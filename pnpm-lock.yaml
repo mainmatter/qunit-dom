@@ -16,7 +16,7 @@ specifiers:
   broccoli-funnel: ^3.0.8
   broccoli-merge-trees: ^4.2.0
   documentation: 14.0.1
-  ember-auto-import: 2.6.1
+  ember-auto-import: 2.6.2
   ember-cli: 4.11.0
   ember-cli-babel: ^7.26.10
   ember-cli-dependency-checker: 3.3.1
@@ -66,7 +66,7 @@ devDependencies:
   babel-plugin-transform-es2015-modules-commonjs: 6.26.2
   babel-preset-env: 1.7.0
   documentation: 14.0.1
-  ember-auto-import: 2.6.1_webpack@5.77.0
+  ember-auto-import: 2.6.2_webpack@5.77.0
   ember-cli: 4.11.0
   ember-cli-dependency-checker: 3.3.1_ember-cli@4.11.0
   ember-cli-htmlbars: 6.2.0
@@ -6910,8 +6910,8 @@ packages:
   /electron-to-chromium/1.4.340:
     resolution: {integrity: sha512-zx8hqumOqltKsv/MF50yvdAlPF9S/4PXbyfzJS6ZGhbddGkRegdwImmfSVqCkEziYzrIGZ/TlrzBND4FysfkDg==}
 
-  /ember-auto-import/2.6.1_webpack@5.77.0:
-    resolution: {integrity: sha512-3bCRi/pXp4QslmuCXGlSz9xwR7DF5oDx3zZO5OXKzNZihtkqAM1xvGuRIdQSl46pvbAXOkp8Odl5fOen1i0dRw==}
+  /ember-auto-import/2.6.2_webpack@5.77.0:
+    resolution: {integrity: sha512-h0bdE1atVqEXkE+9OTkEi2wRHBpJilKn6iXlbrOS2nI4HGpWlqmUjWmQk/iMFad+1XEDBvNJnikxgtKb/GFL5A==}
     engines: {node: 12.* || 14.* || >= 16}
     dependencies:
       '@babel/core': 7.21.3
@@ -7412,7 +7412,7 @@ packages:
       broccoli-funnel: 3.0.8
       broccoli-merge-trees: 3.0.2
       common-tags: 1.8.2
-      ember-auto-import: 2.6.1_webpack@5.77.0
+      ember-auto-import: 2.6.2_webpack@5.77.0
       ember-cli-babel: 7.26.11
       ember-cli-test-loader: 3.0.0
       ember-source: 4.12.0_webpack@5.77.0
@@ -7482,7 +7482,7 @@ packages:
       broccoli-funnel: 3.0.8
       broccoli-merge-trees: 4.2.0
       chalk: 4.1.2
-      ember-auto-import: 2.6.1_webpack@5.77.0
+      ember-auto-import: 2.6.2_webpack@5.77.0
       ember-cli-babel: 7.26.11
       ember-cli-get-component-path-option: 1.0.0
       ember-cli-is-package-missing: 1.0.0
