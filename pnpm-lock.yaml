@@ -17,7 +17,7 @@ specifiers:
   broccoli-merge-trees: ^4.2.0
   documentation: 14.0.1
   ember-auto-import: 2.6.3
-  ember-cli: 4.12.0
+  ember-cli: 4.12.1
   ember-cli-babel: ^7.26.10
   ember-cli-dependency-checker: 3.3.1
   ember-cli-htmlbars: 6.2.0
@@ -67,8 +67,8 @@ devDependencies:
   babel-preset-env: 1.7.0
   documentation: 14.0.1
   ember-auto-import: 2.6.3_webpack@5.79.0
-  ember-cli: 4.12.0
-  ember-cli-dependency-checker: 3.3.1_ember-cli@4.12.0
+  ember-cli: 4.12.1
+  ember-cli-dependency-checker: 3.3.1_ember-cli@4.12.1
   ember-cli-htmlbars: 6.2.0
   ember-cli-inject-live-reload: 2.1.0
   ember-load-initializers: 2.1.2
@@ -7036,14 +7036,14 @@ packages:
       - supports-color
     dev: true
 
-  /ember-cli-dependency-checker/3.3.1_ember-cli@4.12.0:
+  /ember-cli-dependency-checker/3.3.1_ember-cli@4.12.1:
     resolution: {integrity: sha512-Tg6OeijjXNKWkDm6057Tr0N9j9Vlz/ITewXWpn1A/+Wbt3EowBx5ZKfvoupqz05EznKgL1B/ecG0t+JN7Qm6MA==}
     engines: {node: '>= 6'}
     peerDependencies:
       ember-cli: ^3.2.0 || ^4.0.0
     dependencies:
       chalk: 2.4.2
-      ember-cli: 4.12.0
+      ember-cli: 4.12.1
       find-yarn-workspace-root: 1.2.1
       is-git-url: 1.0.0
       resolve: 1.22.1
@@ -7200,8 +7200,8 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /ember-cli/4.12.0:
-    resolution: {integrity: sha512-4b8F6w1xwyLaukiNIq+LzqgaMXEIj1gib/OeCCqLtav4tnOgcj5xKtZ6ZRypUZq92BoSN7j5Tq21Z1kWWcMsZQ==}
+  /ember-cli/4.12.1:
+    resolution: {integrity: sha512-O4QqvbvyyAvIC5SlYNOOocEhX/co7wKOSEGf8M+ipU/zgzA5ElyKMAQly9wf1QJ/RbSD1j2cFVUBIdVH/OuJHg==}
     engines: {node: '>= 14'}
     hasBin: true
     dependencies:
