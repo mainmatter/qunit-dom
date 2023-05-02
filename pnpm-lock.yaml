@@ -38,7 +38,7 @@ specifiers:
   loader.js: 4.7.0
   prettier: 2.8.8
   qunit: 2.19.4
-  release-it: 15.10.2
+  release-it: 15.10.3
   release-it-lerna-changelog: 5.0.0
   rollup: 2.79.1
   rollup-plugin-typescript2: 0.34.1
@@ -86,8 +86,8 @@ devDependencies:
   loader.js: 4.7.0
   prettier: 2.8.8
   qunit: 2.19.4
-  release-it: 15.10.2
-  release-it-lerna-changelog: 5.0.0_release-it@15.10.2
+  release-it: 15.10.3
+  release-it-lerna-changelog: 5.0.0_release-it@15.10.3
   rollup: 2.79.1
   rollup-plugin-typescript2: 0.34.1_zptcx3kz3uwp66hzhyyt545weq
   ts-jest: 27.1.5_n4jzo3ixy42kfaqevs43wjx5ui
@@ -13479,7 +13479,7 @@ packages:
     dependencies:
       jsesc: 0.5.0
 
-  /release-it-lerna-changelog/5.0.0_release-it@15.10.2:
+  /release-it-lerna-changelog/5.0.0_release-it@15.10.3:
     resolution: {integrity: sha512-s/rHzwAwp878bivWKsJKNya9SRVKYZjgpyyGzg5ddBKZY5u5lhTWhxHtld7mHTRg4azIN7YypPH3rGaOfVmNVw==}
     engines: {node: ^14.13.1 || >= 16}
     deprecated: This package has been renamed to @release-it-plugins/lerna-changelog
@@ -13490,7 +13490,7 @@ packages:
       lerna-changelog: 2.2.0
       lodash.template: 4.5.0
       mdast-util-from-markdown: 1.3.0
-      release-it: 15.10.2
+      release-it: 15.10.3
       tmp: 0.2.1
       validate-peer-dependencies: 2.2.0
       which: 2.0.2
@@ -13499,8 +13499,8 @@ packages:
       - supports-color
     dev: true
 
-  /release-it/15.10.2:
-    resolution: {integrity: sha512-fm1MtEG6IFxMMmOhUzpw9FTx8k9Ln5iiM+bikjrg3oZ5JLJO1uR1yxloPqc4A2gIXUq+bQp8/g4wipOwgDmEcw==}
+  /release-it/15.10.3:
+    resolution: {integrity: sha512-OSdHOg76gwkpLbSLBK09GZQj5XWXwBP+S6v//rSoQKkjqklaCLK04Gl5NkTwNrQOHHiihs4ToesDNh2+w55k3w==}
     engines: {node: '>=14.9'}
     hasBin: true
     dependencies:
