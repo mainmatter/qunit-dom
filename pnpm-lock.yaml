@@ -5,7 +5,7 @@ specifiers:
   '@ember/test-helpers': 2.9.3
   '@embroider/compat': 0.48.1
   '@embroider/core': 0.48.1
-  '@embroider/macros': 0.48.1
+  '@embroider/macros': 1.11.0
   '@embroider/webpack': 0.48.1
   '@types/jest': 27.5.2
   '@types/qunit': 2.19.5
@@ -57,7 +57,7 @@ devDependencies:
   '@ember/test-helpers': 2.9.3_ember-source@4.12.0
   '@embroider/compat': 0.48.1_@embroider+core@0.48.1
   '@embroider/core': 0.48.1
-  '@embroider/macros': 0.48.1
+  '@embroider/macros': 1.11.0
   '@embroider/webpack': 0.48.1_srbossnhckriy2brv2pobl55vq
   '@types/jest': 27.5.2
   '@types/qunit': 2.19.5
