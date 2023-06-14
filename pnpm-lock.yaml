@@ -8,7 +8,7 @@ specifiers:
   '@embroider/macros': 0.48.1
   '@embroider/webpack': 0.48.1
   '@types/jest': 27.5.2
-  '@types/qunit': 2.19.5
+  '@types/qunit': 2.19.6
   '@typescript-eslint/eslint-plugin': 5.59.9
   '@typescript-eslint/parser': 5.59.9
   babel-plugin-transform-es2015-modules-commonjs: 6.26.2
@@ -60,7 +60,7 @@ devDependencies:
   '@embroider/macros': 0.48.1
   '@embroider/webpack': 0.48.1_2qsjiyevq57u5zgyt3qbr5vnhm
   '@types/jest': 27.5.2
-  '@types/qunit': 2.19.5
+  '@types/qunit': 2.19.6
   '@typescript-eslint/eslint-plugin': 5.59.9_3i5bqcvz3xm47mwpahnwyqmg7m
   '@typescript-eslint/parser': 5.59.9_kigkzfftsmftz3xok324pyvzui
   babel-plugin-transform-es2015-modules-commonjs: 6.26.2
@@ -3113,8 +3113,8 @@ packages:
     resolution: {integrity: sha512-FGa1F62FT09qcrueBA6qYTrJPVDzah9a+493+o2PCXsesWHIn27G98TsSMs3WPNbZIEj4+VJf6saSFpvD+3Zsw==}
     dev: true
 
-  /@types/qunit/2.19.5:
-    resolution: {integrity: sha512-NvyN1m6nKlRpAXETsTdqzEfW6C+5xbIqrXxQbnm8PmfxM7Ixi73KPoHgXCLJZHw8fd9pvCm3gVeX3nBYRuZLYQ==}
+  /@types/qunit/2.19.6:
+    resolution: {integrity: sha512-bz9STa6EHurtpSfn5cNiScBladlw43bM+7luQA985Kd9YlF4dZaLmKt3c5/oSyN1AWAl50YBpqTq0BxCP64nGg==}
     dev: true
 
   /@types/range-parser/1.2.4:
