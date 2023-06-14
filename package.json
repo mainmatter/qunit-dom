@@ -87,7 +87,7 @@
     "typescript": "4.9.5",
     "webpack": "5.86.0"
   },
-  "packageManager": "pnpm@7.33.0",
+  "packageManager": "pnpm@7.33.1",
   "changelog": {
     "repo": "simplabs/qunit-dom",
     "labels": {
