@@ -19,7 +19,7 @@ specifiers:
   ember-auto-import: 2.6.3
   ember-cli: 4.12.1
   ember-cli-babel: ^7.26.10
-  ember-cli-dependency-checker: 3.3.1
+  ember-cli-dependency-checker: 3.3.2
   ember-cli-htmlbars: 6.2.0
   ember-cli-inject-live-reload: 2.1.0
   ember-cli-version-checker: ^5.1.2
@@ -68,7 +68,7 @@ devDependencies:
   documentation: 14.0.2
   ember-auto-import: 2.6.3_webpack@5.87.0
   ember-cli: 4.12.1
-  ember-cli-dependency-checker: 3.3.1_ember-cli@4.12.1
+  ember-cli-dependency-checker: 3.3.2_ember-cli@4.12.1
   ember-cli-htmlbars: 6.2.0
   ember-cli-inject-live-reload: 2.1.0
   ember-load-initializers: 2.1.2
@@ -7206,11 +7206,11 @@ packages:
       - supports-color
     dev: true
 
-  /ember-cli-dependency-checker/3.3.1_ember-cli@4.12.1:
-    resolution: {integrity: sha512-Tg6OeijjXNKWkDm6057Tr0N9j9Vlz/ITewXWpn1A/+Wbt3EowBx5ZKfvoupqz05EznKgL1B/ecG0t+JN7Qm6MA==}
+  /ember-cli-dependency-checker/3.3.2_ember-cli@4.12.1:
+    resolution: {integrity: sha512-PwkrW5oYsdPWwt+0Tojufmv/hxVETTjkrEdK7ANQB2VSnqpA5UcYubwpQM9ONuR2J8wyNDMwEHlqIrk/FYtBsQ==}
     engines: {node: '>= 6'}
     peerDependencies:
-      ember-cli: ^3.2.0 || ^4.0.0
+      ember-cli: ^3.2.0 || >=4.0.0
     dependencies:
       chalk: 2.4.2
       ember-cli: 4.12.1
