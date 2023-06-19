@@ -31,7 +31,7 @@ specifiers:
   ember-try: 2.0.0
   eslint: 8.43.0
   eslint-config-prettier: 8.8.0
-  eslint-plugin-jest: 27.2.1
+  eslint-plugin-jest: 27.2.2
   eslint-plugin-prettier: 4.2.1
   jest: 27.5.1
   lerna-changelog: 2.2.0
@@ -79,7 +79,7 @@ devDependencies:
   ember-try: 2.0.0
   eslint: 8.43.0
   eslint-config-prettier: 8.8.0_eslint@8.43.0
-  eslint-plugin-jest: 27.2.1_u7sbn43e7mfumtaxmtdm6lujwu
+  eslint-plugin-jest: 27.2.2_u7sbn43e7mfumtaxmtdm6lujwu
   eslint-plugin-prettier: 4.2.1_zh6vkmzat4wtnmvmftdassiwyu
   jest: 27.5.1
   lerna-changelog: 2.2.0
@@ -7912,8 +7912,8 @@ packages:
       eslint: 8.43.0
     dev: true
 
-  /eslint-plugin-jest/27.2.1_u7sbn43e7mfumtaxmtdm6lujwu:
-    resolution: {integrity: sha512-l067Uxx7ZT8cO9NJuf+eJHvt6bqJyz2Z29wykyEdz/OtmcELQl2MQGQLX8J94O1cSJWAwUSEvCjwjA7KEK3Hmg==}
+  /eslint-plugin-jest/27.2.2_u7sbn43e7mfumtaxmtdm6lujwu:
+    resolution: {integrity: sha512-euzbp06F934Z7UDl5ZUaRPLAc9MKjh0rMPERrHT7UhlCEwgb25kBj37TvMgWeHZVkR5I9CayswrpoaqZU1RImw==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
     peerDependencies:
       '@typescript-eslint/eslint-plugin': ^5.0.0
@@ -12891,7 +12891,7 @@ packages:
       got: 12.6.1
       registry-auth-token: 5.0.2
       registry-url: 6.0.1
-      semver: 7.5.1
+      semver: 7.5.2
     dev: true
 
   /parent-module/1.0.1:
@@ -14110,7 +14110,7 @@ packages:
     resolution: {integrity: sha512-0Ju4+6A8iOnpL/Thra7dZsSlOHYAHIeMxfhWQRI1/VLcT3WDBZKKtQt/QkBOsiIN9ZpuvHE6cGZ0x4glCMmfiA==}
     engines: {node: '>=12'}
     dependencies:
-      semver: 7.5.1
+      semver: 7.5.2
     dev: true
 
   /semver/5.7.1:
@@ -15601,7 +15601,7 @@ packages:
       is-yarn-global: 0.4.1
       latest-version: 7.0.0
       pupa: 3.1.0
-      semver: 7.5.1
+      semver: 7.5.2
       semver-diff: 4.0.0
       xdg-basedir: 5.1.0
     dev: true
