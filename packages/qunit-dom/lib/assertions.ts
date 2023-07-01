@@ -774,11 +774,13 @@ export default class DOMAssertions {
     }
 
     let result = expectedProperties.every(
-      property => computedStyle[property] === expected[property]
+      property => computedStyle.getPropertyValue(property.toString()) === expected[property]
     );
     let actual: ActualCSSStyleDeclaration = {};
 
-    expectedProperties.forEach(property => (actual[property] = computedStyle[property]));
+    expectedProperties.forEach(
+      property => (actual[property] = computedStyle.getPropertyValue(property.toString()))
+    );
 
     if (!message) {
       let normalizedSelector = selector ? selector.replace(/^:{0,2}/, '::') : '';
