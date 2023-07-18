@@ -26,7 +26,7 @@ specifiers:
   ember-load-initializers: 2.1.2
   ember-maybe-import-regenerator: 1.0.0
   ember-qunit: 6.2.0
-  ember-resolver: 9.0.1
+  ember-resolver: 10.1.1
   ember-source: 4.12.3
   ember-try: 2.0.0
   eslint: 8.45.0
@@ -74,7 +74,7 @@ devDependencies:
   ember-load-initializers: 2.1.2
   ember-maybe-import-regenerator: 1.0.0
   ember-qunit: 6.2.0_2dwxbwe6b4wb33ud7pmr2ktm3q
-  ember-resolver: 9.0.1_ember-source@4.12.3
+  ember-resolver: 10.1.1_ember-source@4.12.3
   ember-source: 4.12.3_webpack@5.88.2
   ember-try: 2.0.0
   eslint: 8.45.0
@@ -7259,11 +7259,12 @@ packages:
       - webpack
     dev: true
 
-  /ember-resolver/9.0.1_ember-source@4.12.3:
-    resolution: {integrity: sha512-vFdaxDuwp0xptxa4uhJE8mNLQf6/8Mz+mBohsF4721hz03ieW+zdSSR04fCetFVCLxtNhGmmrIZrClDcA5dB9w==}
+  /ember-resolver/10.1.1_ember-source@4.12.3:
+    resolution: {integrity: sha512-y1zzn6C4YGJui+tJzcCKlsf1oSOSVAkRrvmg8OwqVIKnALKKb9ihx2qLCslHg8x0wJvJgMtDMXgrczvQrZW0Lw==}
     engines: {node: 14.* || 16.* || >= 18}
     peerDependencies:
-      ember-source: ^4.8.3
+      '@ember/string': ^3.0.1
+      ember-source: ^4.8.3 || >= 5.0.0
     peerDependenciesMeta:
       ember-source:
         optional: true
