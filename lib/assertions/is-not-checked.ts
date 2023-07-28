@@ -1,6 +1,11 @@
 import elementToString from '../helpers/element-to-string';
 
-export default function notChecked(message?: string) {
+export default function notChecked(message?: string, options?: { withAriaSupport?: boolean }) {
+  let {
+    // @TODO: Remove inline default in favor of consistent global default.
+    withAriaSupport = this.options.withAriaSupport ?? true,
+  } = options;
+
   let element = this.findTargetElement();
   if (!element) return;
 
@@ -10,7 +15,7 @@ export default function notChecked(message?: string) {
   let result = !isChecked;
 
   let hasCheckedProp = isChecked || isNotChecked;
-  if (!hasCheckedProp) {
+  if (withAriaSupport && !hasCheckedProp) {
     let ariaChecked = element.getAttribute('aria-checked');
     if (ariaChecked !== null) {
       result = ariaChecked !== 'true';

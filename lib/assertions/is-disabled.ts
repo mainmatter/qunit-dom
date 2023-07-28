@@ -1,5 +1,13 @@
-export default function isDisabled(message?: string, options: { inverted?: boolean } = {}) {
-  let { inverted } = options;
+export default function isDisabled(
+  message?: string,
+  options?: { inverted?: boolean; withAriaSupport?: boolean }
+) {
+  let {
+    inverted,
+
+    // @TODO: Remove inline default in favor of consistent global default.
+    withAriaSupport = this.options.withAriaSupport ?? false,
+  } = options;
 
   let element = this.findTargetElement();
   if (!element) return;
@@ -19,6 +27,13 @@ export default function isDisabled(message?: string, options: { inverted?: boole
   }
 
   let result = element.disabled === !inverted;
+
+  if (withAriaSupport && !result) {
+    let ariaDisabled = element.getAttribute('aria-disabled');
+    if (ariaDisabled !== null) {
+      result = ariaDisabled === 'true';
+    }
+  }
 
   let actual =
     element.disabled === false
