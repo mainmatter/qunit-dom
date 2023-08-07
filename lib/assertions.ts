@@ -32,7 +32,8 @@ export default class DOMAssertions {
   constructor(
     private target: string | Element | null,
     private rootElement: Element | Document,
-    private testContext: Assert
+    private testContext: Assert,
+    private targetDescription = elementToString(target)
   ) {}
 
   /**
@@ -1346,6 +1347,38 @@ export default class DOMAssertions {
   }
 
   /**
+   * Narrows your selection to the first matching Element that contains the
+   * given text. By itself, this is not an assertion. Chain other assertions
+   * after it.
+   *
+   * @param {string|RegExp} text
+   *
+   * @example
+   *
+   * assert.dom('button').containingText('Subscribe').hasAttribute('disabled');
+   */
+  containingText(expected: string | RegExp): DOMAssertions {
+    let predicate: (element: Element) => boolean;
+    if (typeof expected === 'string') {
+      let collapsedExpected = collapseWhitespace(expected);
+      predicate = element => collapseWhitespace(element.textContent) === collapsedExpected;
+    } else if (expected instanceof RegExp) {
+      predicate = element => expected.test(element.textContent);
+    } else {
+      throw new Error(
+        `You must pass a string or Regular Expression to "containingText". You passed ${expected}`
+      );
+    }
+    let target = this.findElements().find(predicate);
+    return new DOMAssertions(
+      target || null,
+      this.rootElement,
+      this.testContext,
+      `${this.targetDescription} containing text ${expected}`
+    );
+  }
+
+  /**
    * @private
    */
   private pushResult(result: AssertionResult): void {
@@ -1404,12 +1437,5 @@ export default class DOMAssertions {
     } else {
       throw new TypeError(`Unexpected Parameter: ${this.target}`);
     }
-  }
-
-  /**
-   * @private
-   */
-  private get targetDescription(): string {
-    return elementToString(this.target);
   }
 }
