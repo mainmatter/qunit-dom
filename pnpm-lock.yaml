@@ -25,7 +25,7 @@ specifiers:
   ember-cli-version-checker: ^5.1.2
   ember-load-initializers: 2.1.2
   ember-maybe-import-regenerator: 1.0.0
-  ember-qunit: 6.2.0
+  ember-qunit: 7.0.0
   ember-resolver: 9.0.1
   ember-source: 4.12.3
   ember-try: 2.0.0
@@ -73,7 +73,7 @@ devDependencies:
   ember-cli-inject-live-reload: 2.1.0
   ember-load-initializers: 2.1.2
   ember-maybe-import-regenerator: 1.0.0
-  ember-qunit: 6.2.0_2dwxbwe6b4wb33ud7pmr2ktm3q
+  ember-qunit: 7.0.0_2dwxbwe6b4wb33ud7pmr2ktm3q
   ember-resolver: 9.0.1_ember-source@4.12.3
   ember-source: 4.12.3_webpack@5.88.2
   ember-try: 2.0.0
@@ -7218,12 +7218,12 @@ packages:
       - supports-color
     dev: true
 
-  /ember-qunit/6.2.0_2dwxbwe6b4wb33ud7pmr2ktm3q:
-    resolution: {integrity: sha512-mC+0bp8DwWzJLn8SW3GS8KDZIkl4yLsNYwMi5Dw6+aFllq7FM2crd/dfY4MuOIHK7GKdjtmWJTMGnjSpeSayaw==}
-    engines: {node: 14.* || 16.* || >= 18}
+  /ember-qunit/7.0.0_2dwxbwe6b4wb33ud7pmr2ktm3q:
+    resolution: {integrity: sha512-KhrndHYEXsHnXvmsGyJLJQ6VCudXaRs5dzPZBsdttZJIhsB6PmYAvq2Q+mh3GRDT/59T/sRDrB3FD3/lATS8aA==}
+    engines: {node: 16.* || >= 18}
     peerDependencies:
-      '@ember/test-helpers': ^2.9.3
-      ember-source: '>=3.28'
+      '@ember/test-helpers': '>=3.0.3'
+      ember-source: '>=4.0.0'
       qunit: ^2.13.0
     dependencies:
       '@ember/test-helpers': 2.9.4_ember-source@4.12.3
@@ -12585,7 +12585,7 @@ packages:
       got: 12.6.1
       registry-auth-token: 5.0.2
       registry-url: 6.0.1
-      semver: 7.5.1
+      semver: 7.5.4
     dev: true
 
   /parent-module/1.0.1:
@@ -13817,7 +13817,7 @@ packages:
     resolution: {integrity: sha512-0Ju4+6A8iOnpL/Thra7dZsSlOHYAHIeMxfhWQRI1/VLcT3WDBZKKtQt/QkBOsiIN9ZpuvHE6cGZ0x4glCMmfiA==}
     engines: {node: '>=12'}
     dependencies:
-      semver: 7.5.1
+      semver: 7.5.4
     dev: true
 
   /semver/5.7.2:
@@ -15339,7 +15339,7 @@ packages:
       is-yarn-global: 0.4.1
       latest-version: 7.0.0
       pupa: 3.1.0
-      semver: 7.5.1
+      semver: 7.5.4
       semver-diff: 4.0.0
       xdg-basedir: 5.1.0
     dev: true

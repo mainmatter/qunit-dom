@@ -66,7 +66,7 @@
     "ember-cli-inject-live-reload": "2.1.0",
     "ember-load-initializers": "2.1.2",
     "ember-maybe-import-regenerator": "1.0.0",
-    "ember-qunit": "6.2.0",
+    "ember-qunit": "7.0.0",
     "ember-resolver": "9.0.1",
     "ember-source": "4.12.3",
     "ember-try": "2.0.0",
