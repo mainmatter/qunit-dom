@@ -83,6 +83,6 @@ jobs:
 
       - run: pnpm install
       - run: pnpm build
-      - run: pnpm ember try:one ${{ matrix.ember-try-scenario}} -- --config-path tests/dummy/config/ember-try.js
+      - run: pnpm --filter test-app try:one ${{ matrix.ember-try-scenario}} --skip-cleanup 
         env:
           USE_EMBROIDER: "${{ matrix.embroider }}"
