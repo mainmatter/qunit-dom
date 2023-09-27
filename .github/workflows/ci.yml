@@ -67,9 +67,8 @@ jobs:
       matrix:
         embroider: ["true", "false"]
         ember-try-scenario:
-          - ember-qunit-4
-          - ember-qunit-5
           - ember-lts-3.28
+          - ember-lts-4.12
 
     steps:
       - uses: actions/checkout@v3.6.0
