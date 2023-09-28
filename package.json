@@ -41,9 +41,7 @@
   },
   "dependencies": {
     "broccoli-funnel": "^3.0.8",
-    "broccoli-merge-trees": "^4.2.0",
-    "ember-cli-babel": "^7.26.10",
-    "ember-cli-version-checker": "^5.1.2"
+    "ember-cli-babel": "^7.26.10"
   },
   "devDependencies": {
     "@ember/optional-features": "2.0.0",
@@ -107,5 +105,9 @@
       "ember-cli-qunit",
       "ember-qunit"
     ]
+  },
+  "volta": {
+    "node": "18.18.0",
+    "pnpm": "7.33.6"
   }
 }

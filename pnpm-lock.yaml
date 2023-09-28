@@ -14,7 +14,6 @@ specifiers:
   babel-plugin-transform-es2015-modules-commonjs: 6.26.2
   babel-preset-env: 1.7.0
   broccoli-funnel: ^3.0.8
-  broccoli-merge-trees: ^4.2.0
   documentation: 14.0.2
   ember-auto-import: 2.6.3
   ember-cli: 4.12.2
@@ -22,7 +21,6 @@ specifiers:
   ember-cli-dependency-checker: 3.3.2
   ember-cli-htmlbars: 6.3.0
   ember-cli-inject-live-reload: 2.1.0
-  ember-cli-version-checker: ^5.1.2
   ember-load-initializers: 2.1.2
   ember-maybe-import-regenerator: 1.0.0
   ember-qunit: 8.0.1
@@ -48,9 +46,7 @@ specifiers:
 
 dependencies:
   broccoli-funnel: 3.0.8
-  broccoli-merge-trees: 4.2.0
   ember-cli-babel: 7.26.11
-  ember-cli-version-checker: 5.1.2
 
 devDependencies:
   '@ember/optional-features': 2.0.0
@@ -5128,6 +5124,7 @@ packages:
       merge-trees: 2.0.0
     transitivePeerDependencies:
       - supports-color
+    dev: true
 
   /broccoli-middleware/2.1.1:
     resolution: {integrity: sha512-BK8aPhQpOLsHWiftrqXQr84XsvzUqeaN4PlCQOYg5yM0M+WKAHtX2WFXmicSQZOVgKDyh5aeoNTFkHjBAEBzwQ==}
@@ -7027,6 +7024,7 @@ packages:
       silent-error: 1.1.1
     transitivePeerDependencies:
       - supports-color
+    dev: true
 
   /ember-cli/4.12.2:
     resolution: {integrity: sha512-990UglceEsB3nd/pTI08wL+hbApICrd6P4BO88486rSf9r3XjZ7LBcD318N8I1AGe5IUDkbccMrOQxoHge6zNg==}
@@ -11164,6 +11162,7 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       yallist: 4.0.0
+    dev: true
 
   /lru-cache/7.18.3:
     resolution: {integrity: sha512-jumlc0BIUrS3qJGgIkWZsyfAM7NCWiBcCDhnd+3NNM5KbBmLTgHVfWBcg6W+rLUsIpzpERPsvwUP7CckAQSOoA==}
@@ -13850,6 +13849,7 @@ packages:
     hasBin: true
     dependencies:
       lru-cache: 6.0.0
+    dev: true
 
   /send/0.18.0:
     resolution: {integrity: sha512-qqWzuOjSFOuqPjFe4NOsMLafToQQwBSOEpS+FwEt3A2V3vKubTquT3vmLTQpFgMXp8AlFWFuP1qKaJZOtPpVXg==}
@@ -15930,6 +15930,7 @@ packages:
 
   /yallist/4.0.0:
     resolution: {integrity: sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==}
+    dev: true
 
   /yam/1.0.0:
     resolution: {integrity: sha512-Hv9xxHtsJ9228wNhk03xnlDReUuWVvHwM4rIbjdAXYvHLs17xjuyF50N6XXFMN6N0omBaqgOok/MCK3At9fTAg==}
