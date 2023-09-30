@@ -72,7 +72,7 @@
     "ember-try": "2.0.0",
     "eslint": "8.50.0",
     "eslint-config-prettier": "9.0.0",
-    "eslint-plugin-jest": "27.4.0",
+    "eslint-plugin-jest": "27.4.2",
     "eslint-plugin-prettier": "4.2.1",
     "jest": "27.5.1",
     "lerna-changelog": "2.2.0",
