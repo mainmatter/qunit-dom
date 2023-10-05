@@ -11,7 +11,7 @@ import isDisabled from './assertions/is-disabled';
 import matchesSelector from './assertions/matches-selector';
 import elementToString from './helpers/element-to-string';
 import collapseWhitespace from './helpers/collapse-whitespace';
-import { toArray } from './helpers/node-list';
+import {toArray} from './helpers/node-list';
 
 export interface AssertionResult {
   result: boolean;
@@ -90,7 +90,7 @@ export default class DOMAssertions {
    * @see {@link #exists}
    */
   doesNotExist(message?: string): DOMAssertions {
-    exists.call(this, { count: 0 }, message);
+    exists.call(this, {count: 0}, message);
     return this;
   }
 
@@ -228,7 +228,7 @@ export default class DOMAssertions {
    * @see {@link #isValid}
    */
   isNotValid(message?: string): DOMAssertions {
-    isValid.call(this, message, { inverted: true });
+    isValid.call(this, message, {inverted: true});
     return this;
   }
 
@@ -323,7 +323,7 @@ export default class DOMAssertions {
    * @see {@link #isVisible}
    */
   isNotVisible(message?: string): DOMAssertions {
-    isVisible.call(this, { count: 0 }, message);
+    isVisible.call(this, {count: 0}, message);
     return this;
   }
 
@@ -355,7 +355,7 @@ export default class DOMAssertions {
    */
   hasAttribute(
     name: string,
-    value: string | RegExp | { any: true },
+    value: string | RegExp | {any: true},
     message?: string
   ): DOMAssertions;
 
@@ -375,14 +375,14 @@ export default class DOMAssertions {
    */
   hasAttribute(
     name: string,
-    value?: string | RegExp | { any: true },
+    value?: string | RegExp | {any: true},
     message?: string
   ): DOMAssertions {
     let element = this.findTargetElement();
     if (!element) return this;
 
     if (arguments.length === 1) {
-      value = { any: true };
+      value = {any: true};
     }
 
     let actualValue = element.getAttribute(name);
@@ -394,15 +394,15 @@ export default class DOMAssertions {
         actualValue === null
           ? `Element ${this.targetDescription} does not have attribute "${name}"`
           : `Element ${this.targetDescription} has attribute "${name}" with value ${JSON.stringify(
-              actualValue
-            )}`;
+            actualValue
+          )}`;
 
       if (!message) {
         message = expected;
       }
 
-      this.pushResult({ result, actual, expected, message });
-    } else if ((value as { any: true }).any === true) {
+      this.pushResult({result, actual, expected, message});
+    } else if ((value as {any: true}).any === true) {
       let result = actualValue !== null;
       let expected = `Element ${this.targetDescription} has attribute "${name}"`;
       let actual = result
@@ -413,24 +413,23 @@ export default class DOMAssertions {
         message = expected;
       }
 
-      this.pushResult({ result, actual, expected, message });
+      this.pushResult({result, actual, expected, message});
     } else {
       let result = value === actualValue;
-      let expected = `Element ${
-        this.targetDescription
-      } has attribute "${name}" with value ${JSON.stringify(value)}`;
+      let expected = `Element ${this.targetDescription
+        } has attribute "${name}" with value ${JSON.stringify(value)}`;
       let actual =
         actualValue === null
           ? `Element ${this.targetDescription} does not have attribute "${name}"`
           : `Element ${this.targetDescription} has attribute "${name}" with value ${JSON.stringify(
-              actualValue
-            )}`;
+            actualValue
+          )}`;
 
       if (!message) {
         message = expected;
       }
 
-      this.pushResult({ result, actual, expected, message });
+      this.pushResult({result, actual, expected, message});
     }
 
     return this;
@@ -459,16 +458,15 @@ export default class DOMAssertions {
 
     if (!result) {
       let value = element.getAttribute(name);
-      actual = `Element ${
-        this.targetDescription
-      } has attribute "${name}" with value ${JSON.stringify(value)}`;
+      actual = `Element ${this.targetDescription
+        } has attribute "${name}" with value ${JSON.stringify(value)}`;
     }
 
     if (!message) {
       message = expected;
     }
 
-    this.pushResult({ result, actual, expected, message });
+    this.pushResult({result, actual, expected, message});
     return this;
   }
 
@@ -494,7 +492,7 @@ export default class DOMAssertions {
    *
    * @see {@link #doesNotHaveAria}
    */
-  hasAria(name: string, value?: string | RegExp | { any: true }, message?: string): DOMAssertions {
+  hasAria(name: string, value?: string | RegExp | {any: true}, message?: string): DOMAssertions {
     return this.hasAttribute(`aria-${name}`, value, message);
   }
 
@@ -557,7 +555,7 @@ export default class DOMAssertions {
         message = expected;
       }
 
-      this.pushResult({ result, actual, expected, message });
+      this.pushResult({result, actual, expected, message});
     } else {
       let result = value === actualValue;
       let expected = `Element ${description} has property "${name}" with value ${JSON.stringify(
@@ -571,7 +569,7 @@ export default class DOMAssertions {
         message = expected;
       }
 
-      this.pushResult({ result, actual, expected, message });
+      this.pushResult({result, actual, expected, message});
     }
 
     return this;
@@ -607,7 +605,7 @@ export default class DOMAssertions {
    * @see {@link #isDisabled}
    */
   isNotDisabled(message?: string): DOMAssertions {
-    isDisabled.call(this, message, { inverted: true });
+    isDisabled.call(this, message, {inverted: true});
     return this;
   }
 
@@ -649,7 +647,7 @@ export default class DOMAssertions {
         message = `Element ${this.targetDescription} has CSS class matching ${expected}`;
       }
 
-      this.pushResult({ result, actual, expected, message });
+      this.pushResult({result, actual, expected, message});
     } else {
       let result = element.classList.contains(expected);
 
@@ -657,8 +655,41 @@ export default class DOMAssertions {
         message = `Element ${this.targetDescription} has CSS class "${expected}"`;
       }
 
-      this.pushResult({ result, actual, expected, message });
+      this.pushResult({result, actual, expected, message});
     }
+
+    return this;
+  }
+
+  /**
+   * Assert that the {@link HTMLElement} contains any of the `expected` CSS classes using
+   * [`classList`](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList).
+   *
+   * @param {string} expected space-separated list of classes
+   *
+   * @example
+   * assert.dom('input[type="password"]').containsClasses('flex-col overflow-y-auto');
+   *
+   * @example
+   * assert.dom('input[type="password"]').containsClasses('flex-col');
+   *
+   * @see {@link doesNotContainClasses}
+   */
+  containsClasses(expected: string): DOMAssertions {
+    let element = this.findTargetElement();
+    if (!element) return this;
+
+    let actual = element.classList.toString();
+    let classes = expected.split(/\s/).filter(Boolean);
+
+    for (let cssClass of classes) {
+      let message = `Element ${this.targetDescription} contains CSS class ${cssClass} within list ${classes}`;
+
+      let result = element.classList.contains(cssClass);
+
+      this.pushResult({result, actual, expected, message});
+    }
+
 
     return this;
   }
@@ -699,7 +730,7 @@ export default class DOMAssertions {
         message = `Element ${this.targetDescription} does not have CSS class matching ${expected}`;
       }
 
-      this.pushResult({ result, actual, expected: `not: ${expected}`, message });
+      this.pushResult({result, actual, expected: `not: ${expected}`, message});
     } else {
       let result = !element.classList.contains(expected);
 
@@ -707,8 +738,41 @@ export default class DOMAssertions {
         message = `Element ${this.targetDescription} does not have CSS class "${expected}"`;
       }
 
-      this.pushResult({ result, actual, expected: `not: ${expected}`, message });
+      this.pushResult({result, actual, expected: `not: ${expected}`, message});
     }
+
+    return this;
+  }
+
+  /**
+   * Assert that the {@link HTMLElement} does not contain any of the `expected` CSS classes using
+   * [`classList`](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList).
+   *
+   * @param {string} expected space-separated list of classes
+   *
+   * @example
+   * assert.dom('input[type="password"]').doesNotContainClasses('flex-col overflow-y-auto');
+   *
+   * @example
+   * assert.dom('input[type="password"]').doesNotContainClasses('flex-col');
+   *
+   * @see {@link #containsClasses}
+   */
+  doesNotContainClasses(expected: string): DOMAssertions {
+    let element = this.findTargetElement();
+    if (!element) return this;
+
+    let actual = element.classList.toString();
+    let classes = expected.split(/\s/).filter(Boolean);
+
+    for (let cssClass of classes) {
+      let message = `Element ${this.targetDescription} should not contain CSS class ${cssClass} within list ${classes}`;
+
+      let result = !element.classList.contains(cssClass);
+
+      this.pushResult({result, actual, expected, message});
+    }
+
 
     return this;
   }
@@ -787,7 +851,7 @@ export default class DOMAssertions {
       )}"`;
     }
 
-    this.pushResult({ result, actual, expected, message });
+    this.pushResult({result, actual, expected, message});
     return this;
   }
 
@@ -853,12 +917,11 @@ export default class DOMAssertions {
 
     if (!message) {
       let normalizedSelector = selector ? selector.replace(/^:{0,2}/, '::') : '';
-      message = `Element ${
-        this.targetDescription
-      }${normalizedSelector} does not have style "${JSON.stringify(expected)}"`;
+      message = `Element ${this.targetDescription
+        }${normalizedSelector} does not have style "${JSON.stringify(expected)}"`;
     }
 
-    this.pushResult({ result, actual, expected, message });
+    this.pushResult({result, actual, expected, message});
     return this;
   }
 
@@ -891,7 +954,7 @@ export default class DOMAssertions {
    *
    * @see {@link #includesText}
    */
-  hasText(expected: string | RegExp | { any: true }, message?: string): DOMAssertions {
+  hasText(expected: string | RegExp | {any: true}, message?: string): DOMAssertions {
     let element = this.findTargetElement();
     if (!element) return this;
 
@@ -903,8 +966,8 @@ export default class DOMAssertions {
         message = `Element ${this.targetDescription} has text matching ${expected}`;
       }
 
-      this.pushResult({ result, actual, expected, message });
-    } else if ((expected as { any: true }).any === true) {
+      this.pushResult({result, actual, expected, message});
+    } else if ((expected as {any: true}).any === true) {
       let result = Boolean(element.textContent);
 
       let expected = `Element ${this.targetDescription} has a text`;
@@ -914,7 +977,7 @@ export default class DOMAssertions {
         message = expected;
       }
 
-      this.pushResult({ result, actual, expected, message });
+      this.pushResult({result, actual, expected, message});
     } else if (typeof expected === 'string') {
       expected = collapseWhitespace(expected);
       let actual = collapseWhitespace(element.textContent);
@@ -924,7 +987,7 @@ export default class DOMAssertions {
         message = `Element ${this.targetDescription} has text "${expected}"`;
       }
 
-      this.pushResult({ result, actual, expected, message });
+      this.pushResult({result, actual, expected, message});
     } else {
       throw new TypeError(
         `You must pass a string or Regular Expression to "hasText". You passed ${expected}.`
@@ -934,7 +997,7 @@ export default class DOMAssertions {
     return this;
   }
 
-  matchesText(expected: string | RegExp | { any: true }, message?: string): DOMAssertions {
+  matchesText(expected: string | RegExp | {any: true}, message?: string): DOMAssertions {
     return this.hasText(expected, message);
   }
 
@@ -949,7 +1012,7 @@ export default class DOMAssertions {
    * @see {@link #hasText}
    */
   hasAnyText(message?: string): DOMAssertions {
-    return this.hasText({ any: true }, message);
+    return this.hasText({any: true}, message);
   }
 
   /**
@@ -1003,11 +1066,11 @@ export default class DOMAssertions {
     if (!result && text !== collapseWhitespace(text)) {
       console.warn(
         'The `.includesText()`, `.containsText()`, and `.hasTextContaining()` assertions collapse whitespace. The text you are checking for contains whitespace that may have made your test fail incorrectly. Try the `.hasText()` assertion passing in your expected text as a RegExp pattern. Your text:\n' +
-          text
+        text
       );
     }
 
-    this.pushResult({ result, actual, expected, message });
+    this.pushResult({result, actual, expected, message});
     return this;
   }
 
@@ -1050,7 +1113,7 @@ export default class DOMAssertions {
       message = expected;
     }
 
-    this.pushResult({ result, actual, expected, message });
+    this.pushResult({result, actual, expected, message});
     return this;
   }
 
@@ -1078,12 +1141,12 @@ export default class DOMAssertions {
    * @see {@link #hasAnyValue}
    * @see {@link #hasNoValue}
    */
-  hasValue(expected?: string | RegExp | { any: true }, message?: string): DOMAssertions {
+  hasValue(expected?: string | RegExp | {any: true}, message?: string): DOMAssertions {
     let element = this.findTargetElement();
     if (!element) return this;
 
     if (arguments.length === 0) {
-      expected = { any: true };
+      expected = {any: true};
     }
 
     let value = (element as HTMLInputElement).value;
@@ -1096,8 +1159,8 @@ export default class DOMAssertions {
         message = `Element ${this.targetDescription} has value matching ${expected}`;
       }
 
-      this.pushResult({ result, actual, expected, message });
-    } else if ((expected as { any: true }).any === true) {
+      this.pushResult({result, actual, expected, message});
+    } else if ((expected as {any: true}).any === true) {
       let result = Boolean(value);
 
       let expected = `Element ${this.targetDescription} has a value`;
@@ -1107,7 +1170,7 @@ export default class DOMAssertions {
         message = expected;
       }
 
-      this.pushResult({ result, actual, expected, message });
+      this.pushResult({result, actual, expected, message});
     } else {
       let actual = value;
       let result = actual === expected;
@@ -1116,7 +1179,7 @@ export default class DOMAssertions {
         message = `Element ${this.targetDescription} has value "${expected}"`;
       }
 
-      this.pushResult({ result, actual, expected, message });
+      this.pushResult({result, actual, expected, message});
     }
 
     return this;
@@ -1134,7 +1197,7 @@ export default class DOMAssertions {
    * @see {@link #hasNoValue}
    */
   hasAnyValue(message?: string): DOMAssertions {
-    return this.hasValue({ any: true }, message);
+    return this.hasValue({any: true}, message);
   }
 
   /**
@@ -1185,7 +1248,7 @@ export default class DOMAssertions {
           : `${targets} elements, selected by ${this.target}, also match the selector ${compareSelector}.`;
       }
       actual = expected = message;
-      this.pushResult({ result: true, actual, expected, message });
+      this.pushResult({result: true, actual, expected, message});
     } else {
       let difference = targets - matchFailures;
       // there were failures when matching.
@@ -1198,7 +1261,7 @@ export default class DOMAssertions {
       expected = singleElement
         ? `The element should have matched ${compareSelector}.`
         : `${targets} elements should have matched ${compareSelector}.`;
-      this.pushResult({ result: false, actual, expected, message });
+      this.pushResult({result: false, actual, expected, message});
     }
 
     return this;
@@ -1230,7 +1293,7 @@ export default class DOMAssertions {
           : `${targets} elements, selected by ${this.target}, did not also match the selector ${compareSelector}.`;
       }
       actual = expected = message;
-      this.pushResult({ result: true, actual, expected, message });
+      this.pushResult({result: true, actual, expected, message});
     } else {
       let difference = targets - matchFailures;
       // the assertion fails because at least one element matched the other selector.
@@ -1245,7 +1308,7 @@ export default class DOMAssertions {
       expected = singleElement
         ? message
         : `${targets} elements should not have matched ${compareSelector}.`;
-      this.pushResult({ result: false, actual, expected, message });
+      this.pushResult({result: false, actual, expected, message});
     }
 
     return this;
@@ -1286,13 +1349,13 @@ export default class DOMAssertions {
         message = `Element ${this.targetDescription} has tagName ${expected}`;
       }
 
-      this.pushResult({ result: true, actual, expected, message });
+      this.pushResult({result: true, actual, expected, message});
     } else {
       if (!message) {
         message = `Element ${this.targetDescription} does not have tagName ${expected}`;
       }
 
-      this.pushResult({ result: false, actual, expected, message });
+      this.pushResult({result: false, actual, expected, message});
     }
 
     return this;
@@ -1333,13 +1396,13 @@ export default class DOMAssertions {
         message = `Element ${this.targetDescription} does not have tagName ${expected}`;
       }
 
-      this.pushResult({ result: true, actual, expected, message });
+      this.pushResult({result: true, actual, expected, message});
     } else {
       if (!message) {
         message = `Element ${this.targetDescription} has tagName ${expected}`;
       }
 
-      this.pushResult({ result: false, actual, expected, message });
+      this.pushResult({result: false, actual, expected, message});
     }
 
     return this;
@@ -1363,7 +1426,7 @@ export default class DOMAssertions {
 
     if (el === null) {
       let message = `Element ${this.target || '<unknown>'} should exist`;
-      this.pushResult({ message, result: false, actual: undefined, expected: undefined });
+      this.pushResult({message, result: false, actual: undefined, expected: undefined});
       return null;
     }
 
