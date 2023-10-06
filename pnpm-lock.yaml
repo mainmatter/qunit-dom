@@ -133,10 +133,10 @@ importers:
         specifier: 0.48.1
         version: 0.48.1(@embroider/core@0.48.1)(webpack@5.88.2)
       '@glimmer/component':
-        specifier: ^1.1.2
+        specifier: 1.1.2
         version: 1.1.2(@babel/core@7.23.0)
       '@glimmer/tracking':
-        specifier: ^1.1.2
+        specifier: 1.1.2
         version: 1.1.2
       '@tsconfig/ember':
         specifier: 3.0.1
