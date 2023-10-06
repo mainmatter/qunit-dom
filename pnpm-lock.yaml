@@ -22,15 +22,9 @@ importers:
       broccoli-funnel:
         specifier: ^3.0.8
         version: 3.0.8
-      broccoli-merge-trees:
-        specifier: ^4.2.0
-        version: 4.2.0
       ember-cli-babel:
         specifier: ^7.26.10
         version: 7.26.11(supports-color@8.1.1)
-      ember-cli-version-checker:
-        specifier: ^5.1.2
-        version: 5.1.2
     devDependencies:
       '@ember/optional-features':
         specifier: 2.0.0
@@ -5364,6 +5358,7 @@ packages:
       merge-trees: 2.0.0(supports-color@8.1.1)
     transitivePeerDependencies:
       - supports-color
+    dev: true
 
   /broccoli-middleware@2.1.1:
     resolution: {integrity: sha512-BK8aPhQpOLsHWiftrqXQr84XsvzUqeaN4PlCQOYg5yM0M+WKAHtX2WFXmicSQZOVgKDyh5aeoNTFkHjBAEBzwQ==}
@@ -7409,6 +7404,7 @@ packages:
       silent-error: 1.1.1(supports-color@8.1.1)
     transitivePeerDependencies:
       - supports-color
+    dev: true
 
   /ember-cli@4.10.0:
     resolution: {integrity: sha512-gex/GdqzR5NLPVHvqLml7YgJR3KDzq2MGtrB2EHSpk//bY26mWi0milYABBfiDK5Yw/onztwPitxNaZpBjjqng==}
@@ -12047,6 +12043,7 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       yallist: 4.0.0
+    dev: true
 
   /lru-cache@7.18.3:
     resolution: {integrity: sha512-jumlc0BIUrS3qJGgIkWZsyfAM7NCWiBcCDhnd+3NNM5KbBmLTgHVfWBcg6W+rLUsIpzpERPsvwUP7CckAQSOoA==}
@@ -14868,6 +14865,7 @@ packages:
     hasBin: true
     dependencies:
       lru-cache: 6.0.0
+    dev: true
 
   /send@0.18.0:
     resolution: {integrity: sha512-qqWzuOjSFOuqPjFe4NOsMLafToQQwBSOEpS+FwEt3A2V3vKubTquT3vmLTQpFgMXp8AlFWFuP1qKaJZOtPpVXg==}
@@ -17040,6 +17038,7 @@ packages:
 
   /yallist@4.0.0:
     resolution: {integrity: sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==}
+    dev: true
 
   /yam@1.0.0:
     resolution: {integrity: sha512-Hv9xxHtsJ9228wNhk03xnlDReUuWVvHwM4rIbjdAXYvHLs17xjuyF50N6XXFMN6N0omBaqgOok/MCK3At9fTAg==}
