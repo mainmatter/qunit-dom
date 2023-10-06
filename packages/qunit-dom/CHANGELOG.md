@@ -1,6 +1,50 @@
 # Changelog
 
 
+
+## v3.0.0-rc.1 (2023-10-06)
+
+#### :boom: Breaking Change
+* [#2031](https://github.com/mainmatter/qunit-dom/pull/2031) Drop ember qunit less than v6 ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+
+#### :rocket: Enhancement
+* [#2027](https://github.com/mainmatter/qunit-dom/pull/2027) Prepare for V2 Addon conversion. ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+* [#1481](https://github.com/mainmatter/qunit-dom/pull/1481) Fix `hasAria()` docs and add `hasNoAria()` and `lacksAria()` aliases ([@jamescdavis](https://github.com/jamescdavis))
+
+#### :memo: Documentation
+* [#1348](https://github.com/mainmatter/qunit-dom/pull/1348) Update Build Status badge: Travis -> GH Actions ([@SergeAstapov](https://github.com/SergeAstapov))
+
+#### :house: Internal
+* `qunit-dom`
+  * [#2055](https://github.com/mainmatter/qunit-dom/pull/2055) chore(release): copy static LICENSE and README into the package during build ([@BobrImperator](https://github.com/BobrImperator))
+* `qunit-dom`, `test-app`, `test-vite-app`
+  * [#2054](https://github.com/mainmatter/qunit-dom/pull/2054) Move everything to the packages/ folder ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+* Other
+  * [#1801](https://github.com/mainmatter/qunit-dom/pull/1801) Add eslint-plugin-jest ([@bmish](https://github.com/bmish))
+  * [#1696](https://github.com/mainmatter/qunit-dom/pull/1696) chore: downgrade documentation@13.2.5 to 13.2.4 ([@BobrImperator](https://github.com/BobrImperator))
+  * [#1600](https://github.com/mainmatter/qunit-dom/pull/1600) package.json: Specify `packageManager` field ([@Turbo87](https://github.com/Turbo87))
+  * [#1598](https://github.com/mainmatter/qunit-dom/pull/1598) tests: Remove `global` usage ([@Turbo87](https://github.com/Turbo87))
+  * [#1574](https://github.com/mainmatter/qunit-dom/pull/1574) Remove `.pnpm-debug.log` file ([@Turbo87](https://github.com/Turbo87))
+  * [#1573](https://github.com/mainmatter/qunit-dom/pull/1573) CI: Update Node.js versions ([@Turbo87](https://github.com/Turbo87))
+  * [#1572](https://github.com/mainmatter/qunit-dom/pull/1572) Remove `engines` declaration from `package.json` ([@Turbo87](https://github.com/Turbo87))
+  * [#1491](https://github.com/mainmatter/qunit-dom/pull/1491) Fix `documentation` integration ([@Turbo87](https://github.com/Turbo87))
+  * [#1434](https://github.com/mainmatter/qunit-dom/pull/1434) Revert "Update embroider monorepo to v0.50.2 (minor)" ([@Turbo87](https://github.com/Turbo87))
+  * [#1327](https://github.com/mainmatter/qunit-dom/pull/1327) Update dependency ember-source to v4 ([@renovate[bot]](https://github.com/apps/renovate))
+  * [#1365](https://github.com/mainmatter/qunit-dom/pull/1365) Ember.js: Declare `octane` edition compatibility ([@Turbo87](https://github.com/Turbo87))
+  * [#1361](https://github.com/mainmatter/qunit-dom/pull/1361) Use `pnpm` package manager ([@Turbo87](https://github.com/Turbo87))
+  * [#1360](https://github.com/mainmatter/qunit-dom/pull/1360) CI: Add Ember 3.28 scenario ([@Turbo87](https://github.com/Turbo87))
+  * [#1216](https://github.com/mainmatter/qunit-dom/pull/1216) CI: Fix `release` job ([@Turbo87](https://github.com/Turbo87))
+  * [#1217](https://github.com/mainmatter/qunit-dom/pull/1217) Remove duplicate `ember-cli-babel` dependency ([@Turbo87](https://github.com/Turbo87))
+
+#### Committers: 7
+- Bartlomiej Dudzik ([@BobrImperator](https://github.com/BobrImperator))
+- Bryan Mishkin ([@bmish](https://github.com/bmish))
+- James C. Davis ([@jamescdavis](https://github.com/jamescdavis))
+- Sergey Astapov ([@SergeAstapov](https://github.com/SergeAstapov))
+- Tobias Bieniek ([@Turbo87](https://github.com/Turbo87))
+- Tyler Becks ([@tylerbecks](https://github.com/tylerbecks))
+- [@NullVoxPopuli](https://github.com/NullVoxPopuli)
+
 ## v2.0.0 (2021-08-30)
 
 #### :boom: Breaking Change
