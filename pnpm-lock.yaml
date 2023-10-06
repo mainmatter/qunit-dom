@@ -127,8 +127,8 @@ importers:
         specifier: 0.48.1
         version: 0.48.1(supports-color@8.1.1)
       '@embroider/test-setup':
-        specifier: 3.0.1
-        version: 3.0.1(@embroider/compat@0.48.1)(@embroider/core@0.48.1)(@embroider/webpack@0.48.1)
+        specifier: 3.0.2
+        version: 3.0.2(@embroider/compat@0.48.1)(@embroider/core@0.48.1)(@embroider/webpack@0.48.1)
       '@embroider/webpack':
         specifier: 0.48.1
         version: 0.48.1(@embroider/core@0.48.1)(webpack@5.88.2)
@@ -2030,13 +2030,13 @@ packages:
       - supports-color
     dev: true
 
-  /@embroider/test-setup@3.0.1(@embroider/compat@0.48.1)(@embroider/core@0.48.1)(@embroider/webpack@0.48.1):
-    resolution: {integrity: sha512-t7R2f10iZDSNw3ovWAPM63GRQTu63uihpVh6CvHev5XkLt8B7tdxcxGyO6RbdF5Hu+pbsUu8sD0kAlR1gopmxg==}
+  /@embroider/test-setup@3.0.2(@embroider/compat@0.48.1)(@embroider/core@0.48.1)(@embroider/webpack@0.48.1):
+    resolution: {integrity: sha512-cq/xp06CAB8rAGnObeJux7qALnAX2MatMVLjWyGDr3ogS5lHTNXZVCv4ltTM3pJ8EsZWpPM32dtUZqSJFkGibQ==}
     engines: {node: 12.* || 14.* || >= 16}
     peerDependencies:
-      '@embroider/compat': ^3.0.0
-      '@embroider/core': ^3.0.0
-      '@embroider/webpack': ^3.0.0
+      '@embroider/compat': ^3.2.2
+      '@embroider/core': ^3.3.0
+      '@embroider/webpack': ^3.2.0
     peerDependenciesMeta:
       '@embroider/compat':
         optional: true
