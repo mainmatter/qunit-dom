@@ -75,8 +75,8 @@ importers:
         specifier: ^0.2.3
         version: 0.2.3
       qunit:
-        specifier: 2.19.4
-        version: 2.19.4
+        specifier: 2.20.0
+        version: 2.20.0
       release-it:
         specifier: 15.11.0
         version: 15.11.0
@@ -115,7 +115,7 @@ importers:
         specifier: ^3.0.1
         version: 3.1.1
       '@ember/test-helpers':
-        specifier: ^2.9.3
+        specifier: 2.9.4
         version: 2.9.4(@babel/core@7.23.0)(ember-source@4.10.0)
       '@embroider/compat':
         specifier: 0.48.1
@@ -277,7 +277,7 @@ importers:
         specifier: ^7.0.0
         version: 7.0.0
       ember-qunit:
-        specifier: ^6.1.1
+        specifier: 6.2.0
         version: 6.2.0(@ember/test-helpers@2.9.4)(ember-source@4.10.0)(qunit@2.19.4)(webpack@5.88.2)
       ember-resolver:
         specifier: ^10.0.0
@@ -292,7 +292,7 @@ importers:
         specifier: ^5.3.1
         version: 5.11.2
       ember-try:
-        specifier: ^2.0.0
+        specifier: 2.0.0
         version: 2.0.0
       eslint:
         specifier: ^7.32.0
@@ -328,7 +328,7 @@ importers:
         specifier: ^2.8.3
         version: 2.8.8
       qunit:
-        specifier: ^2.19.3
+        specifier: 2.19.4
         version: 2.19.4
       release-it:
         specifier: 15.11.0
@@ -358,7 +358,7 @@ importers:
   packages/test-vite-app:
     devDependencies:
       qunit:
-        specifier: ^2.19.4
+        specifier: 2.19.4
         version: 2.19.4
       qunit-dom:
         specifier: workspace:^
@@ -14327,6 +14327,16 @@ packages:
 
   /qunit@2.19.4:
     resolution: {integrity: sha512-aqUzzUeCqlleWYKlpgfdHHw9C6KxkB9H3wNfiBg5yHqQMzy0xw/pbCRHYFkjl8MsP/t8qkTQE+JTYL71azgiew==}
+    engines: {node: '>=10'}
+    hasBin: true
+    dependencies:
+      commander: 7.2.0
+      node-watch: 0.7.3
+      tiny-glob: 0.2.9
+    dev: true
+
+  /qunit@2.20.0:
+    resolution: {integrity: sha512-N8Fp1J55waE+QG1KwX2LOyqulZUToRrrPBqDOfYfuAMkEglFL15uwvmH1P4Tq/omQ/mGbBI8PEB3PhIfvUb+jg==}
     engines: {node: '>=10'}
     hasBin: true
     dependencies:
