@@ -99,7 +99,7 @@
     "babel-preset-env": "1.7.0",
     "documentation": "14.0.2",
     "ember-maybe-import-regenerator": "1.0.0",
-    "eslint-plugin-jest": "27.4.0",
+    "eslint-plugin-jest": "27.4.2",
     "jest": "27.5.1",
     "lerna-changelog": "2.2.0",
     "release-it": "15.11.0",
