@@ -35,11 +35,7 @@ jobs:
       - run: git diff --exit-code
 
   test:
-    strategy:
-      matrix:
-        node: ['14', '16', '18.17']
-
-    name: Tests (Node.js v${{ matrix.node }})
+    name: Tests
     runs-on: ubuntu-latest
 
     steps:
@@ -50,7 +46,7 @@ jobs:
 
       - uses: actions/setup-node@v3.8.1
         with:
-          node-version: ${{ matrix.node }}
+          node-version: 18.17
           cache: pnpm
 
       - run: pnpm install
