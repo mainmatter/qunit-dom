@@ -1,0 +1,3 @@
+packages:
+  - "qunit-dom"
+  - "test-app"

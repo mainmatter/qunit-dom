@@ -37,7 +37,7 @@ jobs:
   test:
     strategy:
       matrix:
-        node: ['14', '16', '18']
+        node: ['14', '16', '18.17']
 
     name: Tests (Node.js v${{ matrix.node }})
     runs-on: ubuntu-latest
@@ -54,8 +54,8 @@ jobs:
           cache: pnpm
 
       - run: pnpm install
-      - run: pnpm lint
       - run: pnpm build
+      - run: pnpm lint
       - run: pnpm test:coverage --runInBand
       - run: pnpm test:ember
 
@@ -83,6 +83,6 @@ jobs:
 
       - run: pnpm install
       - run: pnpm build
-      - run: pnpm ember try:one ${{ matrix.ember-try-scenario}} -- --config-path tests/dummy/config/ember-try.js
+      - run: pnpm --filter test-app try:one ${{ matrix.ember-try-scenario}} --skip-cleanup 
         env:
           USE_EMBROIDER: "${{ matrix.embroider }}"

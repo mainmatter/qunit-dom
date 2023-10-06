@@ -1,20 +1,16 @@
 # See https://help.github.com/ignore-files/ for more about ignoring files.
 
 # compiled output
-/dist
-/tmp
+dist
+tmp
 *.tgz
 
 # dependencies
-/node_modules
-/bower_components
+node_modules
 
 # misc
-/.eslintcache
-/.sass-cache
-/connect.lock
-/coverage/*
-/libpeerconnection.log
+.eslintcache
+coverage/
 .pnpm-debug.log
 npm-debug.log*
 yarn-error.log
@@ -26,4 +22,4 @@ bower.json.ember-try
 package.json.ember-try
 
 # rollup-plugin-typescript2
-/.rpt2_cache
+.rpt2_cache

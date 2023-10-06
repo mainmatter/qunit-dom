@@ -1,113 +1,28 @@
 {
-  "name": "qunit-dom",
-  "version": "2.0.0",
-  "description": "High Level DOM Assertions for QUnit",
-  "keywords": [
-    "browser",
-    "dom",
-    "ember-addon",
-    "html",
-    "qunit",
-    "qunit-plugin",
-    "testing"
-  ],
-  "repository": "https://github.com/simplabs/qunit-dom",
-  "license": "MIT",
-  "author": "simplabs GmbH",
-  "types": "dist/qunit-dom.d.ts",
-  "directories": {
-    "doc": "doc",
-    "test": "tests"
-  },
+  "private": true,
   "scripts": {
-    "build": "rollup -c",
-    "changelog": "lerna-changelog",
-    "docs": "npm run build && documentation build dist/qunit-dom.js --config documentation.yml -f md -o API.md",
-    "lint": "eslint . --cache",
-    "prepublish": "rollup -c",
-    "release": "release-it",
-    "test": "jest",
-    "test:coverage": "jest --coverage",
-    "test:ember": "ember test",
-    "test:watch": "jest --watchAll --notify"
-  },
-  "jest": {
-    "testEnvironment": "jsdom",
-    "preset": "ts-jest",
-    "testPathIgnorePatterns": [
-      "/node_modules/",
-      "/dist/"
-    ]
-  },
-  "dependencies": {
-    "broccoli-funnel": "^3.0.8",
-    "ember-cli-babel": "^7.26.10"
+    "docs": "npm run build && npm exec documentation build qunit-dom/dist/qunit-dom.js --config documentation.yml -f md -o API.md",
+    "build": "cd qunit-dom && npm run build",
+    "prepare": "pnpm build",
+    "release": "cd qunit-dom && npm run release",
+    "lint": "pnpm --filter '*' lint",
+    "lint:fix": "pnpm --filter '*' lint:fix",
+    "test:coverage": "pnpm --filter '*' test:coverage",
+    "test:ember": "pnpm --filter '*' test:ember"
   },
   "devDependencies": {
-    "@ember/optional-features": "2.0.0",
-    "@ember/test-helpers": "2.9.4",
-    "@embroider/compat": "0.48.1",
-    "@embroider/core": "0.48.1",
-    "@embroider/macros": "0.48.1",
-    "@embroider/webpack": "0.48.1",
-    "@types/jest": "27.5.2",
-    "@types/qunit": "2.19.6",
-    "@typescript-eslint/eslint-plugin": "5.62.0",
-    "@typescript-eslint/parser": "5.62.0",
-    "babel-plugin-transform-es2015-modules-commonjs": "6.26.2",
-    "babel-preset-env": "1.7.0",
     "documentation": "14.0.2",
-    "ember-auto-import": "2.6.3",
-    "ember-cli": "4.12.2",
-    "ember-cli-dependency-checker": "3.3.2",
-    "ember-cli-htmlbars": "6.3.0",
-    "ember-cli-inject-live-reload": "2.1.0",
-    "ember-load-initializers": "2.1.2",
-    "ember-maybe-import-regenerator": "1.0.0",
-    "ember-qunit": "8.0.1",
-    "ember-resolver": "9.0.1",
-    "ember-source": "4.12.3",
-    "ember-try": "2.0.0",
-    "eslint": "8.50.0",
-    "eslint-config-prettier": "9.0.0",
-    "eslint-plugin-jest": "27.4.2",
-    "eslint-plugin-prettier": "4.2.1",
-    "jest": "27.5.1",
-    "lerna-changelog": "2.2.0",
-    "loader.js": "4.7.0",
-    "prettier": "2.8.8",
-    "qunit": "2.20.0",
-    "release-it": "15.11.0",
-    "release-it-lerna-changelog": "5.0.0",
-    "rollup": "2.79.1",
-    "rollup-plugin-typescript2": "0.34.1",
-    "ts-jest": "27.1.5",
-    "typescript": "4.9.5",
-    "webpack": "5.88.2"
+    "concurrently": "^8.0.0",
+    "eslint": "^8.50.0",
+    "prettier": "^2.8.8"
   },
-  "packageManager": "pnpm@7.33.6",
-  "changelog": {
-    "repo": "simplabs/qunit-dom",
-    "labels": {
-      "breaking": ":boom: Breaking Change",
-      "enhancement": ":rocket: Enhancement",
-      "bug": ":bug: Bug Fix",
-      "documentation": ":memo: Documentation",
-      "internal": ":house: Internal"
-    }
-  },
-  "ember": {
-    "edition": "octane"
-  },
-  "ember-addon": {
-    "configPath": "tests/dummy/config",
-    "after": [
-      "ember-cli-qunit",
-      "ember-qunit"
-    ]
+  "engines": {
+    "node": ">= 16.*",
+    "yarn": "use pnpm",
+    "npm": "use pnpm"
   },
   "volta": {
-    "node": "18.18.0",
-    "pnpm": "7.33.6"
+    "node": "16.20.2",
+    "pnpm": "7.33.0"
   }
 }
