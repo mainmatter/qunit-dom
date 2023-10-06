@@ -5,7 +5,6 @@
   "keywords": [
     "browser",
     "dom",
-    "ember-addon",
     "html",
     "qunit",
     "qunit-plugin",
@@ -14,16 +13,31 @@
   "repository": "https://github.com/simplabs/qunit-dom",
   "license": "MIT",
   "author": "simplabs GmbH",
-  "types": "dist/qunit-dom.d.ts",
-  "directories": {
-    "doc": "doc",
-    "test": "tests"
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/addon-test-support/qunit-dom-modules.d.ts",
+      "default": "./dist/addon-test-support/index.js"
+    }
   },
+  "typesVersions": {
+    "*": {
+      "*": "dist/addon-test-support/qunit-dom-modules.d.ts"
+    }
+  },
+  "types": "dist/qunit-dom.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "build": "rollup -c",
+    "build": "rollup -c ./rollup.config.mjs",
     "changelog": "lerna-changelog",
-    "lint": "eslint . --cache",
-    "lint:fix": "eslint . --fix",
+    "lint": "concurrently 'npm:lint:*(!fix)' --names 'lint:'",
+    "lint:fix": "concurrently 'npm:lint:*:fix' --names 'fix:'",
+    "lint:package": "publint",
+    "lint:published-types": "attw --pack --ignore-rules no-resolution cjs-resolves-to-esm internal-resolution-error",
+    "lint:js": "eslint . --cache",
+    "lint::js:fix": "eslint . --fix",
     "prepublish": "rollup -c",
     "release": "release-it",
     "test": "jest",
@@ -38,34 +52,15 @@
       "/dist/"
     ]
   },
-  "dependencies": {
-    "broccoli-funnel": "^3.0.8",
-    "ember-cli-babel": "^7.26.10"
-  },
   "devDependencies": {
-    "@ember/optional-features": "2.0.0",
-    "@ember/test-helpers": "2.9.4",
-    "@embroider/compat": "0.48.1",
-    "@embroider/core": "0.48.1",
-    "@embroider/macros": "0.48.1",
-    "@embroider/webpack": "0.48.1",
+    "@arethetypeswrong/cli": "^0.11.0",
     "@types/jest": "27.5.2",
     "@types/qunit": "2.19.6",
     "@typescript-eslint/eslint-plugin": "5.62.0",
     "@typescript-eslint/parser": "5.62.0",
     "babel-plugin-transform-es2015-modules-commonjs": "6.26.2",
     "babel-preset-env": "1.7.0",
-    "ember-auto-import": "2.6.3",
-    "ember-cli": "4.12.2",
-    "ember-cli-dependency-checker": "3.3.2",
-    "ember-cli-htmlbars": "6.3.0",
-    "ember-cli-inject-live-reload": "2.1.0",
-    "ember-load-initializers": "2.1.2",
-    "ember-maybe-import-regenerator": "1.0.0",
-    "ember-qunit": "8.0.1",
-    "ember-resolver": "9.0.1",
-    "ember-source": "4.12.3",
-    "ember-try": "2.0.0",
+    "concurrently": "^7.6.0",
     "eslint": "8.50.0",
     "eslint-config-prettier": "9.0.0",
     "eslint-plugin-jest": "27.4.0",
@@ -74,6 +69,7 @@
     "lerna-changelog": "2.2.0",
     "loader.js": "4.7.0",
     "prettier": "2.8.8",
+    "publint": "^0.2.3",
     "qunit": "2.19.4",
     "release-it": "15.11.0",
     "release-it-lerna-changelog": "5.0.0",
@@ -94,14 +90,7 @@
       "internal": ":house: Internal"
     }
   },
-  "ember": {
-    "edition": "octane"
-  },
-  "ember-addon": {
-    "configPath": "tests/dummy/config",
-    "after": [
-      "ember-cli-qunit",
-      "ember-qunit"
-    ]
+  "volta": {
+    "extends": "../package.json"
   }
 }
