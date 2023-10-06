@@ -1,4 +1,2 @@
 packages:
-  - "qunit-dom"
-  - "test-app"
-  - "test-vite-app"
+  - "packages/*"

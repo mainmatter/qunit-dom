@@ -9,5 +9,8 @@
     "qunit": "^2.19.4",
     "qunit-dom": "workspace:^",
     "vite": "^4.4.9"
+  },
+  "volta": {
+    "extends": "../../package.json"
   }
 }
