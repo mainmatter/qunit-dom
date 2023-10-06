@@ -61,7 +61,7 @@ This will attach the APIs to QUnit's `assert` object.
 
 ### Ember projects using &lt; v6.x of ember-qunit
 
-Install qunit-dom v2.0.0
+Install qunit-dom v3.0.0
 
 ### `<script>` Tag
 
@@ -69,7 +69,7 @@ Load `qunit-dom.js` *after* `qunit.js`:
 
 ```html
 <script src="https://unpkg.com/qunitjs/qunit/qunit.js"></script>
-<script src="https://unpkg.com/qunit-dom/dist/qunit-dom.js"></script>
+<script src="https://unpkg.com/qunit-dom/dist/iife/qunit-dom.js"></script>
 ```
 
 
