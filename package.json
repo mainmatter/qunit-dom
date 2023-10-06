@@ -8,7 +8,6 @@
     "lint:fix": "pnpm --filter '*' lint:fix",
     "test:coverage": "pnpm --filter '*' test:coverage",
     "test:ember": "pnpm --filter '*' test:ember"
-
   },
   "devDependencies": {
     "documentation": "14.0.2",
@@ -20,5 +19,9 @@
     "node": ">= 16.*",
     "yarn": "use pnpm",
     "npm": "use pnpm"
+  },
+  "volta": {
+    "node": "16.20.2",
+    "pnpm": "7.33.0"
   }
 }
