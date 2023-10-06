@@ -83,7 +83,7 @@
     "eslint-plugin-qunit": "^7.3.4",
     "loader.js": "^4.7.0",
     "prettier": "^2.8.3",
-    "qunit": "^2.19.3",
+    "qunit": "^2.20.0",
     "tracked-built-ins": "^3.1.0",
     "typescript": "^5.2.2",
     "webpack": "^5.75.0",

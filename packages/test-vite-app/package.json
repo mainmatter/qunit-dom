@@ -6,7 +6,7 @@
     "start": "vite"
   },
   "devDependencies": {
-    "qunit": "^2.19.4",
+    "qunit": "^2.20.0",
     "qunit-dom": "workspace:^",
     "vite": "^4.4.9"
   },
