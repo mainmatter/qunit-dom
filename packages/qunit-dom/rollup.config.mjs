@@ -25,7 +25,7 @@ const iifeBundle = {
 
   output: {
     name: 'QUnitDOM',
-    file: 'dist/qunit-dom.js',
+    file: 'dist/iife/index.js',
     format: 'iife',
     sourcemap: true,
   },
@@ -38,7 +38,7 @@ const esBundle = {
   plugins: [typescript(typescriptConfiguration)],
 
   output: {
-    file: 'dist/addon-test-support/index.js',
+    file: 'dist/es/index.js',
     format: 'es',
     sourcemap: true,
   },
