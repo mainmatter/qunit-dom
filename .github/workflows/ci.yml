@@ -54,8 +54,8 @@ jobs:
           cache: pnpm
 
       - run: pnpm install
-      - run: pnpm lint
       - run: pnpm build
+      - run: pnpm lint
       - run: pnpm test:coverage --runInBand
       - run: pnpm test:ember
 
