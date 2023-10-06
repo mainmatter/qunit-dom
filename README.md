@@ -37,7 +37,7 @@ or using [`yarn`](https://yarnpkg.com/):
 yarn add --dev qunit-dom
 ```
 
-### Ember projects using `ember-qunit` v5.x and above
+### Ember projects using `ember-qunit` v6.x and above
 
 Import and run the `setup` function in your `test-helper.js` file:
 
@@ -59,9 +59,9 @@ start();
 
 This will attach the APIs to QUnit's `assert` object.
 
-### Ember projects using `ember-qunit` v4.x and below
+### Ember projects using &lt; v6.x of ember-qunit
 
-`qunit-dom` will automatically attach the APIs to QUnit's `assert` object. No extra setup required :tada:.
+Install qunit-dom v2.0.0
 
 ### `<script>` Tag
 
