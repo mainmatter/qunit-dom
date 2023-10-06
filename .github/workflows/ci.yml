@@ -10,7 +10,7 @@ on:
     - cron: '0 3 * * *' # daily, at 3am
 
 env:
-  PNPM_VERSION: 7.33.6
+  PNPM_VERSION: 8.8.0
 
 jobs:
   docs:
@@ -25,7 +25,7 @@ jobs:
 
       - uses: actions/setup-node@v3.8.1
         with:
-          node-version: 16
+          node-version: 18.17
           cache: pnpm
 
       - run: pnpm install
@@ -74,7 +74,7 @@ jobs:
 
       - uses: actions/setup-node@v3.8.1
         with:
-          node-version: 16
+          node-version: 18.17
           cache: pnpm
 
       - run: pnpm install

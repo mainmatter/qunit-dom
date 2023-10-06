@@ -17,12 +17,12 @@
     "prettier": "^2.8.8"
   },
   "engines": {
-    "node": ">= 16.*",
+    "node": ">= 18.*",
     "yarn": "use pnpm",
     "npm": "use pnpm"
   },
   "volta": {
-    "node": "16.20.2",
-    "pnpm": "7.33.0"
+    "node": "18.17.1",
+    "pnpm": "8.8.0"
   }
 }

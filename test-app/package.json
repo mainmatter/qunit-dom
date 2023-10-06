@@ -109,12 +109,15 @@
     "ts-jest": "27.1.5"
   },
   "engines": {
-    "node": "14.* || 16.* || >= 18"
+    "node": ">= 18"
   },
   "ember": {
     "edition": "octane"
   },
   "dependencies": {
     "qunit-dom": "workspace:*"
+  },
+  "volta": {
+    "extends": "../package.json"
   }
 }

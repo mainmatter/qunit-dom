@@ -13,17 +13,21 @@
   "repository": "https://github.com/simplabs/qunit-dom",
   "license": "MIT",
   "author": "simplabs GmbH",
-  "types": "dist/qunit-dom.d.ts",
   "exports": {
     ".": {
       "types": "dist/addon-test-support/qunit-dom-modules.d.ts",
       "default": "dist/addon-test-support/index.js"
     }
-  }, 
-  "directories": {
-    "doc": "doc",
-    "test": "tests"
   },
+  "typesVersions": {
+    "*": {
+      "*": "dist/addon-test-support/qunit-dom-modules.d.ts"
+    }
+  },
+  "types": "dist/qunit-dom.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "rollup -c",
     "changelog": "lerna-changelog",
@@ -77,5 +81,8 @@
       "documentation": ":memo: Documentation",
       "internal": ":house: Internal"
     }
+  },
+  "volta": {
+    "extends": "../package.json"
   }
 }
