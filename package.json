@@ -24,5 +24,15 @@
   "volta": {
     "node": "18.17.1",
     "pnpm": "8.8.0"
+  },
+  "changelog": {
+    "repo": "mainmatter/qunit-dom",
+    "labels": {
+      "breaking": ":boom: Breaking Change",
+      "enhancement": ":rocket: Enhancement",
+      "bug": ":bug: Bug Fix",
+      "documentation": ":memo: Documentation",
+      "internal": ":house: Internal"
+    }
   }
 }

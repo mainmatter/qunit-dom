@@ -81,16 +81,6 @@
     "webpack": "5.88.2"
   },
   "packageManager": "pnpm@7.33.6",
-  "changelog": {
-    "repo": "mainmatter/qunit-dom",
-    "labels": {
-      "breaking": ":boom: Breaking Change",
-      "enhancement": ":rocket: Enhancement",
-      "bug": ":bug: Bug Fix",
-      "documentation": ":memo: Documentation",
-      "internal": ":house: Internal"
-    }
-  },
   "volta": {
     "extends": "../../package.json"
   }
