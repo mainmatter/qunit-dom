@@ -116,7 +116,7 @@ importers:
         version: 3.1.1
       '@ember/test-helpers':
         specifier: ^2.9.3
-        version: 2.9.4(@babel/core@7.23.0)(ember-source@4.10.0)
+        version: 2.9.4(@babel/core@7.23.0)(ember-source@4.12.3)
       '@embroider/compat':
         specifier: 0.48.1
         version: 0.48.1(@embroider/core@0.48.1)
@@ -146,10 +146,10 @@ importers:
         version: 4.0.6(@babel/core@7.23.0)
       '@types/ember-qunit':
         specifier: ^6.1.1
-        version: 6.1.1(@ember/test-helpers@2.9.4)(ember-source@4.10.0)(qunit@2.19.4)(webpack@5.88.2)
+        version: 6.1.1(@ember/test-helpers@2.9.4)(ember-source@4.12.3)(qunit@2.19.4)(webpack@5.88.2)
       '@types/ember-resolver':
         specifier: ^9.0.0
-        version: 9.0.0(@ember/string@3.1.1)(ember-source@4.10.0)
+        version: 9.0.0(@ember/string@3.1.1)(ember-source@4.12.3)
       '@types/ember__application':
         specifier: ^4.0.8
         version: 4.0.8(@babel/core@7.23.0)
@@ -200,7 +200,7 @@ importers:
         version: 4.0.3(@babel/core@7.23.0)
       '@types/ember__test-helpers':
         specifier: ^2.9.1
-        version: 2.9.1(@babel/core@7.23.0)(ember-source@4.10.0)
+        version: 2.9.1(@babel/core@7.23.0)(ember-source@4.12.3)
       '@types/ember__utils':
         specifier: ^4.0.4
         version: 4.0.4(@babel/core@7.23.0)
@@ -278,13 +278,13 @@ importers:
         version: 7.0.0
       ember-qunit:
         specifier: ^6.1.1
-        version: 6.2.0(@ember/test-helpers@2.9.4)(ember-source@4.10.0)(qunit@2.19.4)(webpack@5.88.2)
+        version: 6.2.0(@ember/test-helpers@2.9.4)(ember-source@4.12.3)(qunit@2.19.4)(webpack@5.88.2)
       ember-resolver:
         specifier: ^10.0.0
-        version: 10.1.1(@ember/string@3.1.1)(ember-source@4.10.0)
+        version: 10.1.1(@ember/string@3.1.1)(ember-source@4.12.3)
       ember-source:
-        specifier: ~4.10.0
-        version: 4.10.0(@babel/core@7.23.0)(@glimmer/component@1.1.2)(webpack@5.88.2)
+        specifier: ~4.12.0
+        version: 4.12.3(@babel/core@7.23.0)(@glimmer/component@1.1.2)(webpack@5.88.2)
       ember-source-channel-url:
         specifier: ^3.0.0
         version: 3.0.0
@@ -1797,7 +1797,7 @@ packages:
       - supports-color
     dev: true
 
-  /@ember/test-helpers@2.9.4(@babel/core@7.23.0)(ember-source@4.10.0):
+  /@ember/test-helpers@2.9.4(@babel/core@7.23.0)(ember-source@4.12.3):
     resolution: {integrity: sha512-z+Qs1NYWyIVDmrY6WdmOS5mdG1lJ5CFfzh6dRhLfs9lq45deDaDrVNcaCYhnNeJZTvUBK2XR2SvPcZm0RloXdA==}
     engines: {node: 10.* || 12.* || 14.* || 15.* || >= 16.*}
     peerDependencies:
@@ -1805,13 +1805,13 @@ packages:
     dependencies:
       '@ember/test-waiters': 3.0.2
       '@embroider/macros': 1.13.2
-      '@embroider/util': 1.12.0(ember-source@4.10.0)
+      '@embroider/util': 1.12.0(ember-source@4.12.3)
       broccoli-debug: 0.6.5(supports-color@8.1.1)
       broccoli-funnel: 3.0.8
       ember-cli-babel: 7.26.11(supports-color@8.1.1)
       ember-cli-htmlbars: 6.3.0
       ember-destroyable-polyfill: 2.0.3(@babel/core@7.23.0)
-      ember-source: 4.10.0(@babel/core@7.23.0)(@glimmer/component@1.1.2)(webpack@5.88.2)
+      ember-source: 4.12.3(@babel/core@7.23.0)(@glimmer/component@1.1.2)(webpack@5.88.2)
     transitivePeerDependencies:
       - '@babel/core'
       - '@glint/environment-ember-loose'
@@ -2052,7 +2052,7 @@ packages:
       resolve: 1.22.6
     dev: true
 
-  /@embroider/util@1.12.0(ember-source@4.10.0):
+  /@embroider/util@1.12.0(ember-source@4.12.3):
     resolution: {integrity: sha512-P4M1QADEH9ceIYC9mwHeV+6DDgEIQQYFfZi728nVKqTAxakXoiLgu/BCyQmEGyow9fYEPYaC1boDCZxW2JQAXg==}
     engines: {node: 14.* || >= 16}
     peerDependencies:
@@ -2068,7 +2068,7 @@ packages:
       '@embroider/macros': 1.13.2
       broccoli-funnel: 3.0.8
       ember-cli-babel: 7.26.11(supports-color@8.1.1)
-      ember-source: 4.10.0(@babel/core@7.23.0)(@glimmer/component@1.1.2)(webpack@5.88.2)
+      ember-source: 4.12.3(@babel/core@7.23.0)(@glimmer/component@1.1.2)(webpack@5.88.2)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -3162,11 +3162,11 @@ packages:
       '@types/ms': 0.7.32
     dev: true
 
-  /@types/ember-qunit@6.1.1(@ember/test-helpers@2.9.4)(ember-source@4.10.0)(qunit@2.19.4)(webpack@5.88.2):
+  /@types/ember-qunit@6.1.1(@ember/test-helpers@2.9.4)(ember-source@4.12.3)(qunit@2.19.4)(webpack@5.88.2):
     resolution: {integrity: sha512-1g5A3vPKhvB/CuN/EP9rBLXYaJOjzKyLYWeBtNDEQNkTuG1dAo/Hg0CCixgbBgLlzaDP8mR/n1xpg8HqQ8SUKg==}
     deprecated: This is a stub types definition. ember-qunit provides its own type definitions, so you do not need this installed.
     dependencies:
-      ember-qunit: 6.2.0(@ember/test-helpers@2.9.4)(ember-source@4.10.0)(qunit@2.19.4)(webpack@5.88.2)
+      ember-qunit: 6.2.0(@ember/test-helpers@2.9.4)(ember-source@4.12.3)(qunit@2.19.4)(webpack@5.88.2)
     transitivePeerDependencies:
       - '@ember/test-helpers'
       - '@glint/template'
@@ -3176,11 +3176,11 @@ packages:
       - webpack
     dev: true
 
-  /@types/ember-resolver@9.0.0(@ember/string@3.1.1)(ember-source@4.10.0):
+  /@types/ember-resolver@9.0.0(@ember/string@3.1.1)(ember-source@4.12.3):
     resolution: {integrity: sha512-lEuC2QD8K6rRAbELMejrALFBgelRPt6OQtapny4Oke07ZtK/Lbf9zn5KIDl7PNkirxMD0AStsQTdUqFu6eVbVw==}
     deprecated: This is a stub types definition. ember-resolver provides its own type definitions, so you do not need this installed.
     dependencies:
-      ember-resolver: 10.1.1(@ember/string@3.1.1)(ember-source@4.10.0)
+      ember-resolver: 10.1.1(@ember/string@3.1.1)(ember-source@4.12.3)
     transitivePeerDependencies:
       - '@ember/string'
       - ember-source
@@ -3339,11 +3339,11 @@ packages:
     resolution: {integrity: sha512-lATq4nSKq/V7Gw261HwoEgpu5jbqDv7/FeO19/Cvh+jbifAvrYfDPm1hOSShj7Ths7yL16O0KeuPQag3rSAv9g==}
     dev: true
 
-  /@types/ember__test-helpers@2.9.1(@babel/core@7.23.0)(ember-source@4.10.0):
+  /@types/ember__test-helpers@2.9.1(@babel/core@7.23.0)(ember-source@4.12.3):
     resolution: {integrity: sha512-KZ6jYr0ZiQHlklLcfyuy1j+FkvygEayf5mZ9FcaSOahw9ghK3K5TYSRDCuIBELRw//OB/WP9J7v9NduFRNfRgg==}
     deprecated: This is a stub types definition. @ember/test-helpers provides its own type definitions, so you do not need this installed.
     dependencies:
-      '@ember/test-helpers': 2.9.4(@babel/core@7.23.0)(ember-source@4.10.0)
+      '@ember/test-helpers': 2.9.4(@babel/core@7.23.0)(ember-source@4.12.3)
     transitivePeerDependencies:
       - '@babel/core'
       - '@glint/environment-ember-loose'
@@ -8007,7 +8007,7 @@ packages:
       - supports-color
     dev: true
 
-  /ember-qunit@6.2.0(@ember/test-helpers@2.9.4)(ember-source@4.10.0)(qunit@2.19.4)(webpack@5.88.2):
+  /ember-qunit@6.2.0(@ember/test-helpers@2.9.4)(ember-source@4.12.3)(qunit@2.19.4)(webpack@5.88.2):
     resolution: {integrity: sha512-mC+0bp8DwWzJLn8SW3GS8KDZIkl4yLsNYwMi5Dw6+aFllq7FM2crd/dfY4MuOIHK7GKdjtmWJTMGnjSpeSayaw==}
     engines: {node: 14.* || 16.* || >= 18}
     peerDependencies:
@@ -8015,14 +8015,14 @@ packages:
       ember-source: '>=3.28'
       qunit: ^2.13.0
     dependencies:
-      '@ember/test-helpers': 2.9.4(@babel/core@7.23.0)(ember-source@4.10.0)
+      '@ember/test-helpers': 2.9.4(@babel/core@7.23.0)(ember-source@4.12.3)
       broccoli-funnel: 3.0.8
       broccoli-merge-trees: 3.0.2(supports-color@8.1.1)
       common-tags: 1.8.2
       ember-auto-import: 2.6.3(webpack@5.88.2)
       ember-cli-babel: 7.26.11(supports-color@8.1.1)
       ember-cli-test-loader: 3.1.0
-      ember-source: 4.10.0(@babel/core@7.23.0)(@glimmer/component@1.1.2)(webpack@5.88.2)
+      ember-source: 4.12.3(@babel/core@7.23.0)(@glimmer/component@1.1.2)(webpack@5.88.2)
       qunit: 2.19.4
       resolve-package-path: 4.0.3
       silent-error: 1.1.1(supports-color@8.1.1)
@@ -8033,7 +8033,7 @@ packages:
       - webpack
     dev: true
 
-  /ember-resolver@10.1.1(@ember/string@3.1.1)(ember-source@4.10.0):
+  /ember-resolver@10.1.1(@ember/string@3.1.1)(ember-source@4.12.3):
     resolution: {integrity: sha512-y1zzn6C4YGJui+tJzcCKlsf1oSOSVAkRrvmg8OwqVIKnALKKb9ihx2qLCslHg8x0wJvJgMtDMXgrczvQrZW0Lw==}
     engines: {node: 14.* || 16.* || >= 18}
     peerDependencies:
@@ -8045,7 +8045,7 @@ packages:
     dependencies:
       '@ember/string': 3.1.1
       ember-cli-babel: 7.26.11(supports-color@8.1.1)
-      ember-source: 4.10.0(@babel/core@7.23.0)(@glimmer/component@1.1.2)(webpack@5.88.2)
+      ember-source: 4.12.3(@babel/core@7.23.0)(@glimmer/component@1.1.2)(webpack@5.88.2)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -8075,8 +8075,8 @@ packages:
       - encoding
     dev: true
 
-  /ember-source@4.10.0(@babel/core@7.23.0)(@glimmer/component@1.1.2)(webpack@5.88.2):
-    resolution: {integrity: sha512-Y7+M+vSygMrpq4szsnpik3PxdVVA7ApuwU2L/l9Os+qpPqIKy4hT0Rw/17z4b87HNEX03jv7ueMbgcpxjUf1Kw==}
+  /ember-source@4.12.3(@babel/core@7.23.0)(@glimmer/component@1.1.2)(webpack@5.88.2):
+    resolution: {integrity: sha512-UuFpMWf931pEWBPuujkaMYhsoPvFyZc+tMYjlUn7um20uL+hWs+k2n/TxMVuxydSzJLnxrXz81nTwbYIlgRWdw==}
     engines: {node: '>= 14.*'}
     peerDependencies:
       '@glimmer/component': ^1.1.2
@@ -8086,6 +8086,7 @@ packages:
       '@ember/edition-utils': 1.2.0
       '@glimmer/component': 1.1.2(@babel/core@7.23.0)
       '@glimmer/vm-babel-plugins': 0.84.2(@babel/core@7.23.0)
+      '@simple-dom/interface': 1.4.0
       babel-plugin-debug-macros: 0.3.4(@babel/core@7.23.0)
       babel-plugin-filter-imports: 4.0.0
       broccoli-concat: 4.2.5
