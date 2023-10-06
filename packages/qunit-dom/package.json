@@ -12,7 +12,7 @@
   ],
   "repository": "https://github.com/simplabs/qunit-dom",
   "license": "MIT",
-  "author": "simplabs GmbH",
+  "author": "Mainmatter GmbH",
   "type": "module",
   "exports": {
     ".": {
@@ -74,6 +74,7 @@
     "release-it": "15.11.0",
     "release-it-lerna-changelog": "5.0.0",
     "rollup": "2.79.1",
+    "rollup-plugin-copy": "3.5.0",
     "rollup-plugin-typescript2": "0.34.1",
     "ts-jest": "27.1.5",
     "typescript": "4.9.5",
