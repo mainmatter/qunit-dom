@@ -10,7 +10,7 @@
     "qunit-plugin",
     "testing"
   ],
-  "repository": "https://github.com/simplabs/qunit-dom",
+  "repository": "https://github.com/mainmatter/qunit-dom",
   "license": "MIT",
   "author": "Mainmatter GmbH",
   "type": "module",
@@ -82,7 +82,7 @@
   },
   "packageManager": "pnpm@7.33.6",
   "changelog": {
-    "repo": "simplabs/qunit-dom",
+    "repo": "mainmatter/qunit-dom",
     "labels": {
       "breaking": ":boom: Breaking Change",
       "enhancement": ":rocket: Enhancement",
