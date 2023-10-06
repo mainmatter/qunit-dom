@@ -88,7 +88,7 @@
     "typescript": "^5.2.2",
     "webpack": "^5.75.0",
     "ember-source-channel-url": "^3.0.0",
-    "ember-try": "^2.0.0",
+    "ember-try": "^3.0.0",
     "@embroider/test-setup": "3.0.1",
     "@embroider/compat": "0.48.1",
     "@embroider/core": "0.48.1",
