@@ -1,4 +1,5 @@
 import typescript from 'rollup-plugin-typescript2';
+import copy from 'rollup-plugin-copy';
 
 const typescriptConfiguration = {
   exclude: [
@@ -9,11 +10,18 @@ const typescriptConfiguration = {
   ],
 };
 
+const copyStaticArtifacts = copy({
+  targets: [
+    { src: '../../README.md', dest: '.' },
+    { src: '../../LICENSE', dest: '.' },
+  ],
+});
+
 const iifeBundle = {
   input: 'lib/qunit-dom.ts',
 
   external: ['qunit'],
-  plugins: [typescript(typescriptConfiguration)],
+  plugins: [typescript(typescriptConfiguration), copyStaticArtifacts],
 
   output: {
     name: 'QUnitDOM',
