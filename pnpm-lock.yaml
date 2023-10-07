@@ -45,8 +45,8 @@ importers:
         specifier: 1.7.0
         version: 1.7.0(supports-color@8.1.1)
       concurrently:
-        specifier: 7.6.0
-        version: 7.6.0
+        specifier: 8.2.1
+        version: 8.2.1
       eslint:
         specifier: 8.50.0
         version: 8.50.0
@@ -229,8 +229,8 @@ importers:
         specifier: 3.0.0
         version: 3.0.0
       concurrently:
-        specifier: 7.6.0
-        version: 7.6.0
+        specifier: 8.2.1
+        version: 8.2.1
       documentation:
         specifier: 14.0.2
         version: 14.0.2
@@ -6664,22 +6664,6 @@ packages:
 
   /concat-map@0.0.1:
     resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==}
-    dev: true
-
-  /concurrently@7.6.0:
-    resolution: {integrity: sha512-BKtRgvcJGeZ4XttiDiNcFiRlxoAeZOseqUvyYRUp/Vtd+9p1ULmeoSqGsDA+2ivdeDFpqrJvGvmI+StKfKl5hw==}
-    engines: {node: ^12.20.0 || ^14.13.0 || >=16.0.0}
-    hasBin: true
-    dependencies:
-      chalk: 4.1.2
-      date-fns: 2.30.0
-      lodash: 4.17.21
-      rxjs: 7.8.1
-      shell-quote: 1.8.1
-      spawn-command: 0.0.2
-      supports-color: 8.1.1
-      tree-kill: 1.2.2
-      yargs: 17.7.2
     dev: true
 
   /concurrently@8.2.1:
