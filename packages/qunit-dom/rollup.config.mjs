@@ -21,11 +21,18 @@ const iifeBundle = {
   input: 'lib/qunit-dom.ts',
 
   external: ['qunit'],
-  plugins: [typescript(typescriptConfiguration), copyStaticArtifacts],
+  plugins: [typescript({
+    ...typescriptConfiguration,
+    tsconfigOverride: {
+      compilerOptions: {
+        declaration: false,
+      }
+    }
+  }), copyStaticArtifacts],
 
   output: {
     name: 'QUnitDOM',
-    file: 'dist/iife/index.js',
+    file: 'dist/qunit-dom.js',
     format: 'iife',
     sourcemap: true,
   },
