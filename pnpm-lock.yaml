@@ -307,8 +307,8 @@ importers:
         specifier: 27.4.0
         version: 27.4.0(@typescript-eslint/eslint-plugin@5.62.0)(eslint@8.50.0)(jest@27.5.1)(typescript@5.2.2)
       eslint-plugin-n:
-        specifier: 15.7.0
-        version: 15.7.0(eslint@8.50.0)
+        specifier: 16.1.0
+        version: 16.1.0(eslint@8.50.0)
       eslint-plugin-prettier:
         specifier: 4.2.1
         version: 4.2.1(eslint-config-prettier@9.0.0)(eslint@8.50.0)(prettier@2.8.8)
@@ -8435,15 +8435,15 @@ packages:
       - supports-color
     dev: true
 
-  /eslint-plugin-es@4.1.0(eslint@8.50.0):
-    resolution: {integrity: sha512-GILhQTnjYE2WorX5Jyi5i4dz5ALWxBIdQECVQavL6s7cI76IZTDWleTHkxz/QT3kvcs2QlGHvKLYsSlPOlPXnQ==}
-    engines: {node: '>=8.10.0'}
+  /eslint-plugin-es-x@7.2.0(eslint@8.50.0):
+    resolution: {integrity: sha512-9dvv5CcvNjSJPqnS5uZkqb3xmbeqRLnvXKK7iI5+oK/yTusyc46zbBZKENGsOfojm/mKfszyZb+wNqNPAPeGXA==}
+    engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
-      eslint: '>=4.19.1'
+      eslint: '>=8'
     dependencies:
+      '@eslint-community/eslint-utils': 4.4.0(eslint@8.50.0)
+      '@eslint-community/regexpp': 4.9.1
       eslint: 8.50.0
-      eslint-utils: 2.1.0
-      regexpp: 3.2.0
     dev: true
 
   /eslint-plugin-jest@27.4.0(@typescript-eslint/eslint-plugin@5.62.0)(eslint@8.50.0)(jest@27.5.1)(typescript@4.9.5):
@@ -8490,16 +8490,17 @@ packages:
       - typescript
     dev: true
 
-  /eslint-plugin-n@15.7.0(eslint@8.50.0):
-    resolution: {integrity: sha512-jDex9s7D/Qial8AGVIHq4W7NswpUD5DPDL2RH8Lzd9EloWUuvUkHfv4FRLMipH5q2UtyurorBkPeNi1wVWNh3Q==}
-    engines: {node: '>=12.22.0'}
+  /eslint-plugin-n@16.1.0(eslint@8.50.0):
+    resolution: {integrity: sha512-3wv/TooBst0N4ND+pnvffHuz9gNPmk/NkLwAxOt2JykTl/hcuECe6yhTtLJcZjIxtZwN+GX92ACp/QTLpHA3Hg==}
+    engines: {node: '>=16.0.0'}
     peerDependencies:
       eslint: '>=7.0.0'
     dependencies:
+      '@eslint-community/eslint-utils': 4.4.0(eslint@8.50.0)
       builtins: 5.0.1
       eslint: 8.50.0
-      eslint-plugin-es: 4.1.0(eslint@8.50.0)
-      eslint-utils: 3.0.0(eslint@8.50.0)
+      eslint-plugin-es-x: 7.2.0(eslint@8.50.0)
+      get-tsconfig: 4.7.2
       ignore: 5.2.4
       is-core-module: 2.13.0
       minimatch: 3.1.2
@@ -8550,13 +8551,6 @@ packages:
       estraverse: 5.3.0
     dev: true
 
-  /eslint-utils@2.1.0:
-    resolution: {integrity: sha512-w94dQYoauyvlDc43XnGB8lU3Zt713vNChgt4EWwhXAP2XkBvndfxF0AgIqKOOasjPIPzj9JqgwkwbCYD0/V3Zg==}
-    engines: {node: '>=6'}
-    dependencies:
-      eslint-visitor-keys: 1.3.0
-    dev: true
-
   /eslint-utils@3.0.0(eslint@8.50.0):
     resolution: {integrity: sha512-uuQC43IGctw68pJA1RgbQS8/NP7rch6Cwd4j3ZBtgo4/8Flj4eGE7ZYSZRN3iq5pVUv6GPdW5Z1RFleo84uLDA==}
     engines: {node: ^10.0.0 || ^12.0.0 || >= 14.0.0}
@@ -8565,11 +8559,6 @@ packages:
     dependencies:
       eslint: 8.50.0
       eslint-visitor-keys: 2.1.0
-    dev: true
-
-  /eslint-visitor-keys@1.3.0:
-    resolution: {integrity: sha512-6J72N8UNa462wa/KFODt/PJ3IU60SDpC3QXC1Hjc1BXXpfL2C9R5+AU7jhe0F6GREqVMh4Juu+NY7xn+6dipUQ==}
-    engines: {node: '>=4'}
     dev: true
 
   /eslint-visitor-keys@2.1.0:
@@ -9540,6 +9529,12 @@ packages:
     dependencies:
       call-bind: 1.0.2
       get-intrinsic: 1.2.1
+    dev: true
+
+  /get-tsconfig@4.7.2:
+    resolution: {integrity: sha512-wuMsz4leaj5hbGgg4IvDU0bqJagpftG5l5cXIAvo8uZrqn0NJqwtfupTN00VnkQJPcIRrxYrm1Ue24btpCha2A==}
+    dependencies:
+      resolve-pkg-maps: 1.0.0
     dev: true
 
   /get-uri@6.0.2:
@@ -14313,11 +14308,6 @@ packages:
       set-function-name: 2.0.1
     dev: true
 
-  /regexpp@3.2.0:
-    resolution: {integrity: sha512-pq2bWo9mVD43nbts2wGv17XLiNLya+GklZ8kaDLV2Z08gDCsGpnKn9BFMepvWuHCbyVvY7J5o5+BVvoQbmlJLg==}
-    engines: {node: '>=8'}
-    dev: true
-
   /regexpu-core@2.0.0:
     resolution: {integrity: sha512-tJ9+S4oKjxY8IZ9jmjnp/mtytu1u3iyIQAfmI51IKWH6bFf7XR1ybtaO6j7INhZKXOTYADk7V5qxaqLkmNxiZQ==}
     dependencies:
@@ -14633,6 +14623,10 @@ packages:
     dependencies:
       http-errors: 1.6.3
       path-is-absolute: 1.0.1
+    dev: true
+
+  /resolve-pkg-maps@1.0.0:
+    resolution: {integrity: sha512-seS2Tj26TBVOC2NIc2rOe2y2ZO7efxITtLZcGSOnHHNOQ7CkiUBfw0Iw2ck6xkIhPwLhKNLS8BO+hEpngQlqzw==}
     dev: true
 
   /resolve-url@0.2.1:
