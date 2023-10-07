@@ -16,16 +16,16 @@
   "type": "module",
   "exports": {
     ".": {
-      "types": "./dist/addon-test-support/qunit-dom-modules.d.ts",
-      "default": "./dist/addon-test-support/index.js"
+      "types": "./dist/es/qunit-dom.d.ts",
+      "default": "./dist/es/index.js"
     }
   },
   "typesVersions": {
     "*": {
-      "*": "dist/addon-test-support/qunit-dom-modules.d.ts"
+      "*": "dist/es/qunit-dom.d.ts"
     }
   },
-  "types": "dist/qunit-dom.d.ts",
+  "types": "dist/es/qunit-dom.d.ts",
   "files": [
     "dist"
   ],

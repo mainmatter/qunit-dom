@@ -21,7 +21,14 @@ const iifeBundle = {
   input: 'lib/qunit-dom.ts',
 
   external: ['qunit'],
-  plugins: [typescript(typescriptConfiguration), copyStaticArtifacts],
+  plugins: [typescript({
+    ...typescriptConfiguration,
+    tsconfigOverride: {
+      compilerOptions: {
+        declaration: false,
+      }
+    }
+  }), copyStaticArtifacts],
 
   output: {
     name: 'QUnitDOM',
@@ -38,7 +45,7 @@ const esBundle = {
   plugins: [typescript(typescriptConfiguration)],
 
   output: {
-    file: 'dist/addon-test-support/index.js',
+    file: 'dist/es/index.js',
     format: 'es',
     sourcemap: true,
   },
