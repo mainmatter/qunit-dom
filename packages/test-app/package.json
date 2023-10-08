@@ -102,7 +102,7 @@
     "eslint-plugin-jest": "27.4.0",
     "jest": "27.5.1",
     "lerna-changelog": "2.2.0",
-    "release-it": "15.11.0",
+    "release-it": "16.2.1",
     "release-it-lerna-changelog": "5.0.0",
     "rollup": "2.79.1",
     "rollup-plugin-typescript2": "0.34.1",
