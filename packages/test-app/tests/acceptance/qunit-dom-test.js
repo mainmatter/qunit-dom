@@ -9,7 +9,7 @@ module('Acceptance | qunit-dom', function (hooks) {
     assert.ok(assert.dom, 'assert.dom is available');
     assert.ok(
       assert.dom('.foo').includesText,
-      'assert.dom(...).includesText is available'
+      'assert.dom(...).includesText is available',
     );
 
     assert
@@ -49,7 +49,7 @@ module('Acceptance | qunit-dom', function (hooks) {
 
     assert.throws(
       () => assert.dom('foo', 'bar'),
-      /bar is not a valid root element/
+      /bar is not a valid root element/,
     );
   });
 });
