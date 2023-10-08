@@ -16,6 +16,7 @@ jobs:
   docs:
     name: API docs
     runs-on: ubuntu-latest
+    timeout-minutes: 15
 
     steps:
       - uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 # v4
@@ -36,6 +37,7 @@ jobs:
   test:
     name: Tests
     runs-on: ubuntu-latest
+    timeout-minutes: 15
 
     steps:
       - uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 # v4
@@ -56,6 +58,7 @@ jobs:
   compatibility:
     name: "Tests (Ember.js, ember-try: ${{ matrix.ember-try-scenario }}, Embroider: ${{ matrix.embroider }})"
     runs-on: ubuntu-latest
+    timeout-minutes: 15
 
     strategy:
       matrix:
