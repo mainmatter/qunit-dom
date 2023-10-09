@@ -40,32 +40,21 @@
     "lint::js:fix": "eslint . --fix",
     "prepublish": "rollup -c",
     "release": "release-it",
-    "test": "jest",
-    "test:coverage": "jest --coverage",
-    "test:watch": "jest --watchAll --notify"
-  },
-  "jest": {
-    "testEnvironment": "jsdom",
-    "preset": "ts-jest",
-    "testPathIgnorePatterns": [
-      "/node_modules/",
-      "/dist/"
-    ]
+    "test": "vitest",
+    "test:coverage": "vitest --coverage"
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "0.11.0",
-    "@types/jest": "27.5.2",
     "@types/qunit": "2.19.6",
     "@typescript-eslint/eslint-plugin": "6.7.4",
     "@typescript-eslint/parser": "6.7.4",
+    "@vitest/coverage-v8": "^0.34.6",
     "babel-plugin-transform-es2015-modules-commonjs": "6.26.2",
     "babel-preset-env": "1.7.0",
     "concurrently": "8.2.1",
     "eslint": "8.50.0",
     "eslint-config-prettier": "9.0.0",
-    "eslint-plugin-jest": "27.4.2",
     "eslint-plugin-prettier": "5.0.0",
-    "jest": "27.5.1",
     "lerna-changelog": "2.2.0",
     "loader.js": "4.7.0",
     "prettier": "3.0.3",
@@ -76,8 +65,8 @@
     "rollup": "2.79.1",
     "rollup-plugin-copy": "3.5.0",
     "rollup-plugin-typescript2": "0.34.1",
-    "ts-jest": "27.1.5",
     "typescript": "5.2.2",
+    "vitest": "^0.34.6",
     "webpack": "5.88.2"
   },
   "packageManager": "pnpm@8.8.0",
