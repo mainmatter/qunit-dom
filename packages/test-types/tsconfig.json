@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    // Settings needed for test
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "bundler",
+
+    // Strictness settings (one day default?)
+    "strict": true,
+    "alwaysStrict": true,
+
+    // Don't implicitly pull in declarations from `@types` packages unless we
+    // actually import from them AND the package in question doesn't bring its
+    // own types. 
+    "types": []
+  }
+}
