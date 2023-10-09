@@ -1,4 +1,4 @@
-import elementToString from '../helpers/element-to-string';
+import elementToString from '../helpers/element-to-string.js';
 
 export default function focused(message?: string) {
   let element = this.findTargetElement();

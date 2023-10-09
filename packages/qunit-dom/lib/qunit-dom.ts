@@ -1,6 +1,6 @@
 /* global QUnit */
-import install from './install';
+import install from './install.js';
 
-export { setup } from './qunit-dom-modules';
+export { setup } from './qunit-dom-modules.js';
 
 install(QUnit.assert);

@@ -1,5 +1,5 @@
-import visible from '../helpers/visible';
-import { ExistsOptions } from '../assertions';
+import visible from '../helpers/visible.js';
+import type { ExistsOptions } from '../assertions.js';
 
 export default function isVisible(options?: string | ExistsOptions, message?: string) {
   let expectedCount: number | null = null;

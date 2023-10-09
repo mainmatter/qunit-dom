@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    // Settings needed for test
+    "target": "esnext",
+    // using qunit-dom with node would require jsdom or happydom
+    // but these use cases are currently untested.
+    // Node16+ requires file extensions
+    "module": "Node16",
+    "moduleResolution": "node16",
+
+    /////////////////////////
+    // Settings to help us type check effectively.
+    // Unrelated to the above.
+
+    // Strictness settings (one day default?)
+    "strict": true,
+
+    // Don't implicitly pull in declarations from `@types` packages unless we
+    // actually import from them AND the package in question doesn't bring its
+    // own types. 
+    "types": []
+  }
+}

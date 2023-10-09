@@ -368,6 +368,44 @@ importers:
         specifier: 5.2.2
         version: 5.2.2
 
+  packages/test-types-resolution-node:
+    dependencies:
+      qunit:
+        specifier: ^2.20.0
+        version: 2.20.0
+      qunit-dom:
+        specifier: workspace:*
+        version: link:../qunit-dom
+    devDependencies:
+      '@types/qunit':
+        specifier: 2.19.6
+        version: 2.19.6
+      expect-type:
+        specifier: ^0.17.3
+        version: 0.17.3
+      typescript:
+        specifier: 5.2.2
+        version: 5.2.2
+
+  packages/test-types-resolution-node16:
+    dependencies:
+      qunit:
+        specifier: ^2.20.0
+        version: 2.20.0
+      qunit-dom:
+        specifier: workspace:*
+        version: link:../qunit-dom
+    devDependencies:
+      '@types/qunit':
+        specifier: 2.19.6
+        version: 2.19.6
+      expect-type:
+        specifier: ^0.17.3
+        version: 0.17.3
+      typescript:
+        specifier: 5.2.2
+        version: 5.2.2
+
   packages/test-vite-app:
     devDependencies:
       qunit:

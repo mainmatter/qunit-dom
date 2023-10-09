@@ -1,0 +1,22 @@
+{
+  "name": "type-tests-resolution-node16",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "lint": "tsc --noEmit",
+    "start": "tsc --noEmit --watch",
+    "test": "echo 'run pnpm lint' instead"
+  },
+  "devDependencies": {
+    "@types/qunit": "2.19.6",
+    "expect-type": "^0.17.3",
+    "typescript": "5.2.2"
+  },
+  "volta": {
+    "extends": "../../package.json"
+  },
+  "dependencies": {
+    "qunit": "^2.20.0",
+    "qunit-dom": "workspace:*"
+  }
+}

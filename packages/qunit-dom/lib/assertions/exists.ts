@@ -1,4 +1,4 @@
-import { ExistsOptions } from '../assertions';
+import type { ExistsOptions } from '../assertions.js';
 
 export default function exists(options?: ExistsOptions | string, message?: string) {
   let expectedCount: number | null = null;
