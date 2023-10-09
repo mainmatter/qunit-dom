@@ -1,4 +1,4 @@
-/* eslint-env jest */
+import { describe, beforeEach, test, expect, vi } from 'vitest';
 
 import TestAssertions from '../helpers/test-assertions';
 
@@ -142,7 +142,7 @@ describe('assert.dom(...).includesText()', () => {
     });
 
     test('explains failures to the user via `console.warn` if expected text contains collapsable whitespace', () => {
-      const warnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
+      const warnSpy = vi.spyOn(console, 'warn').mockImplementation(() => {});
 
       assert.dom(element).includesText('foo\n  bar');
 

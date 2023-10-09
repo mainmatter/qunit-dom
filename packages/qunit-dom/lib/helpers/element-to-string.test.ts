@@ -1,4 +1,4 @@
-/* eslint-env jest */
+import { describe, beforeEach, test, expect } from 'vitest';
 
 import elToString from './element-to-string';
 

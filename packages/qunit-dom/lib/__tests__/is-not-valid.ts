@@ -1,4 +1,4 @@
-/* eslint-env jest */
+import { describe, beforeEach, test, expect } from 'vitest';
 import TestAssertions from '../helpers/test-assertions';
 
 describe('assert.dom(...).isNotValid()', () => {
