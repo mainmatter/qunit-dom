@@ -21,6 +21,9 @@ assert.dom('input').hasValue(/.+ Doe/);
 assert.dom('input').hasAttribute('type', 'text');
 ```
 
+> [!NOTE]
+> qunit-dom was written and is maintained by [Mainmatter](https://mainmatter.com) and contributors.
+> We offer consulting, training, and team augmentation for web development teams – check out our [website](https://mainmatter.com/) to learn more!
 
 Install
 ------------------------------------------------------------------------------
