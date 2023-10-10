@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    // Settings needed for test
+    "target": "esnext",
+    // using qunit-dom with node would require jsdom or happydom
+    // but these use cases are currently untested.
+    // But some older packagers set up TS this way because they 
+    // haven't moved to the newer "bundler" resolution mode yet.
+    "module": "esnext",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+
+    /////////////////////////
+    // Settings to help us type check effectively.
+    // Unrelated to the above.
+
+    // Strictness settings (one day default?)
+    "strict": true,
+
+    // Don't implicitly pull in declarations from `@types` packages unless we
+    // actually import from them AND the package in question doesn't bring its
+    // own types. 
+    "types": []
+  }
+}

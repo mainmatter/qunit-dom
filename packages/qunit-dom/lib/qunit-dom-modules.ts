@@ -1,7 +1,7 @@
-import install from './install';
-import { overrideRootElement } from './root-element';
+import install from './install.js';
+import { overrideRootElement } from './root-element.js';
 
-export { default as install } from './install';
+export { default as install } from './install.js';
 
 interface SetupOptions {
   getRootElement?: () => Element | null;

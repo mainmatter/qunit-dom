@@ -1,5 +1,5 @@
-import DOMAssertions from './assertions';
-import { getRootElement } from './root-element';
+import DOMAssertions from './assertions.js';
+import { getRootElement } from './root-element.js';
 
 declare global {
   interface Assert {

@@ -1,17 +1,17 @@
-import exists from './assertions/exists';
-import focused from './assertions/focused';
-import notFocused from './assertions/not-focused';
-import isChecked from './assertions/is-checked';
-import isNotChecked from './assertions/is-not-checked';
-import isRequired from './assertions/is-required';
-import isNotRequired from './assertions/is-not-required';
-import isValid from './assertions/is-valid';
-import isVisible from './assertions/is-visible';
-import isDisabled from './assertions/is-disabled';
-import matchesSelector from './assertions/matches-selector';
-import elementToString from './helpers/element-to-string';
-import collapseWhitespace from './helpers/collapse-whitespace';
-import { toArray } from './helpers/node-list';
+import exists from './assertions/exists.js';
+import focused from './assertions/focused.js';
+import notFocused from './assertions/not-focused.js';
+import isChecked from './assertions/is-checked.js';
+import isNotChecked from './assertions/is-not-checked.js';
+import isRequired from './assertions/is-required.js';
+import isNotRequired from './assertions/is-not-required.js';
+import isValid from './assertions/is-valid.js';
+import isVisible from './assertions/is-visible.js';
+import isDisabled from './assertions/is-disabled.js';
+import matchesSelector from './assertions/matches-selector.js';
+import elementToString from './helpers/element-to-string.js';
+import collapseWhitespace from './helpers/collapse-whitespace.js';
+import { toArray } from './helpers/node-list.js';
 
 export interface AssertionResult {
   result: boolean;

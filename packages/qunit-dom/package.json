@@ -20,11 +20,6 @@
       "default": "./dist/es/index.js"
     }
   },
-  "typesVersions": {
-    "*": {
-      "*": "dist/es/qunit-dom.d.ts"
-    }
-  },
   "types": "dist/es/qunit-dom.d.ts",
   "files": [
     "dist"
@@ -35,7 +30,7 @@
     "lint": "concurrently 'npm:lint:*(!fix)' --names 'lint:'",
     "lint:fix": "concurrently 'npm:lint:*:fix' --names 'fix:'",
     "lint:package": "publint",
-    "lint:published-types": "attw --pack --ignore-rules no-resolution cjs-resolves-to-esm internal-resolution-error",
+    "lint:published-types": "attw --pack --ignore-rules cjs-resolves-to-esm internal-resolution-error",
     "lint:js": "eslint . --cache",
     "lint::js:fix": "eslint . --fix",
     "prepublish": "rollup -c",

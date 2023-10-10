@@ -1,4 +1,4 @@
-import DOMAssertions, { AssertionResult } from '../assertions';
+import DOMAssertions, { type AssertionResult } from '../assertions.js';
 
 export default class TestAssertions {
   public results: AssertionResult[] = [];
