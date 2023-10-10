@@ -36,7 +36,7 @@ importers:
         specifier: 6.7.4
         version: 6.7.4(eslint@8.50.0)(typescript@5.2.2)
       '@vitest/coverage-v8':
-        specifier: ^0.34.6
+        specifier: 0.34.6
         version: 0.34.6(vitest@0.34.6)
       babel-plugin-transform-es2015-modules-commonjs:
         specifier: 6.26.2
@@ -90,7 +90,7 @@ importers:
         specifier: 5.2.2
         version: 5.2.2
       vitest:
-        specifier: ^0.34.6
+        specifier: 0.34.6
         version: 0.34.6
       webpack:
         specifier: 5.88.2
@@ -362,7 +362,7 @@ importers:
         specifier: 2.19.6
         version: 2.19.6
       expect-type:
-        specifier: ^0.17.3
+        specifier: 0.17.3
         version: 0.17.3
       typescript:
         specifier: 5.2.2
@@ -381,7 +381,7 @@ importers:
         specifier: 2.19.6
         version: 2.19.6
       expect-type:
-        specifier: ^0.17.3
+        specifier: 0.17.3
         version: 0.17.3
       typescript:
         specifier: 5.2.2
@@ -400,7 +400,7 @@ importers:
         specifier: 2.19.6
         version: 2.19.6
       expect-type:
-        specifier: ^0.17.3
+        specifier: 0.17.3
         version: 0.17.3
       typescript:
         specifier: 5.2.2

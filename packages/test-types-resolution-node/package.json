@@ -9,7 +9,7 @@
   },
   "devDependencies": {
     "@types/qunit": "2.19.6",
-    "expect-type": "^0.17.3",
+    "expect-type": "0.17.3",
     "typescript": "5.2.2"
   },
   "volta": {
