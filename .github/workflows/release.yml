@@ -29,7 +29,10 @@ jobs:
         run: pnpm dlx auto-dist-tag@1 --write
         working-directory: packages/qunit-dom
 
-      - run: npm publish
-        working-directory: packages/qunit-dom
+      - name: Set publishing config
+        run: pnpm config set '//registry.npmjs.org/:_authToken' "${NODE_AUTH_TOKEN}"
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - run: npm publish
+        working-directory: packages/qunit-dom
