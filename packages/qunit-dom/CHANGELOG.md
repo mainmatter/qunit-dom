@@ -40,7 +40,7 @@
   * [#1216](https://github.com/mainmatter/qunit-dom/pull/1216) CI: Fix `release` job ([@Turbo87](https://github.com/Turbo87))
   * [#1217](https://github.com/mainmatter/qunit-dom/pull/1217) Remove duplicate `ember-cli-babel` dependency ([@Turbo87](https://github.com/Turbo87))
 
-#### Committers: 2
+#### Committers: 6
 - Bartlomiej Dudzik ([@BobrImperator](https://github.com/BobrImperator))
 - Bryan Mishkin ([@bmish](https://github.com/bmish))
 - James C. Davis ([@jamescdavis](https://github.com/jamescdavis))
