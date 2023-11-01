@@ -16,7 +16,6 @@
       "ES6",
       "DOM"
     ],
-    "target": "es5"
   },
   "include": [
     "lib/**/*"
