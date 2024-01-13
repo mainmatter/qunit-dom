@@ -31,7 +31,7 @@ type ActualCSSStyleDeclaration = Partial<Record<CSSStyleDeclarationProperty, unk
 export default class DOMAssertions {
   constructor(
     private target: string | Element | null,
-    private rootElement: Element | Document,
+    private rootElement: RootElement,
     private testContext: Assert
   ) {}
 
