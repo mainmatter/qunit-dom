@@ -1,5 +1,3 @@
-import elementToString from '../helpers/element-to-string.js';
-
 export default function required(message?: string) {
   let element = this.findTargetElement();
   if (!element) return;
@@ -19,7 +17,7 @@ export default function required(message?: string) {
   let expected = 'required';
 
   if (!message) {
-    message = `Element ${elementToString(this.target)} is required`;
+    message = `Element ${this.targetDescription} is required`;
   }
 
   this.pushResult({ result, actual, expected, message });
