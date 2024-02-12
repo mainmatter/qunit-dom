@@ -27,7 +27,7 @@
   "devDependencies": {
     "@ember/optional-features": "2.0.0",
     "@ember/string": "3.1.1",
-    "@ember/test-helpers": "3.2.1",
+    "@ember/test-helpers": "3.3.0",
     "@embroider/compat": "3.2.3",
     "@embroider/core": "3.3.0",
     "@embroider/macros": "1.13.2",
@@ -98,7 +98,7 @@
     "lerna-changelog": "2.2.0",
     "loader.js": "4.7.0",
     "prettier": "3.0.3",
-    "qunit": "2.19.4",
+    "qunit": "2.20.0",
     "release-it": "16.2.1",
     "release-it-lerna-changelog": "5.0.0",
     "rollup": "2.79.1",
