@@ -2,13 +2,18 @@ import DOMAssertions from './assertions.js';
 import { getRootElement } from './root-element.js';
 
 declare global {
+  type RootElement = Element | Document | ShadowRoot | null;
+
   interface Assert {
-    dom(target?: string | Element | null, rootElement?: Element): DOMAssertions;
+    dom(target?: string | Element | null, rootElement?: RootElement): DOMAssertions;
   }
 }
 
 export default function (assert: Assert) {
-  assert.dom = function (target?: string | Element | null, rootElement?: Element): DOMAssertions {
+  assert.dom = function (
+    target?: string | Element | null,
+    rootElement?: RootElement
+  ): DOMAssertions {
     if (!isValidRootElement(rootElement)) {
       throw new Error(`${rootElement} is not a valid root element`);
     }

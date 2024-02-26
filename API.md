@@ -123,7 +123,7 @@ Once installed the DOM element assertions are available at `assert.dom(...).*`:
 **Parameters**
 
 *   `target` **([string][114] | [HTMLElement][115])** A CSS selector that can be used to find elements using [`querySelector()`][116], or an \[HTMLElement]\[] (Not all assertions support both target types.) (optional, default `rootElement` or `document`)
-*   `rootElement` **[HTMLElement][115]?** The root element of the DOM in which to search for the `target` (optional, default `document`)
+*   `rootElement` **([HTMLElement][115] | [Document][152] | [ShadowRoot][153] | [null][154])?** The root element of the DOM in which to search for the `target` (optional, defaults `document` when `null` or not provided)
 
 **Examples**
 
@@ -1194,3 +1194,9 @@ assert.dom('section#block').doesNotHaveTagName('div');
 [150]: #hasValue
 
 [151]: https://developer.mozilla.org/en-US/docs/Web/API/Element/tagName
+
+[152]: https://developer.mozilla.org/en-US/docs/Web/API/Document
+
+[153]: https://developer.mozilla.org/en-US/docs/Web/API/ShadowRoot
+
+[154]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/null
