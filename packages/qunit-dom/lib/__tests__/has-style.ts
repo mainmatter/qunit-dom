@@ -8,7 +8,10 @@ describe('assert.dom(...).hasStyle()', () => {
   beforeEach(() => {
     assert = new TestAssertions();
     document.body.innerHTML =
-      '<div class="foo" style="opacity: 1; width: 200px; text-align: center;">quit-dom ftw!</div>';
+      '<div class="foo" style="opacity: 1; width: 200px; text-align: center; --color-text: #FFF;">quit-dom ftw!</div>';
+
+    //@ts-ignore
+    document.querySelector('.foo').style.setProperty('--color-background', '#333');
   });
 
   test('succeeds for correct content', () => {
@@ -58,6 +61,22 @@ describe('assert.dom(...).hasStyle()', () => {
         actual: { opacity: '1' },
         expected: { opacity: '1' },
         message: 'Element .foo has style "{"opacity":"1"}"',
+        result: true,
+      },
+    ]);
+  });
+
+  test('succeeds for custom property', () => {
+    assert.dom('.foo').hasStyle({
+      '--color-text': '#FFF',
+      '--color-background': '#333',
+    });
+
+    expect(assert.results).toEqual([
+      {
+        actual: { '--color-text': '#FFF', '--color-background': '#333' },
+        expected: { '--color-text': '#FFF', '--color-background': '#333' },
+        message: 'Element .foo has style "{"--color-text":"#FFF","--color-background":"#333"}"',
         result: true,
       },
     ]);
