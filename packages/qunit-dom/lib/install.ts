@@ -1,5 +1,6 @@
-import DOMAssertions from './assertions.js';
+import DOMAssertions, { type DOMAssertionsHandler } from './assertions.js';
 import { getRootElement } from './root-element.js';
+import { toArray } from './helpers/node-list.js';
 
 declare global {
   interface Assert {
@@ -7,7 +8,7 @@ declare global {
   }
 }
 
-export default function (assert: Assert) {
+export default function (assert: Assert, assertionHandlers?: DOMAssertionsHandler[]) {
   assert.dom = function (target?: string | Element | null, rootElement?: Element): DOMAssertions {
     if (!isValidRootElement(rootElement)) {
       throw new Error(`${rootElement} is not a valid root element`);
@@ -19,7 +20,7 @@ export default function (assert: Assert) {
       target = rootElement instanceof Element ? rootElement : null;
     }
 
-    return new DOMAssertions(target, rootElement, this);
+    return new DOMAssertions(target, rootElement, this, assertionHandlers);
   };
 
   function isValidRootElement(element: any): element is Element {

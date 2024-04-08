@@ -1,10 +1,12 @@
 import install from './install.js';
 import { overrideRootElement } from './root-element.js';
+import { type DOMAssertionsHandler } from './assertions.js';
 
 export { default as install } from './install.js';
 
-interface SetupOptions {
+interface SetupOptions<T = void> {
   getRootElement?: () => Element | null;
+  customHandlers?: DOMAssertionsHandler<T>[];
 }
 
 export function setup(assert: Assert, options: SetupOptions = {}) {
