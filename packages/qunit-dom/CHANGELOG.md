@@ -3,6 +3,17 @@
 
 
 
+
+## v3.1.0 (2024-04-08)
+
+#### :rocket: Enhancement
+* `qunit-dom`
+  * [#1976](https://github.com/mainmatter/qunit-dom/pull/1976) Use getProperty for hasStyle assertions so testing can be done against css variables ([@jkeen](https://github.com/jkeen))
+
+#### Committers: 2
+- Bartlomiej Dudzik ([@BobrImperator](https://github.com/BobrImperator))
+- Jeff Keen ([@jkeen](https://github.com/jkeen))
+
 ## v3.0.0 (2023-10-12)
 
 #### :boom: Breaking Change
