@@ -3,7 +3,7 @@ import DOMAssertions, { type AssertionResult } from '../assertions.js';
 export default class TestAssertions {
   public results: AssertionResult[] = [];
 
-  dom(target: string | Element | null, rootElement?: Element) {
+  dom(target: string | Element | null, rootElement?: RootElement) {
     return new DOMAssertions(target, rootElement || document, this as any);
   }
 
