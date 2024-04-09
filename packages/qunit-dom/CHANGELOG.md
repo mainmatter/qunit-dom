@@ -4,6 +4,21 @@
 
 
 
+
+## v3.1.1 (2024-04-09)
+
+#### :bug: Bug Fix
+* `qunit-dom`
+  * [#2090](https://github.com/mainmatter/qunit-dom/pull/2090) Support ShadowRoot, add tests for rootElement, Closes [#2089](https://github.com/mainmatter/qunit-dom/issues/2089) ([@lolmaus](https://github.com/lolmaus))
+
+#### :house: Internal
+* `qunit-dom`
+  * [#2080](https://github.com/mainmatter/qunit-dom/pull/2080) remove hidden target override from compilerOptions ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+
+#### Committers: 2
+- Andrey Mikhaylov (lolmaus) ([@lolmaus](https://github.com/lolmaus))
+- [@NullVoxPopuli](https://github.com/NullVoxPopuli)
+
 ## v3.1.0 (2024-04-08)
 
 #### :rocket: Enhancement
