@@ -5,6 +5,16 @@
 
 
 
+
+## v3.1.2 (2024-04-23)
+
+#### :bug: Bug Fix
+* `qunit-dom`
+  * [#2105](https://github.com/mainmatter/qunit-dom/pull/2105) fix(hasStyle): allow using camelCase properties inside assertion object ([@BobrImperator](https://github.com/BobrImperator))
+
+#### Committers: 1
+- Bartlomiej Dudzik ([@BobrImperator](https://github.com/BobrImperator))
+
 ## v3.1.1 (2024-04-09)
 
 #### :bug: Bug Fix
