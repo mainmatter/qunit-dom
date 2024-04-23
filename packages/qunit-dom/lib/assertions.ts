@@ -774,12 +774,16 @@ export default class DOMAssertions {
     }
 
     let result = expectedProperties.every(
-      property => computedStyle.getPropertyValue(property.toString()) === expected[property]
+      property =>
+        (computedStyle.getPropertyValue(property.toString()) || computedStyle[property]) ===
+        expected[property]
     );
     let actual: ActualCSSStyleDeclaration = {};
 
     expectedProperties.forEach(
-      property => (actual[property] = computedStyle.getPropertyValue(property.toString()))
+      property =>
+        (actual[property] =
+          computedStyle.getPropertyValue(property.toString()) || computedStyle[property])
     );
 
     if (!message) {
