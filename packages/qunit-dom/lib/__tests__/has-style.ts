@@ -139,4 +139,20 @@ describe('assert.dom(...).hasStyle()', () => {
 
     expect(assert.results.length).toEqual(2);
   });
+
+  test('succeeds for checking styles using camelCase property as argument', () => {
+    assert.dom('.foo').hasStyle({
+      opacity: '1',
+      width: '200px',
+      textAlign: 'center',
+    });
+    expect(assert.results).toEqual([
+      {
+        actual: { opacity: '1', width: '200px', textAlign: 'center' },
+        expected: { opacity: '1', width: '200px', textAlign: 'center' },
+        message: 'Element .foo has style "{"opacity":"1","width":"200px","textAlign":"center"}"',
+        result: true,
+      },
+    ]);
+  });
 });
