@@ -1,4 +1,8 @@
-import DOMAssertions, { DOMAssertionsHandler, type AssertionHandler, type RootElement } from './assertions.js';
+import DOMAssertions, {
+  DOMAssertionsHandler,
+  type AssertionHandler,
+  type RootElement,
+} from './assertions.js';
 import { getRootElement } from './root-element.js';
 
 export default function (assert: Assert, targetHandler?: AssertionHandler) {
