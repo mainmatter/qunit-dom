@@ -11,4 +11,3 @@ declare global {
     dom(target?: QUnitDOMAssertTarget, rootElement?: RootElement): DOMAssertions;
   }
 }
-

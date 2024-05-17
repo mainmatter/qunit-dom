@@ -1,4 +1,8 @@
-import { type AssertionResult, type AssertionHandler, DOMAssertionsHandler } from '../assertions.js';
+import {
+  type AssertionResult,
+  type AssertionHandler,
+  DOMAssertionsHandler,
+} from '../assertions.js';
 
 export default class TestAssertions {
   public results: AssertionResult[] = [];
