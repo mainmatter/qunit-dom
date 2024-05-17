@@ -1,4 +1,4 @@
-import {
+import DOMAssertions, {
   type AssertionResult,
   type AssertionHandler,
   DOMAssertionsHandler,
