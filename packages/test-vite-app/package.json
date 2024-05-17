@@ -3,14 +3,12 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "start": "tsc && vite"
+    "start": "vite"
   },
   "devDependencies": {
     "qunit": "2.20.1",
     "qunit-dom": "workspace:^",
-    "vite": "4.5.0",
-    "typescript": "5.2.2",
-    "@types/qunit": "2.19.7"
+    "vite": "4.5.0"
   },
   "volta": {
     "extends": "../../package.json"

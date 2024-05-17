@@ -408,18 +408,12 @@ importers:
 
   packages/test-vite-app:
     devDependencies:
-      '@types/qunit':
-        specifier: 2.19.7
-        version: 2.19.7
       qunit:
         specifier: 2.20.1
         version: 2.20.1
       qunit-dom:
         specifier: workspace:^
         version: link:../qunit-dom
-      typescript:
-        specifier: 5.2.2
-        version: 5.2.2
       vite:
         specifier: 4.5.0
         version: 4.5.0
