@@ -28,61 +28,56 @@ type CSSStyleDeclarationProperty = keyof CSSStyleDeclaration;
 
 type ActualCSSStyleDeclaration = Partial<Record<CSSStyleDeclarationProperty, unknown>>;
 
-export type Target = string | Element | null;
 export type RootElement = Element | Document;
+type FoundElement = Element | null;
 
-export interface DOMAssertionsHandler<T = Target, R = Element> {
-  name: string;
-  findElement(target: T, rootElement: RootElement): { ok: boolean; value: R | null };
-  findElements(target: T, rootElement: RootElement): { ok: boolean; value: R[] };
-  description(target: T): { ok: boolean; value: string };
+export interface AssertionHandler {
+  findElements(target: QUnitDOM.AssertTarget, rootElement: RootElement): FoundElement[];
+  findElement(target: QUnitDOM.AssertTarget, rootElement: RootElement): FoundElement;
+  description(target: QUnitDOM.AssertTarget): string | null;
 }
 
-const qunitDomHandler: DOMAssertionsHandler = {
-  name: 'qunit-dom',
-
-  findElements(target: Target, rootElement: RootElement) {
+export class DOMAssertionsHandler implements AssertionHandler {
+  findElements(target: QUnitDOM.AssertTarget, rootElement: RootElement) {
     if (target === null) {
-      return { ok: true, value: [null] };
+      return [null];
     } else if (typeof target === 'string') {
-      return { ok: true, value: toArray(rootElement.querySelectorAll(target)) };
+      return toArray(rootElement.querySelectorAll(target));
     } else if (target instanceof Element) {
-      return { ok: true, value: [target] };
+      return [target];
     } else {
-      return { ok: false, value: null };
+      throw new TypeError(`Unexpected Parameter: ${target}`);
     }
-  },
+  }
 
-  findElement(target: Target, rootElement: RootElement) {
+  findElement(target: QUnitDOM.AssertTarget, rootElement: RootElement) {
     if (target === null) {
-      return { ok: true, value: null };
+      return null;
     } else if (typeof target === 'string') {
-      return { ok: true, value: rootElement.querySelector(target) };
+      return rootElement.querySelector(target);
     } else if (target instanceof Element) {
-      return { ok: true, value: target };
+      return target;
     } else {
-      return { ok: false, value: null };
+      throw new TypeError(`Unexpected Parameter: ${target}`);
     }
-  },
+  }
 
-  description(target: Target) {
+  description(target: QUnitDOM.AssertTarget) {
     if (target === null) {
-      return { ok: false, value: null };
+      return '<not found>';
     } else {
-      return { ok: true, value: elementToString(target) };
+      return elementToString(target);
     }
-  },
-};
+  }
+}
 
 export default class DOMAssertions {
   constructor(
-    private target: string | Element | null,
+    private target: QUnitDOM.AssertTarget,
     private rootElement: Element | Document,
     private testContext: Assert,
-    private assertionHandlers: DOMAssertionsHandler[] = []
-  ) {
-    this.assertionHandlers = [].concat(assertionHandlers, qunitDomHandler);
-  }
+    private targetHandler: AssertionHandler
+  ) {}
 
   /**
    * Assert an {@link HTMLElement} (or multiple) matching the `selector` exists.
@@ -1427,21 +1422,8 @@ export default class DOMAssertions {
    * @returns (HTMLElement|null) a valid HTMLElement, or null
    * @throws TypeError will be thrown if target is an unrecognized type
    */
-  private findElement(): Element | null {
-    let result = null;
-    for (const handler of this.assertionHandlers) {
-      result = handler.findElement(this.target, this.rootElement);
-
-      if (result.ok) {
-        break;
-      }
-    }
-
-    if (result.ok) {
-      return result.value;
-    } else {
-      throw new TypeError(`Unexpected Parameter: ${this.target}`);
-    }
+  private findElement(): FoundElement {
+    return this.targetHandler.findElement(this.target, this.rootElement);
   }
 
   /**
@@ -1450,39 +1432,14 @@ export default class DOMAssertions {
    * @returns (Element[]) an array of Element instances
    * @throws TypeError will be thrown if target is an unrecognized type
    */
-  private findElements(): Element[] {
-    let result: any;
-    for (const handler of this.assertionHandlers) {
-      result = handler.findElements(this.target, this.rootElement);
-      if (result.ok) {
-        break;
-      }
-    }
-
-    if (result.ok) {
-      return result.value;
-    } else {
-      throw new TypeError(`Unexpected Parameter: ${this.target}`);
-    }
+  private findElements(): FoundElement[] {
+    return this.targetHandler.findElements(this.target, this.rootElement);
   }
 
   /**
    * @private
    */
   private get targetDescription(): string {
-    let result: any;
-    for (const handler of this.assertionHandlers) {
-      result = handler.description(this.target);
-
-      if (result.ok) {
-        break;
-      }
-    }
-
-    if (result.ok) {
-      return result.value;
-    } else {
-      return '<not found>';
-    }
+    return this.targetHandler.description(this.target);
   }
 }

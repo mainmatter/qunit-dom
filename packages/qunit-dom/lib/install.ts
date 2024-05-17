@@ -1,14 +1,17 @@
-import DOMAssertions, { type DOMAssertionsHandler } from './assertions.js';
+import DOMAssertions, { DOMAssertionsHandler, type AssertionHandler } from './assertions.js';
 import { getRootElement } from './root-element.js';
-import { toArray } from './helpers/node-list.js';
 
 declare global {
-  interface Assert {
-    dom(target?: string | Element | null, rootElement?: Element): DOMAssertions;
+  namespace QUnitDOM {
+    type AssertTarget = string | Element | null;
+
+    interface Assert {
+      dom(target?: AssertTarget, rootElement?: Element): DOMAssertions;
+    }
   }
 }
 
-export default function (assert: Assert, assertionHandlers?: DOMAssertionsHandler[]) {
+export default function (assert: QUnitDOM.Assert, targetHandler: AssertionHandler = new DOMAssertionsHandler()) {
   assert.dom = function (target?: string | Element | null, rootElement?: Element): DOMAssertions {
     if (!isValidRootElement(rootElement)) {
       throw new Error(`${rootElement} is not a valid root element`);
@@ -20,7 +23,7 @@ export default function (assert: Assert, assertionHandlers?: DOMAssertionsHandle
       target = rootElement instanceof Element ? rootElement : null;
     }
 
-    return new DOMAssertions(target, rootElement, this, assertionHandlers);
+    return new DOMAssertions(target, rootElement, this, targetHandler);
   };
 
   function isValidRootElement(element: any): element is Element {

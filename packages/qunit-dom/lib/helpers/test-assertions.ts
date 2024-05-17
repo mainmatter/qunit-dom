@@ -1,12 +1,12 @@
-import DOMAssertions, { type AssertionResult, type DOMAssertionsHandler } from '../assertions.js';
+import DOMAssertions, { type AssertionResult, type AssertionHandler, DOMAssertionsHandler } from '../assertions.js';
 
 export default class TestAssertions {
   public results: AssertionResult[] = [];
 
-  constructor(private customHandlers?: DOMAssertionsHandler[]) {}
+  constructor(private targetHandler: AssertionHandler = new DOMAssertionsHandler()) {}
 
   dom(target: string | Element | null, rootElement?: Element) {
-    return new DOMAssertions(target, rootElement || document, this as any, this.customHandlers);
+    return new DOMAssertions(target, rootElement || document, this as any, this.targetHandler);
   }
 
   pushResult(result: AssertionResult) {
