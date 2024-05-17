@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "noImplicitAny": true,
+    "strictNullChecks": true,
     "declaration": true,
     // Forces import type when imports are only used as types.
     "verbatimModuleSyntax": true,
