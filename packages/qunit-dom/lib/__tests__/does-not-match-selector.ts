@@ -82,6 +82,21 @@ describe('assert.dom(...).doesNotMatchSelector()', () => {
       ]);
     });
 
+    test('null passed', () => {
+      assert.dom(null).doesNotMatchSelector('div>p:last-child');
+
+      expect(assert.results).toEqual([
+        {
+          actual: '0 elements, selected by null, did not also match the selector div>p:last-child.',
+          expected:
+            '0 elements, selected by null, did not also match the selector div>p:last-child.',
+          message:
+            '0 elements, selected by null, did not also match the selector div>p:last-child.',
+          result: true,
+        },
+      ]);
+    });
+
     test('multiple elements, some matching compareSelector', () => {
       assert.dom('p').doesNotMatchSelector('div>p');
 
