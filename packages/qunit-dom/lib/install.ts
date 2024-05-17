@@ -3,7 +3,7 @@ import { getRootElement } from './root-element.js';
 
 export default function (assert: Assert, targetHandler?: AssertionHandler) {
   assert.dom = function (
-    target?: string | Element | null,
+    target?: QUnitDOMAssertTarget,
     rootElement?: RootElement
   ): DOMAssertions {
     if (!isValidRootElement(rootElement)) {
