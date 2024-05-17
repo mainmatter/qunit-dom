@@ -1,6 +1,6 @@
 {
   "name": "qunit-dom",
-  "version": "3.1.0",
+  "version": "3.1.2",
   "description": "High Level DOM Assertions for QUnit",
   "keywords": [
     "browser",

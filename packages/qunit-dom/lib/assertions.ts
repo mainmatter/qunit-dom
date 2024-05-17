@@ -28,7 +28,6 @@ type CSSStyleDeclarationProperty = keyof CSSStyleDeclaration;
 
 type ActualCSSStyleDeclaration = Partial<Record<CSSStyleDeclarationProperty, unknown>>;
 
-export type RootElement = Element | Document;
 type FoundElement = Element | null;
 
 export interface AssertionHandler {
@@ -74,7 +73,7 @@ export class DOMAssertionsHandler implements AssertionHandler {
 export default class DOMAssertions {
   constructor(
     private target: QUnitDOMAssertTarget,
-    private rootElement: Element | Document,
+    private rootElement: RootElement,
     private testContext: Assert,
     private targetHandler: AssertionHandler
   ) {}
@@ -818,12 +817,16 @@ export default class DOMAssertions {
     }
 
     let result = expectedProperties.every(
-      property => computedStyle.getPropertyValue(property.toString()) === expected[property]
+      property =>
+        (computedStyle.getPropertyValue(property.toString()) || computedStyle[property]) ===
+        expected[property]
     );
     let actual: ActualCSSStyleDeclaration = {};
 
     expectedProperties.forEach(
-      property => (actual[property] = computedStyle.getPropertyValue(property.toString()))
+      property =>
+        (actual[property] =
+          computedStyle.getPropertyValue(property.toString()) || computedStyle[property])
     );
 
     if (!message) {
