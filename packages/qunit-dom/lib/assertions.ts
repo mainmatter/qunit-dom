@@ -30,6 +30,8 @@ type ActualCSSStyleDeclaration = Partial<Record<CSSStyleDeclarationProperty, unk
 
 type FoundElement = Element | null;
 
+export type RootElement = Element | Document | ShadowRoot | null;
+
 export interface AssertionHandler {
   findElements(target: QUnitDOMAssertTarget, rootElement: RootElement): FoundElement[];
   findElement(target: QUnitDOMAssertTarget, rootElement: RootElement): FoundElement;

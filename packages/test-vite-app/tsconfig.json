@@ -18,6 +18,6 @@
     "types": [],
     "lib": ["ES6", "DOM"],
     "outDir": "./dist",
-  "types": ["vite/client"]
+    "types": ["vite/client"]
   },
 }
