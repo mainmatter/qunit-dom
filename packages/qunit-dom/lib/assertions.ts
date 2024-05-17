@@ -32,13 +32,13 @@ export type RootElement = Element | Document;
 type FoundElement = Element | null;
 
 export interface AssertionHandler {
-  findElements(target: QUnitDOM.AssertTarget, rootElement: RootElement): FoundElement[];
-  findElement(target: QUnitDOM.AssertTarget, rootElement: RootElement): FoundElement;
-  description(target: QUnitDOM.AssertTarget): string | null;
+  findElements(target: QUnitDOMAssertTarget, rootElement: RootElement): FoundElement[];
+  findElement(target: QUnitDOMAssertTarget, rootElement: RootElement): FoundElement;
+  description(target: QUnitDOMAssertTarget): string | null;
 }
 
 export class DOMAssertionsHandler implements AssertionHandler {
-  findElements(target: QUnitDOM.AssertTarget, rootElement: RootElement) {
+  findElements(target: QUnitDOMAssertTarget, rootElement: RootElement) {
     if (target === null) {
       return [null];
     } else if (typeof target === 'string') {
@@ -50,7 +50,7 @@ export class DOMAssertionsHandler implements AssertionHandler {
     }
   }
 
-  findElement(target: QUnitDOM.AssertTarget, rootElement: RootElement) {
+  findElement(target: QUnitDOMAssertTarget, rootElement: RootElement) {
     if (target === null) {
       return null;
     } else if (typeof target === 'string') {
@@ -62,7 +62,7 @@ export class DOMAssertionsHandler implements AssertionHandler {
     }
   }
 
-  description(target: QUnitDOM.AssertTarget) {
+  description(target: QUnitDOMAssertTarget) {
     if (target === null) {
       return '<not found>';
     } else {
@@ -73,7 +73,7 @@ export class DOMAssertionsHandler implements AssertionHandler {
 
 export default class DOMAssertions {
   constructor(
-    private target: QUnitDOM.AssertTarget,
+    private target: QUnitDOMAssertTarget,
     private rootElement: Element | Document,
     private testContext: Assert,
     private targetHandler: AssertionHandler

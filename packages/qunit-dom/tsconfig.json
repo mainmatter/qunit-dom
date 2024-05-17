@@ -6,8 +6,8 @@
     "verbatimModuleSyntax": true,
     // We build to ESM, so we need to tell TS that we build to ESM
     // otherwise TS uses fake ESM (you use imports, but it assumes the compilation is to CJS)
-    // These are also required when using 
-    // verbatimModuleSyntax, because it's an 
+    // These are also required when using
+    // verbatimModuleSyntax, because it's an
     // ESM-only feature
     "target": "esnext",
     "module": "esnext",
