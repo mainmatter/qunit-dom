@@ -101,7 +101,7 @@
     "qunit": "2.20.1",
     "release-it": "16.2.1",
     "release-it-lerna-changelog": "5.0.0",
-    "rollup": "2.79.1",
+    "rollup": "4.18.0",
     "rollup-plugin-typescript2": "0.36.0",
     "tracked-built-ins": "3.3.0",
     "ts-jest": "29.1.1",
