@@ -5,6 +5,12 @@ export interface ConstructableHandler {
   new (...args: any[]): DOMAssertionsHandler;
 }
 
+declare global {
+  interface Assert {
+    dom(target?: string | Element | null, rootElement?: RootElement): DOMAssertions;
+  }
+}
+
 export default function Install<AssertionHandler extends ConstructableHandler>(
   assert: Assert,
   TargetHandler: AssertionHandler
