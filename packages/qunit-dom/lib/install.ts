@@ -13,12 +13,13 @@ export default function (assert: Assert, targetHandler?: AssertionHandler) {
 
     rootElement = rootElement || this.dom.rootElement || getRootElement();
 
-    if (arguments.length === 0) {
-      target = rootElement instanceof Element ? rootElement : null;
-    }
-
     const _targetHandler = targetHandler || new DOMAssertionsHandler();
-    return new DOMAssertions(target, rootElement, this, _targetHandler);
+    return new DOMAssertions(
+      target !== undefined ? target : rootElement instanceof Element ? rootElement : null,
+      rootElement,
+      this,
+      _targetHandler
+    );
   };
 
   function isValidRootElement(element: any): element is Element {

@@ -150,6 +150,17 @@ describe('assert.dom(...).hasProperty()', () => {
     ]);
   });
 
+  test('fails for null', () => {
+    assert.dom(null).hasProperty('foo', 'bar');
+
+    expect(assert.results).toEqual([
+      {
+        message: 'Element <unknown> should exist',
+        result: false,
+      },
+    ]);
+  });
+
   test('throws for unexpected parameter types', () => {
     //@ts-ignore -- These assertions are for JavaScript users who don't have type checking
     expect(() => assert.dom(5).hasProperty('foo', 'bar')).toThrow('Unexpected Parameter: 5');

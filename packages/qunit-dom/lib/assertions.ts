@@ -119,8 +119,8 @@ export default class DOMAssertions {
    *
    * @see {@link #doesNotExist}
    */
-  exists(options: ExistsOptions | string, message?: string): DOMAssertions {
-    exists.call(this, options, message);
+  exists(...args: [options: ExistsOptions, message?: string] | [message?: string]): DOMAssertions {
+    exists.call(this, ...args);
     return this;
   }
 
@@ -343,8 +343,10 @@ export default class DOMAssertions {
    *
    * @see {@link #isNotVisible}
    */
-  isVisible(options: ExistsOptions | string, message?: string): DOMAssertions {
-    isVisible.call(this, options, message);
+  isVisible(
+    ...args: [options: ExistsOptions, message?: string] | [message?: string]
+  ): DOMAssertions {
+    isVisible.call(this, ...args);
     return this;
   }
 
@@ -433,7 +435,7 @@ export default class DOMAssertions {
     let actualValue = element.getAttribute(name);
 
     if (value instanceof RegExp) {
-      let result = value.test(actualValue);
+      let result = typeof actualValue === 'string' && value.test(actualValue);
       let expected = `Element ${this.targetDescription} has attribute "${name}" with value matching ${value}`;
       let actual =
         actualValue === null
@@ -496,7 +498,7 @@ export default class DOMAssertions {
    */
   doesNotHaveAttribute(name: string, message?: string): DOMAssertions {
     let element = this.findTargetElement();
-    if (!element) return;
+    if (!element) return this;
 
     let result = !element.hasAttribute(name);
     let expected = `Element ${this.targetDescription} does not have attribute "${name}"`;
@@ -527,6 +529,35 @@ export default class DOMAssertions {
 
   /**
    * Assert that the {@link HTMLElement} has an ARIA attribute with the provided
+   * `name`.
+   *
+   * @param {string} name
+   *
+   * @example
+   * assert.dom('button').hasAria('pressed');
+   *
+   * @see {@link #doesNotHaveAria}
+   */
+  hasAria(name: string): DOMAssertions;
+
+  /**
+   * Assert that the {@link HTMLElement} has an ARIA attribute with the provided
+   * `name` and checks if the attribute `value` matches the provided text or
+   * regular expression.
+   *
+   * @param {string} name
+   * @param {string|RegExp|object} value
+   * @param {string?} message
+   *
+   * @example
+   * assert.dom('button').hasAria('pressed', 'true');
+   *
+   * @see {@link #doesNotHaveAttribute}
+   */
+  hasAria(name: string, value: string | RegExp | { any: true }, message?: string): DOMAssertions;
+
+  /**
+   * Assert that the {@link HTMLElement} has an ARIA attribute with the provided
    * `name` and optionally checks if the attribute `value` matches the provided
    * text or regular expression.
    *
@@ -539,8 +570,15 @@ export default class DOMAssertions {
    *
    * @see {@link #doesNotHaveAria}
    */
-  hasAria(name: string, value?: string | RegExp | { any: true }, message?: string): DOMAssertions {
-    return this.hasAttribute(`aria-${name}`, value, message);
+  hasAria(
+    name: string,
+    ...args: [value: string | RegExp | { any: true }, message?: string] | []
+  ): DOMAssertions {
+    if (args.length === 0) {
+      return this.hasAttribute(`aria-${name}`);
+    } else {
+      return this.hasAttribute(`aria-${name}`, ...args);
+    }
   }
 
   /**
@@ -785,7 +823,7 @@ export default class DOMAssertions {
     return this.hasPseudoElementStyle(null, expected, message);
   }
 
-  hasPseudoElementStyle(selector: string, expected: object, message?: string): DOMAssertions;
+  hasPseudoElementStyle(selector: string | null, expected: object, message?: string): DOMAssertions;
 
   /**
    * Assert that the pseudo element for `selector` of the [HTMLElement][] has the `expected` style declarations using
@@ -861,7 +899,11 @@ export default class DOMAssertions {
     return this.doesNotHavePseudoElementStyle(null, expected, message);
   }
 
-  doesNotHavePseudoElementStyle(selector: string, expected: object, message: string): DOMAssertions;
+  doesNotHavePseudoElementStyle(
+    selector: string | null,
+    expected: object,
+    message?: string
+  ): DOMAssertions;
 
   /**
    * Assert that the pseudo element for `selector` of the [HTMLElement][] does not have the `expected` style declarations using
@@ -881,7 +923,7 @@ export default class DOMAssertions {
   doesNotHavePseudoElementStyle(
     selector: string | null,
     expected: Record<string, unknown>,
-    message: string
+    message?: string
   ): DOMAssertions {
     let element = this.findTargetElement();
     if (!element) return this;
@@ -947,7 +989,7 @@ export default class DOMAssertions {
     if (!element) return this;
 
     if (expected instanceof RegExp) {
-      let result = expected.test(element.textContent);
+      let result = typeof element.textContent === 'string' && expected.test(element.textContent);
       let actual = element.textContent;
 
       if (!message) {
@@ -968,7 +1010,7 @@ export default class DOMAssertions {
       this.pushResult({ result, actual, expected, message });
     } else if (typeof expected === 'string') {
       expected = collapseWhitespace(expected);
-      let actual = collapseWhitespace(element.textContent);
+      let actual = collapseWhitespace(element.textContent || '');
       let result = actual === expected;
 
       if (!message) {
@@ -1042,7 +1084,7 @@ export default class DOMAssertions {
     let element = this.findTargetElement();
     if (!element) return this;
 
-    let collapsedText = collapseWhitespace(element.textContent);
+    let collapsedText = collapseWhitespace(element.textContent || '');
     let result = collapsedText.indexOf(text) !== -1;
     let actual = collapsedText;
     let expected = text;
@@ -1088,7 +1130,7 @@ export default class DOMAssertions {
     let element = this.findTargetElement();
     if (!element) return this;
 
-    let collapsedText = collapseWhitespace(element.textContent);
+    let collapsedText = collapseWhitespace(element.textContent || '');
     let result = collapsedText.indexOf(text) === -1;
     let expected = `Element ${this.targetDescription} does not include text "${text}"`;
     let actual = expected;
@@ -1429,6 +1471,19 @@ export default class DOMAssertions {
    */
   private findElement(): FoundElement {
     return this.targetHandler.findElement(this.target, this.rootElement);
+//  private findElement(): Element | null {
+//    if (this.target === null) {
+//      return null;
+//    } else if (typeof this.target === 'string') {
+//      if (!this.rootElement) {
+//        throw new Error('Cannot do selector-based queries without a root element');
+//      }
+//      return this.rootElement.querySelector(this.target);
+//    } else if (this.target instanceof Element) {
+//      return this.target;
+//    } else {
+//      throw new TypeError(`Unexpected Parameter: ${this.target}`);
+//    }
   }
 
   /**
@@ -1439,6 +1494,19 @@ export default class DOMAssertions {
    */
   private findElements(): FoundElement[] {
     return this.targetHandler.findElements(this.target, this.rootElement);
+//  private findElements(): Element[] {
+//    if (this.target === null) {
+//      return [];
+//    } else if (typeof this.target === 'string') {
+//      if (!this.rootElement) {
+//        throw new Error('Cannot do selector-based queries without a root element');
+//      }
+//      return toArray(this.rootElement.querySelectorAll(this.target));
+//    } else if (this.target instanceof Element) {
+//      return [this.target];
+//    } else {
+//      throw new TypeError(`Unexpected Parameter: ${this.target}`);
+//    }
   }
 
   /**

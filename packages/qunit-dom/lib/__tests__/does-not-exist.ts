@@ -54,6 +54,21 @@ describe('assert.dom(...).doesNotExist()', () => {
         },
       ]);
     });
+
+    test('fails if passed null', () => {
+      document.body.innerHTML = '<h1 class="baz">foo</h1>bar';
+
+      assert.dom(null).doesNotExist();
+
+      expect(assert.results).toEqual([
+        {
+          actual: 'Element <not found> does not exist',
+          expected: 'Element <not found> does not exist',
+          message: 'Element <not found> does not exist',
+          result: true,
+        },
+      ]);
+    });
   });
 
   test('custom message', () => {
