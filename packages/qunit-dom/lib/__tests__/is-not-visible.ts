@@ -42,9 +42,9 @@ describe('assert.dom(...).isNotVisible()', () => {
 
       expect(assert.results).toEqual([
         {
-          actual: 'Element <not found> is not visible',
-          expected: 'Element <not found> is not visible',
-          message: 'Element <not found> is not visible',
+          actual: 'Element <unknown> is not visible',
+          expected: 'Element <unknown> is not visible',
+          message: 'Element <unknown> is not visible',
           result: true,
         },
       ]);

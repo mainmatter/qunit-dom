@@ -7,10 +7,10 @@ import DOMAssertions, {
 export default class TestAssertions {
   public results: AssertionResult[] = [];
 
-  constructor(private targetHandler = new DOMAssertionsHandler()) {}
+  constructor(private targetHandler = DOMAssertionsHandler) {}
 
   dom(target: string | Element | null, rootElement?: RootElement) {
-    return new DOMAssertions(target, rootElement || document, this as any, this.targetHandler);
+    return new DOMAssertions(rootElement || document, this as any, new this.targetHandler(target));
   }
 
   pushResult(result: AssertionResult) {

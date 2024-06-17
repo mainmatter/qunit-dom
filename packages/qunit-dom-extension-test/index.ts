@@ -3,39 +3,49 @@ import DOMAssertions, { setup, DOMAssertionsHandler, type RootElement } from 'qu
 
 declare global {
   interface Assert {
-    dom(target?: number, rootElement?: RootElement): DOMAssertions<number>;
+    dom(target?: string | Element | null | number, rootElement?: RootElement): DOMAssertions;
   }
 }
 
-class CustomHandler extends DOMAssertionsHandler<number> {
-  findElements(target: number, rootElement: RootElement) {
+class CustomHandler extends DOMAssertionsHandler {
+  constructor(target: number) {
+    super(target as any);
+  }
+
+  findElements(rootElement: RootElement) {
+    const { target } = this;
     if (typeof target === 'number' && rootElement) {
       return Array.prototype.slice.call(rootElement.querySelectorAll(`[data-id="${target}"]`), 0);
     }
-    return [null];
+    return super.findElements(rootElement);
   }
 
-  findElement(target: number, rootElement: RootElement) {
+  findElement(rootElement: RootElement) {
+    const { target } = this;
     if (typeof target === 'number' && rootElement) {
       return rootElement.querySelector(`[data-id="${target}"]`);
     }
-    return null;
+    return super.findElement(rootElement);
   }
 
-  description(target: number): string {
-    if (target >= 200) {
-      return  `data-id=${target}` ;
-    } else if (target <= 100) {
-      return target.toString();
-    } else {
-      return "<not found>";
+  description(): string {
+    const { target } = this;
+
+    if (typeof target === 'number') {
+      if (target >= 200) {
+        return  `data-id=${target}` ;
+      } else if (target <= 100) {
+        return `${target}`;
+      }
     }
+
+    return super.description();
   }
 }
 
 export default function (assert: Assert) {
   setup(assert, {
-    targetHandler: new CustomHandler(),
+    targetHandler: CustomHandler,
   });
 }
 

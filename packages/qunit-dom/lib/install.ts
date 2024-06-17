@@ -1,20 +1,23 @@
 import DOMAssertions, { DOMAssertionsHandler, type RootElement } from './assertions.js';
 import { getRootElement } from './root-element.js';
 
-export default function <Target>(assert: Assert, targetHandler: DOMAssertionsHandler<Target>) {
-  assert.dom = function AssertDom(
-    target: Target,
+export interface ConstructableHandler {
+  new (...args: any[]): DOMAssertionsHandler;
+}
+
+export default function Install<AssertionHandler extends ConstructableHandler>(assert: Assert, TargetHandler: AssertionHandler) {
+  assert.dom =
+  function AssertDom(
+    target: string | Element | null,
     rootElement?: RootElement
-  ): DOMAssertions<Target> {
+  ): DOMAssertions {
     if (!isValidRootElement(rootElement)) {
       throw new Error(`${rootElement} is not a valid root element`);
     }
 
     rootElement = rootElement || this.dom.rootElement || getRootElement();
-    if (target === undefined || target === null) {
-      target = (rootElement instanceof Element ? rootElement : null) as Target;
-    }
-    return new DOMAssertions(target, rootElement, this, targetHandler);
+    target = target !== undefined ? target : rootElement instanceof Element ? rootElement : null;
+    return new DOMAssertions(rootElement, this, new TargetHandler(target));
   };
 
   function isValidRootElement(element: any): element is Element {

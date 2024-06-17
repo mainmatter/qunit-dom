@@ -62,9 +62,9 @@ describe('assert.dom(...).doesNotExist()', () => {
 
       expect(assert.results).toEqual([
         {
-          actual: 'Element <not found> does not exist',
-          expected: 'Element <not found> does not exist',
-          message: 'Element <not found> does not exist',
+          actual: 'Element <unknown> does not exist',
+          expected: 'Element <unknown> does not exist',
+          message: 'Element <unknown> does not exist',
           result: true,
         },
       ]);

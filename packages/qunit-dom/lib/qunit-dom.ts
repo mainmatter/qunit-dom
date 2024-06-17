@@ -10,4 +10,4 @@ export {
   type FoundElement,
 } from './assertions.js';
 
-install(QUnit.assert, new DOMAssertionsHandler());
+install(QUnit.assert, DOMAssertionsHandler);
