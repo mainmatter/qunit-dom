@@ -20,11 +20,11 @@ export default function (assert: Assert) {
 
     rootElement = rootElement || this.dom.rootElement || getRootElement();
 
-    if (arguments.length === 0) {
-      target = rootElement instanceof Element ? rootElement : null;
-    }
-
-    return new DOMAssertions(target, rootElement, this);
+    return new DOMAssertions(
+      target !== undefined ? target : rootElement instanceof Element ? rootElement : null,
+      rootElement,
+      this
+    );
   };
 
   function isValidRootElement(element: any): element is Element {

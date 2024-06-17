@@ -1,6 +1,6 @@
 let _getRootElement: () => Element | null = () => null;
 
-export function overrideRootElement(fn: () => Element) {
+export function overrideRootElement(fn: () => Element | null) {
   _getRootElement = fn;
 }
 

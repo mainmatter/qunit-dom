@@ -34,6 +34,23 @@ describe('assert.dom(...).isNotVisible()', () => {
     });
   });
 
+  describe('element only', () => {
+    test('succeeds if element is missing', () => {
+      document.body.innerHTML = '<h1 class="baz">foo</h1>bar';
+
+      assert.dom(null).isNotVisible();
+
+      expect(assert.results).toEqual([
+        {
+          actual: 'Element <not found> is not visible',
+          expected: 'Element <not found> is not visible',
+          message: 'Element <not found> is not visible',
+          result: true,
+        },
+      ]);
+    });
+  });
+
   describe('custom messages', () => {
     test('shows custom messages', () => {
       document.body.innerHTML = '<h1 class="baz">foo</h1>bar';
