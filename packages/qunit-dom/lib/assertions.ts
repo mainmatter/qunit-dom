@@ -132,9 +132,7 @@ export default class DOMAssertions {
    *
    * @see {@link #doesNotExist}
    */
-  exists(
-    ...args: [options: ExistsOptions, message?: string] | [message?: string]
-  ): DOMAssertions {
+  exists(...args: [options: ExistsOptions, message?: string] | [message?: string]): DOMAssertions {
     exists.call(this, ...args);
     return this;
   }
@@ -311,7 +309,7 @@ export default class DOMAssertions {
    *
    * @see {@link #isNotVisible}
    */
-  isVisible(message?: string): DOMAssertions ;
+  isVisible(message?: string): DOMAssertions;
 
   /**
    * Assert that the {@link HTMLElement} or an {@link HTMLElement} matching the
@@ -334,7 +332,7 @@ export default class DOMAssertions {
    *
    * @see {@link #isNotVisible}
    */
-  isVisible(options: ExistsOptions, message?: string): DOMAssertions ;
+  isVisible(options: ExistsOptions, message?: string): DOMAssertions;
 
   /**
    * Assert that the {@link HTMLElement} or an {@link HTMLElement} matching the
@@ -399,7 +397,7 @@ export default class DOMAssertions {
    *
    * @see {@link #doesNotHaveAttribute}
    */
-  hasAttribute(name: string): DOMAssertions ;
+  hasAttribute(name: string): DOMAssertions;
 
   /**
    * Assert that the {@link HTMLElement} has an attribute with the provided `name`
@@ -419,7 +417,7 @@ export default class DOMAssertions {
     name: string,
     value: string | RegExp | { any: true },
     message?: string
-  ): DOMAssertions ;
+  ): DOMAssertions;
 
   /**
    * Assert that the {@link HTMLElement} has an attribute with the provided `name`
@@ -439,7 +437,7 @@ export default class DOMAssertions {
     name: string,
     value?: string | RegExp | { any: true },
     message?: string
-  ): DOMAssertions{
+  ): DOMAssertions {
     let element = this.findTargetElement();
     if (!element) return this;
 
@@ -511,7 +509,7 @@ export default class DOMAssertions {
    *
    * @see {@link #hasAttribute}
    */
-  doesNotHaveAttribute(name: string, message?: string): DOMAssertions{
+  doesNotHaveAttribute(name: string, message?: string): DOMAssertions {
     let element = this.findTargetElement();
     if (!element) return this;
 
@@ -534,11 +532,11 @@ export default class DOMAssertions {
     return this;
   }
 
-  hasNoAttribute(name: string, message?: string): DOMAssertions{
+  hasNoAttribute(name: string, message?: string): DOMAssertions {
     return this.doesNotHaveAttribute(name, message);
   }
 
-  lacksAttribute(name: string, message?: string): DOMAssertions{
+  lacksAttribute(name: string, message?: string): DOMAssertions {
     return this.doesNotHaveAttribute(name, message);
   }
 
@@ -553,7 +551,7 @@ export default class DOMAssertions {
    *
    * @see {@link #doesNotHaveAria}
    */
-  hasAria(name: string): DOMAssertions ;
+  hasAria(name: string): DOMAssertions;
 
   /**
    * Assert that the {@link HTMLElement} has an ARIA attribute with the provided
@@ -569,11 +567,7 @@ export default class DOMAssertions {
    *
    * @see {@link #doesNotHaveAttribute}
    */
-  hasAria(
-    name: string,
-    value: string | RegExp | { any: true },
-    message?: string
-  ): DOMAssertions ;
+  hasAria(name: string, value: string | RegExp | { any: true }, message?: string): DOMAssertions;
 
   /**
    * Assert that the {@link HTMLElement} has an ARIA attribute with the provided
@@ -842,11 +836,7 @@ export default class DOMAssertions {
     return this.hasPseudoElementStyle(null, expected, message);
   }
 
-  hasPseudoElementStyle(
-    selector: string | null,
-    expected: object,
-    message?: string
-  ): DOMAssertions;
+  hasPseudoElementStyle(selector: string | null, expected: object, message?: string): DOMAssertions;
 
   /**
    * Assert that the pseudo element for `selector` of the [HTMLElement][] has the `expected` style declarations using
@@ -867,7 +857,7 @@ export default class DOMAssertions {
     selector: string | null,
     expected: Record<string, string>,
     message?: string
-  ): DOMAssertions{
+  ): DOMAssertions {
     let element = this.findTargetElement();
     if (!element) return this;
 
@@ -918,7 +908,7 @@ export default class DOMAssertions {
    *
    * @see {@link #hasClass}
    */
-  doesNotHaveStyle(expected: object, message?: string): DOMAssertions{
+  doesNotHaveStyle(expected: object, message?: string): DOMAssertions {
     return this.doesNotHavePseudoElementStyle(null, expected, message);
   }
 
@@ -947,7 +937,7 @@ export default class DOMAssertions {
     selector: string | null,
     expected: Record<string, unknown>,
     message?: string
-  ): DOMAssertions{
+  ): DOMAssertions {
     let element = this.findTargetElement();
     if (!element) return this;
 
@@ -1007,7 +997,7 @@ export default class DOMAssertions {
    *
    * @see {@link #includesText}
    */
-  hasText(expected: string | RegExp | { any: true }, message?: string): DOMAssertions{
+  hasText(expected: string | RegExp | { any: true }, message?: string): DOMAssertions {
     let element = this.findTargetElement();
     if (!element) return this;
 
@@ -1050,7 +1040,7 @@ export default class DOMAssertions {
     return this;
   }
 
-  matchesText(expected: string | RegExp | { any: true }, message?: string): DOMAssertions{
+  matchesText(expected: string | RegExp | { any: true }, message?: string): DOMAssertions {
     return this.hasText(expected, message);
   }
 
@@ -1064,7 +1054,7 @@ export default class DOMAssertions {
    *
    * @see {@link #hasText}
    */
-  hasAnyText(message?: string): DOMAssertions{
+  hasAnyText(message?: string): DOMAssertions {
     return this.hasText({ any: true }, message);
   }
 
@@ -1078,7 +1068,7 @@ export default class DOMAssertions {
    *
    * @see {@link #hasNoText}
    */
-  hasNoText(message?: string): DOMAssertions{
+  hasNoText(message?: string): DOMAssertions {
     return this.hasText('', message);
   }
 
@@ -1103,7 +1093,7 @@ export default class DOMAssertions {
    *
    * @see {@link #hasText}
    */
-  includesText(text: string, message?: string): DOMAssertions{
+  includesText(text: string, message?: string): DOMAssertions {
     let element = this.findTargetElement();
     if (!element) return this;
 
@@ -1127,11 +1117,11 @@ export default class DOMAssertions {
     return this;
   }
 
-  containsText(expected: string, message?: string): DOMAssertions{
+  containsText(expected: string, message?: string): DOMAssertions {
     return this.includesText(expected, message);
   }
 
-  hasTextContaining(expected: string, message?: string): DOMAssertions{
+  hasTextContaining(expected: string, message?: string): DOMAssertions {
     return this.includesText(expected, message);
   }
 
@@ -1149,7 +1139,7 @@ export default class DOMAssertions {
    * @example
    * assert.dom('#title').doesNotIncludeText('Welcome');
    */
-  doesNotIncludeText(text: string, message?: string): DOMAssertions{
+  doesNotIncludeText(text: string, message?: string): DOMAssertions {
     let element = this.findTargetElement();
     if (!element) return this;
 
@@ -1170,11 +1160,11 @@ export default class DOMAssertions {
     return this;
   }
 
-  doesNotContainText(unexpected: string, message?: string): DOMAssertions{
+  doesNotContainText(unexpected: string, message?: string): DOMAssertions {
     return this.doesNotIncludeText(unexpected, message);
   }
 
-  doesNotHaveTextContaining(unexpected: string, message?: string): DOMAssertions{
+  doesNotHaveTextContaining(unexpected: string, message?: string): DOMAssertions {
     return this.doesNotIncludeText(unexpected, message);
   }
 
@@ -1290,7 +1280,9 @@ export default class DOMAssertions {
     let matchFailures = matchesSelector(filterElements(targetElements), compareSelector);
     let singleElement: boolean = targets === 1;
     let targetDescription = this.targetHandler.targetString();
-    let selectedByPart = this.targetHandler.isElement() ? 'passed' : `selected by ${targetDescription}`;
+    let selectedByPart = this.targetHandler.isElement()
+      ? 'passed'
+      : `selected by ${targetDescription}`;
     let actual;
     let expected;
 
@@ -1337,7 +1329,9 @@ export default class DOMAssertions {
     let matchFailures = matchesSelector(filterElements(targetElements), compareSelector);
     let singleElement: boolean = targets === 1;
     let targetDescription = this.targetHandler.targetString();
-    let selectedByPart = this.targetHandler.isElement() ? 'passed' : `selected by ${targetDescription}`;
+    let selectedByPart = this.targetHandler.isElement()
+      ? 'passed'
+      : `selected by ${targetDescription}`;
     let actual;
     let expected;
     if (matchFailures === targets) {

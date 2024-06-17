@@ -5,9 +5,11 @@ export interface ConstructableHandler {
   new (...args: any[]): DOMAssertionsHandler;
 }
 
-export default function Install<AssertionHandler extends ConstructableHandler>(assert: Assert, TargetHandler: AssertionHandler) {
-  assert.dom =
-  function AssertDom(
+export default function Install<AssertionHandler extends ConstructableHandler>(
+  assert: Assert,
+  TargetHandler: AssertionHandler
+) {
+  assert.dom = function AssertDom(
     target: string | Element | null,
     rootElement?: RootElement
   ): DOMAssertions {
