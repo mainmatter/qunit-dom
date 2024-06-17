@@ -1,10 +1,7 @@
-import DOMAssertions, { RootElement } from './assertions.js';
+import DOMAssertions, { type RootElement } from './assertions';
 
 declare global {
-  type QUnitDOMAssertTarget = string | Element | null;
-
-  // overwrite the global QUnit interface
   interface Assert {
-    dom(target?: QUnitDOMAssertTarget, rootElement?: RootElement): DOMAssertions;
+    dom<Target>(target: Target, rootElement?: RootElement): DOMAssertions<Target>;
   }
 }

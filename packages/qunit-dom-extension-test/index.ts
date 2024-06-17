@@ -1,20 +1,21 @@
-// QUnit's package.json needs updating, because this is silly
-import 'qunit/qunit/qunit.css';
-import * as QUnit from 'qunit';
 // Setup the package that this repo provides
-import { setup, DOMAssertionsHandler, type RootElement, type FoundElement } from 'qunit-dom';
+import DOMAssertions, { setup, DOMAssertionsHandler, type RootElement } from 'qunit-dom';
 
-QUnit.config.autostart = false;
+declare global {
+  interface Assert {
+    dom(target?: number, rootElement?: RootElement): DOMAssertions<number>;
+  }
+}
 
 class CustomHandler extends DOMAssertionsHandler<number> {
-  findElements(target: number, rootElement: RootElement): FoundElement[] {
+  findElements(target: number, rootElement: RootElement) {
     if (typeof target === 'number' && rootElement) {
       return Array.prototype.slice.call(rootElement.querySelectorAll(`[data-id="${target}"]`), 0);
     }
     return [null];
   }
 
-  findElement(target: number, rootElement: RootElement): FoundElement {
+  findElement(target: number, rootElement: RootElement) {
     if (typeof target === 'number' && rootElement) {
       return rootElement.querySelector(`[data-id="${target}"]`);
     }
@@ -32,13 +33,9 @@ class CustomHandler extends DOMAssertionsHandler<number> {
   }
 }
 
-setup<CustomHandler>(QUnit.assert, {
-  targetHandler: new CustomHandler(),
-});
-
-const modules = import.meta.glob('./tests/*', { eager: true });
-
-console.log({ modules });
-
-QUnit.start();
+export default function (assert: Assert) {
+  setup(assert, {
+    targetHandler: new CustomHandler(),
+  });
+}
 

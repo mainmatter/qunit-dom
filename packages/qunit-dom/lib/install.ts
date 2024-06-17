@@ -1,25 +1,20 @@
-import DOMAssertions, {
-  DOMAssertionsHandler,
-  type AssertionHandler,
-  type RootElement,
-} from './assertions.js';
+import DOMAssertions, { DOMAssertionsHandler, type RootElement } from './assertions.js';
 import { getRootElement } from './root-element.js';
 
-export default function (assert: Assert, targetHandler?: AssertionHandler) {
-  assert.dom = function (target?: QUnitDOMAssertTarget, rootElement?: RootElement): DOMAssertions {
+export default function <Target>(assert: Assert, targetHandler: DOMAssertionsHandler<Target>) {
+  assert.dom = function AssertDom(
+    target: Target,
+    rootElement?: RootElement
+  ): DOMAssertions<Target> {
     if (!isValidRootElement(rootElement)) {
       throw new Error(`${rootElement} is not a valid root element`);
     }
 
     rootElement = rootElement || this.dom.rootElement || getRootElement();
-
-    const _targetHandler = targetHandler || new DOMAssertionsHandler();
-    return new DOMAssertions(
-      target !== undefined ? target : rootElement instanceof Element ? rootElement : null,
-      rootElement,
-      this,
-      _targetHandler
-    );
+    if (target === undefined || target === null) {
+      target = (rootElement instanceof Element ? rootElement : null) as Target;
+    }
+    return new DOMAssertions(target, rootElement, this, targetHandler);
   };
 
   function isValidRootElement(element: any): element is Element {

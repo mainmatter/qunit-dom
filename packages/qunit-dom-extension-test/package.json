@@ -1,0 +1,17 @@
+{
+  "name": "qunit-dom-extension-lib",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "qunit": "2.20.1",
+    "qunit-dom": "workspace:^",
+    "typescript": "5.2.2",
+    "@types/qunit": "2.19.7"
+  },
+  "volta": {
+    "extends": "../../package.json"
+  }
+}

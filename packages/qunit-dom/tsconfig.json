@@ -19,6 +19,7 @@
     ],
   },
   "include": [
-    "lib/**/*"
+    "lib/**/*",
+    "lib/global.d.ts",
   ]
 }

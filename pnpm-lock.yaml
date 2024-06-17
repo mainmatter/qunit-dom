@@ -96,6 +96,21 @@ importers:
         specifier: 5.89.0
         version: 5.89.0
 
+  packages/qunit-dom-extension-test:
+    devDependencies:
+      '@types/qunit':
+        specifier: 2.19.7
+        version: 2.19.7
+      qunit:
+        specifier: 2.20.1
+        version: 2.20.1
+      qunit-dom:
+        specifier: workspace:^
+        version: link:../qunit-dom
+      typescript:
+        specifier: 5.2.2
+        version: 5.2.2
+
   packages/test-app:
     dependencies:
       qunit-dom:
@@ -16236,6 +16251,16 @@ packages:
       node-watch: 0.7.3
       tiny-glob: 0.2.9
     dev: false
+
+  /qunit@2.20.1:
+    resolution: {integrity: sha512-scZfyhX8mmP3u/CN2y3CutQb+ppalbpqmm7g/X62M2yOt8ofzsxrRaC+MPmYm/tXxpzs9HGrVeCxZwLoP0tuAA==}
+    engines: {node: '>=10'}
+    hasBin: true
+    dependencies:
+      commander: 7.2.0
+      node-watch: 0.7.3
+      tiny-glob: 0.2.9
+    dev: true
 
   /qunit@2.21.0:
     resolution: {integrity: sha512-kJJ+uzx5xDWk0oRrbOZ3zsm+imPULE58ZMIrNl+3POZl4a1k6VXj2E4OiqTmZ9j6hh9egE3kNgnAti9Q+BG6Yw==}
