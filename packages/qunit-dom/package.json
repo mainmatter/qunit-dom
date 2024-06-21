@@ -55,7 +55,7 @@
     "prettier": "3.0.3",
     "publint": "0.2.4",
     "qunit": "2.21.0",
-    "release-it": "16.2.1",
+    "release-it": "17.4.0",
     "@release-it-plugins/lerna-changelog": "6.1.0",
     "rollup": "2.79.1",
     "rollup-plugin-copy": "3.5.0",
