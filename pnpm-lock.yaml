@@ -366,7 +366,7 @@ importers:
         specifier: 2.19.7
         version: 2.19.7
       dom-element-descriptors:
-        specifier: ^0.5.1
+        specifier: 0.5.1
         version: 0.5.1
       expect-type:
         specifier: 0.17.3
@@ -388,7 +388,7 @@ importers:
         specifier: 2.19.7
         version: 2.19.7
       dom-element-descriptors:
-        specifier: ^0.5.1
+        specifier: 0.5.1
         version: 0.5.1
       expect-type:
         specifier: 0.17.3
@@ -410,7 +410,7 @@ importers:
         specifier: 2.19.7
         version: 2.19.7
       dom-element-descriptors:
-        specifier: ^0.5.1
+        specifier: 0.5.1
         version: 0.5.1
       expect-type:
         specifier: 0.17.3
