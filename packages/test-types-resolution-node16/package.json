@@ -8,7 +8,7 @@
     "test": "echo 'run pnpm lint' instead"
   },
   "devDependencies": {
-    "@types/qunit": "2.19.7",
+    "@types/qunit": "2.19.10",
     "dom-element-descriptors": "0.5.1",
     "expect-type": "0.17.3",
     "typescript": "5.2.2"
