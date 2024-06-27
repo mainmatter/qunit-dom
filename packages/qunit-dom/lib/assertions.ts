@@ -9,9 +9,14 @@ import isValid from './assertions/is-valid.js';
 import isVisible from './assertions/is-visible.js';
 import isDisabled from './assertions/is-disabled.js';
 import matchesSelector from './assertions/matches-selector.js';
-import elementToString from './helpers/element-to-string.js';
 import collapseWhitespace from './helpers/collapse-whitespace.js';
-import { toArray } from './helpers/node-list.js';
+import {
+  type IDOMElementDescriptor,
+  resolveDOMElement,
+  resolveDOMElements,
+  resolveDescription,
+} from 'dom-element-descriptors';
+import createDescriptor from './descriptor';
 
 export interface AssertionResult {
   result: boolean;
@@ -29,11 +34,24 @@ type CSSStyleDeclarationProperty = keyof CSSStyleDeclaration;
 type ActualCSSStyleDeclaration = Partial<Record<CSSStyleDeclarationProperty, unknown>>;
 
 export default class DOMAssertions {
+  /**
+   * The target of our assertions
+   */
+  private descriptor: IDOMElementDescriptor;
+  /**
+   * Whether we were constructed with an element, rather than a selector or
+   * descriptor. Used to make error messages more helpful.
+   */
+  private wasPassedElement: boolean;
+
   constructor(
-    private target: string | Element | null,
-    private rootElement: RootElement,
+    target: string | Element | null | IDOMElementDescriptor,
+    rootElement: RootElement,
     private testContext: Assert
-  ) {}
+  ) {
+    this.descriptor = createDescriptor(target, rootElement);
+    this.wasPassedElement = target instanceof Element;
+  }
 
   /**
    * Assert an {@link HTMLElement} (or multiple) matching the `selector` exists.
@@ -1217,11 +1235,11 @@ export default class DOMAssertions {
    * assert.dom('p.red').matchesSelector('div.wrapper p:last-child')
    */
   matchesSelector(compareSelector: string, message?: string): DOMAssertions {
-    let targetElements = this.target instanceof Element ? [this.target] : this.findElements();
+    let targetElements = this.findElements();
     let targets = targetElements.length;
     let matchFailures = matchesSelector(targetElements, compareSelector);
     let singleElement: boolean = targets === 1;
-    let selectedByPart = this.target instanceof Element ? 'passed' : `selected by ${this.target}`;
+    let selectedByPart = this.selectedBy;
     let actual;
     let expected;
 
@@ -1230,7 +1248,7 @@ export default class DOMAssertions {
       if (!message) {
         message = singleElement
           ? `The element ${selectedByPart} also matches the selector ${compareSelector}.`
-          : `${targets} elements, selected by ${this.target}, also match the selector ${compareSelector}.`;
+          : `${targets} elements, ${selectedByPart}, also match the selector ${compareSelector}.`;
       }
       actual = expected = message;
       this.pushResult({ result: true, actual, expected, message });
@@ -1240,7 +1258,7 @@ export default class DOMAssertions {
       if (!message) {
         message = singleElement
           ? `The element ${selectedByPart} did not also match the selector ${compareSelector}.`
-          : `${matchFailures} out of ${targets} elements selected by ${this.target} did not also match the selector ${compareSelector}.`;
+          : `${matchFailures} out of ${targets} elements ${selectedByPart} did not also match the selector ${compareSelector}.`;
       }
       actual = singleElement ? message : `${difference} elements matched ${compareSelector}.`;
       expected = singleElement
@@ -1263,11 +1281,11 @@ export default class DOMAssertions {
    * assert.dom('input').doesNotMatchSelector('input[disabled]')
    */
   doesNotMatchSelector(compareSelector: string, message?: string): DOMAssertions {
-    let targetElements = this.target instanceof Element ? [this.target] : this.findElements();
+    let targetElements = this.findElements();
     let targets = targetElements.length;
     let matchFailures = matchesSelector(targetElements, compareSelector);
     let singleElement: boolean = targets === 1;
-    let selectedByPart = this.target instanceof Element ? 'passed' : `selected by ${this.target}`;
+    let selectedByPart = this.selectedBy;
     let actual;
     let expected;
     if (matchFailures === targets) {
@@ -1275,7 +1293,7 @@ export default class DOMAssertions {
       if (!message) {
         message = singleElement
           ? `The element ${selectedByPart} did not also match the selector ${compareSelector}.`
-          : `${targets} elements, selected by ${this.target}, did not also match the selector ${compareSelector}.`;
+          : `${targets} elements, ${selectedByPart}, did not also match the selector ${compareSelector}.`;
       }
       actual = expected = message;
       this.pushResult({ result: true, actual, expected, message });
@@ -1285,7 +1303,7 @@ export default class DOMAssertions {
       if (!message) {
         message = singleElement
           ? `The element ${selectedByPart} must not also match the selector ${compareSelector}.`
-          : `${difference} elements out of ${targets}, selected by ${this.target}, must not also match the selector ${compareSelector}.`;
+          : `${difference} elements out of ${targets}, ${selectedByPart}, must not also match the selector ${compareSelector}.`;
       }
       actual = singleElement
         ? `The element ${selectedByPart} matched ${compareSelector}.`
@@ -1407,36 +1425,15 @@ export default class DOMAssertions {
    * @returns (HTMLElement|null) a valid HTMLElement, or null
    */
   private findTargetElement(): Element | null {
-    let el = this.findElement();
+    let el = resolveDOMElement(this.descriptor);
 
     if (el === null) {
-      let message = `Element ${this.target || '<unknown>'} should exist`;
+      let message = `Element ${this.targetDescription} should exist`;
       this.pushResult({ message, result: false, actual: undefined, expected: undefined });
       return null;
     }
 
     return el;
-  }
-
-  /**
-   * Finds a valid HTMLElement from target
-   * @private
-   * @returns (HTMLElement|null) a valid HTMLElement, or null
-   * @throws TypeError will be thrown if target is an unrecognized type
-   */
-  private findElement(): Element | null {
-    if (this.target === null) {
-      return null;
-    } else if (typeof this.target === 'string') {
-      if (!this.rootElement) {
-        throw new Error('Cannot do selector-based queries without a root element');
-      }
-      return this.rootElement.querySelector(this.target);
-    } else if (this.target instanceof Element) {
-      return this.target;
-    } else {
-      throw new TypeError(`Unexpected Parameter: ${this.target}`);
-    }
   }
 
   /**
@@ -1446,24 +1443,26 @@ export default class DOMAssertions {
    * @throws TypeError will be thrown if target is an unrecognized type
    */
   private findElements(): Element[] {
-    if (this.target === null) {
-      return [];
-    } else if (typeof this.target === 'string') {
-      if (!this.rootElement) {
-        throw new Error('Cannot do selector-based queries without a root element');
-      }
-      return toArray(this.rootElement.querySelectorAll(this.target));
-    } else if (this.target instanceof Element) {
-      return [this.target];
-    } else {
-      throw new TypeError(`Unexpected Parameter: ${this.target}`);
-    }
+    return Array.from(resolveDOMElements(this.descriptor));
   }
 
   /**
    * @private
    */
   private get targetDescription(): string {
-    return elementToString(this.target);
+    return resolveDescription(this.descriptor) ?? 'undefined';
+  }
+
+  /**
+   * @private
+   */
+  private get selectedBy(): string {
+    if (this.wasPassedElement) {
+      return 'passed';
+    } else if (resolveDOMElement(this.descriptor)) {
+      return `selected by ${this.targetDescription}`;
+    } else {
+      return 'selected by null';
+    }
   }
 }

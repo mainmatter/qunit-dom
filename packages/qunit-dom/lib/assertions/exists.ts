@@ -37,6 +37,10 @@ export default function exists(options?: ExistsOptions | string, message?: strin
 }
 
 function format(selector: string, num?: number) {
+  if (selector === '<unknown>') {
+    selector = '<not found>';
+  }
+
   if (num === undefined || num === null) {
     return `Element ${selector} exists`;
   } else if (num === 0) {
