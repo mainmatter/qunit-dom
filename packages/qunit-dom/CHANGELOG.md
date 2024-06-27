@@ -6,6 +6,20 @@
 
 
 
+
+## v3.2.0 (2024-06-27)
+
+#### :rocket: Enhancement
+* `qunit-dom`, `test-types-resolution-node`, `test-types-resolution-node16`, `test-types`
+  * [#2087](https://github.com/mainmatter/qunit-dom/pull/2087) feature: support IDOMElementDescriptors ([@bendemboski](https://github.com/bendemboski))
+
+#### :house: Internal
+* `qunit-dom`
+  * [#2107](https://github.com/mainmatter/qunit-dom/pull/2107) Tighter null checks ([@bendemboski](https://github.com/bendemboski))
+
+#### Committers: 1
+- Ben Demboski ([@bendemboski](https://github.com/bendemboski))
+
 ## v3.1.2 (2024-04-23)
 
 #### :bug: Bug Fix
