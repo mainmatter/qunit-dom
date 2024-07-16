@@ -10,8 +10,8 @@
   "devDependencies": {
     "@types/qunit": "2.19.7",
     "dom-element-descriptors": "0.5.1",
-    "expect-type": "0.17.3",
-    "typescript": "5.2.2"
+    "expect-type": "0.19.0",
+    "typescript": "5.5.3"
   },
   "volta": {
     "extends": "../../package.json"
