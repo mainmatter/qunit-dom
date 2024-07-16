@@ -22,7 +22,7 @@
     "npm": "use pnpm"
   },
   "volta": {
-    "node": "18.18.2",
+    "node": "20.15.1",
     "pnpm": "8.8.0"
   },
   "changelog": {
