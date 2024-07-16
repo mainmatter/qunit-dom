@@ -8,7 +8,7 @@
   "devDependencies": {
     "qunit": "2.21.0",
     "qunit-dom": "workspace:^",
-    "vite": "4.5.0"
+    "vite": "5.3.4"
   },
   "volta": {
     "extends": "../../package.json"
