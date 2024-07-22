@@ -23,7 +23,7 @@
   },
   "volta": {
     "node": "20.15.1",
-    "pnpm": "8.8.0"
+    "pnpm": "8.15.9"
   },
   "changelog": {
     "repo": "mainmatter/qunit-dom",
