@@ -76,8 +76,8 @@ importers:
         specifier: 0.2.8
         version: 0.2.8
       qunit:
-        specifier: 2.21.0
-        version: 2.21.0
+        specifier: 2.21.1
+        version: 2.21.1
       release-it:
         specifier: 16.3.0
         version: 16.3.0(typescript@5.5.3)
@@ -144,7 +144,7 @@ importers:
         version: 4.0.8(@babel/core@7.24.9)
       '@types/ember-qunit':
         specifier: 6.1.1
-        version: 6.1.1(@ember/test-helpers@3.3.0)(ember-source@5.10.1)(qunit@2.21.0)
+        version: 6.1.1(@ember/test-helpers@3.3.0)(ember-source@5.10.1)(qunit@2.21.1)
       '@types/ember-resolver':
         specifier: 9.0.0
         version: 9.0.0(ember-source@5.10.1)
@@ -276,7 +276,7 @@ importers:
         version: 8.2.3(ember-source@5.10.1)
       ember-qunit:
         specifier: 8.1.0
-        version: 8.1.0(@ember/test-helpers@3.3.0)(ember-source@5.10.1)(qunit@2.21.0)
+        version: 8.1.0(@ember/test-helpers@3.3.0)(ember-source@5.10.1)(qunit@2.21.1)
       ember-resolver:
         specifier: 11.0.1
         version: 11.0.1(ember-source@5.10.1)
@@ -326,8 +326,8 @@ importers:
         specifier: 3.3.3
         version: 3.3.3
       qunit:
-        specifier: 2.21.0
-        version: 2.21.0
+        specifier: 2.21.1
+        version: 2.21.1
       release-it:
         specifier: 16.3.0
         version: 16.3.0(typescript@5.5.3)
@@ -422,8 +422,8 @@ importers:
   packages/test-vite-app:
     devDependencies:
       qunit:
-        specifier: 2.21.0
-        version: 2.21.0
+        specifier: 2.21.1
+        version: 2.21.1
       qunit-dom:
         specifier: workspace:^
         version: link:../qunit-dom
@@ -5801,11 +5801,11 @@ packages:
       '@types/ms': 0.7.32
     dev: true
 
-  /@types/ember-qunit@6.1.1(@ember/test-helpers@3.3.0)(ember-source@5.10.1)(qunit@2.21.0):
+  /@types/ember-qunit@6.1.1(@ember/test-helpers@3.3.0)(ember-source@5.10.1)(qunit@2.21.1):
     resolution: {integrity: sha512-1g5A3vPKhvB/CuN/EP9rBLXYaJOjzKyLYWeBtNDEQNkTuG1dAo/Hg0CCixgbBgLlzaDP8mR/n1xpg8HqQ8SUKg==}
     deprecated: This is a stub types definition. ember-qunit provides its own type definitions, so you do not need this installed.
     dependencies:
-      ember-qunit: 8.1.0(@ember/test-helpers@3.3.0)(ember-source@5.10.1)(qunit@2.21.0)
+      ember-qunit: 8.1.0(@ember/test-helpers@3.3.0)(ember-source@5.10.1)(qunit@2.21.1)
     transitivePeerDependencies:
       - '@ember/test-helpers'
       - '@glint/template'
@@ -10916,7 +10916,7 @@ packages:
       - supports-color
     dev: true
 
-  /ember-qunit@8.1.0(@ember/test-helpers@3.3.0)(ember-source@5.10.1)(qunit@2.21.0):
+  /ember-qunit@8.1.0(@ember/test-helpers@3.3.0)(ember-source@5.10.1)(qunit@2.21.1):
     resolution: {integrity: sha512-55/xqvVQwhiNcnh/tCzWyvlYzrYqwDY0/cIPyDQbAxGKtkUt9jCfRUGllfyOofC6LX0fL/0fIi+5e9sg1m6vXw==}
     peerDependencies:
       '@ember/test-helpers': '>=3.0.3'
@@ -10928,7 +10928,7 @@ packages:
       '@embroider/macros': 1.16.5
       ember-cli-test-loader: 3.1.0
       ember-source: 5.10.1(@glimmer/component@1.1.2)(rsvp@4.8.5)(webpack@5.93.0)
-      qunit: 2.21.0
+      qunit: 2.21.1
       qunit-theme-ember: 1.0.0
     transitivePeerDependencies:
       - '@glint/template'
@@ -17277,8 +17277,8 @@ packages:
       tiny-glob: 0.2.9
     dev: false
 
-  /qunit@2.21.0:
-    resolution: {integrity: sha512-kJJ+uzx5xDWk0oRrbOZ3zsm+imPULE58ZMIrNl+3POZl4a1k6VXj2E4OiqTmZ9j6hh9egE3kNgnAti9Q+BG6Yw==}
+  /qunit@2.21.1:
+    resolution: {integrity: sha512-SMA8IBZamI9MyVB4dShGpn6+X6plO8mIyfZTQ815XBvv/nVMeUj+yxsw8SgZVnrMlrAvTziJkmjOhaDwkNMHWQ==}
     engines: {node: '>=10'}
     hasBin: true
     dependencies:
