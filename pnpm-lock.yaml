@@ -278,8 +278,8 @@ importers:
         specifier: 8.1.0
         version: 8.1.0(@ember/test-helpers@3.3.0)(ember-source@5.10.1)(qunit@2.21.1)
       ember-resolver:
-        specifier: 11.0.1
-        version: 11.0.1(ember-source@5.10.1)
+        specifier: 12.0.1
+        version: 12.0.1(ember-source@5.10.1)
       ember-source:
         specifier: 5.10.1
         version: 5.10.1(@glimmer/component@1.1.2)(rsvp@4.8.5)(webpack@5.93.0)
@@ -5818,7 +5818,7 @@ packages:
     resolution: {integrity: sha512-lEuC2QD8K6rRAbELMejrALFBgelRPt6OQtapny4Oke07ZtK/Lbf9zn5KIDl7PNkirxMD0AStsQTdUqFu6eVbVw==}
     deprecated: This is a stub types definition. ember-resolver provides its own type definitions, so you do not need this installed.
     dependencies:
-      ember-resolver: 11.0.1(ember-source@5.10.1)
+      ember-resolver: 12.0.1(ember-source@5.10.1)
     transitivePeerDependencies:
       - ember-source
       - supports-color
@@ -10935,11 +10935,11 @@ packages:
       - supports-color
     dev: true
 
-  /ember-resolver@11.0.1(ember-source@5.10.1):
-    resolution: {integrity: sha512-ucBk3oM+PR+AfYoSUXeQh8cDQS1sSiEKp4Pcgbew5cFMSqPxJfqd1zyZsfQKNTuyubeGmWxBOyMVSTvX2LeCyg==}
+  /ember-resolver@12.0.1(ember-source@5.10.1):
+    resolution: {integrity: sha512-U+ZBdbEHMhmvcZly1xhZKwqeH5/igjT93p9bbD6x+mQVg7hm4jrsQA4jsxHu3BqgL5MmqOVx0gtAuYEWV1x2MQ==}
     engines: {node: 14.* || 16.* || >= 18}
     peerDependencies:
-      ember-source: ^4.8.3 || >= 5.0.0
+      ember-source: ^4.12.0 || >= 5.0.0
     peerDependenciesMeta:
       ember-source:
         optional: true
