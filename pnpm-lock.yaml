@@ -278,8 +278,8 @@ importers:
         specifier: 8.1.0
         version: 8.1.0(@ember/test-helpers@3.3.1)(ember-source@5.10.2)(qunit@2.21.1)
       ember-resolver:
-        specifier: 11.0.1
-        version: 11.0.1(ember-source@5.10.2)
+        specifier: 12.0.1
+        version: 12.0.1(ember-source@5.10.2)
       ember-source:
         specifier: 5.10.2
         version: 5.10.2(@glimmer/component@1.1.2)(rsvp@4.8.5)(webpack@5.93.0)
@@ -4632,32 +4632,10 @@ packages:
     resolution: {integrity: sha512-lEuC2QD8K6rRAbELMejrALFBgelRPt6OQtapny4Oke07ZtK/Lbf9zn5KIDl7PNkirxMD0AStsQTdUqFu6eVbVw==}
     deprecated: This is a stub types definition. ember-resolver provides its own type definitions, so you do not need this installed.
     dependencies:
-      ember-resolver: 11.0.1(ember-source@5.10.2)
+      ember-resolver: 12.0.1(ember-source@5.10.2)
     transitivePeerDependencies:
       - ember-source
       - supports-color
-    dev: true
-
-  /@types/ember@4.0.11:
-    resolution: {integrity: sha512-v7VIex0YILK8fP87LkIfzeeYKNnu74+xwf6U56v6MUDDGfSs9q/6NCxiUfwkxD+z5nQiUcwvfKVokX8qzZFRLw==}
-    dependencies:
-      '@types/ember__application': 4.0.11(@babel/core@7.24.9)
-      '@types/ember__array': 4.0.10
-      '@types/ember__component': 4.0.22
-      '@types/ember__controller': 4.0.12
-      '@types/ember__debug': 4.0.8
-      '@types/ember__engine': 4.0.11
-      '@types/ember__error': 4.0.6
-      '@types/ember__object': 4.0.12
-      '@types/ember__polyfills': 4.0.6
-      '@types/ember__routing': 4.0.22
-      '@types/ember__runloop': 4.0.10
-      '@types/ember__service': 4.0.9
-      '@types/ember__string': 3.0.15
-      '@types/ember__template': 4.0.7
-      '@types/ember__test': 4.0.6(@babel/core@7.24.9)
-      '@types/ember__utils': 4.0.7
-      '@types/rsvp': 4.0.9
     dev: true
 
   /@types/ember@4.0.11(@babel/core@7.24.9):
@@ -4666,15 +4644,15 @@ packages:
       '@types/ember__application': 4.0.11(@babel/core@7.24.9)
       '@types/ember__array': 4.0.10(@babel/core@7.24.9)
       '@types/ember__component': 4.0.22(@babel/core@7.24.9)
-      '@types/ember__controller': 4.0.12
-      '@types/ember__debug': 4.0.8
-      '@types/ember__engine': 4.0.11
+      '@types/ember__controller': 4.0.12(@babel/core@7.24.9)
+      '@types/ember__debug': 4.0.8(@babel/core@7.24.9)
+      '@types/ember__engine': 4.0.11(@babel/core@7.24.9)
       '@types/ember__error': 4.0.6
       '@types/ember__object': 4.0.12(@babel/core@7.24.9)
       '@types/ember__polyfills': 4.0.6
       '@types/ember__routing': 4.0.22(@babel/core@7.24.9)
       '@types/ember__runloop': 4.0.10(@babel/core@7.24.9)
-      '@types/ember__service': 4.0.9
+      '@types/ember__service': 4.0.9(@babel/core@7.24.9)
       '@types/ember__string': 3.0.15
       '@types/ember__template': 4.0.7
       '@types/ember__test': 4.0.6(@babel/core@7.24.9)
@@ -4689,54 +4667,34 @@ packages:
     resolution: {integrity: sha512-U1S7XW0V70nTWbFckWoraJbYGBJK69muP/CsPFLeAuUYHfkkDiwh1SfqgAUN9aHtrEJM5SuSYVYp2YsTI2yLuA==}
     dependencies:
       '@glimmer/component': 1.1.2(@babel/core@7.24.9)
-      '@types/ember': 4.0.11
-      '@types/ember__engine': 4.0.11
-      '@types/ember__object': 4.0.12
+      '@types/ember': 4.0.11(@babel/core@7.24.9)
+      '@types/ember__engine': 4.0.11(@babel/core@7.24.9)
+      '@types/ember__object': 4.0.12(@babel/core@7.24.9)
       '@types/ember__owner': 4.0.6
-      '@types/ember__routing': 4.0.22
+      '@types/ember__routing': 4.0.22(@babel/core@7.24.9)
     transitivePeerDependencies:
       - '@babel/core'
       - supports-color
-    dev: true
-
-  /@types/ember__array@4.0.10:
-    resolution: {integrity: sha512-UrhDbopLI3jB0MqV14y8yji2IuPNmeDrtT1PRYJL4CThLHrRkfeYyFvxqvrxWxn0wXKjbbjfH1gOe7BU57QrLQ==}
-    dependencies:
-      '@types/ember': 4.0.11
-      '@types/ember__object': 4.0.12
     dev: true
 
   /@types/ember__array@4.0.10(@babel/core@7.24.9):
     resolution: {integrity: sha512-UrhDbopLI3jB0MqV14y8yji2IuPNmeDrtT1PRYJL4CThLHrRkfeYyFvxqvrxWxn0wXKjbbjfH1gOe7BU57QrLQ==}
     dependencies:
       '@types/ember': 4.0.11(@babel/core@7.24.9)
-      '@types/ember__object': 4.0.12
+      '@types/ember__object': 4.0.12(@babel/core@7.24.9)
     transitivePeerDependencies:
       - '@babel/core'
       - supports-color
-    dev: true
-
-  /@types/ember__component@4.0.22:
-    resolution: {integrity: sha512-m72EtmBN/RxOChXqRsyOg4RR5+AiB4LQ8s1CEKNYAfvANt18m4hjqxtA7QZYLTq2ZjEVJGpdMsrdDuONWjwRSQ==}
-    dependencies:
-      '@types/ember': 4.0.11
-      '@types/ember__object': 4.0.12
     dev: true
 
   /@types/ember__component@4.0.22(@babel/core@7.24.9):
     resolution: {integrity: sha512-m72EtmBN/RxOChXqRsyOg4RR5+AiB4LQ8s1CEKNYAfvANt18m4hjqxtA7QZYLTq2ZjEVJGpdMsrdDuONWjwRSQ==}
     dependencies:
       '@types/ember': 4.0.11(@babel/core@7.24.9)
-      '@types/ember__object': 4.0.12
+      '@types/ember__object': 4.0.12(@babel/core@7.24.9)
     transitivePeerDependencies:
       - '@babel/core'
       - supports-color
-    dev: true
-
-  /@types/ember__controller@4.0.12:
-    resolution: {integrity: sha512-80rdnSC0UJBqoUX5/vkQcM2xkRdTPTvY0dPXEfY5cC5OZITbcSeRo5qa7ZGhgNBfH6XYyh55Lo/b811LwU3N9w==}
-    dependencies:
-      '@types/ember__object': 4.0.12
     dev: true
 
   /@types/ember__controller@4.0.12(@babel/core@7.24.9):
@@ -4746,13 +4704,6 @@ packages:
     transitivePeerDependencies:
       - '@babel/core'
       - supports-color
-    dev: true
-
-  /@types/ember__debug@4.0.8:
-    resolution: {integrity: sha512-9wF7STmDHDsUxSjyCq2lpMq/03QOPkBQMGJnV8yOBnVZxB6f+FJH/kxaCprdMkUe7iwAPNEC2zrFFx1tzH75Kg==}
-    dependencies:
-      '@types/ember__object': 4.0.12
-      '@types/ember__owner': 4.0.6
     dev: true
 
   /@types/ember__debug@4.0.8(@babel/core@7.24.9):
@@ -4769,13 +4720,6 @@ packages:
     resolution: {integrity: sha512-spJyZxpvecssbXkaOQYcbnlWgb+TasFaKrgAYVbykZY6saMwUdMOGDDoW6uP/y/+A8Jj/fUIatPWJLepeSfgww==}
     dev: true
 
-  /@types/ember__engine@4.0.11:
-    resolution: {integrity: sha512-ryR4Q1Xm3kQ3Ap58w10CxV3+vb3hs1cJqi7UZ5IlSdLRql7AbpS6hIjxSQ3EQ4zadeeJ6/D8JJcSwqR7eX3PFA==}
-    dependencies:
-      '@types/ember__object': 4.0.12
-      '@types/ember__owner': 4.0.6
-    dev: true
-
   /@types/ember__engine@4.0.11(@babel/core@7.24.9):
     resolution: {integrity: sha512-ryR4Q1Xm3kQ3Ap58w10CxV3+vb3hs1cJqi7UZ5IlSdLRql7AbpS6hIjxSQ3EQ4zadeeJ6/D8JJcSwqR7eX3PFA==}
     dependencies:
@@ -4788,13 +4732,6 @@ packages:
 
   /@types/ember__error@4.0.6:
     resolution: {integrity: sha512-vYrLaGGjHkN14K89Vm8yqB2mkpJQefE5w7QJkkgYyV+smzns1vKlPbvuFevRtoeYNn4u4yY0JyF7HceNkm3H0Q==}
-    dev: true
-
-  /@types/ember__object@4.0.12:
-    resolution: {integrity: sha512-ZEpikPjZ02m1QCBiTPTayMJwVwF4UBlHlGDoScRB3IP/SUS1O5mmn1/CnSQDxzzF3ctfmhNuTZzVBBc1Y8OC1A==}
-    dependencies:
-      '@types/ember': 4.0.11
-      '@types/rsvp': 4.0.9
     dev: true
 
   /@types/ember__object@4.0.12(@babel/core@7.24.9):
@@ -4815,31 +4752,16 @@ packages:
     resolution: {integrity: sha512-hbds3Qv+oVm/QKIaY1E6atvrCoJTH/MPSl4swOhX6P0RiMB2fOfFCrFSD1mP1KrU1LqpHJ2Rzs7XLe53SWVzgw==}
     dev: true
 
-  /@types/ember__routing@4.0.22:
-    resolution: {integrity: sha512-qLk9Vd2GMxdlGmX9xbzg4Farths+AQGzYDH901Wo2Nsre+Cwv1Tk1rbCiay2V3ICYZYufytdWT6V++DISF3nvw==}
-    dependencies:
-      '@types/ember': 4.0.11
-      '@types/ember__controller': 4.0.12
-      '@types/ember__object': 4.0.12
-      '@types/ember__service': 4.0.9
-    dev: true
-
   /@types/ember__routing@4.0.22(@babel/core@7.24.9):
     resolution: {integrity: sha512-qLk9Vd2GMxdlGmX9xbzg4Farths+AQGzYDH901Wo2Nsre+Cwv1Tk1rbCiay2V3ICYZYufytdWT6V++DISF3nvw==}
     dependencies:
       '@types/ember': 4.0.11(@babel/core@7.24.9)
-      '@types/ember__controller': 4.0.12
-      '@types/ember__object': 4.0.12
-      '@types/ember__service': 4.0.9
+      '@types/ember__controller': 4.0.12(@babel/core@7.24.9)
+      '@types/ember__object': 4.0.12(@babel/core@7.24.9)
+      '@types/ember__service': 4.0.9(@babel/core@7.24.9)
     transitivePeerDependencies:
       - '@babel/core'
       - supports-color
-    dev: true
-
-  /@types/ember__runloop@4.0.10:
-    resolution: {integrity: sha512-9MZfOJBXuUP7RqLjovmzy1yY2xKTxVpqHMapqy6QJ8mjAekRmq9IJ+ni2zJ5CWftyb3Lqu3Eks05CL7fnbhcJA==}
-    dependencies:
-      '@types/ember': 4.0.11
     dev: true
 
   /@types/ember__runloop@4.0.10(@babel/core@7.24.9):
@@ -4849,12 +4771,6 @@ packages:
     transitivePeerDependencies:
       - '@babel/core'
       - supports-color
-    dev: true
-
-  /@types/ember__service@4.0.9:
-    resolution: {integrity: sha512-DrepocL/4hH5YxbDWbxEKMDcAchBPSGGa4g+LEINW1Po81RmSdKw5GZV4UO0mvRWgkdu3EbWUxbTzB4gmbDSeQ==}
-    dependencies:
-      '@types/ember__object': 4.0.12
     dev: true
 
   /@types/ember__service@4.0.9(@babel/core@7.24.9):
@@ -4894,12 +4810,6 @@ packages:
     transitivePeerDependencies:
       - '@babel/core'
       - supports-color
-    dev: true
-
-  /@types/ember__utils@4.0.7:
-    resolution: {integrity: sha512-qQPBeWRyIPigKnZ68POlkqI5e6XA78Q4G3xHo687wQTcEtfoL/iZyPC4hn70mdijcZq8Hjch2Y3E5yhsEMzK+g==}
-    dependencies:
-      '@types/ember': 4.0.11
     dev: true
 
   /@types/ember__utils@4.0.7(@babel/core@7.24.9):
@@ -9763,11 +9673,11 @@ packages:
       - supports-color
     dev: true
 
-  /ember-resolver@11.0.1(ember-source@5.10.2):
-    resolution: {integrity: sha512-ucBk3oM+PR+AfYoSUXeQh8cDQS1sSiEKp4Pcgbew5cFMSqPxJfqd1zyZsfQKNTuyubeGmWxBOyMVSTvX2LeCyg==}
+  /ember-resolver@12.0.1(ember-source@5.10.2):
+    resolution: {integrity: sha512-U+ZBdbEHMhmvcZly1xhZKwqeH5/igjT93p9bbD6x+mQVg7hm4jrsQA4jsxHu3BqgL5MmqOVx0gtAuYEWV1x2MQ==}
     engines: {node: 14.* || 16.* || >= 18}
     peerDependencies:
-      ember-source: ^4.8.3 || >= 5.0.0
+      ember-source: ^4.12.0 || >= 5.0.0
     peerDependenciesMeta:
       ember-source:
         optional: true
