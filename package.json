@@ -34,5 +34,6 @@
       "documentation": ":memo: Documentation",
       "internal": ":house: Internal"
     }
-  }
+  },
+  "packageManager": "pnpm@8.8.0"
 }
