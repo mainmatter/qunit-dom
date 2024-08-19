@@ -54,7 +54,7 @@
     "loader.js": "4.7.0",
     "prettier": "3.3.3",
     "publint": "0.2.10",
-    "qunit": "2.21.1",
+    "qunit": "2.22.0",
     "release-it": "16.3.0",
     "@release-it-plugins/lerna-changelog": "6.1.0",
     "rollup": "2.79.1",
