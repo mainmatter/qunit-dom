@@ -1,0 +1,21 @@
+{
+  "solution": {
+    "qunit-dom": {
+      "impact": "patch",
+      "oldVersion": "3.2.0",
+      "newVersion": "3.2.1",
+      "constraints": [
+        {
+          "impact": "patch",
+          "reason": "Appears in changelog section :memo: Documentation"
+        },
+        {
+          "impact": "patch",
+          "reason": "Appears in changelog section :house: Internal"
+        }
+      ],
+      "pkgJSONPath": "./packages/qunit-dom/package.json"
+    }
+  },
+  "description": "## Release (2024-09-23)\n\nqunit-dom 3.2.1 (patch)\n\n#### :memo: Documentation\n* `qunit-dom`\n  * [#2132](https://github.com/mainmatter/qunit-dom/pull/2132) Regenerate docs ([@CvX](https://github.com/CvX))\n\n#### :house: Internal\n* `qunit-dom`\n  * [#2135](https://github.com/mainmatter/qunit-dom/pull/2135) chore(release): migrate to release-plan ([@BobrImperator](https://github.com/BobrImperator))\n\n#### Committers: 2\n- Bartlomiej Dudzik ([@BobrImperator](https://github.com/BobrImperator))\n- Jarek Radosz ([@CvX](https://github.com/CvX))\n"
+}
