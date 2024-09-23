@@ -1,10 +1,10 @@
 {
   "private": true,
   "scripts": {
-    "docs": "npm run build && npm exec documentation build qunit-dom/dist/qunit-dom.js --config documentation.yml -f md -o API.md",
-    "build": "cd packages/qunit-dom && npm run build",
+    "docs": "pnpm build && pnpm exec documentation build packages/qunit-dom/dist/qunit-dom.js --config documentation.yml -f md -o API.md",
+    "build": "cd packages/qunit-dom && pnpm build",
     "prepare": "pnpm build",
-    "release": "cd packages/qunit-dom && npm run release",
+    "release": "cd packages/qunit-dom && pnpm release",
     "lint": "pnpm --filter '*' lint",
     "lint:fix": "pnpm --filter '*' lint:fix",
     "test:coverage": "pnpm --filter '*' test:coverage",

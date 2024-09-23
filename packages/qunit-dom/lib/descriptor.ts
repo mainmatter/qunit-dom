@@ -6,6 +6,7 @@ import {
 import elementToString from './helpers/element-to-string';
 
 /**
+ * @ignore
  * Descriptor data for creating an {@link IDOMElementDescriptor} from a CSS
  * selector
  */
@@ -29,6 +30,7 @@ class SelectorData {
 }
 
 /**
+ * @ignore
  * Descriptor data for creating an {@link IDOMElementDescriptor} from an
  * {@link Element}
  */
@@ -41,6 +43,7 @@ class ElementData {
 }
 
 /**
+ * @ignore
  * Create an {@link IDOMElementDescriptor} from a target and a root element
  */
 export default function createDescriptor(

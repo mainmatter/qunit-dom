@@ -33,17 +33,26 @@ type CSSStyleDeclarationProperty = keyof CSSStyleDeclaration;
 
 type ActualCSSStyleDeclaration = Partial<Record<CSSStyleDeclarationProperty, unknown>>;
 
+/**
+ * @namespace
+ */
 export default class DOMAssertions {
   /**
+   * @ignore
    * The target of our assertions
    */
   private descriptor: IDOMElementDescriptor;
+
   /**
+   * @ignore
    * Whether we were constructed with an element, rather than a selector or
    * descriptor. Used to make error messages more helpful.
    */
   private wasPassedElement: boolean;
 
+  /**
+   * @hideconstructor
+   */
   constructor(
     target: string | Element | null | IDOMElementDescriptor,
     rootElement: RootElement,
@@ -92,8 +101,10 @@ export default class DOMAssertions {
    *
    * @see {@link #doesNotExist}
    */
-  exists(...args: [options: ExistsOptions, message?: string] | [message?: string]): DOMAssertions {
-    exists.call(this, ...args);
+  exists(
+    ...options: [options: ExistsOptions, message?: string] | [message?: string]
+  ): DOMAssertions {
+    exists.call(this, ...options);
     return this;
   }
 
@@ -317,9 +328,9 @@ export default class DOMAssertions {
    * @see {@link #isNotVisible}
    */
   isVisible(
-    ...args: [options: ExistsOptions, message?: string] | [message?: string]
+    ...options: [options: ExistsOptions, message?: string] | [message?: string]
   ): DOMAssertions {
-    isVisible.call(this, ...args);
+    isVisible.call(this, ...options);
     return this;
   }
 
@@ -545,12 +556,12 @@ export default class DOMAssertions {
    */
   hasAria(
     name: string,
-    ...args: [value: string | RegExp | { any: true }, message?: string] | []
+    ...value: [value: string | RegExp | { any: true }, message?: string] | []
   ): DOMAssertions {
-    if (args.length === 0) {
+    if (value.length === 0) {
       return this.hasAttribute(`aria-${name}`);
     } else {
-      return this.hasAttribute(`aria-${name}`, ...args);
+      return this.hasAttribute(`aria-${name}`, ...value);
     }
   }
 
