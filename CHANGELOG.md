@@ -1,5 +1,21 @@
 # Changelog
 
+## Release (2024-09-23)
+
+qunit-dom 3.2.1 (patch)
+
+#### :memo: Documentation
+* `qunit-dom`
+  * [#2132](https://github.com/mainmatter/qunit-dom/pull/2132) Regenerate docs ([@CvX](https://github.com/CvX))
+
+#### :house: Internal
+* `qunit-dom`
+  * [#2135](https://github.com/mainmatter/qunit-dom/pull/2135) chore(release): migrate to release-plan ([@BobrImperator](https://github.com/BobrImperator))
+
+#### Committers: 2
+- Bartlomiej Dudzik ([@BobrImperator](https://github.com/BobrImperator))
+- Jarek Radosz ([@CvX](https://github.com/CvX))
+
 
 
 
