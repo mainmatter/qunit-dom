@@ -1,5 +1,10 @@
 # Changelog
 
+
+
+
+
+
 ## Release (2024-09-23)
 
 qunit-dom 3.2.1 (patch)
