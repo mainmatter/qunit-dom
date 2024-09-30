@@ -85,14 +85,14 @@ importers:
         specifier: 16.3.0
         version: 16.3.0(typescript@5.5.4)
       rollup:
-        specifier: 2.79.1
-        version: 2.79.1
+        specifier: 2.79.2
+        version: 2.79.2
       rollup-plugin-copy:
         specifier: 3.5.0
         version: 3.5.0
       rollup-plugin-typescript2:
         specifier: 0.36.0
-        version: 0.36.0(rollup@2.79.1)(typescript@5.5.4)
+        version: 0.36.0(rollup@2.79.2)(typescript@5.5.4)
       typescript:
         specifier: 5.5.4
         version: 5.5.4
@@ -302,8 +302,8 @@ importers:
         specifier: 9.1.0
         version: 9.1.0(eslint@8.57.1)
       eslint-plugin-ember:
-        specifier: 12.2.0
-        version: 12.2.0(@babel/core@7.24.9)(@typescript-eslint/parser@7.18.0)(eslint@8.57.1)
+        specifier: 12.2.1
+        version: 12.2.1(@babel/core@7.24.9)(@typescript-eslint/parser@7.18.0)(eslint@8.57.1)
       eslint-plugin-jest:
         specifier: 28.8.3
         version: 28.8.3(@typescript-eslint/eslint-plugin@7.18.0)(eslint@8.57.1)(jest@29.7.0)(typescript@5.5.4)
@@ -338,11 +338,11 @@ importers:
         specifier: 5.0.0
         version: 5.0.0(release-it@16.3.0)
       rollup:
-        specifier: 2.79.1
-        version: 2.79.1
+        specifier: 2.79.2
+        version: 2.79.2
       rollup-plugin-typescript2:
         specifier: 0.36.0
-        version: 0.36.0(rollup@2.79.1)(typescript@5.5.4)
+        version: 0.36.0(rollup@2.79.2)(typescript@5.5.4)
       tracked-built-ins:
         specifier: 3.3.0
         version: 3.3.0
@@ -431,8 +431,8 @@ importers:
         specifier: workspace:^
         version: link:../qunit-dom
       vite:
-        specifier: 5.4.7
-        version: 5.4.7
+        specifier: 5.4.8
+        version: 5.4.8
 
 packages:
 
@@ -8366,8 +8366,8 @@ packages:
       safe-buffer: 5.2.1
     dev: true
 
-  /content-tag@1.2.2:
-    resolution: {integrity: sha512-9guqKIx2H+78N17otBpl8yLZbQGL5q1vBO/jDb3gF2JjixtcVpC62jDUNxjVMNoaZ09oxRX84ZOD6VX02qkVvg==}
+  /content-tag@2.0.2:
+    resolution: {integrity: sha512-qHRyTp02dgzRK2tsCFxZ1H289bZOuSLNpupr6prvnSFq4SFPmNlBKbbE5PCMb+8+Z1a1z+yCVtXvQIGUCCa3lQ==}
     dev: true
 
   /content-type@1.0.5:
@@ -9564,8 +9564,8 @@ packages:
       - supports-color
     dev: true
 
-  /ember-eslint-parser@0.4.3(@babel/core@7.24.9)(@typescript-eslint/parser@7.18.0)(eslint@8.57.1):
-    resolution: {integrity: sha512-wMPoaaA+i/F/tPPxURRON9XXJH5MRUOZ5x/9CVJTSpL+0n4EWphyztb20gR+ZJeShnOACQpAdFy6YSS1/JSHKw==}
+  /ember-eslint-parser@0.5.2(@babel/core@7.24.9)(@typescript-eslint/parser@7.18.0)(eslint@8.57.1):
+    resolution: {integrity: sha512-289KjJ08QxK1Ytf+aq04QMoQ8WvhXCInJixcGuS5SWBFNlVuEs9yAZ06VXzVSuZ9zMAqX24MTMvD7ICVFN7QSg==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
       '@babel/core': ^7.23.6
@@ -9578,7 +9578,7 @@ packages:
       '@babel/eslint-parser': 7.23.10(@babel/core@7.24.9)(eslint@8.57.1)
       '@glimmer/syntax': 0.92.0
       '@typescript-eslint/parser': 7.18.0(eslint@8.57.1)(typescript@5.5.4)
-      content-tag: 1.2.2
+      content-tag: 2.0.2
       eslint-scope: 7.2.2
       html-tags: 3.3.1
     transitivePeerDependencies:
@@ -10167,8 +10167,8 @@ packages:
     resolution: {integrity: sha512-Uk/TVLt6Nf6Xoz7C1iYuZjOSdJxe5aaauGRke8JhKeJwD66Y61/pY2FjtLP04Ooq9PwV34bzrkKkU2UZ5FtDRA==}
     dev: true
 
-  /eslint-plugin-ember@12.2.0(@babel/core@7.24.9)(@typescript-eslint/parser@7.18.0)(eslint@8.57.1):
-    resolution: {integrity: sha512-Pf0LB70qzrGqbxrieASFDqxvGu7/xgejM78Kj+VsH27XqkuoluF1M5fBU5xxNB7oRCpA5IFA5jdN9WnnSjLzKA==}
+  /eslint-plugin-ember@12.2.1(@babel/core@7.24.9)(@typescript-eslint/parser@7.18.0)(eslint@8.57.1):
+    resolution: {integrity: sha512-HZZueTKXmQRDVxREiMLdh87sLFmmkjH3z37gsS0pLWtnZECJiG447GCd+odVgWpSKoDpB4Hce0BtoJeY2HGSlg==}
     engines: {node: 18.* || 20.* || >= 21}
     peerDependencies:
       '@typescript-eslint/parser': '*'
@@ -10180,7 +10180,7 @@ packages:
       '@ember-data/rfc395-data': 0.0.4
       '@typescript-eslint/parser': 7.18.0(eslint@8.57.1)(typescript@5.5.4)
       css-tree: 2.3.1
-      ember-eslint-parser: 0.4.3(@babel/core@7.24.9)(@typescript-eslint/parser@7.18.0)(eslint@8.57.1)
+      ember-eslint-parser: 0.5.2(@babel/core@7.24.9)(@typescript-eslint/parser@7.18.0)(eslint@8.57.1)
       ember-rfc176-data: 0.3.18
       eslint: 8.57.1
       eslint-utils: 3.0.0(eslint@8.57.1)
@@ -16720,7 +16720,7 @@ packages:
       is-plain-object: 3.0.1
     dev: true
 
-  /rollup-plugin-typescript2@0.36.0(rollup@2.79.1)(typescript@5.5.4):
+  /rollup-plugin-typescript2@0.36.0(rollup@2.79.2)(typescript@5.5.4):
     resolution: {integrity: sha512-NB2CSQDxSe9+Oe2ahZbf+B4bh7pHwjV5L+RSYpCu7Q5ROuN94F9b6ioWwKfz3ueL3KTtmX4o2MUH2cgHDIEUsw==}
     peerDependencies:
       rollup: '>=1.26.3'
@@ -16729,7 +16729,7 @@ packages:
       '@rollup/pluginutils': 4.2.1
       find-cache-dir: 3.3.2
       fs-extra: 10.1.0
-      rollup: 2.79.1
+      rollup: 2.79.2
       semver: 7.5.4
       tslib: 2.6.2
       typescript: 5.5.4
@@ -16758,8 +16758,8 @@ packages:
       sourcemap-codec: 1.4.8
     dev: true
 
-  /rollup@2.79.1:
-    resolution: {integrity: sha512-uKxbd0IhMZOhjAiD5oAFp7BqvkA4Dv47qpOCtaNvng4HBwdbWtdOh8f5nZNuk2rp51PMGk3bzfWu5oayNEuYnw==}
+  /rollup@2.79.2:
+    resolution: {integrity: sha512-fS6iqSPZDs3dr/y7Od6y5nha8dW1YnbgtsyotCVvoFGKbERG++CVRFv1meyGDE1SNItQA8BrnCw7ScdAhRJ3XQ==}
     engines: {node: '>=10.0.0'}
     hasBin: true
     optionalDependencies:
@@ -18734,7 +18734,7 @@ packages:
     engines: {node: '>= 12'}
     dependencies:
       resolve-package-path: 4.0.3
-      semver: 7.6.2
+      semver: 7.6.3
     dev: true
 
   /vary@1.1.2:
@@ -18801,7 +18801,7 @@ packages:
       debug: 4.3.5(supports-color@8.1.1)
       pathe: 1.1.2
       tinyrainbow: 1.2.0
-      vite: 5.4.7
+      vite: 5.4.8
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -18814,8 +18814,8 @@ packages:
       - terser
     dev: true
 
-  /vite@5.4.7:
-    resolution: {integrity: sha512-5l2zxqMEPVENgvzTuBpHer2awaetimj2BGkhBPdnwKbPNOlHsODU+oiazEZzLK7KhAnOrO+XGYJYn4ZlUhDtDQ==}
+  /vite@5.4.8:
+    resolution: {integrity: sha512-FqrItQ4DT1NC4zCUqMB4c4AZORMKIa0m8/URVCZ77OZ/QSNeJ54bU1vrFADbDsuwfIPcgknRkmqakQcgnL4GiQ==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
     peerDependencies:
@@ -18893,7 +18893,7 @@ packages:
       tinybench: 2.8.0
       tinypool: 1.0.0
       tinyrainbow: 1.2.0
-      vite: 5.4.7
+      vite: 5.4.8
       vite-node: 2.0.5
       why-is-node-running: 2.3.0
     transitivePeerDependencies:
