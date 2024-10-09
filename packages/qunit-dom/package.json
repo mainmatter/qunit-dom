@@ -41,6 +41,7 @@
   "devDependencies": {
     "@arethetypeswrong/cli": "0.15.4",
     "@types/qunit": "2.19.10",
+    "@typescript/lib-dom": "npm:@types/web@0.0.169",
     "@typescript-eslint/eslint-plugin": "7.18.0",
     "@typescript-eslint/parser": "7.18.0",
     "@vitest/coverage-v8": "2.0.5",

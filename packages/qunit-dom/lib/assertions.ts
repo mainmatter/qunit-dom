@@ -10,6 +10,7 @@ import isVisible from './assertions/is-visible.js';
 import isDisabled from './assertions/is-disabled.js';
 import matchesSelector from './assertions/matches-selector.js';
 import collapseWhitespace from './helpers/collapse-whitespace.js';
+import getComputedStyle from './helpers/get-computed-style.js';
 import {
   type IDOMElementDescriptor,
   resolveDOMElement,
@@ -28,10 +29,6 @@ export interface AssertionResult {
 export interface ExistsOptions {
   count: number;
 }
-
-type CSSStyleDeclarationProperty = keyof CSSStyleDeclaration;
-
-type ActualCSSStyleDeclaration = Partial<Record<CSSStyleDeclarationProperty, unknown>>;
 
 /**
  * @namespace
@@ -832,8 +829,8 @@ export default class DOMAssertions {
     let element = this.findTargetElement();
     if (!element) return this;
 
-    let computedStyle = window.getComputedStyle(element, selector);
-    let expectedProperties = Object.keys(expected) as CSSStyleDeclarationProperty[];
+    let computedStyle = getComputedStyle(element, selector);
+    let expectedProperties = Object.keys(expected);
     if (expectedProperties.length <= 0) {
       throw new TypeError(
         `Missing style expectations. There must be at least one style property in the passed in expectation object.`
@@ -841,17 +838,11 @@ export default class DOMAssertions {
     }
 
     let result = expectedProperties.every(
-      property =>
-        (computedStyle.getPropertyValue(property.toString()) || computedStyle[property]) ===
-        expected[property]
+      property => computedStyle[property] === expected[property]
     );
-    let actual: ActualCSSStyleDeclaration = {};
+    let actual: Record<string, string> = {};
 
-    expectedProperties.forEach(
-      property =>
-        (actual[property] =
-          computedStyle.getPropertyValue(property.toString()) || computedStyle[property])
-    );
+    expectedProperties.forEach(property => (actual[property] = computedStyle[property]));
 
     if (!message) {
       let normalizedSelector = selector ? selector.replace(/^:{0,2}/, '::') : '';
@@ -912,9 +903,9 @@ export default class DOMAssertions {
     let element = this.findTargetElement();
     if (!element) return this;
 
-    let computedStyle = window.getComputedStyle(element, selector);
+    let computedStyle = getComputedStyle(element, selector);
 
-    let expectedProperties = Object.keys(expected) as CSSStyleDeclarationProperty[];
+    let expectedProperties = Object.keys(expected);
     if (expectedProperties.length <= 0) {
       throw new TypeError(
         `Missing style expectations. There must be at least one style property in the passed in expectation object.`
@@ -924,7 +915,7 @@ export default class DOMAssertions {
     let result = expectedProperties.some(
       property => computedStyle[property] !== expected[property]
     );
-    let actual: ActualCSSStyleDeclaration = {};
+    let actual: Record<string, string> = {};
 
     expectedProperties.forEach(property => (actual[property] = computedStyle[property]));
 
