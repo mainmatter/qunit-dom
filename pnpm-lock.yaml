@@ -278,8 +278,8 @@ importers:
         specifier: 8.2.3
         version: 8.2.3(ember-source@5.10.2)
       ember-qunit:
-        specifier: 8.1.0
-        version: 8.1.0(@ember/test-helpers@3.3.1)(ember-source@5.10.2)(qunit@2.22.0)
+        specifier: 8.1.1
+        version: 8.1.1(@ember/test-helpers@3.3.1)(ember-source@5.10.2)(qunit@2.22.0)
       ember-resolver:
         specifier: 11.0.1
         version: 11.0.1(ember-source@5.10.2)
@@ -2967,10 +2967,10 @@ packages:
     resolution: {integrity: sha512-qyN64T1jMHZ99ihlk7VFHCWHYZHLE1DOdHi0J7lmn5waV1DoW7gD8JLi1i7FregzXtKhbDc7shyEmTmWPTs8MQ==}
     engines: {node: 12.* || 14.* || >= 16}
     dependencies:
-      '@embroider/shared-internals': 2.6.2
+      '@embroider/shared-internals': 2.6.3
       broccoli-funnel: 3.0.8
       common-ancestor-path: 1.0.1
-      semver: 7.6.2
+      semver: 7.6.3
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -3146,24 +3146,6 @@ packages:
       minimatch: 3.1.2
       resolve-package-path: 4.0.3
       semver: 7.6.3
-      typescript-memoize: 1.1.1
-    transitivePeerDependencies:
-      - supports-color
-    dev: true
-
-  /@embroider/shared-internals@2.6.2:
-    resolution: {integrity: sha512-jL3Bjn8C73AUBlTex+VixP7YmqvPNN/BZFB85odTstzLFOuR8y2mmGiuWbq17qNuFyoxc6xtndMnAeqwCXBNkA==}
-    engines: {node: 12.* || 14.* || >= 16}
-    dependencies:
-      babel-import-util: 2.0.1
-      debug: 4.3.5(supports-color@8.1.1)
-      ember-rfc176-data: 0.3.18
-      fs-extra: 9.1.0
-      js-string-escape: 1.0.1
-      lodash: 4.17.21
-      minimatch: 3.1.2
-      resolve-package-path: 4.0.3
-      semver: 7.6.2
       typescript-memoize: 1.1.1
     transitivePeerDependencies:
       - supports-color
@@ -4668,7 +4650,7 @@ packages:
     resolution: {integrity: sha512-1g5A3vPKhvB/CuN/EP9rBLXYaJOjzKyLYWeBtNDEQNkTuG1dAo/Hg0CCixgbBgLlzaDP8mR/n1xpg8HqQ8SUKg==}
     deprecated: This is a stub types definition. ember-qunit provides its own type definitions, so you do not need this installed.
     dependencies:
-      ember-qunit: 8.1.0(@ember/test-helpers@3.3.1)(ember-source@5.10.2)(qunit@2.22.0)
+      ember-qunit: 8.1.1(@ember/test-helpers@3.3.1)(ember-source@5.10.2)(qunit@2.22.0)
     transitivePeerDependencies:
       - '@ember/test-helpers'
       - '@glint/template'
@@ -9644,15 +9626,15 @@ packages:
       - supports-color
     dev: true
 
-  /ember-qunit@8.1.0(@ember/test-helpers@3.3.1)(ember-source@5.10.2)(qunit@2.22.0):
-    resolution: {integrity: sha512-55/xqvVQwhiNcnh/tCzWyvlYzrYqwDY0/cIPyDQbAxGKtkUt9jCfRUGllfyOofC6LX0fL/0fIi+5e9sg1m6vXw==}
+  /ember-qunit@8.1.1(@ember/test-helpers@3.3.1)(ember-source@5.10.2)(qunit@2.22.0):
+    resolution: {integrity: sha512-nT+6s74j3BKNn+QQY/hINC3Xw3kn0NF0cU9zlgVQmCBWoyis1J24xWrY2LFOMThPmF6lHqcrUb5JwvBD4BXEXg==}
     peerDependencies:
       '@ember/test-helpers': '>=3.0.3'
       ember-source: '>=4.0.0'
       qunit: ^2.13.0
     dependencies:
       '@ember/test-helpers': 3.3.1(@babel/core@7.24.9)(ember-source@5.10.2)(webpack@5.93.0)
-      '@embroider/addon-shim': 1.8.6
+      '@embroider/addon-shim': 1.8.9
       '@embroider/macros': 1.16.6
       ember-cli-test-loader: 3.1.0
       ember-source: 5.10.2(@glimmer/component@1.1.2)(rsvp@4.8.5)(webpack@5.93.0)
