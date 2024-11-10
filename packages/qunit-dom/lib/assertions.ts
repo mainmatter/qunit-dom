@@ -1423,6 +1423,211 @@ export default class DOMAssertions {
   }
 
   /**
+   * Assert that the html of the {@link HTMLElement} or an {@link HTMLElement}
+   * matching the `selector` matches the `expected` html, using the
+   * [`innerHTML`](https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML)
+   * property of the {@link HTMLElement}.
+   *
+   * `expected` can also be a regular expression.
+   *
+   * > Note: This assertion will collapse whitespace if the type you pass in is a string.
+   * > If you are testing specifically for whitespace integrity, pass your expected html
+   * > in as a RegEx pattern.
+   *
+   * @param {string|RegExp} expected
+   * @param {string?} message
+   *
+   * @example
+   * // <h1>
+   * //   A <b>great</b> thing
+   * // </h1>
+   *
+   * assert.dom('h1').hasHtml('A <b>great</b> thing');
+   *
+   * @example
+   * assert.dom('h1').hasHtml(/.*\s<b>great.+/);
+   */
+  hasHtml(expected: string | RegExp, message?: string): DOMAssertions {
+    let element = this.findTargetElement();
+    if (!element) return this;
+
+    if (expected instanceof RegExp) {
+      let result = expected.test(element.innerHTML);
+      let actual = element.innerHTML;
+
+      if (!message) {
+        if (result) {
+          message = `Element ${this.targetDescription} has html matching ${expected}`;
+        } else {
+          message = `Element ${this.targetDescription} does not have html matching ${expected}`;
+        }
+      }
+
+      this.pushResult({ result, actual, expected, message });
+    } else if (typeof expected === 'string') {
+      expected = collapseWhitespace(expected);
+      let actual = collapseWhitespace(element.innerHTML);
+      let result = actual === expected;
+
+      if (!message) {
+        if (result) {
+          message = `Element ${this.targetDescription} has html "${expected}"`;
+        } else {
+          message = `Element ${this.targetDescription} does not have html "${expected}"`;
+        }
+      }
+
+      this.pushResult({ result, actual, expected, message });
+    } else {
+      throw new TypeError(
+        `You must pass a string or Regular Expression to "hasHtml". You passed ${expected}.`
+      );
+    }
+
+    return this;
+  }
+
+  /**
+   * Assert that the html of the {@link HTMLElement} or an {@link HTMLElement}
+   * matching the `selector` does not match the `expected` html, using the
+   * [`innerHTML`](https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML)
+   * property of the {@link HTMLElement}.
+   *
+   * @param {string} expected
+   * @param {string?} message
+   *
+   * @example
+   * // <section>
+   * //   a <b>great</b> thing
+   * // </section>
+   *
+   * assert.dom('section').doesNotHaveHtml('<b>fantastic</b>');
+   */
+  doesNotHaveHtml(expected: string, message?: string): DOMAssertions {
+    let element = this.findTargetElement();
+
+    if (!element) return this;
+
+    if (typeof expected !== 'string') {
+      throw new TypeError(`You must pass a string to "doesNotHaveHtml". You passed ${expected}.`);
+    }
+
+    let actual = element.innerHTML;
+
+    if (actual !== expected) {
+      if (!message) {
+        message = `Element ${this.targetDescription} does not have html "${expected}"`;
+      }
+
+      this.pushResult({ result: true, actual, expected, message });
+    } else {
+      if (!message) {
+        message = `Element ${this.targetDescription} has html "${expected}"`;
+      }
+
+      this.pushResult({ result: false, actual, expected, message });
+    }
+
+    return this;
+  }
+
+  /**
+   * Assert that the html of the {@link HTMLElement} or an {@link HTMLElement}
+   * matching the `selector` contains the given `html`, using the
+   * [`innerHTML`](https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML)
+   * property.
+   *
+   * > Note: This assertion will collapse whitespace in `innerHTML` before searching.
+   * > If you would like to assert on a string that *should* contain line breaks, tabs,
+   * > more than one space in a row, or starting/ending whitespace, use the {@link #hasText}
+   * > selector and pass your expected html in as a RegEx pattern.
+   *
+   * **Aliases:** `containsHtml`, `hasHtmlContaining`
+   *
+   * @param {string} expected
+   * @param {string?} message
+   *
+   * @example
+   * assert.dom('#title').includesHtml('<b>nice</b>');
+   *
+   * @see {@link #hasHtml}
+   */
+  includesHtml(html: string, message?: string): DOMAssertions {
+    let element = this.findTargetElement();
+    if (!element) return this;
+
+    let collapsedHtml = collapseWhitespace(element.innerHTML || '');
+    let result = collapsedHtml.indexOf(html) !== -1;
+    let actual = collapsedHtml;
+    let expected = html;
+
+    if (!message) {
+      message = `Element ${this.targetDescription} has html containing "${html}"`;
+    }
+
+    if (!result && html !== collapseWhitespace(html)) {
+      console.warn(
+        'The `.includesHtml()`, `.containsHtml()`, and `.hasHtmlContaining()` assertions collapse whitespace. The html you are checking for contains whitespace that may have made your test fail incorrectly. Try the `.hasHtml()` assertion passing in your expected html as a RegExp pattern. Your html:\n' +
+          html
+      );
+    }
+
+    this.pushResult({ result, actual, expected, message });
+    return this;
+  }
+
+  containsHtml(expected: string, message?: string): DOMAssertions {
+    return this.includesHtml(expected, message);
+  }
+
+  hasHtmlContaining(expected: string, message?: string): DOMAssertions {
+    return this.includesHtml(expected, message);
+  }
+
+  /**
+   * Assert that the html of the {@link HTMLElement} or an {@link HTMLElement}
+   * matching the `selector` does not include the given `expected` html, using the
+   * [`innerHTML`](https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML)
+   * attribute.
+   *
+   * **Aliases:** `doesNotContainHtml`, `doesNotHaveHtmlContaining`
+   *
+   * @param {string} html
+   * @param {string?} message
+   *
+   * @example
+   * assert.dom('#title').doesNotIncludeHtml('<i>nope</i>');
+   */
+  doesNotIncludeHtml(html: string, message?: string): DOMAssertions {
+    let element = this.findTargetElement();
+    if (!element) return this;
+
+    let collapsedHtml = collapseWhitespace(element.innerHTML || '');
+    let result = collapsedHtml.indexOf(html) === -1;
+    let expected = `Element ${this.targetDescription} does not include html "${html}"`;
+    let actual = expected;
+
+    if (!result) {
+      actual = `Element ${this.targetDescription} includes html "${html}"`;
+    }
+
+    if (!message) {
+      message = expected;
+    }
+
+    this.pushResult({ result, actual, expected, message });
+    return this;
+  }
+
+  doesNotContainHtml(unexpected: string, message?: string): DOMAssertions {
+    return this.doesNotIncludeHtml(unexpected, message);
+  }
+
+  doesNotHaveHtmlContaining(unexpected: string, message?: string): DOMAssertions {
+    return this.doesNotIncludeHtml(unexpected, message);
+  }
+
+  /**
    * @private
    */
   private pushResult(result: AssertionResult): void {
