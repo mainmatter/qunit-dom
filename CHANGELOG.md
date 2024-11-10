@@ -1,5 +1,16 @@
 # Changelog
 
+## Release (2024-11-10)
+
+qunit-dom 3.3.0 (minor)
+
+#### :rocket: Enhancement
+* `qunit-dom`
+  * [#2147](https://github.com/mainmatter/qunit-dom/pull/2147) feature: add HTML matching methods ([@CvX](https://github.com/CvX))
+
+#### Committers: 1
+- Jarek Radosz ([@CvX](https://github.com/CvX))
+
 ## Release (2024-09-23)
 
 qunit-dom 3.2.1 (patch)
