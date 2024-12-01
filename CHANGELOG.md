@@ -1,5 +1,16 @@
 # Changelog
 
+## Release (2024-12-01)
+
+qunit-dom 3.4.0 (minor)
+
+#### :rocket: Enhancement
+* `qunit-dom`
+  * [#2153](https://github.com/mainmatter/qunit-dom/pull/2153) feature: add includesValue/doesNotIncludeValue ([@CvX](https://github.com/CvX))
+
+#### Committers: 1
+- Jarek Radosz ([@CvX](https://github.com/CvX))
+
 ## Release (2024-11-10)
 
 qunit-dom 3.3.0 (minor)
