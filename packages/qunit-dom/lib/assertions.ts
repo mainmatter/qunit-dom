@@ -1151,7 +1151,8 @@ export default class DOMAssertions {
    *
    * @example
    * assert.dom('input.username').hasValue('HSimpson');
-
+   *
+   * @see {@link #includesValue}
    * @see {@link #hasAnyValue}
    * @see {@link #hasNoValue}
    */
@@ -1197,6 +1198,82 @@ export default class DOMAssertions {
     }
 
     return this;
+  }
+
+  /**
+   * Assert that the `value` property of an {@link HTMLInputElement} includes
+   * the `expected` text.
+   *
+   * **Aliases:** `containsValue`, `hasValueContaining`
+   *
+   * @param {string} expected
+   * @param {string?} message
+   *
+   * @example
+   * assert.dom('textarea.description').includesValue('https://example.com');
+   *
+   * @see {@link #doesNotIncludeValue}
+   */
+  includesValue(expected: string, message?: string): DOMAssertions {
+    let element = this.findTargetElement();
+    if (!element) return this;
+
+    let actual = (element as HTMLInputElement).value;
+    let result = actual.includes(expected);
+
+    if (!message) {
+      message = `Element ${this.targetDescription} includes value "${expected}"`;
+    }
+
+    this.pushResult({ result, actual, expected, message });
+
+    return this;
+  }
+
+  containsValue(expected: string, message?: string): DOMAssertions {
+    return this.includesValue(expected, message);
+  }
+
+  hasValueContaining(expected: string, message?: string): DOMAssertions {
+    return this.includesValue(expected, message);
+  }
+
+  /**
+   * Assert that the `value` property of an {@link HTMLInputElement} does not include
+   * the `expected` text.
+   *
+   * **Aliases:** `doesNotContainValue`, `doesNotHaveValueContaining`
+   *
+   * @param {string} expected
+   * @param {string?} message
+   *
+   * @example
+   * assert.dom('textarea.description').doesNotIncludeValue('https://example.com');
+   *
+   * @see {@link #includesValue}
+   */
+  doesNotIncludeValue(expected: string, message?: string): DOMAssertions {
+    let element = this.findTargetElement();
+    if (!element) return this;
+
+    let actual = (element as HTMLInputElement).value;
+    let result = !actual.includes(expected);
+
+    if (!message) {
+      message = `Element ${this.targetDescription} does not include value "${expected}"`;
+    }
+
+    this.pushResult({ result, actual, expected, message });
+
+    return this;
+  }
+
+  doesNotContainValue(expected: string, message?: string): DOMAssertions {
+    return this.doesNotIncludeValue(expected, message);
+  }
+
+  doesNotHaveValueContaining(expected: string, message?: string): DOMAssertions {
+    return this.doesNotIncludeValue(expected, message);
   }
 
   /**
