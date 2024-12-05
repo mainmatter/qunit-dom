@@ -1,4 +1,5 @@
 import DOMAssertions from './assertions.js';
+import isValid from './assertions/is-valid.js';
 import { getRootElement } from './root-element.js';
 import type { IDOMElementDescriptor } from 'dom-element-descriptors';
 
@@ -20,6 +21,10 @@ export default function (assert: Assert) {
   ): DOMAssertions {
     if (!isValidRootElement(rootElement)) {
       throw new Error(`${rootElement} is not a valid root element`);
+    }
+
+    if (isValidRootElement(rootElement)) {
+      console.log('rootElement is valid');
     }
 
     rootElement = rootElement || this.dom.rootElement || getRootElement();
