@@ -1,5 +1,10 @@
 # Changelog
 
+
+
+
+
+
 ## Release (2024-12-01)
 
 qunit-dom 3.4.0 (minor)
