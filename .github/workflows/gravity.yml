@@ -1,0 +1,30 @@
+name: Gravity
+
+on:
+  push:
+    branches:
+      - main
+  pull_request: {}
+
+env:
+  VOLTA_FEATURE_PNPM: 1
+  
+jobs:
+  build:
+    name: Run Gravity
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 # v4
+      - uses: volta-cli/action@d253558a6e356722728a10e9a469190de21a83ef # v4
+      - uses: actions/cache@704facf57e6136b1bc63b828d79edcd491f0ee84 # v3
+        with:
+          path: "**/node_modules"
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-
+      
+      - run: pnpm install
+      - run: pnpm build
+      - run: pnpm dlx @gravityci/cli ./packages/qunit-dom/dist/qunit-dom.js
+        env:
+          GRAVITY_TOKEN: ${{ secrets.GRAVITY_TOKEN }}
