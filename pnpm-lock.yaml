@@ -134,8 +134,8 @@ importers:
         specifier: 3.2.3
         version: 3.2.3(@embroider/core@3.4.19)(webpack@5.93.0)
       '@glimmer/component':
-        specifier: 1.1.2
-        version: 1.1.2(@babel/core@7.24.9)
+        specifier: 2.0.0
+        version: 2.0.0
       '@glimmer/tracking':
         specifier: 1.1.2
         version: 1.1.2
@@ -285,7 +285,7 @@ importers:
         version: 11.0.1(ember-source@6.0.1)
       ember-source:
         specifier: 6.0.1
-        version: 6.0.1(@glimmer/component@1.1.2)(rsvp@4.8.5)(webpack@5.93.0)
+        version: 6.0.1(@glimmer/component@2.0.0)(rsvp@4.8.5)(webpack@5.93.0)
       ember-source-channel-url:
         specifier: 3.0.0
         version: 3.0.0
@@ -2932,7 +2932,7 @@ packages:
       ember-auto-import: 2.7.4(webpack@5.93.0)
       ember-cli-babel: 8.2.0(@babel/core@7.24.9)
       ember-cli-htmlbars: 6.3.0
-      ember-source: 6.0.1(@glimmer/component@1.1.2)(rsvp@4.8.5)(webpack@5.93.0)
+      ember-source: 6.0.1(@glimmer/component@2.0.0)(rsvp@4.8.5)(webpack@5.93.0)
     transitivePeerDependencies:
       - '@babel/core'
       - '@glint/template'
@@ -2956,7 +2956,7 @@ packages:
     resolution: {integrity: sha512-siC9kP78uucEbpDcVyxjkwa76pcs5rVzDVpWO4PDc9EAXRX+pzmUuSTLAK3GztUwx7/PWhz1BenAivqdSvSgfg==}
     engines: {node: 12.* || 14.* || >= 16}
     dependencies:
-      '@embroider/shared-internals': 2.6.3
+      '@embroider/shared-internals': 2.8.1
       broccoli-funnel: 3.0.8
       semver: 7.6.3
     transitivePeerDependencies:
@@ -2967,7 +2967,7 @@ packages:
     resolution: {integrity: sha512-qyN64T1jMHZ99ihlk7VFHCWHYZHLE1DOdHi0J7lmn5waV1DoW7gD8JLi1i7FregzXtKhbDc7shyEmTmWPTs8MQ==}
     engines: {node: 12.* || 14.* || >= 16}
     dependencies:
-      '@embroider/shared-internals': 2.6.3
+      '@embroider/shared-internals': 2.8.1
       broccoli-funnel: 3.0.8
       common-ancestor-path: 1.0.1
       semver: 7.6.3
@@ -3764,6 +3764,16 @@ packages:
       ember-compatibility-helpers: 1.2.6(@babel/core@7.24.9)
     transitivePeerDependencies:
       - '@babel/core'
+      - supports-color
+    dev: true
+
+  /@glimmer/component@2.0.0:
+    resolution: {integrity: sha512-eATSzBOUm0MZ9+YfJx7Y5p3gbwnaeMzLSSsCDn1ihDtUOIm5YYEV0ee0G7tXt/uKxowt8tXYn/EMbI9OlRF0CA==}
+    engines: {node: '>= 18'}
+    dependencies:
+      '@embroider/addon-shim': 1.8.9
+      '@glimmer/env': 0.1.7
+    transitivePeerDependencies:
       - supports-color
     dev: true
 
@@ -9493,7 +9503,7 @@ packages:
       ember-source: ^3.28.0 || >= 4.0.0
     dependencies:
       ember-cli-babel: 7.26.11
-      ember-source: 6.0.1(@glimmer/component@1.1.2)(rsvp@4.8.5)(webpack@5.93.0)
+      ember-source: 6.0.1(@glimmer/component@2.0.0)(rsvp@4.8.5)(webpack@5.93.0)
       git-repo-info: 2.1.1
     transitivePeerDependencies:
       - supports-color
@@ -10076,7 +10086,7 @@ packages:
     dependencies:
       '@embroider/addon-shim': 1.8.9
       '@simple-dom/document': 1.4.0
-      ember-source: 6.0.1(@glimmer/component@1.1.2)(rsvp@4.8.5)(webpack@5.93.0)
+      ember-source: 6.0.1(@glimmer/component@2.0.0)(rsvp@4.8.5)(webpack@5.93.0)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -10092,7 +10102,7 @@ packages:
       '@embroider/addon-shim': 1.8.9
       '@embroider/macros': 1.16.9
       ember-cli-test-loader: 3.1.0
-      ember-source: 6.0.1(@glimmer/component@1.1.2)(rsvp@4.8.5)(webpack@5.93.0)
+      ember-source: 6.0.1(@glimmer/component@2.0.0)(rsvp@4.8.5)(webpack@5.93.0)
       qunit: 2.23.1
       qunit-theme-ember: 1.0.0
     transitivePeerDependencies:
@@ -10110,7 +10120,7 @@ packages:
         optional: true
     dependencies:
       ember-cli-babel: 7.26.11
-      ember-source: 6.0.1(@glimmer/component@1.1.2)(rsvp@4.8.5)(webpack@5.93.0)
+      ember-source: 6.0.1(@glimmer/component@2.0.0)(rsvp@4.8.5)(webpack@5.93.0)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -10140,7 +10150,7 @@ packages:
       - encoding
     dev: true
 
-  /ember-source@6.0.1(@glimmer/component@1.1.2)(rsvp@4.8.5)(webpack@5.93.0):
+  /ember-source@6.0.1(@glimmer/component@2.0.0)(rsvp@4.8.5)(webpack@5.93.0):
     resolution: {integrity: sha512-2IK4qYuJXG3U0ngm2JO+7mABAWlXjjBT2yvwxxTmatyg+iuV5CCtGWZGTGa/uw1nfAaihkDwyaVqNjmlvbovcg==}
     engines: {node: '>= 18.*'}
     peerDependencies:
@@ -10149,7 +10159,7 @@ packages:
       '@babel/core': 7.24.9
       '@ember/edition-utils': 1.2.0
       '@glimmer/compiler': 0.92.4
-      '@glimmer/component': 1.1.2(@babel/core@7.24.9)
+      '@glimmer/component': 2.0.0
       '@glimmer/destroyable': 0.92.3
       '@glimmer/env': 0.1.7
       '@glimmer/global-context': 0.92.3
