@@ -27,7 +27,7 @@
   "devDependencies": {
     "@ember/optional-features": "2.1.0",
     "@ember/string": "4.0.0",
-    "@ember/test-helpers": "3.3.1",
+    "@ember/test-helpers": "4.0.4",
     "@embroider/compat": "3.6.1",
     "@embroider/core": "3.4.20",
     "@embroider/macros": "1.16.10",
@@ -81,7 +81,7 @@
     "ember-load-initializers": "2.1.2",
     "ember-maybe-import-regenerator": "1.0.0",
     "ember-page-title": "8.2.3",
-    "ember-qunit": "8.1.1",
+    "ember-qunit": "9.0.1",
     "ember-resolver": "11.0.1",
     "ember-source": "6.0.1",
     "ember-source-channel-url": "3.0.0",
