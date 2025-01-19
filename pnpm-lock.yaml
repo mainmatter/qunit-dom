@@ -344,8 +344,8 @@ importers:
         specifier: 0.36.0
         version: 0.36.0(rollup@2.79.2)(typescript@5.5.4)
       tracked-built-ins:
-        specifier: 3.3.0
-        version: 3.3.0
+        specifier: 4.0.0
+        version: 4.0.0(@babel/core@7.24.9)
       ts-jest:
         specifier: 29.2.5
         version: 29.2.5(@babel/core@7.24.9)(jest@29.7.0)(typescript@5.5.4)
@@ -2952,22 +2952,11 @@ packages:
       - supports-color
     dev: true
 
-  /@embroider/addon-shim@1.8.6:
-    resolution: {integrity: sha512-siC9kP78uucEbpDcVyxjkwa76pcs5rVzDVpWO4PDc9EAXRX+pzmUuSTLAK3GztUwx7/PWhz1BenAivqdSvSgfg==}
-    engines: {node: 12.* || 14.* || >= 16}
-    dependencies:
-      '@embroider/shared-internals': 2.6.3
-      broccoli-funnel: 3.0.8
-      semver: 7.6.3
-    transitivePeerDependencies:
-      - supports-color
-    dev: true
-
   /@embroider/addon-shim@1.8.9:
     resolution: {integrity: sha512-qyN64T1jMHZ99ihlk7VFHCWHYZHLE1DOdHi0J7lmn5waV1DoW7gD8JLi1i7FregzXtKhbDc7shyEmTmWPTs8MQ==}
     engines: {node: 12.* || 14.* || >= 16}
     dependencies:
-      '@embroider/shared-internals': 2.6.3
+      '@embroider/shared-internals': 2.8.1
       broccoli-funnel: 3.0.8
       common-ancestor-path: 1.0.1
       semver: 7.6.3
@@ -6397,6 +6386,11 @@ packages:
     engines: {node: '>= 12.*'}
     dev: true
 
+  /babel-import-util@3.0.0:
+    resolution: {integrity: sha512-4YNPkuVsxAW5lnSTa6cn4Wk49RX6GAB6vX+M6LqEtN0YePqoFczv1/x0EyLK/o+4E1j9jEuYj5Su7IEPab5JHQ==}
+    engines: {node: '>= 12.*'}
+    dev: true
+
   /babel-jest@29.7.0(@babel/core@7.24.9):
     resolution: {integrity: sha512-BrvGY3xZSwEcCzKvKsCi2GgHqDqsYkOP4/by5xCgIwGXQxIEh+8ew3gmrE1y7XRR6LHZIj6yLYnUi/mm2KXKBg==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
@@ -9009,6 +9003,15 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       mimic-response: 3.1.0
+    dev: true
+
+  /decorator-transforms@2.3.0(@babel/core@7.24.9):
+    resolution: {integrity: sha512-jo8c1ss9yFPudHuYYcrJ9jpkDZIoi+lOGvt+Uyp9B+dz32i50icRMx9Bfa8hEt7TnX1FyKWKkjV+cUdT/ep2kA==}
+    dependencies:
+      '@babel/plugin-syntax-decorators': 7.24.7(@babel/core@7.24.9)
+      babel-import-util: 3.0.0
+    transitivePeerDependencies:
+      - '@babel/core'
     dev: true
 
   /dedent@1.5.1:
@@ -18629,12 +18632,14 @@ packages:
       punycode: 2.3.1
     dev: true
 
-  /tracked-built-ins@3.3.0:
-    resolution: {integrity: sha512-ewKFrW/AQs05oLPM5isOUb/1aOwBRfHfmF408CCzTk21FLAhKrKVOP5Q5ebX+zCT4kvg81PGBGwrBiEGND1nWA==}
+  /tracked-built-ins@4.0.0(@babel/core@7.24.9):
+    resolution: {integrity: sha512-0Jl43A1SDZd+yYCJvXfgDSn4Wk/zcawkyFTBPqOETU5UJRngnVEnQ8oOjawqPRg6qja3sKjIQ8z6X9xJzcUTUA==}
     dependencies:
-      '@embroider/addon-shim': 1.8.6
+      '@embroider/addon-shim': 1.8.9
+      decorator-transforms: 2.3.0(@babel/core@7.24.9)
       ember-tracked-storage-polyfill: 1.0.0
     transitivePeerDependencies:
+      - '@babel/core'
       - supports-color
     dev: true
 
