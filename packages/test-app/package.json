@@ -103,7 +103,7 @@
     "release-it-lerna-changelog": "5.0.0",
     "rollup": "2.79.2",
     "rollup-plugin-typescript2": "0.36.0",
-    "tracked-built-ins": "3.3.0",
+    "tracked-built-ins": "4.0.0",
     "ts-jest": "29.2.5",
     "typescript": "5.5.4",
     "webpack": "5.93.0"
