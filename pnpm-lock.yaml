@@ -281,8 +281,8 @@ importers:
         specifier: 8.1.1
         version: 8.1.1(@ember/test-helpers@3.3.1)(ember-source@6.0.1)(qunit@2.23.1)
       ember-resolver:
-        specifier: 11.0.1
-        version: 11.0.1(ember-source@6.0.1)
+        specifier: 13.1.0
+        version: 13.1.0(ember-source@6.0.1)
       ember-source:
         specifier: 6.0.1
         version: 6.0.1(@glimmer/component@1.1.2)(rsvp@4.8.5)(webpack@5.93.0)
@@ -4803,7 +4803,7 @@ packages:
     resolution: {integrity: sha512-E1dUIOvdvS8GIt/25psR1CZVmE1o9xuOxmsS1J8iVWrb43cV7mo21IYy+yDwOe7J/2QMgPNzh0uZGItsOXQoYw==}
     deprecated: This is a stub types definition. ember-resolver provides its own type definitions, so you do not need this installed.
     dependencies:
-      ember-resolver: 11.0.1(ember-source@6.0.1)
+      ember-resolver: 13.1.0(ember-source@6.0.1)
     transitivePeerDependencies:
       - ember-source
       - supports-color
@@ -9841,11 +9841,11 @@ packages:
       - supports-color
     dev: true
 
-  /ember-resolver@11.0.1(ember-source@6.0.1):
-    resolution: {integrity: sha512-ucBk3oM+PR+AfYoSUXeQh8cDQS1sSiEKp4Pcgbew5cFMSqPxJfqd1zyZsfQKNTuyubeGmWxBOyMVSTvX2LeCyg==}
+  /ember-resolver@13.1.0(ember-source@6.0.1):
+    resolution: {integrity: sha512-t/PjXLCl5tM9EQXGIFoBgHiA41HkLJpfo17Nud5Cy9eyUPGcnsMjWJqQ+O5QHA0E63Sp+zTn4y/RS5Tu2v2ydg==}
     engines: {node: 14.* || 16.* || >= 18}
     peerDependencies:
-      ember-source: ^4.8.3 || >= 5.0.0
+      ember-source: ^4.12.0 || >= 5.0.0
     peerDependenciesMeta:
       ember-source:
         optional: true
@@ -16950,6 +16950,7 @@ packages:
 
   /rimraf@2.7.1:
     resolution: {integrity: sha512-uWjbaKIK3T1OSVptzX7Nl6PvQ3qAGtKEtVRjRuazjfL3Bx5eI409VZSqgND+4UNnmzLVdPj9FqFJNPqBZFve4w==}
+    deprecated: Rimraf versions prior to v4 are no longer supported
     hasBin: true
     dependencies:
       glob: 7.2.3
@@ -16957,6 +16958,7 @@ packages:
 
   /rimraf@3.0.2:
     resolution: {integrity: sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==}
+    deprecated: Rimraf versions prior to v4 are no longer supported
     hasBin: true
     dependencies:
       glob: 7.2.3
