@@ -21,7 +21,7 @@
     "prettier": "2.8.8",
     "release-plan": "^0.9.0"
   },
-  "packageManager": "pnpm@8.8.0",
+  "packageManager": "pnpm@8.15.9",
   "engines": {
     "node": ">= 18.*",
     "npm": "use pnpm",
@@ -29,7 +29,7 @@
   },
   "volta": {
     "node": "20.16.0",
-    "pnpm": "8.8.0"
+    "pnpm": "8.15.9"
   },
   "changelog": {
     "repo": "mainmatter/qunit-dom",
