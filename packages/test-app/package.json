@@ -33,7 +33,7 @@
     "@embroider/macros": "1.16.10",
     "@embroider/test-setup": "3.0.3",
     "@embroider/webpack": "3.2.3",
-    "@glimmer/component": "1.1.2",
+    "@glimmer/component": "2.0.0",
     "@glimmer/tracking": "1.1.2",
     "@tsconfig/ember": "3.0.9",
     "@types/ember": "4.0.11",
