@@ -2,8 +2,8 @@
   "solution": {
     "qunit-dom": {
       "impact": "minor",
-      "oldVersion": "3.3.0",
-      "newVersion": "3.4.0",
+      "oldVersion": "3.4.0",
+      "newVersion": "3.5.0",
       "constraints": [
         {
           "impact": "minor",
@@ -13,5 +13,5 @@
       "pkgJSONPath": "./packages/qunit-dom/package.json"
     }
   },
-  "description": "## Release (2024-12-01)\n\nqunit-dom 3.4.0 (minor)\n\n#### :rocket: Enhancement\n* `qunit-dom`\n  * [#2153](https://github.com/mainmatter/qunit-dom/pull/2153) feature: add includesValue/doesNotIncludeValue ([@CvX](https://github.com/CvX))\n\n#### Committers: 1\n- Jarek Radosz ([@CvX](https://github.com/CvX))\n"
+  "description": "## Release (2025-08-19)\n\nqunit-dom 3.5.0 (minor)\n\n#### :rocket: Enhancement\n* `qunit-dom`\n  * [#2185](https://github.com/mainmatter/qunit-dom/pull/2185) chore(qunit-dom): expose private install types ([@BobrImperator](https://github.com/BobrImperator))\n\n#### :house: Internal\n* [#2157](https://github.com/mainmatter/qunit-dom/pull/2157) Install Gravity CI ([@marcoow](https://github.com/marcoow))\n\n#### Committers: 2\n- Bartlomiej Dudzik ([@BobrImperator](https://github.com/BobrImperator))\n- Marco Otte-Witte ([@marcoow](https://github.com/marcoow))\n"
 }
