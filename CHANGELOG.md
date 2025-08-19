@@ -1,5 +1,20 @@
 # Changelog
 
+## Release (2025-08-19)
+
+qunit-dom 3.5.0 (minor)
+
+#### :rocket: Enhancement
+* `qunit-dom`
+  * [#2185](https://github.com/mainmatter/qunit-dom/pull/2185) chore(qunit-dom): expose private install types ([@BobrImperator](https://github.com/BobrImperator))
+
+#### :house: Internal
+* [#2157](https://github.com/mainmatter/qunit-dom/pull/2157) Install Gravity CI ([@marcoow](https://github.com/marcoow))
+
+#### Committers: 2
+- Bartlomiej Dudzik ([@BobrImperator](https://github.com/BobrImperator))
+- Marco Otte-Witte ([@marcoow](https://github.com/marcoow))
+
 ## Release (2024-12-01)
 
 qunit-dom 3.4.0 (minor)
