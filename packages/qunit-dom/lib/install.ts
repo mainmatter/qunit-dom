@@ -2,22 +2,23 @@ import DOMAssertions from './assertions.js';
 import { getRootElement } from './root-element.js';
 import type { IDOMElementDescriptor } from 'dom-element-descriptors';
 
-declare global {
-  type RootElement = Element | Document | ShadowRoot | null;
+type TRoot = Element | Document | ShadowRoot | null;
 
-  interface Assert {
-    dom(
-      target?: string | Element | IDOMElementDescriptor | null,
-      rootElement?: RootElement
-    ): DOMAssertions;
-  }
+interface IAssert {
+  dom(target?: DOMTarget, rootElement?: RootElement): DOMAssertions;
+}
+
+export type RootElement = TRoot;
+export type Assert = IAssert;
+export type DOMTarget = string | Element | IDOMElementDescriptor | null;
+
+declare global {
+  type RootElement = TRoot;
+  interface Assert extends IAssert {}
 }
 
 export default function (assert: Assert) {
-  assert.dom = function (
-    target?: string | Element | IDOMElementDescriptor | null,
-    rootElement?: RootElement
-  ): DOMAssertions {
+  assert.dom = function (target?: DOMTarget, rootElement?: RootElement): DOMAssertions {
     if (!isValidRootElement(rootElement)) {
       throw new Error(`${rootElement} is not a valid root element`);
     }
