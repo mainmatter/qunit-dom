@@ -1,5 +1,10 @@
 # Changelog
 
+
+
+
+
+
 ## Release (2025-08-19)
 
 qunit-dom 3.5.0 (minor)
