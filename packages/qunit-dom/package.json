@@ -67,7 +67,7 @@
   "dependencies": {
     "dom-element-descriptors": "^0.5.1"
   },
-  "packageManager": "pnpm@10.14.0",
+  "packageManager": "pnpm@10.15.0",
   "volta": {
     "extends": "../../package.json"
   }
