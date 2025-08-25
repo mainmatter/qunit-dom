@@ -41,8 +41,8 @@
   "devDependencies": {
     "@arethetypeswrong/cli": "0.15.4",
     "@types/qunit": "2.19.12",
-    "@typescript-eslint/eslint-plugin": "7.18.0",
-    "@typescript-eslint/parser": "7.18.0",
+    "@typescript-eslint/eslint-plugin": "8.41.0",
+    "@typescript-eslint/parser": "8.41.0",
     "@vitest/coverage-v8": "3.0.4",
     "babel-plugin-transform-es2015-modules-commonjs": "6.26.2",
     "babel-preset-env": "1.7.0",
