@@ -57,7 +57,7 @@
     "qunit": "2.23.1",
     "release-it": "16.3.0",
     "@release-it-plugins/lerna-changelog": "6.1.0",
-    "rollup": "2.79.2",
+    "rollup": "4.49.0",
     "rollup-plugin-copy": "3.5.0",
     "rollup-plugin-typescript2": "0.36.0",
     "typescript": "5.5.4",
