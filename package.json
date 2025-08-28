@@ -28,7 +28,7 @@
     "yarn": "use pnpm"
   },
   "volta": {
-    "node": "20.16.0",
+    "node": "22.19.0",
     "pnpm": "10.14.0"
   },
   "changelog": {
