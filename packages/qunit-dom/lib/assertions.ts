@@ -54,7 +54,7 @@ export default class DOMAssertions {
    * @hideconstructor
    */
   constructor(
-    target: string | Element | null | IDOMElementDescriptor,
+    target: string | Element | null | IDOMElementDescriptor | undefined,
     rootElement: RootElement,
     private testContext: Assert
   ) {
