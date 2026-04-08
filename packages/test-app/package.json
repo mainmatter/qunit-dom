@@ -25,7 +25,7 @@
     "try:one": "ember try:one"
   },
   "devDependencies": {
-    "@ember/optional-features": "2.1.0",
+    "@ember/optional-features": "3.0.0",
     "@ember/string": "4.0.0",
     "@ember/test-helpers": "3.3.1",
     "@embroider/compat": "3.6.1",
