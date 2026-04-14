@@ -1,17 +1,17 @@
 {
   "solution": {
     "qunit-dom": {
-      "impact": "minor",
-      "oldVersion": "3.4.0",
-      "newVersion": "3.5.0",
+      "impact": "patch",
+      "oldVersion": "3.5.0",
+      "newVersion": "3.5.1",
       "constraints": [
         {
-          "impact": "minor",
-          "reason": "Appears in changelog section :rocket: Enhancement"
+          "impact": "patch",
+          "reason": "Appears in changelog section :bug: Bug Fix"
         }
       ],
       "pkgJSONPath": "./packages/qunit-dom/package.json"
     }
   },
-  "description": "## Release (2025-08-19)\n\nqunit-dom 3.5.0 (minor)\n\n#### :rocket: Enhancement\n* `qunit-dom`\n  * [#2185](https://github.com/mainmatter/qunit-dom/pull/2185) chore(qunit-dom): expose private install types ([@BobrImperator](https://github.com/BobrImperator))\n\n#### :house: Internal\n* [#2157](https://github.com/mainmatter/qunit-dom/pull/2157) Install Gravity CI ([@marcoow](https://github.com/marcoow))\n\n#### Committers: 2\n- Bartlomiej Dudzik ([@BobrImperator](https://github.com/BobrImperator))\n- Marco Otte-Witte ([@marcoow](https://github.com/marcoow))\n"
+  "description": "## Release (2026-04-14)\n\nqunit-dom 3.5.1 (patch)\n\n#### :bug: Bug Fix\n* `qunit-dom`, `test-app`\n  * [#2200](https://github.com/mainmatter/qunit-dom/pull/2200) Fix `assert.dom(undefined)` does not throw, Closes [#2186](https://github.com/mainmatter/qunit-dom/issues/2186) ([@eliasdawson-addepar](https://github.com/eliasdawson-addepar))\n\n#### Committers: 1\n- Elias Dawson ([@eliasdawson-addepar](https://github.com/eliasdawson-addepar))\n"
 }
