@@ -25,11 +25,13 @@ export default function (assert: Assert) {
 
     rootElement = rootElement || this.dom.rootElement || getRootElement();
 
-    return new DOMAssertions(
-      target !== undefined ? target : rootElement instanceof Element ? rootElement : null,
-      rootElement,
-      this
-    );
+    // Only default to rootElement when NO arguments provided.
+    // This allows assert.dom(undefined) to throw while assert.dom() still works.
+    if (arguments.length === 0) {
+      target = rootElement instanceof Element ? rootElement : null;
+    }
+
+    return new DOMAssertions(target, rootElement, this);
   };
 
   function isValidRootElement(element: any): element is Element {

@@ -47,7 +47,7 @@ class ElementData {
  * Create an {@link IDOMElementDescriptor} from a target and a root element
  */
 export default function createDescriptor(
-  target: string | Element | null | IDOMElementDescriptor,
+  target: string | Element | null | IDOMElementDescriptor | undefined,
   rootElement: RootElement
 ): IDOMElementDescriptor {
   if (typeof target === 'string') {

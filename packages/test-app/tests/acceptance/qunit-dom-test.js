@@ -51,5 +51,11 @@ module('Acceptance | qunit-dom', function (hooks) {
       () => assert.dom('foo', 'bar'),
       /bar is not a valid root element/,
     );
+
+    assert.throws(
+      () => assert.dom(undefined),
+      /Unexpected Parameter: undefined/,
+      'assert.dom(undefined) throws',
+    );
   });
 });
