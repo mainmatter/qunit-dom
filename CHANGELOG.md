@@ -1,5 +1,16 @@
 # Changelog
 
+## Release (2026-04-14)
+
+qunit-dom 3.5.1 (patch)
+
+#### :bug: Bug Fix
+* `qunit-dom`, `test-app`
+  * [#2200](https://github.com/mainmatter/qunit-dom/pull/2200) Fix `assert.dom(undefined)` does not throw, Closes [#2186](https://github.com/mainmatter/qunit-dom/issues/2186) ([@eliasdawson-addepar](https://github.com/eliasdawson-addepar))
+
+#### Committers: 1
+- Elias Dawson ([@eliasdawson-addepar](https://github.com/eliasdawson-addepar))
+
 ## Release (2025-08-19)
 
 qunit-dom 3.5.0 (minor)
