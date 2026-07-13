@@ -1,5 +1,21 @@
 # Changelog
 
+## Release (2026-07-13)
+
+* qunit-dom 3.6.0 (minor)
+
+#### :rocket: Enhancement
+* `qunit-dom`
+  * [#2215](https://github.com/mainmatter/qunit-dom/pull/2215) Add `is()` and `isNot()` element identity assertions ([@NullVoxPopuli-ai-agent](https://github.com/NullVoxPopuli-ai-agent))
+
+#### :house: Internal
+* `qunit-dom`
+  * [#2216](https://github.com/mainmatter/qunit-dom/pull/2216) chore: support release-plan OIDC ([@BobrImperator](https://github.com/BobrImperator))
+
+#### Committers: 2
+- @NullVoxPopuli's reduced-access machine account for AI usage ([@NullVoxPopuli-ai-agent](https://github.com/NullVoxPopuli-ai-agent))
+- Bartlomiej Dudzik ([@BobrImperator](https://github.com/BobrImperator))
+
 ## Release (2026-04-14)
 
 qunit-dom 3.5.1 (patch)
