@@ -10,6 +10,7 @@ import isVisible from './assertions/is-visible.js';
 import isDisabled from './assertions/is-disabled.js';
 import matchesSelector from './assertions/matches-selector.js';
 import collapseWhitespace from './helpers/collapse-whitespace.js';
+import elementToString from './helpers/element-to-string.js';
 import {
   type IDOMElementDescriptor,
   resolveDOMElement,
@@ -1402,6 +1403,92 @@ export default class DOMAssertions {
       this.pushResult({ result: false, actual, expected, message });
     }
 
+    return this;
+  }
+
+  /**
+   * Assert that the {@link HTMLElement} or an {@link HTMLElement} matching the
+   * `selector` is the same {@link Element} as the `expected` element.
+   *
+   * The elements are compared by reference (`===`), not by their contents, but
+   * the failure messages use qunit-dom's element serialization to describe
+   * both elements, making it easy to see which element was found instead.
+   *
+   * @param {Element} expected
+   * @param {string?} message
+   *
+   * @example
+   * assert.dom('#title').is(element);
+   *
+   * @see {@link #isNot}
+   */
+  is(expected: Element, message?: string): DOMAssertions {
+    let element = this.findTargetElement();
+    if (!element) return this;
+
+    if (!(expected instanceof Element)) {
+      throw new TypeError(`You must pass an Element to "is". You passed ${expected}.`);
+    }
+
+    let result = element === expected;
+    let expectedDescription = elementToString(expected);
+    let actualDescription = elementToString(element);
+
+    if (!result && actualDescription === expectedDescription) {
+      actualDescription += ' (a different element with the same description)';
+    }
+
+    if (!message) {
+      message = `Element ${this.targetDescription} is the same element as ${expectedDescription}`;
+    }
+
+    this.pushResult({
+      result,
+      actual: actualDescription,
+      expected: expectedDescription,
+      message,
+    });
+    return this;
+  }
+
+  /**
+   * Assert that the {@link HTMLElement} or an {@link HTMLElement} matching the
+   * `selector` is not the same {@link Element} as the `unexpected` element.
+   *
+   * The elements are compared by reference (`===`), not by their contents.
+   *
+   * @param {Element} unexpected
+   * @param {string?} message
+   *
+   * @example
+   * assert.dom('#title').isNot(element);
+   *
+   * @see {@link #is}
+   */
+  isNot(unexpected: Element, message?: string): DOMAssertions {
+    let element = this.findTargetElement();
+    if (!element) return this;
+
+    if (!(unexpected instanceof Element)) {
+      throw new TypeError(`You must pass an Element to "isNot". You passed ${unexpected}.`);
+    }
+
+    let result = element !== unexpected;
+    let unexpectedDescription = elementToString(unexpected);
+    let actualDescription = result
+      ? elementToString(element)
+      : `${elementToString(element)} (the same element)`;
+
+    if (!message) {
+      message = `Element ${this.targetDescription} is not the same element as ${unexpectedDescription}`;
+    }
+
+    this.pushResult({
+      result,
+      actual: actualDescription,
+      expected: `not: ${unexpectedDescription}`,
+      message,
+    });
     return this;
   }
 
