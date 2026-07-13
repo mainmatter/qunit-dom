@@ -109,7 +109,7 @@ describe('assert.dom(..., rootElement)', () => {
       </div>
     `;
 
-    const container = document.getElementById('container');
+    const container = document.getElementById('container')!;
     const shadowRoot = container.attachShadow({ mode: 'closed' });
 
     shadowRoot.innerHTML = '<span class="target">real target<span>';
@@ -119,8 +119,6 @@ describe('assert.dom(..., rootElement)', () => {
 
     assert.dom('.target', shadowRoot).exists({ count: 1 }, 'Only target found in shadow root');
     assert.dom('.target', shadowRoot).hasText('real target', 'Target element text');
-
-    console.log(assert.results);
 
     expect(assert.results).toEqual([
       {

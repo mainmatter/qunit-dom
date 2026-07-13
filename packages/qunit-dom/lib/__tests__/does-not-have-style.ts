@@ -40,7 +40,7 @@ describe('assert.dom(...).doesNotHaveStyle()', () => {
     });
     expect(assert.results).toEqual([
       {
-        actual: { opacity: '1', width: '200px', 'text-align': 'center', color: 'blue' },
+        actual: { opacity: '1', width: '200px', 'text-align': 'center', color: 'rgb(0, 0, 255)' },
         expected: { opacity: '1', width: '200px', 'text-align': 'center', color: 'red' },
         message:
           'Element .foo does not have style "{"opacity":"1","width":"200px","text-align":"center","color":"red"}"',

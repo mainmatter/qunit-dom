@@ -38,14 +38,14 @@ describe('assert.dom(...).hasStyle()', () => {
       opacity: '1',
       width: '200px',
       'text-align': 'center',
-      color: 'blue',
+      color: 'rgb(0, 0, 255)',
     });
     expect(assert.results).toEqual([
       {
-        actual: { opacity: '1', width: '200px', 'text-align': 'center', color: 'blue' },
-        expected: { opacity: '1', width: '200px', 'text-align': 'center', color: 'blue' },
+        actual: { opacity: '1', width: '200px', 'text-align': 'center', color: 'rgb(0, 0, 255)' },
+        expected: { opacity: '1', width: '200px', 'text-align': 'center', color: 'rgb(0, 0, 255)' },
         message:
-          'Element .foo has style "{"opacity":"1","width":"200px","text-align":"center","color":"blue"}"',
+          'Element .foo has style "{"opacity":"1","width":"200px","text-align":"center","color":"rgb(0, 0, 255)"}"',
         result: true,
       },
     ]);
