@@ -17,7 +17,7 @@
     "extends": "../../package.json"
   },
   "dependencies": {
-    "qunit": "^2.20.0",
+    "qunit": "^3.0.0",
     "qunit-dom": "workspace:*"
   }
 }
