@@ -1,5 +1,10 @@
 # Changelog
 
+
+
+
+
+
 ## Release (2026-07-13)
 
 * qunit-dom 3.6.0 (minor)
